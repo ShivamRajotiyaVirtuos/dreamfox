@@ -11,7 +11,7 @@ const Snapshot = () => {
       description:
         "Complete website overhaul with modern design principles and enhanced user experience.",
       videoSrc:
-        "https://sample-videos.com/zip/10/mp4/SampleVideo_1280x720_1mb.mp4",
+        "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4",
     },
     {
       id: 2,
@@ -19,7 +19,7 @@ const Snapshot = () => {
       description:
         "Custom Webflow implementation with advanced interactions and responsive design.",
       videoSrc:
-        "https://sample-videos.com/zip/10/mp4/SampleVideo_1280x720_2mb.mp4",
+        "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4",
     },
     {
       id: 3,
@@ -27,7 +27,7 @@ const Snapshot = () => {
       description:
         "Showcasing creative work with dynamic layouts and smooth transitions.",
       videoSrc:
-        "https://sample-videos.com/zip/10/mp4/SampleVideo_1280x720_5mb.mp4",
+        "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4",
     },
     {
       id: 4,
@@ -35,7 +35,7 @@ const Snapshot = () => {
       description:
         "Platform dedicated to promoting cultural industries and creative professionals.",
       videoSrc:
-        "https://sample-videos.com/zip/10/mp4/SampleVideo_1280x720_1mb.mp4",
+        "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4",
     },
     {
       id: 5,
@@ -43,7 +43,7 @@ const Snapshot = () => {
       description:
         "Website redesign & Webflow development for studio fugu, A localization studio.",
       videoSrc:
-        "https://sample-videos.com/zip/10/mp4/SampleVideo_1280x720_2mb.mp4",
+        "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4",
     },
   ];
 
