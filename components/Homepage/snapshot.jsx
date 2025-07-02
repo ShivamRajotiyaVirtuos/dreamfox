@@ -48,7 +48,7 @@ const Snapshot = () => {
   ];
 
   return (
-    <section className="min-h-screen flex justify-center items-center bg-black text-white py-20 px-8">
+    <section className="min-h-screen flex justify-center items-center text-white py-20 px-8">
       <div className="container mx-auto">
         <motion.div
           className="text-center mb-16"
