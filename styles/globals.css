@@ -177,3 +177,32 @@ body {
       max-width: 1536px;
     }
   }
+
+  .container-fluid {
+    width: 100%;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    margin-left: auto;
+    margin-right: auto;
+    overflow-x: visible; /* allow horizontal overflow */
+    position: relative; /* optional, useful for positioning */
+  }
+  
+  .section-half-unconstrained {
+    width: 100%;
+    position: relative;
+  }
+  
+  .section-half-unconstrained .stretch-right {
+    margin-left: calc((100% - 1536px) / 2); /* adjust to your container's max-width */
+    padding-left: 1rem; /* match .container padding */
+    padding-right: 0;
+    width: 100vw;
+  }
+/* Gradient text utility */
+.text-gradient {
+    background: linear-gradient(96.8deg, #D2448D 2.85%, #DC6263 84.49%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }

@@ -16,7 +16,7 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 h-32 ">
+    <nav className="fixed top-0 left-0 right-0 z-50 h-32 bg-[#1a1a1a] ">
       <div className="container relative mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-center items-center h-32">
           {/* Logo */}

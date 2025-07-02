@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 
 const Banner = () => {
   return (
-    <div className="container relative my-16 lg:my-32">
+    <div className="container relative my-16 lg:my-32 min-h-[90vh]">
       <div className="text-left relative">
         <motion.h3
           className="text-24 font-semibold text-[#d2448d] mb-4"
@@ -54,20 +54,20 @@ const Banner = () => {
             Digital
           </motion.span>
         </motion.h1>
-      </div>
-      <motion.div
-        initial={{ opacity: 0, x: 50 }}
-        animate={{ opacity: 1, x: 0 }}
-        transition={{ duration: 0.6, delay: 1.2 }}
-      >
-        <Link
-          href={"/"}
-          className="hover:scale-105 transition-all absolute right-0 bottom-0 text-30 font-semibold rounded-lg pl-8 pr-16 pb-4 pt-32 bg-gray-200 flex gap-4"
+        <motion.div
+          initial={{ opacity: 0, x: 50 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.6, delay: 1.2 }}
         >
-          <span>Get Started</span>
-          <ArrowUpRightIcon className="w-8 h-8" />
-        </Link>
-      </motion.div>
+          <Link
+            href={"/"}
+            className="hover:scale-105 transition-all absolute right-0 bottom-0 text-30 font-semibold rounded-lg pl-8 pr-16 pb-4 pt-32 bg-gray-200 flex gap-4"
+          >
+            <span>Get Started</span>
+            <ArrowUpRightIcon className="w-8 h-8" />
+          </Link>
+        </motion.div>
+      </div>
     </div>
   );
 };
