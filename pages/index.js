@@ -1,5 +1,5 @@
-import Navbar2 from "@/components/About/Navbar2";
 import Banner from "@/components/Homepage/banner";
+import Snapshot from "@/components/Homepage/snapshot";
 import Vision from "@/components/Homepage/vision";
 import WhatWeDo from "@/components/Homepage/what_we_do";
 import Navbar from "@/components/Navbar/Navbar";
@@ -12,6 +12,7 @@ export default function Home() {
       <Banner />
       <WhatWeDo />
       <Vision />
+      <Snapshot/>
     </div>
 
   );
