@@ -13,12 +13,12 @@ const WebGLCursorEffect = () => {
   // Configuration
   const config = {
     TEXTURE_DOWNSAMPLE: 1,
-    DENSITY_DISSIPATION: 0.95,
+    DENSITY_DISSIPATION: 0.97,
     VELOCITY_DISSIPATION: 0.99,
     PRESSURE_DISSIPATION: 0.8,
     PRESSURE_ITERATIONS: 25,
-    CURL: 1.5,
-    SPLAT_RADIUS: 0.0019,
+    CURL: 1,
+    SPLAT_RADIUS: 0.00039,
   };
 
   // Initialize WebGL context

@@ -56,7 +56,7 @@ export default function OurVision() {
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: container.current,
-        start: "top +=20%",
+        start: "top -=10%", // Adjusted start position
         end: "bottom +10",
         markers: true,
         pin: true,
@@ -96,7 +96,7 @@ export default function OurVision() {
   return (
     <section
       ref={container}
-      className="min-h-[50vh] px-6 flex items-center relative z-10"
+      className="min-h-[120vh] px-6 flex items-center relative z-10"
     >
       <div className="wrapper container mx-auto">
         <h1 className="split text-[120px] font-bold bg-gradient-to-r from-[#D2448D] to-[#DC6263] bg-clip-text text-transparent mb-10">
