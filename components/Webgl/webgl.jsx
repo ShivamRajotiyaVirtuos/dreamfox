@@ -17,7 +17,7 @@ const WebGLCursorEffect = () => {
     VELOCITY_DISSIPATION: 0.99,
     PRESSURE_DISSIPATION: 0.8,
     PRESSURE_ITERATIONS: 25,
-    CURL: 55,
+    CURL: 1.5,
     SPLAT_RADIUS: 0.0019,
   };
 
@@ -37,12 +37,10 @@ const WebGLCursorEffect = () => {
         canvas.getContext("webgl", params) ||
         canvas.getContext("experimental-webgl", params);
     }
-
     if (!gl) {
       console.error("WebGL not supported");
       return null;
     }
-
     let halfFloat;
     let supportLinearFiltering;
 

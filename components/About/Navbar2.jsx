@@ -33,7 +33,9 @@ const Navbar2
 
         {/* Right Menu */}
         <div className="w-1/3 flex justify-end relative">
-          <div
+         
+         
+          {/* <div
             className="text-white cursor-pointer font-medium relative"
             onMouseEnter={() => setIsOpen(true)}
             onMouseLeave={() => setIsOpen(false)}
@@ -56,7 +58,7 @@ const Navbar2
                 </motion.ul>
               )}
             </AnimatePresence>
-          </div>
+          </div> */}
         </div>
       </nav>
     </header>

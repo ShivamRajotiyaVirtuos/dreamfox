@@ -42,7 +42,7 @@ const Vision = () => {
   ];
 
   return (
-    <section className="min-h-[90vh] px-6 flex items-center">
+    <section className="py-16 lg:py-32 px-6 flex items-center">
       <div className="container mx-auto">
         <div className="mb-10 flex flex-wrap gap-x-4">
           {headingWords.map((word, index) => (

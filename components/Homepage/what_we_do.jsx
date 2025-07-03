@@ -1,8 +1,19 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import { ArrowTopRightOnSquareIcon } from "@heroicons/react/24/outline";
-import { motion } from "framer-motion";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const WhatWeDo = () => {
+  const containerRef = useRef(null);
+  const textRef = useRef(null);
+  const h2Ref = useRef(null);
+  const pRef = useRef(null);
+  const buttonRef = useRef(null);
+  const cardsContainerRef = useRef(null);
+  const cardRefs = useRef([]); // Array of card refs
+
   const cards = [
     {
       id: 1,
@@ -22,103 +33,161 @@ const WhatWeDo = () => {
       description:
         "Bold and innovative design solutions that make your brand stand out in the competitive marketplace.",
     },
+    {
+      id: 4,
+      title: "Media Production",
+      description:
+        "High-quality video and audio production that tells your brand story in compelling ways.",
+    },
+    {
+      id: 5,
+      title: "Growth Marketing",
+      description:
+        "Data-driven marketing strategies that accelerate growth and maximize ROI across all channels.",
+    },
   ];
 
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      // Text animations
+      gsap.fromTo(
+        h2Ref.current,
+        { opacity: 0, y: 20 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 0.6,
+          scrollTrigger: {
+            trigger: h2Ref.current,
+            start: "top 80%",
+            toggleActions: "play none none none",
+          },
+        }
+      );
+
+      gsap.fromTo(
+        pRef.current,
+        { opacity: 0, y: 30 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 0.8,
+          delay: 0.2,
+          scrollTrigger: {
+            trigger: pRef.current,
+            start: "top 80%",
+            toggleActions: "play none none none",
+          },
+        }
+      );
+
+      gsap.fromTo(
+        buttonRef.current,
+        { opacity: 0, y: 20 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 0.6,
+          delay: 0.4,
+          scrollTrigger: {
+            trigger: buttonRef.current,
+            start: "top 80%",
+            toggleActions: "play none none none",
+          },
+        }
+      );
+
+      // Pinning the container
+      ScrollTrigger.create({
+        trigger: containerRef.current,
+        start: "center center",
+        end: `+=${cards.length * 100}vh`,
+        pin: true,
+        pinSpacing: false,
+      });
+
+      // Cards animation
+      cardRefs.current.forEach((cardEl, index) => {
+        if (!cardEl) return;
+
+        gsap.set(cardEl, {
+          x: "100vw",
+          opacity: 0,
+        });
+
+        gsap.to(cardEl, {
+          x: 0,
+          opacity: 1,
+          duration: 0.8,
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: containerRef.current,
+            start: `center+=${index * 20}% center`,
+            end: `center+=${(index + 1) * 20}% center`,
+            scrub: 1,
+            onEnter: () => {
+              cardRefs.current.forEach((el) => {
+                el.classList.remove("bg-[#D2458C]", "text-white");
+                el.classList.add("bg-white", "text-black");
+              });
+              cardEl.classList.remove("bg-white", "text-black");
+              cardEl.classList.add("bg-[#D2458C]", "text-white");
+            },
+          },
+        });
+      });
+    }, containerRef);
+
+    return () => ctx.revert();
+  }, []);
+
   return (
-    <div className="flex min-h-screen section-half-unconstrained py-16 lg:py-32 flex-col lg:flex-row gap-8 lg:gap-12  items-center">
-      <div className="stretch-right flex w-full gap-20 items-end">
-        <motion.div
-          className="lg:w-3/5"
-          initial={{ opacity: 0, x: -50 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-        >
-          <motion.h2
-            className="text-24 mb-4 font-bold text-[#DC6263]"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            viewport={{ once: true }}
-          >
-            What we do
-          </motion.h2>
+    <div ref={containerRef} className="bg-[#1a1a1a] overflow-hidden">
+      <div className="flex section-half-unconstrained py-16 lg:py-32 flex-col lg:flex-row gap-8 lg:gap-12 p-6 lg:p-8">
+        <div className="stretch-right flex w-full gap-20 items-end">
+          <div ref={textRef} className="lg:w-1/2">
+            <h2 ref={h2Ref} className="text-24 mb-4 font-bold text-[#DC6263]">
+              What we do
+            </h2>
 
-          <motion.p
-            className="text-30 leading-relaxed text-white mb-10"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            viewport={{ once: true }}
-          >
-            At DreamFox, we go far beyond simply offering digital services — we
-            architect meaningful brand journeys from the ground up. Every
-            project we take on is rooted in thoughtful strategy, bold
-            creativity, and a deep understanding of what drives modern
-            audiences. Our approach is built on four foundational pillars that
-            guide everything we do — empowering brands to transform, tell
-            unforgettable stories, create immersive experiences, and achieve
-            measurable growth in the digital space.
-          </motion.p>
+            <p ref={pRef} className="text-30 leading-relaxed text-white mb-10">
+              At DreamFox, we go far beyond simply offering digital services —
+              we architect meaningful brand journeys from the ground up. Every
+              project we take on is rooted in thoughtful strategy, bold
+              creativity, and a deep understanding of what drives modern
+              audiences.
+            </p>
 
-          <motion.button
-            className="group flex items-center gap-2 rounded-lg hover:bg-white transition-all duration-500 ease-in-out"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.6 }}
-            viewport={{ once: true }}
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            <ArrowTopRightOnSquareIcon className="size-16 p-3 rounded bg-white text-black  transition-all duration-500 ease-in-out" />
-            <span className="text-24 text-white font-semibold group-hover:text-black pr-4 pl-2 transition-colors duration-500 ease-in-out">
-              Learn More
-            </span>
-          </motion.button>
-        </motion.div>
+            <button
+              ref={buttonRef}
+              className="group flex items-center gap-2 rounded transition-all duration-1000 ease-[cubic-bezier(0.77,0,0.175,1)] overflow-hidden relative cursor-pointer"
+            >
+              {/* Background Slide Effect */}
+              <div className="absolute inset-0 bg-white origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-[900ms] ease-[cubic-bezier(0.77,0,0.175,1)]" />
 
-        <motion.div
-          className="w-2/5"
-          initial={{ opacity: 0, x: 100 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8, delay: 0.3 }}
-          viewport={{ once: true }}
-        >
-          <div className="">
-            <div className="flex gap-6 pr-0 min-w-full overflow-hidden">
-              {cards.map((card, index) => (
-                <motion.div
-                  key={card.id}
-                  className=" first:bg-[#D2458C] lg:min-w-[400px] first:text-white lg:min-h-[520px] flex justify-end flex-col bg-white rounded-2xl shadow-lg pt-32 px-8 pb-8 border border-gray-200 hover:shadow-xl transition-shadow duration-300"
-                  initial={{ opacity: 0, y: 50 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: 0.5 + index * 0.2 }}
-                  viewport={{ once: true }}
-                  whileHover={{ y: -10, scale: 1.02 }}
-                >
-                  <motion.h3
-                    className="text-30 font-semibold mb-3"
-                    initial={{ opacity: 0 }}
-                    whileInView={{ opacity: 1 }}
-                    transition={{ duration: 0.5, delay: 0.7 + index * 0.2 }}
-                    viewport={{ once: true }}
-                  >
-                    {card.title}
-                  </motion.h3>
-                  <motion.p
-                    className="text-24 leading-relaxed"
-                    initial={{ opacity: 0 }}
-                    whileInView={{ opacity: 1 }}
-                    transition={{ duration: 0.5, delay: 0.8 + index * 0.2 }}
-                    viewport={{ once: true }}
-                  >
-                    {card.description}
-                  </motion.p>
-                </motion.div>
-              ))}
-            </div>
+              {/* Icon with smooth color transition */}
+              <ArrowTopRightOnSquareIcon className="size-16 p-3 rounded bg-white text-black transition-all duration-[700ms] ease-[cubic-bezier(0.77,0,0.175,1)] relative z-10 " />
+
+              {/* Text with instant start, smooth transition */}
+              <span className="text-24 font-semibold pr-4 pl-2 text-white transition-colors duration-[900ms] ease-[cubic-bezier(0.77,0,0.175,1)] relative z-10 group-hover:text-black">
+                Learn More
+              </span>
+            </button>
           </div>
-        </motion.div>
+
+          <div ref={cardsContainerRef} className="lg:w-1/2 relative h-[500px]">
+            {cards.map((card, index) => (
+              <div
+                key={card.id}
+                ref={(el) => (cardRefs.current[index] = el)}
+                className="card-item absolute top-0 right-0 w-80 h-96 bg-white text-black rounded-2xl shadow-lg p-8 flex flex-col justify-end border border-gray-200"
+              >
+                <h3 className="text-24 font-semibold mb-3">{card.title}</h3>
+                <p className="text-16 leading-relaxed">{card.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
       </div>
     </div>
   );
