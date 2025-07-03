@@ -1,8 +1,8 @@
 import Banner from "@/components/Homepage/banner";
+import OurVision from "@/components/Homepage/ourvision";
 import Snapshot from "@/components/Homepage/snapshot";
 import Vision from "@/components/Homepage/vision";
 import WhatWeDo from "@/components/Homepage/what_we_do";
-
 
 export default function Home() {
   return (
@@ -10,9 +10,9 @@ export default function Home() {
       {/* <Navbar /> */}
       <Banner />
       <WhatWeDo />
-      <Vision />
-      <Snapshot/>
+      {/* <Vision /> */}
+      <OurVision />
+      <Snapshot />
     </div>
-
   );
 }
