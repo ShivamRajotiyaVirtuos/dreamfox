@@ -25,10 +25,10 @@ const WhatWeDo = () => {
   ];
 
   return (
-    <div className="flex min-h-screen section-half-unconstrained py-16 lg:py-32 flex-col lg:flex-row gap-8 lg:gap-12 p-6 lg:p-8 items-center">
+    <div className="flex min-h-screen section-half-unconstrained py-16 lg:py-32 flex-col lg:flex-row gap-8 lg:gap-12  items-center">
       <div className="stretch-right flex w-full gap-20 items-end">
         <motion.div
-          className="lg:w-1/2"
+          className="lg:w-3/5"
           initial={{ opacity: 0, x: -50 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8 }}
@@ -78,18 +78,18 @@ const WhatWeDo = () => {
         </motion.div>
 
         <motion.div
-          className="w-full"
+          className="w-2/5"
           initial={{ opacity: 0, x: 100 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8, delay: 0.3 }}
           viewport={{ once: true }}
         >
           <div className="">
-            <div className="flex gap-6 pr-0 min-w-full">
+            <div className="flex gap-6 pr-0 min-w-full overflow-hidden">
               {cards.map((card, index) => (
                 <motion.div
                   key={card.id}
-                  className="min-w-[280px] first:bg-[#D2458C] first:text-white min-h-[520px] flex justify-end flex-col bg-white rounded-2xl shadow-lg pt-32 px-8 pb-8 border border-gray-200 hover:shadow-xl transition-shadow duration-300"
+                  className=" first:bg-[#D2458C] lg:min-w-[400px] first:text-white lg:min-h-[520px] flex justify-end flex-col bg-white rounded-2xl shadow-lg pt-32 px-8 pb-8 border border-gray-200 hover:shadow-xl transition-shadow duration-300"
                   initial={{ opacity: 0, y: 50 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 0.5 + index * 0.2 }}

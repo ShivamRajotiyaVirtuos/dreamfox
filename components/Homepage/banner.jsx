@@ -3,6 +3,7 @@ import React from "react";
 import { ArrowUpRightIcon } from "@heroicons/react/24/outline";
 import Link from "next/link";
 import { motion } from "framer-motion";
+import HoverButton from "../buttons/button";
 
 const Banner = () => {
   return (
@@ -58,14 +59,20 @@ const Banner = () => {
           initial={{ opacity: 0, x: 50 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6, delay: 1.2 }}
+          className="absolute right-0 bottom-0"
         >
-          <Link
+          <HoverButton
+            text="Get Started"
+            href="/welcome"
+            className="hover:scale-105 transition-all absolute right-0 bottom-0 text-30 font-semibold rounded-lg pl-8 pr-16 pb-4 pt-32 bg-gray-200 flex gap-4"
+          />
+          {/* <Link
             href={"/"}
             className="hover:scale-105 transition-all absolute right-0 bottom-0 text-30 font-semibold rounded-lg pl-8 pr-16 pb-4 pt-32 bg-gray-200 flex gap-4"
           >
             <span>Get Started</span>
             <ArrowUpRightIcon className="w-8 h-8" />
-          </Link>
+          </Link> */}
         </motion.div>
       </div>
     </div>
