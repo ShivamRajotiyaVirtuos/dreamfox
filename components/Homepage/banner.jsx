@@ -130,7 +130,7 @@ const Banner = () => {
           <span ref={whereRef}>WHERE </span>
           <span
             ref={brandsRef}
-            className="bg-gradient-to-r px-6 inline-block from-[#DC6263] to-[#D2448D] text-black origin-bottom-left"
+            className="gradient-selection  bg-gradient-to-r px-6 inline-block from-[#DC6263] to-[#D2448D] text-black origin-bottom-left"
             style={{ transformOrigin: "bottom left" }}
           >
             Brands
