@@ -1,5 +1,6 @@
 import Banner from "@/components/Homepage/banner";
 import OurVision from "@/components/Homepage/ourvision";
+import ReviewsSection from "@/components/Homepage/ReviewsSection";
 import Snapshot from "@/components/Homepage/snapshot";
 import WhatWeDo from "@/components/Homepage/what_we_do";
 import WhyDreamfox from "@/components/Homepage/WhyDreamfox";
@@ -12,6 +13,9 @@ export default function Home() {
       <OurVision />
       <WhyDreamfox />
       <Snapshot />
+      {/* <div className="overflow-hidden">
+        <ReviewsSection/>
+      </div> */}
     </div>
   );
 }
