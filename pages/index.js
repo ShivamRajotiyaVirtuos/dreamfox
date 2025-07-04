@@ -1,4 +1,5 @@
 import Banner from "@/components/Homepage/banner";
+import ScrollControlledSwiper from "@/components/Homepage/Horizontalscroll";
 import OurVision from "@/components/Homepage/ourvision";
 import Snapshot from "@/components/Homepage/snapshot";
 import WhatWeDo from "@/components/Homepage/what_we_do";
@@ -12,6 +13,7 @@ export default function Home() {
       <OurVision />
       <WhyDreamfox />
       <Snapshot />
+      <ScrollControlledSwiper/>
     </div>
   );
 }
