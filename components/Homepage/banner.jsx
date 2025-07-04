@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 import React, { useEffect, useRef } from "react";
 import { ArrowUpRightIcon } from "@heroicons/react/24/outline";
@@ -86,7 +88,7 @@ const Banner = () => {
       ease: "none",
       repeat: -1,
     });
-    
+
     // Ring hover effect
     // const handleMouseEnter = () => {
     //   gsap.to(ringRef.current, {
