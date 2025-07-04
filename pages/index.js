@@ -1,4 +1,5 @@
 import Banner from "@/components/Homepage/banner";
+import ScrollControlledSwiper from "@/components/Homepage/Horizontalscroll";
 import OurVision from "@/components/Homepage/ourvision";
 import ReviewsSection from "@/components/Homepage/ReviewsSection";
 import Snapshot from "@/components/Homepage/snapshot";
@@ -16,6 +17,7 @@ export default function Home() {
       {/* <div className="overflow-hidden">
         <ReviewsSection/>
       </div> */}
+      <ScrollControlledSwiper/>
     </div>
   );
 }

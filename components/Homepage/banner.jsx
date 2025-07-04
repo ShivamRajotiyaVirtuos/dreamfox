@@ -74,6 +74,7 @@ const Banner = () => {
         ease: "bounce.out",
         delay: 0.5,
       });
+
     gsap.fromTo(
       ringRef.current,
       { opacity: 0 },
@@ -82,6 +83,7 @@ const Banner = () => {
       },
       "+=0.2"
     );
+
     gsap.to(ringRef.current, {
       rotation: 360,
       duration: 3,
