@@ -8,7 +8,7 @@ export default function Home() {
   return (
     <div className="bg-[#1a1a1a] min-h-screen">
       <Banner />
-      {/* <WhatWeDo /> */}
+      <WhatWeDo />
       <OurVision />
       <WhyDreamfox />
       <Snapshot />
