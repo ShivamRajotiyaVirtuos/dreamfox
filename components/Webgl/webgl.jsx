@@ -1008,11 +1008,6 @@ const WebGLCursorEffect = () => {
     initFramebuffers(gl, buffers);
     buffersRef.current = buffers;
 
-    // Add initial splats
-    setTimeout(() => {
-      multipleSplats(gl, programs, buffers, Math.floor(Math.random() * 20) + 5);
-    }, 100);
-
     // Start animation loop
     update();
 
