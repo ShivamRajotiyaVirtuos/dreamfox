@@ -1,3 +1,4 @@
+"use client";
 import React, { useState, useRef } from "react";
 // import { Lightbulb, Zap, Target, Plus } from "lucide-react";
 import {
@@ -42,20 +43,34 @@ const WhyDreamfox = () => {
     const deltaX = (e.clientX - centerX) * 0.1;
     const deltaY = (e.clientY - centerY) * 0.1;
 
+    // Calculate angle for gradient direction
+    const angle = Math.atan2(e.clientY - centerY, e.clientX - centerX);
+    const degree = (angle * 180) / Math.PI + 90; // Convert to degrees and adjust
+
+    // Update transform
     e.currentTarget.style.transform = `translate(${deltaX}px, ${deltaY}px)`;
+
+    // Update gradient direction on the border element
+    const borderElement = e.currentTarget.querySelector(".gradient-border");
+    if (borderElement) {
+      borderElement.style.background = `linear-gradient(${degree}deg, #DC6263, #D2448D, transparent, transparent)`;
+    }
   };
 
   const handleMouseLeave = (e) => {
     e.currentTarget.style.transform = "translate(0px, 0px)";
+
+    // Reset gradient to default
+    const borderElement = e.currentTarget.querySelector(".gradient-border");
+    if (borderElement) {
+      borderElement.style.background = "#374151"; // gray-800
+    }
   };
 
   return (
-    <div
-      className="min-h-screen bg-black text-white flex flex-col items-center justify-center p-8"
-      ref={containerRef}
-    >
+    <div className="bg-black text-white p-8 py-16 lg:py-32" ref={containerRef}>
       {/* Header */}
-      <div className="text-center mb-16">
+      <div className="text-center mb-16 lg:mb-32">
         <h1 className="text-6xl md:text-7xl font-bold mb-8 tracking-tight">
           Why DreamFox?
         </h1>
@@ -65,7 +80,7 @@ const WhyDreamfox = () => {
       </div>
 
       {/* Features Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 lg:gap-24 max-w-[100rem] w-full">
+      <div className="mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 lg:gap-24 max-w-[100rem] w-full">
         {features.map((feature, index) => {
           return (
             <div
@@ -81,7 +96,9 @@ const WhyDreamfox = () => {
               {/* Circular Container */}
               <div className="relative w-96 h-96 mx-auto">
                 {/* Outer Ring */}
-                <div className="absolute inset-0 rounded-full border border-gray-800 transition-all duration-500 group-hover:border-red-500 group-hover:shadow-2xl group-hover:shadow-red-500/20"></div>
+                <div className="absolute inset-0 rounded-full p-[2px] bg-gray-800 gradient-border transition-all duration-300 shadow-lg shadow-gray-900/50 group-hover:shadow-2xl group-hover:shadow-[#D2448D]/30">
+                  <div className="w-full h-full rounded-full bg-black group-hover:bg-gray-900 transition-all duration-500"></div>
+                </div>
 
                 {/* Inner Content */}
                 <div className="absolute inset-4 rounded-full bg-gradient-to-br from-gray-900 to-black flex flex-col items-center justify-center p-10 text-center transition-all duration-500 group-hover:from-gray-800 group-hover:to-gray-900">

@@ -12,10 +12,10 @@ body {
   background-color: #d75477; /* a blend of the two */
   color: white;
 }
-/* .gradient-selection::selection {
+.gradient-selection::selection {
   background: white;
   color: #d75477;
-} */
+}
 
 /* ...existing code... */
 /* Responsive font size classes that scale down from desktop */
