@@ -22,7 +22,7 @@ const Navbar = () => {
         <div className="flex justify-center items-center h-32">
           {/* Logo */}
 
-          <div className="flex-shrink-0">
+          <div id="nav-logo" className="flex-shrink-0">
             <Image
               src="/logos/dreamfox_emblem.svg"
               alt="Logo"

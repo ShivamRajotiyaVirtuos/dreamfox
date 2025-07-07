@@ -6,6 +6,7 @@ import { ArrowUpRightIcon } from "@heroicons/react/24/outline";
 import Link from "next/link";
 import { gsap } from "gsap";
 import HoverButton from "../buttons/button";
+import CtaButton from "../buttons/CtaButton";
 
 const Banner = () => {
   const h3Ref = useRef(null);
@@ -151,12 +152,15 @@ const Banner = () => {
             Digital
           </span>
         </h1>
-        <div ref={buttonRef} className="absolute right-0 bottom-0">
+        {/* <div ref={buttonRef} className="absolute right-0 bottom-0">
           <HoverButton
             text="Get Started"
             href="/welcome"
             className="hover:scale-105 transition-all absolute right-0 bottom-0 text-30 font-semibold rounded-lg pl-8 pr-16 pb-4 pt-32 bg-gray-200 flex gap-4"
           />
+        </div> */}
+        <div className="absolute right-0 bottom-0">
+          <CtaButton text="Book a Demo" href="/demo" />
         </div>
       </div>
     </div>

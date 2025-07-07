@@ -17,7 +17,7 @@ export default function Home() {
       {/* <div className="overflow-hidden">
         <ReviewsSection/>
       </div> */}
-      <ScrollControlledSwiper/>
+      <ScrollControlledSwiper />
     </div>
   );
 }
