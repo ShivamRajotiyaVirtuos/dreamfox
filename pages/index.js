@@ -14,9 +14,9 @@ export default function Home() {
       <OurVision />
       <WhyDreamfox />
       <Snapshot />
-      {/* <div className="overflow-hidden">
+      <div className="overflow-hidden">
         <ReviewsSection/>
-      </div> */}
+      </div>
       <ScrollControlledSwiper />
     </div>
   );

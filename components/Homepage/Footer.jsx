@@ -7,12 +7,14 @@ import { ArrowRightIcon } from '@heroicons/react/24/solid';
 import React from 'react';
 
 const Footer = () => {
+
+  
   return (
     <footer className="relative bg-[#1a1a1a] text-white overflow-hidden">
       {/* Main Content */}
-      <div className="max-w-7xl mx-auto px-6 py-20 grid grid-cols-1 md:grid-cols-3 gap-12 relative z-10">
+      <div className="container mx-auto px-6 py-20 grid grid-cols-1 md:grid-cols-3 gap-12 relative z-10">
         {/* Left Nav */}
-        {/* <div className="flex flex-col space-y-4 text-20">
+        {/* <div className="flex flex-col space-y-4 text-30">
           {['Home', 'Services', 'About', 'Projects', 'Contact'].map((item) => (
             <a
               key={item}
@@ -23,7 +25,7 @@ const Footer = () => {
             </a>
           ))}
         </div> */}
-        <div className="flex flex-col space-y-4 text-20">
+        <div className="flex flex-col space-y-4 text-40">
           {[
             { name: 'Home', href: '/' },
             { name: 'Services', href: '/services' },
@@ -43,7 +45,7 @@ const Footer = () => {
 
 
         {/* Middle Links */}
-        <div className="flex flex-col space-y-4 text-20">
+        <div className="flex flex-col space-y-4 text-24">
           {[
             ['Instagram', '#'],
             ['Linkedin', '#'],
@@ -74,19 +76,22 @@ const Footer = () => {
 
         {/* Right Email */}
         <div className="flex flex-col space-y-4">
-          <h3 className="text-20  uppercase tracking-widest">Drop your email</h3>
-          <p className="text-20  uppercase tracking-widest">Let’s have a chat</p>
+          <h3 className="text-24  uppercase tracking-widest">Drop your email</h3>
+          <p className="text-24  uppercase tracking-widest">Let’s have a chat</p>
           <div className="flex items-center bg-gray-200 text-black rounded-full overflow-hidden max-w-md">
             <input
                 type="email"
                 placeholder="Get Started Today"
-                className="px-4 py-2 w-full text-20 bg-transparent focus:outline-none"
+                className="px-4 py-2 w-full text-24 bg-transparent focus:outline-none"
             />
             <button className="bg-black m-3 h-13 w-13  text-white px-4 py-2 rounded-full flex items-center justify-center">
                 <ArrowRightIcon className="h-5 w-5 text-white" />
             </button>
         </div>
         </div>
+
+        
+
       </div>
 
       {/* Logo as cutout mask with background video */}

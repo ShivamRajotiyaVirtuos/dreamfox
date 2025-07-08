@@ -1,145 +1,56 @@
 'use client';
 
-import React, { useEffect } from 'react';
-import gsap from 'gsap';
-import { CustomEase } from 'gsap/CustomEase';
+import React, { useState } from 'react';
 import {
   ArrowTopRightOnSquareIcon,
   ChevronDownIcon,
   ChevronUpIcon,
 } from '@heroicons/react/24/outline';
+import { motion, AnimatePresence } from 'framer-motion';
 
-gsap.registerPlugin(CustomEase);
+const images = [
+  'https://static.vecteezy.com/system/resources/previews/003/130/062/large_2x/cyber-circuit-future-technology-concept-background-text-free-vector.jpg',
+  // 'https://static.vecteezy.com/system/resources/previews/002/964/235/large_2x/cyber-circuit-future-technology-concept-background-free-vector.jpg',
+  'https://static.vecteezy.com/system/resources/thumbnails/008/905/837/small_2x/3d-render-of-neon-and-light-glowing-on-dark-scene-cyber-punk-night-city-concept-night-life-technology-network-for-5g-beyond-generation-and-futuristic-scene-sci-fi-pattern-theme-free-photo.jpg',
+  'https://static.vecteezy.com/system/resources/thumbnails/003/130/089/small_2x/cyber-circuit-future-technology-concept-background-text-free-vector.jpg',
+  'https://static.vecteezy.com/system/resources/previews/060/199/356/non_2x/fluid-wave-like-abstract-shape-in-deep-teal-and-green-flowing-across-a-gradient-background-ideal-for-high-tech-projects-posters-ui-design-or-digital-advertisements-free-vector.jpg',
+  'https://static.vecteezy.com/system/resources/thumbnails/008/905/837/small_2x/3d-render-of-neon-and-light-glowing-on-dark-scene-cyber-punk-night-city-concept-night-life-technology-network-for-5g-beyond-generation-and-futuristic-scene-sci-fi-pattern-theme-free-photo.jpg',
+  'https://static.vecteezy.com/system/resources/previews/003/130/062/large_2x/cyber-circuit-future-technology-concept-background-text-free-vector.jpg',
+  // 'https://static.vecteezy.com/system/resources/thumbnails/003/130/089/small_2x/cyber-circuit-future-technology-concept-background-text-free-vector.jpg',
+  // 'https://static.vecteezy.com/system/resources/previews/060/199/356/non_2x/fluid-wave-like-abstract-shape-in-deep-teal-and-green-flowing-across-a-gradient-background-ideal-for-high-tech-projects-posters-ui-design-or-digital-advertisements-free-vector.jpg',
+];
 
 const ReviewsSection = () => {
-  useEffect(() => {
-    CustomEase.create('cubic', '0.83, 0, 0.17, 1');
+  const [cards, setCards] = useState(images);
+  const [isAnimating, setIsAnimating] = useState(false);
 
-    const splitTextIntoSpans = selector => {
-      const elements = document.querySelectorAll(selector);
-      elements.forEach(element => {
-        const text = element.innerText;
-        const splitText = text
-          .split('')
-          .map(char => `<span>${char === ' ' ? '&nbsp;' : char}</span>`)
-          .join('');
-        element.innerHTML = splitText;
-      });
-    };
+  const moveTopToBack = async () => {
+    if (isAnimating) return;
+    setIsAnimating(true);
 
-    const initializeCards = () => {
-      const cards = Array.from(document.querySelectorAll('.card'));
-      gsap.to(cards, {
-        y: i => -15 + 15 * i + '%',
-        z: i => 15 * i,
-        duration: 1,
-        ease: 'cubic',
-        stagger: -0.1,
-      });
-    };
+    // Add a quick swipe-down delay
+    await new Promise((resolve) => setTimeout(resolve, 150));
 
-    splitTextIntoSpans('.copy h1');
-    initializeCards();
-    gsap.set('h1 span', { y: -200 });
-    gsap.set('.card:last-child h1 span', { y: 0 });
-  }, []);
-
-  const handleNext = () => {
-  const slider = document.querySelector('.slider');
-  const cards = Array.from(slider.querySelectorAll('.card'));
-  const topCard = cards.pop(); // top card to send to back
-  const nextCard = cards[cards.length - 1];
-
-  // Animate top card's text out
-  gsap.to(topCard.querySelectorAll('h1 span'), {
-    y: 200,
-    duration: 0.6,
-    ease: 'cubic',
-  });
-
-  // Instantly move top card to the back of DOM stack
-  slider.prepend(topCard);
-
-  // Reset position immediately (so there's no jump)
-  gsap.set(topCard, { y: '-150%' });
-
-  // Animate all cards into new stacked position
-  const allCards = Array.from(slider.querySelectorAll('.card'));
-  gsap.to(allCards, {
-    y: i => -15 + 15 * i + '%',
-    z: i => 15 * i,
-    duration: 1,
-    ease: 'cubic',
-    stagger: -0.1,
-  });
-
-  // Reset and animate next card's text in
-  gsap.set(topCard.querySelectorAll('h1 span'), { y: -200 });
-  gsap.to(nextCard.querySelectorAll('h1 span'), {
-    y: 0,
-    duration: 1,
-    ease: 'cubic',
-    stagger: 0.05,
-  });
-};
-
-
-  const handlePrevious = () => {
-    const slider = document.querySelector('.slider');
-    const cards = Array.from(slider.querySelectorAll('.card'));
-    const firstCard = cards.shift();
-    const topCard = cards[cards.length - 1];
-
-    slider.append(firstCard);
-
-    const allCards = Array.from(slider.querySelectorAll('.card'));
-    gsap.set(firstCard, { y: '-150%' });
-
-    gsap.to(allCards, {
-      y: i => -15 + 15 * i + '%',
-      z: i => 15 * i,
-      duration: 1,
-      ease: 'cubic',
-      stagger: -0.1,
-    });
-
-    gsap.set(firstCard.querySelectorAll('h1 span'), { y: -200 });
-    gsap.to(topCard.querySelectorAll('h1 span'), {
-      y: 0,
-      duration: 1,
-      ease: 'cubic',
-      stagger: 0.05,
-    });
+    const newCards = [...cards];
+    const top = newCards.shift();
+    newCards.push(top);
+    setCards(newCards);
+    setTimeout(() => setIsAnimating(false), 300);
   };
 
-  const cardData = [
-    {
-      img: 'https://images.unsplash.com/photo-1689602037070-fec2eca3f5b2?q=80&w=2070&auto=format&fit=crop',
-      text: 'Amazing',
-    },
-    {
-      img: 'https://images.unsplash.com/photo-1718125188885-7ce699512931?q=80&w=2071&auto=format&fit=crop',
-      text: 'Creative',
-    },
-    {
-      img: 'https://images.unsplash.com/photo-1718116088537-212b192d1ad9?q=80&w=2075&auto=format&fit=crop',
-      text: 'Strategic',
-    },
-    {
-      img: 'https://images.unsplash.com/photo-1718194822494-47de8fb7922c?q=80&w=2071&auto=format&fit=crop',
-      text: 'Bold Ideas',
-    },
-    {
-      img: 'https://images.unsplash.com/photo-1713970700051-556d05c59fce?q=80&w=2070&auto=format&fit=crop',
-      text: 'Beyond',
-    },
-  ];
+  const moveBottomToTop = () => {
+    if (isAnimating) return;
+    const newCards = [...cards];
+    const last = newCards.pop();
+    newCards.unshift(last);
+    setCards(newCards);
+  };
 
   return (
-    <div className="bg-[#1a1a1a] w-full min-h-[180vh] text-white flex flex-col items-center justify-start py-24 px-4">
-      {/* Heading */}
+    <section className="w-full flex flex-col items-center py-16 bg-[#1a1a1a]">
+      {/* Header */}
       <div className="max-w-3xl text-center mb-12 z-10">
-        <h2 className="text-3xl md:text-5xl font-semibold mb-4">
+        <h2 className="text-3xl md:text-5xl font-semibold mb-4 text-white">
           Our Partners will <br /> tell you better about us
         </h2>
         <p className="text-sm md:text-base text-white/80 mb-6">
@@ -158,107 +69,64 @@ const ReviewsSection = () => {
         </div>
       </div>
 
-      {/* Stack & Buttons */}
-      <div className="w-full flex flex-col md:flex-row items-center justify-center gap-8 md:mt-20 translate-x-20">
-        {/* Cards */}
-        <div
-          className="slider relative w-full md:w-[600px] h-[clamp(300px,60vw,500px)]"
-          style={{
-            perspective: '300px',
-            perspectiveOrigin: '50% 50%',
-          }}
-        >
-          {cardData.map((card, index) => (
-            <div
-              key={index}
-              className="card"
-              style={{
-                position: 'absolute',
-                top: '50%',
-                left: '50%',
-                width: '100%',
-                height: '100%',
-                borderRadius: '12px',
-                overflow: 'hidden',
-                transform: 'translate(-50%, -50%)',
-                backgroundColor: '#000',
+      {/* Card Stack with 3D effect */}
+      <div className="relative h-[450px] w-[700px] max-w-full mt-20 perspective-[1200px]">
+        {cards.map((img, index) => {
+          const offset = cards.length - index;
+          const translateY = -offset * 20;
+          const scale = 1 - offset * 0.02;
+          const rotateX = offset * 2;
+
+          return (
+            <motion.div
+              key={img}
+              className="absolute w-full h-full"
+              style={{ zIndex: index }}
+              animate={{
+                y: translateY,
+                scale: scale,
+                rotateX: rotateX,
+              }}
+              transition={{
+                type: 'spring',
+                stiffness: 120,
+                damping: 20,
               }}
             >
-              {/* Image */}
+              {/* <img
+                src={img}
+                alt={`Slide ${index}`}
+                className="w-full h-full object-cover rounded-xl border-4 border-white shadow-2xl"
+              /> */}
+              <div className="relative w-full h-full rounded-xl overflow-hidden border-2 border-white shadow-2xl">
               <img
-                src={card.img}
-                alt=""
-                style={{
-                  width: '100%',
-                  height: '100%',
-                  objectFit: 'cover',
-                  position: 'absolute',
-                  top: 0,
-                  left: 0,
-                  zIndex: 1,
-                }}
+                src={img}
+                alt={`Slide ${index}`}
+                className="w-full h-full object-cover"
               />
-
-              {/* Overlay */}
-              <div
-                style={{
-                  position: 'absolute',
-                  top: 0,
-                  left: 0,
-                  width: '100%',
-                  height: '100%',
-                  backgroundColor: 'rgba(0, 0, 0, 0.5)',
-                  zIndex: 2,
-                }}
-              />
-
-              {/* Text */}
-              <div
-                className="copy"
-                style={{
-                  position: 'absolute',
-                  top: '50%',
-                  left: '50%',
-                  transform: 'translate(-50%, -50%)',
-                  width: '90%',
-                  zIndex: 3,
-                }}
-              >
-                <h1
-                  style={{
-                    textAlign: 'center',
-                    fontSize: 'clamp(1.5rem, 5vw, 4rem)',
-                    fontWeight: '300',
-                    letterSpacing: '-0.05em',
-                    textTransform: 'uppercase',
-                    color: '#DFE1C8',
-                    lineHeight: 1.1,
-                  }}
-                >
-                  {card.text}
-                </h1>
-              </div>
+              <div className="absolute bottom-0 left-0 w-full h-24 bg-gradient-to-t from-black to-transparent pointer-events-none rounded-b-xl" />
             </div>
-          ))}
-        </div>
-
-        {/* Buttons: show beside on md+, below on sm */}
-        <div className="flex md:flex-col flex-row gap-4 mt-96 md:mt-0 ml-20">
-          <button
-            onClick={handlePrevious}
-            className="w-10 h-10 border border-gray-400 bg-black text-white flex items-center justify-center rounded"
-          >
-            <ChevronUpIcon className="w-5 h-5" />
-          </button>
-          <button
-            onClick={handleNext}
-            className="w-10 h-10 border border-gray-400 bg-black text-white flex items-center justify-center rounded"
-          >
-            <ChevronDownIcon className="w-5 h-5" />
-          </button>
-        </div>
+            </motion.div>
+          );
+        })}
       </div>
-    </div>
+
+      {/* Navigation Buttons */}
+      <div className="mt-6 flex gap-4">
+        <button
+          onClick={moveBottomToTop}
+          className="p-2 bg-[#1a1a1a] border border-gray-300 rounded shadow hover:bg-gray-800 transition"
+        >
+          <ChevronUpIcon className="h-5 w-5 text-white" />
+        </button>
+        <button
+          onClick={moveTopToBack}
+          className="p-2 bg-[#1a1a1a] border border-gray-300 rounded shadow hover:bg-gray-800 transition"
+        >
+          <ChevronDownIcon className="h-5 w-5 text-white" />
+        </button>
+      </div>
+    </section>
   );
 };
 
