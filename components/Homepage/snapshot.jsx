@@ -1,6 +1,5 @@
 "use client";
 
-
 import React, { useState, useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -101,7 +100,7 @@ const Snapshot = () => {
           scale: 1,
           y: 0,
           duration: 0.4,
-          stagger: 0.1,
+          // stagger: 0.1,
           ease: "power2.out",
           scrollTrigger: {
             trigger: cardsRef.current,
@@ -112,55 +111,76 @@ const Snapshot = () => {
       );
     }, sectionRef);
 
-    return () => ctx.revert();
+    return () => {
+      ctx.revert();
+    };
   }, []);
 
-  // Handle card hover animations
+  // Simple hover handler - no complex animations, just state management
   const handleCardHover = (cardId, isHovering) => {
-    const card = document.querySelector(`[data-card-id="${cardId}"]`);
-    const otherCards = document.querySelectorAll(
-      `.card-item:not([data-card-id="${cardId}"])`
-    );
+    // Only enable hover effects on XL screens and above
+    if (window.innerWidth >= 1280) {
+      setHoveredCard(isHovering ? cardId : null);
+    }
+  };
 
-    if (isHovering) {
-      gsap.to(card, {
-        width: "600px",
-        height: "450px",
-        duration: 0.3,
-        ease: "power2.out",
-      });
+  // Handle click for smaller screens
+  const handleCardClick = (cardId) => {
+    // For screens below XL, toggle video play on click
+    if (window.innerWidth < 1280) {
+      setHoveredCard(hoveredCard === cardId ? null : cardId);
+    }
+  };
 
-      gsap.to(otherCards, {
-        width: "250px",
-        height: "300px",
-        duration: 0.3,
-        ease: "power2.out",
-      });
-    } else {
-      gsap.to(".card-item", {
-        width: "100%",
-        height: "350px",
-        duration: 0.3,
-        ease: "power2.out",
-      });
+  // Function to get slanting height for other cards (only for XL and above)
+  const getCardHeight = (cardId, index) => {
+    // For screens below XL, use simple fixed height
+    if (typeof window !== "undefined" && window.innerWidth < 1280) {
+      return "h-[250px] sm:h-[280px] md:h-[300px]";
     }
 
-    setHoveredCard(isHovering ? cardId : null);
+    // Original slanting logic for XL screens and above
+    if (hoveredCard === cardId) {
+      return "h-[300px] md:h-[400px] lg:h-[450px]"; // Responsive hovered card height
+    }
+
+    if (hoveredCard && hoveredCard !== cardId) {
+      // Create slanting effect based on distance from hovered card
+      const hoveredIndex = cards.findIndex((card) => card.id === hoveredCard);
+      const distance = Math.abs(index - hoveredIndex);
+
+      // Responsive heights decrease with distance
+      const heights = [
+        "h-[250px] md:h-[300px] lg:h-[350px]", // 1st neighbor
+        "h-[220px] md:h-[260px] lg:h-[300px]", // 2nd neighbor
+        "h-[200px] md:h-[230px] lg:h-[250px]", // 3rd neighbor
+        "h-[180px] md:h-[200px] lg:h-[200px]", // 4th+ neighbor
+      ];
+      return (
+        heights[Math.min(distance - 1, heights.length - 1)] ||
+        "h-[180px] md:h-[200px] lg:h-[200px]"
+      );
+    }
+
+    return "h-[250px] md:h-[300px] lg:h-[350px]"; // Default responsive height when nothing is hovered
   };
 
   return (
     <section
       ref={sectionRef}
-      className="flex justify-center items-center text-white py-16 lg:py-32 px-8"
+      className="flex justify-center items-center text-white py-8 md:py-16 lg:py-32 px-4 md:px-6 lg:px-8"
     >
       <div className="container mx-auto">
-        <div className="text-center mb-16">
-          <h2 ref={titleRef} className="text-6xl font-bold mb-8">
+        <div className="text-center mb-8 md:mb-12 lg:mb-16">
+          <h2
+            ref={titleRef}
+            className="text-3xl md:text-5xl lg:text-6xl font-bold mb-4 md:mb-6 lg:mb-8"
+          >
             Case Snapshots
           </h2>
           <p
             ref={descriptionRef}
-            className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed"
+            className="text-base md:text-lg lg:text-xl text-gray-300 max-w-xl md:max-w-2xl lg:max-w-3xl mx-auto leading-relaxed px-4"
           >
             Website redesign & Webflow development for studio fugu, A
             localization studio dedicated to the creative and cultural
@@ -171,55 +191,78 @@ const Snapshot = () => {
         {/* Cards Grid */}
         <div
           ref={cardsRef}
-          className="flex gap-4 w-full overflow-hidden justify-center items-end min-h-[500px]"
+          className="xl:flex xl:flex-row xl:justify-center xl:items-end xl:gap-4 xl:min-h-[500px] 
+                     grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 w-full px-2 sm:px-0"
         >
-          {cards.map((card) => (
-            <div
-              key={card.id}
-              data-card-id={card.id}
-              className="card-item relative  bg-white overflow-hidden cursor-pointer rounded-sm  h-[350px]"
-              onMouseEnter={() => handleCardHover(card.id, true)}
-              onMouseLeave={() => handleCardHover(card.id, false)}
-            >
-              <div className="relative w-full h-full">
-                <video
-                  src={card.videoSrc}
-                  className="w-full h-full object-cover"
-                  muted
-                  loop
-                  playsInline
-                  ref={(video) => {
-                    if (video) {
-                      if (hoveredCard === card.id) {
-                        video.play();
-                      } else {
-                        video.pause();
-                        video.currentTime = 0;
+          {cards.map((card, index) => {
+            const isHovered = hoveredCard === card.id;
+            const isOtherHovered = hoveredCard && hoveredCard !== card.id;
+            const cardHeight = getCardHeight(card.id, index);
+
+            return (
+              <div
+                key={card.id}
+                data-card-id={card.id}
+                className={`card-item relative bg-white overflow-hidden cursor-pointer rounded-sm transition-all duration-300 ease-out
+                  xl:flex-shrink-0 ${
+                    isHovered
+                      ? "xl:w-[420px]"
+                      : isOtherHovered
+                      ? "xl:w-[250px]"
+                      : "xl:w-[280px]"
+                  } 
+                  w-full max-w-[400px] mx-auto xl:max-w-none xl:mx-0
+                } ${cardHeight}`}
+                onMouseEnter={() => handleCardHover(card.id, true)}
+                onMouseLeave={() => handleCardHover(card.id, false)}
+                onClick={() => handleCardClick(card.id)}
+              >
+                <div className="relative w-full h-full">
+                  <video
+                    src={card.videoSrc}
+                    className="w-full h-full object-cover"
+                    muted
+                    loop
+                    playsInline
+                    ref={(video) => {
+                      if (video) {
+                        if (hoveredCard === card.id) {
+                          video.play();
+                        } else {
+                          video.pause();
+                          video.currentTime = 0;
+                        }
                       }
-                    }
-                  }}
-                />
+                    }}
+                  />
 
-                {/* Overlay gradient */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
+                  {/* Overlay gradient */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
 
-                {/* Content */}
-                {hoveredCard === card.id && (
-                  <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
-                    <h3 className="text-2xl font-bold mb-2">{card.title}</h3>
-                    <p className="text-sm text-gray-200">{card.description}</p>
-                  </div>
-                )}
+                  {/* Content */}
+                  {hoveredCard === card.id && (
+                    <div className="absolute bottom-0 left-0 right-0 p-3 md:p-4 lg:p-6 text-white">
+                      <h3 className="text-16  mb-1 md:mb-2">
+                        {card.title}
+                      </h3>
+                      {/* <p className="text-sm md:text-base lg:text-16 text-gray-200 leading-snug">
+                        {card.description}
+                      </p> */}
+                    </div>
+                  )}
 
-                {/* Card title when not hovered */}
-                {hoveredCard !== card.id && (
-                  <div className="absolute bottom-4 left-4 text-white">
-                    <span className="text-lg font-semibold">{card.title}</span>
-                  </div>
-                )}
+                  {/* Card title when not hovered */}
+                  {hoveredCard !== card.id && (
+                    <div className="absolute bottom-2 md:bottom-3 lg:bottom-4 left-2 md:left-3 lg:left-4 text-white">
+                      <span className="text-16 ">
+                        {card.title}
+                      </span>
+                    </div>
+                  )}
+                </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </div>
     </section>

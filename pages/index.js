@@ -1,7 +1,8 @@
 import Banner from "@/components/Homepage/banner";
-import ScrollControlledSwiper from "@/components/Homepage/Horizontalscroll";
+
 import OurVision from "@/components/Homepage/ourvision";
 import ReviewsSection from "@/components/Homepage/ReviewsSection";
+import Showreel from "@/components/Homepage/showreel";
 import Snapshot from "@/components/Homepage/snapshot";
 import WhatWeDo from "@/components/Homepage/what_we_do";
 import WhyDreamfox from "@/components/Homepage/WhyDreamfox";
@@ -14,10 +15,10 @@ export default function Home() {
       <OurVision />
       <WhyDreamfox />
       <Snapshot />
-      {/* <div className="overflow-hidden">
-        <ReviewsSection/>
-      </div> */}
-      <ScrollControlledSwiper/>
+      <div className="overflow-hidden">
+        <ReviewsSection />
+      </div>
+      <Showreel/>
     </div>
   );
 }

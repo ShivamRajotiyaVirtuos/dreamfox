@@ -108,12 +108,12 @@ const WhyDreamfox = () => {
                   </div>
 
                   {/* Title */}
-                  <h3 className="text-2xl font-bold mb-4 group-hover:text-red-400 transition-colors duration-500">
+                  <h3 className="text-24 font-bold mb-4 group-hover:text-red-400 transition-colors duration-500">
                     {feature.title}
                   </h3>
 
                   {/* Description */}
-                  <p className="text-gray-400 text-sm leading-relaxed group-hover:text-gray-300 transition-colors duration-500">
+                  <p className="text-gray-400 text-20 leading-relaxed group-hover:text-gray-300 transition-colors duration-500">
                     {feature.description}
                   </p>
                 </div>
