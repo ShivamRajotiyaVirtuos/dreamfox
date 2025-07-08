@@ -145,7 +145,29 @@ body {
     font-size: 60px;
   }
 }
+/* text-120 - 120px on desktop, scales down */
+.text-120 {
+  font-size: 48px;
+  line-height: 1.1;
+}
 
+@media (min-width: 640px) {
+  .text-120 {
+    font-size: 72px;
+  }
+}
+
+@media (min-width: 768px) {
+  .text-120 {
+    font-size: 90px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .text-120 {
+    font-size: 120px;
+  }
+}
 /* Container class */
 .container {
   width: 100%;
@@ -214,4 +236,11 @@ body {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+}
+#snapreel .swiper {
+  overflow: visible !important;
+}
+
+#snapreel .swiper-wrapper {
+  transition-timing-function: linear !important;
 }

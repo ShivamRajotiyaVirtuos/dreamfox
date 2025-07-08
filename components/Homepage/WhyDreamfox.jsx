@@ -7,6 +7,7 @@ import {
   PuzzlePieceIcon,
 } from "@heroicons/react/24/outline";
 import Image from "next/image";
+import TextReveal from "../Text Reveal/textreveal";
 const WhyDreamfox = () => {
   const [hoveredIndex, setHoveredIndex] = useState(null);
   const containerRef = useRef(null);
@@ -71,12 +72,23 @@ const WhyDreamfox = () => {
     <div className="bg-black text-white p-8 py-16 lg:py-32" ref={containerRef}>
       {/* Header */}
       <div className="text-center mb-16 lg:mb-32">
-        <h1 className="text-6xl md:text-7xl font-bold mb-8 tracking-tight">
+        <TextReveal
+          className="text-120 font-bold mb-8 tracking-tight"
+          animation="rotateX"
+          stagger={0.1}
+          duration={0.8}
+        >
           Why DreamFox?
-        </h1>
-        <p className="text-2xl md:text-3xl text-gray-300 font-light tracking-wide">
+        </TextReveal>
+        <h1></h1>
+        <TextReveal
+          animation="rotateX"
+          stagger={0.1}
+          duration={0.8}
+          className="text-40 text-gray-300 font-light tracking-wide"
+        >
           We Move Fast. Think Bold. Deliver Smart.
-        </p>
+        </TextReveal>
       </div>
 
       {/* Features Grid */}

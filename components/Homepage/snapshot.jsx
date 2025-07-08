@@ -3,6 +3,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import TextReveal from "../Text Reveal/textreveal";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -172,20 +173,25 @@ const Snapshot = () => {
     >
       <div className="container mx-auto">
         <div className="text-center mb-8 md:mb-12 lg:mb-16">
-          <h2
-            ref={titleRef}
-            className="text-3xl md:text-5xl lg:text-6xl font-bold mb-4 md:mb-6 lg:mb-8"
+          <TextReveal
+            className="text-120 font-bold mb-4 md:mb-6 lg:mb-8"
+            animation="rotateX"
+            stagger={0.1}
+            duration={0.8}
           >
             Case Snapshots
-          </h2>
-          <p
+          </TextReveal>
+
+          <TextReveal
+            stagger={0.1}
+            duration={0.8}
             ref={descriptionRef}
-            className="text-base md:text-lg lg:text-xl text-gray-300 max-w-xl md:max-w-2xl lg:max-w-3xl mx-auto leading-relaxed px-4"
+            className="text-40 text-gray-300 max-w-3xl md:max-w-4xl lg:max-w-6xl mx-auto leading-relaxed px-4 font-extralight"
           >
             Website redesign & Webflow development for studio fugu, A
             localization studio dedicated to the creative and cultural
             industries.
-          </p>
+          </TextReveal>
         </div>
 
         {/* Cards Grid */}
@@ -240,25 +246,23 @@ const Snapshot = () => {
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
 
                   {/* Content */}
-                  {hoveredCard === card.id && (
+                  {/* {hoveredCard === card.id && (
                     <div className="absolute bottom-0 left-0 right-0 p-3 md:p-4 lg:p-6 text-white">
                       <h3 className="text-16  mb-1 md:mb-2">
                         {card.title}
                       </h3>
-                      {/* <p className="text-sm md:text-base lg:text-16 text-gray-200 leading-snug">
+                      <p className="text-sm md:text-base lg:text-16 text-gray-200 leading-snug">
                         {card.description}
-                      </p> */}
+                      </p>
                     </div>
-                  )}
+                  )} */}
 
                   {/* Card title when not hovered */}
-                  {hoveredCard !== card.id && (
-                    <div className="absolute bottom-2 md:bottom-3 lg:bottom-4 left-2 md:left-3 lg:left-4 text-white">
-                      <span className="text-16 ">
-                        {card.title}
-                      </span>
-                    </div>
-                  )}
+                  {/* {hoveredCard !== card.id && ( */}
+                  <div className="absolute bottom-2 md:bottom-3 lg:bottom-4 left-2 md:left-3 lg:left-4 text-white">
+                    <span className="text-16 ">{card.title}</span>
+                  </div>
+                  {/* )} */}
                 </div>
               </div>
             );
