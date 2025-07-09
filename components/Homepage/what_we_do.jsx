@@ -1,246 +1,317 @@
-"use client";
+// 'use client';
 
-import React, { useEffect, useRef, useState } from "react";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
+// import React, { useEffect, useRef } from 'react';
+// import { gsap } from 'gsap';
+// import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+// gsap.registerPlugin(ScrollTrigger);
+
+// // Wider gap to begin with
+// const cardWidth = 320;
+// const gap = 60;
+
+// const WhatWeDo = () => {
+//   const sectionRef = useRef(null);
+//   const textRef = useRef(null);
+//   const cardsWrapperRef = useRef(null);
+//   const cardRefs = useRef([]);
+
+//   const slides = [
+//     {
+//       title: 'Brand Positioning',
+//       description: 'Strategic brand positioning that resonates with your audience',
+//       image: '/images/brand-positioning.jpg',
+//     },
+//     {
+//       title: 'Visual Identity',
+//       description: 'Cohesive visual systems that tell your brand story',
+//       image: '/images/visual-identity.jpg',
+//     },
+//     {
+//       title: 'Brand Guidelines',
+//       description: 'Comprehensive guidelines for consistent brand application',
+//       image: '/images/brand-guidelines.jpg',
+//     },
+//     {
+//       title: 'Creative Direction',
+//       description: 'Innovative direction to elevate your brand presence',
+//       image: '/images/brand-guidelines.jpg',
+//     },
+//     {
+//       title: 'Experience Design',
+//       description: 'Crafting memorable interactions for your users',
+//       image: '/images/brand-guidelines.jpg',
+//     },
+//   ];
+
+//   useEffect(() => {
+//     const ctx = gsap.context(() => {
+//       const totalCards = slides.length;
+//       const totalWidth = totalCards * (cardWidth + gap);
+
+//       const timeline = gsap.timeline({
+//         scrollTrigger: {
+//           trigger: sectionRef.current,
+//           start: 'top top',
+//           end: () => `+=${totalWidth + 1000}`, // slower and longer scroll
+//           scrub: 1.5,
+//           pin: true,
+//           anticipatePin: 1,
+//         },
+//       });
+
+//       // Reveal left text
+//       timeline.from(textRef.current, {
+//         opacity: 0,
+//         y: 80,
+//         duration: 2,
+//         ease: 'power2.out',
+//       });
+
+//       // Show cards wrapper
+//       timeline.to(cardsWrapperRef.current, {
+//         opacity: 1,
+//         duration: 1,
+//       });
+
+//       // Animate each card one-by-one to stack
+//       cardRefs.current.forEach((card, i) => {
+//         const delay = i * 0.3; // delay between cards
+//         const overlapX = Math.min(i * (cardWidth + gap), cardWidth + 40 + i * 30);
+
+//         timeline.to(
+//           card,
+//           {
+//             x: () => `-${overlapX}`,
+//             zIndex: i + 1,
+//             ease: 'none',
+//             duration: 1.2,
+//             onUpdate: () => {
+//               const progress = timeline.scrollTrigger.progress;
+//               const activeIndex = Math.floor(progress * (totalCards - 1));
+//               cardRefs.current.forEach((c, j) => {
+//                 c.classList.remove('bg-[#d2448d]');
+//                 if (j === activeIndex) c.classList.add('bg-[#d2448d]');
+//               });
+//             },
+//           },
+//           `+=${delay}` // stagger one-by-one
+//         );
+//       });
+//     }, sectionRef);
+
+//     return () => ctx.revert();
+//   }, []);
+
+//   return (
+//     <section
+//       ref={sectionRef}
+//       className="h-[100vh] w-full overflow-hidden bg-black text-white"
+//     >
+//       <div className="container mx-auto h-full flex items-center gap-12">
+//         {/* Left Text */}
+//         <div ref={textRef} className="w-1/3 z-10">
+//           <h2 className="text-3xl font-bold text-[#DC6263] mb-4">What we do</h2>
+//           <p className="text-lg leading-relaxed">
+//             At DreamFox, we go far beyond simply offering digital services — we
+//             architect meaningful brand journeys from the ground up. Every project
+//             we take on is rooted in thoughtful strategy, bold creativity, and a
+//             deep understanding of what drives modern audiences.
+//           </p>
+//         </div>
+
+//         {/* Cards */}
+//         <div
+//           ref={cardsWrapperRef}
+//           className="w-2/3 h-[450px] relative overflow-hidden opacity-0"
+//         >
+//           <div
+//             className="flex gap-10 absolute top-0 left-0"
+//             style={{ width: `${slides.length * (cardWidth + gap)}px` }}
+//           >
+//             {slides.map((slide, index) => (
+//               <div
+//                 key={index}
+//                 ref={(el) => (cardRefs.current[index] = el)}
+//                 className="card w-80 p-6 rounded-xl bg-gray-800 text-white flex-shrink-0 absolute top-0 transition-all duration-300"
+//                 style={{ left: `${index * (cardWidth + gap)}px` }}
+//               >
+//                 <div
+//                   className="w-full h-44 bg-cover bg-center rounded-lg mb-4"
+//                   style={{ backgroundImage: `url(${slide.image})` }}
+//                 ></div>
+//                 <h3 className="text-xl font-bold mb-2">{slide.title}</h3>
+//                 <p className="text-sm text-gray-300">{slide.description}</p>
+//               </div>
+//             ))}
+//           </div>
+//         </div>
+//       </div>
+//     </section>
+//   );
+// };
+
+// export default WhatWeDo;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+'use client';
+
+import React, { useEffect, useRef } from 'react';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 gsap.registerPlugin(ScrollTrigger);
 
-const WhatWeDo = () => {
-  const containerRef = useRef(null);
-  const h2Ref = useRef(null);
-  const pRef = useRef(null);
-  const carouselRefs = useRef([]);
-  const slideRefs = useRef([]);
-  const [currentSlide, setCurrentSlide] = useState(0);
+const cardWidth = 320;
+const gap = 60;
 
-  const carouselData = [
+const WhatWeDo = () => {
+  const sectionRef = useRef(null);
+  const textRef = useRef(null);
+  const cardsWrapperRef = useRef(null);
+  const cardRefs = useRef([]);
+
+  const slides = [
     {
-      id: 1,
-      title: "Brand Strategy & Identity",
-      slides: [
-        {
-          title: "Brand Positioning",
-          description:
-            "Strategic brand positioning that resonates with your audience",
-          image: "/images/brand-positioning.jpg",
-        },
-        {
-          title: "Visual Identity",
-          description: "Cohesive visual systems that tell your brand story",
-          image: "/images/visual-identity.jpg",
-        },
-        {
-          title: "Brand Guidelines",
-          description:
-            "Comprehensive guidelines for consistent brand application",
-          image: "/images/brand-guidelines.jpg",
-        },
-        {
-          title: "Brand Guidelines",
-          description:
-            "Comprehensive guidelines for consistent brand application",
-          image: "/images/brand-guidelines.jpg",
-        },
-        {
-          title: "Brand Guidelines",
-          description:
-            "Comprehensive guidelines for consistent brand application",
-          image: "/images/brand-guidelines.jpg",
-        },
-      ],
+      title: 'Brand Positioning',
+      description: 'Strategic brand positioning that resonates with your audience',
+      image: '/images/brand-positioning.jpg',
+    },
+    {
+      title: 'Visual Identity',
+      description: 'Cohesive visual systems that tell your brand story',
+      image: '/images/visual-identity.jpg',
+    },
+    {
+      title: 'Brand Guidelines',
+      description: 'Comprehensive guidelines for consistent brand application',
+      image: '/images/brand-guidelines.jpg',
+    },
+    {
+      title: 'Creative Direction',
+      description: 'Innovative direction to elevate your brand presence',
+      image: '/images/brand-guidelines.jpg',
+    },
+    {
+      title: 'Experience Design',
+      description: 'Crafting memorable interactions for your users',
+      image: '/images/brand-guidelines.jpg',
     },
   ];
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      // Split text into words for reveal animation
-      const splitH2 = gsap.utils.toArray(
-        h2Ref.current.querySelectorAll(".word")
-      );
-      const splitP = gsap.utils.toArray(pRef.current.querySelectorAll(".word"));
+      const totalCards = slides.length;
+      const scrollLength = totalCards * 400;
 
-      // H2 text reveal animation
-      gsap.fromTo(
-        splitH2,
-        { opacity: 0, y: 100, rotationX: -90 },
-        {
-          opacity: 1,
-          y: 0,
-          rotationX: 0,
-          duration: 0.8,
-          stagger: 0.1,
-          ease: "power2.out",
-          scrollTrigger: {
-            trigger: h2Ref.current,
-            start: "top 80%",
-            toggleActions: "play none none reverse",
-          },
-        }
-      );
-
-      // Paragraph text reveal animation
-      gsap.fromTo(
-        splitP,
-        { opacity: 0, y: 50, scale: 0.9 },
-        {
-          opacity: 1,
-          y: 0,
-          scale: 1,
-          duration: 0.6,
-          stagger: 0.03,
-          ease: "power2.out",
-          scrollTrigger: {
-            trigger: pRef.current,
-            start: "top 80%",
-            toggleActions: "play none none reverse",
-          },
-        }
-      );
-
-      // Carousel animations
-      carouselData.forEach((carousel, carouselIndex) => {
-        const carouselEl = carouselRefs.current[carouselIndex];
-        const slides = slideRefs.current[carouselIndex];
-
-        if (!carouselEl || !slides) return;
-
-        const slideWidth = slides[0]?.offsetWidth || 300;
-        const totalWidth = slideWidth * carousel.slides.length;
-
-        const tl = gsap.timeline({
-          scrollTrigger: {
-            trigger: carouselEl,
-            start: "top bottom",
-            end: "bottom top",
-            scrub: 1,
-            onUpdate: (self) => {
-              const progress = self.progress;
-              const slideIndex = Math.floor(
-                progress * (carousel.slides.length - 1)
-              );
-              setCurrentSlide(slideIndex);
-            },
-          },
-        });
-
-        tl.to(slides, {
-          x: -totalWidth + slideWidth,
-          duration: 1,
-          ease: "none",
-        });
-
-        slides.forEach((slide, slideIndex) => {
-          const card = slide.querySelector(".card");
-          const image = slide.querySelector(".media-container");
-          const text = slide.querySelector(".card-text");
-
-          gsap.set([image, text], { opacity: 0, y: 50 });
-
-          gsap.to([image, text], {
-            opacity: 1,
-            y: 0,
-            duration: 0.8,
-            delay: slideIndex * 0.1,
-            scrollTrigger: {
-              trigger: slide,
-              start: "left center",
-              end: "right center",
-              toggleActions: "play none none reverse",
-            },
-          });
-        });
-
-        const title = carouselEl.querySelector(".text-before h2");
-        if (title) {
-          gsap.fromTo(
-            title,
-            { opacity: 0, y: 100 },
-            {
-              opacity: 1,
-              y: 0,
-              duration: 1,
-              scrollTrigger: {
-                trigger: title,
-                start: "top 80%",
-                end: "top 20%",
-                toggleActions: "play none none reverse",
-              },
-            }
-          );
-        }
+      const timeline = gsap.timeline({
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: 'top top',
+          end: `+=${scrollLength}`,
+          scrub: true,
+          pin: true,
+        },
       });
-    }, containerRef);
+
+      // Animate paragraph in
+      timeline.from(textRef.current, {
+        opacity: 0,
+        y: 80,
+        duration: 1.2,
+        ease: 'power2.out',
+      });
+
+      // Reveal card container
+      timeline.to(cardsWrapperRef.current, {
+        opacity: 1,
+        duration: 0.4,
+      });
+
+      // Animate each card individually
+      slides.forEach((_, i) => {
+        const card = cardRefs.current[i];
+        const zIndex = 100 + i;
+
+        timeline.fromTo(
+          card,
+          {
+            x: '100vw',
+            opacity: 0,
+            zIndex,
+          },
+          {
+            x: 0,
+            opacity: 1,
+            zIndex,
+            duration: 1,
+            ease: 'power2.out',
+            onStart: () => card.classList.add('bg-[#d2448d]'),
+            onReverseComplete: () => card.classList.remove('bg-[#d2448d]'),
+          },
+          `+=0.2` // slight delay between cards
+        );
+      });
+    }, sectionRef);
 
     return () => ctx.revert();
   }, []);
 
-  // Function to split text into words
-  const splitTextIntoWords = (text) => {
-    return text.split(" ").map((word, index) => (
-      <span
-        key={index}
-        className="word inline-block"
-        style={{ overflow: "hidden" }}
-      >
-        {word}&nbsp;
-      </span>
-    ));
-  };
-
   return (
     <section
-      ref={containerRef}
-      className="relative section-half-unconstrained flex items-center py-16 lg:py-32  text-white"
+      ref={sectionRef}
+      className="h-screen w-full overflow-hidden bg-black text-white"
     >
-      <div className="flex items-center gap-20 stretch-right ">
-        <div className="mb-16 lg:w-1/3">
-          <h2 ref={h2Ref} className="text-24 text-[#DC6263] font-bold mb-4">
-            {splitTextIntoWords("What we do")}
-          </h2>
-          <p ref={pRef} className="text-30 max-w-2xl">
-            {splitTextIntoWords(
-              "At DreamFox, we go far beyond simply offering digital services — we architect meaningful brand journeys from the ground up. Every project we take on is rooted in thoughtful strategy, bold creativity, and a deep understanding of what drives modern audiences."
-            )}
+      <div className="container mx-auto h-full flex items-center gap-12">
+        {/* Left Text Column */}
+        <div ref={textRef} className="w-1/3 z-10">
+          <h2 className="text-3xl font-bold text-[#DC6263] mb-4">What we do</h2>
+          <p className="text-lg leading-relaxed">
+            At DreamFox, we go far beyond simply offering digital services — we
+            architect meaningful brand journeys from the ground up. Every project
+            we take on is rooted in thoughtful strategy, bold creativity, and a
+            deep understanding of what drives modern audiences.
           </p>
         </div>
 
-        {carouselData.map((carousel, carouselIndex) => (
-          <div
-            key={carousel.id}
-            ref={(el) => (carouselRefs.current[carouselIndex] = el)}
-            className="overflow-hidden px-4 py-10"
-          >
-            <div className="flex gap-6 ">
-              {carousel.slides.map((slide, slideIndex) => (
+        {/* Right Cards Stack */}
+        <div
+          ref={cardsWrapperRef}
+          className="w-2/3 h-[450px] relative overflow-visible opacity-0 flex items-center"
+        >
+          <div className="relative w-full h-full">
+            {slides.map((slide, index) => (
+              <div
+                key={index}
+                ref={(el) => (cardRefs.current[index] = el)}
+                className="card w-80 p-6 rounded-xl bg-gray-800 text-white absolute left-0 top-1/2 -translate-y-1/2 transition-colors duration-300 shadow-xl"
+              >
                 <div
-                  key={slideIndex}
-                  ref={(el) => {
-                    if (!slideRefs.current[carouselIndex]) {
-                      slideRefs.current[carouselIndex] = [];
-                    }
-                    slideRefs.current[carouselIndex][slideIndex] = el;
-                  }}
-                  className="card w-80 bg-gray-800 rounded-xl p-4 flex-shrink-0"
-                >
-                  <div
-                    className="media-container w-full h-48 bg-cover bg-center rounded-md mb-4"
-                    style={{ backgroundImage: `url(${slide.image})` }}
-                  ></div>
-                  <div className="card-text">
-                    <h3 className="text-xl font-bold mb-2">{slide.title}</h3>
-                    <p className="text-sm text-gray-300 mb-4">
-                      {slide.description}
-                    </p>
-                    <button className="mt-auto text-[#d2448d] hover:underline">
-                      Learn More
-                    </button>
-                  </div>
-                </div>
-              ))}
-            </div>
+                  className="w-full h-44 bg-cover bg-center rounded-lg mb-4"
+                  style={{ backgroundImage: `url(${slide.image})` }}
+                ></div>
+                <h3 className="text-xl font-bold mb-2">{slide.title}</h3>
+                <p className="text-sm text-gray-300">{slide.description}</p>
+              </div>
+            ))}
           </div>
-        ))}
+        </div>
       </div>
     </section>
   );
