@@ -61,6 +61,248 @@ const Showreel = () => {
         "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&h=300&fit=crop",
       category: "Portfolio",
     },
+
+    {
+      id: 7,
+      title: "Brand Identity",
+      description: "Complete visual identity for tech startup",
+      image:
+        "https://images.unsplash.com/photo-1558655146-9f40138edfeb?w=400&h=300&fit=crop",
+      category: "Branding",
+    },
+    {
+      id: 8,
+      title: "E-commerce",
+      description: "Modern shopping experience design",
+      image:
+        "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=400&h=300&fit=crop",
+      category: "Web Design",
+    },
+    {
+      id: 9,
+      title: "Mobile App UI",
+      description: "Intuitive fitness tracking application",
+      image:
+        "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=400&h=300&fit=crop",
+      category: "UI/UX",
+    },
+    {
+      id: 10,
+      title: "Corporate Website",
+      description: "Professional business presence online",
+      image:
+        "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&h=300&fit=crop",
+      category: "Development",
+    },
+    {
+      id: 11,
+      title: "Creative Campaign",
+      description: "Digital marketing campaign design",
+      image:
+        "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=400&h=300&fit=crop",
+      category: "Marketing",
+    },
+    {
+      id: 12,
+      title: "Portfolio Website",
+      description: "Artist portfolio with interactive gallery",
+      image:
+        "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&h=300&fit=crop",
+      category: "Portfolio",
+    },
+    {
+      id: 13,
+      title: "Brand Identity",
+      description: "Complete visual identity for tech startup",
+      image:
+        "https://images.unsplash.com/photo-1558655146-9f40138edfeb?w=400&h=300&fit=crop",
+      category: "Branding",
+    },
+    {
+      id: 14,
+      title: "E-commerce",
+      description: "Modern shopping experience design",
+      image:
+        "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=400&h=300&fit=crop",
+      category: "Web Design",
+    },
+    {
+      id: 15,
+      title: "Mobile App UI",
+      description: "Intuitive fitness tracking application",
+      image:
+        "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=400&h=300&fit=crop",
+      category: "UI/UX",
+    },
+    {
+      id: 16,
+      title: "Corporate Website",
+      description: "Professional business presence online",
+      image:
+        "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&h=300&fit=crop",
+      category: "Development",
+    },
+    {
+      id: 17,
+      title: "Creative Campaign",
+      description: "Digital marketing campaign design",
+      image:
+        "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=400&h=300&fit=crop",
+      category: "Marketing",
+    },
+    {
+      id: 18,
+      title: "Portfolio Website",
+      description: "Artist portfolio with interactive gallery",
+      image:
+        "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&h=300&fit=crop",
+      category: "Portfolio",
+    },
+    {
+      id: 1,
+      title: "Brand Identity",
+      description: "Complete visual identity for tech startup",
+      image:
+        "https://images.unsplash.com/photo-1558655146-9f40138edfeb?w=400&h=300&fit=crop",
+      category: "Branding",
+    },
+    {
+      id: 2,
+      title: "E-commerce",
+      description: "Modern shopping experience design",
+      image:
+        "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=400&h=300&fit=crop",
+      category: "Web Design",
+    },
+    {
+      id: 3,
+      title: "Mobile App UI",
+      description: "Intuitive fitness tracking application",
+      image:
+        "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=400&h=300&fit=crop",
+      category: "UI/UX",
+    },
+    {
+      id: 4,
+      title: "Corporate Website",
+      description: "Professional business presence online",
+      image:
+        "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&h=300&fit=crop",
+      category: "Development",
+    },
+    {
+      id: 5,
+      title: "Creative Campaign",
+      description: "Digital marketing campaign design",
+      image:
+        "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=400&h=300&fit=crop",
+      category: "Marketing",
+    },
+    {
+      id: 6,
+      title: "Portfolio Website",
+      description: "Artist portfolio with interactive gallery",
+      image:
+        "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&h=300&fit=crop",
+      category: "Portfolio",
+    },
+
+    {
+      id: 7,
+      title: "Brand Identity",
+      description: "Complete visual identity for tech startup",
+      image:
+        "https://images.unsplash.com/photo-1558655146-9f40138edfeb?w=400&h=300&fit=crop",
+      category: "Branding",
+    },
+    {
+      id: 8,
+      title: "E-commerce",
+      description: "Modern shopping experience design",
+      image:
+        "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=400&h=300&fit=crop",
+      category: "Web Design",
+    },
+    {
+      id: 9,
+      title: "Mobile App UI",
+      description: "Intuitive fitness tracking application",
+      image:
+        "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=400&h=300&fit=crop",
+      category: "UI/UX",
+    },
+    {
+      id: 10,
+      title: "Corporate Website",
+      description: "Professional business presence online",
+      image:
+        "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&h=300&fit=crop",
+      category: "Development",
+    },
+    {
+      id: 11,
+      title: "Creative Campaign",
+      description: "Digital marketing campaign design",
+      image:
+        "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=400&h=300&fit=crop",
+      category: "Marketing",
+    },
+    {
+      id: 12,
+      title: "Portfolio Website",
+      description: "Artist portfolio with interactive gallery",
+      image:
+        "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&h=300&fit=crop",
+      category: "Portfolio",
+    },
+    {
+      id: 13,
+      title: "Brand Identity",
+      description: "Complete visual identity for tech startup",
+      image:
+        "https://images.unsplash.com/photo-1558655146-9f40138edfeb?w=400&h=300&fit=crop",
+      category: "Branding",
+    },
+    {
+      id: 14,
+      title: "E-commerce",
+      description: "Modern shopping experience design",
+      image:
+        "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=400&h=300&fit=crop",
+      category: "Web Design",
+    },
+    {
+      id: 15,
+      title: "Mobile App UI",
+      description: "Intuitive fitness tracking application",
+      image:
+        "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=400&h=300&fit=crop",
+      category: "UI/UX",
+    },
+    {
+      id: 16,
+      title: "Corporate Website",
+      description: "Professional business presence online",
+      image:
+        "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&h=300&fit=crop",
+      category: "Development",
+    },
+    {
+      id: 17,
+      title: "Creative Campaign",
+      description: "Digital marketing campaign design",
+      image:
+        "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=400&h=300&fit=crop",
+      category: "Marketing",
+    },
+    {
+      id: 18,
+      title: "Portfolio Website",
+      description: "Artist portfolio with interactive gallery",
+      image:
+        "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&h=300&fit=crop",
+      category: "Portfolio",
+    },
     // {
     //   id: 7,
     //   title: "Landing Page",
@@ -86,7 +328,7 @@ const Showreel = () => {
 
   return (
     <section
-      className="py-16 lg:pt-32 pb-72 px-4 md:px-8 bg-black text-white "
+      className="py-16 overflow-hidden lg:pt-32 pb-72 px-4 md:px-8 bg-black text-white "
       id="snapreel"
     >
       <div className="container mx-auto">
@@ -115,14 +357,21 @@ const Showreel = () => {
             slidesPerView="auto"
             breakpoints={{
               640: {
-                slidesPerView: 2,
+                slidesPerView: 1,
                 spaceBetween: 20,
+                speed: 1000,
               },
               768: {
-                slidesPerView: 3,
+                slidesPerView: 2,
                 spaceBetween: 25,
+                speed: 2000,
+
               },
               1024: {
+                slidesPerView: 2,
+                spaceBetween: 30,
+              },
+              1324: {
                 slidesPerView: 4,
                 spaceBetween: 30,
               },
@@ -150,14 +399,18 @@ const Showreel = () => {
           >
             {projects.map((project) => (
               <SwiperSlide
-                className={` ${project.id % 2 !== 0 ? "mt-24" : ""}`}
+                className={` ${project.id % 2 !== 0 ? " sm:mt-24" : ""}`}
                 key={project.id}
               >
                 <div className="relative  flex items-center group cursor-pointer perspective-1000">
                   {/* Envelope Container */}
                   <div
-                    className="relative w-full h-[20rem] sm:h-[24rem] md:h-[28rem] "
+                    className="relative w-full h-[24rem] sm:h-[24rem] md:h-[28rem] "
                     onMouseEnter={() => {
+                      handleCardHover(project.id, true);
+                      swiperRef.current?.autoplay?.stop();
+                    }}
+                    onClick={() => {
                       handleCardHover(project.id, true);
                       swiperRef.current?.autoplay?.stop();
                     }}
@@ -171,14 +424,24 @@ const Showreel = () => {
                         className={`absolute -bottom-20  z-20  transition-all duration-700 ease-out transform ${
                           hoveredCard === project.id
                             ? "transform translate-y-4 opacity-100 transition-all duration-500 ease-out shadow-2xl"
-                            : "transform translate-y-0 transition-all duration-500 ease-out opacity-0"
+                            : "transform translate-y-4 2xl:translate-y-0 transition-all duration-500 ease-out opacity-100 2xl:opacity-0"
                         }`}
                         src={"/images/folder.svg"}
                         height={300}
-                        width={400}
+                        width={500}
                       />
+                      <div className="p-4 2xl:hidden absolute -bottom-20 z-20 ">
+                        <h3 className="text-24  rounded-full px-4 font-bold text-white mb-2  line-clamp-2">
+                          {project.title}
+                        </h3>
+                        <div className="mb-2">
+                          <p className="text-16 text-white  px-4 py-1 rounded-full">
+                            {project.description}
+                          </p>
+                        </div>
+                      </div>
                       {hoveredCard === project.id ? (
-                        <div className="p-4 absolute -bottom-20 z-20 ">
+                        <div className="p-4 hidden 2xl:block absolute -bottom-20 z-20 ">
                           <h3 className="text-24  rounded-full px-4 font-bold text-white mb-2  line-clamp-2">
                             {project.title}
                           </h3>
@@ -198,8 +461,8 @@ const Showreel = () => {
                         
                         ${
                           hoveredCard === project.id
-                            ? "transform -rotate-3 translate-y-24 rounded-3xl grayscale-0    z-10"
-                            : "transform grayscale translate-y-16 rotate-0 "
+                            ? "transform -rotate-3 sm:translate-y-24 rounded-3xl grayscale-0    z-10"
+                            : "transform  xl:grayscale translate-y-16 rotate-0 "
                         }
                       
                       `}
@@ -211,16 +474,18 @@ const Showreel = () => {
                           alt={project.title}
                           className="w-full h-full border border-white/20 !rounded-3xl object-cover transition-transform duration-300 "
                         />
-                        <div className="p-4 absolute bottom-0">
-                          <h3 className="text-20 bg-white backdrop-blur-sm rounded-full px-5 py-1 font-semibold text-black mb-2  line-clamp-2">
-                            {project.title}
-                          </h3>
-                          <div className="mb-2">
-                            <span className="text-16 text-black bg-white px-4 py-1 rounded-full">
-                              {project.category}
-                            </span>
+                        {hoveredCard !== project.id && (
+                          <div className="p-4 absolute bottom-0">
+                            <h3 className="text-20 bg-white backdrop-blur-sm rounded-full px-5 py-1 font-semibold text-black mb-2  line-clamp-2">
+                              {project.title}
+                            </h3>
+                            <div className="mb-2">
+                              <span className="text-16 text-black bg-white px-4 py-1 rounded-full">
+                                {project.category}
+                              </span>
+                            </div>
                           </div>
-                        </div>
+                        )}
                       </div>
                     </div>
                   </div>
