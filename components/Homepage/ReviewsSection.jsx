@@ -1,23 +1,19 @@
-'use client';
+"use client";
 
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import {
   ArrowTopRightOnSquareIcon,
   ChevronDownIcon,
   ChevronUpIcon,
-} from '@heroicons/react/24/outline';
-import { motion, AnimatePresence } from 'framer-motion';
-
+} from "@heroicons/react/24/outline";
+import { motion, AnimatePresence } from "framer-motion";
+import Image from "next/image";
 const images = [
-  'https://static.vecteezy.com/system/resources/previews/003/130/062/large_2x/cyber-circuit-future-technology-concept-background-text-free-vector.jpg',
-  'https://static.vecteezy.com/system/resources/previews/002/964/235/large_2x/cyber-circuit-future-technology-concept-background-free-vector.jpg',
-  // 'https://static.vecteezy.com/system/resources/thumbnails/008/905/837/small_2x/3d-render-of-neon-and-light-glowing-on-dark-scene-cyber-punk-night-city-concept-night-life-technology-network-for-5g-beyond-generation-and-futuristic-scene-sci-fi-pattern-theme-free-photo.jpg',
-  'https://static.vecteezy.com/system/resources/thumbnails/003/130/089/small_2x/cyber-circuit-future-technology-concept-background-text-free-vector.jpg',
-  'https://static.vecteezy.com/system/resources/previews/060/199/356/non_2x/fluid-wave-like-abstract-shape-in-deep-teal-and-green-flowing-across-a-gradient-background-ideal-for-high-tech-projects-posters-ui-design-or-digital-advertisements-free-vector.jpg',
-  // 'https://static.vecteezy.com/system/resources/thumbnails/008/905/837/small_2x/3d-render-of-neon-and-light-glowing-on-dark-scene-cyber-punk-night-city-concept-night-life-technology-network-for-5g-beyond-generation-and-futuristic-scene-sci-fi-pattern-theme-free-photo.jpg',
-  // 'https://static.vecteezy.com/system/resources/previews/003/130/062/large_2x/cyber-circuit-future-technology-concept-background-text-free-vector.jpg',
-  // 'https://static.vecteezy.com/system/resources/thumbnails/003/130/089/small_2x/cyber-circuit-future-technology-concept-background-text-free-vector.jpg',
-  // 'https://static.vecteezy.com/system/resources/previews/060/199/356/non_2x/fluid-wave-like-abstract-shape-in-deep-teal-and-green-flowing-across-a-gradient-background-ideal-for-high-tech-projects-posters-ui-design-or-digital-advertisements-free-vector.jpg',
+  "https://cdn.prod.website-files.com/677fb4d34764579513f06e12/67cac8d3816839026be753df_lora-ui.jpg", // Abstract tech patterns
+  "https://cdn.prod.website-files.com/677fb4d34764579513f06e12/67cac8b1a5ddb1034191c0e6_domum-ui.webp", // Digital circuits
+  "https://cdn.prod.website-files.com/677fb4d34764579513f06e12/67c982cd91af879ebf7ea7bd_gazette-ui.jpg", // Futuristic network
+  "https://cdn.prod.website-files.com/677fb4d34764579513f06e12/67cac895fff2152d6465742b_wisdom-ui.jpg", // Digital transformation
+  // Creative workspace
 ];
 
 const ReviewsSection = () => {
@@ -47,51 +43,38 @@ const ReviewsSection = () => {
   };
 
   return (
-    <section className="w-full flex flex-col items-center py-16 bg-black ">
+    <section className="w-full container flex flex-col items-center py-16 bg-black ">
       {/* Header */}
-      <div className="max-w-3xl text-center  z-10">
-        <h2 className="text-3xl md:text-5xl font-semibold mb-4 text-white text-center">
-          Our Partners will <br /> tell you better about us
+      <div className=" text-center  z-10">
+        <h2 className="text-120 font-semibold mb-4 md:mb-6 lg:mb-8 text-white text-center">
+          Our Partners will tell you better about us
         </h2>
-        <p className="text-sm  text-white/80 mb-6 ">
+        <p className="text-40  text-white/80 mb-6 ">
           Our clients call us their creative partner — blending strategy, speed,
           and bold ideas to deliver work that exceeds expectations.
         </p>
-{/* 
-        <div className="flex justify-center">
+
+        {/* <div className="flex justify-center">
           <button className="group flex items-center gap-2 rounded overflow-hidden relative cursor-pointer transition-all duration-1000 ease-[cubic-bezier(0.77,0,0.175,1)]">
             <div className="absolute inset-0 bg-white origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-[900ms] ease-[cubic-bezier(0.77,0,0.175,1)]" />
+
             <ArrowTopRightOnSquareIcon className="size-12 p-2 rounded bg-white text-black z-10 relative" />
-            <span className="text-lg font-semibold pr-4 pl-2 text-white z-10 relative group-hover:text-black">
+
+            <span
+              className="text-lg font-semibold pr-4 pl-2 text-white z-10 relative 
+            group-hover:text-gray-100 transition-colors duration-100 
+            group-hover:delay-0 
+            [@media(hover:hover)]:group-hover:text-black 
+            [@media(hover:hover)]:delay-[900ms] [@media(hover:hover)]:duration-100"
+            >
               Get more information
             </span>
           </button>
         </div> */}
-        <div className="flex justify-center">
-        <button className="group flex items-center gap-2 rounded overflow-hidden relative cursor-pointer transition-all duration-1000 ease-[cubic-bezier(0.77,0,0.175,1)]">
-          {/* Expanding white background */}
-          <div className="absolute inset-0 bg-white origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-[900ms] ease-[cubic-bezier(0.77,0,0.175,1)]" />
-
-          {/* Icon */}
-          <ArrowTopRightOnSquareIcon className="size-12 p-2 rounded bg-white text-black z-10 relative" />
-
-          {/* Text: immediately gray, then black after 900ms */}
-          <span className="text-lg font-semibold pr-4 pl-2 text-white z-10 relative 
-            group-hover:text-gray-100 transition-colors duration-100 
-            group-hover:delay-0 
-            [@media(hover:hover)]:group-hover:text-black 
-            [@media(hover:hover)]:delay-[900ms] [@media(hover:hover)]:duration-100">
-            Get more information
-          </span>
-        </button>
-      </div>
-
-
-
       </div>
 
       {/* Card Stack with 3D effect */}
-      <div className="relative h-[500px]  w-[1000px] max-w-full mt-20 perspective-[1200px]">
+      <div className="relative h-[500px]  w-[1000px] max-w-full mt-40 perspective-[1200px]">
         {cards.map((img, index) => {
           const offset = cards.length - index;
           const translateY = -offset * 20;
@@ -109,7 +92,7 @@ const ReviewsSection = () => {
                 rotateX: rotateX,
               }}
               transition={{
-                type: 'spring',
+                type: "spring",
                 stiffness: 120,
                 damping: 20,
               }}
@@ -120,31 +103,33 @@ const ReviewsSection = () => {
                 className="w-full h-full object-cover rounded-xl border-4 border-white shadow-2xl"
               /> */}
               <div className="relative w-full h-full rounded overflow-hidden  shadow">
-              <img
-                src={img}
-                alt={`Slide ${index}`}
-                className="w-full h-full object-cover"
-              />
-              <div className="absolute bottom-0 left-0 w-full h-48 bg-gradient-to-t from-black to-transparent  pointer-events-none rounded-b" />
-            </div>
+                <Image
+                  height={1000}
+                  width={1200}
+                  src={img}
+                  alt={`Slide ${index}`}
+                  className="w-full  "
+                />
+                <div className="absolute bottom-0 left-0 w-full h-48 bg-gradient-to-t from-black to-transparent  pointer-events-none rounded-b" />
+              </div>
             </motion.div>
           );
         })}
       </div>
 
       {/* Navigation Buttons */}
-      <div className="mt-6 flex gap-4">
+      <div className="mt-16 flex gap-4">
         <button
           onClick={moveBottomToTop}
           className="p-2 bg-[#1a1a1a] border border-white/30 rounded shadow hover:bg-gray-800 transition"
         >
-          <ChevronUpIcon className="h-5 w-5 text-white" />
+          <ChevronUpIcon className="w-10 h-8 text-white" />
         </button>
         <button
           onClick={moveTopToBack}
           className="p-2 bg-[#1a1a1a] border border-white/30 rounded shadow hover:bg-gray-800 transition"
         >
-          <ChevronDownIcon className="h-5 w-5 text-white" />
+          <ChevronDownIcon className="w-10 h-8 text-white" />
         </button>
       </div>
     </section>
