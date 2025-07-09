@@ -47,17 +47,17 @@ const ReviewsSection = () => {
   };
 
   return (
-    <section className="w-full flex flex-col items-center py-16 bg-[#1a1a1a]">
+    <section className="w-full flex flex-col items-center py-16 bg-black ">
       {/* Header */}
-      <div className="max-w-3xl text-center mb-12 z-10">
-        <h2 className="text-3xl md:text-5xl font-semibold mb-4 text-white">
+      <div className="max-w-3xl text-center  z-10">
+        <h2 className="text-3xl md:text-5xl font-semibold mb-4 text-white text-center">
           Our Partners will <br /> tell you better about us
         </h2>
-        <p className="text-sm md:text-base text-white/80 mb-6">
+        <p className="text-sm  text-white/80 mb-6 ">
           Our clients call us their creative partner — blending strategy, speed,
           and bold ideas to deliver work that exceeds expectations.
         </p>
-
+{/* 
         <div className="flex justify-center">
           <button className="group flex items-center gap-2 rounded overflow-hidden relative cursor-pointer transition-all duration-1000 ease-[cubic-bezier(0.77,0,0.175,1)]">
             <div className="absolute inset-0 bg-white origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-[900ms] ease-[cubic-bezier(0.77,0,0.175,1)]" />
@@ -66,11 +66,32 @@ const ReviewsSection = () => {
               Get more information
             </span>
           </button>
-        </div>
+        </div> */}
+        <div className="flex justify-center">
+        <button className="group flex items-center gap-2 rounded overflow-hidden relative cursor-pointer transition-all duration-1000 ease-[cubic-bezier(0.77,0,0.175,1)]">
+          {/* Expanding white background */}
+          <div className="absolute inset-0 bg-white origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-[900ms] ease-[cubic-bezier(0.77,0,0.175,1)]" />
+
+          {/* Icon */}
+          <ArrowTopRightOnSquareIcon className="size-12 p-2 rounded bg-white text-black z-10 relative" />
+
+          {/* Text: immediately gray, then black after 900ms */}
+          <span className="text-lg font-semibold pr-4 pl-2 text-white z-10 relative 
+            group-hover:text-gray-100 transition-colors duration-100 
+            group-hover:delay-0 
+            [@media(hover:hover)]:group-hover:text-black 
+            [@media(hover:hover)]:delay-[900ms] [@media(hover:hover)]:duration-100">
+            Get more information
+          </span>
+        </button>
+      </div>
+
+
+
       </div>
 
       {/* Card Stack with 3D effect */}
-      <div className="relative h-[450px] w-[700px] max-w-full mt-20 perspective-[1200px]">
+      <div className="relative h-[500px]  w-[1000px] max-w-full mt-20 perspective-[1200px]">
         {cards.map((img, index) => {
           const offset = cards.length - index;
           const translateY = -offset * 20;
@@ -98,13 +119,13 @@ const ReviewsSection = () => {
                 alt={`Slide ${index}`}
                 className="w-full h-full object-cover rounded-xl border-4 border-white shadow-2xl"
               /> */}
-              <div className="relative w-full h-full rounded-xl overflow-hidden border-2 border-white shadow-2xl">
+              <div className="relative w-full h-full rounded overflow-hidden  shadow">
               <img
                 src={img}
                 alt={`Slide ${index}`}
                 className="w-full h-full object-cover"
               />
-              <div className="absolute bottom-0 left-0 w-full h-24 bg-gradient-to-t from-black to-transparent pointer-events-none rounded-b-xl" />
+              <div className="absolute bottom-0 left-0 w-full h-48 bg-gradient-to-t from-black to-transparent  pointer-events-none rounded-b" />
             </div>
             </motion.div>
           );
@@ -115,13 +136,13 @@ const ReviewsSection = () => {
       <div className="mt-6 flex gap-4">
         <button
           onClick={moveBottomToTop}
-          className="p-2 bg-[#1a1a1a] border border-gray-300 rounded shadow hover:bg-gray-800 transition"
+          className="p-2 bg-[#1a1a1a] border border-white/30 rounded shadow hover:bg-gray-800 transition"
         >
           <ChevronUpIcon className="h-5 w-5 text-white" />
         </button>
         <button
           onClick={moveTopToBack}
-          className="p-2 bg-[#1a1a1a] border border-gray-300 rounded shadow hover:bg-gray-800 transition"
+          className="p-2 bg-[#1a1a1a] border border-white/30 rounded shadow hover:bg-gray-800 transition"
         >
           <ChevronDownIcon className="h-5 w-5 text-white" />
         </button>
