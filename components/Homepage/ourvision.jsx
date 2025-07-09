@@ -213,11 +213,11 @@ export default function OurVision() {
       className="min-h-[100vh] sm:min-h-[110vh] lg:min-h-[120vh] px-4 sm:px-6 lg:px-8 flex items-center relative z-10"
     >
       <div className="wrapper container mx-auto">
-        <h1 className="split text-4xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-[120px] font-bold bg-gradient-to-r from-[#D2448D] to-[#DC6263] bg-clip-text text-transparent mb-6 sm:mb-8 lg:mb-10 leading-tight">
+        <h1 className="split text-120 font-bold bg-gradient-to-r from-[#D2448D] to-[#DC6263] bg-clip-text text-transparent mb-6 sm:mb-8 lg:mb-10 leading-tight">
           Our Vision
         </h1>
         <div className="max-w-full sm:max-w-4xl lg:max-w-7xl">
-          <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-[40px] text-[#ec4672] leading-relaxed">
+          <p className="text-40 text-[#ec4672] leading-relaxed">
             We don't just follow trends — we shape them. DreamFox is a
             powerhouse of digital transformation through brand creativity,
             strategic marketing, immersive experience design, and media

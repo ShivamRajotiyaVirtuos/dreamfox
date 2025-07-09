@@ -145,6 +145,65 @@ body {
     font-size: 60px;
   }
 }
+/* text-120 - 120px on desktop, scales down */
+.text-120 {
+  font-size: 48px;
+  line-height: 1.1;
+}
+
+@media (min-width: 640px) {
+  .text-120 {
+    font-size: 62px;
+  }
+}
+
+@media (min-width: 768px) {
+  .text-120 {
+    font-size: 70px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .text-120 {
+    font-size: 90px;
+  }
+}
+
+@media (min-width: 1324px) {
+  .text-120 {
+    font-size: 120px;
+  }
+}
+
+/* text-130 - 130px on desktop, scales down */
+.text-130 {
+  font-size: 52px;
+  line-height: 1.1;
+}
+
+@media (min-width: 640px) {
+  .text-130 {
+    font-size: 68px;
+  }
+}
+
+@media (min-width: 768px) {
+  .text-130 {
+    font-size: 78px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .text-130 {
+    font-size: 98px;
+  }
+}
+
+@media (min-width: 1324px) {
+  .text-130 {
+    font-size: 130px;
+  }
+}
 
 /* Container class */
 .container {
@@ -266,3 +325,16 @@ body {
 
 
 
+#snapreel .swiper {
+  /* width: 100vw !important; */
+  overflow: visible !important;
+}
+
+#snapreel .swiper-wrapper {
+  transition-timing-function: linear !important;
+}
+@media (max-width: 640px) {
+  #snapreel .swiper-wrapper {
+    transition-timing-function: ease !important;
+  }
+}
