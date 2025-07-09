@@ -1,14 +1,181 @@
+"use client";
 
-'use client';
+import { ArrowRightIcon } from "@heroicons/react/24/solid";
+import { useRef, useEffect } from "react";
+import { gsap } from "gsap";
 
-import { ArrowRightIcon } from '@heroicons/react/24/solid';
-
-
-import React from 'react';
+import React from "react";
 
 const Footer = () => {
+  const buttonRef = useRef(null);
+  const textRef = useRef(null);
+  const arrowRef = useRef(null);
+  const rippleRef = useRef(null);
+  const glowRef = useRef(null);
+  const particlesRef = useRef([]);
 
-  
+  useEffect(() => {
+    // Initialize button animations
+    gsap.set(rippleRef.current, { scale: 0, opacity: 0 });
+    gsap.set(glowRef.current, { scale: 0.8, opacity: 0 });
+  }, []);
+
+  const handleMouseEnter = () => {
+    const tl = gsap.timeline();
+
+    // Ripple effect
+    tl.to(
+      rippleRef.current,
+      {
+        scale: 1.5,
+        opacity: 0.3,
+        duration: 0.6,
+        ease: "power2.out",
+      },
+      0
+    );
+
+    // Glow effect
+    tl.to(
+      glowRef.current,
+      {
+        scale: 1.2,
+        opacity: 0.6,
+        duration: 0.4,
+        ease: "power2.out",
+      },
+      0
+    );
+
+    // Text animation - slide up effect
+    tl.to(
+      textRef.current,
+      {
+        y: -5,
+        duration: 0.3,
+        ease: "power2.out",
+      },
+      0
+    );
+
+    // Arrow bounce and glow
+    tl.to(
+      arrowRef.current,
+      {
+        x: 5,
+        scale: 1.1,
+        rotation: 45,
+        duration: 0.3,
+        ease: "back.out(1.7)",
+      },
+      0
+    );
+
+    // Create particle explosion effect
+    createParticles();
+  };
+
+  const handleMouseLeave = () => {
+    const tl = gsap.timeline();
+
+    // Reset all animations
+    tl.to(
+      [rippleRef.current, glowRef.current],
+      {
+        scale: 0.8,
+        opacity: 0,
+        duration: 0.4,
+        ease: "power2.out",
+      },
+      0
+    );
+
+    tl.to(
+      textRef.current,
+      {
+        y: 0,
+        duration: 0.3,
+        ease: "power2.out",
+      },
+      0
+    );
+
+    tl.to(
+      arrowRef.current,
+      {
+        x: 0,
+        scale: 1,
+        rotation: 0,
+        duration: 0.4,
+        ease: "power2.out",
+      },
+      0
+    );
+  };
+
+  const handleClick = () => {
+    // Epic click animation
+    const tl = gsap.timeline();
+
+    // Button press effect
+    tl.to(buttonRef.current, {
+      scale: 0.95,
+      duration: 0.1,
+      ease: "power2.out",
+    });
+
+    // Button release with overshoot
+    tl.to(buttonRef.current, {
+      scale: 1.05,
+      duration: 0.2,
+      ease: "back.out(1.7)",
+    });
+
+    // Return to normal
+    tl.to(buttonRef.current, {
+      scale: 1,
+      duration: 0.3,
+      ease: "power2.out",
+    });
+
+    // Mega ripple effect
+    tl.to(
+      rippleRef.current,
+      {
+        scale: 3,
+        opacity: 0,
+        duration: 0.8,
+        ease: "power2.out",
+      },
+      0.1
+    );
+  };
+
+  const createParticles = () => {
+    // Create floating particles around the button
+    for (let i = 0; i < 8; i++) {
+      const particle = document.createElement("div");
+      particle.className =
+        "absolute w-1 h-1 bg-white rounded-full pointer-events-none";
+      particle.style.left = "50%";
+      particle.style.top = "50%";
+      buttonRef.current.appendChild(particle);
+
+      gsap.fromTo(
+        particle,
+        { x: 0, y: 0, opacity: 1, scale: 1 },
+        {
+          x: (Math.random() - 0.5) * 100,
+          y: (Math.random() - 0.5) * 100,
+          opacity: 0,
+          scale: 0,
+          duration: 1.5,
+          ease: "power2.out",
+          onComplete: () => particle.remove(),
+        }
+      );
+    }
+  };
   return (
     <footer className="relative bg-[#1a1a1a] text-white overflow-hidden">
       {/* Main Content */}
@@ -27,32 +194,31 @@ const Footer = () => {
         </div> */}
         <div className="flex flex-col space-y-4 text-40">
           {[
-            { name: 'Home', href: '/' },
-            { name: 'Services', href: '/services' },
-            { name: 'About', href: '/about' },
-            { name: 'Projects', href: '/projects' },
-            { name: 'Contact', href: '/contact' },
+            { name: "Home", href: "/" },
+            { name: "Services", href: "/services" },
+            { name: "About", href: "/about" },
+            { name: "Projects", href: "/projects" },
+            { name: "Contact", href: "/contact" },
           ].map(({ name, href }) => (
-            <a
-              key={name}
-              href={href}
-              className="text-white group"
-            >
+            <a key={name} href={href} className="text-white group">
               <span className="link-underline">{name}</span>
             </a>
           ))}
         </div>
 
-
         {/* Middle Links */}
         <div className="flex flex-col space-y-4 text-24">
           {[
-            ['Instagram', '#'],
-            ['Linkedin', '#'],
-            ['Return Policy', '#'],
-            ['Terms & Services', '#'],
+            ["Instagram", "#"],
+            ["Linkedin", "#"],
+            ["Return Policy", "#"],
+            ["Terms & Services", "#"],
           ].map(([name, href]) => (
-            <a key={name} href={href} className="flex items-center gap-2  text-white group">
+            <a
+              key={name}
+              href={href}
+              className="flex items-center gap-2  text-white group"
+            >
               <span className="link-underline">{name}</span>
               <svg
                 width="12"
@@ -76,22 +242,17 @@ const Footer = () => {
 
         {/* Right Email */}
         <div className="flex flex-col space-y-4">
-          <h3 className="text-24  uppercase tracking-widest">Drop your email</h3>
-          <p className="text-24  uppercase tracking-widest">Let’s have a chat</p>
-          <div className="flex items-center bg-gray-200 text-black rounded-full overflow-hidden max-w-md">
-            <input
-                type="email"
-                placeholder="Get Started Today"
-                className="px-4 py-2 w-full text-24 bg-transparent focus:outline-none"
-            />
-            <button className="bg-black m-3 h-13 w-13  text-white px-4 py-2 rounded-full flex items-center justify-center">
-                <ArrowRightIcon className="h-5 w-5 text-white" />
-            </button>
+          <h3 className="text-24 uppercase tracking-widest">Drop your email</h3>
+          <p className="text-24 uppercase tracking-widest">Let’s have a chat</p>
+          <button className="flex items-center bg-gray-200 text-black rounded-full overflow-hidden max-w-md">
+            <span className="px-4 py-2 w-full text-24 bg-transparent text-left">
+              Get Started Today
+            </span>
+            <div className="bg-black m-3 h-13 w-13 text-white px-4 py-2 rounded-full flex items-center justify-center">
+              <ArrowRightIcon className="h-5 w-5 text-white" />
+            </div>
+          </button>
         </div>
-        </div>
-
-        
-
       </div>
 
       {/* Logo as cutout mask with background video */}
@@ -110,5 +271,3 @@ const Footer = () => {
 };
 
 export default Footer;
-
-

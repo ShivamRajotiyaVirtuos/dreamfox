@@ -7,6 +7,7 @@ import {
   PuzzlePieceIcon,
 } from "@heroicons/react/24/outline";
 import Image from "next/image";
+import TextReveal from "../Text Reveal/textreveal";
 const WhyDreamfox = () => {
   const [hoveredIndex, setHoveredIndex] = useState(null);
   const containerRef = useRef(null);
@@ -71,16 +72,27 @@ const WhyDreamfox = () => {
     <div className="bg-black text-white p-8 py-16 lg:py-32" ref={containerRef}>
       {/* Header */}
       <div className="text-center mb-16 lg:mb-32">
-        <h1 className="text-6xl md:text-7xl font-bold mb-8 tracking-tight">
+        <TextReveal
+          className="text-120 font-bold mb-8 tracking-tight"
+          animation="rotateX"
+          stagger={0.1}
+          duration={0.8}
+        >
           Why DreamFox?
-        </h1>
-        <p className="text-2xl md:text-3xl text-gray-300 font-light tracking-wide">
+        </TextReveal>
+        <h1></h1>
+        <TextReveal
+          animation="rotateX"
+          stagger={0.1}
+          duration={0.8}
+          className="text-40 text-gray-300 font-light tracking-wide"
+        >
           We Move Fast. Think Bold. Deliver Smart.
-        </p>
+        </TextReveal>
       </div>
 
       {/* Features Grid */}
-      <div className="mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 lg:gap-24 max-w-[100rem] w-full">
+      <div className="mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 2xl:grid-cols-4 gap-16  xl:gap-24 max-w-[100rem] w-full">
         {features.map((feature, index) => {
           return (
             <div
@@ -94,7 +106,7 @@ const WhyDreamfox = () => {
               }}
             >
               {/* Circular Container */}
-              <div className="relative w-96 h-96 mx-auto">
+              <div className="relative size-76 lg:size-96 mx-auto">
                 {/* Outer Ring */}
                 <div className="absolute inset-0 rounded-full p-[2px] bg-gray-800 gradient-border transition-all duration-300 shadow-lg shadow-gray-900/50 group-hover:shadow-2xl group-hover:shadow-[#D2448D]/30">
                   <div className="w-full h-full rounded-full bg-black group-hover:bg-gray-900 transition-all duration-500"></div>
@@ -108,12 +120,12 @@ const WhyDreamfox = () => {
                   </div>
 
                   {/* Title */}
-                  <h3 className="text-2xl font-bold mb-4 group-hover:text-red-400 transition-colors duration-500">
+                  <h3 className="text-24 font-bold mb-4 group-hover:text-red-400 transition-colors duration-500">
                     {feature.title}
                   </h3>
 
                   {/* Description */}
-                  <p className="text-gray-400 text-sm leading-relaxed group-hover:text-gray-300 transition-colors duration-500">
+                  <p className="text-gray-400 text-20 leading-relaxed group-hover:text-gray-300 transition-colors duration-500">
                     {feature.description}
                   </p>
                 </div>
