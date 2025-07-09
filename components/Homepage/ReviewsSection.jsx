@@ -10,12 +10,12 @@ import { motion, AnimatePresence } from 'framer-motion';
 
 const images = [
   'https://static.vecteezy.com/system/resources/previews/003/130/062/large_2x/cyber-circuit-future-technology-concept-background-text-free-vector.jpg',
-  // 'https://static.vecteezy.com/system/resources/previews/002/964/235/large_2x/cyber-circuit-future-technology-concept-background-free-vector.jpg',
-  'https://static.vecteezy.com/system/resources/thumbnails/008/905/837/small_2x/3d-render-of-neon-and-light-glowing-on-dark-scene-cyber-punk-night-city-concept-night-life-technology-network-for-5g-beyond-generation-and-futuristic-scene-sci-fi-pattern-theme-free-photo.jpg',
+  'https://static.vecteezy.com/system/resources/previews/002/964/235/large_2x/cyber-circuit-future-technology-concept-background-free-vector.jpg',
+  // 'https://static.vecteezy.com/system/resources/thumbnails/008/905/837/small_2x/3d-render-of-neon-and-light-glowing-on-dark-scene-cyber-punk-night-city-concept-night-life-technology-network-for-5g-beyond-generation-and-futuristic-scene-sci-fi-pattern-theme-free-photo.jpg',
   'https://static.vecteezy.com/system/resources/thumbnails/003/130/089/small_2x/cyber-circuit-future-technology-concept-background-text-free-vector.jpg',
   'https://static.vecteezy.com/system/resources/previews/060/199/356/non_2x/fluid-wave-like-abstract-shape-in-deep-teal-and-green-flowing-across-a-gradient-background-ideal-for-high-tech-projects-posters-ui-design-or-digital-advertisements-free-vector.jpg',
-  'https://static.vecteezy.com/system/resources/thumbnails/008/905/837/small_2x/3d-render-of-neon-and-light-glowing-on-dark-scene-cyber-punk-night-city-concept-night-life-technology-network-for-5g-beyond-generation-and-futuristic-scene-sci-fi-pattern-theme-free-photo.jpg',
-  'https://static.vecteezy.com/system/resources/previews/003/130/062/large_2x/cyber-circuit-future-technology-concept-background-text-free-vector.jpg',
+  // 'https://static.vecteezy.com/system/resources/thumbnails/008/905/837/small_2x/3d-render-of-neon-and-light-glowing-on-dark-scene-cyber-punk-night-city-concept-night-life-technology-network-for-5g-beyond-generation-and-futuristic-scene-sci-fi-pattern-theme-free-photo.jpg',
+  // 'https://static.vecteezy.com/system/resources/previews/003/130/062/large_2x/cyber-circuit-future-technology-concept-background-text-free-vector.jpg',
   // 'https://static.vecteezy.com/system/resources/thumbnails/003/130/089/small_2x/cyber-circuit-future-technology-concept-background-text-free-vector.jpg',
   // 'https://static.vecteezy.com/system/resources/previews/060/199/356/non_2x/fluid-wave-like-abstract-shape-in-deep-teal-and-green-flowing-across-a-gradient-background-ideal-for-high-tech-projects-posters-ui-design-or-digital-advertisements-free-vector.jpg',
 ];
