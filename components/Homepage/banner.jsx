@@ -8,6 +8,7 @@ import { gsap } from "gsap";
 import HoverButton from "../buttons/button";
 import CtaButton from "../buttons/CtaButton";
 import AnimatedButton from "../buttons/AnimatedButton";
+import BannerButton from "../buttons/BannerButton";
 
 const Banner = () => {
   const h3Ref = useRef(null);
@@ -164,7 +165,12 @@ const Banner = () => {
           />
         </div>  */}
         <div className="absolute right-0 bottom-0">
-          <AnimatedButton text="ABOUT ME" href="/about" />
+          {/* <AnimatedButton text="ABOUT ME" href="/about" /> */}
+          <BannerButton
+            text="GET STARTED"
+            href="/welcome"
+            // className="w-4xl h-[70px]"
+          />
         </div>
       </div>
     </div>
