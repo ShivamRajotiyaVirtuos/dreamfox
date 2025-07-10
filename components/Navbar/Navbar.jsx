@@ -17,11 +17,13 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 h-20 sm:h-28 2xl:h-24  backdrop-blur-2xl ">
-      <div className="container relative mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-center items-center h-20 sm:h-28 2xl:h-24">
-          {/* Logo */}
+    <nav className="fixed top-0 left-0 right-0 z-50 h-20 sm:h-24 2xl:h-24 backdrop-blur-2xl">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex justify-between items-center h-20 sm:h-24 2xl:h-24">
+          {/* Left spacer to balance the layout */}
+          <div className="sm:flex-1"></div>
 
+          {/* Logo - Centered */}
           <div id="nav-logo" className="flex-shrink-0">
             <Image
               src="/logos/dreamfox_emblem.svg"
@@ -31,10 +33,11 @@ const Navbar = () => {
               className="h-12 w-auto"
             />
           </div>
-          <div className="absolute right-0 top-0 h-full flex items-center">
+
+          {/* Menu Button - Right aligned */}
+          <div className="flex-1 flex items-start justify-end">
             <AnimatedMenu />
           </div>
-          {/* Menu Button */}
         </div>
       </div>
     </nav>

@@ -4,15 +4,16 @@ import React, { useState, useRef, useEffect } from "react";
 import { gsap } from "gsap";
 import clsx from "clsx";
 import Link from "next/link";
-import { ArrowUpCircleIcon } from "@heroicons/react/24/solid";
+import { ArrowRightCircleIcon } from "@heroicons/react/24/outline";
+import ContactButton from "./contact-button";
 
 const MenuButton = () => {
   const [isOpen, setIsOpen] = useState(false);
   const containerRef = useRef(null);
-  const itemsRef = useRef(null);
-  const menuTextRef = useRef(null);
   const overlayRef = useRef(null);
+  const menuContentRef = useRef(null);
   const closeButtonRef = useRef(null);
+  const menuButtonRef = useRef(null);
 
   const menuItems = [
     { name: "Home", href: "/" },
@@ -23,229 +24,283 @@ const MenuButton = () => {
   ];
 
   useEffect(() => {
+    // Pre-initialize GSAP properties to avoid first-hover lag
+    if (containerRef.current && overlayRef.current) {
+      gsap.set(containerRef.current, {
+        transformOrigin: "top-right",
+        force3D: true, // Hardware acceleration
+      });
+      gsap.set(overlayRef.current, {
+        opacity: 0,
+        force3D: true,
+      });
+    }
+  }, []);
+
+  useEffect(() => {
+    // Initialize menu items when they're rendered
     if (isOpen) {
-      expand();
+      gsap.set(".menu-item", {
+        opacity: 0,
+        y: 30,
+        x: 15,
+        rotationY: -10,
+        force3D: true,
+      });
     }
   }, [isOpen]);
 
-  const expand = () => {
-    setIsOpen(true);
+  useEffect(() => {
+    if (isOpen) {
+      openMenu();
+    }
+  }, [isOpen]);
 
-    const tl = gsap.timeline();
+  const openMenu = () => {
+    // Pre-set overlay to slightly visible to eliminate flash
+    gsap.set(overlayRef.current, { opacity: 0.1 });
 
-    // Hide menu text first
-    tl.to(menuTextRef.current, {
+    const tl = gsap.timeline({
+      defaults: { force3D: true }, // Hardware acceleration for all animations
+    });
+
+    // Hide menu button first
+    tl.to(menuButtonRef.current, {
       opacity: 0,
       scale: 0.8,
       duration: 0.2,
+      ease: "power2.inOut",
     })
 
-      // Expand container
-      .to(
-        containerRef.current,
-        {
-          width: "400px",
-          height: "600px",
-          borderRadius: "24px",
-          duration: 0.8,
-        },
-        "-=0.1"
-      )
-
-      // Fade in overlay
+      // Start overlay and container simultaneously
       .to(
         overlayRef.current,
         {
           opacity: 1,
-          duration: 0.6,
+          duration: 0.35,
+          ease: "power2.out",
         },
-        "-=0.2"
+        0.1 // Start at 0.1 seconds
       )
 
-      // Animate close button
-      .fromTo(
-        closeButtonRef.current,
-        { opacity: 0, scale: 0, rotation: -180 },
-        {
-          opacity: 1,
-          scale: 1,
-          rotation: 0,
-          duration: 0.5,
-        },
-        "-=0.3"
-      )
-
-      // Animate menu items with stagger
-      .fromTo(
-        ".menu-item",
-        { opacity: 0, y: 60, rotationX: -90 },
-        {
-          opacity: 1,
-          y: 0,
-          rotationX: 0,
-          duration: 0.6,
-          stagger: 0.1,
-        },
-        "-=0.4"
-      );
-  };
-
-  const collapse = () => {
-    const tl = gsap.timeline();
-
-    // Animate menu items out - much faster
-    tl.to(".menu-item", {
-      opacity: 0,
-      y: -20,
-      duration: 0.1,
-      stagger: 0.01,
-    })
-
-      // Fade out close button - much faster
       .to(
+        containerRef.current,
+        {
+          width: "420px",
+          height: "600px",
+          borderRadius: "32px",
+          duration: 0.35,
+          ease: "power3.out",
+        },
+        0.1 // Same start time as overlay
+      )
+
+      // Animate close button in
+      .fromTo(
         closeButtonRef.current,
         {
           opacity: 0,
           scale: 0,
-          duration: 0.15,
+          rotation: -90,
         },
-        "-=0.05"
+        {
+          opacity: 1,
+          scale: 1,
+          rotation: 0,
+          duration: 0.4,
+          ease: "back.out(1.7)",
+        },
+        0.2
       )
 
-      // Fade out overlay - much faster
-      .to(
-        overlayRef.current,
+      // Animate menu items with progressive stagger
+      .fromTo(
+        ".menu-item",
         {
           opacity: 0,
-          duration: 0.15,
+          y: 30,
+          x: 15,
+          rotationY: -10,
+          scale: 0.95,
         },
-        "-=0.1"
-      )
-
-      // Collapse container - much faster
-      .to(
-        containerRef.current,
         {
-          width: "120px",
-          height: "60px",
-          borderRadius: "9999px",
-          duration: 0.25,
-          ease: "power2.inOut",
-          onComplete: () => setIsOpen(false),
+          opacity: 1,
+          y: 0,
+          x: 0,
+          rotationY: 0,
+          scale: 1,
+          duration: 0.7,
+          stagger: 0.1,
+          ease: "power2.out",
         },
-        "-=0.1"
+        0.3
       );
   };
 
-  const handleHover = () => {
+  const closeMenu = () => {
+    // Simple immediate close without complex animations
+    setIsOpen(false);
+  };
+
+  const handleMenuButtonHover = () => {
     if (!isOpen) {
-      gsap.to(containerRef.current, {
-        scale: 1.05,
-        boxShadow: "0 15px 35px rgba(210, 68, 141, 0.3)",
-        duration: 0.3,
+      // Open menu on hover
+      setIsOpen(true);
+
+      // Remove the additional scale animation to prevent conflicts
+      gsap.set(containerRef.current, {
+        scale: 1,
+        boxShadow: "0 10px 30px rgba(0, 0, 0, 0.1)",
       });
     }
   };
 
-  const handleHoverOut = () => {
+  const handleMenuButtonLeave = () => {
+    // Only apply scale effect if menu is not open
     if (!isOpen) {
       gsap.to(containerRef.current, {
         scale: 1,
-        boxShadow: "0 8px 25px rgba(0, 0, 0, 0.15)",
+        boxShadow: "0 10px 30px rgba(0, 0, 0, 0.1)",
         duration: 0.3,
-        // ease: "power2.out",
+        ease: "power2.out",
       });
     }
   };
 
+  const handleDropdownLeave = () => {
+    // Close menu when cursor leaves the entire dropdown area
+    closeMenu();
+  };
+
   return (
-    <div className="fixed top-8 right-8 z-50">
+    <div className="relative">
       <div
         ref={containerRef}
-        onMouseEnter={handleHover}
-        onMouseLeave={handleHoverOut}
-        onClick={!isOpen ? () => setIsOpen(true) : undefined}
         className={clsx(
-          "bg-gradient-to-br from-amber-100 via-yellow-50 to-amber-50",
-          "shadow-xl overflow-hidden transition-all duration-300",
-          "flex items-center  cursor-pointer",
-          "backdrop-blur-sm border border-white/20",
-          !isOpen && "j hover:shadow-2xl"
+          "relative bg-gradient-to-br from-[#fdfbe5] via-gray-50 to-gray-100",
+          "shadow-xl overflow-hidden transform transition-all duration-300",
+          "border border-gray-200/50 backdrop-blur-md",
+          !isOpen && "cursor-pointer hover:shadow-2xl"
         )}
         style={{
-          justifyContent: isOpen ? "flex-start" : "center",
-          width: isOpen ? "400px" : "120px",
+          width: isOpen ? "420px" : "140px",
           height: isOpen ? "600px" : "60px",
-          borderRadius: isOpen ? "24px" : "9999px",
+          borderRadius: isOpen ? "32px" : "50px",
+          position: "absolute",
+          top: "-28px",
+          right: "0",
+          zIndex: isOpen ? "1000" : "auto",
+          willChange: "transform, width, height, border-radius", // Optimize for animations
         }}
+        onMouseEnter={handleMenuButtonHover}
+        onClick={handleMenuButtonHover}
+
+        onMouseLeave={isOpen ? handleDropdownLeave : handleMenuButtonLeave}
       >
-        {/* Menu Text - Always present */}
+        {/* Menu Button */}
         {!isOpen && (
           <div
-            ref={menuTextRef}
-            className="flex items-center justify-center gap-2"
+            ref={menuButtonRef}
+            className="flex items-center justify-center h-full gap-3"
           >
-            <div className="w-2 h-2 bg-gradient-to-r from-[#D2448D] to-[#DC6263] rounded-full animate-pulse"></div>
-            <span className="text-pink-500 uppercase font-bold text-20 tracking-wide">
-              Menu
+            <div className="w-2 h-2 bg-gradient-to-r from-pink-500 to-orange-500 rounded-full animate-pulse"></div>
+            <span className="text-gray-700 font-bold text-lg tracking-wide">
+              MENU
             </span>
           </div>
         )}
+
         {/* Expanded Menu Content */}
         {isOpen && (
           <>
             {/* Background Overlay */}
             <div
               ref={overlayRef}
-              className="absolute inset-0 bg-gradient-to-br from-amber-100 via-yellow-50 to-amber-50 opacity-0 rounded-3xl"
+              className="absolute inset-0 bg-gradient-to-br from-[#fdfbe5] via-gray-50 to-gray-100 opacity-0"
             />
 
-            {/* Close Button */}
             <div
-              ref={closeButtonRef}
-              className="absolute top-6 right-6 w-12 h-12 bg-gradient-to-r from-[#161516] to-[#383636] rounded-full flex items-center justify-center cursor-pointer group hover:scale-110 transition-transform duration-300 opacity-0"
-              onClick={(e) => {
-                e.stopPropagation();
-                collapse();
-              }}
+              ref={menuContentRef}
+              className="relative z-10  flex flex-col justify-center px-8 py-12"
             >
-              <svg
-                className="w-6 h-6 text-white group-hover:rotate-90 transition-transform duration-300"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M6 18L18 6M6 6l12 12"
-                />
-              </svg>
-            </div>
-
-            {/* Menu Content */}
-            <div className="relative z-10 flex flex-col items-start justify-center h-full px-8">
-              {/* Menu Items */}
-              <ul ref={itemsRef} className="space-y-4 w-full">
+              <nav className="space-y-6">
                 {menuItems.map((item, index) => (
-                  <li
+                  <div
                     key={item.name}
-                    className="menu-item  uppercase group opacity-0"
+                    className="menu-item uppercase"
+                    style={{ opacity: 0 }}
                   >
                     <Link
                       href={item.href}
-                      className="relative text-30 font-semibold text-black   duration-300  py-3 px-6 rounded-lg transition-all  backdrop-blur-sm flex items-center gap-2 hover:underline group"
+                      className="group flex items-center gap-4 relative "
+                      onClick={() => closeMenu()}
                     >
-                      {item.name}
+                      <span className="relative text-3xl font-bold text-gray-800 transition-colors duration-300 group-hover:text-pink-600 py-3 block">
+                        {item.name}
 
-                      <ArrowUpCircleIcon className="h-7 w-7 transition-all group-hover:block hidden rotate-45 text-black" />
+                        {/* Progressive Underline */}
+                        <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-gradient-to-r from-pink-500 to-orange-500 transition-all duration-500 ease-out group-hover:w-full"></span>
 
-                      {/* <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-indigo-500/20 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10"></div> */}
+                        {/* Secondary underline for extra effect */}
+                        <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-gradient-to-r from-pink-300 to-orange-300 transition-all duration-700 delay-100 ease-out group-hover:w-full"></span>
+                      </span>
+
+                      {/* Arrow icon that appears on hover */}
+                      <div className="transition-all transform opacity-0 duration-300 group-hover:opacity-100 group-hover:translate-x-0">
+                        <svg
+                          data-slot="icon"
+                          fill="none"
+                          stroke-width="1.8"
+                          stroke="currentColor"
+                          className="w-8 h-8 transform text-pink-500"
+
+                          viewBox="0 0 24 24"
+                          xmlns="http://www.w3.org/2000/svg"
+                          aria-hidden="true"
+                        >
+                          <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"
+                          ></path>
+                        </svg>
+
+                        {/* <svg
+                          data-slot="icon"
+                          fill="none"
+                          stroke-width="2"
+                          className="w-8 h-8 transform -rotate-45 text-pink-500"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                          xmlns="http://www.w3.org/2000/svg"
+                          aria-hidden="true"
+                        >
+                          <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            d="m12.75 15 3-3m0 0-3-3m3 3h-7.5M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+                          ></path>
+                        </svg> */}
+                        {/* <svg
+                          className="w-6 h-6 text-pink-500"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          stroke="currentColor"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M17 8l4 4m0 0l-4 4m4-4H3"
+                          />
+                        </svg> */}
+                      </div>
                     </Link>
-                  </li>
+                  </div>
                 ))}
-              </ul>
+              </nav>
+
+              <ContactButton />
             </div>
           </>
         )}
