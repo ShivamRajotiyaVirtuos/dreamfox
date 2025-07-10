@@ -92,7 +92,7 @@ const WhyDreamfox = () => {
       </div>
 
       {/* Features Grid */}
-      <div className="mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 2xl:grid-cols-4 gap-16  2xl:gap-20 max-w-[100rem] w-full">
+      <div className="mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 2xl:grid-cols-4 gap-16  2xl:gap-0 max-w-[100rem] w-full">
         {features.map((feature, index) => {
           return (
             <div
@@ -106,7 +106,7 @@ const WhyDreamfox = () => {
               }}
             >
               {/* Circular Container */}
-              <div className="relative size-76 lg:size-[18rem] mx-auto">
+              <div className="relative size-76 lg:size-[20rem] mx-auto">
                 {/* Outer Ring */}
                 <div className="absolute inset-0 rounded-full p-[2px] bg-gray-800 gradient-border transition-all duration-300 shadow-lg shadow-gray-900/50 group-hover:shadow-2xl group-hover:shadow-[#D2448D]/30">
                   <div className="w-full h-full rounded-full bg-black group-hover:bg-gray-900 transition-all duration-500"></div>
