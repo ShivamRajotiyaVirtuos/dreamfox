@@ -122,7 +122,7 @@ const Banner = () => {
   }, []);
 
   return (
-    <div className="container relative flex justify-center min-h-[90vh] items-center 2xl:min-h-[70vh]">
+    <div className="container relative flex justify-center min-h-[90vh] items-center 2xl:min-h-[100vh] lg:pt-32">
       <div className="text-left relative ">
         <div>
           <h3 ref={h3Ref} className="text-24 font-semibold text-[#d2448d] mb-4">
