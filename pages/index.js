@@ -9,7 +9,7 @@ import WhyDreamfox from "@/components/Homepage/WhyDreamfox";
 
 export default function Home() {
   return (
-    <div className="bg-[#000] min-h-screen">
+    <div className="bg-black min-h-screen">
       <Banner />
       <WhatWeDo />
       <OurVision />
