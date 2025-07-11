@@ -15,6 +15,52 @@ const MenuButton = () => {
   const closeButtonRef = useRef(null);
   const menuButtonRef = useRef(null);
 
+  // In your dimensions state
+  const [dimensions, setDimensions] = useState({
+    width: { closed: "140px", open: "420px" },
+    height: { closed: "45px", open: "600px" },
+    top: "-28px",
+  });
+
+  useEffect(() => {
+    const updateDimensions = () => {
+      const width = window.innerWidth;
+
+      if (width < 640) {
+        setDimensions({
+          width: { closed: "120px", open: "320px" },
+          height: { closed: "40px", open: "590px" },
+          top: "-18px",
+        });
+      } else if (width < 768) {
+        setDimensions({
+          width: { closed: "130px", open: "320px" },
+          height: { closed: "42px", open: "590px" },
+          top: "-20px",
+        });
+      } else if (width < 1024) {
+        setDimensions({
+          width: { closed: "140px", open: "380px" },
+          height: { closed: "45px", open: "590px" },
+          top: "-24px",
+        });
+      } else {
+        setDimensions({
+          width: { closed: "140px", open: "420px" },
+          height: { closed: "45px", open: "600px" },
+          top: "-28px",
+        });
+      }
+    };
+
+    updateDimensions();
+    window.addEventListener("resize", updateDimensions);
+
+    return () => window.removeEventListener("resize", updateDimensions);
+  }, []);
+
+  // Then in your style prop:
+
   const menuItems = [
     { name: "Home", href: "/" },
     { name: "About", href: "/about" },
@@ -86,8 +132,8 @@ const MenuButton = () => {
       .to(
         containerRef.current,
         {
-          width: "420px",
-          height: "600px",
+          width: dimensions.width.open,
+          height: dimensions.height.open,
           borderRadius: "32px",
           duration: 0.35,
           ease: "power3.out",
@@ -138,8 +184,72 @@ const MenuButton = () => {
   };
 
   const closeMenu = () => {
-    // Simple immediate close without complex animations
-    setIsOpen(false);
+    // Add smooth close animation
+    const tl = gsap.timeline({
+      defaults: { force3D: true },
+      onComplete: () => setIsOpen(false),
+    });
+
+    // Animate close button out
+    tl.to(closeButtonRef.current, {
+      opacity: 0,
+      scale: 0,
+      rotation: 90,
+      duration: 0.2,
+      ease: "power2.in",
+    })
+
+      // Animate menu items out
+      .to(
+        ".menu-item",
+        {
+          opacity: 0,
+          y: -20,
+          x: 10,
+          rotationY: 10,
+          scale: 0.95,
+          duration: 0.3,
+          stagger: 0.05,
+          ease: "power2.in",
+        },
+        0.1
+      )
+
+      // Animate container back to original size
+      .to(
+        containerRef.current,
+        {
+          width: dimensions.width.closed,
+          height: dimensions.height.closed,
+          borderRadius: "50px",
+          duration: 0.3,
+          ease: "power2.in",
+        },
+        0.2
+      )
+
+      // Fade out overlay
+      .to(
+        overlayRef.current,
+        {
+          opacity: 0,
+          duration: 0.2,
+          ease: "power2.in",
+        },
+        0.2
+      )
+
+      // Show menu button again
+      .to(
+        menuButtonRef.current,
+        {
+          opacity: 1,
+          scale: 1,
+          duration: 0.2,
+          ease: "power2.out",
+        },
+        0.3
+      );
   };
 
   const handleMenuButtonHover = () => {
@@ -172,6 +282,29 @@ const MenuButton = () => {
     closeMenu();
   };
 
+  const handleCloseButtonClick = (e) => {
+    e.stopPropagation();
+    closeMenu();
+  };
+
+  const handleCloseButtonHover = () => {
+    gsap.to(closeButtonRef.current, {
+      scale: 1.1,
+      rotation: 90,
+      duration: 0.2,
+      ease: "power2.out",
+    });
+  };
+
+  const handleCloseButtonLeave = () => {
+    gsap.to(closeButtonRef.current, {
+      scale: 1,
+      rotation: 0,
+      duration: 0.2,
+      ease: "power2.out",
+    });
+  };
+
   return (
     <div className="relative">
       <div
@@ -183,18 +316,18 @@ const MenuButton = () => {
           !isOpen && "cursor-pointer hover:shadow-2xl"
         )}
         style={{
-          width: isOpen ? "420px" : "140px",
-          height: isOpen ? "600px" : "45px",
+          width: isOpen ? dimensions.width.open : dimensions.width.closed,
+          height: isOpen ? dimensions.height.open : dimensions.height.closed,
           borderRadius: isOpen ? "32px" : "50px",
           position: "absolute",
-          top: "-28px",
+          top: dimensions.top,
           right: "0",
           zIndex: isOpen ? "1000" : "auto",
-          willChange: "transform, width, height, border-radius", // Optimize for animations
+          willChange: "transform, width, height, border-radius",
         }}
         // onMouseEnter={handleMenuButtonHover}
         onClick={handleMenuButtonHover}
-        onMouseLeave={isOpen ? handleDropdownLeave : handleMenuButtonLeave}
+        // onMouseLeave={isOpen ? handleDropdownLeave : handleMenuButtonLeave}
       >
         {/* Menu Button */}
         {!isOpen && (
@@ -218,9 +351,34 @@ const MenuButton = () => {
               className="absolute inset-0 bg-gradient-to-br from-[#fdfbe5] via-gray-50 to-gray-100 opacity-0"
             />
 
+            {/* Close Button */}
+            <button
+              // ref={closeButtonRef}
+              onClick={handleCloseButtonClick}
+              onMouseEnter={handleCloseButtonHover}
+              onMouseLeave={handleCloseButtonLeave}
+              className="absolute top-4 right-4 z-20 w-10 h-10 text-white flex items-center justify-center bg-gradient-to-r from-pink-500 to-orange-500 backdrop-blur-sm border border-gray-200 rounded-full shadow-lg hover:shadow-xl transition-all duration-200 group"
+              // style={{ opacity: 0 }}
+            >
+              <svg
+                className="w-5 h-5 text-white hover:rotate-180 transform transition-colors duration-200"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M6 18L18 6M6 6l12 12"
+                />
+              </svg>
+            </button>
+
             <div
               ref={menuContentRef}
-              className="relative z-10  flex flex-col justify-center px-8 py-12"
+              className="relative z-10 flex flex-col justify-center px-8 py-12"
             >
               <nav className="space-y-6">
                 {menuItems.map((item, index) => (
@@ -249,7 +407,7 @@ const MenuButton = () => {
                         <svg
                           data-slot="icon"
                           fill="none"
-                          stroke-width="1.8"
+                          strokeWidth="1.8"
                           stroke="currentColor"
                           className="w-8 h-8 transform text-pink-500"
                           viewBox="0 0 24 24"
@@ -257,41 +415,11 @@ const MenuButton = () => {
                           aria-hidden="true"
                         >
                           <path
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
                             d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"
                           ></path>
                         </svg>
-
-                        {/* <svg
-                          data-slot="icon"
-                          fill="none"
-                          stroke-width="2"
-                          className="w-8 h-8 transform -rotate-45 text-pink-500"
-                          stroke="currentColor"
-                          viewBox="0 0 24 24"
-                          xmlns="http://www.w3.org/2000/svg"
-                          aria-hidden="true"
-                        >
-                          <path
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            d="m12.75 15 3-3m0 0-3-3m3 3h-7.5M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
-                          ></path>
-                        </svg> */}
-                        {/* <svg
-                          className="w-6 h-6 text-pink-500"
-                          fill="none"
-                          viewBox="0 0 24 24"
-                          stroke="currentColor"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth={2}
-                            d="M17 8l4 4m0 0l-4 4m4-4H3"
-                          />
-                        </svg> */}
                       </div>
                     </Link>
                   </div>

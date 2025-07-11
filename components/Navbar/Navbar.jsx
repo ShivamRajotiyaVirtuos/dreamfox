@@ -17,9 +17,9 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 h-20 sm:h-24 2xl:h-24 backdrop-blur-2xl">
+    <nav className="fixed top-0 left-0 right-0 z-50 h-16 sm:h-24 2xl:h-24 backdrop-blur-2xl">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-20 sm:h-24 2xl:h-24">
+        <div className="flex justify-between items-center h-16 sm:h-24 2xl:h-24">
           {/* Left spacer to balance the layout */}
           <div className="sm:flex-1"></div>
 
@@ -30,7 +30,7 @@ const Navbar = () => {
               alt="Logo"
               width={150}
               height={50}
-              className="h-12 w-auto"
+              className="h-9 sm:h-12 w-auto"
             />
           </div>
 

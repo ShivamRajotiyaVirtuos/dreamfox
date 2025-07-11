@@ -53,7 +53,7 @@ const ReviewsSection = () => {
           stagger={0.1}
           duration={0.8}
         >
-          Our Partners will tell you better about us
+          Our Partners 
         </TextReveal>
         {/* <h2 className="text-120 font-semibold mb-4 md:mb-6 lg:mb-8 text-white text-center">
           Our Partners will tell you better about us

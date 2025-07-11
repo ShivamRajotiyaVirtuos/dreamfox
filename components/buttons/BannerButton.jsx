@@ -185,8 +185,8 @@ const BannerButton = ({ text = "BOOK A DEMO", href = "#", className = "" }) => {
       href={href}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
-      className={`relative inline-block no-underline cursor-pointer rounded-full overflow-hidden transition-all duration-200 hover:shadow-[0_0_20px_#D2448D] hover:scale-[0.95]  ${className}`}
-      style={{ width: "450px", height: "100px" }}
+      className={`relative w-[300px] mt-16 xl:mt-0 sm:w-[350px] xl:w-[450px] h-[70px] sm:h-[100px] xl:h-[100px] inline-block no-underline cursor-pointer rounded-full overflow-hidden transition-all duration-200 hover:border-white border hover:shadow-[0_0_20px_#D2448D] hover:scale-[0.95]  ${className}`}
+      // style={{ width: "450px", height: "100px" }}
     >
       {/* Black base layer - will show when yellow circle shrinks */}
       <div className="absolute top-0 left-0 w-full h-full bg-black text-white flex items-center justify-center gap-3 z-0 text-base font-semibold tracking-wide rounded-full">
