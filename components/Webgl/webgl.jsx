@@ -898,7 +898,10 @@ const WebGLCursorEffect = () => {
   };
 
   const handleTouchMove = (e) => {
-    e.preventDefault();
+    // Only prevent default if the touch is actually on our canvas
+    if (e.target === canvasRef.current) {
+      e.preventDefault();
+    }
     const rect = canvasRef.current.getBoundingClientRect();
     const touches = e.targetTouches;
 
@@ -918,7 +921,10 @@ const WebGLCursorEffect = () => {
   };
 
   const handleTouchStart = (e) => {
-    e.preventDefault();
+    // Only prevent default if the touch is actually on our canvas
+    if (e.target === canvasRef.current) {
+      e.preventDefault();
+    }
     const rect = canvasRef.current.getBoundingClientRect();
     const touches = e.targetTouches;
 
@@ -1013,10 +1019,11 @@ const WebGLCursorEffect = () => {
     // Start animation loop
     update();
 
-    // Event listeners
+    // Event listeners - use document but with better touch handling
     document.addEventListener("mousemove", handleMouseMove);
     document.addEventListener("mousemove", handleMouseMove2);
     document.addEventListener("mouseup", handleMouseUp);
+    // Keep touch events on document but only prevent default when needed
     document.addEventListener("touchmove", handleTouchMove, { passive: false });
     document.addEventListener("touchstart", handleTouchStart, {
       passive: false,

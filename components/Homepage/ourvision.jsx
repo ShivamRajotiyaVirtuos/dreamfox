@@ -65,6 +65,7 @@ export default function OurVision() {
             pinSpacing: true,
             scrub: 1,
             anticipatePin: 1,
+            markers: true,
           },
         });
 

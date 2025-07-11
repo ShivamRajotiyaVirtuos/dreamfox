@@ -12,11 +12,11 @@ export default function Home() {
     <div className="bg-[#000] min-h-screen">
       <Banner />
       <WhatWeDo />
-      {/* <OurVision /> */}
+      <OurVision />
       <WhyDreamfox />
       <Snapshot />
       <div className="overflow-hidden">
-        <ReviewsSection/>
+        <ReviewsSection />
       </div>
       {/* <ScrollControlledSwiper /> */}
       {/* <div className="overflow-hidden">
