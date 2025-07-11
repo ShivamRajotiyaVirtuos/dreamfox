@@ -8,7 +8,12 @@ export default function SmoothScroll({ children }) {
       lerp: 0.02, // try 0.03 to 0.1
       wheelMultiplier: 0.8, // try 0.5 to 1.5
       smoothWheel: true,
-      smoothTouch: true,
+      smoothTouch: false, // Disable on touch to avoid conflicts
+      syncTouch: false, // Better mobile compatibility
+      touchMultiplier: 2,
+      infinite: false,
+      autoResize: true,
+      __experimental__naiveDimensions: false,
     });
 
     function raf(time) {
