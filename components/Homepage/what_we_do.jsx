@@ -718,11 +718,7 @@ const WhatWeDo = () => {
           ref={textRef}
           className="w-full md:w-1/3 z-10 text-center md:text-left"
         >
-<<<<<<< Updated upstream
-          <h2 className="text-60 font-bold mb-4 md:mb-6 lg:mb-8 text-[#DC6263]">
-=======
           <h2 className="text-60 font-semibold mb-4 md:mb-6 lg:mb-8 text-[#DC6263]">
->>>>>>> Stashed changes
             What we do
           </h2>
           <p className="text-30 text-gray-300 max-w-md mx-auto md:mx-0">
@@ -750,11 +746,7 @@ const WhatWeDo = () => {
                   className="w-full h-32 md:h-44 bg-cover bg-center rounded-lg mb-3 md:mb-4"
                   style={{ backgroundImage: `url(${slide.image})` }}
                 ></div>
-<<<<<<< Updated upstream
-                <h3 className="text-lg md:text-xl font-bold mb-2">
-=======
                 <h3 className="text-lg md:text-xl font-semibold mb-2">
->>>>>>> Stashed changes
                   {slide.title}
                 </h3>
                 <p className="text-xs md:text-sm text-gray-300">
