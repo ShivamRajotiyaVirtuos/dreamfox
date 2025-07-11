@@ -8,6 +8,7 @@ import {
 } from "@heroicons/react/24/outline";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
+import TextReveal from "../Text Reveal/textreveal";
 const images = [
   "https://cdn.prod.website-files.com/677fb4d34764579513f06e12/67cac8d3816839026be753df_lora-ui.jpg", // Abstract tech patterns
   "https://cdn.prod.website-files.com/677fb4d34764579513f06e12/67cac8b1a5ddb1034191c0e6_domum-ui.webp", // Digital circuits
@@ -46,13 +47,30 @@ const ReviewsSection = () => {
     <section className="w-full container flex flex-col items-center py-16 lg:py-32 bg-black ">
       {/* Header */}
       <div className=" text-center  z-10">
-        <h2 className="text-120 font-semibold mb-4 md:mb-6 lg:mb-8 text-white text-center">
+        <TextReveal
+          className="text-120 font-semibold mb-4 md:mb-6 lg:mb-8 text-white text-center"
+          animation="rotateX"
+          stagger={0.1}
+          duration={0.8}
+        >
           Our Partners will tell you better about us
-        </h2>
-        <p className="text-40  text-white/80 mb-6 ">
+        </TextReveal>
+        {/* <h2 className="text-120 font-semibold mb-4 md:mb-6 lg:mb-8 text-white text-center">
+          Our Partners will tell you better about us
+        </h2> */}
+        <TextReveal
+          className="text-40  text-white/80 mb-6"
+          animation="rotateX"
+          stagger={0.1}
+          duration={0.8}
+        >
           Our clients call us their creative partner — blending strategy, speed,
           and bold ideas to deliver work that exceeds expectations.
-        </p>
+        </TextReveal>
+        {/* <p className="text-40  text-white/80 mb-6 ">
+          Our clients call us their creative partner — blending strategy, speed,
+          and bold ideas to deliver work that exceeds expectations.
+        </p> */}
 
         {/* <div className="flex justify-center">
           <button className="group flex items-center gap-2 rounded overflow-hidden relative cursor-pointer transition-all duration-1000 ease-[cubic-bezier(0.77,0,0.175,1)]">
