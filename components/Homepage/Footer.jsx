@@ -5,6 +5,7 @@ import { useRef, useEffect } from "react";
 import { gsap } from "gsap";
 
 import React from "react";
+import Link from "next/link";
 
 const Footer = () => {
   const buttonRef = useRef(null);
@@ -200,9 +201,9 @@ const Footer = () => {
             { name: "Projects", href: "/projects" },
             { name: "Contact", href: "/contact" },
           ].map(({ name, href }) => (
-            <a key={name} href={href} className="text-white group">
+            <Link key={name} href={href} className="text-white group w-fit">
               <span className="link-underline">{name}</span>
-            </a>
+            </Link>
           ))}
         </div>
 
@@ -214,10 +215,10 @@ const Footer = () => {
             ["Return Policy", "#"],
             ["Terms & Services", "#"],
           ].map(([name, href]) => (
-            <a
+            <Link
               key={name}
               href={href}
-              className="flex items-center gap-2  text-white group"
+              className="flex w-fit items-center gap-2  text-white group"
             >
               <span className="link-underline">{name}</span>
               <svg
@@ -236,7 +237,7 @@ const Footer = () => {
                   strokeLinejoin="round"
                 />
               </svg>
-            </a>
+            </Link>
           ))}
         </div>
 
