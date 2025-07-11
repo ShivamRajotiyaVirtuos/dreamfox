@@ -43,7 +43,7 @@ const ReviewsSection = () => {
   };
 
   return (
-    <section className="w-full container flex flex-col items-center py-16 bg-black ">
+    <section className="w-full container flex flex-col items-center py-16 lg:py-32 bg-black ">
       {/* Header */}
       <div className=" text-center  z-10">
         <h2 className="text-120 font-semibold mb-4 md:mb-6 lg:mb-8 text-white text-center">

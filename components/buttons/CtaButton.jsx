@@ -10,7 +10,7 @@ export default function CtaButton({ text, href }) {
     <div className="inline-block relative">
       <Link
         href={href}
-        className="relative inline-flex items-center font-bold text-white text-xl px-6 py-3"
+        className="relative inline-flex items-center font-semibold text-white text-xl px-6 py-3"
       >
         {/* Yellow expanding circle */}
         <div className=" bg-yellow-400 rounded-full left-[-0.7em] top-1/2 -translate-y-1/2 z-0"></div>

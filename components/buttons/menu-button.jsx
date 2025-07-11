@@ -20,7 +20,7 @@ const MenuButton = () => {
     { name: "About", href: "/about" },
     { name: "Services", href: "/services" },
     { name: "Portfolio", href: "/portfolio" },
-    { name: "Contact", href: "/contact" },
+    { name: "Technologies", href: "/technologies" },
   ];
 
   useEffect(() => {
@@ -184,7 +184,7 @@ const MenuButton = () => {
         )}
         style={{
           width: isOpen ? "420px" : "140px",
-          height: isOpen ? "600px" : "60px",
+          height: isOpen ? "600px" : "45px",
           borderRadius: isOpen ? "32px" : "50px",
           position: "absolute",
           top: "-28px",
@@ -192,9 +192,8 @@ const MenuButton = () => {
           zIndex: isOpen ? "1000" : "auto",
           willChange: "transform, width, height, border-radius", // Optimize for animations
         }}
-        onMouseEnter={handleMenuButtonHover}
+        // onMouseEnter={handleMenuButtonHover}
         onClick={handleMenuButtonHover}
-
         onMouseLeave={isOpen ? handleDropdownLeave : handleMenuButtonLeave}
       >
         {/* Menu Button */}
@@ -204,7 +203,7 @@ const MenuButton = () => {
             className="flex items-center justify-center h-full gap-3"
           >
             <div className="w-2 h-2 bg-gradient-to-r from-pink-500 to-orange-500 rounded-full animate-pulse"></div>
-            <span className="text-gray-700 font-bold text-lg tracking-wide">
+            <span className="text-gray-700 font-semibold text-lg tracking-wide">
               MENU
             </span>
           </div>
@@ -232,10 +231,10 @@ const MenuButton = () => {
                   >
                     <Link
                       href={item.href}
-                      className="group flex items-center gap-4 relative "
+                      className="group w-max flex items-center gap-4 relative "
                       onClick={() => closeMenu()}
                     >
-                      <span className="relative text-3xl font-bold text-gray-800 transition-colors duration-300 group-hover:text-pink-600 py-3 block">
+                      <span className="relative text-3xl font-semibold text-gray-800 transition-colors duration-300 group-hover:text-pink-600 py-3 block">
                         {item.name}
 
                         {/* Progressive Underline */}
@@ -253,7 +252,6 @@ const MenuButton = () => {
                           stroke-width="1.8"
                           stroke="currentColor"
                           className="w-8 h-8 transform text-pink-500"
-
                           viewBox="0 0 24 24"
                           xmlns="http://www.w3.org/2000/svg"
                           aria-hidden="true"

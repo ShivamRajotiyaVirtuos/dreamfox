@@ -334,7 +334,7 @@ const Showreel = () => {
       <div className="container mx-auto">
         {/* Header */}
         <div className="text-center mb-16">
-          <TextReveal className="text-120 font-bold mb-6">
+          <TextReveal className="text-120 font-semibold mb-6">
             The DreamFox Showreel
           </TextReveal>
           <h2></h2>
@@ -365,7 +365,6 @@ const Showreel = () => {
                 slidesPerView: 2,
                 spaceBetween: 25,
                 speed: 2000,
-
               },
               1024: {
                 slidesPerView: 2,
@@ -431,7 +430,7 @@ const Showreel = () => {
                         width={500}
                       />
                       <div className="p-4 2xl:hidden absolute -bottom-20 z-20 ">
-                        <h3 className="text-24  rounded-full px-4 font-bold text-white mb-2  line-clamp-2">
+                        <h3 className="text-24  rounded-full px-4 font-semibold text-white mb-2  line-clamp-2">
                           {project.title}
                         </h3>
                         <div className="mb-2">
@@ -442,7 +441,7 @@ const Showreel = () => {
                       </div>
                       {hoveredCard === project.id ? (
                         <div className="p-4 hidden 2xl:block absolute -bottom-20 z-20 ">
-                          <h3 className="text-24  rounded-full px-4 font-bold text-white mb-2  line-clamp-2">
+                          <h3 className="text-24  rounded-full px-4 font-semibold text-white mb-2  line-clamp-2">
                             {project.title}
                           </h3>
                           <div className="mb-2">

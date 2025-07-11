@@ -17,9 +17,9 @@ export default function App({ Component, pageProps }) {
   return (
     <Layout>
       <WebGLCursorEffect />
-      {/* <SmoothScroll> */}
+      <SmoothScroll>
         <Component {...pageProps} />
-      {/* </SmoothScroll> */}
+      </SmoothScroll>
     </Layout>
   );
 }

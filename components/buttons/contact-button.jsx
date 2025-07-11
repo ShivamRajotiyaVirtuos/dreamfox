@@ -195,7 +195,7 @@ const ContactButton = () => {
         {/* Text */}
         <span
           ref={textRef}
-          className="font-bold uppercase text-24 tracking-wide text-gray-700 transition-colors duration-300"
+          className="font-semibold uppercase text-24 tracking-wide text-gray-700 transition-colors duration-300"
         >
           Contact Us
         </span>

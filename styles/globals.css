@@ -1,10 +1,20 @@
+@import url("https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&family=Geist+Mono:wght@100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Oranienbaum&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&family=Geist+Mono:wght@100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Oranienbaum&family=Sora:wght@100..800&display=swap');
 @import "tailwindcss";
 
 /* Add font-family utilities */
-body {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-}
+/* body h1 {
+  font-family: "Sora", sans-serif;
+  font-family: "Arimo", sans-serif;
+} */
+h1,h2,h3{
+  font-family: "Sora", sans-serif;
 
+}
+body p, body span {
+  /* font-family: "Sora", sans-serif; */
+  font-family: "Arimo", sans-serif;
+}
 .font-helvetica {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
@@ -275,15 +285,13 @@ body {
   background-clip: text;
 }
 
-
-
 .link-underline {
   position: relative;
   display: inline-block;
 }
 
 .link-underline::after {
-  content: '';
+  content: "";
   position: absolute;
   left: 0;
   bottom: -2px;
@@ -297,17 +305,16 @@ body {
   width: 100%;
 }
 
-
 .glow-svg-mask {
   position: relative;
   width: 100%;
   height: auto;
   display: block;
-  mask-image: url('/logos/dreamfox_logo.svg');
+  mask-image: url("/logos/dreamfox_logo.svg");
   mask-repeat: no-repeat;
   mask-position: center;
   mask-size: contain;
-  -webkit-mask-image: url('/logos/dreamfox_logo.svg');
+  -webkit-mask-image: url("/logos/dreamfox_logo.svg");
   -webkit-mask-repeat: no-repeat;
   -webkit-mask-position: center;
   -webkit-mask-size: contain;
@@ -320,10 +327,6 @@ body {
   height: 100%;
   object-fit: cover;
 }
-
-
-
-
 
 #snapreel .swiper {
   /* width: 100vw !important; */

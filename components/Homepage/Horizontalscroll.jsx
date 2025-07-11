@@ -228,7 +228,7 @@ const ScrollSyncedCarousel = () => {
         >
           <div className="wrapper max-w-7xl mx-auto px-4">
             <div className="text-before mb-12">
-              <h2 className="text-4xl md:text-6xl font-bold text-center">
+              <h2 className="text-4xl md:text-6xl font-semibold text-center">
                 {carousel.title}
               </h2>
             </div>
@@ -256,7 +256,7 @@ const ScrollSyncedCarousel = () => {
                         <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
                       </div>
                       <div className="card-text p-6">
-                        <h3 className="title text-xl font-bold mb-3 text-white">
+                        <h3 className="title text-xl font-semibold mb-3 text-white">
                           {slide.title}
                         </h3>
                         <p className="text-gray-300 mb-4 leading-relaxed">

@@ -73,7 +73,7 @@ const WhyDreamfox = () => {
       {/* Header */}
       <div className="text-center mb-16 lg:mb-32">
         <TextReveal
-          className="text-120 font-bold mb-8 tracking-tight"
+          className="text-120 font-semibold mb-8 tracking-tight"
           animation="rotateX"
           stagger={0.1}
           duration={0.8}
@@ -120,7 +120,7 @@ const WhyDreamfox = () => {
                   </div>
 
                   {/* Title */}
-                  <h3 className="text-24 font-bold mb-4 group-hover:text-red-400 transition-colors duration-500">
+                  <h3 className="text-24 font-semibold mb-4 group-hover:text-red-400 transition-colors duration-500">
                     {feature.title}
                   </h3>
 

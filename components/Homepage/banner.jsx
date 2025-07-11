@@ -16,6 +16,7 @@ const Banner = () => {
   const whereRef = useRef(null);
   const brandsRef = useRef(null);
   const ringRef = useRef(null);
+
   const dreamRef = useRef(null);
   const buttonRef = useRef(null);
 
@@ -131,7 +132,7 @@ const Banner = () => {
           </h3>
           <h1
             ref={h1Ref}
-            className="text-130 font-bold uppercase text-white leading-tight group"
+            className="text-130 font-semibold uppercase text-white leading-tight group"
           >
             <span ref={whereRef}>WHERE </span>
             <span
@@ -164,7 +165,7 @@ const Banner = () => {
             className="hover:scale-105 transition-all absolute right-0 bottom-0 text-30 font-semibold rounded-lg pl-8 pr-16 pb-4 pt-32 bg-gray-200 flex gap-4"
           />
         </div>  */}
-        <div className="absolute right-0 bottom-0">
+        <div ref={buttonRef} className="absolute right-0 bottom-0">
           {/* <AnimatedButton text="ABOUT ME" href="/about" /> */}
           <BannerButton
             text="GET STARTED"

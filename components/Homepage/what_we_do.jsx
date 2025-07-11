@@ -111,7 +111,7 @@
 //       <div className="container mx-auto h-full flex items-center gap-12">
 //         {/* Left Text */}
 //         <div ref={textRef} className="w-1/3 z-10">
-//           <h2 className="text-3xl font-bold text-[#DC6263] mb-4">What we do</h2>
+//           <h2 className="text-3xl font-semibold text-[#DC6263] mb-4">What we do</h2>
 //           <p className="text-lg leading-relaxed">
 //             At DreamFox, we go far beyond simply offering digital services — we
 //             architect meaningful brand journeys from the ground up. Every project
@@ -140,7 +140,7 @@
 //                   className="w-full h-44 bg-cover bg-center rounded-lg mb-4"
 //                   style={{ backgroundImage: `url(${slide.image})` }}
 //                 ></div>
-//                 <h3 className="text-xl font-bold mb-2">{slide.title}</h3>
+//                 <h3 className="text-xl font-semibold mb-2">{slide.title}</h3>
 //                 <p className="text-sm text-gray-300">{slide.description}</p>
 //               </div>
 //             ))}
@@ -264,7 +264,7 @@
 // //       <div className="container mx-auto h-full flex items-center gap-12">
 // //         {/* Left Text Column */}
 // //         <div ref={textRef} className="w-1/3 z-10">
-// //           <h2 className="text-3xl font-bold text-[#DC6263] mb-4">What we do</h2>
+// //           <h2 className="text-3xl font-semibold text-[#DC6263] mb-4">What we do</h2>
 // //           <p className="text-lg leading-relaxed">
 // //             At DreamFox, we go far beyond simply offering digital services — we
 // //             architect meaningful brand journeys from the ground up. Every project
@@ -289,7 +289,7 @@
 // //                   className="w-full h-44 bg-cover bg-center rounded-lg mb-4"
 // //                   style={{ backgroundImage: `url(${slide.image})` }}
 // //                 ></div>
-// //                 <h3 className="text-xl font-bold mb-2">{slide.title}</h3>
+// //                 <h3 className="text-xl font-semibold mb-2">{slide.title}</h3>
 // //                 <p className="text-sm text-gray-300">{slide.description}</p>
 // //               </div>
 // //             ))}
@@ -414,7 +414,7 @@
 // //       <div className="container mx-auto h-full flex items-center gap-12">
 // //         {/* Left Text Column */}
 // //         <div ref={textRef} className="w-1/3 z-10">
-// //           <h2 className="text-3xl font-bold text-[#DC6263] mb-4">What we do</h2>
+// //           <h2 className="text-3xl font-semibold text-[#DC6263] mb-4">What we do</h2>
 // //           <p className="text-lg leading-relaxed">
 // //             At DreamFox, we go far beyond simply offering digital services — we
 // //             architect meaningful brand journeys from the ground up. Every project
@@ -439,7 +439,7 @@
 // //                   className="w-full h-44 bg-cover bg-center rounded-lg mb-4"
 // //                   style={{ backgroundImage: `url(${slide.image})` }}
 // //                 ></div>
-// //                 <h3 className="text-xl font-bold mb-2">{slide.title}</h3>
+// //                 <h3 className="text-xl font-semibold mb-2">{slide.title}</h3>
 // //                 <p className="text-sm text-gray-300">{slide.description}</p>
 // //               </div>
 // //             ))}
@@ -564,7 +564,7 @@
 //       <div className="container mx-auto h-full flex flex-col md:flex-row items-center justify-center gap-8 md:gap-12 px-4 py-8 md:py-0">
 //         {/* Left Text Column */}
 //         <div ref={textRef} className="w-full md:w-1/3 z-10 text-center md:text-left">
-//           <h2 className="text-60  font-bold mb-4 md:mb-6 lg:mb-8  text-[#DC6263] ">What we do</h2>
+//           <h2 className="text-60  font-semibold mb-4 md:mb-6 lg:mb-8  text-[#DC6263] ">What we do</h2>
 //           <p className="text-30 text-gray-300 max-w-md mx-auto md:mx-0">
 //             At DreamFox, we go far beyond simply offering digital services — we
 //             architect meaningful brand journeys from the ground up. Every project
@@ -589,7 +589,7 @@
 //                   className="w-full h-32 md:h-44 bg-cover bg-center rounded-lg mb-3 md:mb-4"
 //                   style={{ backgroundImage: `url(${slide.image})` }}
 //                 ></div>
-//                 <h3 className="text-lg md:text-xl font-bold mb-2">{slide.title}</h3>
+//                 <h3 className="text-lg md:text-xl font-semibold mb-2">{slide.title}</h3>
 //                 <p className="text-xs md:text-sm text-gray-300">{slide.description}</p>
 //               </div>
 //             ))}
@@ -718,7 +718,11 @@ const WhatWeDo = () => {
           ref={textRef}
           className="w-full md:w-1/3 z-10 text-center md:text-left"
         >
+<<<<<<< Updated upstream
           <h2 className="text-60 font-bold mb-4 md:mb-6 lg:mb-8 text-[#DC6263]">
+=======
+          <h2 className="text-60 font-semibold mb-4 md:mb-6 lg:mb-8 text-[#DC6263]">
+>>>>>>> Stashed changes
             What we do
           </h2>
           <p className="text-30 text-gray-300 max-w-md mx-auto md:mx-0">
@@ -746,7 +750,11 @@ const WhatWeDo = () => {
                   className="w-full h-32 md:h-44 bg-cover bg-center rounded-lg mb-3 md:mb-4"
                   style={{ backgroundImage: `url(${slide.image})` }}
                 ></div>
+<<<<<<< Updated upstream
                 <h3 className="text-lg md:text-xl font-bold mb-2">
+=======
+                <h3 className="text-lg md:text-xl font-semibold mb-2">
+>>>>>>> Stashed changes
                   {slide.title}
                 </h3>
                 <p className="text-xs md:text-sm text-gray-300">

@@ -174,7 +174,7 @@ const Snapshot = () => {
       <div className="container mx-auto">
         <div className="text-center mb-8 md:mb-12 lg:mb-16">
           <TextReveal
-            className="text-120 font-bold mb-4 md:mb-6 lg:mb-8"
+            className="text-120 font-semibold mb-4 md:mb-6 lg:mb-8"
             animation="rotateX"
             stagger={0.1}
             duration={0.8}
