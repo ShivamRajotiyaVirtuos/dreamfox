@@ -42,8 +42,8 @@ const WhatWeDo = () => {
         scrollTrigger: {
           trigger: sectionRef.current,
           start: "top top",
-          end: `+=${scrollLength}`,
-          scrub: 1.5,
+          end: `+=${slides.length * 700}`,
+          scrub: 1,
           pin: true,
           pinSpacing: true,
           markers: true,
@@ -93,7 +93,7 @@ const WhatWeDo = () => {
   return (
     <section
       ref={sectionRef}
-      className="h-[100vh] bg-black  w-full overflow-hidden text-white"
+      className="min-h-screen w-full overflow-hidden bg-black text-white"
     >
       <div className="container mx-auto h-full flex flex-col md:flex-row items-center justify-center gap-8 md:gap-12 px-4 py-8 md:py-0">
         {/* Left Text Column */}
@@ -130,7 +130,7 @@ const WhatWeDo = () => {
             className="w-full h-[85%] bg-cover bg-center rounded-lg mb-4"
             style={{
               backgroundImage: `url(${slide.image})`,
-            }}
+            }}            
           ></div>
         
           {/* Text below image */}
