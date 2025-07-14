@@ -13,7 +13,7 @@ export default function Home() {
       <Banner />
       <WhatWeDo />
       <OurVision />
-      <WhyDreamfox />
+      {/* <WhyDreamfox /> */}
       <Snapshot />
       <div className="overflow-hidden">
         <ReviewsSection />
