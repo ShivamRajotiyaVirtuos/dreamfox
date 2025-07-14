@@ -12,7 +12,6 @@ export default function Home() {
     <div className="bg-black min-h-screen">
       <Banner />
       <WhatWeDo />
-      <div id="our-vision-trigger" className="h-0"></div>
       <OurVision />
       <WhyDreamfox />
       <Snapshot />
