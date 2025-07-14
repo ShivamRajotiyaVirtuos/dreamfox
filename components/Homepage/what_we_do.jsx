@@ -657,7 +657,7 @@ const WhatWeDo = () => {
         scrollTrigger: {
           trigger: sectionRef.current,
           start: "top top",
-          end: `+=${scrollLength}`,
+          end: `bottom +80%`,
           scrub: 1.5,
           pin: true,
           markers: true,
@@ -710,7 +710,7 @@ const WhatWeDo = () => {
   return (
     <section
       ref={sectionRef}
-      className="min-h-screen w-full overflow-hidden bg-black text-white"
+      className="min-h-[100vh] w-full overflow-hidden bg-black text-white"
     >
       <div className="container mx-auto h-full flex flex-col md:flex-row items-center justify-center gap-8 md:gap-12 px-4 py-8 md:py-0">
         {/* Left Text Column */}
