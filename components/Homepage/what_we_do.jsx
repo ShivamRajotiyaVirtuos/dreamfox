@@ -42,8 +42,8 @@ const WhatWeDo = () => {
         scrollTrigger: {
           trigger: sectionRef.current,
           start: "top top",
-          end: `+=${slides.length * 700}`,
-          scrub: 1,
+          end: `+=${scrollLength}`,
+          scrub: 1.5,
           pin: true,
           pinSpacing: true,
           markers: true,
