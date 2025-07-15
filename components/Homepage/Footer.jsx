@@ -7,6 +7,9 @@ import { gsap } from "gsap";
 import React from "react";
 import Link from "next/link";
 
+import { FaInstagram, FaTelegramPlane } from "react-icons/fa";
+import { CiLinkedin } from "react-icons/ci";
+
 const Footer = () => {
   const buttonRef = useRef(null);
   const textRef = useRef(null);
@@ -193,7 +196,7 @@ const Footer = () => {
             </a>
           ))}
         </div> */}
-        <div className="flex flex-col space-y-4 text-40">
+        <div className="flex flex-col space-y-4 text-30">
           {[
             { name: "Home", href: "/" },
             { name: "Services", href: "/services" },
@@ -209,34 +212,23 @@ const Footer = () => {
 
         {/* Middle Links */}
         <div className="flex flex-col space-y-4 text-24">
+          <h3 className="uppercase tracking-widest text-white text-30 mb-6 ">Socials</h3>
           {[
-            ["Instagram", "#"],
-            ["Linkedin", "#"],
-            ["Return Policy", "#"],
-            ["Terms & Services", "#"],
-          ].map(([name, href]) => (
+            { name: "Instagram", href: "#", Icon: FaInstagram },
+            { name: "Linkedin", href: "#", Icon: CiLinkedin },
+            { name: "Telegram", href: "#", Icon: FaTelegramPlane },
+          ].map(({ name, href, Icon }) => (
             <Link
               key={name}
               href={href}
-              className="flex w-fit items-center gap-2  text-white group"
+              className="flex items-center gap-4 w-fit group"
             >
-              <span className="link-underline">{name}</span>
-              <svg
-                width="12"
-                height="12"
-                viewBox="0 0 25 25"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-                className="transition-transform group-hover:translate-x-1"
-              >
-                <path
-                  d="M11.1875 2H2V20.375C2 21.0712 2.27656 21.7389 2.76884 22.2312C3.26113 22.7234 3.92881 23 4.625 23H20.375C21.0712 23 21.7389 22.7234 22.2312 22.2312C22.7234 21.7389 23 21.0712 23 20.375V13.8125M8.5625 16.4375L23 2M23 2H16.4375M23 2V8.5625"
-                  stroke="white"
-                  strokeWidth="2.5"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
+              <div className="h-16 w-16 flex items-center justify-center border border-gray-400 rounded-full transition-all duration-300 group-hover:bg-white mb-2">
+                <Icon className="h-7 w-7 text-white transition-all duration-300 group-hover:text-black" />
+              </div>
+              <span className="text-white transition-all duration-300">
+                {name}
+              </span>
             </Link>
           ))}
         </div>
