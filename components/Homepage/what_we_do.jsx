@@ -120,7 +120,7 @@ const WhatWeDo = () => {
           <div
           key={index}
           ref={(el) => (cardRefs.current[index] = el)}
-          className="card w-full h-[500px] xl:h-[650px] 2xl:h-[750px] rounded-xl bg-gray-800 text-white absolute left-0 top-1/2 -translate-y-1/2 shadow-2xl border border-white/20 p-6 flex flex-col"
+          className="card aspect-[1.2/1] h-[500px]  2xl:h-[750px] rounded-xl bg-gray-800 text-white absolute left-0 top-1/2 -translate-y-1/2 shadow-2xl border border-white/20 p-6 flex flex-col"
           style={{
             zIndex: 10 + index,
           }}
