@@ -155,6 +155,38 @@ body p, body span {
     font-size: 60px;
   }
 }
+
+/* text-85 - 85px on desktop, scales down */
+.text-85 {
+  font-size: 36px;
+  line-height: 1.1;
+}
+
+@media (min-width: 640px) {
+  .text-85 {
+    font-size: 52px;
+  }
+}
+
+@media (min-width: 768px) {
+  .text-85 {
+    font-size: 64px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .text-85 {
+    font-size: 75px;
+  }
+}
+
+@media (min-width: 1324px) {
+  .text-85 {
+    font-size: 85px;
+  }
+}
+
+
 /* text-120 - 120px on desktop, scales down */
 .text-120 {
   font-size: 48px;
