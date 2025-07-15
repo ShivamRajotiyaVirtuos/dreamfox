@@ -101,7 +101,7 @@ const WhatWeDo = () => {
           ref={textRef}
           className="w-full md:w-1/3 z-10 text-center md:text-left"
         >
-          <h2 className="text-85 font-semibold mb-4 md:mb-6 text-[#DC6263] mt-10 md:mt-0">
+          <h2 className="text-80 font-semibold mb-4 md:mb-6 text-[#DC6263] mt-10 md:mt-0">
             What we do
           </h2>
           <p className="text-30 text-gray-300 max-w-md mx-auto md:mx-0">

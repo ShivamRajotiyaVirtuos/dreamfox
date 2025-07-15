@@ -8,7 +8,9 @@ import React from "react";
 import Link from "next/link";
 
 import { FaInstagram, FaTelegramPlane } from "react-icons/fa";
-import { CiLinkedin } from "react-icons/ci";
+// import { CiLinkedin } from "react-icons/ci";
+import { FaLinkedinIn } from "react-icons/fa";
+
 
 const Footer = () => {
   const buttonRef = useRef(null);
@@ -197,6 +199,7 @@ const Footer = () => {
           ))}
         </div> */}
         <div className="flex flex-col space-y-4 text-30">
+        <h3 className="uppercase tracking-widest font-bold text-gray-500 text-40 mb-6 ">Menu</h3>
           {[
             { name: "Home", href: "/" },
             { name: "Services", href: "/services" },
@@ -204,24 +207,24 @@ const Footer = () => {
             { name: "Projects", href: "/projects" },
             { name: "Contact", href: "/contact" },
           ].map(({ name, href }) => (
-            <Link key={name} href={href} className="text-white group w-fit">
+            <Link key={name} href={href} className="text-white group w-fit uppercase">
               <span className="link-underline">{name}</span>
             </Link>
           ))}
         </div>
 
         {/* Middle Links */}
-        <div className="flex flex-col space-y-4 text-24">
-          <h3 className="uppercase tracking-widest text-white text-30 mb-6 ">Socials</h3>
+        <div className="flex flex-col space-y-4 text-20">
+          <h3 className="uppercase tracking-widest font-bold text-gray-500 text-40 mb-6 ">Socials</h3>
           {[
             { name: "Instagram", href: "#", Icon: FaInstagram },
-            { name: "Linkedin", href: "#", Icon: CiLinkedin },
+            { name: "Linkedin", href: "#", Icon: FaLinkedinIn },
             { name: "Telegram", href: "#", Icon: FaTelegramPlane },
           ].map(({ name, href, Icon }) => (
             <Link
               key={name}
               href={href}
-              className="flex items-center gap-4 w-fit group"
+              className="flex uppercase items-center gap-4 w-fit group"
             >
               <div className="h-16 w-16 flex items-center justify-center border border-gray-400 rounded-full transition-all duration-300 group-hover:bg-white mb-2">
                 <Icon className="h-7 w-7 text-white transition-all duration-300 group-hover:text-black" />
@@ -235,8 +238,8 @@ const Footer = () => {
 
         {/* Right Email */}
         <div className="flex flex-col space-y-4">
-          <h3 className="text-24 uppercase tracking-widest">Drop your email</h3>
-          <p className="text-24 uppercase tracking-widest">Let’s have a chat</p>
+          <h3 className="text-24 uppercase tracking-widest text-30">Drop your email</h3>
+          <p className="text-24 uppercase tracking-widest text-30">Let’s have a chat</p>
           <button className="flex items-center bg-gray-200 text-black rounded-full overflow-hidden max-w-md">
             <span className="px-4 py-2 w-full text-24 bg-transparent text-left">
               Get Started Today

@@ -155,36 +155,36 @@ body p, body span {
     font-size: 60px;
   }
 }
-
-/* text-85 - 85px on desktop, scales down */
-.text-85 {
+/* text-80 - 80px on desktop, scales down */
+.text-80 {
   font-size: 36px;
   line-height: 1.1;
 }
 
 @media (min-width: 640px) {
-  .text-85 {
+  .text-80 {
     font-size: 52px;
   }
 }
 
 @media (min-width: 768px) {
-  .text-85 {
+  .text-80 {
     font-size: 64px;
   }
 }
 
 @media (min-width: 1024px) {
-  .text-85 {
-    font-size: 75px;
+  .text-80 {
+    font-size: 72px;
   }
 }
 
 @media (min-width: 1324px) {
-  .text-85 {
-    font-size: 85px;
+  .text-80 {
+    font-size: 80px;
   }
 }
+
 
 
 /* text-120 - 120px on desktop, scales down */
