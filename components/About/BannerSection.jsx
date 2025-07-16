@@ -3,6 +3,7 @@
 import { useRef, useEffect } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import BannerButton from "../buttons/BannerButton";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -50,27 +51,27 @@ const BannerSection = () => {
   return (
     <section
       ref={sectionRef}
-      className="relative w-full min-h-[80vh] bg-[#1a1a1a] flex items-center overflow-hidden"
+      className="relative w-full min-h-[80vh] bg-black flex items-center overflow-hidden"
     >
       {/* Gradient Circles */}
       <div
         ref={circle1Ref}
-        className=" absolute top-[-50vw] right-[-30vw] w-[70vw] h-[70vw] rounded-full bg-gradient-to-br from-[#DC6263] to-[#D2448D] opacity-30 z-0"
+        className=" absolute top-[-50vw] right-[-30vw] w-[60vw] h-[60vw] rounded-full bg-gradient-to-bl  from-[#ba6161] to-[#e36ca9] via-[#000000]  z-0"
       />
       <div
         ref={circle2Ref}
-        className=" absolute top-[-50vw] right-[-40vw] w-[60vw] h-[60vw] rounded-full bg-gradient-to-br from-[#de5e5e] to-[#d43c8a] opacity-40 z-0"
+        className=" absolute top-[-50vw] right-[-30vw] w-[50vw] h-[50vw] rounded-full bg-gradient-to-bl  from-[#cc3838] to-[#e9308f] via-[#8d8d8d]   z-0"
       />
       <div
         ref={circle3Ref}
-        className=" absolute top-[-50vw] right-[-30vw] w-[40vw] h-[40vw] rounded-full bg-gradient-to-br from-[#e85e5e] to-[#e53d94] opacity-50 z-0"
+        className=" absolute top-[-50vw] right-[-30vw] w-[40vw] h-[40vw] rounded-full bg-gradient-to-bl  from-[#cb3434] to-[#c62277] via-[#8d8d8d]  z-0"
       />
 
       {/* Main Content */}
       <div className="container mx-auto px-6 relative z-10 flex flex-col justify-between h-full py-24 banner-trigger">
         <div className="max-w-2xl">
-          <h1 className="text-white text-[32px] sm:text-[48px] md:text-[64px] font-bold leading-tight">
-            About test about the company
+          <h1 className="text-white text-120 font-bold leading-tight">
+            About the company
           </h1>
         </div>
 
@@ -89,12 +90,17 @@ const BannerSection = () => {
           </div>
 
           <div className="flex flex-col sm:flex-row gap-4 shrink-0">
-            <button className="bg-white text-black px-6 py-3 rounded-full text-sm font-medium whitespace-nowrap">
+            {/* <button className="bg-white text-black px-6 py-3 rounded-full text-sm font-medium whitespace-nowrap">
               Arrange an initial consultation
-            </button>
-            <button className="bg-[#222] text-white px-6 py-3 rounded-full text-sm font-medium whitespace-nowrap">
+            </button> */}
+
+            <BannerButton
+            text="text"
+            href="/some"
+            />
+            {/* <button className="bg-[#222] text-white px-6 py-3 rounded-full text-sm font-medium whitespace-nowrap">
               button
-            </button>
+            </button> */}
           </div>
         </div>
       </div>

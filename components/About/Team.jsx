@@ -96,7 +96,7 @@ const Team = () => {
 
   return (
     <section
-      className="py-16 overflow-hidden lg:pt-32 pb-72 px-4 md:px-8 bg-black text-white"
+      className=" overflow-hidden pb-72 px-4 md:px-8 bg-black text-white"
       id="snapreel"
     >
       <div className="container mx-auto">
