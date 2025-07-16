@@ -73,7 +73,7 @@ const Banner = () => {
       // Brands span tilts and falls after everything is revealed
       .to(brandsRef.current, {
         transformOrigin: "center bottom",
-        rotation: -7.5,
+        rotation: -5,
         duration: 0.8,
         ease: "bounce.out",
         delay: 0.5,

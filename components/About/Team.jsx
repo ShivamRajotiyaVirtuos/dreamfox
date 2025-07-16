@@ -53,45 +53,45 @@ const Team = () => {
       category: "Landing",
     },
     {
-        id: 1,
-        title: "Brand Identity",
-        description: "Complete visual identity for tech startup",
-        image:
-          "https://images.unsplash.com/photo-1558655146-9f40138edfeb?w=400&h=300&fit=crop",
-        category: "Branding",
-      },
-      {
-        id: 2,
-        title: "E-commerce",
-        description: "Modern shopping experience design",
-        image:
-          "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=400&h=300&fit=crop",
-        category: "Web Design",
-      },
-      {
-        id: 3,
-        title: "App UI Design",
-        description: "Intuitive mobile app interfaces",
-        image:
-          "https://images.unsplash.com/photo-1593642632823-8f785ba67e45?w=400&h=300&fit=crop",
-        category: "Mobile UI",
-      },
-      {
-        id: 4,
-        title: "Corporate Website",
-        description: "Professional design for B2B services",
-        image:
-          "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=400&h=300&fit=crop",
-        category: "Web",
-      },
-      {
-        id: 5,
-        title: "Product Design",
-        description: "Elegant product landing pages",
-        image:
-          "https://images.unsplash.com/photo-1603791440384-56cd371ee9a7?w=400&h=300&fit=crop",
-        category: "Landing",
-      },
+      id: 1,
+      title: "Brand Identity",
+      description: "Complete visual identity for tech startup",
+      image:
+        "https://images.unsplash.com/photo-1558655146-9f40138edfeb?w=400&h=300&fit=crop",
+      category: "Branding",
+    },
+    {
+      id: 2,
+      title: "E-commerce",
+      description: "Modern shopping experience design",
+      image:
+        "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=400&h=300&fit=crop",
+      category: "Web Design",
+    },
+    {
+      id: 3,
+      title: "App UI Design",
+      description: "Intuitive mobile app interfaces",
+      image:
+        "https://images.unsplash.com/photo-1593642632823-8f785ba67e45?w=400&h=300&fit=crop",
+      category: "Mobile UI",
+    },
+    {
+      id: 4,
+      title: "Corporate Website",
+      description: "Professional design for B2B services",
+      image:
+        "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=400&h=300&fit=crop",
+      category: "Web",
+    },
+    {
+      id: 5,
+      title: "Product Design",
+      description: "Elegant product landing pages",
+      image:
+        "https://images.unsplash.com/photo-1603791440384-56cd371ee9a7?w=400&h=300&fit=crop",
+      category: "Landing",
+    },
   ];
 
   return (
@@ -101,11 +101,21 @@ const Team = () => {
     >
       <div className="container mx-auto">
         <div className="text-center mb-16">
-          <TextReveal className="text-120 font-semibold mb-6">
+          <TextReveal
+            animation="rotateX"
+            stagger={0.1}
+            duration={0.8}
+            className="text-120 font-semibold mb-6"
+          >
             The Team
           </TextReveal>
-          <TextReveal className="text-40 font-extralight text-gray-300 mx-auto">
-            Text Description Text Description Text Description 
+          <TextReveal
+            animation="rotateX"
+            stagger={0.1}
+            duration={0.8}
+            className="text-40 font-extralight text-gray-300 mx-auto"
+          >
+            Text Description Text Description Text Description
           </TextReveal>
         </div>
 

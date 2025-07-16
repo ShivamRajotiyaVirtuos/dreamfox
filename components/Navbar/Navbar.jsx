@@ -35,7 +35,7 @@ const Navbar = () => {
           </div>
 
           {/* Menu Button - Right aligned */}
-          <div className="flex-1 flex items-start justify-end">
+          <div className="flex-1 flex items-start justify-end ">
             <AnimatedMenu />
           </div>
         </div>

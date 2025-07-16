@@ -7,6 +7,7 @@ import "swiper/css";
 import "swiper/css/navigation";
 import Image from "next/image";
 import TextReveal from "../Text Reveal/textreveal";
+import { PlusCircleIcon } from "@heroicons/react/24/solid";
 
 const Showreel = () => {
   const [hoveredCard, setHoveredCard] = useState(null);
@@ -334,12 +335,22 @@ const Showreel = () => {
       <div className="container mx-auto">
         {/* Header */}
         <div className="text-center mb-16">
-          <TextReveal className="text-120 font-semibold mb-6">
+          <TextReveal
+            className="text-120 font-semibold mb-6"
+            animation="rotateX"
+            stagger={0.1}
+            duration={0.8}
+          >
             The DreamFox Showreel
           </TextReveal>
           <h2></h2>
 
-          <TextReveal className="text-40 font-extralight  text-gray-300 mx-auto">
+          <TextReveal
+            className="text-40 font-extralight  text-gray-300 mx-auto"
+            animation="rotateX"
+            stagger={0.1}
+            duration={0.8}
+          >
             Bold brands. Sharp design. Stories in motion.
           </TextReveal>
         </div>
@@ -371,7 +382,7 @@ const Showreel = () => {
                 spaceBetween: 30,
               },
               1324: {
-                slidesPerView: 4,
+                slidesPerView: 3,
                 spaceBetween: 30,
               },
             }}
@@ -398,7 +409,7 @@ const Showreel = () => {
           >
             {projects.map((project) => (
               <SwiperSlide
-                className={` ${project.id % 2 !== 0 ? " sm:mt-24" : ""}`}
+                className={` ${project.id % 2 !== 0 ? " sm:mt-16" : ""}`}
                 key={project.id}
               >
                 <div className="relative  flex items-center group cursor-pointer perspective-1000">
@@ -420,10 +431,10 @@ const Showreel = () => {
                   >
                     <div className="">
                       <Image
-                        className={`absolute -bottom-20  z-20  transition-all duration-700 ease-out transform ${
+                        className={`absolute -bottom-24 sm:-bottom-20  z-20  transition-all duration-700 ease-out transform ${
                           hoveredCard === project.id
-                            ? "transform translate-y-4 opacity-100 transition-all duration-500 ease-out shadow-2xl"
-                            : "transform translate-y-4 2xl:translate-y-0 transition-all duration-500 ease-out opacity-100 2xl:opacity-0"
+                            ? "transform translate-y-8 opacity-100 transition-all duration-500 ease-out shadow-2xl"
+                            : "transform translate-y-8 2xl:translate-y-0 transition-all duration-500 ease-out opacity-100 2xl:opacity-0"
                         }`}
                         src={"/images/folder.svg"}
                         height={300}
@@ -460,19 +471,20 @@ const Showreel = () => {
                         
                         ${
                           hoveredCard === project.id
-                            ? "transform -rotate-3 sm:translate-y-24 rounded-3xl grayscale-0    z-10"
-                            : "transform  xl:grayscale translate-y-16 rotate-0 "
+                            ? "transform -rotate-3 sm:translate-y-16 rounded-3xl     z-10"
+                            : "transform   translate-y-12 rotate-0 "
                         }
                       
                       `}
                     >
                       {/* Project Image */}
-                      <div className="h-96 overflow-hidden relative">
+                      <div className="h-[24rem] sm:h-[28rem] overflow-hidden relative">
                         <img
                           src={project.image}
                           alt={project.title}
                           className="w-full h-full border border-white/20 !rounded-3xl object-cover transition-transform duration-300 "
                         />
+                        <PlusCircleIcon className="size-7 lg:block hidden absolute top-4 right-4 text-white  transition-opacity duration-300" />
                         {hoveredCard !== project.id && (
                           <div className="p-4 absolute bottom-0">
                             <h3 className="text-20 bg-white backdrop-blur-sm rounded-full px-5 py-1 font-semibold text-black mb-2  line-clamp-2">

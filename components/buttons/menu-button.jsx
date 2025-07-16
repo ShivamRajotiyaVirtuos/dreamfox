@@ -67,6 +67,8 @@ const MenuButton = () => {
     { name: "Services", href: "/services" },
     { name: "Portfolio", href: "/portfolio" },
     { name: "Technologies", href: "/technologies" },
+    { name: "Contact Us", href: "/contact" },
+
   ];
 
   useEffect(() => {
@@ -310,7 +312,7 @@ const MenuButton = () => {
       <div
         ref={containerRef}
         className={clsx(
-          "relative bg-gradient-to-br from-[#fdfbe5] via-gray-50 to-gray-100",
+          "relative bg-gradient-to-br from-[#fff6e0] via-[#fff6e0] to-[#fff6e0]",
           "shadow-xl overflow-hidden transform transition-all duration-300",
           "border border-gray-200/50 backdrop-blur-md",
           !isOpen && "cursor-pointer hover:shadow-2xl"
@@ -348,7 +350,7 @@ const MenuButton = () => {
             {/* Background Overlay */}
             <div
               ref={overlayRef}
-              className="absolute inset-0 bg-gradient-to-br from-[#fdfbe5] via-gray-50 to-gray-100 opacity-0"
+              className="absolute inset-0 backdrop-blur-2xl !bg-white/10 opacity-0"
             />
 
             {/* Close Button */}
@@ -357,7 +359,7 @@ const MenuButton = () => {
               onClick={handleCloseButtonClick}
               onMouseEnter={handleCloseButtonHover}
               onMouseLeave={handleCloseButtonLeave}
-              className="absolute top-4 right-4 z-20 w-10 h-10 text-white flex items-center justify-center bg-gradient-to-r from-pink-500 to-orange-500 backdrop-blur-sm border border-gray-200 rounded-full shadow-lg hover:shadow-xl transition-all duration-200 group"
+              className="absolute top-4 cursor-pointer right-4 z-20 w-10 h-10 text-white flex items-center justify-center bg-gradient-to-r from-pink-500 to-orange-500 backdrop-blur-sm border border-gray-200 rounded-full shadow-lg hover:shadow-xl transition-all duration-200 group"
               // style={{ opacity: 0 }}
             >
               <svg
@@ -378,7 +380,7 @@ const MenuButton = () => {
 
             <div
               ref={menuContentRef}
-              className="relative z-10 flex flex-col justify-center px-8 py-12"
+              className="relative z-10 backdrop-blur-2xl bg-white/10 flex flex-col justify-center px-8 py-12"
             >
               <nav className="space-y-6">
                 {menuItems.map((item, index) => (
@@ -426,7 +428,7 @@ const MenuButton = () => {
                 ))}
               </nav>
 
-              <ContactButton />
+              {/* <ContactButton /> */}
             </div>
           </>
         )}

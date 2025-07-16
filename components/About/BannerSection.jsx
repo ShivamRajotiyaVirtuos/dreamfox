@@ -4,6 +4,8 @@ import { useRef, useEffect } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import BannerButton from "../buttons/BannerButton";
+import AnimatedButton from "../buttons/AnimatedButton";
+import BannerButton from "../buttons/BannerButton";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -90,6 +92,8 @@ const BannerSection = () => {
           </div>
 
           <div className="flex flex-col sm:flex-row gap-4 shrink-0">
+            <AnimatedButton text="Arrange an initial consultation" href="/" />
+            <AnimatedButton text="button" href="/" />
             {/* <button className="bg-white text-black px-6 py-3 rounded-full text-sm font-medium whitespace-nowrap">
               Arrange an initial consultation
             </button> */}
