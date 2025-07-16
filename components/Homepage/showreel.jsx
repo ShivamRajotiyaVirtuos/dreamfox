@@ -334,12 +334,22 @@ const Showreel = () => {
       <div className="container mx-auto">
         {/* Header */}
         <div className="text-center mb-16">
-          <TextReveal className="text-120 font-semibold mb-6">
+          <TextReveal
+            className="text-120 font-semibold mb-6"
+            animation="rotateX"
+            stagger={0.1}
+            duration={0.8}
+          >
             The DreamFox Showreel
           </TextReveal>
           <h2></h2>
 
-          <TextReveal className="text-40 font-extralight  text-gray-300 mx-auto">
+          <TextReveal
+            className="text-40 font-extralight  text-gray-300 mx-auto"
+            animation="rotateX"
+            stagger={0.1}
+            duration={0.8}
+          >
             Bold brands. Sharp design. Stories in motion.
           </TextReveal>
         </div>
