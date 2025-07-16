@@ -5,7 +5,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import BannerButton from "../buttons/BannerButton";
 import AnimatedButton from "../buttons/AnimatedButton";
-import BannerButton from "../buttons/BannerButton";
+// import BannerButton from "../buttons/BannerButton";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -98,10 +98,10 @@ const BannerSection = () => {
               Arrange an initial consultation
             </button> */}
 
-            <BannerButton
+            {/* <BannerButton
             text="text"
             href="/some"
-            />
+            /> */}
             {/* <button className="bg-[#222] text-white px-6 py-3 rounded-full text-sm font-medium whitespace-nowrap">
               button
             </button> */}
