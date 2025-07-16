@@ -209,7 +209,7 @@ const Snapshot = () => {
               <div
                 key={card.id}
                 data-card-id={card.id}
-                className={`card-item relative bg-white overflow-hidden cursor-pointer rounded-sm transition-all duration-300 ease-out
+                className={`card-item relative bg-black overflow-hidden cursor-pointer rounded-sm transition-all duration-300 ease-out
                   xl:flex-shrink-0 ${
                     isHovered
                       ? "xl:w-[420px]"

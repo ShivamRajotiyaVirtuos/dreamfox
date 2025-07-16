@@ -11,9 +11,12 @@ export default function Home() {
   return (
     <div className="bg-black min-h-screen">
       <Banner />
-      <WhatWeDo />
       <OurVision />
-      {/* <WhyDreamfox /> */}
+
+      <WhatWeDo />
+
+      <WhyDreamfox />
+
       <Snapshot />
       <div className="overflow-hidden">
         <ReviewsSection />

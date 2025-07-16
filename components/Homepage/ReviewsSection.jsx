@@ -92,7 +92,7 @@ const ReviewsSection = () => {
       </div>
 
       {/* Card Stack with 3D effect */}
-      <div className="relative h-[500px]  w-[1000px] max-w-full mt-40 perspective-[1200px]">
+      <div className="relative h-[250px] sm:h-[500px]  w-[1000px] max-w-full mt-40 perspective-[1200px]">
         {cards.map((img, index) => {
           const offset = cards.length - index;
           const translateY = -offset * 20;
@@ -102,7 +102,7 @@ const ReviewsSection = () => {
           return (
             <motion.div
               key={img}
-              className="absolute w-full h-full"
+              className="absolute w-full sm:h-full"
               style={{ zIndex: index }}
               animate={{
                 y: translateY,
@@ -120,7 +120,7 @@ const ReviewsSection = () => {
                 alt={`Slide ${index}`}
                 className="w-full h-full object-cover rounded-xl border-4 border-white shadow-2xl"
               /> */}
-              <div className="relative w-full h-full rounded overflow-hidden  shadow">
+              <div className="relative w-full sm:h-full rounded overflow-hidden  shadow">
                 <Image
                   height={1000}
                   width={1200}
@@ -128,7 +128,7 @@ const ReviewsSection = () => {
                   alt={`Slide ${index}`}
                   className="w-full  "
                 />
-                <div className="absolute bottom-0 left-0 w-full h-48 bg-gradient-to-t from-black to-transparent  pointer-events-none rounded-b" />
+                {/* <div className="absolute bottom-0 left-0 w-full h-48 bg-gradient-to-t from-black to-transparent  pointer-events-none rounded-b" /> */}
               </div>
             </motion.div>
           );
