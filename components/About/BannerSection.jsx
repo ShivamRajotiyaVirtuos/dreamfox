@@ -3,6 +3,8 @@
 import { useRef, useEffect } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import BannerButton from "../buttons/BannerButton";
+import AnimatedButton from "../buttons/AnimatedButton";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -50,7 +52,7 @@ const BannerSection = () => {
   return (
     <section
       ref={sectionRef}
-      className="relative w-full min-h-[80vh] bg-[#1a1a1a] flex items-center overflow-hidden"
+      className="relative w-full min-h-[80vh] bg-black flex items-center overflow-hidden"
     >
       {/* Gradient Circles */}
       <div
@@ -89,12 +91,14 @@ const BannerSection = () => {
           </div>
 
           <div className="flex flex-col sm:flex-row gap-4 shrink-0">
-            <button className="bg-white text-black px-6 py-3 rounded-full text-sm font-medium whitespace-nowrap">
+            <AnimatedButton text="Arrange an initial consultation" href="/" />
+            <AnimatedButton text="button" href="/" />
+            {/* <button className="bg-white text-black px-6 py-3 rounded-full text-sm font-medium whitespace-nowrap">
               Arrange an initial consultation
             </button>
             <button className="bg-[#222] text-white px-6 py-3 rounded-full text-sm font-medium whitespace-nowrap">
               button
-            </button>
+            </button> */}
           </div>
         </div>
       </div>

@@ -9,7 +9,6 @@ function Index() {
     <div>
       <BannerSection />
       <BeforeAfterGallery />
-      <BannerSection />
     </div>
   );
 }

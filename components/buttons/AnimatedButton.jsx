@@ -4,6 +4,7 @@ import { useRef, useEffect } from "react";
 import Link from "next/link";
 import { gsap } from "gsap";
 import { UserIcon } from "@heroicons/react/24/solid";
+import { ArrowRightIcon } from "@heroicons/react/24/outline";
 
 export default function AnimatedButton({ text = "ABOUT ME", href = "#" }) {
   const dotRef = useRef(null);
@@ -112,7 +113,10 @@ export default function AnimatedButton({ text = "ABOUT ME", href = "#" }) {
           ref={dotRef}
           className="absolute w-2.5 h-2.5 top-1.5 left-1.5 bg-white rounded-full"
         />
-        <UserIcon ref={userIconRef} className="absolute w-5 h-5 text-white" />
+        <ArrowRightIcon
+          ref={userIconRef}
+          className="absolute w-5 h-5 text-white"
+        />
       </div>
 
       {/* Text Stack */}
