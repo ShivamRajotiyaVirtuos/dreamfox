@@ -113,14 +113,7 @@ export default function AnimatedButton({ text = "ABOUT ME", href = "#" }) {
           ref={dotRef}
           className="absolute w-2.5 h-2.5 top-1.5 left-1.5 bg-white rounded-full"
         />
-<<<<<<< Updated upstream
-        <ArrowRightIcon
-          ref={userIconRef}
-          className="absolute w-5 h-5 text-white"
-        />
-=======
         <ArrowRightIcon ref={userIconRef} className="absolute w-5 h-5 text-white" />
->>>>>>> Stashed changes
       </div>
 
       {/* Text Stack */}

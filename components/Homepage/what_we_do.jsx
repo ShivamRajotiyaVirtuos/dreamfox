@@ -160,11 +160,7 @@ const WhatWeDo = () => {
           // ref={textRef}
           className="w-full md:w-1/3 z-10 text-center md:text-left"
         >
-<<<<<<< Updated upstream
-          <h2 className="text-80 font-semibold mb-4 md:mb-6 text-[#DC6263] mt-10 md:mt-0">
-=======
           <TextReveal className="text-60 font-semibold mb-4 md:mb-6 text-[#ec4672] mt-10 md:mt-0">
->>>>>>> Stashed changes
             What we do
           </TextReveal>
           <TextReveal className="text-30 text-gray-300 max-w-md mx-auto md:mx-0">
@@ -180,31 +176,6 @@ const WhatWeDo = () => {
         >
           <div className="relative w-full h-full max-w-none">
             {slides.map((slide, index) => (
-<<<<<<< Updated upstream
-          <div
-          key={index}
-          ref={(el) => (cardRefs.current[index] = el)}
-          className="card aspect-[1.2/1] h-[500px]  2xl:h-[750px] rounded-xl bg-gray-800 text-white absolute left-0 top-1/2 -translate-y-1/2 shadow-2xl border border-white/20 p-6 flex flex-col"
-          style={{
-            zIndex: 10 + index,
-          }}
-        >
-          {/* Full-width image with dynamic height */}
-          <div
-            className="w-full h-[85%] bg-cover bg-center rounded-lg mb-4"
-            style={{
-              backgroundImage: `url(${slide.image})`,
-            }}            
-          ></div>
-        
-          {/* Text below image */}
-          <div className="flex flex-col justify-center  flex-1">
-            <h3 className="text-xl md:text-2xl font-semibold mb-1">{slide.title}</h3>
-            <p className="text-sm md:text-base text-gray-300  ">{slide.description}</p>
-          </div>
-        </div>
-
-=======
               <div
                 key={index}
                 ref={(el) => (cardRefs.current[index] = el)}
@@ -220,7 +191,6 @@ const WhatWeDo = () => {
                     backgroundImage: `url(${slide.image})`,
                   }}
                 ></div>
->>>>>>> Stashed changes
 
                 {/* Text below image */}
                 <div className="flex flex-col justify-center  flex-1">
