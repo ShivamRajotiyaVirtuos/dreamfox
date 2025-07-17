@@ -92,7 +92,7 @@ const ReviewsSection = () => {
       </div>
 
       {/* Card Stack with 3D effect */}
-      <div className="relative h-[250px] sm:h-[500px]  w-[1000px] max-w-full mt-40 perspective-[1200px]">
+      <div className="relative h-[250px] sm:h-[500px]  w-[1000px] max-w-full mt-20 sm:mt-40 perspective-[1200px]">
         {cards.map((img, index) => {
           const offset = cards.length - index;
           const translateY = -offset * 20;
@@ -128,7 +128,7 @@ const ReviewsSection = () => {
                   alt={`Slide ${index}`}
                   className="w-full  "
                 />
-                {/* <div className="absolute bottom-0 left-0 w-full h-48 bg-gradient-to-t from-black to-transparent  pointer-events-none rounded-b" /> */}
+                <div className="absolute bottom-0 left-0 w-full h-48 bg-gradient-to-t from-black to-transparent  pointer-events-none rounded-b" />
               </div>
             </motion.div>
           );
@@ -136,7 +136,7 @@ const ReviewsSection = () => {
       </div>
 
       {/* Navigation Buttons */}
-      <div className="mt-16 flex gap-4">
+      <div className="mt-4 sm:mt-16 flex gap-4">
         <button
           onClick={moveBottomToTop}
           className="p-2 bg-[#1a1a1a] border border-white/30 rounded shadow hover:bg-gray-800 transition"

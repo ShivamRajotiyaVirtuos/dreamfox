@@ -59,7 +59,8 @@ const images = [
 export default function Services() {
   const containerRef = useRef(null);
   const slidesRef = useRef([]);
-
+  const firstTitle1Ref = useRef(null);
+  const firstTitle2Ref = useRef(null);
   useEffect(() => {
     const slides = slidesRef.current;
 
@@ -69,6 +70,10 @@ export default function Services() {
       position: "absolute",
       top: 0,
       left: 0,
+    });
+    gsap.set([firstTitle1Ref.current, firstTitle2Ref.current], {
+      scale: 0,
+      opacity: 0,
     });
 
     const totalSlides = slides.length;
@@ -85,7 +90,18 @@ export default function Services() {
         anticipatePin: 1,
       },
     });
-
+    gsap.to([firstTitle1Ref.current, firstTitle2Ref.current], {
+      scale: 1,
+      opacity: 1,
+      duration: 1.6,
+      ease: "power2.out",
+      stagger: 0.3, // 0.2s delay between title1 and title2
+      scrollTrigger: {
+        trigger: containerRef.current,
+        start: "top center",
+        toggleActions: "play none none reverse",
+      },
+    });
     return () => {
       ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
       scrollTween.kill();
@@ -102,24 +118,21 @@ export default function Services() {
             className="w-screen h-screen flex-shrink-0 absolute"
           >
             <figure className="relative bg-black w-full h-full m-0">
-              <img
+              {/* <img
                 src={images[0]?.src}
                 alt={images[0]?.alt}
                 className="w-96 h-96 object-cover"
-              />
+              /> */}
               <figcaption className="flex-col gap-4 absolute inset-0 flex items-center justify-center bg-black/40">
-                <h2 className="text-200 font-bold text-white px-6 py-2">
-                  <span
-                    className="inline-block  px-6 py-4 bg-clip-text text-transparent bg-gradient-to-r from-[#DC6263] to-[#D2448D]"
-                    // style={{
-                    //   WebkitTextStroke: "2px white",
-                    //   WebkitTextStrokeWidth: "2px",
-                    //   WebkitTextStrokeColor: "white",
-                    // }}
-                  >
+                <h2
+                  ref={firstTitle1Ref}
+                  className="text-200 font-bold text-white px-6 py-2"
+                >
+                  <span className="inline-block  px-6 py-4 bg-clip-text text-transparent bg-gradient-to-r from-[#DC6263] to-[#D2448D]">
                     {images[0].title1}
                   </span>
                   <span
+                    // ref={firstTitle2Ref}
                     className="inline-block  px-6 py-4 bg-clip-text text-transparent "
                     style={{
                       WebkitTextStroke: "2px #D2448D",
@@ -130,9 +143,9 @@ export default function Services() {
                     {images[0].title2}
                   </span>
                 </h2>
-                <p className="text-40 text-center max-w-4xl text-white px-6 py-2">
+                {/* <p className="text-40 max-w-4xl  text-white px-6 py-2">
                   {images[0]?.description}
-                </p>
+                </p> */}
               </figcaption>
             </figure>
           </div>
@@ -149,18 +162,22 @@ export default function Services() {
                 className="w-96 h-96 object-cover"
               />
               <figcaption className="flex-col gap-4 absolute inset-0 flex items-center justify-center bg-black/40">
-                <h2 className="text-200 font-bold text-white px-6 py-2">
-                  <span
-                    style={{
-                      WebkitTextStroke: "1px rgba(255,255,255,0.5)",
-                      WebkitTextStrokeWidth: "1px",
-                      WebkitTextStrokeColor: "rgba(255,255,255,0.5)",
-                    }}
-                  >
+                <h2 className="text-200 font-bold  py-2">
+                  <span className="inline-block   py-4 bg-clip-text  text-white bg-gradient-to-r from-[#DC6263] to-[#D2448D]">
                     {images[1].title1}
                   </span>
+                  <br />
+                  <span
+                    style={{
+                      WebkitTextStroke: "1px white",
+                      WebkitTextStrokeWidth: "1px",
+                      WebkitTextStrokeColor: "white",
+                    }}
+                  >
+                    {images[1].title2}
+                  </span>
                 </h2>
-                <p className="text-40 text-center max-w-4xl text-white px-6 py-2">
+                <p className="text-40  max-w-4xl text-white  py-2">
                   {images[1]?.description}
                 </p>
               </figcaption>
@@ -170,27 +187,31 @@ export default function Services() {
           {/* Third Card - Creative Design */}
           <div
             ref={(el) => (slidesRef.current[2] = el)}
-            className="w-screen h-screen flex-shrink-0 absolute"
+            className="w-screen h-screen  flex-shrink-0 absolute"
           >
-            <figure className="relative bg-black w-full h-full m-0">
+            <figure className="relative flex items-center justify-center bg-black w-full h-full m-0">
               <img
                 src={images[2]?.src}
                 alt={images[2]?.alt}
                 className="w-96 h-96 object-cover"
               />
               <figcaption className="flex-col gap-4 absolute inset-0 flex items-center justify-center bg-black/40">
-                <h2 className="text-200 font-bold text-white px-6 py-2">
-                  <span
-                    style={{
-                      WebkitTextStroke: "1px rgba(255,255,255,0.5)",
-                      WebkitTextStrokeWidth: "1px",
-                      WebkitTextStrokeColor: "rgba(255,255,255,0.5)",
-                    }}
-                  >
+                <h2 className="text-200   font-bold   py-2">
+                  <span className="inline-block   py-4 bg-clip-text  text-white bg-gradient-to-r from-[#DC6263] to-[#D2448D]">
                     {images[2].title1}
                   </span>
+                  <br />
+                  <span
+                    style={{
+                      WebkitTextStroke: "1px white",
+                      WebkitTextStrokeWidth: "1px",
+                      WebkitTextStrokeColor: "white",
+                    }}
+                  >
+                    {images[2].title2}
+                  </span>
                 </h2>
-                <p className="text-40 text-center max-w-4xl text-white px-6 py-2">
+                <p className="text-40 max-w-5xl  text-white  py-2">
                   {images[2]?.description}
                 </p>
               </figcaption>
@@ -209,18 +230,21 @@ export default function Services() {
                 className="w-96 h-96 object-cover"
               />
               <figcaption className="flex-col gap-4 absolute inset-0 flex items-center justify-center bg-black/40">
-                <h2 className="text-200 font-bold text-white px-6 py-2">
-                  <span
-                    style={{
-                      WebkitTextStroke: "1px rgba(255,255,255,0.5)",
-                      WebkitTextStrokeWidth: "1px",
-                      WebkitTextStrokeColor: "rgba(255,255,255,0.5)",
-                    }}
-                  >
+                <h2 className="text-200 font-bold  px-6 py-2">
+                  <span className="inline-block  px-6 py-4 bg-clip-text  text-white bg-gradient-to-r from-[#DC6263] to-[#D2448D]">
                     {images[3].title1}
                   </span>
+                  <span
+                    style={{
+                      WebkitTextStroke: "1px white",
+                      WebkitTextStrokeWidth: "1px",
+                      WebkitTextStrokeColor: "white",
+                    }}
+                  >
+                    {images[3].title2}
+                  </span>
                 </h2>
-                <p className="text-40 text-center max-w-4xl text-white px-6 py-2">
+                <p className="text-40 text-center  text-white px-6 py-2">
                   {images[3]?.description}
                 </p>
               </figcaption>
@@ -239,18 +263,21 @@ export default function Services() {
                 className="w-96 h-96 object-cover"
               />
               <figcaption className="flex-col gap-4 absolute inset-0 flex items-center justify-center bg-black/40">
-                <h2 className="text-200 font-bold text-white px-6 py-2">
-                  <span
-                    style={{
-                      WebkitTextStroke: "1px rgba(255,255,255,0.5)",
-                      WebkitTextStrokeWidth: "1px",
-                      WebkitTextStrokeColor: "rgba(255,255,255,0.5)",
-                    }}
-                  >
+                <h2 className="text-200 font-bold px-6 py-2">
+                  <span className="inline-block  px-6 py-4 bg-clip-text  text-white bg-gradient-to-r from-[#DC6263] to-[#D2448D]">
                     {images[4].title1}
                   </span>
+                  <span
+                    style={{
+                      WebkitTextStroke: "1px white",
+                      WebkitTextStrokeWidth: "1px",
+                      WebkitTextStrokeColor: "white",
+                    }}
+                  >
+                    {images[4].title2}
+                  </span>
                 </h2>
-                <p className="text-40 text-center max-w-4xl text-white px-6 py-2">
+                <p className="text-40 text-center  text-white px-6 py-2">
                   {images[4]?.description}
                 </p>
               </figcaption>
@@ -269,18 +296,21 @@ export default function Services() {
                 className="w-96 h-96 object-cover"
               />
               <figcaption className="flex-col gap-4 absolute inset-0 flex items-center justify-center bg-black/40">
-                <h2 className="text-200 font-bold text-white px-6 py-2">
-                  <span
-                    style={{
-                      WebkitTextStroke: "1px rgba(255,255,255,0.5)",
-                      WebkitTextStrokeWidth: "1px",
-                      WebkitTextStrokeColor: "rgba(255,255,255,0.5)",
-                    }}
-                  >
+                <h2 className="text-200 font-bold e px-6 py-2">
+                  <span className="inline-block  px-6 py-4 bg-clip-text  text-white bg-gradient-to-r from-[#DC6263] to-[#D2448D]">
                     {images[5].title1}
                   </span>
+                  <span
+                    style={{
+                      WebkitTextStroke: "1px white",
+                      WebkitTextStrokeWidth: "1px",
+                      WebkitTextStrokeColor: "white",
+                    }}
+                  >
+                    {images[5].title2}
+                  </span>
                 </h2>
-                <p className="text-40 text-center max-w-4xl text-white px-6 py-2">
+                <p className="text-40 text-center  text-white px-6 py-2">
                   {images[5]?.description}
                 </p>
               </figcaption>
