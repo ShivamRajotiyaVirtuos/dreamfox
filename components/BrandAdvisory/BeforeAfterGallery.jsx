@@ -53,10 +53,10 @@ const BeforeAfterGallery = ({
   return (
     <div
       ref={sectionRef}
-      className="flex flex-col justify-center items-center bg-black py-16 md:py-32 relative overflow-hidden"
+      className="flex flex-col justify-center items-center bg-black pt-16 md:pt-32 relative overflow-hidden"
     >
       {/* Magenta Glow Blob - True Semi Circle with Glow and GSAP animation */}
-      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 z-0 w-[60vw] max-w-4xl h-[20vw] max-h-[20rem] pointer-events-none">
+      {/* <div className="absolute bottom-0 left-1/2 -translate-x-1/2 z-0 w-[60vw] max-w-4xl h-[20vw] max-h-[20rem] pointer-events-none">
         <div
           ref={blobRef}
           className="w-full h-full rounded-t-full"
@@ -67,7 +67,7 @@ const BeforeAfterGallery = ({
             boxShadow: "0 0 120px 40px #D2448D, 0 0 240px 80px #DC6263",
           }}
         />
-      </div>
+      </div> */}
       <TextReveal
         animation="rotateX"
         stagger={0.1}

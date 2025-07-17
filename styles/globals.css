@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&family=Geist+Mono:wght@100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Oranienbaum&display=swap");
-@import url('https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&family=Geist+Mono:wght@100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Oranienbaum&family=Sora:wght@100..800&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&family=Geist+Mono:wght@100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Oranienbaum&family=Sora:wght@100..800&display=swap");
 @import "tailwindcss";
 
 /* Add font-family utilities */
@@ -7,11 +7,13 @@
   font-family: "Sora", sans-serif;
   font-family: "Arimo", sans-serif;
 } */
-h1,h2,h3{
+h1,
+h2,
+h3 {
   font-family: "Sora", sans-serif;
-
 }
-body p, body span {
+body p,
+body span {
   /* font-family: "Sora", sans-serif; */
   font-family: "Arimo", sans-serif;
 }
@@ -185,8 +187,6 @@ body p, body span {
   }
 }
 
-
-
 /* text-120 - 120px on desktop, scales down */
 .text-120 {
   font-size: 48px;
@@ -246,7 +246,77 @@ body p, body span {
     font-size: 130px;
   }
 }
+/* text-200 - 200px on desktop, scales down */
+.text-200 {
+  font-size: 48px;
+  line-height: 1.1;
+}
 
+@media (min-width: 640px) {
+  .text-200 {
+    font-size: 80px;
+  }
+}
+
+@media (min-width: 768px) {
+  .text-200 {
+    font-size: 112px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .text-200 {
+    font-size: 144px;
+  }
+}
+
+@media (min-width: 1324px) {
+  .text-200 {
+    font-size: 176px;
+  }
+}
+
+@media (min-width: 1536px) {
+  .text-200 {
+    font-size: 200px;
+  }
+}
+
+/* text-250 - 250px on desktop, scales down */
+.text-250 {
+  font-size: 60px;
+  line-height: 1.1;
+}
+
+@media (min-width: 640px) {
+  .text-250 {
+    font-size: 100px;
+  }
+}
+
+@media (min-width: 768px) {
+  .text-250 {
+    font-size: 140px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .text-250 {
+    font-size: 180px;
+  }
+}
+
+@media (min-width: 1324px) {
+  .text-250 {
+    font-size: 220px;
+  }
+}
+
+@media (min-width: 1536px) {
+  .text-250 {
+    font-size: 250px;
+  }
+}
 /* Container class */
 .container {
   width: 100%;

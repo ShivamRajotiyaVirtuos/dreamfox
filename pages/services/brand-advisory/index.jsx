@@ -1,13 +1,14 @@
-import BrandAdvisoryProcess from "@/components/Services/Brand-Advisory/process";
-import Services_Brand from "@/components/Services/Brand-Advisory/services";
+import BeforeAfterGallery from "@/components/BrandAdvisory/BeforeAfterGallery";
+import BrandAdvisoryProcess from "@/components/BrandAdvisory/process";
+import Services from "@/components/BrandAdvisory/services";
 import React from "react";
 
 const Brand = () => {
   return (
     <div>
-      <Services_Brand/>
+      <BeforeAfterGallery/>
+      <Services/>
       <BrandAdvisoryProcess />
-      
     </div>
   );
 };
