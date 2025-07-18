@@ -13,13 +13,22 @@ const SmoothScroll = dynamic(
   }
 );
 
+const ScrollSmootherWrapper = dynamic(
+  () => import("@/components/SmoothScroll/SmoothScrollWrapper"),
+  {
+    ssr: false,
+  }
+);
+
 export default function App({ Component, pageProps }) {
   return (
     <Layout>
       <WebGLCursorEffect />
-      <SmoothScroll>
+      {/* <SmoothScroll> */}
+      <ScrollSmootherWrapper>
         <Component {...pageProps} />
-      </SmoothScroll>
+      </ScrollSmootherWrapper>
+      {/* </SmoothScroll> */}
     </Layout>
   );
 }

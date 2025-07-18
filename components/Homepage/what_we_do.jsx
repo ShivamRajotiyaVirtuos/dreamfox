@@ -4,6 +4,7 @@ import React, { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import TextReveal from "../Text Reveal/textreveal";
+import { useGSAP } from "@gsap/react";
 
 gsap.registerPlugin(ScrollTrigger);
 const slides = [
@@ -39,7 +40,10 @@ const WhatWeDo = () => {
   const cardRefs = useRef([]);
   // const [isDesktop, setIsDesktop] = useState(false);
 
-  useEffect(() => {
+  useGSAP(() => {
+    // ScrollTrigger.defaults({
+    //   scroller: "#smooth-content", // ✅ Required for ScrollSmoother
+    // });
     const ctx = gsap.context(() => {
       ScrollTrigger.matchMedia({
         "(min-width: 801px)": function () {
