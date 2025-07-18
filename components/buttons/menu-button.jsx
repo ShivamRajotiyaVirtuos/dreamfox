@@ -64,7 +64,7 @@ const MenuButton = () => {
   const menuItems = [
     { name: "Home", href: "/" },
     { name: "About", href: "/about" },
-    { name: "Services", href: "/services" },
+    { name: "Services", href: "/services/brand-advisory" },
     { name: "Portfolio", href: "/portfolio" },
     { name: "Technologies", href: "/technologies" },
     { name: "Contact Us", href: "/contact" },

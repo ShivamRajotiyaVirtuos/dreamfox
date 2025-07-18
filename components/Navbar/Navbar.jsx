@@ -10,7 +10,7 @@ const Navbar = () => {
   const menuItems = [
     { name: "Home", href: "#home" },
     { name: "About", href: "#about" },
-    { name: "Services", href: "#services" },
+    { name: "Services", href: "/services/brand-advisory" },
     { name: "Portfolio", href: "#portfolio" },
     { name: "Contact", href: "#contact" },
     { name: "Blog", href: "#blog" },

@@ -61,6 +61,13 @@ export default function Services() {
   const slidesRef = useRef([]);
   const firstTitle1Ref = useRef(null);
   const firstTitle2Ref = useRef(null);
+  const image2ref = useRef(null);
+  const image3ref = useRef(null);
+  const image4ref = useRef(null);
+  const image5ref = useRef(null);
+  const image6ref = useRef(null);
+
+
   useEffect(() => {
     const slides = slidesRef.current;
 
@@ -75,7 +82,69 @@ export default function Services() {
       scale: 0,
       opacity: 0,
     });
+    // gsap.set(
+    //   [
+    //     image2ref.current,
+    //     image3ref.current,
+    //     image4ref.current,
+    //     image5ref.current,
+    //   ],
+    //   {
+    //     scale: 0.8,
+    //     opacity: 0,
+    //     rotateX: gsap.utils.random(-20, 20),
+    //     rotateY: gsap.utils.random(-20, 20),
+    //     rotateZ: gsap.utils.random(-10, 10),
+    //     transformPerspective: 400,
+    //     transformOrigin: "center",
+    //   }
+    // );
 
+    gsap.set(image2ref.current, {
+      scale: 0.8,
+      opacity: 0,
+      rotateX: gsap.utils.random(-20, 20),
+      rotateY: gsap.utils.random(-20, 20),
+      rotateZ: gsap.utils.random(-10, 10),
+      transformPerspective: 400,
+      transformOrigin: "center",
+    });
+    gsap.set(image3ref.current, {
+      scale: 0.8,
+      opacity: 0,
+      rotateX: gsap.utils.random(-20, 20),
+      rotateY: gsap.utils.random(-20, 20),
+      rotateZ: gsap.utils.random(-10, 10),
+      transformPerspective: 400,
+      transformOrigin: "center",
+    });
+    gsap.set(image4ref.current, {
+      scale: 0.8,
+      opacity: 0,
+      rotateX: gsap.utils.random(-20, 20),
+      rotateY: gsap.utils.random(-20, 20),
+      rotateZ: gsap.utils.random(-10, 10),
+      transformPerspective: 400,
+      transformOrigin: "center",
+    });
+    gsap.set(image5ref.current, {
+      scale: 0.8,
+      opacity: 0,
+      rotateX: gsap.utils.random(-20, 20),
+      rotateY: gsap.utils.random(-20, 20),
+      rotateZ: gsap.utils.random(-10, 10),
+      transformPerspective: 400,
+      transformOrigin: "center",
+    });
+    gsap.set(image6ref.current, {
+      scale: 0.8,
+      opacity: 0,
+      rotateX: gsap.utils.random(-20, 20),
+      rotateY: gsap.utils.random(-20, 20),
+      rotateZ: gsap.utils.random(-10, 10),
+      transformPerspective: 400,
+      transformOrigin: "center",
+    });
     const totalSlides = slides.length;
 
     const scrollTween = gsap.to(slides, {
@@ -102,6 +171,39 @@ export default function Services() {
         toggleActions: "play none none reverse",
       },
     });
+
+    gsap.to(
+      [
+        image2ref.current,
+        image3ref.current,
+        image4ref.current,
+        image5ref.current,
+        image6ref.current,
+
+      ],
+      {
+        // y: "-120vh",
+        opacity: 1,
+        duration: 4,
+        ease: "power1.out",
+        stagger: 0.3,
+      }
+      //   "+=0.5"
+    );
+    // gsap.to(image2ref.current, {
+    //   scale: 1,
+    //   opacity: 1,
+    //   rotation: 10,
+
+    //   duration: 1.2,
+    //   ease: "power2.out",
+    //   scrollTrigger: {
+    //     markers: true,
+    //     trigger: slidesRef.current[1],
+    //     start: "top +80%",
+    //     toggleActions: "play none none reverse",
+    //   },
+    // });
     return () => {
       ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
       scrollTween.kill();
@@ -155,32 +257,37 @@ export default function Services() {
             ref={(el) => (slidesRef.current[1] = el)}
             className="w-screen h-screen flex-shrink-0 absolute"
           >
-            <figure className="relative bg-black w-full h-full m-0">
+            <figure className="relative bg-black flex gap-10 items-center justify-center w-full h-full m-0">
               <img
+                ref={image2ref}
                 src={images[1]?.src}
                 alt={images[1]?.alt}
-                className="w-96 h-96 object-cover"
+                className="w-[26rem] h-[40rem] object-cover"
               />
-              <figcaption className="flex-col gap-4 absolute inset-0 flex items-center justify-center bg-black/40">
-                <h2 className="text-200 font-bold  py-2">
-                  <span className="inline-block   py-4 bg-clip-text  text-white bg-gradient-to-r from-[#DC6263] to-[#D2448D]">
-                    {images[1].title1}
-                  </span>
-                  <br />
-                  <span
-                    style={{
-                      WebkitTextStroke: "1px white",
-                      WebkitTextStrokeWidth: "1px",
-                      WebkitTextStrokeColor: "white",
-                    }}
-                  >
-                    {images[1].title2}
-                  </span>
-                </h2>
-                <p className="text-40  max-w-4xl text-white  py-2">
-                  {images[1]?.description}
-                </p>
-              </figcaption>
+              <div className="flex-col gap-4  flex items-center justify-center bg-black/40">
+                <div className="flex items-center justify-center flex-col">
+                  <h2 className="text-200 font-bold  py-2">
+                    <span className="inline-block   py-4 bg-clip-text  text-white bg-gradient-to-r from-[#DC6263] to-[#D2448D]">
+                      {images[1].title1}
+                    </span>
+                    <br />
+                    <span
+                      className=" ml-36 flex justify-end"
+                      style={{
+                        WebkitTextStroke: "1px white",
+                        WebkitTextStrokeWidth: "1px",
+                        WebkitTextStrokeColor: "white",
+                        // mixBlendMode: "screen",
+                      }}
+                    >
+                      {images[1].title2}
+                    </span>
+                  </h2>
+                  <p className="text-40 pl-72 max-w-7xl mt-10 text-white  py-2">
+                    {images[1]?.description}
+                  </p>
+                </div>
+              </div>
             </figure>
           </div>
 
@@ -191,11 +298,12 @@ export default function Services() {
           >
             <figure className="relative flex items-center justify-center bg-black w-full h-full m-0">
               <img
+                ref={image3ref}
                 src={images[2]?.src}
                 alt={images[2]?.alt}
-                className="w-96 h-96 object-cover"
+                className="w-[26rem] h-[40rem] object-cover"
               />
-              <figcaption className="flex-col gap-4 absolute inset-0 flex items-center justify-center bg-black/40">
+              <figcaption className="flex-col gap-4  flex items-center justify-center bg-black/40">
                 <h2 className="text-200   font-bold   py-2">
                   <span className="inline-block   py-4 bg-clip-text  text-white bg-gradient-to-r from-[#DC6263] to-[#D2448D]">
                     {images[2].title1}
@@ -211,7 +319,7 @@ export default function Services() {
                     {images[2].title2}
                   </span>
                 </h2>
-                <p className="text-40 max-w-5xl  text-white  py-2">
+                <p className="text-40 max-w-5xl  text-white ml-10  py-2">
                   {images[2]?.description}
                 </p>
               </figcaption>
@@ -223,50 +331,58 @@ export default function Services() {
             ref={(el) => (slidesRef.current[3] = el)}
             className="w-screen h-screen flex-shrink-0 absolute"
           >
-            <figure className="relative bg-black w-full h-full m-0">
+            <figure className="relative bg-black flex gap-10 items-center justify-center w-full h-full m-0">
               <img
+                ref={image4ref}
                 src={images[3]?.src}
                 alt={images[3]?.alt}
-                className="w-96 h-96 object-cover"
+                className="w-[26rem] h-[40rem] object-cover"
               />
-              <figcaption className="flex-col gap-4 absolute inset-0 flex items-center justify-center bg-black/40">
-                <h2 className="text-200 font-bold  px-6 py-2">
-                  <span className="inline-block  px-6 py-4 bg-clip-text  text-white bg-gradient-to-r from-[#DC6263] to-[#D2448D]">
-                    {images[3].title1}
-                  </span>
-                  <span
-                    style={{
-                      WebkitTextStroke: "1px white",
-                      WebkitTextStrokeWidth: "1px",
-                      WebkitTextStrokeColor: "white",
-                    }}
-                  >
-                    {images[3].title2}
-                  </span>
-                </h2>
-                <p className="text-40 text-center  text-white px-6 py-2">
-                  {images[3]?.description}
-                </p>
-              </figcaption>
+              <div className="flex-col gap-4  flex items-center justify-center bg-black/40">
+                <div className="flex items-center justify-center flex-col">
+                  <h2 className="text-200 font-bold  py-2">
+                    <span className="inline-block   py-4 bg-clip-text  text-white bg-gradient-to-r from-[#DC6263] to-[#D2448D]">
+                      {images[3].title1}
+                    </span>
+                    <br />
+                    <span
+                      className=" ml-36 flex justify-end"
+                      style={{
+                        WebkitTextStroke: "1px white",
+                        WebkitTextStrokeWidth: "1px",
+                        WebkitTextStrokeColor: "white",
+                        // mixBlendMode: "screen",
+                      }}
+                    >
+                      {images[3].title2}
+                    </span>
+                  </h2>
+                  <p className="text-40 pl-72 max-w-7xl mt-10 text-white  py-2">
+                    {images[3]?.description}
+                  </p>
+                </div>
+              </div>
             </figure>
           </div>
 
           {/* Fifth Card - Content Creation */}
           <div
             ref={(el) => (slidesRef.current[4] = el)}
-            className="w-screen h-screen flex-shrink-0 absolute"
+            className="w-screen h-screen  flex-shrink-0 absolute"
           >
-            <figure className="relative bg-black w-full h-full m-0">
+            <figure className="relative flex items-center justify-center bg-black w-full h-full m-0">
               <img
+                ref={image5ref}
                 src={images[4]?.src}
                 alt={images[4]?.alt}
-                className="w-96 h-96 object-cover"
+                className="w-[26rem] h-[40rem] object-cover"
               />
-              <figcaption className="flex-col gap-4 absolute inset-0 flex items-center justify-center bg-black/40">
-                <h2 className="text-200 font-bold px-6 py-2">
-                  <span className="inline-block  px-6 py-4 bg-clip-text  text-white bg-gradient-to-r from-[#DC6263] to-[#D2448D]">
+              <figcaption className="flex-col gap-4  flex items-center justify-center bg-black/40">
+                <h2 className="text-200   font-bold   py-2">
+                  <span className="inline-block   py-4 bg-clip-text  text-white bg-gradient-to-r from-[#DC6263] to-[#D2448D]">
                     {images[4].title1}
                   </span>
+                  <br />
                   <span
                     style={{
                       WebkitTextStroke: "1px white",
@@ -277,7 +393,7 @@ export default function Services() {
                     {images[4].title2}
                   </span>
                 </h2>
-                <p className="text-40 text-center  text-white px-6 py-2">
+                <p className="text-40 max-w-5xl  text-white ml-10  py-2">
                   {images[4]?.description}
                 </p>
               </figcaption>
@@ -289,31 +405,37 @@ export default function Services() {
             ref={(el) => (slidesRef.current[5] = el)}
             className="w-screen h-screen flex-shrink-0 absolute"
           >
-            <figure className="relative bg-black w-full h-full m-0">
+            <figure className="relative bg-black flex gap-10 items-center justify-center w-full h-full m-0">
               <img
+                ref={image6ref}
                 src={images[5]?.src}
                 alt={images[5]?.alt}
-                className="w-96 h-96 object-cover"
+                className="w-[26rem] h-[40rem] object-cover"
               />
-              <figcaption className="flex-col gap-4 absolute inset-0 flex items-center justify-center bg-black/40">
-                <h2 className="text-200 font-bold e px-6 py-2">
-                  <span className="inline-block  px-6 py-4 bg-clip-text  text-white bg-gradient-to-r from-[#DC6263] to-[#D2448D]">
-                    {images[5].title1}
-                  </span>
-                  <span
-                    style={{
-                      WebkitTextStroke: "1px white",
-                      WebkitTextStrokeWidth: "1px",
-                      WebkitTextStrokeColor: "white",
-                    }}
-                  >
-                    {images[5].title2}
-                  </span>
-                </h2>
-                <p className="text-40 text-center  text-white px-6 py-2">
-                  {images[5]?.description}
-                </p>
-              </figcaption>
+              <div className="flex-col gap-4  flex items-center justify-center bg-black/40">
+                <div className="flex items-center justify-center flex-col">
+                  <h2 className="text-200 font-bold  py-2">
+                    <span className="inline-block   py-4 bg-clip-text  text-white bg-gradient-to-r from-[#DC6263] to-[#D2448D]">
+                      {images[5].title1}
+                    </span>
+                    <br />
+                    <span
+                      className=" ml-36 flex justify-end"
+                      style={{
+                        WebkitTextStroke: "1px white",
+                        WebkitTextStrokeWidth: "1px",
+                        WebkitTextStrokeColor: "white",
+                        // mixBlendMode: "screen",
+                      }}
+                    >
+                      {images[5].title2}
+                    </span>
+                  </h2>
+                  <p className="text-40 pl-94 max-w-7xl mt-10  text-white  py-2">
+                    {images[5]?.description}
+                  </p>
+                </div>
+              </div>
             </figure>
           </div>
         </div>
