@@ -111,6 +111,9 @@ export default function OurVision() {
   const container = useRef(null);
 
   useGSAP(() => {
+    // ScrollTrigger.defaults({
+    //   scroller: "#smooth-content",
+    // });
     const splitHeading = new SplitText(container.current.querySelector("h1"), {
       type: "lines, words",
       linesClass: "split-line",
