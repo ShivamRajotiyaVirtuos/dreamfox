@@ -30,14 +30,14 @@ const CultureValuesSection = () => {
   return (
     <section className="bg-black w-full">
       {/* Heading with animation */}
-      <TextReveal
+      <p
         className="text-120 text-white text-center font-semibold mb-4 md:mb-6 lg:mb-8 pt-20"
         animation="rotateX"
         stagger={0.1}
         duration={0.8}
       >
         Culture & Values
-      </TextReveal>
+      </p>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4  border-t-2 border-b-2 md:border-b-0 border-l-2 border-r-2 border-dashed border-gray-700">
         {valuesData.map((item, index) => (
@@ -46,19 +46,19 @@ const CultureValuesSection = () => {
             className="bg-[#111] text-white border-t-2 md:border-t-0  md:border-r-2 border-b-2 border-dashed border-gray-700 last:border-r-0 flex flex-col items-center justify-center px-6 py-16"
           >
             {/* Icon Animation */}
-            <TextReveal animation="scale" className="mb-4">
+            <p animation="scale" className="mb-4">
               <div className="text-white">{item.icon}</div>
-            </TextReveal>
+            </p>
 
             {/* Title Animation */}
-            <TextReveal animation="slideRight" className="text-40 font-semibold text-center mb-4">
+            <p animation="slideRight" className="text-40 font-semibold text-center mb-4">
               {item.title}
-            </TextReveal>
+            </p>
 
             {/* Description Animation */}
-            <TextReveal className="text-center text-20 text-gray-300">
+            <p className="text-center text-20 text-gray-300">
               {item.description}
-            </TextReveal>
+            </p>
           </div>
         ))}
       </div>

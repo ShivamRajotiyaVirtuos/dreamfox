@@ -240,14 +240,24 @@ const Footer = () => {
         <div className="flex flex-col space-y-4">
           <h3 className="text-24 uppercase tracking-widest text-30">Drop your email</h3>
           <p className="text-24 uppercase tracking-widest text-30">Let’s have a chat</p>
-          <button className="flex items-center bg-gray-200 text-black rounded-full overflow-hidden max-w-md">
-            <span className="px-4 py-2 w-full text-24 bg-transparent text-left">
-              Get Started Today
-            </span>
-            <div className="bg-black m-3 h-13 w-13 text-white px-4 py-2 rounded-full flex items-center justify-center">
-              <ArrowRightIcon className="h-5 w-5 text-white" />
-            </div>
-          </button>
+          <button className="group flex items-center bg-gray-200 text-black rounded-full overflow-hidden max-w-[350px] transition-all">
+          <span className="px-4 py-2 w-full text-24 bg-transparent text-left">
+            Get Started Today
+          </span>
+
+          {/* Icon container */}
+          <div className="relative bg-black m-2 h-12 w-16 rounded-full overflow-hidden flex items-center justify-center">
+            {/* Outgoing arrow (exits top-right) */}
+            <ArrowRightIcon
+              className="absolute h-5 w-5 text-white -rotate-45 transition-all duration-500 ease-out group-hover:translate-x-6 group-hover:-translate-y-6 group-hover:opacity-0"
+            />
+
+            {/* Incoming arrow (enters from bottom-left) */}
+            <ArrowRightIcon
+              className="absolute h-5 w-5 text-white -rotate-45 opacity-0 transition-all duration-500 ease-out delay-100 group-hover:opacity-100 group-hover:translate-x-0 group-hover:translate-y-0 -translate-x-4 translate-y-4"
+            />
+          </div>
+        </button>
         </div>
       </div>
 
