@@ -80,7 +80,7 @@ const OurWork = () => {
     tl.to(
       imagesRef.current.slice(0, 4),
       {
-        y: "-120vh",
+        y: "-130vh",
         opacity: 1,
         duration: 4,
         ease: "power1.out",
@@ -101,7 +101,7 @@ const OurWork = () => {
     ).to(
       imagesRef.current.slice(4, 8),
       {
-        y: "-120vh",
+        y: "-130vh",
         opacity: 1,
         duration: 4,
         ease: "power1.out",
@@ -122,7 +122,7 @@ const OurWork = () => {
     ).to(
       imagesRef.current.slice(8, 12),
       {
-        y: "-120vh",
+        y: "-130vh",
         opacity: 1,
         duration: 10,
         ease: "power1.out",
@@ -189,7 +189,7 @@ const OurWork = () => {
           alt={`Work ${index + 1}`}
           className="absolute w-[15vw] h-[40vh] object-cover rounded-lg shadow-2xl z-20"
           style={{
-            left: `${Math.random() * 80 + 10}%`,
+            left: `${Math.random() * 40 + 20}%`,
             bottom: "-200px",
           }}
         />
