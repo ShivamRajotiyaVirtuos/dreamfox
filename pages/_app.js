@@ -22,13 +22,13 @@ const ScrollSmootherWrapper = dynamic(
 
 export default function App({ Component, pageProps }) {
   return (
-    <Layout>
+    <>
       <WebGLCursorEffect />
       {/* <SmoothScroll> */}
       <ScrollSmootherWrapper>
         <Component {...pageProps} />
       </ScrollSmootherWrapper>
       {/* </SmoothScroll> */}
-    </Layout>
+    </>
   );
 }
