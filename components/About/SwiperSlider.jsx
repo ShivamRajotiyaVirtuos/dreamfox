@@ -39,62 +39,63 @@ const SwiperSlider = () => {
   }, []);
 
   const slides = [
-    {
-      url: "https://cdn.josetxu.com/img/gp-tonin-rocodromo.jpg",
-      name: "Carlos Rubio",
-      description: "Climbing El Rocodromo, La Pedriza",
-    },
-    {
-      url: "https://cdn.josetxu.com/img/gp-normal-caliz.jpg",
-      name: "Josetxu López",
-      description: "Route: Normal (Ae) at El Caliz",
-    },
-    {
-      url: "https://cdn.josetxu.com/img/gp-cumbre-totem.jpg",
-      name: "Aitor & Josefer",
-      description: "Sur Clasica (6a), El Totem",
-    },
-    {
-      url: "https://cdn.josetxu.com/img/gp-oscar-raul-hueco-hoces2.jpg",
-      name: "Oscar & Raul",
-      description: "Hueco de las Hoces, La Pedriza",
-    },
-    {
-      url: "https://cdn.josetxu.com/img/gp-gallego-cueva-mora.jpg",
-      name: "Jarutxi Mora",
-      description: "Gallego (V+) at Cueva de la Mora",
-    },
-    {
-      url: "https://cdn.josetxu.com/img/gp-chimenea-tortuga.jpg",
-      name: "Nacho Ruiz",
-      description: "Chimenea (6a) - La Tortuga",
-    },
-    {
-      url: "https://cdn.josetxu.com/img/gp-blues-ojos-bonitos-tres-coronas.jpg",
-      name: "Marino",
-      description: "Blues de los ojos bonitos (6a+)",
-    },
-    {
-      url: "https://cdn.josetxu.com/img/gp-capuchon-sarcofago.jpg",
-      name: "Josetxu & Uge",
-      description: "Capuchon (6a/A1), El Sarcofago",
-    },
-    {
-      url: "https://cdn.josetxu.com/img/gp-rosario-cueva-mora.jpg",
-      name: "Eloy Atajos",
-      description: "Rosario (Vº) - Cueva de la Mora",
-    },
-    {
-      url: "https://cdn.josetxu.com/img/gp-me-pesa-hasta-el-aire-dehesilla.jpg",
-      name: "Indio",
-      description: "Me pesa hasta el aire (A2/A3?)",
-    },
-    {
-      url: "https://cdn.josetxu.com/img/gp-anonima-tres-coronas.jpg",
-      name: "Krispin Talavera",
-      description: "Anónima (6c) - Tres Coronas",
-    },
-  ];
+  {
+    url: "https://cdn.josetxu.com/img/gp-tonin-rocodromo.jpg",
+    name: "Rahul Mehta",
+    description: "Frontend Developer specializing in React and Tailwind CSS",
+  },
+  {
+    url: "https://cdn.josetxu.com/img/gp-normal-caliz.jpg",
+    name: "Aisha Kapoor",
+    description: "UI/UX Designer crafting user-centered digital experiences",
+  },
+  {
+    url: "https://cdn.josetxu.com/img/gp-cumbre-totem.jpg",
+    name: "Arjun Reddy",
+    description: "Full Stack Developer with MERN expertise",
+  },
+  {
+    url: "https://cdn.josetxu.com/img/gp-oscar-raul-hueco-hoces2.jpg",
+    name: "Neha Sharma",
+    description: "Cloud Engineer deploying scalable AWS infrastructure",
+  },
+  {
+    url: "https://cdn.josetxu.com/img/gp-gallego-cueva-mora.jpg",
+    name: "Kabir Singh",
+    description: "Backend Developer working with Node.js and GraphQL",
+  },
+  {
+    url: "https://cdn.josetxu.com/img/gp-chimenea-tortuga.jpg",
+    name: "Sneha Iyer",
+    description: "Mobile App Developer building cross-platform apps with Flutter",
+  },
+  {
+    url: "https://cdn.josetxu.com/img/gp-blues-ojos-bonitos-tres-coronas.jpg",
+    name: "Vikram Nair",
+    description: "DevOps Engineer automating CI/CD pipelines",
+  },
+  {
+    url: "https://cdn.josetxu.com/img/gp-capuchon-sarcofago.jpg",
+    name: "Priya Desai",
+    description: "Machine Learning Engineer solving real-world problems with AI",
+  },
+  {
+    url: "https://cdn.josetxu.com/img/gp-rosario-cueva-mora.jpg",
+    name: "Rohan Bhatt",
+    description: "Cybersecurity Analyst focusing on threat detection",
+  },
+  {
+    url: "https://cdn.josetxu.com/img/gp-me-pesa-hasta-el-aire-dehesilla.jpg",
+    name: "Meera Sinha",
+    description: "Data Scientist turning raw data into insights",
+  },
+  {
+    url: "https://cdn.josetxu.com/img/gp-anonima-tres-coronas.jpg",
+    name: "Aditya Verma",
+    description: "Software Architect designing scalable systems",
+  },
+];
+
 
   return (
     <>
