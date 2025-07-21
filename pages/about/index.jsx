@@ -5,6 +5,7 @@ import CultureValuesSection from '@/components/About/CultureValuesSection';
 import Mission from '@/components/About/Mission';
 import StackingCards from '@/components/About/Timeline';
 import DreamFoxModel from '@/components/About/DreamFoxModel';
+import SwiperSlider from '@/components/About/SwiperSlider';
 
 
 function Index() {
@@ -14,7 +15,8 @@ function Index() {
             <StackingCards/>
             <DreamFoxModel/>
             <Mission/>
-            <Team/>
+            <SwiperSlider/>
+            {/* <Team/> */}
             <CultureValuesSection/>
         </div>
     )
