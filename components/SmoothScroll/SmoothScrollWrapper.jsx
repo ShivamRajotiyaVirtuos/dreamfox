@@ -5,6 +5,7 @@ import { ScrollSmoother } from "gsap/ScrollSmoother";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Navbar from "../Navbar/Navbar";
 import Footer from "../Homepage/Footer";
+import Navbar2 from "../Navbar/Navbar2";
 
 const ScrollSmootherWrapper = ({ children }) => {
   const wrapperRef = useRef(null);
@@ -46,11 +47,16 @@ const ScrollSmootherWrapper = ({ children }) => {
   }, []);
 
   return (
-    <div id="smooth-wrapper" ref={wrapperRef}>
-      <div id="smooth-content" ref={contentRef}>
-        <Navbar />
-        {children}
-        <Footer />
+    <div className="relative">
+      {/* Navbar outside of ScrollSmoother */}
+      <Navbar2 />
+      
+      {/* ScrollSmoother wrapper */}
+      <div id="smooth-wrapper" ref={wrapperRef}>
+        <div id="smooth-content" ref={contentRef}>
+          {children}
+          <Footer />
+        </div>
       </div>
     </div>
   );
