@@ -435,9 +435,9 @@ body span {
   overflow: visible !important;
 }
 
-#snapreel .swiper-wrapper {
+/* #snapreel .swiper-wrapper {
   transition-timing-function: linear !important;
-}
+} */
 @media (max-width: 640px) {
   #snapreel .swiper-wrapper {
     transition-timing-function: ease !important;

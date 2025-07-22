@@ -366,29 +366,34 @@ const Showreel = () => {
             spaceBetween={30}
             speed={3000}
             slidesPerView="auto"
+            easing="linear"
             breakpoints={{
               640: {
                 slidesPerView: 1,
                 spaceBetween: 20,
                 speed: 1000,
+                easing: "linear", // Add to each breakpoint
               },
               768: {
                 slidesPerView: 2,
                 spaceBetween: 25,
                 speed: 2000,
+                easing: "linear", // Add to each breakpoint
               },
               1024: {
                 slidesPerView: 2,
                 spaceBetween: 30,
+                easing: "linear", // Add to each breakpoint
               },
               1324: {
                 slidesPerView: 3,
                 spaceBetween: 30,
+                easing: "linear", // Add to each breakpoint
               },
             }}
             autoplay={{
               delay: 0,
-              pauseOnMouseEnter: false,
+              pauseOnMouseEnter: true,
               disableOnInteraction: false,
             }}
             navigation={{
@@ -484,7 +489,9 @@ const Showreel = () => {
                           alt={project.title}
                           className="w-full h-full border border-white/20 !rounded-3xl object-cover transition-transform duration-300 "
                         />
-                        <PlusCircleIcon className="size-7 lg:block hidden absolute top-4 right-4 text-white  transition-opacity duration-300" />
+                        {hoveredCard !== project.id && (
+                          <PlusCircleIcon className="size-7 lg:block hidden absolute top-4 right-4 text-white  transition-opacity duration-300" />
+                        )}
                         {hoveredCard !== project.id && (
                           <div className="p-4 absolute bottom-0">
                             <h3 className="text-20 bg-white backdrop-blur-sm rounded-full px-5 py-1 font-semibold text-black mb-2  line-clamp-2">
