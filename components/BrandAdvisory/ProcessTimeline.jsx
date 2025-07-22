@@ -3,6 +3,7 @@
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import TextReveal from "../Text Reveal/textreveal";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -84,9 +85,14 @@ export default function ProcessTimeline() {
 
   return (
     <>
-      <h1 className="text-white text-120 font-bold text-center py-12">
+      <TextReveal
+        animation="rotateX"
+        stagger={0.1}
+        duration={0.8}
+        className="text-white text-120 font-bold text-center py-12"
+      >
         Process Timeline
-      </h1>
+      </TextReveal>
       <section
         ref={containerRef}
         className="relative w-full h-screen overflow-hidden bg-black"
@@ -98,26 +104,84 @@ export default function ProcessTimeline() {
             ref={lineRef}
             width="100%"
             height="100%"
-            viewBox="0 0 1000 32"
+            viewBox="0 0 1000 100"
             preserveAspectRatio="none"
             className="w-full h-16"
             style={{ position: "absolute", left: 0, top: 0 }}
           >
-            {/* Heart-rate style line */}
+            {/* Gradient definitions */}
+            <defs>
+              <linearGradient
+                id="waveGradient"
+                x1="0%"
+                y1="0%"
+                x2="100%"
+                y2="0%"
+              >
+                <stop offset="0%" stopColor="#ec4899" />
+                <stop offset="25%" stopColor="#D2448D" />
+                <stop offset="50%" stopColor="#8b5cf6" />
+                <stop offset="75%" stopColor="#06b6d4" />
+                <stop offset="100%" stopColor="#3b82f6" />
+              </linearGradient>
+
+              <filter id="glow">
+                <feGaussianBlur stdDeviation="3" result="coloredBlur" />
+                <feMerge>
+                  <feMergeNode in="coloredBlur" />
+                  <feMergeNode in="SourceGraphic" />
+                </feMerge>
+              </filter>
+            </defs>
+
+            {/* Background wavy path */}
             <path
-              id="wavyPath"
-              d="M0,16 L100,16 L120,8 L140,24 L160,16 L300,16 L320,4 L340,28 L360,16 L500,16 L520,6 L540,26 L560,16 L700,16 L720,10 L740,22 L760,16 L1000,16"
-              stroke="#D2448D"
-              strokeWidth="6"
+              d="M0,50 Q100,20 200,50 T400,50 Q500,30 600,50 T800,50 Q900,25 1000,50"
+              stroke="url(#waveGradient)"
+              strokeWidth="8"
               fill="none"
-              style={{ opacity: 0.7 }}
+              opacity="0.3"
+              strokeDasharray="5,5"
+              className="animate-pulse"
             />
+
+            {/* Main animated wavy path */}
             <path
               ref={lineRef}
-              stroke="#D2448D"
-              strokeWidth="6"
+              d="M0,50 Q100,20 200,50 T400,50 Q500,30 600,50 T800,50 Q900,25 1000,50"
+              stroke="url(#waveGradient)"
+              strokeWidth="8"
               fill="none"
-              style={{ opacity: 1 }}
+              filter="url(#glow)"
+              strokeLinecap="round"
+              strokeDasharray="0"
+              style={{
+                opacity: 1,
+                pathLength: 1,
+                strokeDasharray: "1000",
+                strokeDashoffset: "1000",
+              }}
+            />
+
+            {/* Floating particles along path */}
+            <circle r="3" fill="#ec4899" opacity="0.8">
+              <animateMotion dur="8s" repeatCount="indefinite">
+                <mpath href="#wavePathMotion" />
+              </animateMotion>
+            </circle>
+
+            <circle r="2" fill="#8b5cf6" opacity="0.6">
+              <animateMotion dur="10s" repeatCount="indefinite" begin="2s">
+                <mpath href="#wavePathMotion" />
+              </animateMotion>
+            </circle>
+
+            {/* Hidden path for motion */}
+            <path
+              id="wavePathMotion"
+              d="M0,50 Q100,20 200,50 T400,50 Q500,30 600,50 T800,50 Q900,25 1000,50"
+              fill="none"
+              stroke="none"
             />
           </svg>
         </div>
@@ -128,27 +192,45 @@ export default function ProcessTimeline() {
             <div
               key={i}
               ref={(el) => (boxesRef.current[i] = el)}
-              className="w-[50rem] h-[30rem] bg-gray-900/60 backdrop-blur-2xl border-4 border-transparent rounded-3xl shadow-2xl p-1 flex items-center justify-center relative"
+              className="group h-[25rem] sm:h-[40rem] w-[80%] xl:w-[70rem] relative"
             >
-              {/* Pink glowing border */}
-              <div
-                className="absolute inset-0 rounded-3xl z-0 pointer-events-none"
-                style={{
-                  boxShadow: "0 0 40px 10px #d2448d, 0 0 80px 30px #dc6263",
-                  border: "4px solid transparent",
-                  borderRadius: "1.5rem",
-                  pointerEvents: "none",
-                  opacity: 0.7,
-                  transition: "box-shadow 0.3s",
-                }}
-              />
-              <div className="w-full h-full flex flex-col justify-center items-center text-center px-10 py-8 relative z-10">
-                <h2 className="text-80 italic font-extrabold text-[#D2448D] mb-4 drop-shadow-sm">
-                  {step.title}
-                </h2>
-                <p className="text-30 italic text-white max-w-md">
-                  {step.desc}
-                </p>
+              {/* Glowing background */}
+              <div className="absolute -inset-1 bg-gradient-to-r from-pink-600 to-purple-600 rounded-3xl blur opacity-25 group-hover:opacity-75 transition duration-1000 group-hover:duration-200" />
+
+              {/* Main card */}
+              <div className="relative bg-gray-900/80 backdrop-blur-xl border border-white/10 rounded-3xl p-8 h-full transform transition-all duration-500 group-hover:scale-105 group-hover:-translate-y-2">
+                {/* Floating icon */}
+                <div className="absolute -top-6 left-1/2 transform -translate-x-1/2">
+                  <div
+                    className={`w-16 h-16 bg-gradient-to-r ${step.gradient} rounded-2xl flex items-center justify-center text-2xl shadow-2xl transform rotate-3 group-hover:rotate-0 transition-transform duration-500`}
+                  >
+                    {step.icon}
+                  </div>
+                </div>
+
+                {/* Step number */}
+                <div className="absolute top-4 right-4 w-8 h-8 bg-white/10 rounded-full flex items-center justify-center text-sm font-bold text-white/60">
+                  {i + 1}
+                </div>
+
+                {/* Content */}
+                <div className="pt-8 text-center">
+                  <h3 className="text-120 font-bold mb-4 bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
+                    {step.title}
+                  </h3>
+                  <p className="text-gray-400 text-60 leading-relaxed">
+                    {step.desc}
+                  </p>
+                </div>
+
+                {/* Decorative elements */}
+                <div className="absolute bottom-4 left-4 w-2 h-2 bg-pink-500 rounded-full opacity-50" />
+                <div className="absolute bottom-4 right-4 w-1 h-1 bg-purple-500 rounded-full opacity-50" />
+
+                {/* Hover effect overlay */}
+                <div
+                  className={`absolute inset-0 bg-gradient-to-br ${step.gradient} opacity-0 group-hover:opacity-10 rounded-3xl transition-opacity duration-500`}
+                />
               </div>
             </div>
           ))}

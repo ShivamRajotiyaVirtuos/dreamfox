@@ -163,12 +163,12 @@ const OurWork = () => {
 
       {/* Main content */}
       <div className="relative z-10 text-center">
-        <h2 ref={titleRef} className="text-200 font-bold text-white px-6 py-2">
-          <span className="inline-block px-6 py-4 bg-clip-text text-transparent bg-gradient-to-r from-[#DC6263] to-[#D2448D]">
+        <h2 ref={titleRef} className="text-200 flex gap-3 sm:gap-0 font-bold text-white px-6 py-2">
+          <span className="inline-block sm:px-6 py-4 bg-clip-text text-transparent bg-gradient-to-r from-[#DC6263] to-[#D2448D]">
             Our
           </span>
           <span
-            className="inline-block px-6 py-4 bg-clip-text text-transparent"
+            className="inline-block sm:px-6 py-4 bg-clip-text text-transparent"
             style={{
               WebkitTextStroke: "2px #D2448D",
               WebkitTextStrokeWidth: "2px",
@@ -187,7 +187,7 @@ const OurWork = () => {
           ref={(el) => (imagesRef.current[index] = el)}
           src={src}
           alt={`Work ${index + 1}`}
-          className="absolute w-[15vw] h-[40vh] object-cover rounded-lg shadow-2xl z-20"
+          className="absolute sm:w-[15vw] sm:h-[40vh] object-cover rounded-lg shadow-2xl z-20"
           style={{
             left: `${Math.random() * 40 + 20}%`,
             bottom: "-200px",

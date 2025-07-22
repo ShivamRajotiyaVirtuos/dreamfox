@@ -86,8 +86,8 @@ const Navbar = () => {
     <nav
       className={`fixed top-0 container left-0 right-0 z-50 transition-all duration-500 ease-in-out ${
         isScrolled
-          ? "bg-gray-900/60 backdrop-blur-xl border border-white/10 sm:rounded-full sm:px-6 sm:py-4 sm:mt-4 shadow-full"
-          : "sm:bg-transparent bg-gray-900/60 backdrop-blur-xl"
+          ? "bg-gray-900/60 backdrop-blur-xl border border-white/10 lg:rounded-full xl:px-6  lg:mt-4 shadow-full"
+          : "lg:bg-transparent bg-gray-900/60 backdrop-blur-xl"
       }`}
     >
       <div
@@ -103,7 +103,7 @@ const Navbar = () => {
               alt="Logo"
               width={150}
               height={50}
-              className="h-9 sm:h-12 w-auto"
+              className="h-9 lg:h-12 w-auto"
             />
           </div>
 

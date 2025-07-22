@@ -53,7 +53,7 @@ const BeforeAfterGallery = ({
   return (
     <div
       ref={sectionRef}
-      className="flex flex-col justify-center items-center bg-black pt-16 md:pt-32 relative overflow-hidden"
+      className="flex flex-col justify-center items-center bg-black py-16 md:py-32 relative overflow-hidden"
     >
       {/* Magenta Glow Blob - True Semi Circle with Glow and GSAP animation */}
       {/* <div className="absolute bottom-0 left-1/2 -translate-x-1/2 z-0 w-[60vw] max-w-4xl h-[20vw] max-h-[20rem] pointer-events-none">
@@ -90,7 +90,7 @@ const BeforeAfterGallery = ({
             className="w-full h-full object-cover"
           />
           {/* Before Label */}
-          <span className="absolute top-6 left-6 bg-black/70 text-white text-lg font-bold px-4 py-1 rounded-full shadow-lg select-none pointer-events-none z-20">
+          <span className="absolute top-6 left-16 sm:left-6 bg-black/70 text-white text-lg font-bold px-4 py-1 rounded-full shadow-lg select-none pointer-events-none z-20">
             Before
           </span>
         </div>
@@ -106,7 +106,7 @@ const BeforeAfterGallery = ({
             className="w-full h-full object-cover"
           />
           {/* After Label */}
-          <span className="absolute top-6 right-6 bg-gradient-to-r from-[#DC6263] to-[#D2448D] text-white text-lg font-bold px-4 py-1 rounded-full shadow-lg select-none pointer-events-none z-20">
+          <span className="absolute top-6 right-16 sm:right-6 bg-gradient-to-r from-[#DC6263] to-[#D2448D] text-white text-lg font-bold px-4 py-1 rounded-full shadow-lg select-none pointer-events-none z-20">
             After
           </span>
         </div>

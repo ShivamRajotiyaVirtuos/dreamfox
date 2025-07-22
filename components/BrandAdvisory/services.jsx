@@ -257,22 +257,22 @@ export default function Services() {
             ref={(el) => (slidesRef.current[1] = el)}
             className="w-screen h-screen flex-shrink-0 absolute"
           >
-            <figure className="relative bg-black flex gap-10 items-center justify-center w-full h-full m-0">
+            <figure className="relative bg-black flex flex-col xl:flex-row xl:gap-10 items-center justify-center w-full h-full m-0">
               <img
                 ref={image2ref}
                 src={images[1]?.src}
                 alt={images[1]?.alt}
-                className="w-[26rem] h-[40rem] object-cover"
+                className="w-[18rem] xl:w-[26rem] h-[30rem] xl:h-[40rem] object-cover"
               />
               <div className="flex-col gap-4  flex items-center justify-center bg-black/40">
-                <div className="flex items-center justify-center flex-col">
+                <div className="flex items-start xl:items-center xl:justify-center flex-col">
                   <h2 className="text-200 font-bold  py-2">
                     <span className="inline-block   py-4 bg-clip-text  text-white bg-gradient-to-r from-[#DC6263] to-[#D2448D]">
                       {images[1].title1}
                     </span>
                     <br />
                     <span
-                      className=" ml-36 flex justify-end"
+                      className=" xl:ml-36 flex justify-end"
                       style={{
                         WebkitTextStroke: "1px white",
                         WebkitTextStrokeWidth: "1px",
@@ -283,7 +283,7 @@ export default function Services() {
                       {images[1].title2}
                     </span>
                   </h2>
-                  <p className="text-40 pl-72 max-w-7xl mt-10 text-white  py-2">
+                  <p className="text-40 xl:pl-72 max-w-7xl xl:mt-10 text-white  py-2">
                     {images[1]?.description}
                   </p>
                 </div>
@@ -296,14 +296,14 @@ export default function Services() {
             ref={(el) => (slidesRef.current[2] = el)}
             className="w-screen h-screen  flex-shrink-0 absolute"
           >
-            <figure className="relative flex items-center justify-center bg-black w-full h-full m-0">
+            <figure className="relative flex  flex-col xl:flex-row xl:gap-10 items-center justify-center bg-black w-full h-full m-0">
               <img
                 ref={image3ref}
                 src={images[2]?.src}
                 alt={images[2]?.alt}
-                className="w-[26rem] h-[40rem] object-cover"
+                className="w-[18rem] xl:w-[26rem] h-[30rem] xl:h-[40rem] object-cover"
               />
-              <figcaption className="flex-col gap-4  flex items-center justify-center bg-black/40">
+              <figcaption className="flex-col gap-4  flex items-start xl:items-center justify-center bg-black/40">
                 <h2 className="text-200   font-bold   py-2">
                   <span className="inline-block   py-4 bg-clip-text  text-white bg-gradient-to-r from-[#DC6263] to-[#D2448D]">
                     {images[2].title1}
@@ -319,7 +319,7 @@ export default function Services() {
                     {images[2].title2}
                   </span>
                 </h2>
-                <p className="text-40 max-w-5xl  text-white ml-10  py-2">
+                <p className="text-40 max-w-5xl  text-white xl:ml-10  py-2">
                   {images[2]?.description}
                 </p>
               </figcaption>
@@ -331,22 +331,22 @@ export default function Services() {
             ref={(el) => (slidesRef.current[3] = el)}
             className="w-screen h-screen flex-shrink-0 absolute"
           >
-            <figure className="relative bg-black flex gap-10 items-center justify-center w-full h-full m-0">
+            <figure className="relative bg-black flex flex-col xl:flex-row xl:gap-10 items-center justify-center w-full h-full m-0">
               <img
                 ref={image4ref}
                 src={images[3]?.src}
                 alt={images[3]?.alt}
-                className="w-[26rem] h-[40rem] object-cover"
+                className="w-[18rem] xl:w-[26rem] h-[30rem] xl:h-[40rem] object-cover"
               />
               <div className="flex-col gap-4  flex items-center justify-center bg-black/40">
-                <div className="flex items-center justify-center flex-col">
+                <div className="flex items-start xl:items-center xl:justify-center flex-col">
                   <h2 className="text-200 font-bold  py-2">
                     <span className="inline-block   py-4 bg-clip-text  text-white bg-gradient-to-r from-[#DC6263] to-[#D2448D]">
                       {images[3].title1}
                     </span>
                     <br />
                     <span
-                      className=" ml-36 flex justify-end"
+                      className=" xl:ml-36 flex justify-end"
                       style={{
                         WebkitTextStroke: "1px white",
                         WebkitTextStrokeWidth: "1px",
@@ -357,7 +357,7 @@ export default function Services() {
                       {images[3].title2}
                     </span>
                   </h2>
-                  <p className="text-40 pl-72 max-w-7xl mt-10 text-white  py-2">
+                  <p className="text-40 xl:pl-72 max-w-7xl xl:mt-10 text-white  py-2">
                     {images[3]?.description}
                   </p>
                 </div>
@@ -370,14 +370,14 @@ export default function Services() {
             ref={(el) => (slidesRef.current[4] = el)}
             className="w-screen h-screen  flex-shrink-0 absolute"
           >
-            <figure className="relative flex items-center justify-center bg-black w-full h-full m-0">
+            <figure className="relative flex items-center flex-col xl:flex-row xl:gap-10 justify-center bg-black w-full h-full m-0">
               <img
                 ref={image5ref}
                 src={images[4]?.src}
                 alt={images[4]?.alt}
-                className="w-[26rem] h-[40rem] object-cover"
+                className="w-[18rem] xl:w-[26rem] h-[30rem] xl:h-[40rem] object-cover"
               />
-              <figcaption className="flex-col gap-4  flex items-center justify-center bg-black/40">
+              <figcaption className="flex-col gap-4  flex items-start xl:items-center justify-center bg-black/40">
                 <h2 className="text-200   font-bold   py-2">
                   <span className="inline-block   py-4 bg-clip-text  text-white bg-gradient-to-r from-[#DC6263] to-[#D2448D]">
                     {images[4].title1}
@@ -393,7 +393,7 @@ export default function Services() {
                     {images[4].title2}
                   </span>
                 </h2>
-                <p className="text-40 max-w-5xl  text-white ml-10  py-2">
+                <p className="text-40 max-w-5xl  text-white xl:ml-10  py-2">
                   {images[4]?.description}
                 </p>
               </figcaption>
@@ -403,24 +403,24 @@ export default function Services() {
           {/* Sixth Card - Analytics & Insights */}
           <div
             ref={(el) => (slidesRef.current[5] = el)}
-            className="w-screen h-screen flex-shrink-0 absolute"
+            className="w-screen h-screen px-4 flex-shrink-0 absolute"
           >
-            <figure className="relative bg-black flex gap-10 items-center justify-center w-full h-full m-0">
+            <figure className="relative bg-black flex flex-col xl:flex-row xl:gap-10 items-center justify-center w-full h-full m-0">
               <img
                 ref={image6ref}
                 src={images[5]?.src}
                 alt={images[5]?.alt}
-                className="w-[26rem] h-[40rem] object-cover"
+                className="w-[18rem] xl:w-[26rem] h-[30rem] xl:h-[40rem] object-cover"
               />
               <div className="flex-col gap-4  flex items-center justify-center bg-black/40">
-                <div className="flex items-center justify-center flex-col">
+                <div className="flex items-start xl:items-center xl:justify-center flex-col">
                   <h2 className="text-200 font-bold  py-2">
                     <span className="inline-block   py-4 bg-clip-text  text-white bg-gradient-to-r from-[#DC6263] to-[#D2448D]">
                       {images[5].title1}
                     </span>
                     <br />
                     <span
-                      className=" ml-36 flex justify-end"
+                      className=" xl:ml-36 flex xl:justify-end"
                       style={{
                         WebkitTextStroke: "1px white",
                         WebkitTextStrokeWidth: "1px",
@@ -431,7 +431,7 @@ export default function Services() {
                       {images[5].title2}
                     </span>
                   </h2>
-                  <p className="text-40 pl-94 max-w-7xl mt-10  text-white  py-2">
+                  <p className="text-40 xl:pl-94 max-w-7xl xl:mt-10  text-white  py-2">
                     {images[5]?.description}
                   </p>
                 </div>
