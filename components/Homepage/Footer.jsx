@@ -11,7 +11,6 @@ import { FaInstagram, FaTelegramPlane } from "react-icons/fa";
 // import { CiLinkedin } from "react-icons/ci";
 import { FaLinkedinIn } from "react-icons/fa";
 
-
 const Footer = () => {
   const buttonRef = useRef(null);
   const textRef = useRef(null);
@@ -199,7 +198,9 @@ const Footer = () => {
           ))}
         </div> */}
         <div className="flex flex-col space-y-4 text-30">
-        <h3 className="uppercase tracking-widest font-bold text-gray-500 text-40 mb-6 ">Menu</h3>
+          <h3 className="uppercase tracking-widest font-bold text-gray-500 text-40 mb-6 ">
+            Menu
+          </h3>
           {[
             { name: "Home", href: "/" },
             { name: "Services", href: "/services" },
@@ -207,7 +208,11 @@ const Footer = () => {
             { name: "Projects", href: "/projects" },
             { name: "Contact", href: "/contact" },
           ].map(({ name, href }) => (
-            <Link key={name} href={href} className="text-white group w-fit uppercase">
+            <Link
+              key={name}
+              href={href}
+              className="text-white group w-fit uppercase"
+            >
               <span className="link-underline">{name}</span>
             </Link>
           ))}
@@ -215,7 +220,9 @@ const Footer = () => {
 
         {/* Middle Links */}
         <div className="flex flex-col space-y-4 text-20">
-          <h3 className="uppercase tracking-widest font-bold text-gray-500 text-40 mb-6 ">Socials</h3>
+          <h3 className="uppercase tracking-widest font-bold text-gray-500 text-40 mb-6 ">
+            Socials
+          </h3>
           {[
             { name: "Instagram", href: "#", Icon: FaInstagram },
             { name: "Linkedin", href: "#", Icon: FaLinkedinIn },
@@ -237,27 +244,24 @@ const Footer = () => {
         </div>
 
         {/* Right Email */}
-        <div className="flex flex-col space-y-4">
-          <h3 className="text-24 uppercase tracking-widest text-30">Drop your email</h3>
-          <p className="text-24 uppercase tracking-widest text-30">Let’s have a chat</p>
-          <button className="group flex items-center bg-gray-200 text-black rounded-full overflow-hidden max-w-[350px] transition-all">
-          <span className="px-4 py-2 w-full text-24 bg-transparent text-left">
-            Get Started Today
-          </span>
+        <div className="flex  flex-col space-y-4">
+          <h3 className="uppercase tracking-widest font-bold text-gray-500 text-40 mb-6 ">
+            Connect
+          </h3>
+          <button className="group cursor-pointer flex items-center bg-gray-200 text-black rounded-full overflow-hidden max-w-[280px] transition-all hover:scale-105 transition-all">
+            <span className="px-4 uppercase font-sm py-2 w-full text-24 bg-transparent text-left">
+              Get Started
+            </span>
 
-          {/* Icon container */}
-          <div className="relative bg-black m-2 h-12 w-16 rounded-full overflow-hidden flex items-center justify-center">
-            {/* Outgoing arrow (exits top-right) */}
-            <ArrowRightIcon
-              className="absolute h-5 w-5 text-white -rotate-45 transition-all duration-500 ease-out group-hover:translate-x-6 group-hover:-translate-y-6 group-hover:opacity-0"
-            />
+            {/* Icon container */}
+            <div className="relative bg-black m-2 h-12 w-16 rounded-full overflow-hidden flex items-center justify-center">
+              {/* Outgoing arrow (exits top-right) */}
+              <ArrowRightIcon className="absolute h-5 w-5 text-white -rotate-45 transition-all duration-500 ease-out group-hover:translate-x-6 group-hover:-translate-y-6 group-hover:opacity-0" />
 
-            {/* Incoming arrow (enters from bottom-left) */}
-            <ArrowRightIcon
-              className="absolute h-5 w-5 text-white -rotate-45 opacity-0 transition-all duration-500 ease-out delay-100 group-hover:opacity-100 group-hover:translate-x-0 group-hover:translate-y-0 -translate-x-4 translate-y-4"
-            />
-          </div>
-        </button>
+              {/* Incoming arrow (enters from bottom-left) */}
+              <ArrowRightIcon className="absolute h-5 w-5 text-white -rotate-45 opacity-0 transition-all duration-500 ease-out delay-100 group-hover:opacity-100 group-hover:translate-x-0 group-hover:translate-y-0 -translate-x-4 translate-y-4" />
+            </div>
+          </button>
         </div>
       </div>
 

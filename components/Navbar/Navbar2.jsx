@@ -97,7 +97,7 @@ const Navbar = () => {
       >
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <div className="flex-shrink-0">
+          <Link href={"/"} className="flex-shrink-0">
             <Image
               src={"/logos/dreamfox_emblem.svg"}
               alt="Logo"
@@ -105,7 +105,7 @@ const Navbar = () => {
               height={50}
               className="h-9 lg:h-12 w-auto"
             />
-          </div>
+          </Link>
 
           {/* Desktop Menu Items - Center */}
           <div className="hidden lg:flex items-center space-x-12">
