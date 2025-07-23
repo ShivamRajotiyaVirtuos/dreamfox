@@ -172,8 +172,8 @@ const SwiperSlider = () => {
         }
       `}</style>
 
-      <div className="full-height-container">
-        <p className="slider-heading text-120 text-white text-center font-semibold "> Meet The Team</p>
+      <div className="min-h-[50vh]">
+        <p className=" text-120 text-white text-center font-semibold mb-8 2xl:mb-16"> Meet The Team</p>
         <div className="swiper">
           <div className="swiper-wrapper">
             {slides.map((slide, i) => (

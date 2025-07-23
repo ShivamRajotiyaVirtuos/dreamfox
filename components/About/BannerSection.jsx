@@ -53,7 +53,7 @@ const BannerSection = () => {
   return (
     <section
       ref={sectionRef}
-      className="relative w-full min-h-[80vh] bg-black flex items-center overflow-hidden"
+      className="relative min-h-[80vh] bg-black flex items-center overflow-hidden"
     >
       {/* Gradient Circles */}
       <div
