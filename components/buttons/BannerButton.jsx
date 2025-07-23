@@ -109,7 +109,10 @@ const BannerButton = ({ text = "BOOK A DEMO", href = "#", className = "" }) => {
 
       // Create hover animation timeline
       const hoverTl = gsap.timeline({ paused: true });
-
+      // Get current button dimensions
+      const buttonRect = buttonRef.current.getBoundingClientRect();
+      const targetX = buttonRect.width * 0.9; // 90% of current width
+      const targetY = buttonRect.height * 0.5; // 50% of current height
       hoverTl
         .to(yellowTextRef.current, {
           x: "130%",
@@ -123,9 +126,8 @@ const BannerButton = ({ text = "BOOK A DEMO", href = "#", className = "" }) => {
           width: "3rem",
           height: "3rem",
           borderRadius: "50%",
-          top: "50%",
-          left: "90%",
-          transform: "translate(-50%, -50%)",
+          x: targetX - 24, // 24px = half of 3rem (48px)
+          y: targetY - 24,
           duration: 0.5,
           ease: "power2.inOut",
           force3D: true,
@@ -190,7 +192,7 @@ const BannerButton = ({ text = "BOOK A DEMO", href = "#", className = "" }) => {
     >
       {/* Black base layer - will show when yellow circle shrinks */}
       <div className="absolute top-0 left-0 w-full h-full bg-black text-white flex items-center justify-center gap-3 z-0 text-base font-semibold tracking-wide rounded-full">
-        <span ref={blackTextRef} className="text-40 block">
+        <span ref={blackTextRef} className="text-30 block">
           {text}
         </span>
       </div>
@@ -205,7 +207,7 @@ const BannerButton = ({ text = "BOOK A DEMO", href = "#", className = "" }) => {
           perspective: "1000px",
         }}
       >
-        <span ref={yellowTextRef} className="text-40">
+        <span ref={yellowTextRef} className="text-30">
           {text}
         </span>
         <ArrowRightIcon

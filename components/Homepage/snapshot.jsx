@@ -8,7 +8,7 @@ import TextReveal from "../Text Reveal/textreveal";
 gsap.registerPlugin(ScrollTrigger);
 
 const Snapshot = () => {
-  const [hoveredCard, setHoveredCard] = useState(1);
+  const [hoveredCard, setHoveredCard] = useState(3);
   const sectionRef = useRef(null);
   const titleRef = useRef(null);
   const descriptionRef = useRef(null);
