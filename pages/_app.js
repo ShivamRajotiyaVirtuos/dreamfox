@@ -6,12 +6,12 @@ import dynamic from "next/dynamic";
 const WebGLCursorEffect = dynamic(() => import("@/components/Webgl/webgl"), {
   ssr: false,
 });
-const SmoothScroll = dynamic(
-  () => import("@/components/SmoothScroll/SmoothScroll"),
-  {
-    ssr: false,
-  }
-);
+// const SmoothScroll = dynamic(
+//   () => import("@/components/SmoothScroll/SmoothScroll"),
+//   {
+//     ssr: false,
+//   }
+// );
 
 const ScrollSmootherWrapper = dynamic(
   () => import("@/components/SmoothScroll/SmoothScrollWrapper"),

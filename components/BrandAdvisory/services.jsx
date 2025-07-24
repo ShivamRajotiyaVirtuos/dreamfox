@@ -265,7 +265,7 @@ export default function Services() {
                 className="w-[18rem] xl:w-[26rem] h-[30rem] xl:h-[40rem] object-cover"
               />
               <div className="flex-col gap-4  flex items-center justify-center bg-black/40">
-                <div className="flex items-start xl:items-center xl:justify-center flex-col">
+                <div className="flex items-start xl:items-start xl:justify-center flex-col">
                   <h2 className="text-200 font-bold  py-2">
                     <span className="inline-block   py-4 bg-clip-text  text-white bg-gradient-to-r from-[#DC6263] to-[#D2448D]">
                       {images[1].title1}
@@ -303,7 +303,7 @@ export default function Services() {
                 alt={images[2]?.alt}
                 className="w-[18rem] xl:w-[26rem] h-[30rem] xl:h-[40rem] object-cover"
               />
-              <figcaption className="flex-col gap-4  flex items-start xl:items-center justify-center bg-black/40">
+              <figcaption className="flex-col gap-4  flex items-start xl:items-start justify-center bg-black/40">
                 <h2 className="text-200   font-bold   py-2">
                   <span className="inline-block   py-4 bg-clip-text  text-white bg-gradient-to-r from-[#DC6263] to-[#D2448D]">
                     {images[2].title1}
@@ -319,7 +319,7 @@ export default function Services() {
                     {images[2].title2}
                   </span>
                 </h2>
-                <p className="text-40 max-w-5xl  text-white xl:ml-10  py-2">
+                <p className="text-40 max-w-5xl  text-white   py-2">
                   {images[2]?.description}
                 </p>
               </figcaption>
@@ -339,7 +339,7 @@ export default function Services() {
                 className="w-[18rem] xl:w-[26rem] h-[30rem] xl:h-[40rem] object-cover"
               />
               <div className="flex-col gap-4  flex items-center justify-center bg-black/40">
-                <div className="flex items-start xl:items-center xl:justify-center flex-col">
+                <div className="flex items-start xl:items-start xl:justify-center flex-col">
                   <h2 className="text-200 font-bold  py-2">
                     <span className="inline-block   py-4 bg-clip-text  text-white bg-gradient-to-r from-[#DC6263] to-[#D2448D]">
                       {images[3].title1}
@@ -377,7 +377,7 @@ export default function Services() {
                 alt={images[4]?.alt}
                 className="w-[18rem] xl:w-[26rem] h-[30rem] xl:h-[40rem] object-cover"
               />
-              <figcaption className="flex-col gap-4  flex items-start xl:items-center justify-center bg-black/40">
+              <figcaption className="flex-col gap-4  flex items-start xl:items-start justify-center bg-black/40">
                 <h2 className="text-200   font-bold   py-2">
                   <span className="inline-block   py-4 bg-clip-text  text-white bg-gradient-to-r from-[#DC6263] to-[#D2448D]">
                     {images[4].title1}
@@ -393,7 +393,7 @@ export default function Services() {
                     {images[4].title2}
                   </span>
                 </h2>
-                <p className="text-40 max-w-5xl  text-white xl:ml-10  py-2">
+                <p className="text-40 max-w-5xl  text-white   py-2">
                   {images[4]?.description}
                 </p>
               </figcaption>
@@ -413,7 +413,7 @@ export default function Services() {
                 className="w-[18rem] xl:w-[26rem] h-[30rem] xl:h-[40rem] object-cover"
               />
               <div className="flex-col gap-4  flex items-center justify-center bg-black/40">
-                <div className="flex items-start xl:items-center xl:justify-center flex-col">
+                <div className="flex items-start xl:items-start xl:justify-center flex-col">
                   <h2 className="text-200 font-bold  py-2">
                     <span className="inline-block   py-4 bg-clip-text  text-white bg-gradient-to-r from-[#DC6263] to-[#D2448D]">
                       {images[5].title1}

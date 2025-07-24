@@ -92,7 +92,7 @@ const WhyDreamfox = () => {
       </div>
 
       {/* Features Grid */}
-      <div className="mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 2xl:grid-cols-4 gap-16  2xl:gap-0 max-w-[100rem] w-full">
+      <div className="mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 gap-16  2xl:gap-0 max-w-[100rem] w-full">
         {features.map((feature, index) => {
           return (
             <div

@@ -118,7 +118,7 @@ const Navbar = () => {
             </a>
 
             <a
-              href="about"
+              href="/about"
               className="text-white text-20 font-normal hover:text-[#ec466f] transition-all duration-300 hover:scale-105 relative group"
             >
               ABOUT
