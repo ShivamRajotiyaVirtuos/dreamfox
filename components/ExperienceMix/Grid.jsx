@@ -166,11 +166,11 @@ const HorizontalScrollGallery = () => {
       {/* Header */}
       <header className="flex justify-center items-center min-h-screen">
         <div className="text-center">
-          <h1 className="text-200 font-bold tracking-wide mb-4 bg-gradient-to-r from-red-500 via-blue-500 to-yellow-500 bg-clip-text text-transparent">
+          <h1 className="text-200 font-bold tracking-wide mb-4 bg-clip-text text-transparent bg-gradient-to-r from-[#DC6263] to-[#D2448D]">
             Our Services
           </h1>
-          <p className="text-xl text-gray-400">
-            Scroll down to explore the services
+          <p className="text-30 text-gray-400 container">
+            Scroll down to explore the services Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem accusantium at impedit distinctio, debitis sequi excepturi ullam id inventore nisi optio rem, soluta voluptas animi qui voluptatum in incidunt dignissimos, adipisci ut fuga minus! Labore, eos! Magnam, suscipit amet eos quaerat voluptatibus adipisci. Cupiditate doloremque et temporibus odio, quo illum qui, modi sint labore accusantium ad hic dolor ullam? Cum tempore sed totam molestiae impedit, op.
           </p>
         </div>
       </header>
