@@ -169,6 +169,12 @@ const Navbar = () => {
                   >
                     WEB DEVELOPMENT
                   </a>
+                  <a
+                    href="/services/digital-marketing"
+                    className="block uppercase px-6 py-3 text-white font-medium text-base hover:text-[#ec466f] hover:bg-white/10 transition-all duration-300 ease-out rounded-xl transform hover:translate-x-2"
+                  >
+                    Digital Marketing
+                  </a>
                 </div>
               </div>
             </div>

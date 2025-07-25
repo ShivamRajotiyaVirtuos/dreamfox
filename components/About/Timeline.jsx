@@ -70,7 +70,7 @@ const StackingCards = () => {
             stagger={0.1}
             duration={0.8}
           >
-            Case Snapshots
+            Our Story
           </TextReveal>
         </div>
 

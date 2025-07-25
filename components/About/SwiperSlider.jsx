@@ -40,57 +40,57 @@ const SwiperSlider = () => {
 
   const slides = [
   {
-    url: "https://cdn.josetxu.com/img/gp-tonin-rocodromo.jpg",
+    url: "https://static.vecteezy.com/system/resources/previews/003/314/142/large_2x/portrait-of-a-businessman-working-in-office-photo.jpg",
     name: "Rahul Mehta",
     description: "Frontend Developer specializing in React and Tailwind CSS",
   },
   {
-    url: "https://cdn.josetxu.com/img/gp-normal-caliz.jpg",
+    url: "https://static.vecteezy.com/system/resources/previews/048/673/875/large_2x/mature-businesswoman-in-glasses-points-authoritatively-in-a-well-appointed-home-office-embodying-leadership-and-remote-work-photo.jpg",
     name: "Aisha Kapoor",
     description: "UI/UX Designer crafting user-centered digital experiences",
   },
   {
-    url: "https://cdn.josetxu.com/img/gp-cumbre-totem.jpg",
+    url: "https://static.vecteezy.com/system/resources/previews/066/920/669/large_2x/cheerful-black-guy-worker-call-center-representative-with-headset-using-laptop-smiling-at-camera-african-american-man-having-business-training-or-conference-online-in-office-copy-space-photo.jpg",
     name: "Arjun Reddy",
     description: "Full Stack Developer with MERN expertise",
   },
   {
-    url: "https://cdn.josetxu.com/img/gp-oscar-raul-hueco-hoces2.jpg",
+    url: "https://static.vecteezy.com/system/resources/previews/036/111/842/large_2x/ai-generated-portrait-of-successful-and-happy-senior-businesswoman-office-worker-smiling-working-inside-modern-office-photo.jpg",
     name: "Neha Sharma",
     description: "Cloud Engineer deploying scalable AWS infrastructure",
   },
   {
-    url: "https://cdn.josetxu.com/img/gp-gallego-cueva-mora.jpg",
+    url: "https://static.vecteezy.com/system/resources/previews/052/961/686/large_2x/professional-focused-on-laptop-with-paperwork-for-business-tasks-photo.jpg",
     name: "Kabir Singh",
     description: "Backend Developer working with Node.js and GraphQL",
   },
   {
-    url: "https://cdn.josetxu.com/img/gp-chimenea-tortuga.jpg",
+    url: "https://static.vecteezy.com/system/resources/previews/013/084/175/large_2x/succsesfull-woman-manager-in-beige-suit-with-crossed-arms-photo.JPG",
     name: "Sneha Iyer",
     description: "Mobile App Developer building cross-platform apps with Flutter",
   },
   {
-    url: "https://cdn.josetxu.com/img/gp-blues-ojos-bonitos-tres-coronas.jpg",
+    url: "https://static.vecteezy.com/system/resources/previews/010/141/210/large_2x/beautiful-millennial-asian-businesswoman-or-female-financial-worker-working-and-brainstorming-with-her-coworker-in-the-office-free-photo.jpg",
     name: "Vikram Nair",
     description: "DevOps Engineer automating CI/CD pipelines",
   },
   {
-    url: "https://cdn.josetxu.com/img/gp-capuchon-sarcofago.jpg",
+    url: "https://static.vecteezy.com/system/resources/previews/032/094/110/large_2x/a-woman-in-an-office-looking-at-the-camera-generative-ai-photo.jpeg",
     name: "Priya Desai",
     description: "Machine Learning Engineer solving real-world problems with AI",
   },
   {
-    url: "https://cdn.josetxu.com/img/gp-rosario-cueva-mora.jpg",
+    url: "https://static.vecteezy.com/system/resources/previews/044/456/838/large_2x/smiling-young-professional-man-using-laptop-at-his-desk-in-a-well-lit-modern-office-showing-productivity-and-comfort-photo.jpg",
     name: "Rohan Bhatt",
     description: "Cybersecurity Analyst focusing on threat detection",
   },
   {
-    url: "https://cdn.josetxu.com/img/gp-me-pesa-hasta-el-aire-dehesilla.jpg",
+    url: "https://static.vecteezy.com/system/resources/previews/044/454/319/large_2x/confident-young-adult-male-with-a-beard-using-a-digital-tablet-in-a-well-lit-modern-office-environment-perfect-for-depicting-professionalism-and-technology-in-the-workplace-photo.jpg",
     name: "Meera Sinha",
     description: "Data Scientist turning raw data into insights",
   },
   {
-    url: "https://cdn.josetxu.com/img/gp-anonima-tres-coronas.jpg",
+    url: "https://static.vecteezy.com/system/resources/previews/067/834/406/large_2x/businesswoman-or-female-office-worker-holding-mug-talking-happily-in-online-meeting-or-call-photo.jpg",
     name: "Aditya Verma",
     description: "Software Architect designing scalable systems",
   },
@@ -193,7 +193,7 @@ const SwiperSlider = () => {
               </div>
             ))}
           </div>
-          <div className="swiper-pagination" />
+          {/* <div className="swiper-pagination" /> */}
         </div>
       </div>
     </>

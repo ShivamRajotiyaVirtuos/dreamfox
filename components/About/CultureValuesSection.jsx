@@ -69,7 +69,7 @@ const CultureValuesSection = () => {
 
   return (
     <section className="w-full py-20 bg-black text-white  container ">
-      <h2 className="text-center text-120 font-serif-display font-bold text-white mb-16">
+      <h2 className="text-center text-120  font-bold text-white mb-16">
         Culture & Values
       </h2>
 
