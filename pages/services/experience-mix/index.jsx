@@ -2,6 +2,7 @@ import Banner_Experiencemix from "@/components/ExperienceMix/Banner";
 import HorizontalScrollGallery from "@/components/ExperienceMix/Grid";
 // import Grid from "@/components/ExperienceMix/Grid";
 import ServicesGrid from "@/components/ExperienceMix/ServicesGrid";
+import Techstack from "@/components/ExperienceMix/Techstack";
 import UXSnapshot from "@/components/ExperienceMix/UXsnapshot";
 
 const Index = ({}) => {
@@ -11,6 +12,7 @@ const Index = ({}) => {
       <UXSnapshot />
       <HorizontalScrollGallery />
       {/* <ServicesGrid /> */}
+      <Techstack/>
     </div>
   );
 };
