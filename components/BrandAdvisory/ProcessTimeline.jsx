@@ -187,7 +187,7 @@ export default function ProcessTimeline() {
         </div>
 
         {/* Step boxes */}
-        <div className="relative w-full h-full">
+        <div className="relative w-full h-full 3xl:mt-16 4xl:mt-10">
           {steps.map((step, i) => (
             <div
               key={i}

@@ -118,7 +118,7 @@ const Navbar = () => {
             </a>
 
             <a
-              href="about"
+              href="/about"
               className="text-white text-20 font-normal hover:text-[#ec466f] transition-all duration-300 hover:scale-105 relative group"
             >
               ABOUT
@@ -164,10 +164,10 @@ const Navbar = () => {
                     UI/UX DESIGN
                   </a>
                   <a
-                    href="#"
-                    className="block px-6 py-3 text-white font-medium text-base hover:text-[#ec466f] hover:bg-white/10 transition-all duration-300 ease-out rounded-xl transform hover:translate-x-2"
+                    href="/services/experience-mix"
+                    className="block uppercase px-6 py-3 text-white font-medium text-base hover:text-[#ec466f] hover:bg-white/10 transition-all duration-300 ease-out rounded-xl transform hover:translate-x-2"
                   >
-                    WEB DEVELOPMENT
+                    Experience Mix
                   </a>
                   <a
                     href="/services/digital-marketing"
@@ -232,7 +232,7 @@ const Navbar = () => {
               onMouseEnter={handleMouseEnter}
               onMouseMove={handleMouseMove}
               onMouseLeave={handleMouseLeave}
-              className="relative px-8 cursor-pointer py-4  font-black text-lg border-[#e83682] border-2 rounded-full overflow-hidden group hover:shadow-2xl hover:shadow-purple-500/25 transition-all duration-300 hover:scale-105 flex items-center gap-3"
+              className="relative px-8 cursor-pointer py-4  font-black text-lg border-[#fff] border-2 rounded-full overflow-hidden group hover:shadow-2xl hover:shadow-purple-500/25 transition-all duration-300 hover:scale-105 flex items-center gap-3"
             >
               {/* Overlay effect */}
               <div
@@ -246,7 +246,7 @@ const Navbar = () => {
                 }}
               />
 
-              <span className="relative z-10 text-[#e83682] group-hover:text-white ">CONTACT US</span>
+              <span className="relative z-10 text-white ">CONTACT US</span>
 
               <span className=" rounded-full relative z-10">
                 <svg

@@ -20,7 +20,7 @@ const BeforeAfterGallery = ({
   const blobRef = useRef(null);
   const hasInteracted = useRef(false);
   const sliderRef = useRef(null);
-
+  const titleRef = useRef(null);
   const handleSliderChange = (e) => {
     const value = e.target.value;
     setSliderValue(value);
@@ -34,7 +34,22 @@ const BeforeAfterGallery = ({
   const handleDoubleClick = () => {
     setSliderValue(50);
   };
-
+  const splitTextIntoWords = (text) => {
+    return text.split(" ").map((word, index) => (
+      <span
+        key={index}
+        className="word inline-block opacity-0"
+        style={{
+          overflow: "hidden",
+          display: "inline-block",
+          transformStyle: "preserve-3d",
+          willChange: "transform, opacity",
+        }}
+      >
+        {word}&nbsp;
+      </span>
+    ));
+  };
   useEffect(() => {
     if (!sectionRef.current) return;
 
@@ -57,7 +72,35 @@ const BeforeAfterGallery = ({
           }
         );
       }
+      const titleWords = titleRef.current?.querySelectorAll(".word");
+      if (titleWords && titleWords.length > 0) {
+        // Set initial state for words
+        gsap.set(titleWords, {
+          opacity: 0,
+          y: 100,
+          rotationX: -90,
+          transformOrigin: "50% 50%",
+        });
 
+        // Create timeline for title animation
+        const titleTimeline = gsap.timeline({
+          scrollTrigger: {
+            trigger: titleRef.current,
+            start: "top 80%",
+            toggleActions: "play none none reset",
+            markers: false,
+          },
+        });
+
+        titleTimeline.to(titleWords, {
+          opacity: 1,
+          y: 0,
+          rotationX: 0,
+          duration: 0.8,
+          stagger: 0.1,
+          ease: "power2.out",
+        });
+      }
       // Show hint and animate divider left-right when in view
       ScrollTrigger.create({
         trigger: sectionRef.current,
@@ -107,14 +150,13 @@ const BeforeAfterGallery = ({
         />
       </div> */}
 
-      <TextReveal
-        animation="rotateX"
-        stagger={0.1}
-        duration={0.8}
-        className="text-white text-4xl md:text-6xl font-bold mb-20 text-center relative z-10"
+      <h2
+        ref={titleRef}
+        className="text-white text-120 font-bold mb-20 text-center relative z-10"
+        style={{ perspective: "1000px" }}
       >
-        Before-After Gallery
-      </TextReveal>
+        {splitTextIntoWords("Before-After Gallery")}
+      </h2>
 
       <div
         className="relative flex w-full max-w-7xl h-[32rem] md:h-[40rem] xl:h-[50rem] aspect-[3/2] max-h-[95vh] z-10"

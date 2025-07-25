@@ -1,12 +1,14 @@
 @import url("https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&family=Geist+Mono:wght@100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Oranienbaum&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&family=Geist+Mono:wght@100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Oranienbaum&family=Sora:wght@100..800&display=swap");
+
 @import "tailwindcss";
 
-/* Add font-family utilities */
-/* body h1 {
-  font-family: "Sora", sans-serif;
-  font-family: "Arimo", sans-serif;
-} */
+@theme {
+  --breakpoint-3xl: 1700px;
+  --breakpoint-4xl: 1920px;
+  --breakpoint-5xl: 2560px;
+}
+
 h1,
 h2,
 h3 {
@@ -186,7 +188,43 @@ body span {
     font-size: 80px;
   }
 }
+/* ...existing code... */
 
+/* text-90 - 90px on desktop, scales down */
+.text-90 {
+  font-size: 60px;
+  line-height: 1.1;
+}
+
+@media (min-width: 640px) {
+  .text-90 {
+    font-size: 75px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .text-90 {
+    font-size: 90px;
+  }
+}
+
+/* text-100 - 100px on desktop, scales down */
+.text-100 {
+  font-size: 65px;
+  line-height: 1.1;
+}
+
+@media (min-width: 640px) {
+  .text-100 {
+    font-size: 85px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .text-100 {
+    font-size: 100px;
+  }
+}
 /* text-120 - 120px on desktop, scales down */
 .text-120 {
   font-size: 48px;
@@ -260,25 +298,30 @@ body span {
 
 @media (min-width: 768px) {
   .text-200 {
-    font-size: 112px;
+    font-size: 92px;
   }
 }
 
 @media (min-width: 1024px) {
   .text-200 {
-    font-size: 144px;
+    font-size: 110px;
   }
 }
 
 @media (min-width: 1324px) {
   .text-200 {
-    font-size: 176px;
+    font-size: 110px;
   }
 }
 
 @media (min-width: 1536px) {
   .text-200 {
-    font-size: 200px;
+    font-size: 120px;
+  }
+}
+@media (min-width: 1936px) {
+  .text-200 {
+    font-size: 180px;
   }
 }
 

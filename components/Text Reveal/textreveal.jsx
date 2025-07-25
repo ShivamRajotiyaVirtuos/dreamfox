@@ -17,60 +17,82 @@ const TextReveal = ({
   const textRef = useRef(null);
 
   useEffect(() => {
-    if (!textRef.current) return;
+    // Give ScrollSmoother time to initialize first
+    const timer = setTimeout(() => {
+      if (!textRef.current) return;
+      
+      // Create animation context
+      const ctx = gsap.context(() => {
+        const words = textRef.current.querySelectorAll(".word");
+        
+        if (!words.length) return;
 
-    const ctx = gsap.context(() => {
-      const words = textRef.current.querySelectorAll(".word");
+        // Animation configurations
+        const animations = {
+          fadeUp: {
+            from: { opacity: 0, y: 50, scale: 0.9 },
+            to: { opacity: 1, y: 0, scale: 1 },
+          },
+          fadeDown: {
+            from: { opacity: 0, y: -50, scale: 0.9 },
+            to: { opacity: 1, y: 0, scale: 1 },
+          },
+          rotateX: {
+            from: { opacity: 0, y: 100, rotationX: -90 },
+            to: { opacity: 1, y: 0, rotationX: 0 },
+          },
+          rotateY: {
+            from: { opacity: 0, x: 100, rotationY: -90 },
+            to: { opacity: 1, x: 0, rotationY: 0 },
+          },
+          scale: {
+            from: { opacity: 0, scale: 0 },
+            to: { opacity: 1, scale: 1 },
+          },
+          slideLeft: {
+            from: { opacity: 0, x: 100 },
+            to: { opacity: 1, x: 0 },
+          },
+          slideRight: {
+            from: { opacity: 0, x: -100 },
+            to: { opacity: 1, x: 0 },
+          },
+        };
 
-      // Animation configurations
-      const animations = {
-        fadeUp: {
-          from: { opacity: 0, y: 50, scale: 0.9 },
-          to: { opacity: 1, y: 0, scale: 1 },
-        },
-        fadeDown: {
-          from: { opacity: 0, y: -50, scale: 0.9 },
-          to: { opacity: 1, y: 0, scale: 1 },
-        },
-        rotateX: {
-          from: { opacity: 0, y: 100, rotationX: -90 },
-          to: { opacity: 1, y: 0, rotationX: 0 },
-        },
-        rotateY: {
-          from: { opacity: 0, x: 100, rotationY: -90 },
-          to: { opacity: 1, x: 0, rotationY: 0 },
-        },
-        scale: {
-          from: { opacity: 0, scale: 0 },
-          to: { opacity: 1, scale: 1 },
-        },
-        slideLeft: {
-          from: { opacity: 0, x: 100 },
-          to: { opacity: 1, x: 0 },
-        },
-        slideRight: {
-          from: { opacity: 0, x: -100 },
-          to: { opacity: 1, x: 0 },
-        },
-      };
+        const selectedAnimation = animations[animation] || animations.fadeUp;
 
-      const selectedAnimation = animations[animation] || animations.fadeUp;
+        // Create timeline with ScrollTrigger
+        const tl = gsap.timeline({
+          scrollTrigger: {
+            trigger: textRef.current,
+            start: trigger,
+            toggleActions: "play none none reset",
+            // Don't specify scroller here - it will use the global default
+            markers: false,
+          }
+        });
+        
+        // Add animation to timeline
+        tl.fromTo(
+          words, 
+          selectedAnimation.from, 
+          {
+            ...selectedAnimation.to,
+            duration,
+            stagger,
+            ease,
+          },
+          delay
+        );
+        
+        // For debugging
+        console.log("TextReveal initialized with ScrollTrigger", tl.scrollTrigger);
+      }, textRef);
 
-      gsap.fromTo(words, selectedAnimation.from, {
-        ...selectedAnimation.to,
-        duration,
-        stagger,
-        delay,
-        ease,
-        scrollTrigger: {
-          trigger: textRef.current,
-          start: trigger,
-          toggleActions: "play none none reverse",
-        },
-      });
-    }, textRef);
-
-    return () => ctx.revert();
+      return () => ctx.revert();
+    }, 400); // Wait longer for ScrollSmoother to initialize
+    
+    return () => clearTimeout(timer);
   }, [animation, stagger, duration, delay, trigger, ease]);
 
   // Function to split text into words
@@ -80,8 +102,11 @@ const TextReveal = ({
     return text.split(" ").map((word, index) => (
       <span
         key={index}
-        className="word inline-block"
-        style={{ overflow: "hidden" }}
+        className="word inline-block opacity-0"
+        style={{ 
+          overflow: "hidden",
+          display: "inline-block"
+        }}
       >
         {word}&nbsp;
       </span>

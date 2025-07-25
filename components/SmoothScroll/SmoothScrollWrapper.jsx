@@ -27,14 +27,16 @@ const ScrollSmootherWrapper = ({ children }) => {
         normalizeScroll: true,
       });
 
-      // Set ScrollTrigger defaults AFTER ScrollSmoother is created
+      // IMPORTANT: This is the key fix - use scrollerProxy instead of contentRef
       ScrollTrigger.defaults({
-        scroller: contentRef.current,
+        scroller: scrollSmootherRef.current.scrollerProxy || wrapperRef.current,
       });
 
-      // Refresh all ScrollTriggers
-      ScrollTrigger.refresh();
-    }, 100);
+      // Force a complete refresh of all ScrollTrigger instances
+      ScrollTrigger.refresh(true);
+
+      console.log("ScrollSmoother initialized", scrollSmootherRef.current);
+    }, 200); // Increased timeout for more reliable initialization
 
     // Cleanup function
     return () => {
@@ -42,23 +44,49 @@ const ScrollSmootherWrapper = ({ children }) => {
       if (scrollSmootherRef.current) {
         scrollSmootherRef.current.kill();
       }
-      ScrollTrigger.killAll();
+
+      // Reset ScrollTrigger defaults instead of killing all triggers
+      ScrollTrigger.defaults({ scroller: null });
+      ScrollTrigger.refresh(true);
     };
   }, []);
 
   return (
-    <div className="relative">
-      {/* Navbar outside of ScrollSmoother */}
+    <>
       <Navbar2 />
-      
-      {/* ScrollSmoother wrapper */}
-      <div id="smooth-wrapper" ref={wrapperRef}>
-        <div id="smooth-content" ref={contentRef}>
+
+      <div ref={wrapperRef} className="smooth-wrapper">
+        <div ref={contentRef} className="smooth-content">
           {children}
           <Footer />
         </div>
+
+        <style jsx global>{`
+          /* Essential styles for ScrollSmoother to work */
+          html,
+          body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            height: 100%;
+          }
+
+          .smooth-wrapper {
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+          }
+
+          .smooth-content {
+            width: 100%;
+            min-height: 100vh;
+          }
+        `}</style>
       </div>
-    </div>
+    </>
   );
 };
 
