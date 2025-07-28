@@ -132,38 +132,18 @@ export default function ServicesGrid() {
       },
     });
 
-    // Enhanced parallax effect for images
+    // Parallax effect for images: move left as user scrolls horizontally
     images.forEach((image, index) => {
       if (image) {
-        // Multiple parallax layers for more depth
-        gsap
-          .timeline({
-            scrollTrigger: {
-              trigger: containerRef.current,
-              start: "top top",
-              end: () => `+=${scrollDistance}`,
-              scrub: 1,
-            },
-          })
-          .to(image, {
-            x: -200, // Stronger horizontal movement
-            y: -100, // Add vertical movement
-            scale: 1.1, // Scale change for depth
-            rotation: 2, // Subtle rotation
-            ease: "none",
-          });
-
-        // Individual card parallax when it's active
         gsap.to(image, {
-          x: -150,
-          y: -50,
-          scale: 1.05,
+          x: -window.innerWidth * 0.25, // Move image left for parallax
+          scale: 1.1,
           ease: "none",
           scrollTrigger: {
             trigger: containerRef.current,
-            start: `top+=${index * window.innerHeight * 0.8} top`,
-            end: `top+=${(index + 1.2) * window.innerHeight} top`,
-            scrub: 2,
+            start: "top top",
+            end: () => `+=${scrollDistance}`,
+            scrub: 1,
           },
         });
       }
@@ -331,26 +311,6 @@ export default function ServicesGrid() {
             </div>
           </div>
         ))}
-      </div>
-
-      {/* Enhanced Progress Indicator */}
-      <div className="fixed bottom-8 left-1/2 transform -translate-x-1/2 z-20 flex space-x-2">
-        {services.map((_, index) => (
-          <div
-            key={index}
-            className="w-12 h-1 bg-white/20 rounded-full overflow-hidden backdrop-blur-sm"
-          >
-            <div
-              ref={(el) => (progressRef.current[index] = el)}
-              className="w-full h-full bg-gradient-to-r from-white to-gray-300 transform scale-x-0 origin-left transition-transform duration-300"
-            />
-          </div>
-        ))}
-      </div>
-
-      {/* Scroll indicator */}
-      <div className="fixed bottom-20 left-1/2 transform -translate-x-1/2 z-20 text-white/50 text-sm animate-bounce">
-        Scroll to explore
       </div>
     </section>
   );
