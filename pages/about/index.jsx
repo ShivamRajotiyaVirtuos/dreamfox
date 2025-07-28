@@ -19,7 +19,7 @@ function Index() {
             <SwiperSlider/>
             {/* <Team/> */}
             <CultureValuesSection/>
-            <CultureValuesSection2/>
+            {/* <CultureValuesSection2/> */}
         </div>
     )
 }

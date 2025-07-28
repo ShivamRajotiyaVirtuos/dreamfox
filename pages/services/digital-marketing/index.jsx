@@ -1,4 +1,5 @@
 import BannerSection from '@/components/DigitalMarketing/BannerSection'
+import Funnel from '@/components/DigitalMarketing/Funnel'
 import MetricSection from '@/components/DigitalMarketing/MetricSection'
 import PersonaGrid from '@/components/DigitalMarketing/PersonaGrid'
 import React from 'react'
@@ -9,13 +10,9 @@ function Index() {
             <BannerSection/>
             <PersonaGrid/>
             <MetricSection/>
+            <Funnel/>
 
             {/* <BannerSection/> */}
-            <PersonaGrid/>
-            <PersonaGrid/>
-
-
-
         </div>
     )
 }
