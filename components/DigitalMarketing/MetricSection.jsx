@@ -52,6 +52,7 @@ const metrics = [
   },
 ];
 
+// Random purple blur blobs for background
 const blurs = [
   { top: "10%", left: "15%", size: 220, color: "#a259f7", opacity: 0.25 },
   { top: "60%", left: "70%", size: 180, color: "#8e44ad", opacity: 0.18 },
@@ -60,10 +61,25 @@ const blurs = [
 ];
 
 export default function MetricSection() {
+  // This is a completely rewritten component with better responsive handling
+  const [isMobile, setIsMobile] = React.useState(false);
+  
+  // Check if we're on the client-side
+  React.useEffect(() => {
+    setIsMobile(window.innerWidth < 768);
+    
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
   const sectionRef = useRef(null);
   const headingRef = useRef(null);
   const cardRefs = useRef([]);
   const contentRef = useRef(null);
+  const timelineRef = useRef(null); // Store timeline reference
 
   useGSAP(() => {
     const masterTL = gsap.timeline({
@@ -74,7 +90,7 @@ export default function MetricSection() {
         pin: true,
         pinSpacing: true,
         scrub: 1,
-        markers: true,
+        markers: false, // Set to false in production
         onEnter: () => {
           console.log("Section entered viewport");
         },
@@ -84,43 +100,142 @@ export default function MetricSection() {
       }
     });
     
-    const totalWidth = metrics.length * 220;
-    const startX = (window.innerWidth - totalWidth) / 2;
+    // Get screen width for responsive layout
+    const screenWidth = window.innerWidth;
+    const isMedium = screenWidth < 1024 && screenWidth >= 768; // md breakpoint
+    const isSmall = screenWidth < 768; // sm breakpoint
     
     const cardsToCenter = gsap.timeline();
-    metrics.forEach((m, i) => {
-      cardsToCenter.to(
-        cardRefs.current[i],
-        {
-          x: `${startX + (i * 220)}px`, 
-          y: "calc(50vh - 90px)", 
-          duration: 0.5,
-          ease: "power2.inOut",
-        }, 
-        i * 0.05 
-      );
-    });
+    
+    if (isSmall) {
+      // Small screens: static positioning instead of animation for better visibility
+      const centerX = window.innerWidth / 2 - 100; // Center X (half of card width)
+      
+      // Completely kill ScrollTrigger for mobile to use static positioning
+      ScrollTrigger.getAll().forEach(st => st.kill());
+      
+      // Set each card's position directly without animation
+      metrics.forEach((m, i) => {
+        gsap.set(cardRefs.current[i], {
+          position: "relative", // Change to relative positioning
+          x: 0,                 // Reset transforms
+          y: 0,
+          left: "50%",          // Center horizontally
+          transform: "translateX(-50%)",
+          marginBottom: "20px", // Add spacing between cards
+          scale: 0.8,           // Scale down to fit on screen
+          opacity: 1,
+          clearProps: "top"     // Clear absolute positioning
+        });
+      });
+      
+      // Empty timeline since we're using static positioning
+      return;
+    } else if (isMedium) {
+      // Medium screens: 2x2 grid layout positioned immediately below heading
+      const centerX = window.innerWidth / 2;
+      const leftX = centerX - 210;
+      const rightX = centerX + 10;
+      // Position cards directly below heading with minimal gap
+      const topY = "80px"; // Immediately below heading 
+      const bottomY = "280px"; // Position bottom row higher
+      
+      // Top row
+      cardsToCenter.to(cardRefs.current[0], {
+        x: `${leftX}px`,
+        y: topY,
+        duration: 0.5,
+        ease: "power2.inOut",
+      }, 0);
+      
+      cardsToCenter.to(cardRefs.current[1], {
+        x: `${rightX}px`,
+        y: topY,
+        duration: 0.5,
+        ease: "power2.inOut",
+      }, 0.05);
+      
+      // Bottom row
+      cardsToCenter.to(cardRefs.current[2], {
+        x: `${leftX}px`,
+        y: bottomY,
+        duration: 0.5,
+        ease: "power2.inOut",
+      }, 0.1);
+      
+      cardsToCenter.to(cardRefs.current[3], {
+        x: `${rightX}px`,
+        y: bottomY,
+        duration: 0.5,
+        ease: "power2.inOut",
+      }, 0.15);
+    } else {
+      // Large screens: horizontal row layout (current behavior)
+      const totalWidth = metrics.length * 220;
+      const startX = (window.innerWidth - totalWidth) /  2;
+      
+      metrics.forEach((m, i) => {
+        cardsToCenter.to(
+          cardRefs.current[i],
+          {
+            x: `${startX + (i * 220)}px`, // Center horizontally with spacing
+            y: "calc(50vh - 90px)", // Middle of the section
+            duration: 0.5,
+            ease: "power2.inOut",
+          }, 
+          i * 0.05 // Slight stagger between cards (for visual interest)
+        );
+      });
+    }
     
     const pauseTimeline = gsap.timeline();
     pauseTimeline.to({}, {duration: 1}); 
     
     masterTL.add(cardsToCenter, 0)
            .add(pauseTimeline, 0.33);
+           
+    timelineRef.current = masterTL;
+    
+    // Handle initial setup for mobile
+    if (isSmall) {
+      // Set scale for mobile devices
+      metrics.forEach((_, i) => {
+        gsap.set(cardRefs.current[i], { scale: 0.8 });
+      });
+    }
+    
+    // Add resize event listener to handle responsive layouts
+    const handleResize = () => {
+      // Kill old ScrollTrigger instances
+      ScrollTrigger.getAll().forEach(st => st.kill());
+      // Refresh to create new animations with current screen size
+      ScrollTrigger.refresh();
+    };
+    
+    window.addEventListener('resize', handleResize);
+    
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
   }, []);
 
+  // Detect client-side for responsive styles
+  const isBrowser = typeof window !== "undefined";
+  
+  // Render different layouts based on screen size
   return (
     <section
       ref={sectionRef}
-      className="relative h-screen bg-black flex flex-col items-center justify-start py-12 overflow-hidden"
+      className="relative h-auto lg:h-screen min-h-screen bg-black flex flex-col items-center justify-start py-8 md:py-12 overflow-visible lg:overflow-hidden"
     >
       {/* Header fixed at the top of this section */}
-      <div className="w-full flex justify-center mb-10 pt-6">
+      <div className="w-full flex justify-center mb-4 md:mb-8 pt-2 md:pt-4">
         <h2
           ref={headingRef}
-          className="text-center text-120 pt-10 font-bold text-white"
+          className="text-center text-4xl md:text-5xl lg:text-120 pt-2 md:pt-4 font-bold text-white"
           style={{ pointerEvents: "none" }}
         >
-           Campaign Case Studies
+          Our Metrics
         </h2>
       </div>
 
@@ -141,25 +256,14 @@ export default function MetricSection() {
         />
       ))}
 
-      <div ref={contentRef} className="w-full h-full flex flex-col items-center">
-        <div className="w-full h-full relative z-10">
-          {metrics.map((m, i) => (
-            <div
-              key={i}
-              ref={el => (cardRefs.current[i] = el)}
-              className="absolute flex flex-col items-start justify-start transition-all duration-500"
-              style={{
-                width: m.w,
-                height: m.h,
-                position: "absolute",
-                left: 0,
-                top: 0,
-                opacity: 1,
-                transform: `translate(${m.x}, ${m.y})`,
-                // background: "rgba(255,255,255,0.08)",
-                boxSizing: "border-box",
-                zIndex: 10,
-              }}
+      {/* MOBILE VIEW - Static vertical column */}
+      {isMobile && (
+        <div className="flex flex-col items-center gap-4 mt-2">
+          {metrics.map((metric, idx) => (
+            <div 
+              key={idx} 
+              className="flex flex-col items-start justify-start mb-4 mx-auto scale-75"
+              style={{ width: metric.w, height: metric.h }}
             >
               {/* SVG Outline background */}
               <div className="absolute inset-0 z-0">
@@ -172,7 +276,7 @@ export default function MetricSection() {
               <div className="relative z-10 flex flex-col items-start p-6 w-full h-full">
                 {/* Icon in top left */}
                 <span className="mb-4 text-white">
-                  <m.icon className="w-10 h-10 text-white" />
+                  <metric.icon className="w-10 h-10 text-white" />
                 </span>
                 
                 {/* Value with gradient */}
@@ -185,16 +289,72 @@ export default function MetricSection() {
                     backgroundClip: "text"
                   }}
                 >
-                  {m.value}
+                  {metric.value}
                 </span>
                 
                 {/* Label in white */}
-                <span className="text-xl text-white">{m.label}</span>
+                <span className="text-xl text-white">{metric.label}</span>
               </div>
             </div>
           ))}
         </div>
-      </div>
+      )}
+
+      {/* DESKTOP VIEW - GSAP animated cards */}
+      {!isMobile && (
+        <div ref={contentRef} className="w-full h-full flex flex-col items-center">
+          <div className="w-full h-auto lg:h-full relative z-10 pb-12 lg:pb-0">
+            {metrics.map((m, i) => (
+              <div
+                key={i}
+                ref={el => (cardRefs.current[i] = el)}
+                className="absolute flex flex-col items-start justify-start transition-all duration-500"
+                style={{
+                  width: m.w,
+                  height: m.h,
+                  left: 0,
+                  top: 0,
+                  opacity: 1,
+                  transform: `translate(${m.x}, ${m.y})`,
+                  boxSizing: "border-box",
+                  zIndex: 10,
+                }}
+              >
+                {/* SVG Outline background */}
+                <div className="absolute inset-0 z-0">
+                  <svg width="100%" height="100%" viewBox="0 0 304 336" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
+                    <path d="M1 317V19.2224C1 9.19484 9.1942 1.10062 19.221 1.22374L189.778 3.31808C196.646 3.40242 202.868 7.38852 205.816 13.593L227.986 60.263C230.775 66.133 236.511 70.0441 242.994 70.4958L286.251 73.5096C295.684 74.1667 303 82.0104 303 91.466V317C303 326.941 294.941 335 285 335H152H19C9.05887 335 1 326.941 1 317Z" stroke="white" strokeWidth="1.5"/>
+                  </svg>
+                </div>
+
+                {/* Content - positioned over the SVG */}
+                <div className="relative z-10 flex flex-col items-start p-6 w-full h-full">
+                  {/* Icon in top left */}
+                  <span className="mb-4 text-white">
+                    <m.icon className="w-10 h-10 text-white" />
+                  </span>
+                  
+                  {/* Value with gradient */}
+                  <span 
+                    className="text-5xl font-bold mb-2"
+                    style={{
+                      background: "linear-gradient(90deg, #EC486E 0%, #EC486E 100%)",
+                      WebkitBackgroundClip: "text",
+                      WebkitTextFillColor: "transparent",
+                      backgroundClip: "text"
+                    }}
+                  >
+                    {m.value}
+                  </span>
+                  
+                  {/* Label in white */}
+                  <span className="text-xl text-white">{m.label}</span>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
     </section>
   );
 }
