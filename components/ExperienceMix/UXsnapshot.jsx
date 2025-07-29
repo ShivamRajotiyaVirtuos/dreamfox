@@ -154,7 +154,7 @@ const UXSnapshot = () => {
               transformOrigin: "center center",
             }}
           />
-          <h2 className="text-120 z-0 absolute top-[4.5rem] 3xl:top-48 left-64 font-bold text-white mb-4">
+          <h2 className="text-120 z-0 absolute top-[4.5rem] 2xl:top-32 3xl:top-48 left-64 font-bold text-white mb-4">
             {card.title}
           </h2>
           <Link
