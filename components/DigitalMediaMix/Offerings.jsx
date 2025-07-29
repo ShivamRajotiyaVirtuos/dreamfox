@@ -136,7 +136,7 @@ const Offerings = () => {
       {offeringsData.map((offering, index) => (
         <div
           key={offering.id}
-          className={`offering-card-${index} flex items-center justify-center relative py-26 md:py-36`}
+          className={`offering-card-${index} flex items-center justify-center relative py-16 md:py-36`}
         >
           <div className="absolute inset-0  bg-black" />
 
