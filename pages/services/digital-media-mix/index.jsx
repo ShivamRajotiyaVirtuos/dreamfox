@@ -1,15 +1,18 @@
 import ContactUs from "@/components/Contactus/ContactUs";
+import Banner_Mediamix from "@/components/DigitalMediaMix/Banner";
 import MediaReelGallery from "@/components/DigitalMediaMix/MediaReelGallery";
 import Offerings from "@/components/DigitalMediaMix/Offerings";
-import ProductionProcess from "@/components/DigitalMediaMix/ProductionProcess";
+import Productionprocess from "@/components/DigitalMediaMix/ProductionProcess";
 
 const Index = ({}) => {
   return (
     <div>
+      <Banner_Mediamix />
+      <Productionprocess />
+
       <Offerings />
       <MediaReelGallery />
       <ContactUs />
-      <ProductionProcess />
     </div>
   );
 };
