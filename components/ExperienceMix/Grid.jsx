@@ -178,7 +178,7 @@ const HorizontalScrollGallery = () => {
       {/* Sticky Horizontal Scroll Section */}
       <section
         ref={containerRef}
-        className="sticky-element flex justify-start items-center w-full h-screen overflow-hidden"
+        className="sticky-element  flex justify-start items-center w-full h-screen overflow-hidden"
       >
         <div
           className="track w-fit flex-shrink-0"
@@ -192,7 +192,7 @@ const HorizontalScrollGallery = () => {
             {imageData.map((item, index) => (
               <div
                 key={index}
-                className="panel-wide relative flex-shrink-0 overflow-hidden rounded-2xl"
+                className="panel-wide relative 2xl:mt-20 3xl:mt-0 flex-shrink-0 overflow-hidden rounded-2xl"
                 style={{
                   width: "90vw",
                   height: "80vh",

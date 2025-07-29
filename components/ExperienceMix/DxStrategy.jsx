@@ -394,12 +394,12 @@ const DxStrategy = () => {
                         className="w-screen h-screen flex items-center justify-center p-8 relative flex-shrink-0"
                         style={{ willChange: 'transform' }}
                     >
-                        <div className="container mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-center">
+                        <div className="container mx-auto grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-12 lg:gap-24 items-center">
                             {/* Content Side */}
                             <div className="space-y-8">
                                 <div className="space-y-6">
                                     <div 
-                                        className="section-icon text-6xl mb-4 inline-block p-6 rounded-3xl text-white shadow-2xl transition-all duration-500"
+                                        className="section-icon hidden  text-6xl mb-4 sm:inline-block p-6 rounded-3xl text-white shadow-2xl transition-all duration-500"
                                         style={{ 
                                             willChange: 'transform',
                                             background: item.bgGradient,
@@ -443,7 +443,7 @@ const DxStrategy = () => {
                                 </div>
 
                                 {/* Enhanced progress indicator */}
-                                <div className="flex items-center space-x-4 pt-8">
+                                <div className="hidden sm:flex items-center space-x-4 pt-8">
                                     <span className="text-sm text-gray-400">
                                         Step {index + 1} of {timelineData.length}
                                     </span>
