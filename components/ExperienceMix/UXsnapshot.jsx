@@ -149,12 +149,12 @@ const UXSnapshot = () => {
             height={900}
             width={1600}
             ref={(el) => (contentCardsRef.current[index] = el)}
-            className="bg-white/10 backdrop-blur-lg rounded-2xl p-2 relative z-20 w-[60%] mx-4 border border-white/20 shadow-2xl transform-gpu mt-44"
+            className="bg-white/10 backdrop-blur-lg rounded-2xl p-2 relative z-20 2xl:w-[60%] mx-4 border border-white/20 shadow-2xl transform-gpu mt-44"
             style={{
               transformOrigin: "center center",
             }}
           />
-          <h2 className="text-120 z-0 absolute top-[4.5rem] 3xl:top-48 left-64 font-bold text-white mb-4">
+          <h2 className="text-120 z-0 absolute top-[28%] 2xl:top-32 3xl:top-48 2xl:left-64 font-bold text-white mb-4">
             {card.title}
           </h2>
           <Link

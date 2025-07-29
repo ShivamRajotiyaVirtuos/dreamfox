@@ -53,7 +53,7 @@ const Banner_Experiencemix = () => {
   return (
     <section
       ref={sectionRef}
-      className="relative w-full min-h-[80vh] bg-black flex items-center overflow-hidden"
+      className="relative w-full min-h-[80vh] pt-16 lg:pt-32 bg-black flex items-center overflow-hidden"
     >
       {/* Gradient Circles */}
       <div

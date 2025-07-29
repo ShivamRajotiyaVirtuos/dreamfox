@@ -1,4 +1,5 @@
 import Banner_Experiencemix from "@/components/ExperienceMix/Banner";
+import DxStrategy from "@/components/ExperienceMix/DxStrategy";
 import HorizontalScrollGallery from "@/components/ExperienceMix/Grid";
 // import Grid from "@/components/ExperienceMix/Grid";
 import ServicesGrid from "@/components/ExperienceMix/ServicesGrid";
@@ -9,10 +10,12 @@ const Index = ({}) => {
   return (
     <div>
       <Banner_Experiencemix />
-      <UXSnapshot />
       <HorizontalScrollGallery />
+      <UXSnapshot />
+
+      <DxStrategy />
       {/* <ServicesGrid /> */}
-      <Techstack/>
+      <Techstack />
     </div>
   );
 };
