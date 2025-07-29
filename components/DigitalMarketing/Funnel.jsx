@@ -101,13 +101,13 @@ const Funnel = () => {
       <div className="flex flex-col">
         {/* Sticky Heading */}
         <div className="sticky top-0 w-full bg-black/90 z-50 text-center py-6">
-          <p className="font-bold tracking-tight text-white text-120 mt-96">Funnel Builder</p>
+          <p className="font-bold tracking-tight text-white text-120 px-4 sm:px-0 ">Funnel Builder</p>
         </div>
 
         {/* Cards */}
         {CARD_DATA.slice(0, 5).map((card, idx) => (
           <div
-            className={`card-wrapper flex items-center justify-center w-full mx-auto ${idx === 4 ? "h-[85vh] pb-[15vh]" : "h-[70vh] pt-[10vh] "}`}
+            className={`card-wrapper flex items-center justify-center w-full mx-auto ${idx === 4 ? "h-[85vh] pb-[15vh]" : "h-[70vh] pt-[1vh] "}`}
             key={idx}
           >
             <div className="card flex w-[90vw] max-w-5xl h-[55vh] bg-white rounded-xl shadow-lg overflow-hidden transition-all duration-300">
