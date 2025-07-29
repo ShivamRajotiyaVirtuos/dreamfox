@@ -84,7 +84,7 @@ const Navbar = () => {
   };
   return (
     <nav
-      className={`fixed top-0 max-w-[95rem] xl:mx-4 left-0 right-0 z-50 transition-all duration-500 ease-in-out ${
+      className={`fixed top-0 mx-auto max-w-[95rem]  left-0 right-0 z-50 transition-all duration-500 ease-in-out ${
         isScrolled
           ? "bg-gray-900/60 backdrop-blur-xl border border-white/10 lg:rounded-full xl:px-6  lg:mt-4 shadow-full"
           : "lg:bg-transparent bg-gray-900/60 backdrop-blur-xl"
