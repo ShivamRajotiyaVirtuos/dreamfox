@@ -105,7 +105,7 @@ const ServicesSectionDigitalM = () => {
         {/* Heading */}
         <div className="z-30 text-center">
           <TextReveal
-            className="text-120 font-bold text-white mt-16 md:mt-28 xl:mt-32"
+            className="text-120 font-bold text-white mt-16 md:mt-28 2xl:mt-28"
             animation="rotateX"
             stagger={0.1}
             duration={0.8}
@@ -124,11 +124,11 @@ const ServicesSectionDigitalM = () => {
                 ref={(el) => (textCardsRef.current[index] = el)}
                 className="absolute top-0 left-0 w-full md:w-1/2 h-1/2 md:h-full flex items-start z-20"
               >
-                <div className="w-full h-full md:h-[70vh] p-4 md:p-8 md:ml-20">
+                <div className="w-full h-full md:h-[65vh] p-4 md:p-8 md:ml-20">
                   <div className="w-full h-full bg-white rounded-3xl p-4 md:p-8 flex flex-col justify-between">
                     <div className="flex items-center gap-4">
                       <span className="text-40 md:text-80 font-black opacity-50">
-                        Data
+                        Data {service.number}
                       </span>
                     </div>
                     
@@ -151,14 +151,14 @@ const ServicesSectionDigitalM = () => {
           </div>
 
           {/* Image Cards */}
-          <div className="absolute inset-0 flex">
+          <div className="absolute inset-0 flex md:h-[65vh]">
             {servicesData.map((service, index) => (
               <div
                 key={`image-${index}`}
                 ref={(el) => (imageCardsRef.current[index] = el)}
                 className="absolute bottom-0 md:top-0 right-0 w-full md:w-1/2 h-1/2 md:h-full flex items-start z-10"
               >
-                <div className="w-full h-full md:h-[70vh] p-4 md:p-8 md:mr-20">
+                <div className="w-full h-full  p-4 md:p-8 md:mr-20">
                   <div className="w-full h-full rounded-3xl overflow-hidden">
                     <img
                       src={service.image}
@@ -173,7 +173,7 @@ const ServicesSectionDigitalM = () => {
         </div>
       </section>
 
-      <div className="h-[50vh] md:h-[35vh] lg:h-[40vh]"></div>
+      <div className="h-[50vh] md:h-[35vh] lg:h-[50vh] xl:h-[60vh]  "></div>
     </div>
   );
 };
