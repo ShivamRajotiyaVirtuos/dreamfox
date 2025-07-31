@@ -1,54 +1,73 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import { Autoplay } from "swiper/modules";
 
-const BehindTheScenes = () => {
+const images = [
+  "https://picsum.photos/id/32/600/400",
+  "https://picsum.photos/id/33/600/400",
+  "https://picsum.photos/id/34/600/400",
+  "https://picsum.photos/id/35/600/400",
+  "https://picsum.photos/id/36/600/400",
+  "https://picsum.photos/id/37/600/400",
+  "https://picsum.photos/id/38/600/400",
+  "https://picsum.photos/id/39/600/400",
+  "https://picsum.photos/id/40/600/400",
+  "https://picsum.photos/id/41/600/400",
+];
+
+const useIsMobile = () => {
+  const [isMobile, setIsMobile] = useState(false);
+  useEffect(() => {
+    const checkScreen = () => {
+      setIsMobile(window.innerWidth < 768); // md breakpoint
+    };
+    checkScreen();
+    window.addEventListener("resize", checkScreen);
+    return () => window.removeEventListener("resize", checkScreen);
+  }, []);
+  return isMobile;
+};
+
+// -----------------------------
+// Swiper Carousel (Mobile)
+// -----------------------------
+const SwiperCarousel = () => (
+  <div className="w-full h-screen bg-black flex items-center justify-center">
+    <Swiper
+      modules={[Autoplay]}
+      autoplay={{
+        delay: 3000,
+        pauseOnMouseEnter: true,
+        disableOnInteraction: false,
+      }}
+      loop={true}
+      slidesPerView={1}
+      className="w-full max-w-md h-[400px]"
+    >
+      {images.map((src, index) => (
+        <SwiperSlide key={index}>
+          <div
+            className="w-full h-full bg-cover bg-center rounded-xl shadow-xl"
+            style={{ backgroundImage: `url(${src})` }}
+          />
+        </SwiperSlide>
+      ))}
+    </Swiper>
+  </div>
+);
+
+// -----------------------------
+// 3D GSAP Ring Carousel (Desktop)
+// -----------------------------
+const RingCarousel = () => {
   const containerRef = useRef(null);
   const ringRef = useRef(null);
   const imagesRef = useRef([]);
   const xPosRef = useRef(0);
   const isDraggingRef = useRef(false);
   const autoRotateTween = useRef(null);
-
-  const images = [
-    "https://picsum.photos/id/32/600/400",
-    "https://picsum.photos/id/33/600/400",
-    "https://picsum.photos/id/34/600/400",
-    "https://picsum.photos/id/35/600/400",
-    "https://picsum.photos/id/36/600/400",
-    "https://picsum.photos/id/37/600/400",
-    "https://picsum.photos/id/38/600/400",
-    "https://picsum.photos/id/39/600/400",
-    "https://picsum.photos/id/40/600/400",
-    "https://picsum.photos/id/41/600/400",
-    "https://picsum.photos/id/32/600/400",
-    "https://picsum.photos/id/33/600/400",
-    "https://picsum.photos/id/34/600/400",
-    "https://picsum.photos/id/35/600/400",
-    "https://picsum.photos/id/36/600/400",
-    "https://picsum.photos/id/37/600/400",
-    "https://picsum.photos/id/38/600/400",
-    "https://picsum.photos/id/39/600/400",
-    "https://picsum.photos/id/40/600/400",
-    "https://picsum.photos/id/41/600/400",
-    "https://picsum.photos/id/32/600/400",
-    "https://picsum.photos/id/33/600/400",
-    "https://picsum.photos/id/34/600/400",
-    "https://picsum.photos/id/35/600/400",
-    "https://picsum.photos/id/36/600/400",
-    "https://picsum.photos/id/37/600/400",
-    "https://picsum.photos/id/38/600/400",
-    "https://picsum.photos/id/39/600/400",
-    "https://picsum.photos/id/40/600/400",
-    "https://picsum.photos/id/41/600/400",
-  ];
-
-  const getBgPos = (i) => {
-    if (!ringRef.current) return "0px 0px";
-    const rotationY = gsap.getProperty(ringRef.current, "rotationY") || 0;
-    const pos =
-      100 - (gsap.utils.wrap(0, 360, rotationY - 180 - i * 30) / 360) * 500;
-    return `${pos}px 0px`;
-  };
 
   const dragStart = (e) => {
     e.preventDefault();
@@ -74,13 +93,6 @@ const BehindTheScenes = () => {
     gsap.to(ringRef.current, {
       rotationY: `-=${deltaX}`,
       duration: 0.1,
-      onUpdate: () => {
-        imagesRef.current.forEach((img, i) => {
-          if (img) {
-            gsap.set(img, { backgroundPosition: getBgPos(i) });
-          }
-        });
-      },
     });
 
     xPosRef.current = Math.round(clientX);
@@ -97,30 +109,6 @@ const BehindTheScenes = () => {
     document.removeEventListener("touchend", dragEnd);
   };
 
-  const handleMouseEnter = (index) => {
-    imagesRef.current.forEach((img, i) => {
-      if (img) {
-        gsap.to(img, {
-          opacity: i === index ? 1 : 0.5,
-          duration: 0.3,
-          ease: "power3.out",
-        });
-      }
-    });
-  };
-
-  const handleMouseLeave = () => {
-    imagesRef.current.forEach((img) => {
-      if (img) {
-        gsap.to(img, {
-          opacity: 1,
-          duration: 0.3,
-          ease: "power2.inOut",
-        });
-      }
-    });
-  };
-
   useEffect(() => {
     if (!ringRef.current || !containerRef.current) return;
 
@@ -134,18 +122,17 @@ const BehindTheScenes = () => {
         rotateY: (i) => i * -30,
         transformOrigin: "50% 50% 2000px",
         z: -1500,
-        backgroundPosition: (i) => getBgPos(i),
         backfaceVisibility: "hidden",
+        opacity: 1,
       })
       .from(imagesRef.current, {
         duration: 1.5,
         y: 200,
-        opacity: 0,
+        opacity: 1,
         stagger: 0.1,
         ease: "expo.out",
       });
 
-    // Auto-rotate loop
     autoRotateTween.current = gsap.to(ringRef.current, {
       rotationY: "+=360",
       duration: 60,
@@ -153,13 +140,6 @@ const BehindTheScenes = () => {
       repeat: -1,
       modifiers: {
         rotationY: gsap.utils.unitize((v) => parseFloat(v) % 360),
-      },
-      onUpdate: () => {
-        imagesRef.current.forEach((img, i) => {
-          if (img) {
-            gsap.set(img, { backgroundPosition: getBgPos(i) });
-          }
-        });
       },
     });
 
@@ -196,24 +176,29 @@ const BehindTheScenes = () => {
             userSelect: "none",
           }}
         >
-          {images.map((imageSrc, index) => (
+          {images.map((src, i) => (
             <div
-              key={index}
-              ref={(el) => (imagesRef.current[index] = el)}
+              key={i}
+              ref={(el) => (imagesRef.current[i] = el)}
               className="absolute w-[40%] h-[90%] left-[30%] top-[5%] bg-cover bg-center rounded-2xl shadow-2xl"
               style={{
-                backgroundImage: `url(${imageSrc})`,
+                backgroundImage: `url(${src})`,
                 transformStyle: "preserve-3d",
-                backfaceVisibility: "hidden",
               }}
-              onMouseEnter={() => handleMouseEnter(index)}
-              onMouseLeave={handleMouseLeave}
             />
           ))}
         </div>
       </div>
     </div>
   );
+};
+
+// -----------------------------
+// Final Component
+// -----------------------------
+const BehindTheScenes = () => {
+  const isMobile = useIsMobile();
+  return isMobile ? <SwiperCarousel /> : <RingCarousel />;
 };
 
 export default BehindTheScenes;
