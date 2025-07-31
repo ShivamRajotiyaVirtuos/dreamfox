@@ -58,12 +58,11 @@ const Productionprocess = () => {
         trigger: containerRef.current,
         start: "top top",
         end: "+=400%", // Pin for the duration of 4 full viewport heights
-        pin: true,
+        pin: window.innerWidth > 768,
         scrub: 1,
         onUpdate: (self) => {
           const progress = self.progress;
           const totalStages = stages.length;
-
           // Show progress line after initial moment
           if (progress > 0.05) {
             gsap.to(progressLineRef.current, {
@@ -165,7 +164,7 @@ const Productionprocess = () => {
           </div>
 
           {/* Progress Track */}
-          <div className="hidden sm:block">
+          <div className="hidden lg:block xl:mt-36">
             <div className="relative  mb-16">
               <div className="flex justify-between items-center relative mx-auto">
                 {/* Progress Line Background */}
@@ -213,7 +212,7 @@ const Productionprocess = () => {
                 <div
                   key={index}
                   ref={(el) => (sectionsRef.current[index] = el)}
-                  className="bg-white p-6 rounded-xl shadow-lg border border-gray-100 hover:shadow-xl transition-shadow duration-300"
+                  className="bg-white/10 p-7  rounded-xl shadow-lg border hover:shadow-xl transition-shadow duration-300"
                 >
                   <div className="flex items-center mb-4">
                     {/* <div className="w-8 h-8 rounded-full bg-gradient-to-r from-[#f0565f] to-[#e63089] flex items-center justify-center mr-3">
@@ -221,23 +220,23 @@ const Productionprocess = () => {
                       {index + 1}
                     </span>
                   </div> */}
-                    <h3 className="text-lg font-semibold text-gray-900">
+                    <h3 className="text-24 font-semibold text-gray-100">
                       {stage.title}
                     </h3>
                   </div>
-                  <p className="text-gray-600 leading-relaxed text-sm">
+                  <p className="text-gray-300 leading-relaxed text-16">
                     {stage.description}
                   </p>
                 </div>
               ))}
             </div>
           </div>
-          <div className="grid sm:hidden grid-cols-1  sm:grid-cols-5 gap-6 mx-auto">
+          <div className="grid lg:hidden grid-cols-1  sm:grid-cols-3 gap-6 mx-auto">
             {stages.map((stage, index) => (
               <div
                 key={index}
                 // ref={(el) => (sectionsRef.current[index] = el)}
-                className="bg-white p-6 rounded-xl shadow-lg border border-gray-100 hover:shadow-xl transition-shadow duration-300"
+                className="bg-white/10 p-7 group group-hover:bg-white rounded-xl shadow-lg border hover:shadow-xl transition-shadow duration-300"
               >
                 <div className="flex items-center mb-4">
                   {/* <div className="w-8 h-8 rounded-full bg-gradient-to-r from-[#f0565f] to-[#e63089] flex items-center justify-center mr-3">
@@ -245,11 +244,11 @@ const Productionprocess = () => {
                       {index + 1}
                     </span>
                   </div> */}
-                  <h3 className="text-lg font-semibold text-gray-900">
+                  <h3 className="text-24 group-hover:text-black font-semibold text-gray-100">
                     {stage.title}
                   </h3>
                 </div>
-                <p className="text-gray-600 leading-relaxed text-sm">
+                <p className="text-gray-200 group-hover:text-black leading-relaxed text-16">
                   {stage.description}
                 </p>
               </div>

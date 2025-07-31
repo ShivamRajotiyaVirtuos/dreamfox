@@ -107,7 +107,7 @@ const Offerings = () => {
         }
 
         gsap.to(imageContainer, {
-          yPercent: -20,
+          yPercent: 0,
           ease: "none",
           scrollTrigger: {
             trigger: card,

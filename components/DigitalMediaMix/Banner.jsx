@@ -77,7 +77,7 @@ const Banner_Mediamix = () => {
           </h1>
         </div>
 
-        <div className="flex flex-col xl:flex-row xl:items-center justify-between gap-8 mt-8 sm:mt-16">
+        <div className="flex flex-col xl:flex-row xl:items-center justify-between gap-8 mt-8 lg:mt-16">
           <div className="max-w-2xl">
             <p className="text-white text-base sm:text-lg font-light">
               <br />

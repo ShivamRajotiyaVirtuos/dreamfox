@@ -57,7 +57,7 @@ const MediaReelGallery = () => {
   return (
     <div
       ref={galleryRef}
-      className="w-screen h-screen grid grid-cols-3 gap-4 bg-black perspective-[1000px] overflow-hidden"
+      className="w-screen  h-screen grid grid-cols-3 gap-2 !p-2 xl:!p-0 lg:gap-4 bg-black perspective-[1000px] overflow-hidden"
     >
       {images.map((src, index) => (
         <div
