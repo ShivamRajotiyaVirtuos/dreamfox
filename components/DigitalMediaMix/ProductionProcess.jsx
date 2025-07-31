@@ -146,7 +146,7 @@ const Productionprocess = () => {
       {/* Pinned Main Section */}
       <div
         ref={containerRef}
-        className="min-h-screen bg-black flex flex-col justify-center overflow-hidden relative"
+        className="min-h-[80vh] bg-black flex flex-col justify-center overflow-hidden relative"
         style={{
           zIndex: 40,
         }}

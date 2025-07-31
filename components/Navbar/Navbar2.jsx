@@ -86,12 +86,12 @@ const Navbar = () => {
     <nav
       className={`fixed top-0 mx-auto max-w-[95rem]  left-0 right-0 z-50 transition-all duration-500 ease-in-out ${
         isScrolled
-          ? "bg-gray-900/60 backdrop-blur-xl border border-white/10 lg:rounded-full xl:px-6  lg:mt-4 shadow-full"
-          : "lg:bg-transparent bg-gray-900/60 backdrop-blur-xl"
+          ? "bg-gray-900/60 backdrop-blur-xl  border border-white/10 lg:rounded-full xl:px-6  lg:mt-4 shadow-full"
+          : "lg:bg-transparent bg-gray-900/60 backdrop-blur-xl lg:backdrop-blur-none"
       }`}
     >
       <div
-        className={`max-w-[95rem] mx-auto px-6 lg:px-8 transition-all duration-500 ${
+        className={`container mx-auto px-6 lg:px-8 transition-all duration-500 ${
           isScrolled ? "py-4" : "py-4"
         }`}
       >
@@ -144,12 +144,22 @@ const Navbar = () => {
 
               {/* Dropdown Menu */}
               <div
-                className={`absolute top-full left-0 mt-2 w-72 bg-black/95 backdrop-blur-xl rounded-2xl shadow-2xl border border-white/10 overflow-hidden transition-all duration-500 ease-out transform ${
+                className={`absolute top-full -left-20 mt-2 w-72 bg-gray-700 backdrop-blur-xl rounded-2xl shadow-2xl border border-white/10 overflow-hidden transition-all duration-500 ease-out transform ${
                   dropdownOpen
                     ? "opacity-100 translate-y-0 scale-100 visible"
                     : "opacity-0 -translate-y-4 scale-95 invisible"
                 }`}
               >
+                <svg
+                  width="20"
+                  height="6"
+                  viewBox="0 0 8 8"
+                  fill="none"
+                  className="size-5"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path d="M4 0L8 8H0L4 0Z" fill="currentColor" />
+                </svg>
                 <div className="p-2">
                   <a
                     href="/services/brand-advisory"
@@ -157,12 +167,7 @@ const Navbar = () => {
                   >
                     BRAND STRATEGY
                   </a>
-                  <a
-                    href="#"
-                    className="block px-6 py-3 text-white font-medium text-base hover:text-[#ec466f] hover:bg-white/10 transition-all duration-300 ease-out rounded-xl transform hover:translate-x-2"
-                  >
-                    UI/UX DESIGN
-                  </a>
+
                   <a
                     href="/services/experience-mix"
                     className="block uppercase px-6 py-3 text-white font-medium text-base hover:text-[#ec466f] hover:bg-white/10 transition-all duration-300 ease-out rounded-xl transform hover:translate-x-2"
@@ -241,7 +246,8 @@ const Navbar = () => {
               className="relative px-8 cursor-pointer py-4  font-black text-lg border-[#fff] border-2 rounded-full overflow-hidden group hover:shadow-2xl hover:shadow-purple-500/25 transition-all duration-300 hover:scale-105 flex items-center gap-3"
             >
               {/* Overlay effect */}
-              <div
+              <Link
+                href={"/contactus"}
                 className={`absolute inset-0 bg-gradient-to-r from-[#ec466f] to-[#ff6b9d] rounded-full transition-all duration-300 ${
                   isHovered ? "opacity-100 scale-100" : "opacity-0 scale-0"
                 }`}
@@ -385,10 +391,13 @@ const Navbar = () => {
               </div>
 
               {/* Mobile Contact Button */}
-              <button className="relative px-6 py-3 text-white font-black text-lg bg-gradient-to-r from-[#ec466f] to-[#ff6b9d] rounded-full overflow-hidden group hover:shadow-xl transition-all duration-300 mx-2 mt-4">
+              <Link
+                href={"/contactus"}
+                className="relative px-6 py-3 text-white font-black text-lg bg-gradient-to-r from-[#ec466f] to-[#ff6b9d] rounded-full overflow-hidden group hover:shadow-xl transition-all duration-300 mx-2 mt-4"
+              >
                 <span className="relative z-10">CONTACT US</span>
                 <div className="absolute inset-0 bg-gradient-to-r from-pink-600 to-purple-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
-              </button>
+              </Link>
             </div>
           </div>
         </div>

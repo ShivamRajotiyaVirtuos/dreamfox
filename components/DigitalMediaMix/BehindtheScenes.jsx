@@ -34,7 +34,18 @@ const useIsMobile = () => {
 // Swiper Carousel (Mobile)
 // -----------------------------
 const SwiperCarousel = () => (
-  <div className="w-full h-screen bg-black flex items-center justify-center">
+  <div className="w-full h-screen  bg-black flex flex-col items-center justify-center">
+    <div className=" z-10  py-8">
+      <div className="text-center">
+        <h2 className="text-120 font-bold text-gray-50 mb-4">
+          Behind the Scenes
+        </h2>
+        <p className="text-gray-50 text-30 max-w-2xl mx-auto">
+          Follow these steps to get started with Bitcoin and understand the
+          complete process
+        </p>
+      </div>
+    </div>
     <Swiper
       modules={[Autoplay]}
       autoplay={{
@@ -159,43 +170,56 @@ const RingCarousel = () => {
   }, []);
 
   return (
-    <div className="w-full h-screen bg-black overflow-hidden flex items-center justify-center">
-      <div
-        ref={containerRef}
-        className="relative w-full h-[600px]"
-        style={{
-          perspective: "2000px",
-          transformStyle: "preserve-3d",
-        }}
-      >
+    <div className="w-full relative  h-screen bg-black overflow-hidden">
+      {/* Fixed header section */}
+      <div className="sm:absolute top-0 left-0 right-0 z-10 pt-20 lg:pt-40 pb-8">
+        <div className="text-center">
+          <h2 className="text-120 font-bold text-gray-50 mb-4">
+            Behind the Scenes
+          </h2>
+          <p className="text-gray-50 text-30 max-w-2xl mx-auto">
+            Follow these steps to get started with Bitcoin and understand the
+            complete process
+          </p>
+        </div>
+      </div>
+
+      {/* 3D container centered in remaining space */}
+      <div className="w-full h-full flex items-center justify-center">
         <div
-          ref={ringRef}
-          className="absolute inset-0"
+          ref={containerRef}
+          className="relative w-full h-[600px]"
           style={{
+            perspective: "2000px",
             transformStyle: "preserve-3d",
-            userSelect: "none",
           }}
         >
-          {images.map((src, i) => (
-            <div
-              key={i}
-              ref={(el) => (imagesRef.current[i] = el)}
-              className="absolute w-[40%] h-[90%] left-[30%] top-[5%] bg-cover bg-center rounded-2xl shadow-2xl"
-              style={{
-                backgroundImage: `url(${src})`,
-                transformStyle: "preserve-3d",
-              }}
-            />
-          ))}
+          <div
+            ref={ringRef}
+            className="absolute inset-0"
+            style={{
+              transformStyle: "preserve-3d",
+              userSelect: "none",
+            }}
+          >
+            {images.map((src, i) => (
+              <div
+                key={i}
+                ref={(el) => (imagesRef.current[i] = el)}
+                className="absolute w-[40%] h-[90%] left-[30%] top-[5%] bg-cover bg-center rounded-2xl shadow-2xl"
+                style={{
+                  backgroundImage: `url(${src})`,
+                  transformStyle: "preserve-3d",
+                }}
+              />
+            ))}
+          </div>
         </div>
       </div>
     </div>
   );
 };
 
-// -----------------------------
-// Final Component
-// -----------------------------
 const BehindTheScenes = () => {
   const isMobile = useIsMobile();
   return isMobile ? <SwiperCarousel /> : <RingCarousel />;

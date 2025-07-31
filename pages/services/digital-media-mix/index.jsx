@@ -8,11 +8,14 @@ import Productionprocess from "@/components/DigitalMediaMix/ProductionProcess";
 const Index = ({}) => {
   return (
     <div>
-      <BehindTheScenes />
+      <Banner_Mediamix />
+
       <Productionprocess />
       <Offerings />
       <MediaReelGallery />
-      <ContactUs />
+      <BehindTheScenes />
+
+      {/* <ContactUs /> */}
     </div>
   );
 };
