@@ -1,7 +1,8 @@
 import Layout from "@/components/Layout/layout";
 import "@/styles/globals.css";
 import dynamic from "next/dynamic";
-
+import client from "./lib/apollo-client";
+import { ApolloProvider } from "@apollo/client";
 // Dynamically import WebGL component to avoid SSR issues
 const WebGLCursorEffect = dynamic(() => import("@/components/Webgl/webgl"), {
   ssr: false,
@@ -25,9 +26,11 @@ export default function App({ Component, pageProps }) {
     <>
       <WebGLCursorEffect />
       {/* <SmoothScroll> */}
-      <ScrollSmootherWrapper>
-        <Component {...pageProps} />
-      </ScrollSmootherWrapper>
+      <ApolloProvider client={client}>
+        <ScrollSmootherWrapper>
+          <Component {...pageProps} />
+        </ScrollSmootherWrapper>
+      </ApolloProvider>
       {/* </SmoothScroll> */}
     </>
   );
