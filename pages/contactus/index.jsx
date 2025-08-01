@@ -1,10 +1,11 @@
-import ContactUs from '@/components/Contactus/ContactUs'
-import React from 'react'
+import ContactUs from "@/components/Contactus/ContactUs";
 
-const index = () => {
+const Index = ({}) => {
   return (
-    <div><ContactUs/></div>
-  )
-}
+    <div>
+      <ContactUs />
+    </div>
+  );
+};
 
-export default index
+export default Index;
