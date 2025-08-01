@@ -143,6 +143,15 @@ const Navbar = () => {
               </button>
 
               {/* Dropdown Menu */}
+              {/* <svg
+                width="24"
+                height="8"
+                viewBox="0 0 10 8"
+                className=" fill-gray-100 size-4 z-30 absolute -top-2 left-32  right-0"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path d="M5 0L10 8H0L5 0Z" />
+              </svg> */}
               <div
                 className={`absolute top-full -left-20 mt-2 w-72 bg-gray-700 backdrop-blur-xl rounded-2xl shadow-2xl border border-white/10 overflow-hidden transition-all duration-500 ease-out transform ${
                   dropdownOpen
@@ -150,16 +159,6 @@ const Navbar = () => {
                     : "opacity-0 -translate-y-4 scale-95 invisible"
                 }`}
               >
-                <svg
-                  width="20"
-                  height="6"
-                  viewBox="0 0 8 8"
-                  fill="none"
-                  className="size-5"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path d="M4 0L8 8H0L4 0Z" fill="currentColor" />
-                </svg>
                 <div className="p-2">
                   <a
                     href="/services/brand-advisory"
@@ -191,7 +190,7 @@ const Navbar = () => {
             </div>
 
             <a
-              href="#"
+              href="/work-portfolio"
               className="text-white text-20 font-normal hover:text-[#ec466f] transition-all duration-300 hover:scale-105 relative group"
             >
               PORTFOLIO
