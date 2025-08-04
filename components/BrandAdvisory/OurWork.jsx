@@ -8,6 +8,7 @@ gsap.registerPlugin(ScrollTrigger);
 const OurWork = () => {
   const containerRef = useRef(null);
   const titleRef = useRef(null);
+  const paragraphRef = useRef(null); // New ref for paragraph
   const topGlowRef = useRef(null);
   const bottomGlowRef = useRef(null);
   const imagesRef = useRef([]);
@@ -36,13 +37,22 @@ const OurWork = () => {
 
   const allImages = [...imageSet1, ...imageSet2, ...imageSet3];
 
+  // Text content for each phase
+  const textContent = [
+    "Transforming digital experiences through innovative design",
+    "Building sustainable solutions for the future",
+    "Creating impactful brands that resonate with audiences",
+  ];
+
   useEffect(() => {
     const container = containerRef.current;
     const title = titleRef.current;
+    const paragraph = paragraphRef.current;
     const topGlow = topGlowRef.current;
     const bottomGlow = bottomGlowRef.current;
 
     gsap.set(title, { scale: 0, opacity: 0 });
+    gsap.set(paragraph, { y: 20, opacity: 0 }); // Initial state for paragraph
 
     // Random subtle transform setup
     imagesRef.current.forEach((el, i) => {
@@ -61,35 +71,41 @@ const OurWork = () => {
       scrollTrigger: {
         trigger: container,
         start: "top top",
-        end: "+=450%",
-        scrub: 1,
+        end: "+=800%",
+        scrub: 1.5,
         markers: true,
         pin: true,
         anticipatePin: 1,
       },
     });
 
-    tl.to(title, {
-      scale: 1,
+    // Initial animations
+    tl.to(paragraph, {
+      y: 0,
       opacity: 1,
-      duration: 1.2,
-      ease: "back.out(1.7)",
-    });
-
-    // Phase 1
-    tl.to(
-      imagesRef.current.slice(0, 4),
+      duration: 1,
+      ease: "power2.out",
+    }).to(
+      title,
       {
-        y: "-130vh",
+        scale: 1,
         opacity: 1,
-        duration: 4,
-        ease: "power1.out",
-        stagger: 0.3,
-      }
-      //   "+=0.5"
+        duration: 1.2,
+        ease: "back.out(1.7)",
+      },
+      "-=0.5"
     );
 
-    // Phase 2
+    // Phase 1 - Technology/Digital
+    tl.to(imagesRef.current.slice(0, 4), {
+      y: "-130vh",
+      opacity: 1,
+      duration: 4,
+      ease: "power1.out",
+      stagger: 0.3,
+    });
+
+    // Phase 2 - Sustainability/Growth
     tl.to(
       [topGlow, bottomGlow],
       {
@@ -98,19 +114,39 @@ const OurWork = () => {
         duration: 0.5,
       },
       "+=1"
-    ).to(
-      imagesRef.current.slice(4, 8),
-      {
-        y: "-130vh",
+    )
+      .to(
+        paragraph,
+        {
+          opacity: 0,
+          y: -10,
+          duration: 0.3,
+          ease: "power2.in",
+          onComplete: () => {
+            paragraph.textContent = textContent[1];
+          },
+        },
+        "-=0.3"
+      )
+      .to(paragraph, {
         opacity: 1,
-        duration: 4,
-        ease: "power1.out",
-        stagger: 0.3,
-      }
-      //   "-=0.2"
-    );
+        y: 0,
+        duration: 0.5,
+        ease: "power2.out",
+      })
+      .to(
+        imagesRef.current.slice(4, 8),
+        {
+          y: "-130vh",
+          opacity: 1,
+          duration: 4,
+          ease: "power1.out",
+          stagger: 0.3,
+        },
+        "-=0.5"
+      );
 
-    // Phase 3
+    // Phase 3 - Branding/Creative
     tl.to(
       [topGlow, bottomGlow],
       {
@@ -119,17 +155,37 @@ const OurWork = () => {
         duration: 0.5,
       },
       "+=1"
-    ).to(
-      imagesRef.current.slice(8, 12),
-      {
-        y: "-130vh",
+    )
+      .to(
+        paragraph,
+        {
+          opacity: 0,
+          y: -10,
+          duration: 0.3,
+          ease: "power2.in",
+          onComplete: () => {
+            paragraph.textContent = textContent[2];
+          },
+        },
+        "-=0.3"
+      )
+      .to(paragraph, {
         opacity: 1,
-        duration: 10,
-        ease: "power1.out",
-        stagger: 1,
-      }
-      //   "-=0.2"
-    );
+        y: 0,
+        duration: 0.5,
+        ease: "power2.out",
+      })
+      .to(
+        imagesRef.current.slice(8, 12),
+        {
+          y: "-130vh",
+          opacity: 1,
+          duration: 10,
+          ease: "power1.out",
+          stagger: 1,
+        },
+        "-=0.5"
+      );
 
     return () => {
       ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
@@ -162,8 +218,20 @@ const OurWork = () => {
       ></div>
 
       {/* Main content */}
-      <div className="relative z-10 text-center">
-        <h2 ref={titleRef} className="text-200 flex gap-3 sm:gap-0 font-bold text-white px-6 py-2">
+      <div className="relative z-10 text-center max-w-4xl px-6">
+        {/* Dynamic paragraph */}
+        <p
+          ref={paragraphRef}
+          className="text-lg sm:text-xl md:text-2xl text-gray-300 mb-6 sm:mb-8 md:mb-12 font-light leading-relaxed tracking-wide"
+        >
+          {textContent[0]}
+        </p>
+
+        {/* Title */}
+        <h2
+          ref={titleRef}
+          className="text-200 flex gap-3 sm:gap-0 font-bold text-white px-6 py-2"
+        >
           <span className="inline-block sm:px-6 py-4 bg-clip-text text-transparent bg-gradient-to-r from-[#DC6263] to-[#D2448D]">
             Our
           </span>
@@ -194,9 +262,6 @@ const OurWork = () => {
           }}
         />
       ))}
-
-      {/* Extra content to enable scrolling */}
-      {/* <div className="absolute bottom-0 left-0 w-full h-1 opacity-0 pointer-events-none"></div> */}
     </div>
   );
 };
