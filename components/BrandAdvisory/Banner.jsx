@@ -5,6 +5,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import BannerButton from "../buttons/BannerButton";
 import AnimatedButton from "../buttons/AnimatedButton";
+import BannerTextReveal from "../Text Reveal/bannertextreveal";
 // import BannerButton from "../buttons/BannerButton";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -72,24 +73,19 @@ const Banner_Brand = () => {
       {/* Main Content */}
       <div className="container mx-auto px-6 relative z-10 flex flex-col justify-between h-full py-24 banner-trigger">
         <div className="max-w-2xl">
-          <h1 className="text-white text-120 font-bold leading-tight">
-            Brands Are Born Here.
-          </h1>
+        <BannerTextReveal
+            titleClassName="text-white text-130 font-bold leading-tight"
+            descriptionClassName="text-24 text-white max-w-7xl"
+            title="Brands are born here"
+            description="We helps advisors save valuable time and create accurate buyer
+              lists. Our technology ensures a fast and effective compilation of
+              suitable buyers and treats all data according to the highest
+              security standards."
+          />
         </div>
 
         <div className="flex flex-col xl:flex-row xl:items-center justify-between gap-8 mt-8 sm:mt-16">
-          <div className="max-w-2xl">
-            <p className="text-white text-base sm:text-lg font-light">
-              <span className="font-semibold text-white text-lg sm:text-xl">
-                Fast. Intelligent. Individual.
-              </span>
-              <br />
-              We helps advisors save valuable time and create accurate buyer
-              lists. Our technology ensures a fast and effective compilation of
-              suitable buyers and treats all data according to the highest
-              security standards.
-            </p>
-          </div>
+          
 
           <div className="flex flex-col sm:flex-row gap-4 shrink-0">
             <AnimatedButton text="Arrange an initial consultation" href="/" />

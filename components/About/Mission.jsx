@@ -1,11 +1,11 @@
 // edge to edge
 
-
 "use client";
 
 import React, { useRef, useEffect } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import TextReveal from "../Text Reveal/textreveal";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -40,10 +40,10 @@ const MissionVision = () => {
       // Enhanced mission images animation with border color transition
       gsap.fromTo(
         missionImagesRef.current,
-        { 
-          opacity: 0, 
-          y: 100, 
-          borderWidth: "0px"
+        {
+          opacity: 0,
+          y: 100,
+          borderWidth: "0px",
         },
         {
           opacity: 1,
@@ -59,10 +59,10 @@ const MissionVision = () => {
             onUpdate: (self) => {
               const progress = self.progress;
               const images = missionImagesRef.current;
-              
+
               // Direct gradient transition without white border
               const gradientOpacity = progress;
-              
+
               images.style.borderImage = `linear-gradient(45deg, rgba(255, 0, 110, ${gradientOpacity}), rgba(131, 56, 236, ${gradientOpacity})) 1`;
               images.style.borderColor = "transparent";
             },
@@ -91,10 +91,10 @@ const MissionVision = () => {
       // Enhanced vision images animation with border color transition
       gsap.fromTo(
         visionImagesRef.current,
-        { 
-          opacity: 0, 
-          y: 100, 
-          borderWidth: "0px"
+        {
+          opacity: 0,
+          y: 100,
+          borderWidth: "0px",
         },
         {
           opacity: 1,
@@ -110,10 +110,10 @@ const MissionVision = () => {
             onUpdate: (self) => {
               const progress = self.progress;
               const images = visionImagesRef.current;
-              
+
               // Direct gradient transition without white border
               const gradientOpacity = progress;
-              
+
               images.style.borderImage = `linear-gradient(45deg, rgba(255, 0, 110, ${gradientOpacity}), rgba(131, 56, 236, ${gradientOpacity})) 1`;
               images.style.borderColor = "transparent";
             },
@@ -138,12 +138,26 @@ const MissionVision = () => {
             ref={missionTextRef}
             className="md:mr-10 2xl:mt-40 flex flex-col justify-center order-1 md:order-none"
           >
-            <h2 className="text-120 font-bold mb-4">Our Mission</h2>
-            <p className="text-30 leading-relaxed">
+            <TextReveal
+              // className="mt-36 text-center font-bold text-120 "
+              animation="rotateX"
+              stagger={0.1}
+              duration={0.8}
+              className="text-120 font-bold mb-4"
+            >
+              Our Mission
+            </TextReveal>
+            <TextReveal
+              // className="mt-36 text-center font-bold text-120 "
+              animation="rotateX"
+              stagger={0.1}
+              duration={0.8}
+              className="text-30 leading-relaxed"
+            >
               To empower individuals and organizations by providing innovative
               solutions that drive success and create a positive impact on the
               world.
-            </p>
+            </TextReveal>
           </div>
 
           {/* Right Images */}
@@ -211,11 +225,23 @@ const MissionVision = () => {
             ref={visionTextRef}
             className="md:ml-10 2xl:mt-40 flex flex-col justify-center order-1 md:order-none mt-10 md:mt-0  "
           >
-            <h2 className="text-120 font-bold mb-4">Our Vision</h2>
-            <p className="text-30 leading-relaxed">
+            <TextReveal
+              animation="rotateX"
+              stagger={0.1}
+              duration={0.8}
+              className="text-120 font-bold mb-4"
+            >
+              Our Vision
+            </TextReveal>
+            <TextReveal
+              animation="rotateX"
+              stagger={0.1}
+              duration={0.8}
+              className="text-30 leading-relaxed"
+            >
               To be a global leader in innovation, inspiring progress and
               shaping a sustainable future for generations to come.
-            </p>
+            </TextReveal>
           </div>
         </div>
       </section>

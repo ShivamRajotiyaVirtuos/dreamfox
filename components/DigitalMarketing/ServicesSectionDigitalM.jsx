@@ -110,7 +110,7 @@ const ServicesSectionDigitalM = () => {
             stagger={0.1}
             duration={0.8}
           >
-            Services
+            Our Services
           </TextReveal>
         </div>
 

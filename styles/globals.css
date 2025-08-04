@@ -486,3 +486,10 @@ body span {
     transition-timing-function: ease !important;
   }
 }
+
+
+.card-container-pink {
+  box-shadow:
+    0 0 0 1.5px rgba(236, 72, 153, 0.4),
+    0 0 25px 10px rgba(236, 72, 153, 0.2);
+}

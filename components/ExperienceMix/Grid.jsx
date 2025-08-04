@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import TextReveal from "../Text Reveal/textreveal";
 
 const HorizontalScrollGallery = () => {
   const containerRef = useRef(null);
@@ -166,12 +167,16 @@ const HorizontalScrollGallery = () => {
       {/* Header */}
       <header className="flex justify-center items-center min-h-screen">
         <div className="text-center">
-          <h1 className="text-200 font-bold tracking-wide mb-4 text-white">
+          <TextReveal  animation="rotateX"
+              stagger={0.1}
+              duration={0.8} className="text-200 font-bold tracking-wide mb-4 text-white">
             Our Services
-          </h1>
-          <p className="text-30 text-gray-400 container">
+          </TextReveal>
+          <TextReveal  animation="rotateX"
+              stagger={0.1}
+              duration={0.8} className="text-30 text-gray-400 container">
             Scroll down to explore the services Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem accusantium at impedit distinctio, debitis sequi excepturi ullam id inventore nisi optio rem, soluta voluptas animi qui voluptatum in incidunt dignissimos, adipisci ut fuga minus! Labore, eos! Magnam, suscipit amet eos quaerat voluptatibus adipisci. Cupiditate doloremque et temporibus odio, quo illum qui, modi sint labore accusantium ad hic dolor ullam? Cum tempore sed totam molestiae impedit, op.
-          </p>
+          </TextReveal>
         </div>
       </header>
 

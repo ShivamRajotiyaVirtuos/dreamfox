@@ -4,6 +4,7 @@ import Image from "next/image";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { motion, AnimatePresence } from "framer-motion";
+import TextReveal from "../Text Reveal/textreveal";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -26,7 +27,7 @@ const DreamFoxModel = () => {
     const cards = cardsRef.current;
     const markers = markersRef.current;
     const labels = labelsRef.current;
-    
+
     // Function to handle responsive values based on screen size
     const getResponsiveValue = (mobile, desktop) => {
       return window.innerWidth < 768 ? mobile : desktop;
@@ -56,7 +57,9 @@ const DreamFoxModel = () => {
         pin: true,
         scrub: 0.5,
         start: "top top",
-        end: () => "+=" + window.innerHeight * getResponsiveValue(0.6, 1) * cardData.length,
+        end: () =>
+          "+=" +
+          window.innerHeight * getResponsiveValue(0.6, 1) * cardData.length,
         onUpdate: (self) => {
           const progress = self.progress;
           const totalCards = cardData.length;
@@ -71,8 +74,16 @@ const DreamFoxModel = () => {
 
     cards.forEach((card, i) => {
       timeline.to(card, { rotate: 0, duration: 0.3 }, i);
-      timeline.to(markers[i], { width: "24px", backgroundColor: "#fff", duration: 0.3 }, i);
-      timeline.to(labels[i], { opacity: 1, filter: "blur(0px)", duration: 0.3 }, i);
+      timeline.to(
+        markers[i],
+        { width: "24px", backgroundColor: "#fff", duration: 0.3 },
+        i
+      );
+      timeline.to(
+        labels[i],
+        { opacity: 1, filter: "blur(0px)", duration: 0.3 },
+        i
+      );
 
       if (i < cards.length - 1) {
         // Calculate the card width and use it for the offset
@@ -90,10 +101,18 @@ const DreamFoxModel = () => {
   }, []);
 
   return (
-    <section ref={containerRef} className="w-full h-screen flex flex-col text-white font-sans overflow-hidden">
-      <div className="mt-28 text-center font-bold text-120 mb-10  ">
+    <section
+      ref={containerRef}
+      className="w-full h-screen flex flex-col text-white font-sans overflow-hidden"
+    >
+      <TextReveal
+        className="mt-36 text-center font-bold text-120 "
+        animation="rotateX"
+        stagger={0.1}
+        duration={0.8}
+      >
         Our Capabilities
-      </div>
+      </TextReveal>
 
       <div className="flex flex-col md:flex-row container mx-auto px-4 gap-4 sm:gap-6 md:gap-8 lg:gap-10 flex-1 overflow-hidden">
         {/* Left Card Stack */}

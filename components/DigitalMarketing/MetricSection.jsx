@@ -10,6 +10,7 @@ import {
   TrophyIcon,
   GlobeAmericasIcon,
 } from "@heroicons/react/24/outline";
+import TextReveal from "../Text Reveal/textreveal";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -19,9 +20,9 @@ const metrics = [
     value: "120+",
     w: 200,
     h: 180,
-    x: "5vw", 
+    x: "5vw",
     y: "15vh",
-    icon: UsersIcon, 
+    icon: UsersIcon,
   },
   {
     label: "Projects",
@@ -30,7 +31,7 @@ const metrics = [
     h: 180,
     x: "65vw",
     y: "10vh",
-    icon: RocketLaunchIcon, 
+    icon: RocketLaunchIcon,
   },
   {
     label: "Awards",
@@ -39,7 +40,7 @@ const metrics = [
     h: 180,
     x: "25vw",
     y: "60vh",
-    icon: TrophyIcon, 
+    icon: TrophyIcon,
   },
   {
     label: "Countries",
@@ -48,7 +49,7 @@ const metrics = [
     h: 180,
     x: "70vw",
     y: "50vh",
-    icon: GlobeAmericasIcon, 
+    icon: GlobeAmericasIcon,
   },
 ];
 
@@ -63,13 +64,16 @@ const blurs = [
 // Helper: get card size based on screen width
 function getCardSize() {
   if (typeof window === "undefined") return { w: 200, h: 180 };
-  if (window.innerWidth >= 1536) { // 2xl breakpoint (Tailwind: 1536px)
+  if (window.innerWidth >= 1536) {
+    // 2xl breakpoint (Tailwind: 1536px)
     return { w: 270, h: 240 };
   }
-  if (window.innerWidth >= 1024) { // lg breakpoint (Tailwind: 1024px)
+  if (window.innerWidth >= 1024) {
+    // lg breakpoint (Tailwind: 1024px)
     return { w: 250, h: 220 };
   }
-  if (window.innerWidth >= 768) { // md breakpoint (Tailwind: 768px)
+  if (window.innerWidth >= 768) {
+    // md breakpoint (Tailwind: 768px)
     return { w: 230, h: 200 };
   }
   return { w: 200, h: 180 };
@@ -88,8 +92,8 @@ export default function MetricSection() {
       setCardSize(getCardSize());
     };
 
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
 
   const sectionRef = useRef(null);
@@ -102,7 +106,7 @@ export default function MetricSection() {
     const masterTL = gsap.timeline({
       scrollTrigger: {
         trigger: sectionRef.current,
-        start: "top top", 
+        start: "top top",
         end: "+=100%",
         pin: true,
         pinSpacing: true,
@@ -113,116 +117,131 @@ export default function MetricSection() {
         },
         onLeave: () => {
           console.log("Section left viewport");
-        }
-      }
+        },
+      },
     });
-    
+
     // Get screen width for responsive layout
     const screenWidth = window.innerWidth;
     const isMedium = screenWidth < 1024 && screenWidth >= 768; // md breakpoint
     const isSmall = screenWidth < 768; // sm breakpoint
-    
+
     const cardsToCenter = gsap.timeline();
-    
+
     if (isSmall) {
       // Small screens: static positioning instead of animation for better visibility
       const centerX = window.innerWidth / 2 - 100; // Center X (half of card width)
-      
+
       // Completely kill ScrollTrigger for mobile to use static positioning
-      ScrollTrigger.getAll().forEach(st => st.kill());
-      
+      ScrollTrigger.getAll().forEach((st) => st.kill());
+
       // Set each card's position directly without animation
       metrics.forEach((m, i) => {
         gsap.set(cardRefs.current[i], {
           position: "relative", // Change to relative positioning
-          x: 0,                 // Reset transforms
+          x: 0, // Reset transforms
           y: 0,
-          left: "50%",          // Center horizontally
+          left: "50%", // Center horizontally
           transform: "translateX(-50%)",
           marginBottom: "20px", // Add spacing between cards
-          scale: 0.8,           // Scale down to fit on screen
+          scale: 0.8, // Scale down to fit on screen
           opacity: 1,
-          clearProps: "top",    // Clear absolute positioning
+          clearProps: "top", // Clear absolute positioning
           width: cardSize.w,
           height: cardSize.h,
         });
       });
-      
+
       // Empty timeline since we're using static positioning
       return;
     } else if (isMedium) {
       // Medium screens: 2x2 grid layout positioned immediately below heading
       const leftX = window.innerWidth / 2 - cardSize.w - 10;
       const rightX = window.innerWidth / 2 + 10;
-      const topY = "80px"; // Immediately below heading 
+      const topY = "80px"; // Immediately below heading
       const bottomY = "360px"; // Increased gap between rows
-      
+
       // Top row
-      cardsToCenter.to(cardRefs.current[0], {
-        x: `${leftX}px`,
-        y: topY,
-        width: cardSize.w,
-        height: cardSize.h,
-        duration: 0.5,
-        ease: "power2.inOut",
-      }, 0);
-      
-      cardsToCenter.to(cardRefs.current[1], {
-        x: `${rightX}px`,
-        y: topY,
-        width: cardSize.w,
-        height: cardSize.h,
-        duration: 0.5,
-        ease: "power2.inOut",
-      }, 0.05);
-      
+      cardsToCenter.to(
+        cardRefs.current[0],
+        {
+          x: `${leftX}px`,
+          y: topY,
+          width: cardSize.w,
+          height: cardSize.h,
+          duration: 0.5,
+          ease: "power2.inOut",
+        },
+        0
+      );
+
+      cardsToCenter.to(
+        cardRefs.current[1],
+        {
+          x: `${rightX}px`,
+          y: topY,
+          width: cardSize.w,
+          height: cardSize.h,
+          duration: 0.5,
+          ease: "power2.inOut",
+        },
+        0.05
+      );
+
       // Bottom row
-      cardsToCenter.to(cardRefs.current[2], {
-        x: `${leftX}px`,
-        y: bottomY,
-        width: cardSize.w,
-        height: cardSize.h,
-        duration: 0.5,
-        ease: "power2.inOut",
-      }, 0.1);
-      
-      cardsToCenter.to(cardRefs.current[3], {
-        x: `${rightX}px`,
-        y: bottomY,
-        width: cardSize.w,
-        height: cardSize.h,
-        duration: 0.5,
-        ease: "power2.inOut",
-      }, 0.15);
+      cardsToCenter.to(
+        cardRefs.current[2],
+        {
+          x: `${leftX}px`,
+          y: bottomY,
+          width: cardSize.w,
+          height: cardSize.h,
+          duration: 0.5,
+          ease: "power2.inOut",
+        },
+        0.1
+      );
+
+      cardsToCenter.to(
+        cardRefs.current[3],
+        {
+          x: `${rightX}px`,
+          y: bottomY,
+          width: cardSize.w,
+          height: cardSize.h,
+          duration: 0.5,
+          ease: "power2.inOut",
+        },
+        0.15
+      );
     } else {
       // Large screens: horizontal row layout (current behavior)
       const totalWidth = metrics.length * (cardSize.w + 20);
       const startX = (window.innerWidth - totalWidth) / 2;
-      
+
       metrics.forEach((m, i) => {
         cardsToCenter.to(
           cardRefs.current[i],
           {
-            x: `${startX + (i * (cardSize.w + 20))}px`, // Center horizontally with spacing
+            x: `${startX + i * (cardSize.w + 20)}px`, // Center horizontally with spacing
             y: `calc(50vh - ${cardSize.h / 2}px)`, // Middle of the section
             width: cardSize.w,
             height: cardSize.h,
             duration: 0.5,
             ease: "power2.inOut",
-          }, 
+          },
           i * 0.05 // Slight stagger between cards (for visual interest)
         );
       });
     }
-    
+
     const pauseTimeline = gsap.timeline();
-    pauseTimeline.to({}, {duration: 1}); 
-    
-    masterTL.add(cardsToCenter, 0)
-           .add(pauseTimeline, 0.33);
-           
+    pauseTimeline.to({}, { duration: 1 });
+
+    masterTL.add(cardsToCenter, 0).add(pauseTimeline, 0.33);
+
     timelineRef.current = masterTL;
-    
+
     // Handle initial setup for mobile
     if (isSmall) {
       // Set scale for mobile devices
@@ -230,25 +249,25 @@ export default function MetricSection() {
         gsap.set(cardRefs.current[i], { scale: 0.8 });
       });
     }
-    
+
     // Add resize event listener to handle responsive layouts
     const handleResize = () => {
       // Kill old ScrollTrigger instances
-      ScrollTrigger.getAll().forEach(st => st.kill());
+      ScrollTrigger.getAll().forEach((st) => st.kill());
       // Refresh to create new animations with current screen size
       ScrollTrigger.refresh();
     };
-    
-    window.addEventListener('resize', handleResize);
-    
+
+    window.addEventListener("resize", handleResize);
+
     return () => {
-      window.removeEventListener('resize', handleResize);
+      window.removeEventListener("resize", handleResize);
     };
   }, []);
 
   // Detect client-side for responsive styles
   const isBrowser = typeof window !== "undefined";
-  
+
   // Render different layouts based on screen size
   return (
     <section
@@ -257,13 +276,16 @@ export default function MetricSection() {
     >
       {/* Header fixed at the top of this section */}
       <div className="w-full flex justify-center mb-4 md:mb-8  ">
-        <h2
+        <TextReveal
           ref={headingRef}
           className="text-center text-120 pt-20 xl:pt-40  font-bold text-white"
           style={{ pointerEvents: "none" }}
+          animation="rotateX"
+          stagger={0.1}
+          duration={0.8}
         >
           Our Metrics
-        </h2>
+        </TextReveal>
       </div>
 
       {/* Purple blur blobs */}
@@ -287,15 +309,26 @@ export default function MetricSection() {
       {isMobile && (
         <div className="flex  flex-col items-center gap-4 mt-2">
           {metrics.map((metric, idx) => (
-            <div 
-              key={idx} 
+            <div
+              key={idx}
               className="flex flex-col items-start justify-start mb-4 mx-auto scale-75"
               style={{ width: cardSize.w, height: cardSize.h }}
             >
               {/* SVG Outline background */}
               <div className="absolute inset-0 z-0 ">
-                <svg width="100%" height="100%" viewBox="0 0 304 336" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
-                  <path d="M1 317V19.2224C1 9.19484 9.1942 1.10062 19.221 1.22374L189.778 3.31808C196.646 3.40242 202.868 7.38852 205.816 13.593L227.986 60.263C230.775 66.133 236.511 70.0441 242.994 70.4958L286.251 73.5096C295.684 74.1667 303 82.0104 303 91.466V317C303 326.941 294.941 335 285 335H152H19C9.05887 335 1 326.941 1 317Z" stroke="white" strokeWidth="1.5"/>
+                <svg
+                  width="100%"
+                  height="100%"
+                  viewBox="0 0 304 336"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  preserveAspectRatio="xMidYMid meet"
+                >
+                  <path
+                    d="M1 317V19.2224C1 9.19484 9.1942 1.10062 19.221 1.22374L189.778 3.31808C196.646 3.40242 202.868 7.38852 205.816 13.593L227.986 60.263C230.775 66.133 236.511 70.0441 242.994 70.4958L286.251 73.5096C295.684 74.1667 303 82.0104 303 91.466V317C303 326.941 294.941 335 285 335H152H19C9.05887 335 1 326.941 1 317Z"
+                    stroke="white"
+                    strokeWidth="1.5"
+                  />
                 </svg>
               </div>
 
@@ -305,20 +338,21 @@ export default function MetricSection() {
                 <span className="mb-4 text-whit ">
                   <metric.icon className="w-10 h-10 text-white" />
                 </span>
-                
+
                 {/* Value with gradient */}
-                <span 
+                <span
                   className="text-5xl font-bold mb- "
                   style={{
-                    background: "linear-gradient(90deg, #EC486E 0%, #EC486E 100%)",
+                    background:
+                      "linear-gradient(90deg, #EC486E 0%, #EC486E 100%)",
                     WebkitBackgroundClip: "text",
                     WebkitTextFillColor: "transparent",
-                    backgroundClip: "text"
+                    backgroundClip: "text",
                   }}
                 >
                   {metric.value}
                 </span>
-                
+
                 {/* Label in white */}
                 <span className="text-xl text-white ">{metric.label}</span>
               </div>
@@ -329,12 +363,15 @@ export default function MetricSection() {
 
       {/* DESKTOP VIEW - GSAP animated cards */}
       {!isMobile && (
-        <div ref={contentRef} className="w-full lg:h-[70vh] min-h-[70vh] h-full flex flex-col items-center">
+        <div
+          ref={contentRef}
+          className="w-full lg:h-[70vh] min-h-[70vh] h-full flex flex-col items-center"
+        >
           <div className="w-full h-auto lg:h-full relative z-10 pb-12 lg:pb-0">
             {metrics.map((m, i) => (
               <div
                 key={i}
-                ref={el => (cardRefs.current[i] = el)}
+                ref={(el) => (cardRefs.current[i] = el)}
                 className="absolute flex flex-col items-start justify-start transition-all duration-500"
                 style={{
                   width: cardSize.w,
@@ -349,8 +386,19 @@ export default function MetricSection() {
               >
                 {/* SVG Outline background */}
                 <div className="absolute inset-0 z-0">
-                  <svg width="100%" height="100%" viewBox="0 0 304 336" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
-                    <path d="M1 317V19.2224C1 9.19484 9.1942 1.10062 19.221 1.22374L189.778 3.31808C196.646 3.40242 202.868 7.38852 205.816 13.593L227.986 60.263C230.775 66.133 236.511 70.0441 242.994 70.4958L286.251 73.5096C295.684 74.1667 303 82.0104 303 91.466V317C303 326.941 294.941 335 285 335H152H19C9.05887 335 1 326.941 1 317Z" stroke="white" strokeWidth="1.5"/>
+                  <svg
+                    width="100%"
+                    height="100%"
+                    viewBox="0 0 304 336"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    preserveAspectRatio="xMidYMid meet"
+                  >
+                    <path
+                      d="M1 317V19.2224C1 9.19484 9.1942 1.10062 19.221 1.22374L189.778 3.31808C196.646 3.40242 202.868 7.38852 205.816 13.593L227.986 60.263C230.775 66.133 236.511 70.0441 242.994 70.4958L286.251 73.5096C295.684 74.1667 303 82.0104 303 91.466V317C303 326.941 294.941 335 285 335H152H19C9.05887 335 1 326.941 1 317Z"
+                      stroke="white"
+                      strokeWidth="1.5"
+                    />
                   </svg>
                 </div>
 
@@ -360,12 +408,13 @@ export default function MetricSection() {
                   <span className="mb-4 text-white">
                     <m.icon className="w-10 h-10 text-white" />
                   </span>
-                  
+
                   {/* Value with gradient */}
-                  <span 
+                  <span
                     className="text-48 font-bold mb-2"
                     style={{
-                      background: "linear-gradient(90deg, #EC486E 0%, #EC486E 100%)",
+                      background:
+                        "linear-gradient(90deg, #EC486E 0%, #EC486E 100%)",
                       WebkitBackgroundClip: "text",
                       WebkitTextFillColor: "transparent",
                       backgroundClip: "text",
@@ -373,7 +422,7 @@ export default function MetricSection() {
                   >
                     {m.value}
                   </span>
-                  
+
                   {/* Label in white */}
                   <span className="text-30 text-white mb-4">{m.label}</span>
                 </div>

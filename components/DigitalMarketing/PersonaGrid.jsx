@@ -113,7 +113,7 @@
 //           />
 //         </div>
 //       </div>
-      
+
 //       {/* Description box */}
 //       <div className="flex-shrink-0 p-6 bg-gray-100">
 //         <h3 className="text-base font-semibold text-black">{title}</h3>
@@ -147,17 +147,13 @@
 
 // export default PersonaGrid;
 
-
-
-
-
-
 "use client";
 
 import React, { useEffect, useRef } from "react";
 import { ArrowUpRightIcon } from "@heroicons/react/24/outline";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
+import TextReveal from "../Text Reveal/textreveal";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -239,12 +235,7 @@ const GradientCard = ({ gradient, title, description }) => {
   }, []);
 
   return (
-    <div className="flex flex-col w-[310px] min-w-[310px] max-w-[310px] rounded-md shadow-md group overflow-hidden">
-
-      
-
-
-
+    <div className="flex flex-col w-[345px] min-w-[345px] max-w-[345px] rounded-md shadow-md group overflow-hidden">
       {/* SVG gradient area */}
       <div className="flex-shrink-0 w-full h-[160px] 2xl:h-[160px]  overflow-hidden">
         <div
@@ -272,7 +263,7 @@ const GradientCard = ({ gradient, title, description }) => {
           />
         </div>
       </div>
-      
+
       {/* Description box */}
       <div className="flex-shrink-0 p-6 bg-gray-100  relative bottom-3 ">
         <h3 className="text-base font-semibold text-black">{title}</h3>
@@ -284,11 +275,16 @@ const GradientCard = ({ gradient, title, description }) => {
 
 const PersonaGrid = () => {
   return (
-    <section className="py-20 px-4 max-w-7xl mx-auto">
-      <h2 className="text-center text-120 font-bold mb-16 text-white">
+    <section className="py-20 px-4 container mx-auto">
+      <TextReveal
+        className="text-center text-120 font-bold mb-16 text-white"
+        animation="rotateX"
+        stagger={0.1}
+        duration={0.8}
+      >
         Persona Targeting
-      </h2>
-      <div className="flex flex-wrap gap-6 xl:gap-12 justify-center">
+      </TextReveal>
+      <div className="grid grid-cols-3 gap-6 xl:gap-12 justify-center">
         {layeredGradients.map((gradient, index) => (
           <GradientCard
             key={index}
@@ -303,7 +299,3 @@ const PersonaGrid = () => {
 };
 
 export default PersonaGrid;
-
-
-
-

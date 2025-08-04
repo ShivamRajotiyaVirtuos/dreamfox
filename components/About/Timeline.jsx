@@ -80,31 +80,37 @@ const StackingCards = () => {
               {cardData.map((card, index) => (
                 <div
                   key={index}
-                  className="card flex-shrink-0 w-full  h-[60vh] border-8 border-purple-200 rounded-4xl "
+                  className="card flex-shrink-0 w-full  h-[60vh] border-8 card-container-pink rounded-4xl "
                 >
-                  <div className="flex h-full rounded-3xl  overflow-hidden bg-white  outline-1 outline-white">
+                  <div className="flex h-full rounded-3xl  overflow-hidden bg-black/10 backdrop-blur-2xl outline-1 outline-black/10">
                     {/* Left */}
-                    <div className="flex flex-col justify-between flex-1 p-6 md:p-10 bg-white">
-                      <div className="text-30 font-semibold text-gray-500">
+                    <div className="flex lg:w-1/2 flex-col gap-5 justify-start pl-64  pt-[68px] bg-black/10">
+                      <div className="text-250 absolute -left-44 top-48 -rotate-90 font-semibold text-gray-300/20">
                         {card.year}
                       </div>
-                      <div className="text-48 font-bold mt-2">
+                      <div className="text-48 text-white font-bold mt-2">
                         {card.heading}
                       </div>
-                      <div className="text-30 text-gray-700 leading-relaxed my-auto">
+                      <div className="text-30 text-gray-300 leading-relaxed ">
                         {card.description}
                       </div>
-                      <div className="text-48 font-extrabold text-black opacity-10">
-                        {index + 1}
+                      {/* <div className="text-250   font-semibold text-gray-50/10">
+                        {card.year}
                       </div>
+                      <div className="text-250   font-semibold text-gray-200/10">
+                        {card.year}
+                      </div> */}
+                      {/* <div className="text-48 font-extrabold text-black opacity-10">
+                        {index + 1}
+                      </div> */}
                     </div>
 
                     {/* Right */}
-                    <div className="flex-1 h-full">
+                    <div className=" h-full lg:w-1/2">
                       <img
                         src={card.image}
                         alt={card.heading}
-                        className="w-full h-full object-cover"
+                        className="w-full grayscale-100 h-full object-cover"
                       />
                     </div>
                   </div>

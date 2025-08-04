@@ -3,6 +3,7 @@
 import React, { useEffect } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import TextReveal from "../Text Reveal/textreveal";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -101,7 +102,16 @@ const Funnel = () => {
       <div className="flex flex-col">
         {/* Sticky Heading */}
         <div className="sticky top-0 w-full bg-black/90 z-50 text-center py-6">
-          <p className="font-bold tracking-tight text-white text-120 px-4 sm:px-0 ">Funnel Builder</p>
+        <TextReveal
+          // ref={headingRef}
+          className="text-center text-120 pt-20 xl:pt-40  font-bold text-white"
+          style={{ pointerEvents: "none" }}
+          animation="rotateX"
+          stagger={0.1}
+          duration={0.8}
+        >
+          Funnel Builder
+        </TextReveal>
         </div>
 
         {/* Cards */}
