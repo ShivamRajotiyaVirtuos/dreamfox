@@ -4,6 +4,7 @@ import { gsap } from "gsap";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import { Autoplay } from "swiper/modules";
+import TextReveal from "../Text Reveal/textreveal";
 
 const images = [
   "https://picsum.photos/id/32/600/400",
@@ -38,13 +39,23 @@ const SwiperCarousel = () => (
   <div className="w-full h-screen  bg-black flex flex-col items-center justify-center">
     <div className=" z-10  py-8">
       <div className="text-center">
-        <h2 className="text-120 font-bold text-gray-50 mb-4">
+        <TextReveal
+          animation="rotateX"
+          stagger={0.1}
+          duration={0.8}
+          className="text-120 font-bold text-gray-50 mb-4"
+        >
           Behind the Scenes
-        </h2>
-        <p className="text-gray-50 text-30 max-w-2xl mx-auto">
+        </TextReveal>
+        <TextReveal
+          animation="rotateX"
+          stagger={0.1}
+          duration={0.8}
+          className="text-gray-50 text-30 max-w-2xl mx-auto"
+        >
           Follow these steps to get started with Bitcoin and understand the
           complete process
-        </p>
+        </TextReveal>
       </div>
     </div>
     <Swiper
@@ -175,13 +186,23 @@ const RingCarousel = () => {
       {/* Fixed header section */}
       <div className="sm:absolute top-0 left-0 right-0 z-10 pt-20 lg:pt-40 pb-8">
         <div className="text-center">
-          <h2 className="text-120 font-bold text-gray-50 mb-4">
+          <TextReveal
+            animation="rotateX"
+            stagger={0.1}
+            duration={0.8}
+            className="text-120 font-bold text-gray-50 mb-4"
+          >
             Behind the Scenes
-          </h2>
-          <p className="text-gray-50 text-30 max-w-2xl mx-auto">
+          </TextReveal>
+          <TextReveal
+            animation="rotateX"
+            stagger={0.1}
+            duration={0.8}
+            className="text-gray-50 text-30 max-w-2xl mx-auto"
+          >
             Follow these steps to get started with Bitcoin and understand the
             complete process
-          </p>
+          </TextReveal>
         </div>
       </div>
 

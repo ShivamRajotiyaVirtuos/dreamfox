@@ -43,9 +43,11 @@ const StackingCards = () => {
       const totalCards = cards.length - 1;
       const cardWidth = cards[0]?.offsetWidth || 0;
       const gap = 40; // pixels gap between cards
+      const visiblePortion = cardWidth * 0.13;
+      const stackOffset = cardWidth - visiblePortion; // Move by 75% of card width
 
       gsap.to(cards, {
-        x: (i) => -i * (cardWidth + gap),
+        x: (i) => -i * stackOffset,
         duration: (i) => 0.5 * i,
         ease: "none",
         scrollTrigger: {
@@ -76,15 +78,15 @@ const StackingCards = () => {
 
         <div className="w-full h-full 2xl:mb-0 mb-60">
           <div className="w-full h-full px-5 md:px-20">
-            <div className="flex h-full container  stacking-cards card-stack gap-x-10 ">
+            <div className="flex h-full container  stacking-cards  card-stack gap-x-10 ">
               {cardData.map((card, index) => (
                 <div
                   key={index}
-                  className="card flex-shrink-0 w-full  h-[60vh] border-8 card-container-pink rounded-4xl "
+                  className="card flex-shrink-0 w-full  h-[60vh] border-1 border-white card-container-pink rounded-4xl "
                 >
-                  <div className="flex h-full rounded-3xl  overflow-hidden bg-black/10 backdrop-blur-2xl outline-1 outline-black/10">
+                  <div className="flex h-full  overflow-hidden card-container-pink bg-black/10 backdrop-blur-2xl 0 rounded-4xl">
                     {/* Left */}
-                    <div className="flex lg:w-1/2 flex-col gap-5 justify-start pl-64  pt-[68px] bg-black/10">
+                    <div className="flex lg:w-1/2 flex-col gap-5 justify-start pl-64 pr-4  pt-[68px] bg-black/10">
                       <div className="text-250 absolute -left-44 top-48 -rotate-90 font-semibold text-gray-300/20">
                         {card.year}
                       </div>

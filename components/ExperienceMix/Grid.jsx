@@ -167,15 +167,28 @@ const HorizontalScrollGallery = () => {
       {/* Header */}
       <header className="flex justify-center items-center min-h-screen">
         <div className="text-center">
-          <TextReveal  animation="rotateX"
-              stagger={0.1}
-              duration={0.8} className="text-200 font-bold tracking-wide mb-4 text-white">
+          <TextReveal
+            animation="rotateX"
+            stagger={0.1}
+            duration={0.8}
+            className="text-200 font-bold tracking-wide mb-4 text-white"
+          >
             Our Services
           </TextReveal>
-          <TextReveal  animation="rotateX"
-              stagger={0.1}
-              duration={0.8} className="text-30 text-gray-400 container">
-            Scroll down to explore the services Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem accusantium at impedit distinctio, debitis sequi excepturi ullam id inventore nisi optio rem, soluta voluptas animi qui voluptatum in incidunt dignissimos, adipisci ut fuga minus! Labore, eos! Magnam, suscipit amet eos quaerat voluptatibus adipisci. Cupiditate doloremque et temporibus odio, quo illum qui, modi sint labore accusantium ad hic dolor ullam? Cum tempore sed totam molestiae impedit, op.
+          <TextReveal
+            animation="rotateX"
+            stagger={0.1}
+            duration={0.8}
+            className="text-30 text-gray-400 container"
+          >
+            Scroll down to explore the services Lorem ipsum dolor sit amet,
+            consectetur adipisicing elit. Dolorem accusantium at impedit
+            distinctio, debitis sequi excepturi ullam id inventore nisi optio
+            rem, soluta voluptas animi qui voluptatum in incidunt dignissimos,
+            adipisci ut fuga minus! Labore, eos! Magnam, suscipit amet eos
+            quaerat voluptatibus adipisci. Cupiditate doloremque et temporibus
+            odio, quo illum qui, modi sint labore accusantium ad hic dolor
+            ullam? Cum tempore sed totam molestiae impedit, op.
           </TextReveal>
         </div>
       </header>

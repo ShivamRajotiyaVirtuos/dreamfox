@@ -72,7 +72,7 @@ const Banner_Experiencemix = () => {
 
       {/* Main Content */}
       <div className="container mx-auto px-6 relative z-10 flex flex-col justify-between h-full py-24 banner-trigger">
-        <div className="max-w-2xl">
+        <div className="max-w-5xl">
         <BannerTextReveal
             titleClassName="text-white text-130 font-bold leading-tight"
             descriptionClassName="text-24 text-white mt-8 sm:mt-12 max-w-7xl"

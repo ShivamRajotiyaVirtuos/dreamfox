@@ -2,6 +2,7 @@
 import React, { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import TextReveal from "../Text Reveal/textreveal";
 
 // Register ScrollTrigger plugin
 if (typeof window !== "undefined") {
@@ -147,7 +148,7 @@ const Productionprocess = () => {
       {/* Pinned Main Section */}
       <div
         ref={containerRef}
-        className="min-h-[80vh] bg-black flex flex-col justify-center overflow-hidden relative"
+        className="min-h-[80vh] bg-black xl:pt-32 flex flex-col justify-center overflow-hidden relative"
         style={{
           zIndex: 40,
         }}
@@ -155,13 +156,26 @@ const Productionprocess = () => {
         <div className="w-full container">
           {/* Header */}
           <div className="text-center mb-12">
-            <h2 className="text-120 font-bold text-gray-50 mb-4">
+            <TextReveal
+              animation="rotateX"
+              stagger={0.1}
+              duration={0.8}
+              className="text-120 font-bold text-gray-50 mb-4"
+            >
               Production Process
-            </h2>
-            <p className="text-gray-50 text-30 max-w-2xl mx-auto">
+            </TextReveal>
+            {/* <h2 className="text-120 font-bold text-gray-50 mb-4">
+             
+            </h2> */}
+            <TextReveal
+              animation="rotateX"
+              stagger={0.1}
+              duration={0.8}
+              className="text-gray-50 text-30 max-w-2xl mx-auto"
+            >
               Follow these steps to get started with Bitcoin and understand the
               complete process
-            </p>
+            </TextReveal>
           </div>
 
           {/* Progress Track */}

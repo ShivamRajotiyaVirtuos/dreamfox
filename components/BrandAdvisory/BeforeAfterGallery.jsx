@@ -12,7 +12,7 @@ const BeforeAfterGallery = () => {
   const projects = [
     {
       id: 1,
-      name: "E-commerce Platform",
+      name: "E-commerce",
       category: "Web Design",
       beforeImage:
         "https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=800&h=600&fit=crop",
@@ -37,7 +37,7 @@ const BeforeAfterGallery = () => {
       name: "Brand Identity",
       category: "Branding",
       beforeImage:
-        "https://images.unsplash.com/photo-1586717791821-3bd56353c00e?w=800&h=600&fit=crop",
+        "https://images.unsplash.com/photo-1551650975-87deedd944c3?w=800&h=600&fit=crop",
       afterImage:
         "https://images.unsplash.com/photo-1557804506-669a67965ba0?w=800&h=600&fit=crop",
       beforeAlt: "Old brand design",
@@ -318,13 +318,13 @@ const BeforeAfterGallery = () => {
             <div
               data-tabs="nav"
               ref={(el) => (tabsRef.current = el)}
-              className="bg-white/5 border border-white/10 rounded-xl p-1 inline-flex flex-wrap"
+              className="bg-white/5 border border-white/10 rounded-xl p-1 inline-flex flex-wrap "
             >
               {projects.map((project, index) => (
                 <button
                   key={project.id}
                   data-tabs="button"
-                  className={`relative px-5 py-2.5 text-base font-medium transition-all ${
+                  className={`relative px-5 py-2.5 w-1/2 xl:w-auto text-base font-medium transition-all ${
                     activeProject === index
                       ? "text-white z-10 active-tab"
                       : "text-gray-400"

@@ -81,7 +81,7 @@ const Funnel = () => {
         gsap.timeline({
           scrollTrigger: {
             trigger: wrapper,
-            start: "top top",
+            start: "top +=10%",
             end: "bottom top",
             scrub: true,
             pin: true,

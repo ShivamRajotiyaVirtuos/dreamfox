@@ -72,11 +72,11 @@ const BannerSection = () => {
 
       {/* Main Content */}
       <div className="container mx-auto px-6 relative z-10 flex flex-col justify-between h-full py-24 banner-trigger">
-        <div className="max-w-2xl">
+        <div className="max-w-5xl">
           <BannerTextReveal
             titleClassName="text-white text-130 font-bold leading-tight"
             descriptionClassName="text-24 text-white mt-8 sm:mt-12 max-w-7xl"
-            title="          Marketing the Modern Way
+            title="Marketing the Modern Way
 "
             description="We helps advisors save valuable time and create accurate buyer
               lists. Our technology ensures a fast and effective compilation of

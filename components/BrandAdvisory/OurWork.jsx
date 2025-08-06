@@ -230,7 +230,7 @@ const OurWork = () => {
         {/* Title */}
         <h2
           ref={titleRef}
-          className="text-200 flex gap-3 sm:gap-0 font-bold text-white px-6 py-2"
+          className="text-200 justify-center flex gap-3 sm:gap-0 font-bold text-white px-6 py-2"
         >
           <span className="inline-block sm:px-6 py-4 bg-clip-text text-transparent bg-gradient-to-r from-[#DC6263] to-[#D2448D]">
             Our
@@ -255,9 +255,9 @@ const OurWork = () => {
           ref={(el) => (imagesRef.current[index] = el)}
           src={src}
           alt={`Work ${index + 1}`}
-          className="absolute sm:w-[15vw] sm:h-[40vh] object-cover rounded-lg shadow-2xl z-20"
+          className="absolute sm:w-[15vw] xl:w-[15vw] md:w-[35vw] sm:h-[40vh] object-cover rounded-lg shadow-2xl z-20"
           style={{
-            left: `${Math.random() * 40 + 20}%`,
+            left: `${Math.random() * 40 + 10}%`,
             bottom: "-200px",
           }}
         />
