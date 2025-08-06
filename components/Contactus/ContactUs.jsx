@@ -2,7 +2,7 @@
 import { useState, useRef, useEffect } from "react";
 import { gsap } from "gsap";
 import { useMutation } from "@apollo/client";
-import { SUBMIT_FORM } from "@/pages/graphql/ContactUS/queries";
+import { SUBMIT_FORM } from "@/ContactUS/queries";
 
 export default function ContactUs() {
   const [formData, setFormData] = useState({
