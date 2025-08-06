@@ -17,6 +17,26 @@ const images = [
   "https://picsum.photos/id/39/600/400",
   "https://picsum.photos/id/40/600/400",
   "https://picsum.photos/id/41/600/400",
+  "https://picsum.photos/id/32/600/400",
+  "https://picsum.photos/id/33/600/400",
+  "https://picsum.photos/id/34/600/400",
+  "https://picsum.photos/id/35/600/400",
+  "https://picsum.photos/id/36/600/400",
+  "https://picsum.photos/id/37/600/400",
+  "https://picsum.photos/id/38/600/400",
+  "https://picsum.photos/id/39/600/400",
+  "https://picsum.photos/id/40/600/400",
+  "https://picsum.photos/id/41/600/400",
+  "https://picsum.photos/id/32/600/400",
+  "https://picsum.photos/id/33/600/400",
+  "https://picsum.photos/id/34/600/400",
+  "https://picsum.photos/id/35/600/400",
+  "https://picsum.photos/id/36/600/400",
+  "https://picsum.photos/id/37/600/400",
+  "https://picsum.photos/id/38/600/400",
+  "https://picsum.photos/id/39/600/400",
+  "https://picsum.photos/id/40/600/400",
+  "https://picsum.photos/id/41/600/400",
 ];
 
 const useIsMobile = () => {
@@ -60,6 +80,7 @@ const SwiperCarousel = () => (
     </div>
     <Swiper
       modules={[Autoplay]}
+      spaceBetween={50}
       autoplay={{
         delay: 3000,
         pauseOnMouseEnter: true,
@@ -67,10 +88,10 @@ const SwiperCarousel = () => (
       }}
       loop={true}
       slidesPerView={1}
-      className="w-full max-w-md h-[400px]"
+      className="w-full  max-w-md h-[400px]"
     >
       {images.map((src, index) => (
-        <SwiperSlide key={index}>
+        <SwiperSlide className="px-6" key={index}>
           <div
             className="w-full h-full bg-cover bg-center rounded-xl shadow-xl"
             style={{ backgroundImage: `url(${src})` }}
