@@ -153,7 +153,7 @@ const Navbar = () => {
                 <path d="M5 0L10 8H0L5 0Z" />
               </svg> */}
               <div
-                className={`absolute top-full -left-20 mt-2 w-72 bg-gray-700 backdrop-blur-xl rounded-2xl shadow-2xl border border-white/10 overflow-hidden transition-all duration-500 ease-out transform ${
+                className={`absolute top-full -left-20 mt-2 w-64 bg-gray-700 backdrop-blur-xl rounded-2xl shadow-2xl border border-white/10 overflow-hidden transition-all duration-500 ease-out transform ${
                   dropdownOpen
                     ? "opacity-100 translate-y-0 scale-100 visible"
                     : "opacity-0 -translate-y-4 scale-95 invisible"
@@ -162,26 +162,26 @@ const Navbar = () => {
                 <div className="p-2">
                   <a
                     href="/services/brand-advisory"
-                    className="block px-6 py-3 text-white font-medium text-base hover:text-[#ec466f] hover:bg-white/10 transition-all duration-300 ease-out rounded-xl transform hover:translate-x-2"
+                    className="block px-6 py-3 text-white font-medium text-base hover:text-[#ec466f] text-center transition-all duration-300 ease-out rounded-xl transform hover:scale-110 " 
                   >
                     BRAND STRATEGY
                   </a>
 
                   <a
                     href="/services/experience-mix"
-                    className="block uppercase px-6 py-3 text-white font-medium text-base hover:text-[#ec466f] hover:bg-white/10 transition-all duration-300 ease-out rounded-xl transform hover:translate-x-2"
+                    className="block uppercase px-6 py-3 text-white font-medium text-base hover:text-[#ec466f] text-center transition-all duration-300 ease-out rounded-xl transform hover:scale-110 " 
                   >
                     Experience Mix
                   </a>
                   <a
                     href="/services/digital-marketing"
-                    className="block uppercase px-6 py-3 text-white font-medium text-base hover:text-[#ec466f] hover:bg-white/10 transition-all duration-300 ease-out rounded-xl transform hover:translate-x-2"
+                    className="block uppercase px-6 py-3 text-white font-medium text-base hover:text-[#ec466f] text-center transition-all duration-300 ease-out rounded-xl transform hover:scale-110 " 
                   >
                     Digital Marketing
                   </a>
                   <a
                     href="/services/digital-media-mix"
-                    className="block uppercase px-6 py-3 text-white font-medium text-base hover:text-[#ec466f] hover:bg-white/10 transition-all duration-300 ease-out rounded-xl transform hover:translate-x-2"
+                    className="block uppercase px-6 py-3 text-white font-medium text-base hover:text-[#ec466f] text-center transition-all duration-300 ease-out rounded-xl transform hover:scale-110 " 
                   >
                     Digital Media Mix
                   </a>
@@ -257,19 +257,20 @@ const Navbar = () => {
                 }}
               />
 
-              <span className="relative z-10 text-white ">CONTACT US</span>
+              <Link href={"/contactus"} className="relative z-10 text-white ">
+                CONTACT US
+              </Link>
 
               <span className=" rounded-full relative z-10">
                 <svg
-                  className="size-7 text-[#e83682] rounded-full p-1 bg-white/90 group-hover:bg-white "
+                  data-slot="icon"
                   fill="currentColor"
                   viewBox="0 0 20 20"
+                  xmlns="http://www.w3.org/2000/svg"
+                  aria-hidden="true"
+                  className="size-8 group-hover:text-white text-[#ec466f] p-1 rounded-full "
                 >
-                  <path
-                    fillRule="evenodd"
-                    d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
-                    clipRule="evenodd"
-                  />
+                  <path d="M3.105 2.288a.75.75 0 0 0-.826.95l1.414 4.926A1.5 1.5 0 0 0 5.135 9.25h6.115a.75.75 0 0 1 0 1.5H5.135a1.5 1.5 0 0 0-1.442 1.086l-1.414 4.926a.75.75 0 0 0 .826.95 28.897 28.897 0 0 0 15.293-7.155.75.75 0 0 0 0-1.114A28.897 28.897 0 0 0 3.105 2.288Z"></path>
                 </svg>
               </span>
             </button>
@@ -366,21 +367,15 @@ const Navbar = () => {
                   <div className="pl-6 space-y-2">
                     <a
                       href="#"
-                      className="block text-white/80 text-lg hover:text-[#ec466f] py-2 px-4 rounded-lg hover:bg-white/10 transition-all duration-300 ease-out transform hover:translate-x-2"
+                      className="block text-white/80 text-lg hover:text-[#ec466f] py-2 px-4 rounded-lg text-center transition-all duration-300 ease-out transform hover:translate-x-2"
                       onClick={() => setIsMenuOpen(false)}
                     >
                       BRAND STRATEGY
                     </a>
+
                     <a
                       href="#"
-                      className="block text-white/80 text-lg hover:text-[#ec466f] py-2 px-4 rounded-lg hover:bg-white/10 transition-all duration-300 ease-out transform hover:translate-x-2"
-                      onClick={() => setIsMenuOpen(false)}
-                    >
-                      UI/UX DESIGN
-                    </a>
-                    <a
-                      href="#"
-                      className="block text-white/80 text-lg hover:text-[#ec466f] py-2 px-4 rounded-lg hover:bg-white/10 transition-all duration-300 ease-out transform hover:translate-x-2"
+                      className="block text-white/80 text-lg hover:text-[#ec466f] py-2 px-4 rounded-lg text-center transition-all duration-300 ease-out transform hover:translate-x-2"
                       onClick={() => setIsMenuOpen(false)}
                     >
                       WEB DEVELOPMENT
