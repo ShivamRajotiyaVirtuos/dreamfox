@@ -162,28 +162,28 @@ const Navbar = () => {
                 <div className="p-2">
                   <a
                     href="/services/brand-advisory"
-                    className="block px-6 py-3 text-white font-medium text-base hover:text-[#ec466f] text-center transition-all duration-300 ease-out rounded-xl transform hover:scale-110 " 
+                    className="block px-6 uppercase py-3 text-white font-medium text-base hover:text-[#ec466f] text-center transition-all duration-300 ease-out rounded-xl transform hover:scale-110 "
                   >
-                    BRAND STRATEGY
+                    Brandlara Advisory
                   </a>
 
                   <a
                     href="/services/experience-mix"
-                    className="block uppercase px-6 py-3 text-white font-medium text-base hover:text-[#ec466f] text-center transition-all duration-300 ease-out rounded-xl transform hover:scale-110 " 
+                    className="block uppercase px-6 py-3 text-white font-medium text-base hover:text-[#ec466f] text-center transition-all duration-300 ease-out rounded-xl transform hover:scale-110 "
                   >
-                    Experience Mix
+                    Designará Studio
                   </a>
                   <a
                     href="/services/digital-marketing"
-                    className="block uppercase px-6 py-3 text-white font-medium text-base hover:text-[#ec466f] text-center transition-all duration-300 ease-out rounded-xl transform hover:scale-110 " 
+                    className="block uppercase px-6 py-3 text-white font-medium text-base hover:text-[#ec466f] text-center transition-all duration-300 ease-out rounded-xl transform hover:scale-110 "
                   >
-                    Digital Marketing
+                    Assimilations
                   </a>
                   <a
                     href="/services/digital-media-mix"
-                    className="block uppercase px-6 py-3 text-white font-medium text-base hover:text-[#ec466f] text-center transition-all duration-300 ease-out rounded-xl transform hover:scale-110 " 
+                    className="block uppercase px-6 py-3 text-white font-medium text-base hover:text-[#ec466f] text-center transition-all duration-300 ease-out rounded-xl transform hover:scale-110 "
                   >
-                    Digital Media Mix
+                    Yippee Media
                   </a>
                 </div>
               </div>
@@ -370,7 +370,7 @@ const Navbar = () => {
                       className="block text-white/80 text-lg hover:text-[#ec466f] py-2 px-4 rounded-lg text-center transition-all duration-300 ease-out transform hover:translate-x-2"
                       onClick={() => setIsMenuOpen(false)}
                     >
-                      BRAND STRATEGY
+                      Brandlara Advisory
                     </a>
 
                     <a
@@ -378,7 +378,21 @@ const Navbar = () => {
                       className="block text-white/80 text-lg hover:text-[#ec466f] py-2 px-4 rounded-lg text-center transition-all duration-300 ease-out transform hover:translate-x-2"
                       onClick={() => setIsMenuOpen(false)}
                     >
-                      WEB DEVELOPMENT
+                      Designará Studio
+                    </a>
+                    <a
+                      href="#"
+                      className="block text-white/80 text-lg hover:text-[#ec466f] py-2 px-4 rounded-lg text-center transition-all duration-300 ease-out transform hover:translate-x-2"
+                      onClick={() => setIsMenuOpen(false)}
+                    >
+                      Assimilations
+                    </a>
+                    <a
+                      href="#"
+                      className="block text-white/80 text-lg hover:text-[#ec466f] py-2 px-4 rounded-lg text-center transition-all duration-300 ease-out transform hover:translate-x-2"
+                      onClick={() => setIsMenuOpen(false)}
+                    >
+                     Yippee Media
                     </a>
                   </div>
                 </div>

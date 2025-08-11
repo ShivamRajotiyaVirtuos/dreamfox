@@ -5,32 +5,33 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import TextReveal from "../Text Reveal/textreveal";
 import { useGSAP } from "@gsap/react";
+import Link from "next/link";
 
 gsap.registerPlugin(ScrollTrigger);
 const slides = [
   {
-    image:
-      "https://static.vecteezy.com/system/resources/previews/006/304/780/large_2x/letter-a-logo-illustration-suitable-for-brand-and-company-logos-free-vector.jpg",
-    title: "Brand Identity",
-    description: "Designing unique logos and brand visuals that stand out.",
+    link: "/services/brandlara-advisory",
+    image: "/images/home/brandlara_advisory.webp",
+    title: "Brandlara Advisory",
+    description: "Strategy, storytelling, and identity that connect deeply.",
   },
   {
-    image:
-      "https://static.vecteezy.com/system/resources/previews/008/079/348/large_2x/dark-interior-with-circle-neon-light-3d-showcase-for-display-products-free-vector.jpg",
-    title: "3D Product Display",
-    description: "Immersive environments for product showcases.",
+    link: "/services/designara-studio",
+    image: "/images/home/designara_studio.webp",
+    title: "Designará Studio",
+    description: "Fusing form, function, and emotional resonance.",
   },
   {
-    image:
-      "https://static.vecteezy.com/system/resources/previews/001/409/245/large_2x/neon-circle-display-background-free-vector.jpg",
-    title: "Neon Circle Stage",
-    description: "Stylized neon settings for promotional content.",
+    link: "/services/assimilation",
+    image: "/images/home/assimilations.webp",
+    title: "Assimilations",
+    description: "Performance Marketing and Platform in perfect harmony.",
   },
   {
-    image:
-      "https://static.vecteezy.com/system/resources/previews/009/156/948/large_2x/beautiful-girl-in-chicano-style-with-a-tattoo-roses-in-her-hair-an-inscription-on-her-hand-a-dark-background-free-vector.jpg",
-    title: "Chicano Art Style",
-    description: "Bold and expressive art featuring urban themes.",
+    link: "/services/yippee-media",
+    image: "/images/home/yippee_media.webp",
+    title: "Yippee Media",
+    description: "Videos, memes, shorts—all with a marketing soul.",
   },
 ];
 const WhatWeDo = () => {
@@ -180,7 +181,8 @@ const WhatWeDo = () => {
         >
           <div className="relative w-full h-full max-w-none">
             {slides.map((slide, index) => (
-              <div
+              <Link
+                href={slide.link}
                 key={index}
                 ref={(el) => (cardRefs.current[index] = el)}
                 className="card w-full h-[450px] xl:h-[550px] 2xl:h-[660px] rounded-xl bg-gray-800 text-white absolute left-0 top-1/2 -translate-y-1/2 shadow-2xl border border-white/20 p-6 flex flex-col"
@@ -205,7 +207,7 @@ const WhatWeDo = () => {
                     {slide.description}
                   </p>
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
         </div>
