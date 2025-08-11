@@ -10,6 +10,7 @@ const Navbar = () => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const [overlayStyle, setOverlayStyle] = useState({});
   const [isHovered, setIsHovered] = useState(false);
+  const [isLogoHovered, setIsLogoHovered] = useState(false);
   const buttonRef = useRef(null);
 
   useEffect(() => {
@@ -97,14 +98,48 @@ const Navbar = () => {
       >
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <Link href={"/"} className="flex-shrink-0">
-            <Image
-              src={"/logos/dreamfox_emblem.svg"}
-              alt="Logo"
-              width={150}
-              height={50}
-              className="h-9 lg:h-12 w-auto"
-            />
+          <Link
+            href={"/"}
+            className="flex-shrink-0 flex items-center overflow-hidden"
+            onMouseEnter={() => setIsLogoHovered(true)}
+            onMouseLeave={() => setIsLogoHovered(false)}
+          >
+            {/* Container for both logos with smooth width transition */}
+            <div
+              className={`flex items-center transition-all duration-500 ease-in-out ${
+                isLogoHovered ? "w-auto" : "w-auto"
+              }`}
+            >
+              {/* Emblem - always visible */}
+              <Image
+                src={"/logos/dreamfox_emblem.svg"}
+                alt="DreamFox Emblem"
+                width={150}
+                height={50}
+                className="h-9 lg:h-12 w-auto transition-all cursor-pointer duration-300"
+              />
+
+              {/* Logo text - slides in from left */}
+              <div
+                className={`overflow-hidden cursor-pointer transition-all duration-500 ease-in-out ${
+                  isLogoHovered
+                    ? "max-w-[200px] opacity-100 ml-2"
+                    : "max-w-0 opacity-0 ml-0"
+                }`}
+              >
+                <Image
+                  src={"/logos/dreamfox_logo.svg"}
+                  alt="DreamFox Logo"
+                  width={150}
+                  height={50}
+                  className={`h-9 w-auto cursor-pointer transition-all duration-500 ease-in-out transform ${
+                    isLogoHovered
+                      ? "translate-x-0 opacity-100"
+                      : "-translate-x-full opacity-0"
+                  }`}
+                />
+              </div>
+            </div>
           </Link>
 
           {/* Desktop Menu Items - Center */}
@@ -153,7 +188,7 @@ const Navbar = () => {
                 <path d="M5 0L10 8H0L5 0Z" />
               </svg> */}
               <div
-                className={`absolute top-full -left-20 mt-2 w-64 bg-gray-700 backdrop-blur-xl rounded-2xl shadow-2xl border border-white/10 overflow-hidden transition-all duration-500 ease-out transform ${
+                className={`absolute top-full -left-[75px] mt-2 w-64 bg-gray-700 backdrop-blur-xl rounded-2xl shadow-2xl border border-white/10 overflow-hidden transition-all duration-500 ease-out transform ${
                   dropdownOpen
                     ? "opacity-100 translate-y-0 scale-100 visible"
                     : "opacity-0 -translate-y-4 scale-95 invisible"
@@ -168,7 +203,7 @@ const Navbar = () => {
                   </a>
 
                   <a
-                    href="/services/experience-mix"
+                    href="/services/design-studio"
                     className="block uppercase px-6 py-3 text-white font-medium text-base hover:text-[#ec466f] text-center transition-all duration-300 ease-out rounded-xl transform hover:scale-110 "
                   >
                     Designará Studio
@@ -392,7 +427,7 @@ const Navbar = () => {
                       className="block text-white/80 text-lg hover:text-[#ec466f] py-2 px-4 rounded-lg text-center transition-all duration-300 ease-out transform hover:translate-x-2"
                       onClick={() => setIsMenuOpen(false)}
                     >
-                     Yippee Media
+                      Yippee Media
                     </a>
                   </div>
                 </div>

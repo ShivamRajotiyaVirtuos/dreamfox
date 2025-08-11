@@ -10,25 +10,25 @@ import Link from "next/link";
 gsap.registerPlugin(ScrollTrigger);
 const slides = [
   {
-    link: "/services/brandlara-advisory",
+    link: "/services/brand-advisory",
     image: "/images/home/brandlara_advisory.webp",
     title: "Brandlara Advisory",
     description: "Strategy, storytelling, and identity that connect deeply.",
   },
   {
-    link: "/services/designara-studio",
+    link: "/services/design-studio",
     image: "/images/home/designara_studio.webp",
     title: "Designará Studio",
     description: "Fusing form, function, and emotional resonance.",
   },
   {
-    link: "/services/assimilation",
+    link: "/services/digital-marketing",
     image: "/images/home/assimilations.webp",
     title: "Assimilations",
     description: "Performance Marketing and Platform in perfect harmony.",
   },
   {
-    link: "/services/yippee-media",
+    link: "/services/digital-media-mix",
     image: "/images/home/yippee_media.webp",
     title: "Yippee Media",
     description: "Videos, memes, shorts—all with a marketing soul.",
@@ -185,7 +185,7 @@ const WhatWeDo = () => {
                 href={slide.link}
                 key={index}
                 ref={(el) => (cardRefs.current[index] = el)}
-                className="card w-full h-[450px] xl:h-[550px] 2xl:h-[660px] rounded-xl bg-gray-800 text-white absolute left-0 top-1/2 -translate-y-1/2 shadow-2xl border border-white/20 p-6 flex flex-col"
+                className="card w-full cursor-pointer h-[450px] xl:h-[550px] 2xl:h-[660px] rounded-xl bg-gray-800 text-white absolute left-0 top-1/2 -translate-y-1/2 shadow-2xl border border-white/20 p-6 flex flex-col"
                 style={{
                   zIndex: 10 + index,
                 }}
