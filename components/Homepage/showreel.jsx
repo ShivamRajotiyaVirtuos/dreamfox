@@ -44,7 +44,7 @@ const Showreel = () => {
       description: "Logonama",
       image:
         "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&h=300&fit=crop",
-      category: "Development",
+      category: "Logonama",
     },
     {
       id: 5,
@@ -133,7 +133,7 @@ const Showreel = () => {
       description: "Logonama",
       image:
         "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&h=300&fit=crop",
-      category: "Development",
+      category: "Logonama",
     },
     {
       id: 5,
@@ -219,10 +219,10 @@ const Showreel = () => {
     {
       id: 4,
       title: "Logo Design Services",
-      description: "Logonama",
+      description: "Development",
       image:
         "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&h=300&fit=crop",
-      category: "Development",
+      category: "Logonama",
     },
     {
       id: 5,
