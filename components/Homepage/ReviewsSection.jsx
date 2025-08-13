@@ -10,11 +10,11 @@ import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import TextReveal from "../Text Reveal/textreveal";
 const images = [
-  "https://cdn.prod.website-files.com/677fb4d34764579513f06e12/67cac8d3816839026be753df_lora-ui.jpg", // Abstract tech patterns
-  "https://cdn.prod.website-files.com/677fb4d34764579513f06e12/67cac8b1a5ddb1034191c0e6_domum-ui.webp", // Digital circuits
-  "https://cdn.prod.website-files.com/677fb4d34764579513f06e12/67c982cd91af879ebf7ea7bd_gazette-ui.jpg", // Futuristic network
-  "https://cdn.prod.website-files.com/677fb4d34764579513f06e12/67cac895fff2152d6465742b_wisdom-ui.jpg", // Digital transformation
-  // Creative workspace
+  "/images/home/godaddy.webp",
+  "/images/home/microsoft.webp",
+
+  "/images/home/salesforce.webp",
+  "/images/home/oracle.webp",
 ];
 
 const ReviewsSection = () => {
@@ -53,7 +53,7 @@ const ReviewsSection = () => {
           stagger={0.1}
           duration={0.8}
         >
-          Our Partners 
+          Our Partners
         </TextReveal>
         {/* <h2 className="text-120 font-semibold mb-4 md:mb-6 lg:mb-8 text-white text-center">
           Our Partners will tell you better about us
@@ -64,8 +64,11 @@ const ReviewsSection = () => {
           stagger={0.1}
           duration={0.8}
         >
-          Our clients call us their creative partner — blending strategy, speed,
-          and bold ideas to deliver work that exceeds expectations.
+          At <b>Dreamfox</b>, we’ve partnered with leading brands across
+          industries to bring bold visions to life. Our clients call us their{" "}
+          <i>creative partner</i> — blending <b>strategy</b>, <b>speed</b>, and{" "}
+          <b>big ideas</b> to deliver work that consistently exceeds
+          expectations.
         </TextReveal>
         {/* <p className="text-40  text-white/80 mb-6 ">
           Our clients call us their creative partner — blending strategy, speed,
@@ -126,7 +129,7 @@ const ReviewsSection = () => {
                   width={1200}
                   src={img}
                   alt={`Slide ${index}`}
-                  className="w-full  "
+                  className="w-full  border-t border-l border-r border-white/20 h-full object-cover rounded-xl"
                 />
                 <div className="absolute bottom-0 left-0 w-full h-48 bg-gradient-to-t from-black to-transparent  pointer-events-none rounded-b" />
               </div>

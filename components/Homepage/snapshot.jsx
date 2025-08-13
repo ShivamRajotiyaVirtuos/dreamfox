@@ -17,43 +17,39 @@ const Snapshot = () => {
   const cards = [
     {
       id: 1,
-      title: "Studio Fugu Redesign",
+      title: "Giftcart - Personalised Gifting",
       description:
-        "Complete website overhaul with modern design principles and enhanced user experience.",
-      videoSrc:
-        "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4",
+        "Platform dedicated to promoting cultural industries and creative professionals.",
+      videoSrc: "/videos/Dreamfox-Giftcart.mp4",
     },
     {
       id: 2,
-      title: "Webflow Development",
+      title: "INDIC Branding & Website",
       description:
-        "Custom Webflow implementation with advanced interactions and responsive design.",
-      videoSrc:
-        "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4",
+        "Complete website overhaul with modern design principles and enhanced user experience.",
+      videoSrc: "/videos/Dreamfox_INDIC.mp4",
     },
     {
       id: 3,
-      title: "Creative Portfolio",
+      title: "EverFox Domain Branding",
       description:
-        "Showcasing creative work with dynamic layouts and smooth transitions.",
-      videoSrc:
-        "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4",
+        "Custom Webflow implementation with advanced interactions and responsive design.",
+      videoSrc: "/videos/Dreamfox-Everfox.mp4",
     },
     {
       id: 4,
-      title: "Cultural Platform",
+      title: "October.ai —Designara + Brandlara",
       description:
-        "Platform dedicated to promoting cultural industries and creative professionals.",
-      videoSrc:
-        "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4",
+        "Showcasing creative work with dynamic layouts and smooth transitions.",
+      videoSrc: "/videos/Dreamfox-October.ai.mp4",
     },
+
     {
       id: 5,
-      title: "Localization Studio",
+      title: "Crosswalk.ai—Branding",
       description:
         "Website redesign & Webflow development for studio fugu, A localization studio.",
-      videoSrc:
-        "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4",
+      videoSrc: "/videos/Dreamfox-Crosswalk.mp4",
     },
   ];
 
