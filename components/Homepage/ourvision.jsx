@@ -321,7 +321,7 @@ export default function OurVision() {
         </h1>
         <div className="max-w-full sm:max-w-4xl lg:max-w-7xl">
           <p className="text-40 text-[#ec4672] leading-relaxed">
-            DreamFox is a powerhouse of digital transformation through brand creativity, strategic marketing, immersive experience design, and media storytelling."
+            DreamFox is a powerhouse of digital transformation through brand creativity, strategic marketing, immersive experience design, and media storytelling.
           </p>
         </div>
       </div>
