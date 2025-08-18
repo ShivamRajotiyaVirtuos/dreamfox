@@ -18,48 +18,42 @@ const Showreel = () => {
       id: 1,
       title: "ECommerce & DXP",
       description: "Complete visual identity for tech startup",
-      image:
-        "https://images.unsplash.com/photo-1558655146-9f40138edfeb?w=400&h=300&fit=crop",
+      image: "/images/home/ecommerce_dxp.webp",
       category: "Designara",
     },
     {
       id: 2,
       title: "Brand Strategy",
       description: "Modern shopping experience design",
-      image:
-        "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=400&h=300&fit=crop",
+      image: "/images/home/brand_strategy.webp",
       category: "Positioning & ID by Brandlara",
     },
     {
       id: 3,
       title: "Search Marketing",
       description: "Intuitive fitness tracking application",
-      image:
-        "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=400&h=300&fit=crop",
+      image: "/images/home/search_marketing.webp",
       category: "Audacis for SEO/SEM",
     },
     {
       id: 4,
       title: "Logo Design Services",
       description: "Logonama",
-      image:
-        "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&h=300&fit=crop",
+      image: "/images/home/logo_design_services.webp",
       category: "Logonama",
     },
     {
       id: 5,
       title: "Marketing Automation",
       description: "CRM & Workflows",
-      image:
-        "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=400&h=300&fit=crop",
+      image: "/images/home/marketing_automation.webp",
       category: "Marketing",
     },
     {
       id: 6,
       title: "Artwork & Visuals",
       description: "Creatives by Designara",
-      image:
-        "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&h=300&fit=crop",
+      image: "/images/home/artwork_and_visuals.webp",
       category: "Portfolio",
     },
 
@@ -67,88 +61,77 @@ const Showreel = () => {
       id: 7,
       title: "AI + Digital Marketing",
       description: "Complete visual identity for tech startup",
-      image:
-        "https://images.unsplash.com/photo-1558655146-9f40138edfeb?w=400&h=300&fit=crop",
+      image: "/images/home/ai_digital_marketing.webp",
       category: "Assimilations",
     },
     {
       id: 8,
       title: "Experience Design",
       description: "Modern shopping experience design",
-      image:
-        "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=400&h=300&fit=crop",
+      image: "/images/home/experience_design.webp",
       category: "CX & Innovation",
     },
     {
       id: 9,
       title: "Web Development",
       description: "Intuitive fitness tracking application",
-      image:
-        "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=400&h=300&fit=crop",
+      image: "/images/home/web_development.webp",
       category: "UI/UX Design by Designara",
     },
     {
       id: 10,
       title: "Social Media",
       description: "Professional business presence online",
-      image:
-        "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&h=300&fit=crop",
+      image: "/images/home/social_media.webp",
       category: "Engagement & Management",
     },
     {
       id: 11,
       title: "Content Marketing",
       description: "Digital marketing campaign design",
-      image:
-        "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=400&h=300&fit=crop",
+      image: "/images/home/content_marketing.webp",
       category: "Copy & Campaigns",
     },
     {
       id: 1,
       title: "ECommerce & DXP",
       description: "Complete visual identity for tech startup",
-      image:
-        "https://images.unsplash.com/photo-1558655146-9f40138edfeb?w=400&h=300&fit=crop",
+      image: "/images/home/ecommerce_dxp.webp",
       category: "Designara",
     },
     {
       id: 2,
       title: "Brand Strategy",
       description: "Modern shopping experience design",
-      image:
-        "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=400&h=300&fit=crop",
+      image: "/images/home/brand_strategy.webp",
       category: "Positioning & ID by Brandlara",
     },
     {
       id: 3,
       title: "Search Marketing",
       description: "Intuitive fitness tracking application",
-      image:
-        "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=400&h=300&fit=crop",
+      image: "/images/home/search_marketing.webp",
       category: "Audacis for SEO/SEM",
     },
     {
       id: 4,
       title: "Logo Design Services",
       description: "Logonama",
-      image:
-        "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&h=300&fit=crop",
+      image: "/images/home/logo_design_services.webp",
       category: "Logonama",
     },
     {
       id: 5,
       title: "Marketing Automation",
       description: "CRM & Workflows",
-      image:
-        "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=400&h=300&fit=crop",
+      image: "/images/home/marketing_automation.webp",
       category: "Marketing",
     },
     {
       id: 6,
       title: "Artwork & Visuals",
       description: "Creatives by Designara",
-      image:
-        "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&h=300&fit=crop",
+      image: "/images/home/artwork_and_visuals.webp",
       category: "Portfolio",
     },
 
@@ -156,88 +139,77 @@ const Showreel = () => {
       id: 7,
       title: "AI + Digital Marketing",
       description: "Complete visual identity for tech startup",
-      image:
-        "https://images.unsplash.com/photo-1558655146-9f40138edfeb?w=400&h=300&fit=crop",
+      image: "/images/home/ai_digital_marketing.webp",
       category: "Assimilations",
     },
     {
       id: 8,
       title: "Experience Design",
       description: "Modern shopping experience design",
-      image:
-        "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=400&h=300&fit=crop",
+      image: "/images/home/experience_design.webp",
       category: "CX & Innovation",
     },
     {
       id: 9,
       title: "Web Development",
       description: "Intuitive fitness tracking application",
-      image:
-        "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=400&h=300&fit=crop",
+      image: "/images/home/web_development.webp",
       category: "UI/UX Design by Designara",
     },
     {
       id: 10,
       title: "Social Media",
       description: "Professional business presence online",
-      image:
-        "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&h=300&fit=crop",
+      image: "/images/home/social_media.webp",
       category: "Engagement & Management",
     },
     {
       id: 11,
       title: "Content Marketing",
       description: "Digital marketing campaign design",
-      image:
-        "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=400&h=300&fit=crop",
+      image: "/images/home/content_marketing.webp",
       category: "Copy & Campaigns",
     },
     {
       id: 1,
       title: "ECommerce & DXP",
       description: "Complete visual identity for tech startup",
-      image:
-        "https://images.unsplash.com/photo-1558655146-9f40138edfeb?w=400&h=300&fit=crop",
+      image: "/images/home/ecommerce_dxp.webp",
       category: "Designara",
     },
     {
       id: 2,
       title: "Brand Strategy",
       description: "Modern shopping experience design",
-      image:
-        "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=400&h=300&fit=crop",
+      image: "/images/home/brand_strategy.webp",
       category: "Positioning & ID by Brandlara",
     },
     {
       id: 3,
       title: "Search Marketing",
       description: "Intuitive fitness tracking application",
-      image:
-        "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=400&h=300&fit=crop",
+      image: "/images/home/search_marketing.webp",
       category: "Audacis for SEO/SEM",
     },
     {
       id: 4,
       title: "Logo Design Services",
-      description: "Development",
-      image:
-        "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&h=300&fit=crop",
+      description: "Logonama",
+      image: "/images/home/logo_design_services.webp",
       category: "Logonama",
     },
     {
       id: 5,
       title: "Marketing Automation",
       description: "CRM & Workflows",
-      image:
-        "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=400&h=300&fit=crop",
+      image: "/images/home/marketing_automation.webp",
       category: "Marketing",
     },
     {
       id: 6,
       title: "Artwork & Visuals",
       description: "Creatives by Designara",
-      image:
-        "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&h=300&fit=crop",
+      image: "/images/home/artwork_and_visuals.webp",
       category: "Portfolio",
     },
 
@@ -245,40 +217,113 @@ const Showreel = () => {
       id: 7,
       title: "AI + Digital Marketing",
       description: "Complete visual identity for tech startup",
-      image:
-        "https://images.unsplash.com/photo-1558655146-9f40138edfeb?w=400&h=300&fit=crop",
+      image: "/images/home/ai_digital_marketing.webp",
       category: "Assimilations",
     },
     {
       id: 8,
       title: "Experience Design",
       description: "Modern shopping experience design",
-      image:
-        "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=400&h=300&fit=crop",
+      image: "/images/home/experience_design.webp",
       category: "CX & Innovation",
     },
     {
       id: 9,
       title: "Web Development",
       description: "Intuitive fitness tracking application",
-      image:
-        "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=400&h=300&fit=crop",
+      image: "/images/home/web_development.webp",
       category: "UI/UX Design by Designara",
     },
     {
       id: 10,
       title: "Social Media",
       description: "Professional business presence online",
-      image:
-        "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&h=300&fit=crop",
+      image: "/images/home/social_media.webp",
       category: "Engagement & Management",
     },
     {
       id: 11,
       title: "Content Marketing",
       description: "Digital marketing campaign design",
-      image:
-        "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=400&h=300&fit=crop",
+      image: "/images/home/content_marketing.webp",
+      category: "Copy & Campaigns",
+    },
+    {
+      id: 1,
+      title: "ECommerce & DXP",
+      description: "Complete visual identity for tech startup",
+      image: "/images/home/ecommerce_dxp.webp",
+      category: "Designara",
+    },
+    {
+      id: 2,
+      title: "Brand Strategy",
+      description: "Modern shopping experience design",
+      image: "/images/home/brand_strategy.webp",
+      category: "Positioning & ID by Brandlara",
+    },
+    {
+      id: 3,
+      title: "Search Marketing",
+      description: "Intuitive fitness tracking application",
+      image: "/images/home/search_marketing.webp",
+      category: "Audacis for SEO/SEM",
+    },
+    {
+      id: 4,
+      title: "Logo Design Services",
+      description: "Logonama",
+      image: "/images/home/logo_design_services.webp",
+      category: "Logonama",
+    },
+    {
+      id: 5,
+      title: "Marketing Automation",
+      description: "CRM & Workflows",
+      image: "/images/home/marketing_automation.webp",
+      category: "Marketing",
+    },
+    {
+      id: 6,
+      title: "Artwork & Visuals",
+      description: "Creatives by Designara",
+      image: "/images/home/artwork_and_visuals.webp",
+      category: "Portfolio",
+    },
+
+    {
+      id: 7,
+      title: "AI + Digital Marketing",
+      description: "Complete visual identity for tech startup",
+      image: "/images/home/ai_digital_marketing.webp",
+      category: "Assimilations",
+    },
+    {
+      id: 8,
+      title: "Experience Design",
+      description: "Modern shopping experience design",
+      image: "/images/home/experience_design.webp",
+      category: "CX & Innovation",
+    },
+    {
+      id: 9,
+      title: "Web Development",
+      description: "Intuitive fitness tracking application",
+      image: "/images/home/web_development.webp",
+      category: "UI/UX Design by Designara",
+    },
+    {
+      id: 10,
+      title: "Social Media",
+      description: "Professional business presence online",
+      image: "/images/home/social_media.webp",
+      category: "Engagement & Management",
+    },
+    {
+      id: 11,
+      title: "Content Marketing",
+      description: "Digital marketing campaign design",
+      image: "/images/home/content_marketing.webp",
       category: "Copy & Campaigns",
     },
     // {
