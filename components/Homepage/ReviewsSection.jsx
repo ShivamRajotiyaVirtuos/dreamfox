@@ -10,6 +10,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import TextReveal from "../Text Reveal/textreveal";
 const images = [
+  "/images/home/cohering.webp",
   "/images/home/godaddy.webp",
   "/images/home/microsoft.webp",
 

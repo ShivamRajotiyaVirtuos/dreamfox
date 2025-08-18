@@ -458,7 +458,7 @@ const Showreel = () => {
                   >
                     <div className="">
                       <Image
-                        className={`absolute -bottom-24 sm:-bottom-20  z-20  transition-all duration-700 ease-out transform ${
+                        className={`absolute -bottom-24 sm:-bottom-20 opacity-90  z-20  transition-all duration-700 ease-out transform ${
                           hoveredCard === project.id
                             ? "transform translate-y-8 opacity-100 transition-all duration-500 ease-out shadow-2xl"
                             : "transform translate-y-8 2xl:translate-y-0 transition-all duration-500 ease-out opacity-100 2xl:opacity-0"
