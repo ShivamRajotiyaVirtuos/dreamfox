@@ -20,7 +20,7 @@ const Snapshot = () => {
       title: "Giftcart - Personalised Gifting",
       description:
         "Platform dedicated to promoting cultural industries and creative professionals.",
-      videoSrc: "/videos/Dreamfox-Giftcart.mp4",
+      videoSrc: "/videos/Dreamfox_Giftcart.mp4",
     },
     {
       id: 2,
@@ -34,14 +34,14 @@ const Snapshot = () => {
       title: "EverFox Domain Branding",
       description:
         "Custom Webflow implementation with advanced interactions and responsive design.",
-      videoSrc: "/videos/Dreamfox-Everfox.mp4",
+      videoSrc: "/videos/Dreamfox_Everfox.mp4",
     },
     {
       id: 4,
       title: "October.ai —Designara + Brandlara",
       description:
         "Showcasing creative work with dynamic layouts and smooth transitions.",
-      videoSrc: "/videos/Dreamfox-October.ai.mp4",
+      videoSrc: "/videos/Dreamfox_October.ai.mp4",
     },
 
     {
@@ -49,7 +49,7 @@ const Snapshot = () => {
       title: "Crosswalk.ai—Branding",
       description:
         "Website redesign & Webflow development for studio fugu, A localization studio.",
-      videoSrc: "/videos/Dreamfox-Crosswalk.mp4",
+      videoSrc: "/videos/Dreamfox_Crosswalk.mp4",
     },
   ];
 
