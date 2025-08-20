@@ -6,33 +6,36 @@ import {
   AdjustmentsHorizontalIcon,
   UsersIcon,
   GlobeAmericasIcon,
+  ShieldCheckIcon,
+  RocketLaunchIcon,
+  SparklesIcon,
 } from "@heroicons/react/24/solid";
 import TextReveal from "../Text Reveal/textreveal";
 
 const valuesData = [
   {
     icon: <LightBulbIcon className="w-9 h-9" />,
-    title: "Innovation First",
+    title: "Virtuosity",
     description:
-      "We embrace change and continuously seek creative solutions to move forward.",
+      "Mastering creativity and AI to deliver unmatched design excellence.",
   },
   {
-    icon: <AdjustmentsHorizontalIcon className="w-9 h-9" />,
-    title: "Think Smart",
+    icon: <ShieldCheckIcon className="w-9 h-9" />,
+    title: "Veracity",
     description:
-      "We approach challenges with intelligence and make data-driven decisions.",
+      "Upholding truth, trust, and transparency in every client engagement.",
   },
   {
-    icon: <UsersIcon className="w-9 h-9" />,
-    title: "People Matter",
+    icon: <RocketLaunchIcon className="w-9 h-9" />,
+    title: "Velocity",
     description:
-      "We support, uplift, and celebrate the diversity and passion of our people.",
+      "Driving rapid innovation and execution for accelerated digital growth.",
   },
   {
-    icon: <GlobeAmericasIcon className="w-9 h-9" />,
-    title: "Global Impact",
+    icon: <SparklesIcon className="w-9 h-9" />,
+    title: "Vivacity",
     description:
-      "We aim to create a meaningful, scalable impact beyond borders.",
+      "Infusing energy, passion, and vibrancy into brands and experiences.",
   },
 ];
 

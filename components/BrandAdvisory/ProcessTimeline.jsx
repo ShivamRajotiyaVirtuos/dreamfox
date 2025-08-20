@@ -8,13 +8,12 @@ import TextReveal from "../Text Reveal/textreveal";
 gsap.registerPlugin(ScrollTrigger);
 
 const steps = [
-  { title: "Discover", desc: "Initial research and ideation." },
-  { title: "Design", desc: "Create wireframes and prototypes." },
-  { title: "Develop", desc: "Build with modern tools." },
-  { title: "Test", desc: "Ensure quality and performance." },
-  { title: "Deploy", desc: "Launch to the world." },
+  { title: "IDEATE", desc: "Discover insights, spark possibilities" },
+  { title: "DEFINE", desc: "Shape brand vision, values clearly" },
+  { title: "DESIGN", desc: "Create identity, experience touchpoints" },
+  { title: "BUILD", desc: "Integrate across digital, AI, physical" },
+  { title: "AMPLIFY", desc: "Elevate impact, scale visibility" },
 ];
-
 export default function ProcessTimeline() {
   const containerRef = useRef(null);
   const boxesRef = useRef([]);
@@ -91,7 +90,17 @@ export default function ProcessTimeline() {
         duration={0.8}
         className="text-white text-120 font-bold text-center py-12"
       >
-        Process Timeline
+        How Brands Stack Up
+      </TextReveal>
+      <TextReveal
+        className="text-40 text-center mx-auto max-w-6xl text-white/80 mb-6"
+        animation="rotateX"
+        stagger={0.1}
+        duration={0.8}
+      >
+        Brands stack up through clarity, creativity, and consistency—gaining
+        identity, trust, and relevance. At DreamFox, we shape bold brands that
+        thrive across digital, AI, and real-world experiences.
       </TextReveal>
       <section
         ref={containerRef}

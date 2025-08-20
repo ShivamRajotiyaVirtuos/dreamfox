@@ -9,27 +9,27 @@ gsap.registerPlugin(ScrollTrigger);
 
 const cardData = [
   {
-    year: "2020",
+    year: "2010",
     heading: "Started",
-    description: "We laid the foundation of our journey with a clear mission.",
+    description: "We laid the foundation of our journey with Yippee Media Services.",
     image: "/images/about_timeline1.webp",
   },
   {
-    year: "2021",
+    year: "2023",
     heading: "Built",
-    description: "Structured core teams and systems for growth.",
+    description: "Structured core teams and systems for growth and launched Audacis.",
     image: "/images/about_timeline2.webp",
   },
   {
-    year: "2022",
+    year: "2024",
     heading: "Scaled",
-    description: "Rapid expansion with new projects and partnerships.",
+    description: "Rapid expansion with new projects on Branding and partnerships.",
     image: "/images/about_timeline3.webp",
   },
   {
-    year: "2023",
+    year: "2025",
     heading: "Innovated",
-    description: "Launched cutting-edge solutions impacting real change.",
+    description: "DreamFox is born with a new ID—Tech, AI, and Digital Assimilations.",
     image: "/images/about_timeline4.webp",
   },
 ];
@@ -74,6 +74,8 @@ const StackingCards = () => {
           >
             Our Story
           </TextReveal>
+
+          
         </div>
 
         <div className="w-full h-full 2xl:mb-0 mb-60">

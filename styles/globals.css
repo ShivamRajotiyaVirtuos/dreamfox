@@ -21,27 +21,27 @@ body span {
 }
 
 /* Custom cursor using dedicated SVG files */
-* {
+/* * {
   cursor: url("/icons/dreamfox_emblem.svg") 4 4, auto;
-}
+} */
 
 /* Interactive elements get a larger, more prominent cursor */
-a,
+/* a,
 button,
 [role="button"],
 input[type="button"],
 input[type="submit"],
 .cursor-pointer {
   cursor: url("/icons/cursor-hover.svg") 16 16, pointer;
-}
+} */
 
 /* Ensure text selection still works */
-input[type="text"],
+/* input[type="text"],
 input[type="email"],
 textarea,
 [contenteditable] {
   cursor: url("/icons/dreamfox_emblem.svg") 12 12, text;
-}
+} */
 
 .font-helvetica {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;

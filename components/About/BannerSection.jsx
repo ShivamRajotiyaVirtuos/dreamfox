@@ -77,10 +77,7 @@ const BannerSection = () => {
             titleClassName="text-white text-130 font-bold leading-tight"
             descriptionClassName="text-24 mt-8 sm:mt-12 text-white max-w-7xl"
             title="About the company"
-            description="We helps advisors save valuable time and create accurate buyer
-              lists. Our technology ensures a fast and effective compilation of
-              suitable buyers and treats all data according to the highest
-              security standards."
+            description="DreamFox, an associate of Virtuos Group, combines deep design, brand, and technical expertise. Backed by our top-notch Designara, Media, and Brand teams, we craft innovative, immersive, and impactful experiences that empower businesses to thrive in today’s competitive digital economy."
           />
           {/* <h1 className="text-white text-120 font-bold leading-tight">
             About the company
@@ -102,8 +99,8 @@ const BannerSection = () => {
           </div> */}
 
           <div className="flex flex-col sm:flex-row gap-4 shrink-0">
-            <AnimatedButton text="Arrange an initial consultation" href="/" />
-            <AnimatedButton text="button" href="/" />
+            <AnimatedButton text="Services" href="/services" />
+            <AnimatedButton text="Portfolio" href="/portfolio" />
             {/* <button className="bg-white text-black px-6 py-3 rounded-full text-sm font-medium whitespace-nowrap">
               Arrange an initial consultation
             </button> */}
