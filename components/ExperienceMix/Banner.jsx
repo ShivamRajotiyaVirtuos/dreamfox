@@ -54,7 +54,7 @@ const Banner_Experiencemix = () => {
   return (
     <section
       ref={sectionRef}
-      className="relative w-full min-h-[80vh] pt-16 lg:pt-32 bg-black flex items-center overflow-hidden"
+      className="relative w-full min-h-[80vh] pt-16 lg:pt-32 bg-black flex items-end overflow-hidden"
     >
       {/* Gradient Circles */}
       <div
@@ -71,7 +71,7 @@ const Banner_Experiencemix = () => {
       />
 
       {/* Main Content */}
-      <div className="container mx-auto px-6 relative z-10 flex flex-col justify-between h-full py-24 banner-trigger">
+      <div className="container mx-auto px-6 relative z-10 flex flex-col justify-between h-full pt-24 banner-trigger">
         <div className="max-w-5xl">
         <BannerTextReveal
             titleClassName="text-white text-130 font-bold leading-tight"

@@ -54,7 +54,7 @@ const Banner_Brand = () => {
   return (
     <section
       ref={sectionRef}
-      className="relative w-full pt-16 lg:pt-32 min-h-[80vh] bg-black flex items-center overflow-hidden"
+      className="relative w-full pt-16 lg:pt-32 min-h-[80vh] bg-black flex items-end overflow-hidden"
     >
       {/* Gradient Circles */}
       <div
