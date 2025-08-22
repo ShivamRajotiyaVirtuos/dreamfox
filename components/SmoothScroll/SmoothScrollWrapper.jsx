@@ -69,6 +69,7 @@ const ScrollSmootherWrapper = ({ children }) => {
             padding: 0;
             overflow: hidden;
             height: 100%;
+            background: #000;
           }
 
           .smooth-wrapper {

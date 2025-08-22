@@ -39,7 +39,7 @@ const valuesData = [
   },
 ];
 
-const CultureValuesSection = () => {
+const Values_services = () => {
   useEffect(() => {
     if (typeof window !== "undefined") {
       VanillaTilt.init(document.querySelectorAll(".card-container"), {
@@ -65,7 +65,7 @@ const CultureValuesSection = () => {
         duration={0.8}
         className="text-center text-120 font-bold text-white  mt-20"
       >
-        Culture & Values
+        DreamFox Values
       </TextReveal>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mt-16 md:mt-24 px-4 justify-items-center">
@@ -111,4 +111,4 @@ const CultureValuesSection = () => {
   );
 };
 
-export default CultureValuesSection;
+export default Values_services;

@@ -88,12 +88,12 @@ export default function ProcessTimeline() {
         animation="rotateX"
         stagger={0.1}
         duration={0.8}
-        className="text-white text-120 font-bold text-center py-12"
+        className="text-white text-120 font-bold text-center sm:pt-16 mb-6"
       >
         How Brands Stack Up
       </TextReveal>
       <TextReveal
-        className="text-40 text-center mx-auto max-w-6xl text-white/80 mb-6"
+        className="text-40 text-center mx-auto max-w-7xl text-white/80 "
         animation="rotateX"
         stagger={0.1}
         duration={0.8}

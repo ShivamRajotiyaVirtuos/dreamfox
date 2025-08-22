@@ -167,7 +167,10 @@ const Navbar = () => {
               onMouseEnter={() => setDropdownOpen(true)}
               onMouseLeave={() => setDropdownOpen(false)}
             >
-              <button className="text-white text-20 font-normal hover:text-[#ec466f] transition-all duration-500 ease-out hover:scale-105 relative group flex items-center gap-2">
+              <Link
+                href={"/services"}
+                className="text-white text-20 font-normal hover:text-[#ec466f] transition-all duration-500 ease-out hover:scale-105 relative group flex items-center gap-2"
+              >
                 SERVICES
                 <ChevronDownIcon
                   className={`w-4 h-4 transition-transform duration-500 ease-out ${
@@ -175,7 +178,7 @@ const Navbar = () => {
                   }`}
                 />
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-[#ec466f] to-[#ff6b9d] group-hover:w-full transition-all duration-500 ease-out"></span>
-              </button>
+              </Link>
 
               {/* Dropdown Menu */}
               {/* <svg
@@ -199,26 +202,26 @@ const Navbar = () => {
                     href="/services/brand-advisory"
                     className="block px-6 uppercase py-3 text-white font-medium text-base hover:text-[#ec466f] text-center transition-all duration-300 ease-out rounded-xl transform hover:scale-110 "
                   >
-                    Brandlara Advisory
+                    Branding
                   </a>
 
                   <a
                     href="/services/design-studio"
                     className="block uppercase px-6 py-3 text-white font-medium text-base hover:text-[#ec466f] text-center transition-all duration-300 ease-out rounded-xl transform hover:scale-110 "
                   >
-                    Designará Studio
+                    Design
                   </a>
                   <a
                     href="/services/digital-marketing"
                     className="block uppercase px-6 py-3 text-white font-medium text-base hover:text-[#ec466f] text-center transition-all duration-300 ease-out rounded-xl transform hover:scale-110 "
                   >
-                    Assimilations
+                    Ai Marketing
                   </a>
                   <a
                     href="/services/digital-media-mix"
                     className="block uppercase px-6 py-3 text-white font-medium text-base hover:text-[#ec466f] text-center transition-all duration-300 ease-out rounded-xl transform hover:scale-110 "
                   >
-                    Yippee Media
+                    Media
                   </a>
                 </div>
               </div>
@@ -405,7 +408,7 @@ const Navbar = () => {
                       className="block text-white/80 text-lg hover:text-[#ec466f] py-2 px-4 rounded-lg text-center transition-all duration-300 ease-out transform hover:translate-x-2"
                       onClick={() => setIsMenuOpen(false)}
                     >
-                      Brandlara Advisory
+                      Branding
                     </a>
 
                     <a
@@ -413,21 +416,21 @@ const Navbar = () => {
                       className="block text-white/80 text-lg hover:text-[#ec466f] py-2 px-4 rounded-lg text-center transition-all duration-300 ease-out transform hover:translate-x-2"
                       onClick={() => setIsMenuOpen(false)}
                     >
-                      Designará Studio
+                      Design
                     </a>
                     <a
                       href="#"
                       className="block text-white/80 text-lg hover:text-[#ec466f] py-2 px-4 rounded-lg text-center transition-all duration-300 ease-out transform hover:translate-x-2"
                       onClick={() => setIsMenuOpen(false)}
                     >
-                      Assimilations
+                      Ai Marketing
                     </a>
                     <a
                       href="#"
                       className="block text-white/80 text-lg hover:text-[#ec466f] py-2 px-4 rounded-lg text-center transition-all duration-300 ease-out transform hover:translate-x-2"
                       onClick={() => setIsMenuOpen(false)}
                     >
-                      Yippee Media
+                      Media
                     </a>
                   </div>
                 </div>

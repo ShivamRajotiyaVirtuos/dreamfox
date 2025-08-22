@@ -1,9 +1,21 @@
-import React from 'react'
+import Banner_Services from "@/components/Services/Banner";
+import Cta from "@/components/Services/Cta";
+import FourPillarsSection from "@/components/Services/grid";
+import Snapshot_Services from "@/components/Services/snapshot";
+import Values_services from "@/components/Services/values";
+import React from "react";
 
 const Services = () => {
   return (
-    <div>Services</div>
-  )
-}
+    <div>
+      <Banner_Services />
 
-export default Services
+      <Snapshot_Services />
+      {/* <FourPillarsSection /> */}
+      <Values_services />
+      <Cta />
+    </div>
+  );
+};
+
+export default Services;
