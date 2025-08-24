@@ -19,7 +19,10 @@ body span {
   /* font-family: "Sora", sans-serif; */
   font-family: "Arimo", sans-serif;
 }
-
+body{
+  background: black;
+  background-color: black;
+}
 /* Custom cursor using dedicated SVG files */
 /* * {
   cursor: url("/icons/dreamfox_emblem.svg") 4 4, auto;
