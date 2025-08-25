@@ -73,26 +73,43 @@ const CARD_DATA = [
 const Offerings = () => {
   useEffect(() => {
     const wrappers = document.querySelectorAll(".card-wrapper");
+    
     wrappers.forEach((wrapper, index) => {
       const card = wrapper.querySelector(".card");
+      
       if (index === wrappers.length - 1) {
+        // Last card stays visible
         gsap.set(card, { opacity: 1, scale: 1 });
       } else {
+        // Create smooth fade transition
         gsap
           .timeline({
             scrollTrigger: {
               trigger: wrapper,
-              start: "top +=10%",
-              end: "bottom top",
-              scrub: true,
+              start: "top 15%",
+              end: "bottom 10%",
+              scrub: 0.5,
               pin: true,
               pinSpacing: false,
             },
           })
-          .set(card, { opacity: 1, scale: 1 })
-          .to(card, { opacity: 0, scale: 0.6, ease: "none" }, 0.01);
+          .fromTo(card, 
+            { 
+              opacity: 1, 
+              scale: 1,
+              y: 0
+            },
+            { 
+              opacity: 0, 
+              scale: 0.8,
+              y: -30,
+              ease: "power1.inOut",
+              duration: 1
+            }
+          );
       }
     });
+
     return () => {
       ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
     };
@@ -104,8 +121,7 @@ const Offerings = () => {
         {/* Sticky Heading */}
         <div className="sticky top-0 w-full bg-black/90 z-50 text-center py-6">
           <TextReveal
-            // ref={headingRef}
-            className="text-center text-120 pt-20 xl:pt-40  font-bold text-white"
+            className="text-center text-120 pt-20 xl:pt-40 font-bold text-white"
             style={{ pointerEvents: "none" }}
             animation="rotateX"
             stagger={0.1}
@@ -119,7 +135,7 @@ const Offerings = () => {
         {CARD_DATA.slice(0, 5).map((card, idx) => (
           <div
             className={`card-wrapper flex items-center justify-center w-full mx-auto ${
-              idx === 4 ? "h-[85vh] pb-[15vh]" : "h-[70vh] pt-[1vh] "
+              idx === 4 ? "h-[85vh] pb-[15vh]" : "h-[70vh] pt-[1vh]"
             }`}
             key={idx}
           >
@@ -148,23 +164,6 @@ const Offerings = () => {
                     </div>
                     <div className="h-8 w-0.5 bg-gradient-to-b from-white to-transparent"></div>
                   </div>
-
-                  {/* Action Icon */}
-                  {/* <div className="w-14 h-14 rounded-full border border-white/20 flex items-center justify-center backdrop-blur-md bg-white/10 group-hover:bg-white/20 transition-all duration-300 cursor-pointer">
-                    <svg
-                      className="w-6 h-6 text-white transform group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
-                      />
-                    </svg>
-                  </div> */}
                 </div>
 
                 {/* Main Content - Bottom Section */}
@@ -174,7 +173,7 @@ const Offerings = () => {
                     <h2 className="text-5xl md:text-7xl font-bold text-white leading-none tracking-tight">
                       {card.title}
                     </h2>
-                    <div className="h-1 w-0 bg-gradient-to-r from-purple-500 to-cyan-500  transition-all duration-500 delay-200 mt-4"></div>
+                    <div className="h-1 w-0 bg-gradient-to-r from-purple-500 to-cyan-500 transition-all duration-500 delay-200 mt-4"></div>
                   </div>
 
                   {/* Description and CTA */}
@@ -209,12 +208,7 @@ const Offerings = () => {
 
               {/* Decorative Elements */}
               <div className="absolute top-8 right-8 w-32 h-32 border border-white/10 rounded-full opacity-20 group-hover:scale-110 transition-transform duration-500"></div>
-              <div className="absolute bottom-8 left-8 w-2 h-20 bg-gradient-to-t from-pink-500 to-purple-500 rounded-full opacity-60  transition-all duration-500"></div>
-
-              {/* Animated Border */}
-              {/* <div className="absolute inset-0 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-gradient-to-r from-purple-500 via-cyan-500 to-purple-500 p-[2px]">
-                <div className="w-full h-full bg-transparent rounded-3xl"></div>
-              </div> */}
+              <div className="absolute bottom-8 left-8 w-2 h-20 bg-gradient-to-t from-pink-500 to-purple-500 rounded-full opacity-60 transition-all duration-500"></div>
             </div>
           </div>
         ))}
