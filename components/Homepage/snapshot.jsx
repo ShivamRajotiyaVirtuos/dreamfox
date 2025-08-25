@@ -205,7 +205,7 @@ const Snapshot = () => {
               <div
                 key={card.id}
                 data-card-id={card.id}
-                className={`card-item relative bg-black overflow-hidden cursor-pointer rounded-sm transition-all duration-300 ease-out
+                className={`card-item relative bg-black overflow- cursor-pointer rounded-sm transition-all duration-300 ease-out
                   xl:flex-shrink-0 ${
                     isHovered
                       ? "xl:w-[420px]"
@@ -239,7 +239,7 @@ const Snapshot = () => {
                   />
 
                   {/* Overlay gradient */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
+                  <div className="absolute -inset-3 bg-gradient-to-t from-black via-transparent to-transparent" />
 
                   {/* Content */}
                   {/* {hoveredCard === card.id && (

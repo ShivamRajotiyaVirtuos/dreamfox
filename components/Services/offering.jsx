@@ -9,74 +9,45 @@ gsap.registerPlugin(ScrollTrigger);
 
 const CARD_DATA = [
   {
-    title: "Card 1",
-    desc: "Experience the ultimate in luxury living.",
-    img: "https://cdn.cosmos.so/ba8fd483-2042-47ed-a175-9c594fd538d1.jpeg",
-    alt: "Presence",
+    title: "Digital Advertising",
+    desc: "Strategic campaigns that drive engagement and conversions across all platforms.",
+    img: "https://images.unsplash.com/photo-1592685530138-6fdfaf4b278a?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDF8fHxlbnwwfHx8fHw%3D",
+    alt: "Digital Marketing Campaign",
   },
   {
-    title: "Card 2",
-    desc: "Modern design meets timeless elegance.",
-    img: "https://cdn.cosmos.so/913696c4-07e0-40f3-b6c2-0c0e8a18559a.jpeg",
-    alt: "Stillness",
+    title: "Brand Strategy",
+    desc: "Comprehensive brand positioning that resonates with your target audience.",
+    img: "https://media.istockphoto.com/id/1151427999/photo/professional-videographer-holding-camera-on-3-axis-gimbal-which-mounted-on-easy-rig.webp?a=1&s=612x612&w=0&k=20&c=APZBHPmqYTRdcClPO-p7UFcXDzJE8TbJFmDY98mX0E0=",
+    alt: "Brand Strategy Meeting",
   },
   {
-    title: "Card 3",
-    desc: "Indulge in a home that redefines luxury.",
-    img: "https://cdn.cosmos.so/78f3c414-e013-4693-a02e-6bea74309e03.jpeg",
-    alt: "Essence",
+    title: "Creative Design",
+    desc: "Compelling visual narratives that capture attention and inspire action.",
+    img: "https://images.unsplash.com/photo-1723723467929-63315acce895?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDd8fHxlbnwwfHx8fHw%3D",
+    alt: "Creative Design Process",
   },
   {
-    title: "Card 4",
-    desc: "Experience the ultimate in luxury living.",
-    img: "https://cdn.cosmos.so/c7d7c0ef-c730-4192-9687-42606e554e7c.jpeg",
-    alt: "Surrender",
+    title: "Social Media Marketing",
+    desc: "Engaging content strategies that build communities and drive growth.",
+    img: "https://images.unsplash.com/photo-1554246881-d1aec048cc39?q=80&w=2874&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+
+    alt: "Social Media Analytics",
   },
   {
-    title: "Card 5",
-    desc: "Modern design meets timeless elegance.",
-    img: "https://cdn.cosmos.so/69b9691f-921b-43ab-afbb-3237d65f67ad.jpeg",
-    alt: "Awakening",
-  },
-  {
-    title: "Card 6",
-    desc: "Indulge in a home that redefines luxury.",
-    img: "https://cdn.cosmos.so/ba8fd483-2042-47ed-a175-9c594fd538d1.jpeg",
-    alt: "Presence",
-  },
-  {
-    title: "Card 7",
-    desc: "Experience the ultimate in luxury living.",
-    img: "https://cdn.cosmos.so/913696c4-07e0-40f3-b6c2-0c0e8a18559a.jpeg",
-    alt: "Stillness",
-  },
-  {
-    title: "Card 8",
-    desc: "Modern design meets timeless elegance.",
-    img: "https://cdn.cosmos.so/78f3c414-e013-4693-a02e-6bea74309e03.jpeg",
-    alt: "Essence",
-  },
-  {
-    title: "Card 9",
-    desc: "Indulge in a home that redefines luxury.",
-    img: "https://cdn.cosmos.so/c7d7c0ef-c730-4192-9687-42606e554e7c.jpeg",
-    alt: "Surrender",
-  },
-  {
-    title: "Card 10",
-    desc: "Experience the ultimate in luxury living.",
-    img: "https://cdn.cosmos.so/69b9691f-921b-43ab-afbb-3237d65f67ad.jpeg",
-    alt: "Awakening",
+    title: "Performance Analytics",
+    desc: "Data-driven insights that optimize campaigns and maximize ROI.",
+    img: "https://images.unsplash.com/photo-1713816821447-4218b8c19bb7?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDI3fHx8ZW58MHx8fHx8",
+    alt: "Analytics Dashboard",
   },
 ];
 
 const Offerings = () => {
   useEffect(() => {
     const wrappers = document.querySelectorAll(".card-wrapper");
-    
+
     wrappers.forEach((wrapper, index) => {
       const card = wrapper.querySelector(".card");
-      
+
       if (index === wrappers.length - 1) {
         // Last card stays visible
         gsap.set(card, { opacity: 1, scale: 1 });
@@ -93,18 +64,19 @@ const Offerings = () => {
               pinSpacing: false,
             },
           })
-          .fromTo(card, 
-            { 
-              opacity: 1, 
+          .fromTo(
+            card,
+            {
+              opacity: 1,
               scale: 1,
-              y: 0
+              y: 0,
             },
-            { 
-              opacity: 0, 
+            {
+              opacity: 0,
               scale: 0.8,
               y: -30,
               ease: "power1.inOut",
-              duration: 1
+              duration: 1,
             }
           );
       }
@@ -183,7 +155,7 @@ const Offerings = () => {
                     </p>
 
                     {/* CTA Button */}
-                    <button className="group/btn relative px-8 py-4 rounded-2xl bg-gradient-to-r from-pink-900 to-pink-500 font-semibold text-lg text-white shadow-2xl transform transition-all duration-300 hover:shadow-purple-500/25 hover:-translate-y-1 overflow-hidden">
+                    <button className="group/btn relative px-8 py-4 rounded-2xl bg-gradient-to-r from-white to-gra-200 font-semibold text-lg text-black shadow-2xl transform transition-all duration-300 hover:shadow-purple-500/25 hover:-translate-y-1 overflow-hidden">
                       <span className="relative z-10 flex items-center gap-2">
                         Explore
                         <svg
@@ -208,7 +180,7 @@ const Offerings = () => {
 
               {/* Decorative Elements */}
               <div className="absolute top-8 right-8 w-32 h-32 border border-white/10 rounded-full opacity-20 group-hover:scale-110 transition-transform duration-500"></div>
-              <div className="absolute bottom-8 left-8 w-2 h-20 bg-gradient-to-t from-pink-500 to-purple-500 rounded-full opacity-60 transition-all duration-500"></div>
+              
             </div>
           </div>
         ))}

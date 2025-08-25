@@ -1,280 +1,297 @@
 "use client";
-
-import React, { useState, useEffect, useRef } from "react";
+import React, { useRef, useEffect, useState } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import TextReveal from "../Text Reveal/textreveal";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const Snapshot_Services = () => {
-  const [hoveredCard, setHoveredCard] = useState(null);
-  const sectionRef = useRef(null);
-  const titleRef = useRef(null);
-  const descriptionRef = useRef(null);
-  const cardsRef = useRef(null);
+// Extended cards data - 6 cards for 2x3 grid
+const cards = [
+  {
+    id: 1,
+    title: "E-commerce Revolution",
+    description:
+      "Complete digital transformation resulting in 300% increase in online sales and improved user experience through strategic UX redesign.",
+    imageSrc:
+      "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&q=80",
+    category: "E-commerce & DXP",
+    growthMetric: "300",
+    timeline: "6 months",
+  },
+  {
+    id: 2,
+    title: "Brand Identity Overhaul",
+    description:
+      "Strategic rebranding that elevated market position and increased brand recognition by 250% across all digital touchpoints.",
+    imageSrc:
+      "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=800&q=80",
+    category: "Brand & Identity",
+    growthMetric: "250",
+    timeline: "4 months",
+  },
+  {
+    id: 3,
+    title: "Mobile App Success",
+    description:
+      "Award-winning mobile application with innovative UX design and seamless user experience, achieving 4.8 star rating.",
+    imageSrc:
+      "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=800&q=80",
+    category: "Mobile Development",
+    growthMetric: "180",
+    timeline: "8 months",
+  },
+  {
+    id: 4,
+    title: "AI Integration Platform",
+    description:
+      "Cutting-edge AI platform that revolutionized workflow automation and productivity, increasing efficiency by 400%.",
+    imageSrc:
+      "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&q=80",
+    category: "AI & Technology",
+    growthMetric: "400",
+    timeline: "10 months",
+  },
+  {
+    id: 5,
+    title: "Digital Marketing Campaign",
+    description:
+      "Multi-channel marketing strategy that drove unprecedented engagement and conversion rates across social platforms.",
+    imageSrc:
+      "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=800&q=80",
+    category: "Digital Marketing",
+    growthMetric: "220",
+    timeline: "5 months",
+  },
+  {
+    id: 6,
+    title: "UX/UI Redesign Project",
+    description:
+      "Complete user interface overhaul that improved user satisfaction by 300% and reduced bounce rate significantly.",
+    imageSrc:
+      "https://images.unsplash.com/photo-1613909207039-6b173b755cc1?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fHVpJTIwdXh8ZW58MHx8MHx8fDA%3D",
+    category: "UX/UI Design",
+    growthMetric: "300",
+    timeline: "7 months",
+  },
+];
 
-  const cards = [
-    {
-      id: 1,
-      title: "Giftcart - Personalised Gifting",
-      description:
-        "Platform dedicated to promoting cultural industries and creative professionals with personalized gift solutions.",
-      imageSrc: "https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?w=600&h=800&fit=crop",
-      logoSrc: "https://logo.clearbit.com/shopify.com",
-      logoAlt: "Giftcart Logo"
-    },
-    {
-      id: 2,
-      title: "INDIC Branding & Website",
-      description:
-        "Complete website overhaul with modern design principles and enhanced user experience for cultural preservation.",
-      imageSrc: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=800&fit=crop",
-      logoSrc: "https://logo.clearbit.com/atlassian.com",
-      logoAlt: "INDIC Logo"
-    },
-    {
-      id: 3,
-      title: "EverFox Domain Branding",
-      description:
-        "Custom brand identity and domain strategy with advanced digital presence and responsive design solutions.",
-      imageSrc: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=800&fit=crop",
-      logoSrc: "https://logo.clearbit.com/mozilla.org",
-      logoAlt: "EverFox Logo"
-    },
-    {
-      id: 4,
-      title: "October.ai —Designara + Brandlara",
-      description:
-        "AI-powered design platform showcasing creative work with dynamic layouts and intelligent branding solutions.",
-      imageSrc: "https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=600&h=800&fit=crop",
-      logoSrc: "https://logo.clearbit.com/openai.com",
-      logoAlt: "October.ai Logo"
-    },
-    {
-      id: 5,
-      title: "Crosswalk.ai—Branding",
-      description:
-        "AI-driven branding solutions with comprehensive visual identity and strategic brand positioning.",
-      imageSrc: "https://images.unsplash.com/photo-1559136555-9303baea8ebd?w=600&h=800&fit=crop",
-      logoSrc: "https://logo.clearbit.com/nvidia.com",
-      logoAlt: "Crosswalk.ai Logo"
-    },
-  ];
+const Snapshot = () => {
+  const sectionRef = useRef(null);
+  const cardsRef = useRef(null);
+  const cardRefs = useRef([]);
+  const [hoveredCard, setHoveredCard] = useState(null);
+  const [isClient, setIsClient] = useState(false);
 
   useEffect(() => {
+    setIsClient(true);
+    cardRefs.current = cardRefs.current.slice(0, cards.length);
+  }, []);
+
+  useEffect(() => {
+    if (!isClient) return;
+
     const ctx = gsap.context(() => {
-      // Title animation
-      gsap.fromTo(
-        titleRef.current,
-        { opacity: 0, y: 50 },
-        {
+      if (cardRefs.current.length > 0) {
+        gsap.set(cardRefs.current.filter(Boolean), {
+          opacity: 0,
+          y: 60,
+          scale: 0.95,
+        });
+
+        gsap.to(cardRefs.current.filter(Boolean), {
           opacity: 1,
           y: 0,
-          duration: 0.6,
-          scrollTrigger: {
-            trigger: titleRef.current,
-            start: "top 80%",
-            toggleActions: "play none none none",
-          },
-        }
-      );
-
-      // Description animation
-      gsap.fromTo(
-        descriptionRef.current,
-        { opacity: 0, y: 30 },
-        {
-          opacity: 1,
-          y: 0,
-          duration: 0.6,
-          delay: 0.2,
-          scrollTrigger: {
-            trigger: descriptionRef.current,
-            start: "top 80%",
-            toggleActions: "play none none none",
-          },
-        }
-      );
-
-      // Cards stagger animation
-      gsap.fromTo(
-        ".card-item",
-        { opacity: 0, scale: 0.9, y: 30 },
-        {
-          opacity: 1,
           scale: 1,
-          y: 0,
-          duration: 0.4,
+          duration: 0.8,
+          stagger: 0.15,
           ease: "power2.out",
           scrollTrigger: {
             trigger: cardsRef.current,
-            start: "top 80%",
+            start: "top 70%",
             toggleActions: "play none none none",
           },
-        }
-      );
+        });
+      }
     }, sectionRef);
 
-    return () => {
-      ctx.revert();
-    };
-  }, []);
+    return () => ctx.revert();
+  }, [isClient]);
 
-  // Simple hover handler - no complex animations, just state management
   const handleCardHover = (cardId, isHovering) => {
-    // Only enable hover effects on XL screens and above
-    if (window.innerWidth >= 1280) {
-      setHoveredCard(isHovering ? cardId : null);
-    }
+    setHoveredCard(isHovering ? cardId : null);
   };
 
-  // Handle click for smaller screens
-  const handleCardClick = (cardId) => {
-    // For screens below XL, toggle description visibility on click
-    if (window.innerWidth < 1280) {
-      setHoveredCard(hoveredCard === cardId ? null : cardId);
-    }
-  };
-
-  // Function to get slanting height for other cards (only for XL and above)
-  const getCardHeight = (cardId, index) => {
-    // For screens below XL, use simple fixed height
-    if (typeof window !== "undefined" && window.innerWidth < 1280) {
-      return "h-[250px] sm:h-[280px] md:h-[300px]";
-    }
-
-    // Original slanting logic for XL screens and above
-    if (hoveredCard === cardId) {
-      return "h-[300px] md:h-[400px] lg:h-[450px]"; // Responsive hovered card height
-    }
-
-    if (hoveredCard && hoveredCard !== cardId) {
-      // Create slanting effect based on distance from hovered card
-      const hoveredIndex = cards.findIndex((card) => card.id === hoveredCard);
-      const distance = Math.abs(index - hoveredIndex);
-
-      // Responsive heights decrease with distance
-      const heights = [
-        "h-[250px] md:h-[300px] lg:h-[350px]", // 1st neighbor
-        "h-[220px] md:h-[260px] lg:h-[300px]", // 2nd neighbor
-        "h-[200px] md:h-[230px] lg:h-[250px]", // 3rd neighbor
-        "h-[180px] md:h-[200px] lg:h-[200px]", // 4th+ neighbor
-      ];
-      return (
-        heights[Math.min(distance - 1, heights.length - 1)] ||
-        "h-[180px] md:h-[200px] lg:h-[200px]"
-      );
-    }
-
-    return "h-[250px] md:h-[300px] lg:h-[350px]"; // Default responsive height when nothing is hovered
-  };
+  if (!isClient) {
+    return <div className="min-h-screen bg-black" />;
+  }
 
   return (
     <section
       ref={sectionRef}
-      className="flex justify-center items-center text-white py-8 md:py-16 lg:py-32 px-4 md:px-6 lg:px-8"
+      className="flex flex-col w-[90vw] mx-auto justify-center items-center text-white py-16 md:py-24 lg:py-32 bg-black"
     >
-      <div className="container mx-auto">
-        <div className="text-center mb-8 md:mb-12 lg:mb-16">
-          <TextReveal
-            className="text-120 font-semibold mb-4 md:mb-6 lg:mb-8"
-            animation="rotateX"
-            stagger={0.1}
-            duration={0.8}
-          >
-            Success Stories
-          </TextReveal>
-
-          <TextReveal
-            stagger={0.1}
-            duration={0.8}
-            ref={descriptionRef}
-            className="text-40 text-gray-300 max-w-3xl md:max-w-4xl lg:max-w-6xl mx-auto leading-relaxed px-4 font-extralight"
-          >
-            Transforming businesses through innovative design and strategic branding 
-            solutions that drive growth and create lasting impact in the digital landscape.
-          </TextReveal>
-        </div>
-
-        {/* Cards Grid */}
-        <div
-          ref={cardsRef}
-          className="xl:flex xl:flex-row xl:justify-center xl:items-end xl:gap-4 xl:min-h-[500px]  grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 w-full px-2 sm:px-0"
+      {/* Header Section */}
+      <div className="text-center mb-20 xl:mb-36">
+        <TextReveal
+          className="text-center text-120 pt-20 xl:pt-40 font-bold text-white"
+          style={{ pointerEvents: "none" }}
+          animation="rotateX"
+          stagger={0.1}
+          duration={0.8}
         >
-          {cards.map((card, index) => {
-            const isHovered = hoveredCard === card.id;
-            const isOtherHovered = hoveredCard && hoveredCard !== card.id;
-            const cardHeight = getCardHeight(card.id, index);
+          Success Stories
+        </TextReveal>
+        <TextReveal
+          className="text-center text-40 max-w-6xl mx-auto text-white"
+          style={{ pointerEvents: "none" }}
+          animation="rotateX"
+          stagger={0.1}
+          duration={0.8}
+        >
+          Transforming businesses through innovative design and strategic
+          branding solutions that drive growth and create lasting impact.
+        </TextReveal>
+      </div>
 
-            return (
+      {/* Cards Grid - 2x3 Layout */}
+      <div
+        ref={cardsRef}
+        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 px-6  mx-auto"
+      >
+        {cards.map((card, index) => {
+          const isHovered = hoveredCard === card.id;
+
+          return (
+            <div
+              key={card.id}
+              ref={(el) => {
+                if (el) cardRefs.current[index] = el;
+              }}
+              className="group relative overflow-hidden"
+            //   onMouseEnter={() => handleCardHover(card.id, true)}
+            //   onMouseLeave={() => handleCardHover(card.id, false)}
+            >
+              {/* Main Card */}
               <div
-                key={card.id}
-                data-card-id={card.id}
-                className={`card-item relative bg-black overflow-hidden cursor-pointer rounded-sm transition-all duration-500 ease-out
-                  xl:flex-shrink-0 ${
-                    isHovered
-                      ? "xl:w-[420px]"
-                      : isOtherHovered
-                      ? "xl:w-[250px]"
-                      : "xl:w-[280px]"
-                  } 
-                  w-full max-w-[400px] mx-auto xl:max-w-none xl:mx-0
-                } ${cardHeight}`}
-                onMouseEnter={() => handleCardHover(card.id, true)}
-                onMouseLeave={() => handleCardHover(card.id, false)}
-                onClick={() => handleCardClick(card.id)}
+                className="relative bg-gray-900 rounded-2xl overflow-hidden h-[30rem] transition-all duration-700 group-hover:shadow-2xl group-hover:shadow-pink-500/20"
+                style={{
+                  backgroundImage: isHovered ? `url(${card.imageSrc})` : "none",
+                  backgroundSize: "cover",
+                  backgroundPosition: "center",
+                }}
               >
-                <div className="relative w-full h-full group">
-                  {/* Background Image */}
-                  <img
-                    src={card.imageSrc}
-                    alt={card.title}
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                  />
+                {/* Background Overlay when hovered */}
+                {isHovered && (
+                  <div className="absolute inset-0 bg-black/80 transition-opacity duration-700" />
+                )}
 
-                  {/* Company Logo */}
-                  <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm rounded-lg p-2 shadow-lg">
-                    <img
-                      src={card.logoSrc}
-                      alt={card.logoAlt}
-                      className="w-8 h-8 md:w-10 md:h-10 object-contain"
-                    />
-                  </div>
+                {/* Card Content Container */}
+                <div className="relative h-full flex">
+                  {/* Left Half - Title & Description */}
+                  <div className="w-full lg:w-1/2 p-6 flex flex-col justify-between relative z-10">
+                    {/* Category Badge */}
+                    <div className="mb-4">
+                      <span className="inline-block bg-pink-600/20 backdrop-blur-sm rounded-full px-3 py-1 text-xs font-medium text-pink-300 border border-pink-500/30">
+                        {card.category}
+                      </span>
+                    </div>
 
-                  {/* Overlay gradient */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent" />
+                    {/* Title - Always Visible */}
+                    <div>
+                      <h3 className="text-white text-48 font-bold leading-tight mb-4">
+                        {card.title}
+                      </h3>
 
-                  {/* Card title - always visible */}
-                  <div className="absolute bottom-4 left-4 right-4 text-white">
-                    <h3 className="text-20 font-medium mb-2 leading-tight">
-                      {card.title}
-                    </h3>
-                    
-                    {/* Description - shown on hover or click */}
-                    <div className={`transition-all duration-300 overflow-hidden ${
-                      isHovered || (window.innerWidth < 1280 && hoveredCard === card.id)
-                        ? 'opacity-100 max-h-20'
-                        : 'opacity-0 max-h-0'
-                    }`}>
-                      <p className="text-16 text-gray-200 leading-snug">
+                      {/* Growth Metric */}
+                      <div className="flex items-center gap-2 mb-4">
+                        <div className="w-3 h-3 bg-green-400 rounded-full animate-pulse"></div>
+                        <span className="text-green-400 font-semibold text-20">
+                          +{card.growthMetric}% Growth
+                        </span>
+                      </div>
+                    </div>
+
+                    {/* Description - Appears on Hover */}
+                    {/* <div
+                      className={`transition-all duration-500 ${
+                        isHovered
+                          ? "opacity-100 translate-y-0"
+                          : "opacity-0 translate-y-4"
+                      }`}
+                    >
+                      <p className="text-gray-300 text-sm leading-relaxed mb-4">
                         {card.description}
                       </p>
-                    </div>
+
+                      <div className="flex items-center gap-2">
+                        <svg
+                          className="w-4 h-4 text-blue-400"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
+                          />
+                        </svg>
+                        <span className="text-blue-400 text-xs">
+                          {card.timeline}
+                        </span>
+                      </div>
+                    </div> */}
                   </div>
 
-                  {/* Hover overlay for better text readability */}
-                  <div className={`absolute inset-0 bg-black/30 transition-opacity duration-300 ${
-                    isHovered ? 'opacity-100' : 'opacity-0'
-                  }`} />
+                  {/* Right Half - Image */}
+                  <div
+                    className={`hidden lg:block lg:w-1/2 relative overflow-hidden transition-all duration-700 ${
+                      isHovered
+                        ? "translate-y-full opacity-0"
+                        : "translate-y-0 opacity-100"
+                    }`}
+                  >
+                    {/* Gradient Overlay */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-transparent to-transparent z-10" />
+
+                    {/* Image */}
+                    <img
+                      src={card.imageSrc}
+                      alt={card.title}
+                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                      onError={(e) => {
+                        e.target.src = "/api/placeholder/400/300";
+                      }}
+                    />
+                  </div>
                 </div>
+
+                {/* Hover Border Effect */}
+                <div
+                  className={`absolute inset-0 border-2 rounded-2xl transition-all duration-500 ${
+                    isHovered
+                      ? "border-pink-500/50 shadow-lg shadow-pink-500/25"
+                      : "border-transparent"
+                  }`}
+                />
+
+                {/* Floating Elements on Hover */}
+                {isHovered && (
+                  <div className="absolute inset-0 pointer-events-none">
+                    <div className="absolute top-4 right-4 w-2 h-2 bg-pink-400 rounded-full animate-pulse" />
+                    <div className="absolute bottom-4 left-4 w-1 h-1 bg-blue-400 rounded-full animate-pulse delay-300" />
+                    <div className="absolute top-1/2 right-6 w-1.5 h-1.5 bg-teal-400 rounded-full animate-pulse delay-500" />
+                  </div>
+                )}
               </div>
-            );
-          })}
-        </div>
+            </div>
+          );
+        })}
       </div>
     </section>
   );
 };
 
-export default Snapshot_Services;
+export default Snapshot;
