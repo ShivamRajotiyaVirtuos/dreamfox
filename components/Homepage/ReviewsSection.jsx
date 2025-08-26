@@ -65,11 +65,16 @@ const ReviewsSection = () => {
           stagger={0.1}
           duration={0.8}
         >
-          At <b>Dreamfox</b>, we’ve partnered with leading brands across
+          At Dreamfox, we’ve partnered with leading brands across industries to
+          bring bold visions to life. Our clients call us their creative partner
+          — blending strategy, speed, and big ideas to deliver work that
+          consistently exceeds expectations.
+          {/* nbchwjbh */}
+          {/* At <b>Dreamfox</b>, we’ve partnered with leading brands across
           industries to bring bold visions to life. Our clients call us their{" "}
           <i>creative partner</i> — blending <b>strategy</b>, <b>speed</b>, and{" "}
           <b>big ideas</b> to deliver work that consistently exceeds
-          expectations.
+          expectations. */}
         </TextReveal>
         {/* <p className="text-40  text-white/80 mb-6 ">
           Our clients call us their creative partner — blending strategy, speed,
