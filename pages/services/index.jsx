@@ -10,10 +10,11 @@ const Services = () => {
   return (
     <div>
       <Banner_Services />
-
-      <Snapshot_Services />
       <FourPillarsSection />
+
       <Offerings />
+      <Snapshot_Services />
+
       <Values_services />
       <Cta />
     </div>

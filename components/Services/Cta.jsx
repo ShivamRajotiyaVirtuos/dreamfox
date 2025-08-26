@@ -15,17 +15,17 @@ import AnimatedButton from "../buttons/AnimatedButton";
 
 const Cta = () => {
   return (
-    <section className="w-full pb-20 lg:pb-32 bg-black text-white container lg:min-h-[60vh]">
+    <section className="w-full py-20 lg:py-32 bg-black text-white container lg:min-h-[60vh]">
       <TextReveal
         animation="rotateX"
         stagger={0.1}
         duration={0.8}
-        className="text-center text-120 font-bold text-white  mt-20"
+        className="text-center text-80 font-bold text-white  mt-20"
       >
         Ready to design, brand, and scale with DreamFox?
       </TextReveal>
 
-      <div className="flex justify-center mt-16 sm:mt-32 scale-110 sm:scale-200">
+      <div className="flex justify-center mt-16 sm:mt-24 scale-110 sm:scale-[1.8]">
         <AnimatedButton text="Talk to Us" href="/contactus" />
       </div>
     </section>

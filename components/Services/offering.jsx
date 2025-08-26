@@ -57,8 +57,8 @@ const Offerings = () => {
           .timeline({
             scrollTrigger: {
               trigger: wrapper,
-              start: "top 15%",
-              end: "bottom 10%",
+              start: "top -2%",
+              end: "bottom 5%",
               scrub: 0.5,
               pin: true,
               pinSpacing: false,
@@ -72,10 +72,10 @@ const Offerings = () => {
               y: 0,
             },
             {
-              opacity: 0,
-              scale: 0.8,
-              y: -30,
-              ease: "power1.inOut",
+              opacity: 1,
+              scale: 1,
+              y: 0,
+              ease: "power1.out",
               duration: 1,
             }
           );
@@ -91,9 +91,9 @@ const Offerings = () => {
     <div className="relative">
       <div className="flex flex-col">
         {/* Sticky Heading */}
-        <div className="sticky top-0 w-full bg-black/90 z-50 text-center py-6">
+        <div className="s w-full  z-50 text-center py-6">
           <TextReveal
-            className="text-center text-120 pt-20 xl:pt-40 font-bold text-white"
+            className="text-center text-120 py-20 xy:pt-40 font-bold text-white"
             style={{ pointerEvents: "none" }}
             animation="rotateX"
             stagger={0.1}
@@ -106,12 +106,12 @@ const Offerings = () => {
         {/* Cards */}
         {CARD_DATA.slice(0, 5).map((card, idx) => (
           <div
-            className={`card-wrapper flex items-center justify-center w-full mx-auto ${
-              idx === 4 ? "h-[85vh] pb-[15vh]" : "h-[70vh] pt-[1vh]"
+            className={`card-wrapper flex  items-center justify-center w-full mx-auto ${
+              idx === 4 ? "h-[100vh] " : "h-[100vh] pt-[1vh]"
             }`}
             key={idx}
           >
-            <div className="card w-[90vw] max-w-7xl h-[65vh] rounded-3xl overflow-hidden transition-all duration-500 relative group hover:scale-105">
+            <div className="card w-full h-full rounded- overflow-hidden transition-all duration-500 relative group hover:scale-105">
               {/* Background Image with Parallax Effect */}
               <div className="absolute inset-0 overflow-hidden">
                 <img
@@ -125,7 +125,7 @@ const Offerings = () => {
               </div>
 
               {/* Content Container */}
-              <div className="relative z-10 h-full flex flex-col justify-between p-8 md:p-12">
+              <div className="relative z-10 h-full flex flex-col justify-between p-8 md:p-24">
                 {/* Top Section - Card Number */}
                 <div className="flex justify-between items-start">
                   <div className="flex items-center gap-4">
@@ -142,7 +142,7 @@ const Offerings = () => {
                 <div className="space-y-6">
                   {/* Title with animated underline */}
                   <div className="relative">
-                    <h2 className="text-5xl md:text-7xl font-bold text-white leading-none tracking-tight">
+                    <h2 className="text-80 font-bold text-white leading-none tracking-tight">
                       {card.title}
                     </h2>
                     <div className="h-1 w-0 bg-gradient-to-r from-purple-500 to-cyan-500 transition-all duration-500 delay-200 mt-4"></div>
@@ -150,7 +150,7 @@ const Offerings = () => {
 
                   {/* Description and CTA */}
                   <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6">
-                    <p className="text-xl md:text-2xl text-gray-200 leading-relaxed max-w-2xl opacity-90">
+                    <p className="text-30 text-gray-200 leading-relaxed max-w-2xl opacity-90">
                       {card.desc}
                     </p>
 

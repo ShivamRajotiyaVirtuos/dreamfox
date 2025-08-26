@@ -203,9 +203,9 @@ const RingCarousel = () => {
   }, []);
 
   return (
-    <div className="w-full relative  h-screen bg-black overflow-hidden">
+    <div className="w-full relative  min-h-screen bg-black overflow-hidden">
       {/* Fixed header section */}
-      <div className="sm:absolute top-0 left-0 right-0 z-10 pt-20 lg:pt-40 pb-8">
+      <div className="sm:absolute top-0 left-0 right-0 z-10 pt-20 lg:pt-40 pb-8 ">
         <div className="text-center">
           <TextReveal
             animation="rotateX"
@@ -228,7 +228,7 @@ const RingCarousel = () => {
       </div>
 
       {/* 3D container centered in remaining space */}
-      <div className="w-full h-full flex items-center justify-center">
+      <div className="w-full h-full flex items-center justify-center mt-64 mb-32">
         <div
           ref={containerRef}
           className="relative w-full h-[600px]"

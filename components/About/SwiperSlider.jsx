@@ -41,61 +41,139 @@ const SwiperSlider = () => {
 
   const slides = [
     {
-      url: "https://static.vecteezy.com/system/resources/previews/003/314/142/large_2x/portrait-of-a-businessman-working-in-office-photo.jpg",
-      name: "Rahul Mehta",
-      description: "Frontend Developer specializing in React and Tailwind CSS",
+      url: "/images/About/ams.webp",
+      name: "Amarinder Singh",
+      description: "Senior Director",
     },
     {
-      url: "https://static.vecteezy.com/system/resources/previews/048/673/875/large_2x/mature-businesswoman-in-glasses-points-authoritatively-in-a-well-appointed-home-office-embodying-leadership-and-remote-work-photo.jpg",
-      name: "Aisha Kapoor",
-      description: "UI/UX Designer crafting user-centered digital experiences",
+      url: "/images/About/shaloo_reddi.webp",
+
+      name: "Shaloo Reddi",
+      description: "VP & Senior HR",
     },
     {
-      url: "https://static.vecteezy.com/system/resources/previews/066/920/669/large_2x/cheerful-black-guy-worker-call-center-representative-with-headset-using-laptop-smiling-at-camera-african-american-man-having-business-training-or-conference-online-in-office-copy-space-photo.jpg",
-      name: "Arjun Reddy",
-      description: "Full Stack Developer with MERN expertise",
+      url: "/images/About/hemant_tyagi.webp",
+
+      name: "Hemant Tyagi",
+      description: "Project Manager",
     },
     {
-      url: "https://static.vecteezy.com/system/resources/previews/036/111/842/large_2x/ai-generated-portrait-of-successful-and-happy-senior-businesswoman-office-worker-smiling-working-inside-modern-office-photo.jpg",
-      name: "Neha Sharma",
-      description: "Cloud Engineer deploying scalable AWS infrastructure",
+      url: "/images/About/tina_sachdeva.webp",
+
+      name: "Tina Sachdeva",
+      description: "CSM",
     },
     {
-      url: "https://static.vecteezy.com/system/resources/previews/052/961/686/large_2x/professional-focused-on-laptop-with-paperwork-for-business-tasks-photo.jpg",
-      name: "Kabir Singh",
-      description: "Backend Developer working with Node.js and GraphQL",
+      url: "/images/About/shivam_rajotiya.webp",
+
+      name: "Shivam Rajotiya",
+      description: "Software Engineer",
     },
     {
-      url: "https://static.vecteezy.com/system/resources/previews/013/084/175/large_2x/succsesfull-woman-manager-in-beige-suit-with-crossed-arms-photo.JPG",
-      name: "Sneha Iyer",
-      description:
-        "Mobile App Developer building cross-platform apps with Flutter",
+      url: "/images/About/aditya.webp",
+      name: "Aditya Kumar",
+      description: "SEO Expert",
     },
     {
-      url: "https://static.vecteezy.com/system/resources/previews/010/141/210/large_2x/beautiful-millennial-asian-businesswoman-or-female-financial-worker-working-and-brainstorming-with-her-coworker-in-the-office-free-photo.jpg",
-      name: "Vikram Nair",
-      description: "DevOps Engineer automating CI/CD pipelines",
+      url: "/images/About/abdul.webp",
+
+      name: "Abdul Ahad",
+      description: "Software Engineer - Trainee",
     },
     {
-      url: "https://static.vecteezy.com/system/resources/previews/032/094/110/large_2x/a-woman-in-an-office-looking-at-the-camera-generative-ai-photo.jpeg",
-      name: "Priya Desai",
-      description:
-        "Machine Learning Engineer solving real-world problems with AI",
+      url: "/images/About/sukriti.webp",
+      name: "Sukriti Kumari",
+      description: "UI/UX Designer",
     },
     {
-      url: "https://static.vecteezy.com/system/resources/previews/044/456/838/large_2x/smiling-young-professional-man-using-laptop-at-his-desk-in-a-well-lit-modern-office-showing-productivity-and-comfort-photo.jpg",
-      name: "Rohan Bhatt",
-      description: "Cybersecurity Analyst focusing on threat detection",
+      url: "/images/About/ams.webp",
+      name: "Amarinder Singh",
+      description: "Senior Director",
     },
     {
-      url: "https://static.vecteezy.com/system/resources/previews/044/454/319/large_2x/confident-young-adult-male-with-a-beard-using-a-digital-tablet-in-a-well-lit-modern-office-environment-perfect-for-depicting-professionalism-and-technology-in-the-workplace-photo.jpg",
-      name: "Meera Sinha",
-      description: "Data Scientist turning raw data into insights",
+      url: "/images/About/shaloo_reddi.webp",
+
+      name: "Shaloo Reddi",
+      description: "VP & Senior HR",
     },
     {
-      url: "https://static.vecteezy.com/system/resources/previews/067/834/406/large_2x/businesswoman-or-female-office-worker-holding-mug-talking-happily-in-online-meeting-or-call-photo.jpg",
-      name: "Aditya Verma",
-      description: "Software Architect designing scalable systems",
+      url: "/images/About/hemant_tyagi.webp",
+
+      name: "Hemant Tyagi",
+      description: "Project Manager",
+    },
+    {
+      url: "/images/About/tina_sachdeva.webp",
+
+      name: "Tina Sachdeva",
+      description: "CSM",
+    },
+    {
+      url: "/images/About/shivam_rajotiya.webp",
+
+      name: "Shivam Rajotiya",
+      description: "Software Engineer",
+    },
+    {
+      url: "/images/About/aditya.webp",
+      name: "Aditya Kumar",
+      description: "SEO Expert",
+    },
+    {
+      url: "/images/About/abdul.webp",
+
+      name: "Abdul Ahad",
+      description: "Software Engineer - Trainee",
+    },
+    {
+      url: "/images/About/sukriti.webp",
+      name: "Sukriti Kumari",
+      description: "UI/UX Designer",
+    },
+    {
+      url: "/images/About/ams.webp",
+      name: "Amarinder Singh",
+      description: "Senior Director",
+    },
+    {
+      url: "/images/About/shaloo_reddi.webp",
+
+      name: "Shaloo Reddi",
+      description: "VP & Senior HR",
+    },
+    {
+      url: "/images/About/hemant_tyagi.webp",
+
+      name: "Hemant Tyagi",
+      description: "Project Manager",
+    },
+    {
+      url: "/images/About/tina_sachdeva.webp",
+
+      name: "Tina Sachdeva",
+      description: "CSM",
+    },
+    {
+      url: "/images/About/shivam_rajotiya.webp",
+
+      name: "Shivam Rajotiya",
+      description: "Software Engineer",
+    },
+    {
+      url: "/images/About/aditya.webp",
+      name: "Aditya Kumar",
+      description: "SEO Expert",
+    },
+    {
+      url: "/images/About/abdul.webp",
+
+      name: "Abdul Ahad",
+      description: "Software Engineer - Trainee",
+    },
+    {
+      url: "/images/About/sukriti.webp",
+      name: "Sukriti Kumari",
+      description: "UI/UX Designer",
     },
   ];
 
@@ -188,12 +266,12 @@ const SwiperSlider = () => {
             {slides.map((slide, i) => (
               <div
                 key={i}
-                className="swiper-slide"
+                className="swiper-slide bg-white"
                 style={{ backgroundImage: `url(${slide.url})` }}
               >
                 <div className="info">
                   <div className="name ">
-                    <FaUser /> <p className="text-48 "> {slide.name}</p>
+                    <FaUser /> <p className="text-40 "> {slide.name}</p>
                   </div>
                   <div className="desc">
                     <FaQuoteLeft /> {slide.description}

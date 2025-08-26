@@ -149,7 +149,7 @@ const FourPillarsSection = () => {
       text: "Position boldly with Brand ID, Architecture, and Advisory for startups and re-engineering giants.",
       cta: "Discover Branding",
       link: "/services/brand-advisory",
-      image: "/images/home/brandlara_advisory.webp",
+      image: "/images/home/brandlara_advisory_2.webp",
     },
     {
       title: "Designara Studio",
@@ -157,7 +157,7 @@ const FourPillarsSection = () => {
 
       cta: "Explore Design",
       link: "/services/design-studio",
-      image: "/images/home/designara_studio.webp",
+      image: "/images/home/designara_studio_2.webp",
     },
     {
       title: "AI & Digital Assimilations",
@@ -269,7 +269,7 @@ const FourPillarsSection = () => {
                   <p className="card-text text-gray-300 text-base leading-relaxed mb-6 line-clamp-3">
                     {pillar.text}
                   </p>
-                  <AnimatedButton text={pillar.cta} href={pillar.link} />
+                  {/* <AnimatedButton text={pillar.cta} href={pillar.link} /> */}
                 </div>
               </div>
 
@@ -317,7 +317,7 @@ const FourPillarsSection = () => {
                 <p className="card-text text-gray-300 text-lg leading-relaxed mb-8 line-clamp-4">
                   {pillars[0].text}
                 </p>
-                <AnimatedButton text={pillars[0].cta} href={pillars[0].link} />
+                {/* <AnimatedButton text={pillars[0].cta} href={pillars[0].link} /> */}
               </div>
             </div>
 
@@ -351,7 +351,7 @@ const FourPillarsSection = () => {
                 <p className="card-text text-gray-300 text-base leading-relaxed mb-6 line-clamp-2">
                   {pillars[1].text}
                 </p>
-                <AnimatedButton text={pillars[1].cta} href={pillars[1].link} />
+                {/* <AnimatedButton text={pillars[1].cta} href={pillars[1].link} /> */}
               </div>
             </div>
 
@@ -365,7 +365,7 @@ const FourPillarsSection = () => {
           <div className="grid grid-cols-2 grid-rows-1 gap-6 lg:gap-8 col-span-3 row-span-1">
             <div
               ref={(el) => (cardsRef.current[2] = el)}
-              className="group relative overflow-hidden cursor-pointer border border-white/10 backdrop-blur-sm bg-gradient-to-br from-gray-900/80 via-black/60 to-gray-800/80 rounded-lg"
+              className="group relative overflow-hidden cursor-pointer border border-white/10 backdrop-blur-sm bg-gradient-to-br from-gray-900/80 via-black/60 to-gray-800/80 rounded-lg "
             >
               {/* Parallax Background Image */}
               <div className="absolute inset-0 overflow-hidden">
@@ -386,10 +386,10 @@ const FourPillarsSection = () => {
                   <p className="card-text text-gray-300 text-sm leading-relaxed mb-4 line-clamp-2">
                     {pillars[2].text}
                   </p>
-                  <AnimatedButton
+                  {/* <AnimatedButton
                     text={pillars[2].cta}
                     href={pillars[2].link}
-                  />
+                  /> */}
                 </div>
               </div>
 
@@ -422,10 +422,10 @@ const FourPillarsSection = () => {
                   <p className="card-text text-gray-300 text-sm leading-relaxed mb-4 line-clamp-2">
                     {pillars[3].text}
                   </p>
-                  <AnimatedButton
+                  {/* <AnimatedButton
                     text={pillars[3].cta}
                     href={pillars[3].link}
-                  />
+                  /> */}
                 </div>
               </div>
 

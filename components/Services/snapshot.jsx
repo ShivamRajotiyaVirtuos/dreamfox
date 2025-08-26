@@ -1,297 +1,540 @@
 "use client";
-import React, { useRef, useEffect, useState } from "react";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
+import React, { useEffect } from "react";
+import Swiper from "swiper/bundle";
+import "swiper/css/bundle";
+import { FaTrophy, FaQuoteLeft } from "react-icons/fa";
 import TextReveal from "../Text Reveal/textreveal";
 
-gsap.registerPlugin(ScrollTrigger);
-
-// Extended cards data - 6 cards for 2x3 grid
-const cards = [
-  {
-    id: 1,
-    title: "E-commerce Revolution",
-    description:
-      "Complete digital transformation resulting in 300% increase in online sales and improved user experience through strategic UX redesign.",
-    imageSrc:
-      "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&q=80",
-    category: "E-commerce & DXP",
-    growthMetric: "300",
-    timeline: "6 months",
-  },
-  {
-    id: 2,
-    title: "Brand Identity Overhaul",
-    description:
-      "Strategic rebranding that elevated market position and increased brand recognition by 250% across all digital touchpoints.",
-    imageSrc:
-      "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=800&q=80",
-    category: "Brand & Identity",
-    growthMetric: "250",
-    timeline: "4 months",
-  },
-  {
-    id: 3,
-    title: "Mobile App Success",
-    description:
-      "Award-winning mobile application with innovative UX design and seamless user experience, achieving 4.8 star rating.",
-    imageSrc:
-      "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=800&q=80",
-    category: "Mobile Development",
-    growthMetric: "180",
-    timeline: "8 months",
-  },
-  {
-    id: 4,
-    title: "AI Integration Platform",
-    description:
-      "Cutting-edge AI platform that revolutionized workflow automation and productivity, increasing efficiency by 400%.",
-    imageSrc:
-      "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&q=80",
-    category: "AI & Technology",
-    growthMetric: "400",
-    timeline: "10 months",
-  },
-  {
-    id: 5,
-    title: "Digital Marketing Campaign",
-    description:
-      "Multi-channel marketing strategy that drove unprecedented engagement and conversion rates across social platforms.",
-    imageSrc:
-      "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=800&q=80",
-    category: "Digital Marketing",
-    growthMetric: "220",
-    timeline: "5 months",
-  },
-  {
-    id: 6,
-    title: "UX/UI Redesign Project",
-    description:
-      "Complete user interface overhaul that improved user satisfaction by 300% and reduced bounce rate significantly.",
-    imageSrc:
-      "https://images.unsplash.com/photo-1613909207039-6b173b755cc1?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fHVpJTIwdXh8ZW58MHx8MHx8fDA%3D",
-    category: "UX/UI Design",
-    growthMetric: "300",
-    timeline: "7 months",
-  },
-];
-
-const Snapshot = () => {
-  const sectionRef = useRef(null);
-  const cardsRef = useRef(null);
-  const cardRefs = useRef([]);
-  const [hoveredCard, setHoveredCard] = useState(null);
-  const [isClient, setIsClient] = useState(false);
-
+const SuccessStories = () => {
   useEffect(() => {
-    setIsClient(true);
-    cardRefs.current = cardRefs.current.slice(0, cards.length);
+    new Swiper(".swiper", {
+      effect: "coverflow",
+      loop: true,
+      grabCursor: true,
+      centeredSlides: true,
+      autoplay: {
+        delay: 0, // No delay for continuous movement
+        disableOnInteraction: false,
+        pauseOnMouseEnter: true, // Pause when mouse hovers
+        reverseDirection: false,
+      },
+      speed: 3000, // Smooth slow transition speed for continuous effect
+      slidesPerView: 1,
+      allowTouchMove: true,
+      freeMode: false,
+      coverflowEffect: {
+        rotate: 50,
+        stretch: 0,
+        depth: 100,
+        modifier: 1,
+        slideShadows: true,
+      },
+      // pagination: {
+      //   el: ".swiper-pagination",
+      //   clickable: true,
+      // },
+      breakpoints: {
+        320: { slidesPerView: 1.5 },
+        580: { slidesPerView: 2 },
+        767: { slidesPerView: 2.5 },
+        992: { slidesPerView: 2.5 },
+        1200: { slidesPerView: 3 },
+        1400: { slidesPerView: 3.5 },
+      },
+    });
   }, []);
 
-  useEffect(() => {
-    if (!isClient) return;
-
-    const ctx = gsap.context(() => {
-      if (cardRefs.current.length > 0) {
-        gsap.set(cardRefs.current.filter(Boolean), {
-          opacity: 0,
-          y: 60,
-          scale: 0.95,
-        });
-
-        gsap.to(cardRefs.current.filter(Boolean), {
-          opacity: 1,
-          y: 0,
-          scale: 1,
-          duration: 0.8,
-          stagger: 0.15,
-          ease: "power2.out",
-          scrollTrigger: {
-            trigger: cardsRef.current,
-            start: "top 70%",
-            toggleActions: "play none none none",
-          },
-        });
-      }
-    }, sectionRef);
-
-    return () => ctx.revert();
-  }, [isClient]);
-
-  const handleCardHover = (cardId, isHovering) => {
-    setHoveredCard(isHovering ? cardId : null);
-  };
-
-  if (!isClient) {
-    return <div className="min-h-screen bg-black" />;
-  }
+  const stories = [
+    {
+      url: "/casestudy/tvs_credit_fuels_customer_delight.webp",
+      title: "TVS Credit fuels customer delight with Oracle Fusion",
+      description:
+        "Legacy-to-Modern CX Migration powered by Virtuos Digital boosts service agility, omnichannel excellence, and AI-readiness for TVS Credit customers.",
+      logo: "/Homepage/tvscredit.svg",
+      stats: "Oracle Fusion",
+      category: "CX Migration",
+      pageurl:
+        "/customers/tvs-credit-oracle-fusion-Virtuos-Digital-Customer-Success",
+    },
+    {
+      url: "/casestudy/clp_modernizes_stakeholder_management.webp",
+      title: "CLP modernizes stakeholder management with Creatio",
+      description:
+        "Virtuos Digital—Consultare (vdc.com) transforms legacy systems into an intelligent, no-code platform for seamless stakeholder visibility, engagement, search, and reporting.",
+      logo: "/Homepage/CLP_logo.svg",
+      stats: "No-Code Platform",
+      category: "Legacy Transformation",
+      pageurl: "/customers/customer-success-case-study-clp-hongkong-creatio",
+    },
+    {
+      url: "/casestudy/standard_chartered_advances_email_automation_journey.webp",
+      title: "Standard Chartered advances email automation journey",
+      description:
+        "With Virtuos CXDesk Success Stack, Standard Chartered modernizes Verint Email Response System, ensuring continuity, automation, and AWS-based sovereign data compliance.",
+      logo: "/Homepage/standard_chartered.svg",
+      stats: "Email Automation",
+      category: "Banking",
+      pageurl: "/customers/customer-success-standard-chartered-bank-kana",
+    },
+    {
+      url: "/casestudy/hdfc_life_digitizes_quote_management.webp",
+      title: "HDFC Life digitizes quote management",
+      description:
+        "Virtuos and Creatio empower HDFC Int'l Life's Sales Team with a no-code, digital quote system to streamline underwriting and approvals.",
+      logo: "/Homepage/hdfc-life-logo.png",
+      stats: "Digital Quotes",
+      category: "Insurance",
+      pageurl: "/customers/customers-success-case-study-hdfcbank-Creatio-CRM",
+    },
+    {
+      url: "/casestudy/kgsil_streamlines_contract_management_with_agiloft.webp",
+      title: "KGiSL streamlines contract management with Agiloft",
+      description:
+        "Virtuos Digital—Consultare (vdc.com) implemented a tailored Agiloft solution, enhancing contract visibility, approval workflows, and productivity for a leading technology service provider.",
+      logo: "/Homepage/kgisl.svg",
+      stats: "Contract Intelligence",
+      category: "Technology Services",
+      pageurl: "/customers/success-story-CLM-Agiloft-KGISL",
+    },
+    {
+      url: "/casestudy/leading_brewery_company.webp",
+      title: "A leading brewery company (LBC) automates with Agiloft CLM",
+      description:
+        "LBC embarks on digital contract intelligence with Agiloft CLM implemented by Virtuos Digital—Consultare.",
+      logo: "/Homepage/agiloft_logo.svg",
+      stats: "CLM Implementation",
+      category: "Manufacturing",
+      pageurl: "/customers/Brewery-Company-Implements-Agiloft-CLM",
+    },
+    {
+      url: "/casestudy/securitas_implements_contract_intelligence.webp",
+      title: "Securitas implements contract intelligence",
+      description:
+        "Empowering Legal and Sales Teams with AI-Native CLM from Agiloft, implemented by Virtuos Digital—Consultare (VDC).",
+      logo: "/Homepage/securitas_logo.svg",
+      stats: "AI-Native CLM",
+      category: "Security Services",
+      pageurl: "/customers/securitas-Agiloft-clm-success-story",
+    },
+    {
+      url: "/casestudy/pickme_accelerates_customer_experience.webp",
+      title: "PickMe accelerates customer experience with Creatio No-Code CRM",
+      description:
+        "Sri Lanka's leading mobility platform transforms service & contact centers with Virtuos Digital.",
+      logo: "/Homepage/pickme.svg",
+      stats: "CRM Transformation",
+      category: "Mobility Platform",
+      pageurl: "/customers/pickme-implements-Creatio-No-Code-Platform",
+    },
+    {
+      url: "/casestudy/space_ops_insights_company_integrates_smartsheet.webp",
+      title: "Space Ops Insights Company Integrates Smartsheet",
+      description:
+        "Virtuos Digital and Smartsheet Build an Operational Framework for Mission-Critical Visibility and Coordination",
+      logo: "/Homepage/smartsheet_logo.svg",
+      stats: "Mission-Critical",
+      category: "Space Operations",
+      pageurl: "/customers/customer-success-smartsheet-space-ops",
+    },
+    {
+      url: "/casestudy/thomas_cook_india_creates_experience_business_with_cxdesk.webp",
+      title: "Thomas Cook India Creates Experience Business with CXDesk",
+      description:
+        "Virtuos Digital—Consultare Helps Thomas Cook Transform CX into a Scalable, Competitive Edge",
+      logo: "/Homepage/oracle_logo.svg",
+      stats: "CX Excellence",
+      category: "Travel & Tourism",
+      pageurl: "/customers/customer-success-thomas-cook-india",
+    },
+    {
+      url: "/casestudy/barq_fintech_company_implements.webp",
+      title: "Barq—Fintech Company implements Oracle Fusion CX",
+      description:
+        "Virtuos Digital implements Fusion Service Cloud to automate Helpdesk and create digital experiences",
+      logo: "/Homepage/oracle_logo.svg",
+      stats: "Fusion Service Cloud",
+      category: "FinTech",
+      pageurl: "/customers/customer-success-barq-implements-oracle-fusion",
+    },
+    {
+      url: "/casestudy/tvs_credit_fuels_customer_delight.webp",
+      title: "TVS Credit fuels customer delight with Oracle Fusion",
+      description:
+        "Legacy-to-Modern CX Migration powered by Virtuos Digital boosts service agility, omnichannel excellence, and AI-readiness for TVS Credit customers.",
+      logo: "/Homepage/tvscredit.svg",
+      stats: "Oracle Fusion",
+      category: "CX Migration",
+      pageurl:
+        "/customers/tvs-credit-oracle-fusion-Virtuos-Digital-Customer-Success",
+    },
+    {
+      url: "/casestudy/clp_modernizes_stakeholder_management.webp",
+      title: "CLP modernizes stakeholder management with Creatio",
+      description:
+        "Virtuos Digital—Consultare (vdc.com) transforms legacy systems into an intelligent, no-code platform for seamless stakeholder visibility, engagement, search, and reporting.",
+      logo: "/Homepage/CLP_logo.svg",
+      stats: "No-Code Platform",
+      category: "Legacy Transformation",
+      pageurl: "/customers/customer-success-case-study-clp-hongkong-creatio",
+    },
+    {
+      url: "/casestudy/standard_chartered_advances_email_automation_journey.webp",
+      title: "Standard Chartered advances email automation journey",
+      description:
+        "With Virtuos CXDesk Success Stack, Standard Chartered modernizes Verint Email Response System, ensuring continuity, automation, and AWS-based sovereign data compliance.",
+      logo: "/Homepage/standard_chartered.svg",
+      stats: "Email Automation",
+      category: "Banking",
+      pageurl: "/customers/customer-success-standard-chartered-bank-kana",
+    },
+    {
+      url: "/casestudy/hdfc_life_digitizes_quote_management.webp",
+      title: "HDFC Life digitizes quote management",
+      description:
+        "Virtuos and Creatio empower HDFC Int'l Life's Sales Team with a no-code, digital quote system to streamline underwriting and approvals.",
+      logo: "/Homepage/hdfc-life-logo.png",
+      stats: "Digital Quotes",
+      category: "Insurance",
+      pageurl: "/customers/customers-success-case-study-hdfcbank-Creatio-CRM",
+    },
+    {
+      url: "/casestudy/kgsil_streamlines_contract_management_with_agiloft.webp",
+      title: "KGiSL streamlines contract management with Agiloft",
+      description:
+        "Virtuos Digital—Consultare (vdc.com) implemented a tailored Agiloft solution, enhancing contract visibility, approval workflows, and productivity for a leading technology service provider.",
+      logo: "/Homepage/kgisl.svg",
+      stats: "Contract Intelligence",
+      category: "Technology Services",
+      pageurl: "/customers/success-story-CLM-Agiloft-KGISL",
+    },
+    {
+      url: "/casestudy/leading_brewery_company.webp",
+      title: "A leading brewery company (LBC) automates with Agiloft CLM",
+      description:
+        "LBC embarks on digital contract intelligence with Agiloft CLM implemented by Virtuos Digital—Consultare.",
+      logo: "/Homepage/agiloft_logo.svg",
+      stats: "CLM Implementation",
+      category: "Manufacturing",
+      pageurl: "/customers/Brewery-Company-Implements-Agiloft-CLM",
+    },
+    {
+      url: "/casestudy/securitas_implements_contract_intelligence.webp",
+      title: "Securitas implements contract intelligence",
+      description:
+        "Empowering Legal and Sales Teams with AI-Native CLM from Agiloft, implemented by Virtuos Digital—Consultare (VDC).",
+      logo: "/Homepage/securitas_logo.svg",
+      stats: "AI-Native CLM",
+      category: "Security Services",
+      pageurl: "/customers/securitas-Agiloft-clm-success-story",
+    },
+    {
+      url: "/casestudy/pickme_accelerates_customer_experience.webp",
+      title: "PickMe accelerates customer experience with Creatio No-Code CRM",
+      description:
+        "Sri Lanka's leading mobility platform transforms service & contact centers with Virtuos Digital.",
+      logo: "/Homepage/pickme.svg",
+      stats: "CRM Transformation",
+      category: "Mobility Platform",
+      pageurl: "/customers/pickme-implements-Creatio-No-Code-Platform",
+    },
+    {
+      url: "/casestudy/space_ops_insights_company_integrates_smartsheet.webp",
+      title: "Space Ops Insights Company Integrates Smartsheet",
+      description:
+        "Virtuos Digital and Smartsheet Build an Operational Framework for Mission-Critical Visibility and Coordination",
+      logo: "/Homepage/smartsheet_logo.svg",
+      stats: "Mission-Critical",
+      category: "Space Operations",
+      pageurl: "/customers/customer-success-smartsheet-space-ops",
+    },
+    {
+      url: "/casestudy/thomas_cook_india_creates_experience_business_with_cxdesk.webp",
+      title: "Thomas Cook India Creates Experience Business with CXDesk",
+      description:
+        "Virtuos Digital—Consultare Helps Thomas Cook Transform CX into a Scalable, Competitive Edge",
+      logo: "/Homepage/oracle_logo.svg",
+      stats: "CX Excellence",
+      category: "Travel & Tourism",
+      pageurl: "/customers/customer-success-thomas-cook-india",
+    },
+    {
+      url: "/casestudy/barq_fintech_company_implements.webp",
+      title: "Barq—Fintech Company implements Oracle Fusion CX",
+      description:
+        "Virtuos Digital implements Fusion Service Cloud to automate Helpdesk and create digital experiences",
+      logo: "/Homepage/oracle_logo.svg",
+      stats: "Fusion Service Cloud",
+      category: "FinTech",
+      pageurl: "/customers/customer-success-barq-implements-oracle-fusion",
+    },
+    {
+      url: "/casestudy/tvs_credit_fuels_customer_delight.webp",
+      title: "TVS Credit fuels customer delight with Oracle Fusion",
+      description:
+        "Legacy-to-Modern CX Migration powered by Virtuos Digital boosts service agility, omnichannel excellence, and AI-readiness for TVS Credit customers.",
+      logo: "/Homepage/tvscredit.svg",
+      stats: "Oracle Fusion",
+      category: "CX Migration",
+      pageurl:
+        "/customers/tvs-credit-oracle-fusion-Virtuos-Digital-Customer-Success",
+    },
+    {
+      url: "/casestudy/clp_modernizes_stakeholder_management.webp",
+      title: "CLP modernizes stakeholder management with Creatio",
+      description:
+        "Virtuos Digital—Consultare (vdc.com) transforms legacy systems into an intelligent, no-code platform for seamless stakeholder visibility, engagement, search, and reporting.",
+      logo: "/Homepage/CLP_logo.svg",
+      stats: "No-Code Platform",
+      category: "Legacy Transformation",
+      pageurl: "/customers/customer-success-case-study-clp-hongkong-creatio",
+    },
+    {
+      url: "/casestudy/standard_chartered_advances_email_automation_journey.webp",
+      title: "Standard Chartered advances email automation journey",
+      description:
+        "With Virtuos CXDesk Success Stack, Standard Chartered modernizes Verint Email Response System, ensuring continuity, automation, and AWS-based sovereign data compliance.",
+      logo: "/Homepage/standard_chartered.svg",
+      stats: "Email Automation",
+      category: "Banking",
+      pageurl: "/customers/customer-success-standard-chartered-bank-kana",
+    },
+    {
+      url: "/casestudy/hdfc_life_digitizes_quote_management.webp",
+      title: "HDFC Life digitizes quote management",
+      description:
+        "Virtuos and Creatio empower HDFC Int'l Life's Sales Team with a no-code, digital quote system to streamline underwriting and approvals.",
+      logo: "/Homepage/hdfc-life-logo.png",
+      stats: "Digital Quotes",
+      category: "Insurance",
+      pageurl: "/customers/customers-success-case-study-hdfcbank-Creatio-CRM",
+    },
+    {
+      url: "/casestudy/kgsil_streamlines_contract_management_with_agiloft.webp",
+      title: "KGiSL streamlines contract management with Agiloft",
+      description:
+        "Virtuos Digital—Consultare (vdc.com) implemented a tailored Agiloft solution, enhancing contract visibility, approval workflows, and productivity for a leading technology service provider.",
+      logo: "/Homepage/kgisl.svg",
+      stats: "Contract Intelligence",
+      category: "Technology Services",
+      pageurl: "/customers/success-story-CLM-Agiloft-KGISL",
+    },
+    {
+      url: "/casestudy/leading_brewery_company.webp",
+      title: "A leading brewery company (LBC) automates with Agiloft CLM",
+      description:
+        "LBC embarks on digital contract intelligence with Agiloft CLM implemented by Virtuos Digital—Consultare.",
+      logo: "/Homepage/agiloft_logo.svg",
+      stats: "CLM Implementation",
+      category: "Manufacturing",
+      pageurl: "/customers/Brewery-Company-Implements-Agiloft-CLM",
+    },
+    {
+      url: "/casestudy/securitas_implements_contract_intelligence.webp",
+      title: "Securitas implements contract intelligence",
+      description:
+        "Empowering Legal and Sales Teams with AI-Native CLM from Agiloft, implemented by Virtuos Digital—Consultare (VDC).",
+      logo: "/Homepage/securitas_logo.svg",
+      stats: "AI-Native CLM",
+      category: "Security Services",
+      pageurl: "/customers/securitas-Agiloft-clm-success-story",
+    },
+    {
+      url: "/casestudy/pickme_accelerates_customer_experience.webp",
+      title: "PickMe accelerates customer experience with Creatio No-Code CRM",
+      description:
+        "Sri Lanka's leading mobility platform transforms service & contact centers with Virtuos Digital.",
+      logo: "/Homepage/pickme.svg",
+      stats: "CRM Transformation",
+      category: "Mobility Platform",
+      pageurl: "/customers/pickme-implements-Creatio-No-Code-Platform",
+    },
+    {
+      url: "/casestudy/space_ops_insights_company_integrates_smartsheet.webp",
+      title: "Space Ops Insights Company Integrates Smartsheet",
+      description:
+        "Virtuos Digital and Smartsheet Build an Operational Framework for Mission-Critical Visibility and Coordination",
+      logo: "/Homepage/smartsheet_logo.svg",
+      stats: "Mission-Critical",
+      category: "Space Operations",
+      pageurl: "/customers/customer-success-smartsheet-space-ops",
+    },
+    {
+      url: "/casestudy/thomas_cook_india_creates_experience_business_with_cxdesk.webp",
+      title: "Thomas Cook India Creates Experience Business with CXDesk",
+      description:
+        "Virtuos Digital—Consultare Helps Thomas Cook Transform CX into a Scalable, Competitive Edge",
+      logo: "/Homepage/oracle_logo.svg",
+      stats: "CX Excellence",
+      category: "Travel & Tourism",
+      pageurl: "/customers/customer-success-thomas-cook-india",
+    },
+    {
+      url: "/casestudy/barq_fintech_company_implements.webp",
+      title: "Barq—Fintech Company implements Oracle Fusion CX",
+      description:
+        "Virtuos Digital implements Fusion Service Cloud to automate Helpdesk and create digital experiences",
+      logo: "/Homepage/oracle_logo.svg",
+      stats: "Fusion Service Cloud",
+      category: "FinTech",
+      pageurl: "/customers/customer-success-barq-implements-oracle-fusion",
+    },
+  ];
 
   return (
-    <section
-      ref={sectionRef}
-      className="flex flex-col w-[90vw] mx-auto justify-center items-center text-white py-16 md:py-24 lg:py-32 bg-black"
-    >
-      {/* Header Section */}
-      <div className="text-center mb-20 xl:mb-36">
+    <>
+      <style>{`
+        .success-stories-container {
+          background: #000;
+          font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+        }
+        .swiper {
+          width: 100%;
+          padding: 20px 0 50px;
+        }
+        .swiper-slide {
+          background-position: center;
+          background-size: cover;
+          width: 400px;
+          height: 600px;
+          border-radius: 20px;
+          overflow: hidden;
+          position: relative;
+          box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+        .swiper-slide::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background: linear-gradient(135deg, rgba(79, 70, 229, 0.1) 0%, rgba(168, 85, 247, 0.1) 100%);
+          z-index: 1;
+        }
+        .story-info {
+          position: absolute;
+          width: 100%;
+          height: 45%;
+          text-align: left;
+          background: linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 0.4) 20%, rgba(0, 0, 0, 0.9) 100%);
+          padding: 30px 25px;
+          bottom: -100%;
+          box-sizing: border-box;
+          transition: bottom 0.5s ease;
+          display: flex;
+          flex-direction: column;
+          gap: 15px;
+          z-index: 2;
+        }
+        .swiper-slide-active .story-info {
+          bottom: 0;
+        }
+        .story-stats {
+          position: absolute;
+          top: 20px;
+          right: 20px;
+          background: linear-gradient(135deg, #f0565f 0%, #e63089 100%);
+          color: white;
+          padding: 8px 16px;
+          border-radius: 25px;
+          font-size: 12px;
+          font-weight: 600;
+          z-index: 3;
+        }
+        .story-category {
+          position: absolute;
+          top: 20px;
+          left: 20px;
+          background: rgba(0, 0, 0, 0.7);
+          color: white;
+          padding: 6px 12px;
+          border-radius: 20px;
+          font-size: 11px;
+          font-weight: 500;
+          backdrop-filter: blur(10px);
+          z-index: 3;
+        }
+        .story-title {
+          color: #ffffff;
+          display: flex;
+          align-items: center;
+          font-size: 24px;
+          font-weight: 700;
+          gap: 12px;
+          text-transform: none;
+          line-height: 1.2;
+        }
+        .story-description {
+          color: #e6e6e6;
+          display: flex;
+          align-items: flex-start;
+          font-size: 15px;
+          gap: 12px;
+          text-transform: none;
+          line-height: 1.4;
+        }
+        .swiper-pagination-bullet {
+          background: #696969;
+          transition: all 0.5s ease;
+          border-radius: 8px;
+        }
+        .swiper-pagination-bullet-active {
+          background: linear-gradient(135deg, #f0565f 0%, #e63089 100%) !important;
+          width: 30px;
+        }
+      `}</style>
+
+      <div className="success-stories-container min-h-screen py-16 lg:py-32">
         <TextReveal
-          className="text-center text-120 pt-20 xl:pt-40 font-bold text-white"
-          style={{ pointerEvents: "none" }}
           animation="rotateX"
           stagger={0.1}
           duration={0.8}
+          className="text-120 text-white text-center font-semibold mb-4"
         >
           Success Stories
         </TextReveal>
-        <TextReveal
-          className="text-center text-40 max-w-6xl mx-auto text-white"
-          style={{ pointerEvents: "none" }}
-          animation="rotateX"
-          stagger={0.1}
-          duration={0.8}
-        >
-          Transforming businesses through innovative design and strategic
-          branding solutions that drive growth and create lasting impact.
-        </TextReveal>
-      </div>
+        <div className="text-center mb-12">
+          <TextReveal
+            animation="rotateX"
+            stagger={0.1}
+            duration={0.8}
+            className="text-30 font-light text-gray-300 max-w-7xl mx-auto px-4"
+          >
+            Real results from real partnerships. Discover how we've helped
+            businesses transform their digital presence and achieve
+            extraordinary growth.
+          </TextReveal>
+        </div>
 
-      {/* Cards Grid - 2x3 Layout */}
-      <div
-        ref={cardsRef}
-        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 px-6  mx-auto"
-      >
-        {cards.map((card, index) => {
-          const isHovered = hoveredCard === card.id;
-
-          return (
-            <div
-              key={card.id}
-              ref={(el) => {
-                if (el) cardRefs.current[index] = el;
-              }}
-              className="group relative overflow-hidden"
-            //   onMouseEnter={() => handleCardHover(card.id, true)}
-            //   onMouseLeave={() => handleCardHover(card.id, false)}
-            >
-              {/* Main Card */}
+        <div className="swiper mt-32">
+          <div className="swiper-wrapper">
+            {stories.map((story, i) => (
               <div
-                className="relative bg-gray-900 rounded-2xl overflow-hidden h-[30rem] transition-all duration-700 group-hover:shadow-2xl group-hover:shadow-pink-500/20"
-                style={{
-                  backgroundImage: isHovered ? `url(${card.imageSrc})` : "none",
-                  backgroundSize: "cover",
-                  backgroundPosition: "center",
-                }}
+                key={i}
+                className="swiper-slide"
+                style={{ backgroundImage: `url(${story.url})` }}
               >
-                {/* Background Overlay when hovered */}
-                {isHovered && (
-                  <div className="absolute inset-0 bg-black/80 transition-opacity duration-700" />
-                )}
+                <div className="story-stats">{story.stats}</div>
+                <div className="story-category">{story.category}</div>
+                <div className="story-info">
+                  <div className="story-title">
+                    {/* <FaQuoteLeft className="text-gray-400 mt-1 flex-shrink-0 text-20" /> */}
 
-                {/* Card Content Container */}
-                <div className="relative h-full flex">
-                  {/* Left Half - Title & Description */}
-                  <div className="w-full lg:w-1/2 p-6 flex flex-col justify-between relative z-10">
-                    {/* Category Badge */}
-                    <div className="mb-4">
-                      <span className="inline-block bg-pink-600/20 backdrop-blur-sm rounded-full px-3 py-1 text-xs font-medium text-pink-300 border border-pink-500/30">
-                        {card.category}
-                      </span>
-                    </div>
-
-                    {/* Title - Always Visible */}
-                    <div>
-                      <h3 className="text-white text-48 font-bold leading-tight mb-4">
-                        {card.title}
-                      </h3>
-
-                      {/* Growth Metric */}
-                      <div className="flex items-center gap-2 mb-4">
-                        <div className="w-3 h-3 bg-green-400 rounded-full animate-pulse"></div>
-                        <span className="text-green-400 font-semibold text-20">
-                          +{card.growthMetric}% Growth
-                        </span>
-                      </div>
-                    </div>
-
-                    {/* Description - Appears on Hover */}
-                    {/* <div
-                      className={`transition-all duration-500 ${
-                        isHovered
-                          ? "opacity-100 translate-y-0"
-                          : "opacity-0 translate-y-4"
-                      }`}
-                    >
-                      <p className="text-gray-300 text-sm leading-relaxed mb-4">
-                        {card.description}
-                      </p>
-
-                      <div className="flex items-center gap-2">
-                        <svg
-                          className="w-4 h-4 text-blue-400"
-                          fill="none"
-                          stroke="currentColor"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth={2}
-                            d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
-                          />
-                        </svg>
-                        <span className="text-blue-400 text-xs">
-                          {card.timeline}
-                        </span>
-                      </div>
-                    </div> */}
+                    <span>{story.title}</span>
                   </div>
-
-                  {/* Right Half - Image */}
-                  <div
-                    className={`hidden lg:block lg:w-1/2 relative overflow-hidden transition-all duration-700 ${
-                      isHovered
-                        ? "translate-y-full opacity-0"
-                        : "translate-y-0 opacity-100"
-                    }`}
-                  >
-                    {/* Gradient Overlay */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-transparent to-transparent z-10" />
-
-                    {/* Image */}
-                    <img
-                      src={card.imageSrc}
-                      alt={card.title}
-                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                      onError={(e) => {
-                        e.target.src = "/api/placeholder/400/300";
-                      }}
-                    />
+                  <div className="story-description">
+                    {/* <FaQuoteLeft className="text-gray-400 mt-1 flex-shrink-0 text-20" /> */}
+                    <span>{story.description}</span>
                   </div>
                 </div>
-
-                {/* Hover Border Effect */}
-                <div
-                  className={`absolute inset-0 border-2 rounded-2xl transition-all duration-500 ${
-                    isHovered
-                      ? "border-pink-500/50 shadow-lg shadow-pink-500/25"
-                      : "border-transparent"
-                  }`}
-                />
-
-                {/* Floating Elements on Hover */}
-                {isHovered && (
-                  <div className="absolute inset-0 pointer-events-none">
-                    <div className="absolute top-4 right-4 w-2 h-2 bg-pink-400 rounded-full animate-pulse" />
-                    <div className="absolute bottom-4 left-4 w-1 h-1 bg-blue-400 rounded-full animate-pulse delay-300" />
-                    <div className="absolute top-1/2 right-6 w-1.5 h-1.5 bg-teal-400 rounded-full animate-pulse delay-500" />
-                  </div>
-                )}
               </div>
-            </div>
-          );
-        })}
+            ))}
+          </div>
+          <div className="swiper-pagination" />
+        </div>
       </div>
-    </section>
+    </>
   );
 };
 
-export default Snapshot;
+export default SuccessStories;
