@@ -15,6 +15,7 @@ export default function Document() {
         {/* Theme color for mobile browsers */}
         <meta name="theme-color" content="#E62D8D" />
       </Head>
+      <meta title="Dreamfox" />
       <meta name="robots" content="noindex, nofollow" />
       <meta
         name="viewport"
