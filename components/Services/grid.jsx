@@ -3,6 +3,7 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import TextReveal from "../Text Reveal/textreveal";
 import AnimatedButton from "../buttons/AnimatedButton";
+import Link from "next/link";
 
 const FourPillarsSection = () => {
   const sectionRef = useRef(null);
@@ -196,7 +197,8 @@ const FourPillarsSection = () => {
         {/* Mobile Layout (1 column) */}
         <div className="block md:hidden space-y-6">
           {pillars.map((pillar, index) => (
-            <div
+            <Link
+              href={pillar.link}
               key={index}
               ref={(el) => (cardsRef.current[index] = el)}
               className="group relative h-[300px] overflow-hidden cursor-pointer border border-white/10 backdrop-blur-sm bg-gradient-to-br from-gray-900/80 via-black/60 to-gray-800/80 rounded-lg"
@@ -238,14 +240,15 @@ const FourPillarsSection = () => {
                   }`}
                 ></div>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
 
         {/* Tablet Layout (2x2 grid) */}
         <div className="hidden md:grid lg:hidden grid-cols-2 gap-6 auto-rows-fr">
           {pillars.map((pillar, index) => (
-            <div
+            <Link
+              href={pillar.link}
               key={index}
               ref={(el) => (cardsRef.current[index] = el)}
               className="group relative h-[350px] overflow-hidden cursor-pointer border border-white/10 backdrop-blur-sm bg-gradient-to-br from-gray-900/80 via-black/60 to-gray-800/80 rounded-lg"
@@ -287,14 +290,15 @@ const FourPillarsSection = () => {
                   }`}
                 ></div>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
 
         {/* Desktop Bento Grid Layout */}
         <div className="hidden lg:grid grid-cols-5 grid-rows-2 gap-6 lg:gap-8 h-[800px]">
           {/* Card 1 - 2/5 width, full height */}
-          <div
+          <Link
+            href={pillars[0].link}
             ref={(el) => (cardsRef.current[0] = el)}
             className="group relative col-span-2 row-span-2 overflow-hidden cursor-pointer border border-white/10 backdrop-blur-sm bg-gradient-to-br from-gray-900/80 via-black/60 to-gray-800/80 rounded-lg"
           >
@@ -325,10 +329,11 @@ const FourPillarsSection = () => {
             <div className="absolute top-4 right-4 w-12 h-12 opacity-20 group-hover:opacity-40 transition-opacity duration-300">
               <div className="w-full h-full rounded-full bg-gradient-to-br from-blue-400 to-cyan-500 blur-sm"></div>
             </div>
-          </div>
+          </Link>
 
           {/* Card 2 - 3/5 width, half height */}
-          <div
+          <Link
+            href={pillars[1].link}
             ref={(el) => (cardsRef.current[1] = el)}
             className="group relative col-span-3 row-span-1 overflow-hidden cursor-pointer border border-white/10 backdrop-blur-sm bg-gradient-to-br from-gray-900/80 via-black/60 to-gray-800/80 rounded-lg"
           >
@@ -359,11 +364,13 @@ const FourPillarsSection = () => {
             <div className="absolute top-4 right-4 w-12 h-12 opacity-20 group-hover:opacity-40 transition-opacity duration-300">
               <div className="w-full h-full rounded-full bg-gradient-to-br from-purple-400 to-indigo-500 blur-sm"></div>
             </div>
-          </div>
+          </Link>
 
           {/* Bottom row - Cards 3 & 4 */}
           <div className="grid grid-cols-2 grid-rows-1 gap-6 lg:gap-8 col-span-3 row-span-1">
-            <div
+            <Link
+            href={pillars[2].link}
+
               ref={(el) => (cardsRef.current[2] = el)}
               className="group relative overflow-hidden cursor-pointer border border-white/10 backdrop-blur-sm bg-gradient-to-br from-gray-900/80 via-black/60 to-gray-800/80 rounded-lg "
             >
@@ -397,9 +404,11 @@ const FourPillarsSection = () => {
               <div className="absolute top-4 right-4 w-10 h-10 opacity-20 group-hover:opacity-40 transition-opacity duration-300">
                 <div className="w-full h-full rounded-full bg-gradient-to-br from-green-400 to-emerald-500 blur-sm"></div>
               </div>
-            </div>
+            </Link>
 
-            <div
+            <Link
+            href={pillars[3].link}
+
               ref={(el) => (cardsRef.current[3] = el)}
               className="group relative overflow-hidden cursor-pointer border border-white/10 backdrop-blur-sm bg-gradient-to-br from-gray-900/90 via-black/70 to-gray-800/90 z-10 shadow-2xl rounded-lg"
             >
@@ -433,7 +442,7 @@ const FourPillarsSection = () => {
               <div className="absolute top-4 right-4 w-10 h-10 opacity-20 group-hover:opacity-40 transition-opacity duration-300">
                 <div className="w-full h-full rounded-full bg-gradient-to-br from-orange-400 to-red-500 blur-sm"></div>
               </div>
-            </div>
+            </Link>
           </div>
         </div>
       </div>
