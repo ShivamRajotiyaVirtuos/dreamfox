@@ -57,6 +57,12 @@ const SwiperSlider = () => {
       name: "Hemant Tyagi",
       description: "Project Manager",
     },
+     {
+      url: "/images/About/shivam_chawla.webp",
+
+      name: "Shivam Chawla",
+      description: "Lead - Application Developer",
+    },
     {
       url: "/images/About/tina_sachdeva.webp",
 
@@ -103,10 +109,16 @@ const SwiperSlider = () => {
       description: "Project Manager",
     },
     {
+      url: "/images/About/shivam_chawla.webp",
+
+      name: "Shivam Chawla",
+      description: "Lead - Application Developer",
+    },
+    {
       url: "/images/About/tina_sachdeva.webp",
 
       name: "Tina Sachdeva",
-      description: "CSM",
+      description: "Customer Success Manager",
     },
     {
       url: "/images/About/shivam_rajotiya.webp",
@@ -146,6 +158,12 @@ const SwiperSlider = () => {
 
       name: "Hemant Tyagi",
       description: "Project Manager",
+    },
+     {
+      url: "/images/About/shivam_chawla.webp",
+
+      name: "Shivam Chawla",
+      description: "Lead - Application Developer",
     },
     {
       url: "/images/About/tina_sachdeva.webp",
