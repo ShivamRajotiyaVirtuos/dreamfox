@@ -6,40 +6,33 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import TextReveal from "../Text Reveal/textreveal";
 
 gsap.registerPlugin(ScrollTrigger);
-
 const CARD_DATA = [
   {
-    title: "Digital Advertising",
-    desc: "Strategic campaigns that drive engagement and conversions across all platforms.",
+    title: "Brand Advisory Suite",
+    desc: "Naming, Brand ID, Storytelling, Re-engineering Strategies.",
     img: "https://images.unsplash.com/photo-1592685530138-6fdfaf4b278a?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDF8fHxlbnwwfHx8fHw%3D",
-    alt: "Digital Marketing Campaign",
+    alt: "Brand Advisory Suite",
   },
   {
-    title: "Brand Strategy",
-    desc: "Comprehensive brand positioning that resonates with your target audience.",
+    title: "Designara Studio",
+    desc: "Prototypes, UX/UI Kits, Mobile/Web Experience, Motion Graphics.",
     img: "https://media.istockphoto.com/id/1151427999/photo/professional-videographer-holding-camera-on-3-axis-gimbal-which-mounted-on-easy-rig.webp?a=1&s=612x612&w=0&k=20&c=APZBHPmqYTRdcClPO-p7UFcXDzJE8TbJFmDY98mX0E0=",
-    alt: "Brand Strategy Meeting",
+    alt: "Designara Studio",
   },
   {
-    title: "Creative Design",
-    desc: "Compelling visual narratives that capture attention and inspire action.",
+    title: "Assimilations Marketing",
+    desc: "Tech Stack, AI Campaigns, SEO/SMO Dashboards.",
     img: "https://images.unsplash.com/photo-1723723467929-63315acce895?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDd8fHxlbnwwfHx8fHw%3D",
-    alt: "Creative Design Process",
+    alt: "Assimilations Marketing",
   },
   {
-    title: "Social Media Marketing",
-    desc: "Engaging content strategies that build communities and drive growth.",
+    title: "Yippee Media",
+    desc: "Social Campaigns, Influencer Collabs, Creative Content Pods.",
     img: "https://images.unsplash.com/photo-1554246881-d1aec048cc39?q=80&w=2874&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-
-    alt: "Social Media Analytics",
-  },
-  {
-    title: "Performance Analytics",
-    desc: "Data-driven insights that optimize campaigns and maximize ROI.",
-    img: "https://images.unsplash.com/photo-1713816821447-4218b8c19bb7?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDI3fHx8ZW58MHx8fHx8",
-    alt: "Analytics Dashboard",
+    alt: "Yippee Media",
   },
 ];
+
 
 const Offerings = () => {
   useEffect(() => {
@@ -134,7 +127,7 @@ const Offerings = () => {
                         {String(idx + 1).padStart(2, "0")}
                       </span>
                     </div>
-                    <div className="h-8 w-0.5 bg-gradient-to-b from-white to-transparent"></div>
+                    {/* <div className="h-8 w-0.5 bg-gradient-to-b from-white to-transparent"></div> */}
                   </div>
                 </div>
 

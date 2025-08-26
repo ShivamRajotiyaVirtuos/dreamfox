@@ -414,7 +414,7 @@ const SuccessStories = () => {
         .story-info {
           position: absolute;
           width: 100%;
-          height: 45%;
+          height: 35%;
           text-align: left;
           background: linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 0.4) 20%, rgba(0, 0, 0, 0.9) 100%);
           padding: 30px 25px;

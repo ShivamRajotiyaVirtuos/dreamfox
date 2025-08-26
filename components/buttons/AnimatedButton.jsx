@@ -50,27 +50,27 @@ export default function AnimatedButton({ text = "ABOUT ME", href = "#" }) {
       href={href}
       onMouseEnter={handleEnter}
       onMouseLeave={handleLeave}
-      className="relative inline-flex items-center gap-3 px-6 py-3 border border-white/50 text-white rounded-md bg-black hover:bg-white/5 transition-all duration-300 overflow-hidden hover:scale-[0.95] hover:border-[1px] hover:border-white "
+      className="relative inline-flex items-center gap-3 px-6 py-3 border border-white/50 text-black rounded-md bg-white hover:bg-white transition-all duration-300 overflow-hidden hover:scale-[0.95] hover:border-[1px] hover:border-white "
     >
       {/* Icon */}
       <div className="relative w-5 h-5 shrink-0">
         <div
           ref={dotRef}
-          className="absolute w-2.5 h-2.5 top-1.5 left-1.5 bg-white rounded-full"
+          className="absolute w-2.5 h-2.5 top-1.5 left-1.5 bg-black rounded-full"
         />
         <ArrowRightIcon
           ref={userIconRef}
-          className="absolute w-5 h-5 text-white"
+          className="absolute w-5 h-5 text-black"
         />
       </div>
       {/* Text Stack */}
-      <div className="relative h-8 w-fit overflow-hidden ">
-        <span ref={textTopRef} className="block text-sm font-medium text-white">
+      <div className="relative bg-white h-8 w-fit overflow-hidden ">
+        <span ref={textTopRef} className="block text-sm font- text-black uppercase font-semibold">
           {text}
         </span>
         <span
           ref={textBottomRef}
-          className="block text-sm font-medium text-white mt-2"
+          className="block text-sm font-semibold uppercase text-black mt-2"
         >
           {text}
         </span>

@@ -14,6 +14,7 @@ import {
   CursorArrowRippleIcon,
 } from "@heroicons/react/24/solid";
 import TextReveal from "../Text Reveal/textreveal";
+import Image from "next/image";
 
 // Register ScrollTrigger plugin
 gsap.registerPlugin(ScrollTrigger);
@@ -110,11 +111,17 @@ const Values_services = () => {
         animation="rotateX"
         stagger={0.1}
         duration={0.8}
-        className="text-center text-120 font-bold text-white mt-20"
+        className="text-center z-20 relative text-120 font-bold text-white mt-20"
       >
         DreamFox Values
       </TextReveal>
-
+      <Image
+        src={"/images/fox1.svg"}
+        alt="fox"
+        width={700}
+        height={700}
+        className="mx-auto z-0 opacity-40 inset-x-0 absolute left-0 bottom-0"
+      />
       <div className="cards-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mt-16 md:mt-24 xl:mt-32 px-4 justify-items-center relative">
         {valuesData.map((item, index) => (
           <div

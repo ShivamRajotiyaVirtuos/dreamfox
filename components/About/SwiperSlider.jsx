@@ -218,7 +218,7 @@ const SwiperSlider = () => {
         .info {
           position: absolute;
           width: 100%;
-          height: 40%;
+          height: 30%;
           text-align: left;
           background: linear-gradient(180deg, #fff0 0, #0008 50px), linear-gradient(180deg, #fff0 , #0009);
           padding: 20px;

@@ -38,7 +38,7 @@ const Snapshot = () => {
     },
     {
       id: 4,
-      title: "October.ai —Designara + Brandlara",
+      title: "October.ai—Design + Brandlara",
       description:
         "Showcasing creative work with dynamic layouts and smooth transitions.",
       videoSrc: "/videos/Dreamfox_October.ai.mp4",
@@ -254,11 +254,13 @@ const Snapshot = () => {
                   )} */}
 
                   {/* Card title when not hovered */}
-                  {/* {hoveredCard !== card.id && ( */}
-                  <div className="absolute bottom-2 md:bottom-3 lg:bottom-4 left-2 md:left-3 lg:left-4 text-white">
-                    <span className="text-16 ">{card.title}</span>
-                  </div>
-                  {/* )} */}
+                  {hoveredCard === card.id && (
+                    <div className="absolute bottom-2 md:bottom-3 lg:bottom-4 text-center inset-x-0 text-white">
+                      <span className="text-16 px-5 py-1 bg-white/20 rounded-2xl text-center text-white font-semibold">
+                        {card.title}
+                      </span>
+                    </div>
+                  )}
                 </div>
               </div>
             );
