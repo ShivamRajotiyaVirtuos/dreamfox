@@ -106,7 +106,7 @@ const Values_services = () => {
   }, []);
 
   return (
-    <section className="w-full relative pb-20 lg:pb-32 bg-black text-white container lg:min-h-[60vh]">
+    <section className="w-full relative pb-20 lg:pb-32 bg-black text-white container 2xl:min-h-[60vh]">
       <TextReveal
         animation="rotateX"
         stagger={0.1}
@@ -120,9 +120,9 @@ const Values_services = () => {
         alt="fox"
         width={700}
         height={700}
-        className="mx-auto z-0 opacity-40 inset-x-0 absolute left-0 bottom-0"
+        className="mx-auto hidden sm:block z-0 opacity-40 inset-x-0 absolute left-0 bottom-0"
       />
-      <div className="cards-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mt-16 md:mt-24 xl:mt-32 px-4 justify-items-center relative">
+      <div className="cards-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-20 sm:gap-8 mt-20 sm:mt-16 md:mt-24 xl:mt-32 px-4 justify-items-center relative">
         {valuesData.map((item, index) => (
           <div
             key={index}

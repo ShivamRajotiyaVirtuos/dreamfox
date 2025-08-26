@@ -284,7 +284,7 @@ const PersonaGrid = () => {
       >
         Persona Targeting
       </TextReveal>
-      <div className="grid grid-cols-3 gap-6 xl:gap-12 justify-center">
+      <div className="grid sm:grid-cols-2  xl:grid-cols-3 gap-6 xl:gap-12 justify-center">
         {layeredGradients.map((gradient, index) => (
           <GradientCard
             key={index}

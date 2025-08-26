@@ -311,7 +311,7 @@ export default function MetricSection() {
           {metrics.map((metric, idx) => (
             <div
               key={idx}
-              className="flex flex-col items-start justify-start mb-4 mx-auto scale-75"
+              className="flex flex-col gap-20 items-start justify-start mb-4 mx-auto scale-150"
               style={{ width: cardSize.w, height: cardSize.h }}
             >
               {/* SVG Outline background */}

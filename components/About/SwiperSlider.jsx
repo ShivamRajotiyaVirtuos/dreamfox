@@ -13,7 +13,7 @@ const SwiperSlider = () => {
       grabCursor: true,
       centeredSlides: true,
       autoplay: {
-        delay: 2500,
+        delay: 25000,
         disableOnInteraction: false,
       },
       slidesPerView: 1,
@@ -67,7 +67,7 @@ const SwiperSlider = () => {
       url: "/images/About/tina_sachdeva.webp",
 
       name: "Tina Sachdeva",
-      description: "CSM",
+      description: "Customer Success Manager",
     },
     {
       url: "/images/About/shivam_rajotiya.webp",
@@ -169,7 +169,7 @@ const SwiperSlider = () => {
       url: "/images/About/tina_sachdeva.webp",
 
       name: "Tina Sachdeva",
-      description: "CSM",
+      description: "Customer Success Manager",
     },
     {
       url: "/images/About/shivam_rajotiya.webp",
@@ -284,7 +284,7 @@ const SwiperSlider = () => {
             {slides.map((slide, i) => (
               <div
                 key={i}
-                className="swiper-slide bg-white"
+                className="swiper-slide bg-white border-2 border-black shadow-lg"
                 style={{ backgroundImage: `url(${slide.url})` }}
               >
                 <div className="info">

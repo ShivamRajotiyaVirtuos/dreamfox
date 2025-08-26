@@ -35,8 +35,8 @@ const SuccessStories = () => {
       // },
       breakpoints: {
         320: { slidesPerView: 1.5 },
-        580: { slidesPerView: 2 },
-        767: { slidesPerView: 2.5 },
+        580: { slidesPerView: 1.5 },
+        767: { slidesPerView: 2 },
         992: { slidesPerView: 2.5 },
         1200: { slidesPerView: 3 },
         1400: { slidesPerView: 3.5 },
@@ -435,9 +435,9 @@ const SuccessStories = () => {
           right: 20px;
           background: linear-gradient(135deg, #f0565f 0%, #e63089 100%);
           color: white;
-          padding: 8px 16px;
+          padding: 6px 12px;
           border-radius: 25px;
-          font-size: 12px;
+          font-size: 11px;
           font-weight: 600;
           z-index: 3;
         }
@@ -462,7 +462,6 @@ const SuccessStories = () => {
           font-weight: 700;
           gap: 12px;
           text-transform: none;
-          line-height: 1.2;
         }
         .story-description {
           color: #e6e6e6;
@@ -471,7 +470,6 @@ const SuccessStories = () => {
           font-size: 15px;
           gap: 12px;
           text-transform: none;
-          line-height: 1.4;
         }
         .swiper-pagination-bullet {
           background: #696969;
@@ -484,7 +482,7 @@ const SuccessStories = () => {
         }
       `}</style>
 
-      <div className="success-stories-container min-h-screen py-16 lg:py-32">
+      <div className="success-stories-container 2xl:min-h-screen pt-32 lg:py-32">
         <TextReveal
           animation="rotateX"
           stagger={0.1}
@@ -506,7 +504,7 @@ const SuccessStories = () => {
           </TextReveal>
         </div>
 
-        <div className="swiper mt-32">
+        <div className="swiper mt-28 sm:mt-32">
           <div className="swiper-wrapper">
             {stories.map((story, i) => (
               <div
@@ -514,15 +512,15 @@ const SuccessStories = () => {
                 className="swiper-slide"
                 style={{ backgroundImage: `url(${story.url})` }}
               >
-                <div className="story-stats">{story.stats}</div>
-                <div className="story-category">{story.category}</div>
+                <div className="hidden sm:block story-stats">{story.stats}</div>
+                <div className=" story-category">{story.category}</div>
                 <div className="story-info">
-                  <div className="story-title">
+                  <div className="text-24 line-clamp-2 text-white font-semibold ">
                     {/* <FaQuoteLeft className="text-gray-400 mt-1 flex-shrink-0 text-20" /> */}
 
                     <span>{story.title}</span>
                   </div>
-                  <div className="story-description">
+                  <div className="text-16 line-clamp-2 text-white ">
                     {/* <FaQuoteLeft className="text-gray-400 mt-1 flex-shrink-0 text-20" /> */}
                     <span>{story.description}</span>
                   </div>

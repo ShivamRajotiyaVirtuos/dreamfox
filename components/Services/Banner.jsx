@@ -83,7 +83,7 @@ const Banner_Services = () => {
 
         <div className="flex flex-col xl:flex-row xl:items-center justify-between gap-8 mt-8 sm:mt-16">
           <div className="flex flex-col sm:flex-row gap-4 shrink-0">
-            <AnimatedButton text="Talk to Us" href="/contactus" />
+            <AnimatedButton className="max-w-fit" text="Talk to Us" href="/contactus" />
             {/* <AnimatedButton text="button" href="/" /> */}
             {/* <button className="bg-white text-black px-6 py-3 rounded-full text-sm font-medium whitespace-nowrap">
               Arrange an initial consultation

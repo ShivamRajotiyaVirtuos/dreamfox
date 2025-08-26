@@ -197,50 +197,52 @@ const FourPillarsSection = () => {
         {/* Mobile Layout (1 column) */}
         <div className="block md:hidden space-y-6">
           {pillars.map((pillar, index) => (
-            <Link
-              href={pillar.link}
+            <div
+              // href={pillar.link}
               key={index}
               ref={(el) => (cardsRef.current[index] = el)}
               className="group relative h-[300px] overflow-hidden cursor-pointer border border-white/10 backdrop-blur-sm bg-gradient-to-br from-gray-900/80 via-black/60 to-gray-800/80 rounded-lg"
             >
-              {/* Parallax Background Image */}
-              <div className="absolute inset-0 overflow-hidden">
-                <img
-                  src={pillar.image}
-                  alt={pillar.title}
-                  className="parallax-image absolute inset-0 w-full h-[120%] object-cover opacity-70"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/10 to-none"></div>
-              </div>
-
-              {/* Content Overlay */}
-              <div className="content-overlay absolute inset-0 flex flex-col justify-end p-6 bg-gradient-to-t from-black/90 via-transparent to-transparent">
-                <div className="transform transition-transform duration-300">
-                  <h3 className="card-title text-xl sm:text-2xl font-bold mb-3 text-white leading-tight">
-                    {pillar.title}
-                  </h3>
-                  <p className="card-text text-gray-300 text-sm sm:text-base leading-relaxed mb-4 line-clamp-3">
-                    {pillar.text}
-                  </p>
-                  <AnimatedButton text={pillar.cta} href={pillar.link} />
+              <Link href={pillar.link}>
+                {/* Parallax Background Image */}
+                <div className="absolute inset-0 overflow-hidden">
+                  <img
+                    src={pillar.image}
+                    alt={pillar.title}
+                    className="parallax-image absolute inset-0 w-full h-[120%] object-cover opacity-70"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black via-black/10 to-none"></div>
                 </div>
-              </div>
 
-              {/* Corner Accent */}
-              <div className="absolute top-4 right-4 w-10 h-10 opacity-20 transition-opacity duration-300">
-                <div
-                  className={`w-full h-full rounded-full blur-sm ${
-                    index === 0
-                      ? "bg-gradient-to-br from-blue-400 to-cyan-500"
-                      : index === 1
-                      ? "bg-gradient-to-br from-purple-400 to-indigo-500"
-                      : index === 2
-                      ? "bg-gradient-to-br from-green-400 to-emerald-500"
-                      : "bg-gradient-to-br from-orange-400 to-red-500"
-                  }`}
-                ></div>
-              </div>
-            </Link>
+                {/* Content Overlay */}
+                <div className="content-overlay absolute inset-0 flex flex-col justify-end p-6 bg-gradient-to-t from-black/90 via-transparent to-transparent">
+                  <div className="transform transition-transform duration-300">
+                    <h3 className="card-title text-xl sm:text-2xl font-bold mb-3 text-white leading-tight">
+                      {pillar.title}
+                    </h3>
+                    <p className="card-text text-gray-300 text-sm sm:text-base leading-relaxed mb-4 line-clamp-3">
+                      {pillar.text}
+                    </p>
+                    {/* <AnimatedButton text={pillar.cta} href={pillar.link} /> */}
+                  </div>
+                </div>
+
+                {/* Corner Accent */}
+                <div className="absolute top-4 right-4 w-10 h-10 opacity-20 transition-opacity duration-300">
+                  <div
+                    className={`w-full h-full rounded-full blur-sm ${
+                      index === 0
+                        ? "bg-gradient-to-br from-blue-400 to-cyan-500"
+                        : index === 1
+                        ? "bg-gradient-to-br from-purple-400 to-indigo-500"
+                        : index === 2
+                        ? "bg-gradient-to-br from-green-400 to-emerald-500"
+                        : "bg-gradient-to-br from-orange-400 to-red-500"
+                    }`}
+                  ></div>
+                </div>
+              </Link>
+            </div>
           ))}
         </div>
 
@@ -369,8 +371,7 @@ const FourPillarsSection = () => {
           {/* Bottom row - Cards 3 & 4 */}
           <div className="grid grid-cols-2 grid-rows-1 gap-6 lg:gap-8 col-span-3 row-span-1">
             <Link
-            href={pillars[2].link}
-
+              href={pillars[2].link}
               ref={(el) => (cardsRef.current[2] = el)}
               className="group relative overflow-hidden cursor-pointer border border-white/10 backdrop-blur-sm bg-gradient-to-br from-gray-900/80 via-black/60 to-gray-800/80 rounded-lg "
             >
@@ -407,8 +408,7 @@ const FourPillarsSection = () => {
             </Link>
 
             <Link
-            href={pillars[3].link}
-
+              href={pillars[3].link}
               ref={(el) => (cardsRef.current[3] = el)}
               className="group relative overflow-hidden cursor-pointer border border-white/10 backdrop-blur-sm bg-gradient-to-br from-gray-900/90 via-black/70 to-gray-800/90 z-10 shadow-2xl rounded-lg"
             >

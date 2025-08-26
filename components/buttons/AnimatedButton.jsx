@@ -50,7 +50,7 @@ export default function AnimatedButton({ text = "ABOUT ME", href = "#" }) {
       href={href}
       onMouseEnter={handleEnter}
       onMouseLeave={handleLeave}
-      className="relative inline-flex items-center gap-3 px-6 py-3 border border-white/50 text-black rounded-md bg-white hover:bg-white transition-all duration-300 overflow-hidden hover:scale-[0.95] hover:border-[1px] hover:border-white "
+      className="relative inline-flex items-center gap-3 px-6 py-3 border border-white/50 text-black rounded-md bg-white hover:bg-white transition-all duration-300 overflow-hidden hover:scale-[0.95] hover:border-[1px] hover:border-white max-w-fit "
     >
       {/* Icon */}
       <div className="relative w-5 h-5 shrink-0">
