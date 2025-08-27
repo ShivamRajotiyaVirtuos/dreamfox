@@ -83,7 +83,7 @@ const TariffCard = () => {
 
     return (
 
-        <div className=" py-46 text-white container flex flex-col items-center justify-center  relative overflow-hidden">
+        <div className=" py-46 text-white  flex flex-col items-center justify-center  relative overflow-hidden">
 
 
             <header className="flex justify-center">
@@ -98,14 +98,14 @@ const TariffCard = () => {
             </header>
 
 
-            <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8 xl:gap-12 mt-16 xl:mt-32">
+            <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 !gap-8 xl:!gap-12 mt-16 xl:mt-32">
                 <CardStyle1
                     title="Digital Marketing Revolution"
                     description="Exploring the latest trends in digital marketing and how brands are adapting to the changing landscape of consumer engagement and transformation."
                     tag="Marketing Study"
                     backgroundImage="/work/work1.png"
                     onCardClick={() => console.log('Card clicked')}
-                    className="mb-4"
+                    className=""
                 />
 
 
@@ -115,13 +115,13 @@ const TariffCard = () => {
                     tag="Marketing Study"
                     backgroundImage="https://images.unsplash.com/photo-1682687220742-aba13b6e50ba?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDF8MHxzZWFyY2h8NDJ8fG5hdHVyZXxlbnwwfHwwfHx8MA%3D%3D"
                     onCardClick={() => console.log('Card clicked')}
-                    className="mb-4"
+                    className=""
                 />
                 <CardStyle1
                     title="AI & Future of Work"
                     description="An in-depth analysis of how artificial intelligence is transforming workplace dynamics and creating new opportunities for businesses."
                     tag="Technology Report"
-                    backgroundImage="/work/work1.png"
+                    backgroundImage="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Y29ycG9yYXRlfGVufDB8fDB8fHww"
                     onCardClick={() => console.log('AI card clicked')}
                 />
 
@@ -131,12 +131,12 @@ const TariffCard = () => {
                     tag="Marketing Study"
                     backgroundImage="https://images.unsplash.com/photo-1421789665209-c9b2a435e3dc?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fG5hdHVyZXxlbnwwfHwwfHx8MA%3D%3D"
                     onCardClick={() => console.log('Card clicked')}
-                    className="mb-4"
+                    className=""
                 /><CardStyle1
                     title="AI & Future of Work"
                     description="An in-depth analysis of how artificial intelligence is transforming workplace dynamics and creating new opportunities for businesses."
                     tag="Technology Report"
-                    backgroundImage="/work/work1.png"
+                    backgroundImage="https://images.unsplash.com/photo-1508739773434-c26b3d09e071?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8ODR8fG5hdHVyZXxlbnwwfHwwfHx8MA%3D%3D"
                     onCardClick={() => console.log('AI card clicked')}
                 />
                 <CardStyle2
@@ -145,7 +145,22 @@ const TariffCard = () => {
                     tag="Marketing Study"
                     backgroundImage="https://plus.unsplash.com/premium_photo-1673603988651-99f79e4ae7d3?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjF8fG5hdHVyZXxlbnwwfHwwfHx8MA%3D%3D"
                     onCardClick={() => console.log('Card clicked')}
-                    className="mb-4"
+                    className=""
+                />
+                <CardStyle1
+                    title="AI & Future of Work"
+                    description="An in-depth analysis of how artificial intelligence is transforming workplace dynamics and creating new opportunities for businesses."
+                    tag="Technology Report"
+                    backgroundImage="https://images.unsplash.com/photo-1573164574472-797cdf4a583a?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGNvcnBvcmF0ZXxlbnwwfHwwfHx8MA%3D%3D"
+                    onCardClick={() => console.log('AI card clicked')}
+                />
+                <CardStyle2
+                    title="Digital Marketing Revolution"
+                    description="Exploring the latest trends in digital marketing and how brands are adapting to the changing landscape of consumer engagement and digital transformation."
+                    tag="Marketing Study"
+                    backgroundImage="https://images.unsplash.com/photo-1682685797439-a05dd915cee9?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDF8MHxzZWFyY2h8Njl8fG5hdHVyZXxlbnwwfHwwfHx8MA%3D%3D"
+                    onCardClick={() => console.log('Card clicked')}
+                    className=""
                 />
             </div>
         </div>

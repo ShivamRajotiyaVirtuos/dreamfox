@@ -125,7 +125,7 @@ const CardStyle1 = ({
     <div className={className}>
       <div
         ref={cardRef}
-        className="relative w-96 hover:scale-105 transition-all duration-300 h-[600px] bg-white  shadow-2xl overflow-hidden cursor-pointer"
+        className="relative min-w-80 xl:min-w-[370px] hover:scale-105 transition-all duration-300 h-[400px] sm:h-[565px] bg-white  shadow-2xl overflow-hidden cursor-pointer"
         onClick={onCardClick}
       >
         {/* Default/Initial State */}

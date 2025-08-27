@@ -118,7 +118,7 @@ const CardStyle2 = ({
     <div className={className}>
       <div
         ref={cardRef}
-        className="relative w-96 hover:scale-105 transition-all duration-300 h-[600px] backdrop-blur-3xl rou shadow-2xl overflow-hidden cursor-pointer border border-gray-800"
+        className="relative min-w-80 xl:min-w-[370px] hover:scale-105 transition-all duration-300 h-[400px] sm:h-[565px] backdrop-blur-3xl rou shadow-2xl overflow-hidden cursor-pointer border border-gray-800"
         onClick={onCardClick}
       >
         {/* Fixed Header - Always visible */}
