@@ -2,15 +2,19 @@ import { ChevronDownIcon } from "@heroicons/react/24/outline";
 import { HomeIcon, XCircleIcon } from "@heroicons/react/24/solid";
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/router";
 import React, { useState, useEffect, useRef } from "react";
 
 const Navbar = () => {
+  const router = useRouter();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const [overlayStyle, setOverlayStyle] = useState({});
   const [isHovered, setIsHovered] = useState(false);
   const [isLogoHovered, setIsLogoHovered] = useState(false);
+  const [isActivea, setActive] = useState(false);
+
   const buttonRef = useRef(null);
 
   useEffect(() => {
@@ -83,6 +87,13 @@ const Navbar = () => {
       top: `${yPercent}%`,
     });
   };
+
+  const isActive = (href) => {
+    if (href === "/") {
+      return router.pathname === "/";
+    }
+    return router.pathname.startsWith(href);
+  };
   return (
     <nav
       className={`fixed top-0 mx-auto max-w-[95rem]  left-0 right-0 z-50 transition-all duration-500 ease-in-out ${
@@ -100,6 +111,9 @@ const Navbar = () => {
           {/* Logo */}
           <Link
             href={"/"}
+            // onClick={() => {
+            //   setActive("");
+            // }}
             className="flex-shrink-0 flex items-center overflow-hidden"
             onMouseEnter={() => setIsLogoHovered(true)}
             onMouseLeave={() => setIsLogoHovered(false)}
@@ -144,21 +158,18 @@ const Navbar = () => {
 
           {/* Desktop Menu Items - Center */}
           <div className="hidden lg:flex items-center space-x-12">
-            <a
-              href="/"
-              className="text-white text-20 font-normal hover:text-[#ec466f] transition-all duration-300 hover:scale-105 relative group"
-            >
-              HOME
-              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#ec466f] group-hover:w-full transition-all duration-300"></span>
-            </a>
-
-            <a
+            <Link
+              // onClick={() => {
+              //   setActive("about");
+              // }}
               href="/about"
-              className="text-white text-20 font-normal hover:text-[#ec466f] transition-all duration-300 hover:scale-105 relative group"
+              className={` text-20 ${
+                isActive("/about") ? "text-[#ec466f]" : "text-[#fff]"
+              }  font-normal hover:text-[#ec466f] transition-all duration-300 hover:scale-105 relative group`}
             >
               ABOUT
               <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#ec466f] group-hover:w-full transition-all duration-300"></span>
-            </a>
+            </Link>
 
             {/* Services Dropdown */}
             {/* Services Dropdown */}
@@ -169,7 +180,12 @@ const Navbar = () => {
             >
               <Link
                 href={"/services"}
-                className="text-white text-20 font-normal hover:text-[#ec466f] transition-all duration-500 ease-out hover:scale-105 relative group flex items-center gap-2"
+                // onClick={() => {
+                //   setActive("services");
+                // }}
+                className={`${
+                  isActive("/services") ? "text-[#ec466f]" : "text-[#fff]"
+                } text-20 font-normal hover:text-[#ec466f] transition-all duration-500 ease-out hover:scale-105 relative group flex items-center gap-2`}
               >
                 SERVICES
                 <ChevronDownIcon
@@ -198,42 +214,56 @@ const Navbar = () => {
                 }`}
               >
                 <div className="p-2">
-                  <a
+                  <Link
+                    // onClick={() => {
+                    //   setActive("services");
+                    // }}
                     href="/services/brand-advisory"
                     className="block px-6 uppercase py-3 text-white font-medium text-base hover:text-[#ec466f] text-center transition-all duration-300 ease-out rounded-xl transform hover:scale-110 "
                   >
                     Branding
-                  </a>
+                  </Link>
 
-                  <a
+                  <Link
+                    // onClick={() => {
+                    //   setActive("services");
+                    // }}
                     href="/services/design-studio"
                     className="block uppercase px-6 py-3 text-white font-medium text-base hover:text-[#ec466f] text-center transition-all duration-300 ease-out rounded-xl transform hover:scale-110 "
                   >
                     Design
-                  </a>
-                  <a
+                  </Link>
+                  <Link
+                    // onClick={() => {
+                    //   setActive("services");
+                    // }}
                     href="/services/digital-marketing"
                     className="block uppercase px-6 py-3 text-white font-medium text-base hover:text-[#ec466f] text-center transition-all duration-300 ease-out rounded-xl transform hover:scale-110 "
                   >
                     Ai Marketing
-                  </a>
-                  <a
+                  </Link>
+                  <Link
                     href="/services/digital-media-mix"
                     className="block uppercase px-6 py-3 text-white font-medium text-base hover:text-[#ec466f] text-center transition-all duration-300 ease-out rounded-xl transform hover:scale-110 "
                   >
                     Media
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>
 
-            <a
+            <Link
               href="/work-portfolio"
-              className="text-white text-20 font-normal hover:text-[#ec466f] transition-all duration-300 hover:scale-105 relative group"
+              // onClick={() => {
+              //   setActive("portfolio");
+              // }}
+              className={`${
+                isActive("/work-portfolio") ? "text-[#ec466f]" : "text-[#fff]"
+              }  text-20 font-normal hover:text-[#ec466f] transition-all duration-300 hover:scale-105 relative group`}
             >
               PORTFOLIO
               <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#ec466f] group-hover:w-full transition-all duration-300"></span>
-            </a>
+            </Link>
           </div>
 
           {/* Contact Button */}

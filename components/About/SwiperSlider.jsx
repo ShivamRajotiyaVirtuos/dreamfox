@@ -34,7 +34,8 @@ const SwiperSlider = () => {
         767: { slidesPerView: 3 },
         992: { slidesPerView: 3.5 },
         1200: { slidesPerView: 4 },
-        1400: { slidesPerView: 4.5 },
+        1400: { slidesPerView: 4 },
+        2200: { slidesPerView: 4.5 },
       },
     });
   }, []);
@@ -279,7 +280,7 @@ const SwiperSlider = () => {
         >
           Meet The Team
         </TextReveal>
-        <div className="swiper">
+        <div className="swiper 5xl:max-w-[70vw]">
           <div className="swiper-wrapper">
             {slides.map((slide, i) => (
               <div

@@ -118,8 +118,8 @@ const Values_services = () => {
       <Image
         src={"/images/fox1.svg"}
         alt="fox"
-        width={700}
-        height={700}
+        width={900}
+        height={900}
         className="mx-auto hidden sm:block z-0 opacity-40 inset-x-0 absolute left-0 bottom-0"
       />
       <div className="cards-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-20 sm:gap-8 mt-20 sm:mt-16 md:mt-24 xl:mt-32 px-4 justify-items-center relative">

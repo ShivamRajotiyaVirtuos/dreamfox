@@ -58,7 +58,7 @@ const CultureValuesSection = () => {
   }, []);
 
   return (
-    <section className="w-full py-20 lg:pb-32 bg-black text-white container lg:min-h-[60vh]">
+    <section className="w-full pb-20 lg:pb-32 bg-black text-white container lg:min-h-[60vh]">
       <TextReveal
         animation="rotateX"
         stagger={0.1}
