@@ -9,11 +9,11 @@ import TextReveal from "../Text Reveal/textreveal";
 gsap.registerPlugin(ScrollTrigger);
 
 const cardData = [
-  { src: "/images/About/1.png", label: "UI/UX Design" },
-  { src: "/images/About/2.png", label: "App & Web Development" },
-  { src: "/images/About/3.png", label: "Brand Design" },
-  { src: "/images/About/4.png", label: "Design Consulting" },
-  { src: "/images/About/5.png", label: "Content Strategy" },
+  { src: "/images/About/UX.svg", label: "UI/UX Design" },
+  { src: "/images/About/App.svg", label: "App & Web Development" },
+  { src: "/images/About/Brand_Design.svg", label: "Brand Design" },
+  { src: "/images/About/Design_Consulting.svg", label: "Design Consulting" },
+  { src: "/images/About/Content_Strategy.svg", label: "Content Strategy" },
 ];
 
 const DreamFoxModel = () => {

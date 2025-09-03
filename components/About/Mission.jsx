@@ -170,17 +170,17 @@ const MissionVision = () => {
             }}
           >
             <img
-              src="https://images.unsplash.com/photo-1558655146-9f40138edfeb?w=400&h=300&fit=crop"
+              src="/images/About/our_mission1.webp"
               alt="Mission 1"
               className="w-full h-auto shadow-lg"
             />
             <img
-              src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=400&h=300&fit=crop"
+              src="/images/About/our_mission2.webp"
               alt="Mission 2"
               className="w-full h-auto shadow-lg"
             />
             <img
-              src="https://images.unsplash.com/photo-1593642632823-8f785ba67e45?w=400&h=300&fit=crop"
+              src="/images/About/our_mission3.webp"
               alt="Mission 3"
               className="col-span-2 w-full h-auto shadow-lg"
             />
@@ -204,17 +204,17 @@ const MissionVision = () => {
             }}
           >
             <img
-              src="https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?w=400&h=300&fit=crop"
+              src="/images/About/our_vision1.webp"
               alt="Vision 1"
               className="w-full h-auto shadow-lg"
             />
             <img
-              src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?w=400&h=300&fit=crop"
+              src="/images/About/our_vision2.webp"
               alt="Vision 2"
               className="w-full h-auto shadow-lg"
             />
             <img
-              src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=400&h=300&fit=crop"
+              src="/images/About/our_vision3.webp"
               alt="Vision 3"
               className="col-span-2 w-full h-auto shadow-lg"
             />

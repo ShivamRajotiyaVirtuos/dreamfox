@@ -12,25 +12,25 @@ const cardData = [
     year: "2010",
     heading: "Started",
     description: "We laid the foundation of our journey with Yippee Media Services.",
-    image: "/images/about_timeline1.webp",
+    image: "/images/Started.webp",
   },
   {
     year: "2023",
     heading: "Built",
     description: "Structured core teams and systems for growth and launched Audacis.",
-    image: "/images/about_timeline2.webp",
+    image: "/images/Build.webp",
   },
   {
     year: "2024",
     heading: "Scaled",
     description: "Rapid expansion with new projects on Branding and partnerships.",
-    image: "/images/about_timeline3.webp",
+    image: "/images/Scaled.webp",
   },
   {
     year: "2025",
     heading: "Innovated",
     description: "DreamFox is born with a new ID—Tech, AI, and Digital Assimilations.",
-    image: "/images/about_timeline4.webp",
+    image: "/images/innovation.webp",
   },
 ];
 

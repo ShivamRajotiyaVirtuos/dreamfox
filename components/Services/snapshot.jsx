@@ -482,7 +482,7 @@ const SuccessStories = () => {
         }
       `}</style>
 
-      <div className="success-stories-container 2xl:min-h-screen pt-32 lg:py-32">
+      <div className="success-stories-container 2xl:min-h-screen pt-32 lg:py-32 3xl:pb-0">
         <TextReveal
           animation="rotateX"
           stagger={0.1}

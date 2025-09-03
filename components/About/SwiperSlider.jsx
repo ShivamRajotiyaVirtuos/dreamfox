@@ -59,7 +59,7 @@ const SwiperSlider = () => {
       description: "Project Manager",
     },
      {
-      url: "/images/About/shivam_chawla.webp",
+      url: "/images/About/shivam_chawla.jpg",
 
       name: "Shivam Chawla",
       description: "Lead - Application Developer",
@@ -110,7 +110,7 @@ const SwiperSlider = () => {
       description: "Project Manager",
     },
     {
-      url: "/images/About/shivam_chawla.webp",
+      url: "/images/About/shivam_chawla.jpg",
 
       name: "Shivam Chawla",
       description: "Lead - Application Developer",
@@ -161,7 +161,7 @@ const SwiperSlider = () => {
       description: "Project Manager",
     },
      {
-      url: "/images/About/shivam_chawla.webp",
+      url: "/images/About/shivam_chawla.jpg",
 
       name: "Shivam Chawla",
       description: "Lead - Application Developer",
