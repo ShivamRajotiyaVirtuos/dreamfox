@@ -10,6 +10,8 @@ const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState(false);
+  const [dropdownOpenAbout, setDropdownOpenAbout] = useState(false);
+
   const [overlayStyle, setOverlayStyle] = useState({});
   const [isHovered, setIsHovered] = useState(false);
   const [isLogoHovered, setIsLogoHovered] = useState(false);
@@ -158,18 +160,84 @@ const Navbar = () => {
 
           {/* Desktop Menu Items - Center */}
           <div className="hidden lg:flex items-center space-x-12">
-            <Link
-              // onClick={() => {
-              //   setActive("about");
-              // }}
-              href="/about"
-              className={` text-20 ${
-                isActive("/about") ? "text-[#ec466f]" : "text-[#fff]"
-              }  font-normal hover:text-[#ec466f] transition-all duration-300 hover:scale-105 relative group`}
+            <div
+              className="relative"
+              onMouseEnter={() => setDropdownOpenAbout(true)}
+              onMouseLeave={() => setDropdownOpenAbout(false)}
             >
-              ABOUT
-              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#ec466f] group-hover:w-full transition-all duration-300"></span>
-            </Link>
+              <Link
+                href={"/about"}
+                // onClick={() => {
+                //   setActive("services");
+                // }}
+                className={`${
+                  isActive("/about") ? "text-[#ec466f]" : "text-[#fff]"
+                } text-20 font-normal hover:text-[#ec466f] transition-all duration-500 ease-out hover:scale-105 relative group flex items-center gap-2`}
+              >
+                ABOUT
+                <ChevronDownIcon
+                  className={`w-4 h-4 transition-transform duration-500 ease-out ${
+                    dropdownOpenAbout ? "rotate-180" : "rotate-0"
+                  }`}
+                />
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-[#ec466f] to-[#ff6b9d] group-hover:w-full transition-all duration-500 ease-out"></span>
+              </Link>
+
+              {/* Dropdown Menu */}
+              {/* <svg
+                width="24"
+                height="8"
+                viewBox="0 0 10 8"
+                className=" fill-gray-100 size-4 z-30 absolute -top-2 left-32  right-0"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path d="M5 0L10 8H0L5 0Z" />
+              </svg> */}
+              <div
+                className={`absolute top-full -left-[83px] mt-2 w-64 bg-gray-700 backdrop-blur-xl rounded-2xl shadow-2xl border border-white/10 overflow-hidden transition-all duration-500 ease-out transform ${
+                  dropdownOpenAbout
+                    ? "opacity-100 translate-y-0 scale-100 visible"
+                    : "opacity-0 -translate-y-4 scale-95 invisible"
+                }`}
+              >
+                <div className="p-2">
+                  <Link
+                    // onClick={() => {
+                    //   setActive("services");
+                    // }}
+                    href="/about/team"
+                    className="block px-6 uppercase py-3 text-white font-medium text-base hover:text-[#ec466f] text-center transition-all duration-300 ease-out rounded-xl transform hover:scale-110 "
+                  >
+                    Our Team
+                  </Link>
+
+                  <Link
+                    // onClick={() => {
+                    //   setActive("services");
+                    // }}
+                    href="/about/careers"
+                    className="block uppercase px-6 py-3 text-white font-medium text-base hover:text-[#ec466f] text-center transition-all duration-300 ease-out rounded-xl transform hover:scale-110 "
+                  >
+                    Careers
+                  </Link>
+                  <Link
+                    // onClick={() => {
+                    //   setActive("services");
+                    // }}
+                    href="/about/alliances"
+                    className="block uppercase px-6 py-3 text-white font-medium text-base hover:text-[#ec466f] text-center transition-all duration-300 ease-out rounded-xl transform hover:scale-110 "
+                  >
+                    Alliances
+                  </Link>
+                  <Link
+                    href="/news-events"
+                    className="block uppercase px-6 py-3 text-white font-medium text-base hover:text-[#ec466f] text-center transition-all duration-300 ease-out rounded-xl transform hover:scale-110 "
+                  >
+                    News & Events
+                  </Link>
+                </div>
+              </div>
+            </div>
 
             {/* Services Dropdown */}
             {/* Services Dropdown */}

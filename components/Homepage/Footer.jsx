@@ -205,7 +205,7 @@ const Footer = () => {
             { name: "Home", href: "/" },
             { name: "Services", href: "/services" },
             { name: "About", href: "/about" },
-            { name: "Projects", href: "/projects" },
+            { name: "Portfolio", href: "/work-portfolio" },
             { name: "Contact", href: "/contact" },
           ].map(({ name, href }) => (
             <Link

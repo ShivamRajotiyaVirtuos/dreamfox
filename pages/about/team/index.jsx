@@ -3,7 +3,7 @@ import React, { useEffect } from "react";
 import Swiper from "swiper/bundle";
 import "swiper/css/bundle";
 import { FaUser, FaQuoteLeft } from "react-icons/fa";
-import TextReveal from "../Text Reveal/textreveal";
+import TextReveal from "@/components/Text Reveal/textreveal";
 
 const SwiperSlider = () => {
   useEffect(() => {
@@ -271,7 +271,7 @@ const SwiperSlider = () => {
         }
       `}</style>
 
-      <div className="min-h-[50vh] py-16 lg:py-32" id="team">
+      <div className="min-h-screen py-16 lg:py-64" >
         <TextReveal
           animation="rotateX"
           stagger={0.1}
