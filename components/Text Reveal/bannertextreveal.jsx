@@ -104,7 +104,7 @@ const BannerTextReveal = ({
           ref={descriptionRef}
           className={descriptionClassName}
           style={{
-            transform: "translateY(40px)",
+            transform: "translateY(-10px)",
             opacity: 0,
             filter: "blur(4px)",
             transition: `all ${duration}s cubic-bezier(0.25, 0.46, 0.45, 0.94)`,
