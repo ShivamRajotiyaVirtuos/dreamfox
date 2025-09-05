@@ -81,56 +81,11 @@ const SwiperSlider = () => {
       name: "Aditya Kumar",
       description: "SEO Expert",
     },
+    
     {
-      url: "/images/About/abdul.webp",
-
-      name: "Abdul Ahad",
+      url: "/images/About/siddhant.webp",
+      name: "Siddhant Sharma",
       description: "Software Engineer - Trainee",
-    },
-    {
-      url: "/images/About/sukriti.webp",
-      name: "Sukriti Kumari",
-      description: "UI/UX Designer",
-    },
-    {
-      url: "/images/About/ams.webp",
-      name: "Amarinder Singh",
-      description: "Senior Director",
-    },
-    {
-      url: "/images/About/shaloo_reddi.webp",
-
-      name: "Shaloo Reddi",
-      description: "VP & Senior HR",
-    },
-    {
-      url: "/images/About/hemant_tyagi.webp",
-
-      name: "Hemant Tyagi",
-      description: "Project Manager",
-    },
-    {
-      url: "/images/About/shivam_chawla.jpg",
-
-      name: "Shivam Chawla",
-      description: "Lead - Application Developer",
-    },
-    {
-      url: "/images/About/tina_sachdeva.webp",
-
-      name: "Tina Sachdeva",
-      description: "Customer Success Manager",
-    },
-    {
-      url: "/images/About/shivam_rajotiya.webp",
-
-      name: "Shivam Rajotiya",
-      description: "Software Engineer",
-    },
-    {
-      url: "/images/About/aditya.webp",
-      name: "Aditya Kumar",
-      description: "SEO Expert",
     },
     {
       url: "/images/About/abdul.webp",
@@ -143,57 +98,7 @@ const SwiperSlider = () => {
       name: "Sukriti Kumari",
       description: "UI/UX Designer",
     },
-    {
-      url: "/images/About/ams.webp",
-      name: "Amarinder Singh",
-      description: "Senior Director",
-    },
-    {
-      url: "/images/About/shaloo_reddi.webp",
-
-      name: "Shaloo Reddi",
-      description: "VP & Senior HR",
-    },
-    {
-      url: "/images/About/hemant_tyagi.webp",
-
-      name: "Hemant Tyagi",
-      description: "Project Manager",
-    },
-     {
-      url: "/images/About/shivam_chawla.jpg",
-
-      name: "Shivam Chawla",
-      description: "Lead - Application Developer",
-    },
-    {
-      url: "/images/About/tina_sachdeva.webp",
-
-      name: "Tina Sachdeva",
-      description: "Customer Success Manager",
-    },
-    {
-      url: "/images/About/shivam_rajotiya.webp",
-
-      name: "Shivam Rajotiya",
-      description: "Software Engineer",
-    },
-    {
-      url: "/images/About/aditya.webp",
-      name: "Aditya Kumar",
-      description: "SEO Expert",
-    },
-    {
-      url: "/images/About/abdul.webp",
-
-      name: "Abdul Ahad",
-      description: "Software Engineer - Trainee",
-    },
-    {
-      url: "/images/About/sukriti.webp",
-      name: "Sukriti Kumari",
-      description: "UI/UX Designer",
-    },
+    
   ];
 
   return (

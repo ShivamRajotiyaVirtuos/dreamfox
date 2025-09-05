@@ -159,7 +159,7 @@ const JobListingsGrid = () => {
     <div className="min-h-screen bg-black  px-6" id="openings">
       <div className="container mx-auto">
         {/* Header */}
-        <div className="text-center mb-12">
+        <div className="text-center mb-12 lg:mb-24">
           <TextReveal
             style={{ pointerEvents: "none" }}
             animation="fadeup"
