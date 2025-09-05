@@ -3,7 +3,7 @@ import TextReveal from "../Text Reveal/textreveal";
 
 const Fun_Career = () => {
   return (
-    <div className="h-screen container flex justify-center items-center bg-black overflow-hidden">
+    <div className="h-screen max-w-7xl mx-auto flex justify-center items-center bg-black overflow-hidden">
       <TextReveal
         style={{ pointerEvents: "none" }}
         animation="fadeup"

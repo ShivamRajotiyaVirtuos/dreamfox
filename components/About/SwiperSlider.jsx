@@ -5,7 +5,7 @@ import "swiper/css/bundle";
 import { FaUser, FaQuoteLeft } from "react-icons/fa";
 import TextReveal from "../Text Reveal/textreveal";
 
-const SwiperSlider = () => {
+const TeamSlider = () => {
   useEffect(() => {
     new Swiper(".swiper", {
       effect: "coverflow",
@@ -58,7 +58,7 @@ const SwiperSlider = () => {
       name: "Hemant Tyagi",
       description: "Project Manager",
     },
-     {
+    {
       url: "/images/About/shivam_chawla.jpg",
 
       name: "Shivam Chawla",
@@ -71,6 +71,12 @@ const SwiperSlider = () => {
       description: "Customer Success Manager",
     },
     {
+      url: "/images/About/samriddhi.webp",
+
+      name: "Samriddhi Gulati",
+      description: "Marketing Manager",
+    },
+    {
       url: "/images/About/shivam_rajotiya.webp",
 
       name: "Shivam Rajotiya",
@@ -81,7 +87,7 @@ const SwiperSlider = () => {
       name: "Aditya Kumar",
       description: "SEO Expert",
     },
-    
+
     {
       url: "/images/About/siddhant.webp",
       name: "Siddhant Sharma",
@@ -98,9 +104,9 @@ const SwiperSlider = () => {
       name: "Sukriti Kumari",
       description: "UI/UX Designer",
     },
-    
   ];
-
+  const multipleSlides = [...slides, ...slides, ...slides];
+  console.log(multipleSlides, "multipleSlides");
   return (
     <>
       <style>{`
@@ -187,7 +193,7 @@ const SwiperSlider = () => {
         </TextReveal>
         <div className="swiper 5xl:max-w-[70vw]">
           <div className="swiper-wrapper">
-            {slides.map((slide, i) => (
+            {multipleSlides?.map((slide, i) => (
               <div
                 key={i}
                 className="swiper-slide bg-white border-2 border-black shadow-lg"
@@ -211,4 +217,4 @@ const SwiperSlider = () => {
   );
 };
 
-export default SwiperSlider;
+export default TeamSlider;

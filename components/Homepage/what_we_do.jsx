@@ -165,10 +165,20 @@ const WhatWeDo = () => {
           // ref={textRef}
           className="w-full md:w-1/3 z-10 text-center md:text-left"
         >
-          <TextReveal className="text-60 font-semibold mb-4 md:mb-6 text-[#ec4672] mt-10 md:mt-0">
+          <TextReveal
+            animation="rotateX"
+            stagger={0.1}
+            duration={0.8}
+            className="text-60 font-semibold mb-4 md:mb-6 text-[#ec4672] mt-10 md:mt-0"
+          >
             What we do
           </TextReveal>
-          <TextReveal className="text-30 text-gray-300 max-w-md mx-auto md:mx-0">
+          <TextReveal
+            animation="rotateX"
+            stagger={0.1}
+            duration={0.8}
+            className="text-30 text-gray-300 max-w-md mx-auto md:mx-0"
+          >
             At DreamFox, we go far beyond simply offering digital services — we
             architect meaningful brand journeys from the ground up.
           </TextReveal>

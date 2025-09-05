@@ -1,9 +1,12 @@
-import React from 'react'
+import BannerAlliances from "@/components/Alliances/Banner";
+import React from "react";
 
 const index = () => {
   return (
-    <div>index</div>
-  )
-}
+    <div>
+      <BannerAlliances />
+    </div>
+  );
+};
 
-export default index
+export default index;

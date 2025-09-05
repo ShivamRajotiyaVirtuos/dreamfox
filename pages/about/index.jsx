@@ -5,8 +5,9 @@ import CultureValuesSection from "@/components/About/CultureValuesSection";
 import Mission from "@/components/About/Mission";
 import StackingCards from "@/components/About/Timeline";
 import DreamFoxModel from "@/components/About/DreamFoxModel";
-import SwiperSlider from "@/components/About/SwiperSlider";
+// import SwiperSlider from "@/components/About/SwiperSlider";
 import CultureValuesSection2 from "@/components/About/CultureValuesSection2";
+import TeamSlider from "@/components/About/SwiperSlider";
 
 function Index() {
   return (
@@ -15,7 +16,7 @@ function Index() {
       <StackingCards />
       <DreamFoxModel />
       <Mission />
-      <SwiperSlider />
+      <TeamSlider />
       <CultureValuesSection />
 
       {/* <Team/> */}
