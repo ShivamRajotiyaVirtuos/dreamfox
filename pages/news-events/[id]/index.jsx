@@ -114,7 +114,7 @@ const NewsDetailPage = () => {
     date: "June 30, 2025",
     readTime: "5 min read",
     image:
-      "https://images.unsplash.com/photo-1523580494863-6f3031224c94?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fGV2ZW50c3xlbnwwfHwwfHx8MA%3D%3D",
+      "https://images.unsplash.com/photo-1643759543584-fb6f448d42d4?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fGV2ZW50c3xlbnwwfHwwfHx8MA%3D%3D",
     excerpt:
       "Recognition for innovation and leadership in the digital transformation space marks a significant milestone for our company.",
     content: `
@@ -138,19 +138,19 @@ const NewsDetailPage = () => {
       title: "Company expands to Australia with new teams",
       date: "May 15, 2025",
       image:
-        "https://images.unsplash.com/photo-1643759543584-fb6f448d42d4?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fGV2ZW50c3xlbnwwfHwwfHx8MA%3D%3D",
+        "https://images.unsplash.com/photo-1523580494863-6f3031224c94?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fGV2ZW50c3xlbnwwfHwwfHx8MA%3D%3D",
     },
     {
       id: 3,
       title: "Forbes 30 Under 30 recognition announced",
       date: "April 01, 2025",
       image:
-        "https://images.unsplash.com/photo-1643759543584-fb6f448d42d4?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fGV2ZW50c3xlbnwwfHwwfHx8MA%3D%3D",
+        "https://images.unsplash.com/photo-1523580494863-6f3031224c94?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fGV2ZW50c3xlbnwwfHwwfHx8MA%3D%3D",
     },
   ];
 
   return (
-    <div className="min-h-scree  pt-44 bg-gradient-to-br relative from-black via-gray-900 to-black">
+    <div className="min-h-scree  pt-44 bg-gradient-to-br relative from-black via-gray-900 to-black pb-16 lg:pb-32">
       {/* Navigation */}
       {/* <nav ref={headerRef} className="bg-black/50 backdrop-blur-xl border-b border-white/10 px-6 py-4 sticky top-0 z-50">
         <div className="max-w-7xl mx-auto flex items-center gap-4">
@@ -173,7 +173,7 @@ const NewsDetailPage = () => {
       </nav> */}
 
       {/* Hero Section */}
-      <section ref={heroRef} className="relative pb-12 ">
+      <section ref={heroRef} className="relative pb-16  ">
         <div className="container mx-auto px-6 border-b-[0.5px] py-20 border-t-[0.5px] border-gray-700">
           <div className=" mx-auto flex gap-20 items-center ">
             {/* Category and Tags */}
@@ -296,12 +296,16 @@ const NewsDetailPage = () => {
               <div className="sticky top-64 space-y-12">
                 {/* Related Articles */}
                 <div className=" shadow-2xl  border-b-[0.5px] pb-12  border-gray-700">
-                  <h3 className="text-xl font-bold text-white mb-6">
+                  <h3 className="text-xl border-l-2 border-[#ea4079] pl-2 font-bold text-white mb-6">
                     Related Articles
                   </h3>
                   <div className="space-y-6">
                     {relatedArticles.map((related) => (
-                      <div key={related.id} className="group cursor-pointer">
+                      <Link
+                        href={`/news-events/${related.id}`}
+                        key={related.id}
+                        className="group cursor-pointer "
+                      >
                         <div className="flex gap-4">
                           <img
                             src={related.image}
@@ -309,7 +313,7 @@ const NewsDetailPage = () => {
                             className="w-20 h-20 object-cover rounded-xl bg-white/5 border border-white/10"
                           />
                           <div className="flex-1">
-                            <h4 className="text-white text-16 font-medium leading-tight group-hover:text-blue-300 transition-colors duration-300 mb-2">
+                            <h4 className="text-white text-16 font-medium leading-tight group-hover:text-pink-500 transition-colors duration-300 mb-2">
                               {related.title}
                             </h4>
                             <p className="text-gray-400 text-xs">
@@ -317,13 +321,13 @@ const NewsDetailPage = () => {
                             </p>
                           </div>
                         </div>
-                      </div>
+                      </Link>
                     ))}
                   </div>
                 </div>
 
                 {/* Newsletter Signup */}
-                <div className="bg-gradient-to-r from-[#000] via-gray- to-[#ea4079] border border-[#ea4079] backdrop-blur-xl  rounded-3xl p-8 shadow-2xl">
+                <div className="bg-gradient-to-r from-black/10 via-gray- to-[#ea4079] border border-[#ea4079] backdrop-blur-xl  rounded-3xl p-8 shadow-2xl">
                   <h3 className="text-30 text-center font-bold text-[#fff] mb-2">
                     Discover
                   </h3>
@@ -337,7 +341,7 @@ const NewsDetailPage = () => {
                       className="w-full bg-white/5 backdrop-blur-md border border-white/20 rounded-xl px-4 py-3 text-white placeholder-gray-400 focus:border-white/40 focus:bg-white/10 transition-all outline-none"
                     /> */}
                     <Link href={"/contactus"}>
-                      <button className="w-full text-black bg-gradient-to-r from-[#ff] to-[#fff]  hover:text-white     font-semibold py-3 rounded-lg hover:scale-105 transition-transform duration-300 ">
+                      <button className="w-full text-black bg-gradient-to-r from-[#fff] to-[#fff]  hover:text-black     font-semibold py-3 rounded-lg hover:scale-105 transition-transform duration-300 ">
                         Talk to an Expert
                       </button>
                     </Link>

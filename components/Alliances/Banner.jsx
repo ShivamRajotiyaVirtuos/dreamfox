@@ -75,17 +75,14 @@ const BannerAlliances = () => {
         <div className="max-w-5xl">
           <BannerTextReveal
             titleClassName="text-white text-130 font-bold leading-tight"
-            descriptionClassName="text-24 mt-8 sm:mt-12 text-white max-w-7xl"
-            title="Our Alliances"
+            descriptionClassName="text-24 mt-8 lg:mt-12 text-white max-w-7xl"
+            title="Our Trusted Alliances"
             description="Building powerful partnerships that drive innovation and deliver exceptional value to our clients through collaborative excellence."
           />
         </div>
 
         <div className="flex flex-col md:flex-row md:items-center justify-between gap-8 mt-16">
-          {/* <div className="flex flex-col sm:flex-row gap-4 shrink-0">
-            <AnimatedButton text="Services" href="/services" />
-            <AnimatedButton text="Portfolio" href="/portfolio" />
-          </div> */}
+          
         </div>
       </div>
     </section>

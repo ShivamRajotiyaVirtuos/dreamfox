@@ -9,12 +9,10 @@ const Index = ({}) => {
   return (
     <div>
       <Banner_Mediamix />
-
       <Productionprocess />
       <Offerings />
       <MediaReelGallery />
       <BehindTheScenes />
-
       {/* <ContactUs /> */}
     </div>
   );

@@ -129,7 +129,7 @@ const NewsCategory = () => {
           {filteredArticles.map((article, index) => (
             <Link href={`/news-events/${article.id}`}
               key={article.id}
-              className="group bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl overflow-hidden hover:bg-white/10 hover:border-white/20 transition-all duration-500 shadow-2xl hover:shadow-3xl hover:transform hover:scale-[1.02]"
+              className="group bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl overflow-hidden  hover:border-white/20 transition-all duration-500 shadow-2xl hover:shadow-3xl hover:transform hover:scale-[1.02]"
             >
               {/* Image */}
               <div className="relative h-48 overflow-hidden">
@@ -138,7 +138,7 @@ const NewsCategory = () => {
                   alt={article.imageAlt}
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+                <div className="absolute -inset-2 bg-gradient-to-t from-[#0d0d0d] via-transparent to-transparent"></div>
                 
                 {/* Category Badge */}
                 {/* <div className="absolute top-4 left-4">

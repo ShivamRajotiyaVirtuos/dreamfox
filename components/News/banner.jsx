@@ -76,7 +76,7 @@ const NewsroomPage = () => {
           alt="News"
           width={1920}
           height={1080}
-          className="absolute top-0 left-0 w-full h-full object-cover -z-10 opacity-20"
+          className="absolute top-0 left-0 w-full h-full object-cover -z-10 opacity-[15%]"
         />
         <header ref={headerRef} className="pt-8 pb-4">
           <div className=" mx-auto px-6">
@@ -117,7 +117,7 @@ const NewsroomPage = () => {
 
           {/* News Card */}
           <div ref={cardRef} className=" mt-16 xl:mt-24">
-            <div className="bg-white p-10 flex rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-1">
+            <div className="bg-gradient-to-r from-black/10 via-gray- to-[#ea4079] border border-[#ea4079] backdrop-blur-xl  rounded-3xl  shadow-2xl p-10 flex  overflow-hidden hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-1">
               {/* Card Header */}
               <div className="relative w-1/2">
                 <div className="bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 h-full flex items-center justify-center rounded-2xl relative overflow-hidden">
@@ -127,35 +127,24 @@ const NewsroomPage = () => {
                   </div>
 
                   {/* Logos */}
-                  <div className="flex items-center gap-8 z-10">
-                    <div className="text-white text-2xl font-bold flex items-center gap-2">
-                      <div className="w-8 h-8 bg-white rounded-lg flex items-center justify-center">
-                        <div className="w-4 h-4 bg-gradient-to-br from-blue-500 to-purple-600 rounded"></div>
-                      </div>
-                      Virtuos
-                    </div>
-                    <div className="text-white text-4xl">×</div>
-                    <div className="text-white text-2xl font-bold flex items-center gap-2">
-                      <div className="w-8 h-8 bg-gradient-to-br from-[#e83584] to-[#e83584] rounded-full"></div>
-                      Dreamfox
-                    </div>
-                  </div>
+                 <Image src={"https://images.unsplash.com/photo-1643759543584-fb6f448d42d4?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fGV2ZW50c3xlbnwwfHwwfHx8MA%3D%3D"} alt="News" width={600} height={400} className="w-full h-auto object-cover rounded-2xl" />
                 </div>
               </div>
 
               {/* Card Content */}
               <div className="p-8 w-1/2">
-                <div className="  flex gap-2">
-                  <span className="bg-[#e83584] text-white px-3 py-1 rounded-full text-sm font-medium">
+                <div className=" text-white flex gap-2">
+                  <span className="text-[#e83584] bg-white px-3 py-1 rounded-full text-xs flex items-center justify-center font-medium">
                     PRESS RELEASES
                   </span>
+                  
                   |
-                  <span className="bg-gray-700 text-white px-3 py-1 rounded-full text-sm font-medium">
+                  <span className="bg-transparent text-white border  px-3 py-1 rounded-full text-xs lex items-center justify-center font-medium">
                     COMPANY NEWS
                   </span>
                 </div>
                 <TextReveal
-                  className="text-30 mt-10 font-light text-gray-900 mb-6 leading-tight hover:text-pink-600 transition-colors duration-300"
+                  className="text-30 mt-10 font-light text-gray-50 mb-6 leading-tight hover:text-gray-100 transition-colors duration-300"
                   animation="rotateX"
                   stagger={0.1}
                   delay={1.5}
@@ -167,13 +156,13 @@ const NewsroomPage = () => {
                   {/* </h2> */}
                 </TextReveal>
 
-                <div className="flex items-center gap-3 mb-6">
+                <div className="flex items-center gap-3 mb-16">
                   <div className="w-10 h-10 bg-gradient-to-br from-pink-400 to-pink-600 rounded-full flex items-center justify-center">
-                    <span className="text-white text-sm font-semibold">D</span>
+                    <span className="text-white text-sm font-semibold">V</span>
                   </div>
-                  <div className="text-gray-600">
+                  <div className="text-gray-50">
                     <span className="text-sm">Written by </span>
-                    <span className="font-medium text-gray-900">
+                    <span className="font-medium text-gray-100">
                       Venky Vijay Reddi
                     </span>
                     <span className="text-sm"> on Aug 19, 2025</span>
@@ -182,7 +171,7 @@ const NewsroomPage = () => {
 
                 <Link
                   href={`/news-events/1`}
-                  className="bg-[#e83584] hover:bg-pink-600 text-white px-6 py-3 rounded-lg font-medium transition-all duration-300 transform hover:scale-105 hover:shadow-lg group"
+                  className="text-[#e83584] hover:bg-transparent hover:border hover:text-white border-white bg-white px-6 py-3 rounded-lg font-medium transition-all duration-300 transform hover:scale-105 hover:shadow-lg group "
                 >
                   Read More
                   <span className="ml-2 group-hover:translate-x-1 transition-transform duration-300">
