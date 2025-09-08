@@ -1,6 +1,7 @@
 import { MagnifyingGlassIcon } from '@heroicons/react/24/solid';
 import { CalendarIcon, UserIcon, TagIcon } from '@heroicons/react/24/outline';
 import React, { useState, useEffect, useRef } from 'react';
+import Link from 'next/link';
 
 const NewsCategory = () => {
   const [selectedCategory, setSelectedCategory] = useState('All Categories');
@@ -74,7 +75,7 @@ const NewsCategory = () => {
   });
 
   return (
-    <div className=" py-16 lg:py-32 bg-black ">
+    <div className=" py-16 lg:py-44 bg-black ">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Header Section */}
@@ -126,7 +127,7 @@ const NewsCategory = () => {
         {/* Articles Grid */}
         <div ref={articlesRef} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mt-20">
           {filteredArticles.map((article, index) => (
-            <article
+            <Link href={`/news-events/${article.id}`}
               key={article.id}
               className="group bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl overflow-hidden hover:bg-white/10 hover:border-white/20 transition-all duration-500 shadow-2xl hover:shadow-3xl hover:transform hover:scale-[1.02]"
             >
@@ -187,15 +188,15 @@ const NewsCategory = () => {
                   </div>
                   
                   {/* Read More Button */}
-                  <button className="text-blue-400 hover:text-blue-300 text-sm font-medium flex items-center gap-1 group/btn">
+                  <Link href={`/news-events/${article.id}`} className="text-blue-400 hover:text-blue-300 text-sm font-medium flex items-center gap-1 group/btn">
                     <span>Read More</span>
                     <svg className="w-4 h-4 transition-transform group-hover/btn:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                     </svg>
-                  </button>
+                  </Link>
                 </div>
               </div>
-            </article>
+            </Link>
           ))}
         </div>
 

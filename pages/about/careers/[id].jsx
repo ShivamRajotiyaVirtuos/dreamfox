@@ -46,11 +46,16 @@ const JobDetail = () => {
   };
 
   useEffect(() => {
-    window.scrollTo({
-      top: 0,
-      left: 0,
-      behavior: "smooth",
-    });
+    window.scrollTo(0, 0);
+
+    // Use setTimeout to ensure DOM is ready and force scroll again
+    const scrollTimer = setTimeout(() => {
+      window.scrollTo({
+        top: 0,
+        left: 0,
+        behavior: "instant", // Changed from "smooth" to "instant"
+      });
+    }, 100);
     const ctx = gsap.context(() => {
       // Set initial states
       gsap.set(sectionsRef.current, {
@@ -102,13 +107,13 @@ const JobDetail = () => {
       ctx.revert();
       ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
     };
-  }, [id]);
+  }, []);
 
   return (
     <div ref={containerRef} className="min-h-screen bg-black text-white">
       {/* Hero Section */}
       {showCopyMessage && (
-        <div className="fixed top-8 right-8 z-50 bg-green-500 text-white px-6 py-3 rounded-lg shadow-lg flex items-center gap-3 animate-bounce">
+        <div className="fixed top-32 right-8 z-[100] bg-green-500 text-white px-6 py-3 rounded-lg shadow-lg flex items-center gap-3 animate-bounce">
           <svg
             className="w-5 h-5"
             fill="none"
@@ -143,12 +148,12 @@ const JobDetail = () => {
           </p>
 
           <div className="hero-element flex flex-wrap gap-4">
-            <button className="bg-gradient-to-r from-pink-500 to-purple-600 text-white px-8 py-3 rounded-full font-medium hover:scale-105 transition-transform">
+            <button className="bg-gradient-to-r from-pink-500 to-[#ea4079] text-white px-8 py-3 rounded-lg font-medium hover:scale-105 transition-transform">
               Apply Now
             </button>
             <button
               onClick={handleShareJob}
-              className="border  cursor-pointer border-gray-600 text-white px-8 py-3 rounded-full font-medium hover:bg-gray-800 transition-colors"
+              className="border  cursor-pointer border-gray-600 text-white px-8 py-3 rounded-lg font-medium hover:bg-gray-800 transition-colors"
             >
               Share Job
             </button>

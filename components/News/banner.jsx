@@ -1,6 +1,8 @@
 import React, { useEffect, useRef } from "react";
 import BannerTextReveal from "../Text Reveal/bannertextreveal";
 import TextReveal from "../Text Reveal/textreveal";
+import Image from "next/image";
+import Link from "next/link";
 
 // Simulating GSAP for animations since we can't import external libraries
 // In a real Next.js project, you would: npm install gsap
@@ -63,27 +65,38 @@ const NewsroomPage = () => {
   }, []);
 
   return (
-    <div className=" container pt-44 bg-black">
-      {/* Header */}
-      <header ref={headerRef} className="pt-8 pb-4">
-        <div className=" mx-auto px-6">
-          <div className="text-[#e83584] text-20 font-semibold tracking-wider uppercase mb-2">
-            NEWS AND PRESS
-          </div>
-        </div>
-      </header>
+    <div className="relative">
+      <div className="absolute bottom-0 left-0 w-full h-48 bg-gradient-to-t from-black via-black/20 via-black/70 to-transparent -z-5"></div>
+      <div className=" container pt-64 min-h-screen ">
+        {/* Header */}
+        {/* Black gradient overlay at bottom - stronger version */}
 
-      {/* Hero Section */}
-      <main className=" mx-auto px-6">
-        <div className="max-w-5xl">
-          <BannerTextReveal
-            titleClassName="text-white text-130 font-bold leading-tight"
-            descriptionClassName="text-24 text-white max-w-7xl"
-            title="News and Events"
-            description="News and announcements featuring our solutions, team, and company."
-          />
-        </div>
-        {/* <div ref={heroRef} className="mb-12">
+        <Image
+          src={"/images/news.jpg"}
+          alt="News"
+          width={1920}
+          height={1080}
+          className="absolute top-0 left-0 w-full h-full object-cover -z-10 opacity-20"
+        />
+        <header ref={headerRef} className="pt-8 pb-4">
+          <div className=" mx-auto px-6">
+            <div className="text-[#e83584] text-20 font-semibold tracking-wider uppercase mb-2">
+              NEWS AND PRESS
+            </div>
+          </div>
+        </header>
+
+        {/* Hero Section */}
+        <main className=" mx-auto px-6">
+          <div className="max-w-5xl">
+            <BannerTextReveal
+              titleClassName="text-white text-130 font-bold leading-tight"
+              descriptionClassName="text-24 text-white max-w-7xl"
+              title="News and Events"
+              description="News and announcements featuring our solutions, team, and company."
+            />
+          </div>
+          {/* <div ref={heroRef} className="mb-12">
           <h1 className="text-120 font-semibold text-gray-100 mb-6 leading-tight">
             Newsroom
           </h1>
@@ -92,8 +105,8 @@ const NewsroomPage = () => {
           </p>
         </div> */}
 
-        {/* Action Buttons */}
-        {/* <div ref={buttonsRef} className="flex gap-4 mb-16">
+          {/* Action Buttons */}
+          {/* <div ref={buttonsRef} className="flex gap-4 mb-16">
           <button className="bg-[#e83584] hover:bg-pink-600 text-white px-6 py-3 rounded-lg font-medium transition-all duration-300 transform hover:scale-105 hover:shadow-lg">
             Media inquiry →
           </button>
@@ -102,78 +115,88 @@ const NewsroomPage = () => {
           </button>
         </div> */}
 
-        {/* News Card */}
-        <div ref={cardRef} className=" mt-16 xl:mt-24">
-          <div className="bg-white p-10 flex rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-1">
-            {/* Card Header */}
-            <div className="relative w-1/2">
-              <div className="bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 h-full flex items-center justify-center rounded-2xl relative overflow-hidden">
-                {/* Background Pattern */}
-                <div className="absolute inset-0 opacity-10">
-                  <div className="absolute inset-0 bg-gradient-to-br from-[#e83584]/20 to-transparent"></div>
-                </div>
+          {/* News Card */}
+          <div ref={cardRef} className=" mt-16 xl:mt-24">
+            <div className="bg-white p-10 flex rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-1">
+              {/* Card Header */}
+              <div className="relative w-1/2">
+                <div className="bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 h-full flex items-center justify-center rounded-2xl relative overflow-hidden">
+                  {/* Background Pattern */}
+                  <div className="absolute inset-0 opacity-10">
+                    <div className="absolute inset-0 bg-gradient-to-br from-[#e83584]/20 to-transparent"></div>
+                  </div>
 
-                {/* Logos */}
-                <div className="flex items-center gap-8 z-10">
-                  <div className="text-white text-2xl font-bold flex items-center gap-2">
-                    <div className="w-8 h-8 bg-white rounded-lg flex items-center justify-center">
-                      <div className="w-4 h-4 bg-gradient-to-br from-blue-500 to-purple-600 rounded"></div>
+                  {/* Logos */}
+                  <div className="flex items-center gap-8 z-10">
+                    <div className="text-white text-2xl font-bold flex items-center gap-2">
+                      <div className="w-8 h-8 bg-white rounded-lg flex items-center justify-center">
+                        <div className="w-4 h-4 bg-gradient-to-br from-blue-500 to-purple-600 rounded"></div>
+                      </div>
+                      Virtuos
                     </div>
-                    Virtuos
-                  </div>
-                  <div className="text-white text-4xl">×</div>
-                  <div className="text-white text-2xl font-bold flex items-center gap-2">
-                    <div className="w-8 h-8 bg-gradient-to-br from-[#e83584] to-[#e83584] rounded-full"></div>
-                    Dreamfox
+                    <div className="text-white text-4xl">×</div>
+                    <div className="text-white text-2xl font-bold flex items-center gap-2">
+                      <div className="w-8 h-8 bg-gradient-to-br from-[#e83584] to-[#e83584] rounded-full"></div>
+                      Dreamfox
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
 
-            {/* Card Content */}
-            <div className="p-8 w-1/2">
-              <div className="  flex gap-2">
-                <span className="bg-[#e83584] text-white px-3 py-1 rounded-full text-sm font-medium">
-                  PRESS RELEASES
-                </span>
-                |
-                <span className="bg-gray-700 text-white px-3 py-1 rounded-full text-sm font-medium">
-                  COMPANY NEWS
-                </span>
-              </div>
-              <TextReveal className="text-30 mt-10 font-light text-gray-900 mb-6 leading-tight hover:text-pink-600 transition-colors duration-300" animation="rotateX" stagger={0.1} delay={1.5}  duration={0.8}>
-                {/* <h2 c> */}
+              {/* Card Content */}
+              <div className="p-8 w-1/2">
+                <div className="  flex gap-2">
+                  <span className="bg-[#e83584] text-white px-3 py-1 rounded-full text-sm font-medium">
+                    PRESS RELEASES
+                  </span>
+                  |
+                  <span className="bg-gray-700 text-white px-3 py-1 rounded-full text-sm font-medium">
+                    COMPANY NEWS
+                  </span>
+                </div>
+                <TextReveal
+                  className="text-30 mt-10 font-light text-gray-900 mb-6 leading-tight hover:text-pink-600 transition-colors duration-300"
+                  animation="rotateX"
+                  stagger={0.1}
+                  delay={1.5}
+                  duration={0.8}
+                >
+                  {/* <h2 c> */}
                   Dreamfox Expands Its Fund Admin Partnerships with Virtuos,
                   Empowering a New Generation of Service Providers
-                {/* </h2> */}
-              </TextReveal>
+                  {/* </h2> */}
+                </TextReveal>
 
-              <div className="flex items-center gap-3 mb-6">
-                <div className="w-10 h-10 bg-gradient-to-br from-pink-400 to-pink-600 rounded-full flex items-center justify-center">
-                  <span className="text-white text-sm font-semibold">D</span>
+                <div className="flex items-center gap-3 mb-6">
+                  <div className="w-10 h-10 bg-gradient-to-br from-pink-400 to-pink-600 rounded-full flex items-center justify-center">
+                    <span className="text-white text-sm font-semibold">D</span>
+                  </div>
+                  <div className="text-gray-600">
+                    <span className="text-sm">Written by </span>
+                    <span className="font-medium text-gray-900">
+                      Venky Vijay Reddi
+                    </span>
+                    <span className="text-sm"> on Aug 19, 2025</span>
+                  </div>
                 </div>
-                <div className="text-gray-600">
-                  <span className="text-sm">Written by </span>
-                  <span className="font-medium text-gray-900">
-                    Venky Vijay Reddi
+
+                <Link
+                  href={`/news-events/1`}
+                  className="bg-[#e83584] hover:bg-pink-600 text-white px-6 py-3 rounded-lg font-medium transition-all duration-300 transform hover:scale-105 hover:shadow-lg group"
+                >
+                  Read More
+                  <span className="ml-2 group-hover:translate-x-1 transition-transform duration-300">
+                    →
                   </span>
-                  <span className="text-sm"> on Aug 19, 2025</span>
-                </div>
+                </Link>
               </div>
-
-              <button className="bg-[#e83584] hover:bg-pink-600 text-white px-6 py-3 rounded-lg font-medium transition-all duration-300 transform hover:scale-105 hover:shadow-lg group">
-                Read More
-                <span className="ml-2 group-hover:translate-x-1 transition-transform duration-300">
-                  →
-                </span>
-              </button>
             </div>
           </div>
-        </div>
-      </main>
+        </main>
 
-      {/* Footer spacing */}
-      <div className="h-20"></div>
+        {/* Footer spacing */}
+        
+      </div>
     </div>
   );
 };
