@@ -14,8 +14,7 @@ const Alliances_card = () => {
   const offeringsData = [
     {
       id: 1,
-      title:
-        "Enterprise Database Solutions and Cloud Infrastructure",
+      title: "Enterprise Database Solutions and Cloud Infrastructure",
       category: "ORACLE",
       services: [
         "Database Management",
@@ -204,9 +203,12 @@ const Alliances_card = () => {
                   <h2 className="text-60 font-bold text-white leading-tight">
                     {offering.title}
                   </h2>
-                  <div className="space-y-2 gap-2 flex flex-wrap">
+                  <div className="flex flex-wrap gap-2">
                     {offering.services.map((service, serviceIndex) => (
-                      <div key={serviceIndex} className="text-gray-300 px-3 py-1 border border-gray-500 rounded-full text-16">
+                      <div
+                        key={serviceIndex}
+                        className="text-gray-300 px-3 py-2 border border-gray-500 rounded-full text-16 flex items-center h-8 whitespace-nowrap"
+                      >
                         {service}
                       </div>
                     ))}
