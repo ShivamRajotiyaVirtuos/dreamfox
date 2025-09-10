@@ -92,7 +92,7 @@ const Offerings = () => {
             stagger={0.1}
             duration={0.8}
           >
-            Design Offerings
+            Brand Offerings
           </TextReveal>
         </div>
 

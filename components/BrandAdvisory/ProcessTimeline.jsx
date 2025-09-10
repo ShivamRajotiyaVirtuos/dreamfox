@@ -105,24 +105,27 @@ export default function ProcessTimeline() {
 
   return (
     <>
-      <TextReveal
-        animation="rotateX"
-        stagger={0.1}
-        duration={0.8}
-        className="text-white text-120 font-bold text-center sm:pt-16 mb-6 lg:pt-32"
-      >
-        How Brands Stack Up
-      </TextReveal>
-      <TextReveal
-        className="text-40 text-center mx-auto max-w-7xl text-white/80 "
-        animation="rotateX"
-        stagger={0.1}
-        duration={0.8}
-      >
-        Brands stack up through clarity, creativity, and consistency—gaining
-        identity, trust, and relevance. At DreamFox, we shape bold brands that
-        thrive across digital, AI, and real-world experiences.
-      </TextReveal>
+      <div className="">
+        <TextReveal
+          animation="rotateX"
+          stagger={0.1}
+          duration={0.8}
+          className="text-white text-120 font-bold text-center sm:pt-16 mb-6 lg:pt-32"
+        >
+          How Brands Stack Up
+        </TextReveal>
+        <TextReveal
+          className="text-40 text-center mx-auto max-w-7xl text-white/80 "
+          animation="rotateX"
+          stagger={0.1}
+          duration={0.5}
+        >
+          Brands stack up through clarity, creativity, and consistency—gaining
+          identity, trust, and relevance. At DreamFox, we shape bold brands that
+          thrive across digital, AI, and real-world experiences.
+        </TextReveal>
+      </div>
+
       <section
         ref={containerRef}
         className="relative w-full h-[100vh] overflow-hidden bg-black"
@@ -255,9 +258,7 @@ export default function ProcessTimeline() {
 
                   {/* Content */}
                   <div className="lg:w-1/2  pt-8 text-left">
-                    <h3 className="text-60 font-thin mb-4  ">
-                      {step.title}
-                    </h3>
+                    <h3 className="text-60 font-thin mb-4  ">{step.title}</h3>
                     <p className="text-gray-700 font-thin text-30 leading-relaxed">
                       {step.desc}
                     </p>

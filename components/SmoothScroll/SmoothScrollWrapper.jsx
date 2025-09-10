@@ -22,7 +22,7 @@ const ScrollSmootherWrapper = ({ children }) => {
       scrollSmootherRef.current = ScrollSmoother.create({
         wrapper: wrapperRef.current,
         content: contentRef.current,
-        smooth: 1.5,
+        smooth: 1.8,
         effects: true,
         normalizeScroll: true,
       });
