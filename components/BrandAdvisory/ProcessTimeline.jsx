@@ -4,15 +4,36 @@ import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import TextReveal from "../Text Reveal/textreveal";
+import Image from "next/image";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const steps = [
-  { title: "IDEATE", desc: "Discover insights, spark possibilities" },
-  { title: "DEFINE", desc: "Shape brand vision, values clearly" },
-  { title: "DESIGN", desc: "Create identity, experience touchpoints" },
-  { title: "BUILD", desc: "Integrate across digital, AI, physical" },
-  { title: "AMPLIFY", desc: "Elevate impact, scale visibility" },
+  {
+    title: "IDEATE",
+    desc: "Discover insights, spark possibilities",
+    image: "/svgs/ideate.svg",
+  },
+  {
+    title: "DEFINE",
+    desc: "Shape brand vision, values clearly",
+    image: "/svgs/define.svg",
+  },
+  {
+    title: "DESIGN",
+    desc: "Create identity, experience touchpoints",
+    image: "/svgs/design.svg",
+  },
+  {
+    title: "BUILD",
+    desc: "Integrate across digital, AI, physical",
+    image: "/svgs/build.svg",
+  },
+  {
+    title: "AMPLIFY",
+    desc: "Elevate impact, scale visibility",
+    image: "/svgs/amplify.svg",
+  },
 ];
 export default function ProcessTimeline() {
   const containerRef = useRef(null);
@@ -88,7 +109,7 @@ export default function ProcessTimeline() {
         animation="rotateX"
         stagger={0.1}
         duration={0.8}
-        className="text-white text-120 font-bold text-center sm:pt-16 mb-6"
+        className="text-white text-120 font-bold text-center sm:pt-16 mb-6 lg:pt-32"
       >
         How Brands Stack Up
       </TextReveal>
@@ -104,7 +125,7 @@ export default function ProcessTimeline() {
       </TextReveal>
       <section
         ref={containerRef}
-        className="relative w-full h-screen overflow-hidden bg-black"
+        className="relative w-full h-[100vh] overflow-hidden bg-black"
       >
         {/* Progress line */}
         {/* Progress line */}
@@ -204,37 +225,48 @@ export default function ProcessTimeline() {
               className="group h-[25rem] sm:h-[40rem] w-[80%] xl:w-[70rem] relative"
             >
               {/* Glowing background */}
-              <div className="absolute -inset-1 bg-gradient-to-r from-pink-600 to-purple-600 rounded-3xl blur opacity-25 group-hover:opacity-75 transition duration-1000 group-hover:duration-200" />
+              {/* <div className="absolute -inset-1 bg-gradient-to-r from-pink-600 to-purple-600 rounded-3xl blur opacity-25 group-hover:opacity-75 transition duration-1000 group-hover:duration-200" /> */}
 
               {/* Main card */}
-              <div className="relative bg-gray-900/80 backdrop-blur-xl border border-white/10 rounded-3xl p-8 h-full transform transition-all duration-500 group-hover:scale-105 group-hover:-translate-y-2">
+              <div className="relative bg-gradient-to-r from-white to-gray-300 bg-gray-900/80 backdrop-blur-xl border border-white/10 rounded-3xl p-8 h-full transform transition-all duration-500 group-hover:scale-105 group-hover:-translate-y-2">
                 {/* Floating icon */}
-                <div className="absolute -top-6 left-1/2 transform -translate-x-1/2">
+                {/* <div className="absolute -top-6 left-1/2 transform -translate-x-1/2">
                   <div
                     className={`w-16 h-16 bg-gradient-to-r ${step.gradient} rounded-2xl flex items-center justify-center text-2xl shadow-2xl transform rotate-3 group-hover:rotate-0 transition-transform duration-500`}
                   >
                     {step.icon}
                   </div>
-                </div>
+                </div> */}
 
                 {/* Step number */}
-                <div className="absolute top-4 right-4 w-8 h-8 bg-white/10 rounded-full flex items-center justify-center text-sm font-bold text-white/60">
+                <div className="absolute top-4 right-4 w-8 h-8 bg-white rounded-full flex items-center justify-center text-sm font-bold text-black">
                   {i + 1}
                 </div>
+                <div className="flex flex-col gap-10 sm:flex-row items-center justify-center h-full">
+                  <div className="lg:w-1/2">
+                    <Image
+                      src={step.image}
+                      alt={step.title}
+                      width={400}
+                      height={400}
+                      className="mx-auto mt-6"
+                    />
+                  </div>
 
-                {/* Content */}
-                <div className="pt-8 text-center">
-                  <h3 className="text-120 font-bold mb-4 bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
-                    {step.title}
-                  </h3>
-                  <p className="text-gray-400 text-60 leading-relaxed">
-                    {step.desc}
-                  </p>
+                  {/* Content */}
+                  <div className="lg:w-1/2  pt-8 text-left">
+                    <h3 className="text-60 font-thin mb-4  ">
+                      {step.title}
+                    </h3>
+                    <p className="text-gray-700 font-thin text-30 leading-relaxed">
+                      {step.desc}
+                    </p>
+                  </div>
                 </div>
 
                 {/* Decorative elements */}
-                <div className="absolute bottom-4 left-4 w-2 h-2 bg-pink-500 rounded-full opacity-50" />
-                <div className="absolute bottom-4 right-4 w-1 h-1 bg-purple-500 rounded-full opacity-50" />
+                {/* <div className="absolute bottom-4 left-4 w-2 h-2 bg-pink-500 rounded-full opacity-50" />
+                <div className="absolute bottom-4 right-4 w-1 h-1 bg-purple-500 rounded-full opacity-50" /> */}
 
                 {/* Hover effect overlay */}
                 <div

@@ -88,7 +88,7 @@ const NewsroomPage = () => {
 
         {/* Hero Section */}
         <main className=" mx-auto px-6">
-          <div className="max-w-5xl">
+          <div className="max-w-7xl">
             <BannerTextReveal
               titleClassName="text-white text-130 font-bold leading-tight"
               descriptionClassName="text-24 text-white max-w-7xl"

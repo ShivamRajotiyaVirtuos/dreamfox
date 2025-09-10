@@ -299,7 +299,7 @@ const NewsDetailPage = () => {
                   <h3 className="text-xl border-l-2 border-[#ea4079] pl-2 font-bold text-white mb-6">
                     Related Articles
                   </h3>
-                  <div className="space-y-6">
+                  <div className="flex flex-col gap-6">
                     {relatedArticles.map((related) => (
                       <Link
                         href={`/news-events/${related.id}`}
