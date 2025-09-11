@@ -59,15 +59,15 @@ const BannerAlliances = () => {
       {/* Gradient Circles */}
       <div
         ref={circle1Ref}
-        className=" absolute top-[-50vw] right-[-30vw] w-[60vw] h-[60vw] rounded-full bg-gradient-to-bl  from-[#ba6161] to-[#e36ca9] via-[#000000]  z-0"
+        className="absolute top-[-50vw] right-[-30vw] w-[90vw]  sm:w-[60vw] h-[50vh] sm:h-[60vw] rounded-full bg-gradient-to-bl from-[#8b5cf6] to-[#4c1d95] via-[#000000] z-0"
       />
       <div
         ref={circle2Ref}
-        className=" absolute top-[-50vw] right-[-30vw] w-[50vw] h-[50vw] rounded-full bg-gradient-to-bl  from-[#cc3838] to-[#e9308f] via-[#8d8d8d]   z-0"
+        className="absolute top-[-50vw] right-[-30vw] w-[80vw] h-[38vh]  sm:w-[50vw] sm:h-[50vw] rounded-full bg-gradient-to-bl from-[#a855f7] to-[#6b21a8] via-[#374151] z-0"
       />
       <div
         ref={circle3Ref}
-        className=" absolute top-[-50vw] right-[-30vw] w-[40vw] h-[40vw] rounded-full bg-gradient-to-bl  from-[#cb3434] to-[#c62277] via-[#8d8d8d]  z-0"
+        className="absolute top-[-50vw] right-[-30vw] w-[75vw] h-[28vh]  sm:w-[40vw] sm:h-[40vw] rounded-full bg-gradient-to-bl from-[#c084fc] to-[#7346c1] via-[#4b5566] z-0"
       />
 
       {/* Main Content */}
@@ -81,9 +81,7 @@ const BannerAlliances = () => {
           />
         </div>
 
-        <div className="flex flex-col md:flex-row md:items-center justify-between gap-8 mt-16">
-          
-        </div>
+        <div className="flex flex-col md:flex-row md:items-center justify-between gap-8 mt-16"></div>
       </div>
     </section>
   );

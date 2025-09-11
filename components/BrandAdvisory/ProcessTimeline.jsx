@@ -105,7 +105,7 @@ export default function ProcessTimeline() {
 
   return (
     <>
-      <div className="">
+      <div className="h-[50vh] flex flex-col items-center justify-end bg-black px-4">
         <TextReveal
           animation="rotateX"
           stagger={0.1}
@@ -225,13 +225,13 @@ export default function ProcessTimeline() {
             <div
               key={i}
               ref={(el) => (boxesRef.current[i] = el)}
-              className="group h-[25rem] sm:h-[40rem] w-[80%] xl:w-[70rem] relative"
+              className="group h-[40rem] sm:h-[40rem] w-[80%] xl:w-[70rem] relative"
             >
               {/* Glowing background */}
               {/* <div className="absolute -inset-1 bg-gradient-to-r from-pink-600 to-purple-600 rounded-3xl blur opacity-25 group-hover:opacity-75 transition duration-1000 group-hover:duration-200" /> */}
 
               {/* Main card */}
-              <div className="relative bg-gradient-to-r from-white to-gray-300 bg-gray-900/80 backdrop-blur-xl border border-white/10 rounded-3xl p-8 h-full transform transition-all duration-500 group-hover:scale-105 group-hover:-translate-y-2">
+              <div className="relative bg-gradient-to-r from-[black] to-[#df436a] bg-gray-900/80 backdrop-blur-xl border  rounded-3xl p-8 h-full transform transition-all duration-500 group-hover:scale-105 group-hover:-translate-y-2 border-white">
                 {/* Floating icon */}
                 {/* <div className="absolute -top-6 left-1/2 transform -translate-x-1/2">
                   <div
@@ -252,14 +252,14 @@ export default function ProcessTimeline() {
                       alt={step.title}
                       width={400}
                       height={400}
-                      className="mx-auto mt-6"
+                      className=" sm:size-[400px] size-[200px] mx-auto mt-6"
                     />
                   </div>
 
                   {/* Content */}
-                  <div className="lg:w-1/2  pt-8 text-left">
-                    <h3 className="text-60 font-thin mb-4  ">{step.title}</h3>
-                    <p className="text-gray-700 font-thin text-30 leading-relaxed">
+                  <div className="lg:w-1/2  pt-8 text-center sm:text-left">
+                    <h3 className="text-60 font-thin mb-4 text-white ">{step.title}</h3>
+                    <p className="text-gray-100 font-thin text-30 leading-relaxed">
                       {step.desc}
                     </p>
                   </div>

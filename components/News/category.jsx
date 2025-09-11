@@ -75,7 +75,7 @@ const NewsCategory = () => {
   });
 
   return (
-    <div className=" py-16 lg:py-44 bg-black ">
+    <div className=" py-16 md:py-44 bg-black ">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Header Section */}
@@ -90,18 +90,18 @@ const NewsCategory = () => {
 
         {/* Search and Filter Section */}
         <div className="mb-12">
-          <div className="flex flex-col lg:flex-row gap-6 items-start lg:items-center justify-between">
+          <div className="flex flex-col xl:flex-row gap-6 items-start lg:items-center justify-between">
             
             {/* Search Bar */}
-            <div className="relative flex-1 max-w-md">
-              <MagnifyingGlassIcon className="absolute left-4 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400" />
+            <div className="relative 2xl:flex-1 max-w-2xl 2xl:max-w-md">
+              <MagnifyingGlassIcon className="absolute left-4 top-1/2 transform -translate-y-1/2 size-6 z-20 text-gray-400" />
               <input
                 ref={searchRef}
                 type="text"
                 placeholder="Search news and articles..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full bg-white/5 backdrop-blur-xl border border-white/20 rounded-2xl pl-12 pr-4 py-4 text-white placeholder-gray-400 focus:border-white/40 focus:bg-white/10 transition-all duration-300 outline-none"
+                className="min-w-sm sm:min-w-md bg-white/5 backdrop-blur-xl border border-white/20 rounded-full pl-12 pr-4 py-4 text-white placeholder-gray-400 focus:border-white/40 focus:bg-white/10 transition-all duration-300 outline-none"
               />
             </div>
 
@@ -125,7 +125,7 @@ const NewsCategory = () => {
         </div>
 
         {/* Articles Grid */}
-        <div ref={articlesRef} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mt-20">
+        <div ref={articlesRef} className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 lg:grid-cols-3 gap-8 mt-20">
           {filteredArticles.map((article, index) => (
             <Link href={`/news-events/${article.id}`}
               key={article.id}

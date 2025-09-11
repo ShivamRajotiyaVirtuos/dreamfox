@@ -180,7 +180,7 @@ const Alliances_card = () => {
   return (
     <div
       ref={containerRef}
-      className="min-h-screen bg-black overflow-hidden py-26 md:py-36"
+      className="min-h-screen bg-black overflow-hidden pb-16 sm:py-26 md:py-36"
     >
       {offeringsData.map((offering, index) => (
         <div

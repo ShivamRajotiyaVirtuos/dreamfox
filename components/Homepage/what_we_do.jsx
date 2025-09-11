@@ -91,7 +91,7 @@ const WhatWeDo = () => {
                 x: 0,
                 opacity: 1,
                 zIndex,
-                duration: 2,
+                duration: 5,
                 ease: "power2.inOut",
               },
               "+=5"
@@ -176,7 +176,7 @@ const WhatWeDo = () => {
           <TextReveal
             animation="rotateX"
             stagger={0.1}
-            duration={0.8}
+            duration={0.5}
             className="text-30 text-gray-300 max-w-md mx-auto md:mx-0"
           >
             At DreamFox, we go far beyond simply offering digital services — we

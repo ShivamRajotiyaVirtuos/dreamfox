@@ -261,7 +261,7 @@ export default function OurVision() {
             end: "bottom 20%",
             scrub: 0.5,
             pin: true,
-            markers: true,
+            markers: false,
           },
         });
 

@@ -130,7 +130,7 @@ const JobDetail = () => {
           <span className="font-medium">Job URL copied to clipboard!</span>
         </div>
       )}
-      <section className="pt-56 pb-16 px-4">
+      <section className="pt-32 sm:pt-56 pb-16 px-4">
         <div className="max-w-4xl mx-auto">
           <div className="hero-element mb-6">
             <span className="text-pink-500 text-sm font-medium uppercase tracking-wider">
@@ -148,12 +148,12 @@ const JobDetail = () => {
           </p>
 
           <div className="hero-element flex flex-wrap gap-4">
-            <button className="bg-gradient-to-r from-pink-500 to-[#ea4079] text-white px-8 py-3 rounded-lg font-medium hover:scale-105 transition-transform">
+            <button className="bg-gradient-to-r from-pink-500 to-[#ea4079] text-white px-8 py-3 rounded-full font-medium hover:scale-105 transition-transform">
               Apply Now
             </button>
             <button
               onClick={handleShareJob}
-              className="border  cursor-pointer border-gray-600 text-white px-8 py-3 rounded-lg font-medium hover:bg-gray-800 transition-colors"
+              className="border  cursor-pointer border-gray-600 text-white px-8 py-3 rounded-full font-medium hover:bg-gray-800 transition-colors"
             >
               Share Job
             </button>
@@ -161,7 +161,7 @@ const JobDetail = () => {
         </div>
       </section>
 
-      <div className="max-w-4xl mx-auto pb-20">
+      <div className="max-w-4xl mx-auto px-4 sm:px-0 pb-20">
         {/* Job Description */}
         <section
           ref={(el) => (sectionsRef.current[0] = el)}
@@ -328,7 +328,7 @@ const JobDetail = () => {
           className="mb-12 opacity-0"
         >
           <div className="bg-gray-900 border border-gray-800 rounded-lg p-8">
-            <h3 className="text-xl font-semibold text-white mb-4">
+            <h3 className="text-24 font-semibold text-white mb-4">
               About This Role
             </h3>
             <div className="grid md:grid-cols-2 gap-6 text-gray-300">
@@ -354,24 +354,23 @@ const JobDetail = () => {
           </div>
         </section>
 
-        {/* Apply Section */}
-        {/* <section
+        <section
           ref={(el) => (sectionsRef.current[5] = el)}
           className="opacity-0"
         >
-          <div className="bg-gradient-to-r from-pink-500/10 to-purple-600/10 border border-pink-500/20 rounded-lg p-8 text-center">
+          <div className="bg-gradient-to-r from-pink-500/50 to-purple-600/10 border border-pink-500/20 rounded-lg p-8 text-center">
             <h3 className="text-24 font-semibold text-white mb-4">
               Ready to Join Us?
             </h3>
             <p className="text-gray-300 mb-6 max-w-2xl mx-auto">
-              We'd love to hear from you. Send us your resume and let's start a conversation 
-              about how you can contribute to our mission.
+              We'd love to hear from you. Send us your resume and let's start a
+              conversation about how you can contribute to our mission.
             </p>
-            <button className="bg-gradient-to-r from-pink-500 to-purple-600 text-white px-8 py-3 rounded-full font-medium hover:scale-105 transition-transform">
-              Apply for This Position
+            <button className="bg-gradient-to-r from-pink-500 to-[#ea4079] text-white px-8 py-3 rounded-full font-medium hover:scale-105 transition-transform cursor-pointer">
+              Apply Now
             </button>
           </div>
-        </section> */}
+        </section>
       </div>
     </div>
   );

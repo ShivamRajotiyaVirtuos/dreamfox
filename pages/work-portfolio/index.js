@@ -90,8 +90,8 @@ const TariffCard = () => {
                 <div className="text-center">
                     <BannerTextReveal
                         titleClassName="text-120 font-semibold "
-                        descriptionClassName="text-30 max-w-7xl px-4"
-                        title="Work &nbsp;Portfolio"
+                        descriptionClassName="text-30 max-w-7xl px-4 mt-4"
+                        title="Work Portfolio"
                         description="Discover our latest projects and creative solutions that showcase our expertise in web development, design, and digital innovation."
                     />
                 </div>

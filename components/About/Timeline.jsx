@@ -43,20 +43,90 @@ const StackingCards = () => {
       const totalCards = cards.length - 1;
       const cardWidth = cards[0]?.offsetWidth || 0;
       const gap = 40; // pixels gap between cards
-      const visiblePortion = cardWidth * 0.13;
-      const stackOffset = cardWidth - visiblePortion; // Move by 75% of card width
+      // const visiblePortion = cardWidth * 0.13;
+      // const stackOffset = cardWidth - visiblePortion; 
+      
+      // Move by 75% of card width
+      const mm = gsap.matchMedia();
 
-      gsap.to(cards, {
-        x: (i) => -i * stackOffset,
-        duration: (i) => 0.5 * i,
-        ease: "none",
-        scrollTrigger: {
-          trigger: ".stacking-cards",
-          pin: true,
-          scrub: true,
-          end: `+=${totalCards * 100}% bottom`,
-        },
+      mm.add("(min-width: 768px)", () => {
+        const cardWidth = cards[0]?.offsetWidth || 0;
+        const visiblePortion = cardWidth * 0.13;
+        const stackOffset = cardWidth - visiblePortion;
+
+        gsap.to(cards, {
+          x: (i) => -i * stackOffset,
+          duration: (i) => 0.5 * i,
+          ease: "none",
+          scrollTrigger: {
+            trigger: ".stacking-cards",
+            pin: true,
+            scrub: true,
+            end: `+=${totalCards * 150}% bottom`,
+            anticipatePin: 1,
+          },
+        });
       });
+
+      mm.add("(max-width: 768px)", () => {
+        const cardWidth = cards[0]?.offsetWidth || 0;
+        const visiblePortion = cardWidth * 0; // Show more on tablet
+        const stackOffset = cardWidth - visiblePortion;
+
+        gsap.to(cards, {
+          x: (i) => -i * stackOffset,
+          duration: (i) => 0.6 * i,
+          ease: "none",
+          scrollTrigger: {
+            trigger: ".stacking-cards",
+            pin: true,
+            scrub: true,
+            end: `+=${totalCards * 120}% bottom`,
+            anticipatePin: 1,
+          },
+        });
+      });
+
+      // Mobile (below 768px)
+      // mm.add("(max-width: 767px)", () => {
+      //   // Reset any transforms
+      //   gsap.set(cards, { x: 0 });
+
+      //   // Create vertical scroll animation for mobile
+      //   cards.forEach((card, index) => {
+      //     gsap.fromTo(card, 
+      //       {
+      //         opacity: 0,
+      //         y: 100,
+      //         scale: 0.9
+      //       },
+      //       {
+      //         opacity: 1,
+      //         y: 0,
+      //         scale: 1,
+      //         duration: 0.8,
+      //         ease: "power2.out",
+      //         scrollTrigger: {
+      //           trigger: card,
+      //           start: "top 80%",
+      //           end: "bottom 20%",
+      //           toggleActions: "play reverse play reverse",
+      //         }
+      //       }
+      //     );
+      //   });
+      // }); 
+      // gsap.to(cards, {
+      //   x: (i) => -i * stackOffset,
+      //   duration: (i) => 0.5 * i,
+      //   ease: "none",
+      //   scrollTrigger: {
+      //     trigger: ".stacking-cards",
+      //     pin: true,
+      //     scrub: true,
+      //     end: `+=${totalCards * 100}% bottom`,
+      //   },
+      // });
     }, containerRef);
 
     return () => ctx.revert();
@@ -86,10 +156,14 @@ const StackingCards = () => {
                   key={index}
                   className="card flex-shrink-0 w-full  h-[60vh] border-1 border-white card-container-pink rounded-4xl "
                 >
-                  <div className="flex h-full  overflow-hidden card-container-pink bg-black/10 backdrop-blur-2xl 0 rounded-4xl">
+                  <div className="flex flex-col sm:flex-row h-full  overflow-hidden card-container-pink bg-black/10 backdrop-blur-2xl 0 rounded-4xl">
                     {/* Left */}
-                    <div className="flex lg:w-1/2 flex-col gap-5 justify-start pl-64 pr-4  pt-[68px] bg-black/10">
-                      <div className="text-250 absolute -left-44 top-48 -rotate-90 font-semibold text-gray-300/20">
+                    <div className="flex lg:w-1/2 flex-col gap-5 justify-start sm:pl-64 pr-24 sm:pr-4 p-10 sm:p-0 sm:pt-[68px] bg-black/10">
+                      <div className="hidden sm:block  text-250 absolute -left-44 top-48 -rotate-90 font-semibold text-gray-300/20">
+                        {card.year}
+                      </div>
+
+                      <div className="sm:hidden  text-[7rem] absolute  top-32 font-semibold text-gray-300/20">
                         {card.year}
                       </div>
                       <div className="text-48 text-white font-bold mt-2">

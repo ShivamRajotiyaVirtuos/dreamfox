@@ -150,7 +150,7 @@ const NewsDetailPage = () => {
   ];
 
   return (
-    <div className="min-h-scree  pt-44 bg-gradient-to-br relative from-black via-gray-900 to-black pb-16 lg:pb-32">
+    <div className="min-h-scree  pt-28 sm:pt-44 bg-gradient-to-br relative from-black via-gray-900 to-black pb-16 lg:pb-32">
       {/* Navigation */}
       {/* <nav ref={headerRef} className="bg-black/50 backdrop-blur-xl border-b border-white/10 px-6 py-4 sticky top-0 z-50">
         <div className="max-w-7xl mx-auto flex items-center gap-4">
@@ -174,8 +174,8 @@ const NewsDetailPage = () => {
 
       {/* Hero Section */}
       <section ref={heroRef} className="relative pb-16  ">
-        <div className="container mx-auto px-6 border-b-[0.5px] py-20 border-t-[0.5px] border-gray-700">
-          <div className=" mx-auto flex gap-20 items-center ">
+        <div className="container mx-auto px-6 xl:border-b-[0.5px] xl:py-20 xl:border-t-[0.5px] border-gray-700">
+          <div className=" mx-auto flex flex-col lg:flex-row gap-6 xl:gap-20 items-center ">
             {/* Category and Tags */}
 
             {/* Title */}
@@ -225,13 +225,13 @@ const NewsDetailPage = () => {
       </section>
 
       {/* Content Section */}
-      <section className="py-16 relative">
+      <section className="xl:py-16 relative">
         <div className="container mx-auto ">
           <div className="grid grid-cols-1 lg:grid-cols-4 gap-12">
             {/* Main Content */}
             <div
               ref={contentRef}
-              className="lg:col-span-3 border-r-[0.5px] pr-12  border-gray-700"
+              className="lg:col-span-3 sm:border-r-[0.5px] sm:pr-12  border-gray-700"
             >
               <div className=" ">
                 {/* Excerpt */}

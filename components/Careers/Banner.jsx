@@ -72,8 +72,8 @@ const Careersbanner = () => {
       /> */}
 
       {/* Main Content */}
-      <div className="container mx-auto px-6 relative z-10 flex  justify-between py-24 banner-trigger">
-        <div className="w-3/5">
+      <div className="container mx-auto px-6 relative z-10 flex  justify-between flex-col xl:flex-row py-24 banner-trigger">
+        <div className="xl:w-3/5">
           <BannerTextReveal
             titleClassName="text-white text-100 font-bold leading-tight"
             descriptionClassName="text-24 text-white mt-8 sm:mt-12 max-w-7xl"
@@ -85,7 +85,7 @@ const Careersbanner = () => {
 
         {/* <div className="flex flex-col md:flex-row md:items-center justify-between gap-8 mt-16"> */}
 
-        <div className="flex w-2/5 flex-col gap-15">
+        <div className="flex xl:w-2/5 flex-col gap-15">
           <TextReveal
             style={{ pointerEvents: "none" }}
             animation="fadeup"

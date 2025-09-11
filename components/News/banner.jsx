@@ -67,7 +67,7 @@ const NewsroomPage = () => {
   return (
     <div className="relative">
       <div className="absolute bottom-0 left-0 w-full h-48 bg-gradient-to-t from-black via-black/20 via-black/70 to-transparent -z-5"></div>
-      <div className=" container pt-64 min-h-screen ">
+      <div className=" container pt-32 sm:pt-64 min-h-screen ">
         {/* Header */}
         {/* Black gradient overlay at bottom - stronger version */}
 
@@ -79,7 +79,7 @@ const NewsroomPage = () => {
           className="absolute top-0 left-0 w-full h-full object-cover -z-10 opacity-[15%]"
         />
         <header ref={headerRef} className="pt-8 pb-4">
-          <div className=" mx-auto px-6">
+          <div className=" mx-auto sm:px-6">
             <div className="text-[#e83584] text-20 font-semibold tracking-wider uppercase mb-2">
               NEWS AND PRESS
             </div>
@@ -87,7 +87,7 @@ const NewsroomPage = () => {
         </header>
 
         {/* Hero Section */}
-        <main className=" mx-auto px-6">
+        <main className=" mx-auto sm:px-6">
           <div className="max-w-7xl">
             <BannerTextReveal
               titleClassName="text-white text-130 font-bold leading-tight"
@@ -107,20 +107,20 @@ const NewsroomPage = () => {
 
           {/* Action Buttons */}
           {/* <div ref={buttonsRef} className="flex gap-4 mb-16">
-          <button className="bg-[#e83584] hover:bg-pink-600 text-white px-6 py-3 rounded-lg font-medium transition-all duration-300 transform hover:scale-105 hover:shadow-lg">
+          <button className="bg-[#e83584] hover:bg-pink-600 text-white sm:px-6 py-3 rounded-lg font-medium transition-all duration-300 transform hover:scale-105 hover:shadow-lg">
             Media inquiry →
           </button>
-          <button className="border border-[#e83584] text-[#e83584] hover:bg-pink-50 px-6 py-3 rounded-lg font-medium transition-all duration-300 transform hover:scale-105">
+          <button className="border border-[#e83584] text-[#e83584] hover:bg-pink-50 sm:px-6 py-3 rounded-lg font-medium transition-all duration-300 transform hover:scale-105">
             Media kit
           </button>
         </div> */}
 
           {/* News Card */}
           <div ref={cardRef} className=" mt-16 xl:mt-24">
-            <div className="bg-gradient-to-r from-black/10 via-gray- to-[#ea4079] border border-[#ea4079] backdrop-blur-xl  rounded-3xl  shadow-2xl p-10 flex  overflow-hidden hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-1">
+            <div className="bg-gradient-to-r from-black/10 via-gray- to-[#ea4079] border border-[#ea4079] backdrop-blur-xl  rounded-3xl  shadow-2xl p-4 sm:p-10 flex flex-col lg:flex-row overflow-hidden hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-1">
               {/* Card Header */}
-              <div className="relative w-1/2">
-                <div className="bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 h-full flex items-center justify-center rounded-2xl relative overflow-hidden">
+              <div className="relative lg:w-1/2">
+                <div className=" h-full flex items-center justify-center rounded-2xl relative overflow-hidden">
                   {/* Background Pattern */}
                   <div className="absolute inset-0 opacity-10">
                     <div className="absolute inset-0 bg-gradient-to-br from-[#e83584]/20 to-transparent"></div>
@@ -132,7 +132,7 @@ const NewsroomPage = () => {
               </div>
 
               {/* Card Content */}
-              <div className="p-8 w-1/2">
+              <div className="sm:p-8 py-4 sm:py-0 lg:w-1/2">
                 <div className=" text-white flex gap-2">
                   <span className="text-[#e83584] bg-white px-3 py-1 rounded-full text-xs flex items-center justify-center font-medium">
                     PRESS RELEASES
@@ -144,7 +144,7 @@ const NewsroomPage = () => {
                   </span>
                 </div>
                 <TextReveal
-                  className="text-30 mt-10 font-light text-gray-50 mb-6 leading-tight hover:text-gray-100 transition-colors duration-300"
+                  className="text-30 mt-4 sm:mt-10 font-light text-gray-50 mb-4 sm:mb-6 leading-tight hover:text-gray-100 transition-colors duration-300"
                   animation="rotateX"
                   stagger={0.1}
                   delay={1.5}
@@ -156,7 +156,7 @@ const NewsroomPage = () => {
                   {/* </h2> */}
                 </TextReveal>
 
-                <div className="flex items-center gap-3 mb-16">
+                <div className="flex items-center gap-3 mb-10 sm:mb-16">
                   <div className="w-10 h-10 bg-gradient-to-br from-pink-400 to-pink-600 rounded-full flex items-center justify-center">
                     <span className="text-white text-sm font-semibold">V</span>
                   </div>
@@ -171,7 +171,7 @@ const NewsroomPage = () => {
 
                 <Link
                   href={`/news-events/1`}
-                  className="text-[#e83584] hover:bg-transparent hover:border hover:text-white border-white bg-white px-6 py-3 rounded-lg font-medium transition-all duration-300 transform hover:scale-105 hover:shadow-lg group "
+                  className="text-[#e83584] hover:bg-transparent hover:border hover:text-white border-white bg-white sm:px-6 py-3 rounded-lg font-medium transition-all duration-300 transform hover:scale-105 hover:shadow-lg group px-6"
                 >
                   Read More
                   <span className="ml-2 group-hover:translate-x-1 transition-transform duration-300">

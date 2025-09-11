@@ -73,7 +73,7 @@ const OurWork = () => {
         start: "top top",
         end: "+=800%",
         scrub: 1.5,
-        markers: true,
+        markers: false,
         pin: true,
         anticipatePin: 1,
       },

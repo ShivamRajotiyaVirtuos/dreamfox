@@ -37,7 +37,9 @@ const Navbar = () => {
   const toggleDropdown = () => {
     setDropdownOpen(!dropdownOpen);
   };
-
+  const toggleDropdownAbout = () => {
+    setDropdownOpenAbout(!dropdownOpenAbout);
+  };
   //   const handleMouseEnter = (e) => {
   //     if (!buttonRef.current) return;
 
@@ -205,6 +207,15 @@ const Navbar = () => {
                     // onClick={() => {
                     //   setActive("services");
                     // }}
+                    href="/about"
+                    className="block px-6 uppercase py-3 text-white font-medium text-base hover:text-[#ec466f] text-center transition-all duration-300 ease-out rounded-xl transform hover:scale-110 "
+                  >
+                    Background
+                  </Link>
+                  <Link
+                    // onClick={() => {
+                    //   setActive("services");
+                    // }}
                     href="/about/team"
                     className="block px-6 uppercase py-3 text-white font-medium text-base hover:text-[#ec466f] text-center transition-all duration-300 ease-out rounded-xl transform hover:scale-110 "
                   >
@@ -282,6 +293,15 @@ const Navbar = () => {
                 }`}
               >
                 <div className="p-2">
+                  <Link
+                    // onClick={() => {
+                    //   setActive("services");
+                    // }}
+                    href="/services"
+                    className="block px-6 uppercase py-3 text-white font-medium text-base hover:text-[#ec466f] text-center transition-all duration-300 ease-out rounded-xl transform hover:scale-110 "
+                  >
+                    Our Work
+                  </Link>
                   <Link
                     // onClick={() => {
                     //   setActive("services");
@@ -451,7 +471,7 @@ const Navbar = () => {
         {/* Mobile Menu */}
         <div
           className={`lg:hidden overflow-hidden transition-all duration-500 ease-out ${
-            isMenuOpen ? "max-h-[29rem] opacity-100" : "max-h-0 opacity-0"
+            isMenuOpen ? "max-h-full opacity-100" : "max-h-0 opacity-0"
           }`}
         >
           <div className="mt-4 pb-4 border-t border-white/10">
@@ -462,21 +482,79 @@ const Navbar = () => {
                   : "-translate-y-4 opacity-0"
               }`}
             >
-              <a
-                href="#"
-                className="text-white text-xl font-bold hover:text-[#ec466f] transition-all duration-300 px-2 py-2 rounded-lg hover:bg-white/10 transform hover:translate-x-2"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                HOME
-              </a>
+              <div>
+                <button
+                  onClick={toggleDropdownAbout}
+                  className="text-white text-xl font-bold hover:text-[#ec466f] transition-all duration-300 flex items-center space-x-2 px-2 py-2 rounded-lg hover:bg-white/10 transform hover:translate-x-2 w-full text-left"
+                >
+                  <span>ABOUT</span>
+                  <ChevronDownIcon
+                    className={`w-5 h-5 transition-transform duration-300 ${
+                      dropdownOpenAbout ? "rotate-180" : ""
+                    }`}
+                  />
+                </button>
 
-              <a
-                href="#"
-                className="text-white text-xl font-bold hover:text-[#ec466f] transition-all duration-300 px-2 py-2 rounded-lg hover:bg-white/10 transform hover:translate-x-2"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                ABOUT
-              </a>
+                {/* Mobile Services Submenu */}
+                <div
+                  className={`overflow-hidden transition-all duration-300 ease-out ${
+                    dropdownOpenAbout
+                      ? "max-h-64 opacity-100 mt-2"
+                      : "max-h-0 opacity-0"
+                  }`}
+                >
+                  <div className="p-2">
+                    <Link
+                      // onClick={() => {
+                      //   setActive("services");
+                      onClick={() => setIsMenuOpen(false)}
+                      // }}
+                      href="/about"
+                      className="block px-6 uppercase py-3 text-white font-medium text-base hover:text-[#ec466f]  transition-all duration-300 ease-out rounded-xl transform hover:scale-110 "
+                    >
+                      Background
+                    </Link>
+                    <Link
+                      // onClick={() => {
+                      //   setActive("services");
+                      onClick={() => setIsMenuOpen(false)}
+                      // }}
+                      href="/about/team"
+                      className="block px-6 uppercase py-3 text-white font-medium text-base hover:text-[#ec466f]  transition-all duration-300 ease-out rounded-xl transform hover:scale-110 "
+                    >
+                      Our Team
+                    </Link>
+
+                    <Link
+                      // onClick={() => {
+                      //   setActive("services");
+                      onClick={() => setIsMenuOpen(false)}
+                      // }}
+                      href="/about/careers"
+                      className="block uppercase px-6 py-3 text-white font-medium text-base hover:text-[#ec466f]  transition-all duration-300 ease-out rounded-xl transform hover:scale-110 "
+                    >
+                      Careers
+                    </Link>
+                    <Link
+                      // onClick={() => {
+                      //   setActive("services");
+                      // }}
+                      onClick={() => setIsMenuOpen(false)}
+                      href="/about/alliances"
+                      className="block uppercase px-6 py-3 text-white font-medium text-base hover:text-[#ec466f]  transition-all duration-300 ease-out rounded-xl transform hover:scale-110 "
+                    >
+                      Alliances
+                    </Link>
+                    <Link
+                      onClick={() => setIsMenuOpen(false)}
+                      href="/news-events"
+                      className="block uppercase px-6 py-3 text-white font-medium text-base hover:text-[#ec466f]  transition-all duration-300 ease-out rounded-xl transform hover:scale-110 "
+                    >
+                      News & Events
+                    </Link>
+                  </div>
+                </div>
+              </div>
 
               {/* Mobile Services Dropdown */}
               <div>
@@ -496,48 +574,73 @@ const Navbar = () => {
                 <div
                   className={`overflow-hidden transition-all duration-300 ease-out ${
                     dropdownOpen
-                      ? "max-h-48 opacity-100 mt-2"
+                      ? "max-h-64 opacity-100 mt-2"
                       : "max-h-0 opacity-0"
                   }`}
                 >
-                  <div className="pl-6 space-y-2">
-                    <a
-                      href="#"
-                      className="block text-white/80 text-lg hover:text-[#ec466f] py-2 px-4 rounded-lg text-center transition-all duration-300 ease-out transform hover:translate-x-2"
+                  <div className="p-2">
+                    <Link
+                      // onClick={() => {
+                      //   setActive("services");
+                      // }}
                       onClick={() => setIsMenuOpen(false)}
+                      href="/services"
+                      className="block px-6 uppercase py-3 text-white font-medium text-base hover:text-[#ec466f]  transition-all duration-300 ease-out rounded-xl transform hover:scale-110 "
+                    >
+                      Our Work
+                    </Link>
+                    <Link
+                      // onClick={() => {
+                      //   setActive("services");
+                      // }}
+                      href="/services/brand-advisory"
+                      className="block px-6 uppercase py-3 text-white font-medium text-base hover:text-[#ec466f]  transition-all duration-300 ease-out rounded-xl transform hover:scale-110 "
                     >
                       Branding
-                    </a>
+                    </Link>
 
-                    <a
-                      href="#"
-                      className="block text-white/80 text-lg hover:text-[#ec466f] py-2 px-4 rounded-lg text-center transition-all duration-300 ease-out transform hover:translate-x-2"
+                    <Link
+                      // onClick={() => {
+                      //   setActive("services");
+                      // }}
                       onClick={() => setIsMenuOpen(false)}
+                      href="/services/design-studio"
+                      className="block uppercase px-6 py-3 text-white font-medium text-base hover:text-[#ec466f]  transition-all duration-300 ease-out rounded-xl transform hover:scale-110 "
                     >
                       Design
-                    </a>
-                    <a
-                      href="#"
-                      className="block text-white/80 text-lg hover:text-[#ec466f] py-2 px-4 rounded-lg text-center transition-all duration-300 ease-out transform hover:translate-x-2"
+                    </Link>
+                    <Link
+                      // onClick={() => {
+                      //   setActive("services");
+                      // }}
                       onClick={() => setIsMenuOpen(false)}
+                      href="/services/digital-marketing"
+                      className="block uppercase px-6 py-3 text-white font-medium text-base hover:text-[#ec466f]  transition-all duration-300 ease-out rounded-xl transform hover:scale-110 "
                     >
                       Ai Marketing
-                    </a>
-                    <a
-                      href="#"
-                      className="block text-white/80 text-lg hover:text-[#ec466f] py-2 px-4 rounded-lg text-center transition-all duration-300 ease-out transform hover:translate-x-2"
+                    </Link>
+                    <Link
                       onClick={() => setIsMenuOpen(false)}
+                      href="/services/digital-media-mix"
+                      className="block uppercase px-6 py-3 text-white font-medium text-base hover:text-[#ec466f]  transition-all duration-300 ease-out rounded-xl transform hover:scale-110 "
                     >
                       Media
-                    </a>
+                    </Link>
                   </div>
                 </div>
               </div>
-
+              <Link
+                href="/work-portfolio"
+                className="text-white text-xl font-bold hover:text-[#ec466f] transition-all duration-300 px-2 py-2 rounded-lg hover:bg-white/10 transform hover:translate-x-2"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                PORTFOLIO
+              </Link>
               {/* Mobile Contact Button */}
               <Link
                 href={"/contactus"}
-                className="relative px-6 py-3 text-white font-black text-lg bg-gradient-to-r from-[#ec466f] to-[#ff6b9d] rounded-full overflow-hidden group hover:shadow-xl transition-all duration-300 mx-2 mt-4"
+                onClick={() => setIsMenuOpen(false)}
+                className="relative px-6  w-fit py-3 text-white font-black text-lg bg-gradient-to-r from-[#ec466f] to-[#ff6b9d] rounded-full overflow-hidden group hover:shadow-xl transition-all duration-300 mx-2 mt-4"
               >
                 <span className="relative z-10">CONTACT US</span>
                 <div className="absolute inset-0 bg-gradient-to-r from-pink-600 to-purple-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>

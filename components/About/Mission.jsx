@@ -163,7 +163,7 @@ const MissionVision = () => {
           {/* Right Images */}
           <div
             ref={missionImagesRef}
-            className="grid grid-cols-2 gap-4 order-2 md:order-none border-solid h-full"
+            className="grid grid-cols-2 mt-8 sm:mt-0 gap-4 order-2 md:order-none border-solid h-full"
             style={{
               borderWidth: "0px",
               borderColor: "transparent",
@@ -197,7 +197,7 @@ const MissionVision = () => {
           {/* Left Images */}
           <div
             ref={visionImagesRef}
-            className="grid grid-cols-2 gap-4 order-2 md:order-none border-solid h-full"
+            className="grid grid-cols-2 mt-8 sm:mt-0 gap-4 order-2 md:order-none border-solid h-full"
             style={{
               borderWidth: "0px",
               borderColor: "transparent",

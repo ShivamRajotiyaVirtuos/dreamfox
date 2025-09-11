@@ -156,7 +156,7 @@ const JobListingsGrid = () => {
   };
 
   return (
-    <div className="min-h-screen bg-black  px-6" id="openings">
+    <div className="min-h-screen pb-16 lg:pb-32 bg-black  px-6" id="openings">
       <div className="container mx-auto">
         {/* Header */}
         <div className="text-center mb-12 lg:mb-24">
