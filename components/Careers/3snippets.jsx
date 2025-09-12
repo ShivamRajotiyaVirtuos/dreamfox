@@ -2,6 +2,7 @@ import React, { useEffect, useRef } from "react";
 import { ArrowRightIcon } from "@heroicons/react/24/solid";
 import TextReveal from "../Text Reveal/textreveal";
 import Link from "next/link";
+import SidebarForm from "../Sidebar/sideform";
 
 const JobListingsGrid = () => {
   const gridRef = useRef(null);
@@ -157,6 +158,7 @@ const JobListingsGrid = () => {
 
   return (
     <div className="min-h-screen pb-16 lg:pb-32 bg-black  px-6" id="openings">
+      <SidebarForm/>
       <div className="container mx-auto">
         {/* Header */}
         <div className="text-center mb-12 lg:mb-24">
@@ -241,7 +243,7 @@ const JobListingsGrid = () => {
             Don't see a position that fits? We're always looking for talented
             individuals.
           </p>
-          <button className="bg-[#ec466f] hover:bg-[#ec466f] text-white font-semibold px-8 py-3 rounded-lg transition-colors duration-300">
+          <button className="bg-[#ec466f] hover:bg-[#ec466f] text-white font-semibold px-8 py-3 rounded-full transition-colors duration-300">
             Send Us Your Resume
           </button>
         </div>
