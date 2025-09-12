@@ -3,6 +3,7 @@
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+// import { o } from "framer-motion/dist/types.d-D0HXPxHm";
 
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
@@ -16,13 +17,14 @@ const Alliances_card = () => {
       id: 1,
       title: "Enterprise Database Solutions and Cloud Infrastructure",
       category: "ORACLE",
+      alliance:"oracle",
       services: [
         "Database Management",
         "Cloud Infrastructure",
         "Enterprise Applications",
         "Data Analytics",
       ],
-      image: "/images/home/oracle.webp",
+      image: "/images/alliances/oracle.webp",
       bgColor: "from-purple-900 to-blue-900",
       description:
         "Leveraging Oracle's robust database and cloud solutions to deliver scalable enterprise applications.",
@@ -31,13 +33,14 @@ const Alliances_card = () => {
       id: 2,
       title: "Advanced Analytics and Business Intelligence Solutions",
       category: "COHERING",
+      alliance:"cohering",
       services: [
         "Data Analytics",
         "Business Intelligence",
         "Machine Learning",
         "Predictive Modeling",
       ],
-      image: "/images/home/cohering.webp",
+      image: "/images/alliances/cohering.webp",
       bgColor: "from-orange-800 to-purple-900",
       description:
         "Transforming raw data into actionable insights through advanced analytics and AI-driven solutions.",
@@ -46,13 +49,14 @@ const Alliances_card = () => {
       id: 3,
       title: "Web Hosting and Domain Management Excellence",
       category: "GO-DADDY",
+      alliance:"godaddy",
       services: [
         "Web Hosting",
         "Domain Registration",
         "Website Builder",
         "SSL Certificates",
       ],
-      image: "/images/home/godaddy.webp",
+      image: "/images/alliances/godaddy.webp",
       bgColor: "from-purple-900 to-blue-900",
       description:
         "Comprehensive web presence solutions from domain registration to fully managed hosting services.",
@@ -61,13 +65,14 @@ const Alliances_card = () => {
       id: 4,
       title: "Cloud Computing and Digital Transformation Solutions",
       category: "MICROSOFT",
+      alliance:"microsoft",
       services: [
         "Azure Cloud Services",
         "Office 365",
         "Power Platform",
         "AI & Machine Learning",
       ],
-      image: "/images/home/microsoft.webp",
+      image: "/images/alliances/microsoft.webp",
       bgColor: "from-purple-900 to-blue-900",
       description:
         "Empowering businesses with Microsoft's comprehensive cloud ecosystem and productivity tools.",
@@ -76,13 +81,14 @@ const Alliances_card = () => {
       id: 5,
       title: "Customer Relationship Management and Sales Automation",
       category: "SALESFORCE",
+      alliance:"salesforce",
       services: [
         "CRM Implementation",
         "Sales Cloud",
         "Marketing Cloud",
         "Service Cloud",
       ],
-      image: "/images/home/salesforce.webp",
+      image: "/images/alliances/salesforce.webp",
       bgColor: "from-purple-900 to-blue-900",
       description:
         "Building stronger customer relationships through world-class CRM and automation solutions.",
@@ -128,7 +134,7 @@ const Alliances_card = () => {
               opacity: 1,
               scale: 1,
               duration: 0.6,
-              ease: "back.out(1.7)",
+              ease: "back.out(0.5)",
             },
             "-=0.4"
           )
@@ -185,6 +191,7 @@ const Alliances_card = () => {
       {offeringsData.map((offering, index) => (
         <div
           key={offering.id}
+          id={offering.alliance}
           className={`offering-card-${index} flex items-center justify-center relative py-16 md:py-36`}
         >
           <div className="absolute inset-0  bg-black" />

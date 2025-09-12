@@ -112,7 +112,7 @@ const JobDetail = () => {
   return (
     <div ref={containerRef} className="min-h-screen bg-black text-white">
       {/* Hero Section */}
-      {showCopyMessage && (
+      {/* {showCopyMessage && (
         <div className="fixed top-32 right-8 z-[100] bg-green-500 text-white px-6 py-3 rounded-lg shadow-lg flex items-center gap-3 animate-bounce">
           <svg
             className="w-5 h-5"
@@ -129,7 +129,7 @@ const JobDetail = () => {
           </svg>
           <span className="font-medium">Job URL copied to clipboard!</span>
         </div>
-      )}
+      )} */}
       <section className="pt-32 sm:pt-56 pb-16 px-4">
         <div className="max-w-4xl mx-auto">
           <div className="hero-element mb-6">
@@ -147,16 +147,37 @@ const JobDetail = () => {
             power the next generation of digital experiences.
           </p>
 
-          <div className="hero-element flex flex-wrap gap-4">
+          <div className="hero-element relative flex flex-wrap gap-4">
             <button className="bg-gradient-to-r from-pink-500 to-[#ea4079] text-white px-8 py-3 rounded-full font-medium hover:scale-105 transition-transform">
               Apply Now
             </button>
-            <button
-              onClick={handleShareJob}
-              className="border  cursor-pointer border-gray-600 text-white px-8 py-3 rounded-full font-medium hover:bg-gray-800 transition-colors"
-            >
-              Share Job
-            </button>
+            <div className="relative">
+              <button
+                onClick={handleShareJob}
+                className="border  cursor-pointer border-gray-600 text-white px-8 py-3 rounded-full font-medium hover:bg-gray-800 transition-colors"
+              >
+                Share Job
+              </button>
+
+              {showCopyMessage && (
+                <div className="absolute top-1.5 -right-24 z-[100] border border-white text-gray-400 px-4 py-2 rounded-lg shadow-lg flex items-center gap-3 animate-pulse">
+                  {/* <svg
+                            className="w-5 h-5"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              strokeWidth={2}
+                              d="M5 13l4 4L19 7"
+                            />
+                          </svg> */}
+                  <span className="font-medium text-xs">Copied!</span>
+                </div>
+              )}
+            </div>
           </div>
         </div>
       </section>
