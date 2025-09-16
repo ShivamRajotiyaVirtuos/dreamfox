@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { ArrowRightIcon } from "@heroicons/react/24/solid";
 import TextReveal from "../Text Reveal/textreveal";
 import Link from "next/link";
@@ -7,6 +7,7 @@ import SidebarForm from "../Sidebar/sideform";
 const JobListingsGrid = () => {
   const gridRef = useRef(null);
   const cardsRef = useRef([]);
+  const [open, setOpen] = useState(true)
 
   const jobListings = [
     {
@@ -158,7 +159,7 @@ const JobListingsGrid = () => {
 
   return (
     <div className="min-h-screen pb-16 lg:pb-32 bg-black  px-6" id="openings">
-      <SidebarForm/>
+      <SidebarForm />
       <div className="container mx-auto">
         {/* Header */}
         <div className="text-center mb-12 lg:mb-24">
@@ -195,7 +196,7 @@ const JobListingsGrid = () => {
               ref={(el) => (cardsRef.current[index] = el)}
               className="group cursor-pointer opacity-0"
             >
-             <div className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-lg p-6 h-full hover:border-white/20 hover:bg-white hover:text-black transition-all duration-300 relative overflow-hidden shadow-2xl group">
+              <div className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-lg p-6 h-full hover:border-white/20 hover:bg-white hover:text-black transition-all duration-300 relative overflow-hidden shadow-2xl group">
                 {/* External link icon */}
                 <div className="absolute top-4 right-4">
                   <ArrowRightIcon className="w-5 h-5 text-gray-500 group-hover:text-gray-900 transition-colors" />
@@ -209,7 +210,9 @@ const JobListingsGrid = () => {
                 {/* Job Code (if available) */}
                 {job.code && (
                   <div className="mb-3">
-                    <span className="text-gray-400 group-hover:text-black text-sm">Code: </span>
+                    <span className="text-gray-400 group-hover:text-black text-sm">
+                      Code:{" "}
+                    </span>
                     <span className="text-gray-300 group-hover:text-black text-sm font-medium">
                       {job.code}
                     </span>
@@ -218,13 +221,19 @@ const JobListingsGrid = () => {
 
                 {/* Location */}
                 <div className="mb-3">
-                  <span className="text-gray-400 group-hover:text-black text-sm">Location: </span>
-                  <span className="text-gray-300 group-hover:text-black text-sm">{job.location}</span>
+                  <span className="text-gray-400 group-hover:text-black text-sm">
+                    Location:{" "}
+                  </span>
+                  <span className="text-gray-300 group-hover:text-black text-sm">
+                    {job.location}
+                  </span>
                 </div>
 
                 {/* Creation Date */}
                 <div className="mb-4">
-                  <span className="text-gray-400 group-hover:text-black text-sm">Creation date: </span>
+                  <span className="text-gray-400 group-hover:text-black text-sm">
+                    Creation date:{" "}
+                  </span>
                   <span className="text-gray-300 group-hover:text-black text-sm">
                     {formatDate(job.creationDate)}
                   </span>
@@ -238,12 +247,22 @@ const JobListingsGrid = () => {
         </div>
 
         {/* Footer CTA */}
+        {/* <button
+          onClick={() => setOpen(true)}
+          className="rounded-md bg-black px-2.5 py-1.5 text-sm font-semibold text-gray-900 hover:bg-gray-950/10 "
+        >
+          Open drawer
+        </button> */}
+        <SidebarForm open={open} setOpen={setOpen} />
         <div className="text-center mt-16">
           <p className="text-gray-400 mb-6">
             Don't see a position that fits? We're always looking for talented
             individuals.
           </p>
-          <button className="bg-[#ec466f] hover:bg-[#ec466f] text-white font-semibold px-8 py-3 rounded-full transition-colors duration-300">
+          <button
+            onClick={() => setOpen(true)}
+            className="bg-[#ec466f] hover:bg-[#ec466f] text-white font-semibold px-8 py-3 rounded-full transition-colors duration-300"
+          >
             Send Us Your Resume
           </button>
         </div>
