@@ -129,7 +129,7 @@ const JobDetail = ({ onClose }) => {
         </div>
 
         {/* Submit Button */}
-        <div className="flex gap-3 pt-4">
+        <div className="flex flex-col-reverse sm:flex-row gap-3 pt-4">
           <button
             type="button"
             onClick={handleCancel}
@@ -146,7 +146,6 @@ const JobDetail = ({ onClose }) => {
         </div>
       </form>
 
-      {/* Rest of your job detail content... */}
     </div>
   );
 };

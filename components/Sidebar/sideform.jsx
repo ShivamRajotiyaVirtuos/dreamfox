@@ -41,7 +41,6 @@ export default function SidebarForm() {
                     </div>
                   </div>
                   <div className="relative z-50 mt-16 flex-1 px-4 sm:px-6">
-
                   <JobDetail onClose={() => setOpen(false)}/>
                   </div>
                 </div>

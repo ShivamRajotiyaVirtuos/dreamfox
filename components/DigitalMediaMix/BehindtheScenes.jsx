@@ -203,7 +203,7 @@ const RingCarousel = () => {
   }, []);
 
   return (
-    <div className="w-full relative  min-h-screen bg-black overflow-hidden">
+    <div className="w-full relative  2xl:min-h-screen bg-black overflow-hidden">
       {/* Fixed header section */}
       <div className="sm:absolute top-0 left-0 right-0 z-10 pt-20 lg:pt-40 pb-8 ">
         <div className="text-center">
@@ -249,7 +249,7 @@ const RingCarousel = () => {
               <div
                 key={i}
                 ref={(el) => (imagesRef.current[i] = el)}
-                className="absolute w-[40%] h-[90%] left-[30%] top-[5%] bg-cover bg-center rounded-2xl shadow-2xl"
+                className="absolute w-full 2xl:w-[40%] h-[90%] left-[30%] top-[5%] bg-cover bg-center rounded-2xl shadow-2xl"
                 style={{
                   backgroundImage: `url(${src})`,
                   transformStyle: "preserve-3d",

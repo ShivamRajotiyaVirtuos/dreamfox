@@ -60,7 +60,7 @@ const Productionprocess = () => {
         trigger: containerRef.current,
         start: "top top",
         end: "+=400%", // Pin for the duration of 4 full viewport heights
-        pin: window.innerWidth > 768,
+        pin: window.innerWidth > 1024,
         scrub: 1,
         onUpdate: (self) => {
           const progress = self.progress;

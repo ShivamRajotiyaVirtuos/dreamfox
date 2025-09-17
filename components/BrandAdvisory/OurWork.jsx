@@ -15,29 +15,28 @@ const OurWork = () => {
 
   // Sample image URLs - replace with your actual images
   const imageSet1 = [
-    "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=200&h=200&fit=crop",
-    "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=200&h=200&fit=crop",
-    "https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?w=200&h=200&fit=crop",
-    "https://images.unsplash.com/photo-1551650975-87deedd944c3?w=200&h=200&fit=crop",
+    "https://static.wixstatic.com/media/3d4741_088ad4a2cde54fcda775b28fe0111886~mv2.png/v1/fill/w_730,h_792,fp_0.54_0.50,q_90,enc_avif,quality_auto/ARCHIBALD-COVER-min.png",
+    "https://static.wixstatic.com/media/3d4741_d1f0e254499044059089b7fc4f5338e2~mv2.png/v1/fill/w_760,h_538,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/OLIVE-min.png",
+    "https://static.wixstatic.com/media/3d4741_655b3ead275b4e01a9040b4fe046f300~mv2.png/v1/fill/w_772,h_490,al_c,lg_1,q_90,enc_avif,quality_auto/ARTD-C02-Device-013-min.png",
+    "https://static.wixstatic.com/media/3d4741_91322deb235249afbb23229fe25af43f~mv2.jpg/v1/fill/w_864,h_862,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/2-min%20(1).jpg",
   ];
 
   const imageSet2 = [
-    "https://images.unsplash.com/photo-1557804506-669a67965ba0?w=200&h=200&fit=crop",
-    "https://images.unsplash.com/photo-1552664730-d307ca884978?w=200&h=200&fit=crop",
-    "https://images.unsplash.com/photo-1586717791821-3bd56353c00e?w=200&h=200&fit=crop",
-    "https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?w=200&h=200&fit=crop",
+    "https://static.wixstatic.com/media/3d4741_b6545e7b157842d08d622b26dd301279~mv2.png/v1/fill/w_562,h_562,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/2.png",
+    "https://static.wixstatic.com/media/3d4741_651459eccee1418c96d6783fe1c63735~mv2.jpg/v1/fill/w_760,h_538,fp_0.50_0.50,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/2-min%20(3).jpg",
+    "https://static.wixstatic.com/media/3d4741_b6545e7b157842d08d622b26dd301279~mv2.png/v1/fill/w_562,h_562,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/2.png",
+    "https://static.wixstatic.com/media/3d4741_651459eccee1418c96d6783fe1c63735~mv2.jpg/v1/fill/w_760,h_538,fp_0.50_0.50,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/2-min%20(3).jpg",
   ];
 
   const imageSet3 = [
-    "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=200&h=200&fit=crop",
-    "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=200&h=200&fit=crop",
-    "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=200&h=200&fit=crop",
-    "https://images.unsplash.com/photo-1553877522-43269d4ea984?w=200&h=200&fit=crop",
+    "https://static.wixstatic.com/media/3d4741_088ad4a2cde54fcda775b28fe0111886~mv2.png/v1/fill/w_730,h_792,fp_0.54_0.50,q_90,enc_avif,quality_auto/ARCHIBALD-COVER-min.png",
+    "https://static.wixstatic.com/media/3d4741_d1f0e254499044059089b7fc4f5338e2~mv2.png/v1/fill/w_760,h_538,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/OLIVE-min.png",
+    "https://static.wixstatic.com/media/3d4741_655b3ead275b4e01a9040b4fe046f300~mv2.png/v1/fill/w_772,h_490,al_c,lg_1,q_90,enc_avif,quality_auto/ARTD-C02-Device-013-min.png",
+    "https://static.wixstatic.com/media/3d4741_91322deb235249afbb23229fe25af43f~mv2.jpg/v1/fill/w_864,h_862,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/2-min%20(1).jpg",
   ];
 
   const allImages = [...imageSet1, ...imageSet2, ...imageSet3];
 
-  // Text content for each phase
   const textContent = [
     "Transforming digital experiences through innovative design",
     "Building sustainable solutions for the future",
@@ -59,9 +58,9 @@ const OurWork = () => {
       gsap.set(el, {
         y: "100vh",
         opacity: 0,
-        rotateX: gsap.utils.random(-20, 20),
-        rotateY: gsap.utils.random(-20, 20),
-        rotateZ: gsap.utils.random(-10, 10),
+        // rotateX: gsap.utils.random(-20, 20),
+        // rotateY: gsap.utils.random(-20, 20),
+        // rotateZ: gsap.utils.random(-10, 10),
         transformPerspective: 800,
         transformOrigin: "center",
       });
@@ -255,7 +254,7 @@ const OurWork = () => {
           ref={(el) => (imagesRef.current[index] = el)}
           src={src}
           alt={`Work ${index + 1}`}
-          className="absolute sm:w-[15vw] xl:w-[15vw] md:w-[35vw] sm:h-[40vh] object-cover rounded-lg shadow-2xl z-20"
+          className="absolute size-[200px] md:size-[250px] lg:size-[300px] 2lx:size-[350px] object-cover  shadow-2xl z-20"
           style={{
             left: `${Math.random() * 40 + 10}%`,
             bottom: "-200px",

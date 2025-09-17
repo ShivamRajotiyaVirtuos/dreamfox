@@ -10,47 +10,53 @@ const images = [
   {
     // src: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=1200&h=800&fit=crop",
     alt: "brand-strategy",
+    src:"",
     title1: "OUR",
     title2: "SERVICES.",
     description: "",
   },
   {
-    src: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&h=800&fit=crop",
+    // src: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&h=800&fit=crop",
     alt: "digital-marketing",
     title1: "DIGITAL",
+    src:"/images/services/digital_marketing.webp",
     title2: "MARKETING",
     description:
       "Data-driven marketing campaigns across all digital platforms to maximize your reach and ROI.",
   },
   {
-    src: "https://images.unsplash.com/photo-1558655146-d09347e92766?w=1200&h=800&fit=crop",
+    // src: "https://images.unsplash.com/photo-1558655146-d09347e92766?w=1200&h=800&fit=crop",
     alt: "creative-design",
     title1: "CREATIVE",
+    src:"/images/services/creative_design.webp",
     title2: "DESIGN",
     description:
       "Innovative visual solutions that capture attention and communicate your brand message effectively.",
   },
   {
-    src: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=1200&h=800&fit=crop",
+    // src: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=1200&h=800&fit=crop",
     alt: "web-development",
     title1: "WEB",
     title2: "DEVELOPMENT",
+    src:"/images/services/web_development.webp",
     description:
       "Custom websites and applications built with cutting-edge technology for optimal performance.",
   },
   {
-    src: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=1200&h=800&fit=crop",
+    // src: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=1200&h=800&fit=crop",
     alt: "content-creation",
     title1: "CONTENT",
+    src:"/images/services/content_creation.webp",
     title2: "CREATION",
     description:
       "Engaging content that tells your story and connects with your audience across all touchpoints.",
   },
   {
-    src: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&h=800&fit=crop",
+    // src: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&h=800&fit=crop",
     alt: "analytics-insights",
     title1: "ANALYTICS",
     title2: "INSIGHTS",
+    src:"/images/services/analytics_insights.webp",
     description:
       "Deep data analysis and actionable insights to optimize your marketing performance and strategy.",
   },
