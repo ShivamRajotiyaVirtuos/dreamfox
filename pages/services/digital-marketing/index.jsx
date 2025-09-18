@@ -1,23 +1,26 @@
-import BannerSection from '@/components/DigitalMarketing/BannerSection'
-import Funnel from '@/components/DigitalMarketing/Funnel'
-import MetricSection from '@/components/DigitalMarketing/MetricSection'
-import PersonaGrid from '@/components/DigitalMarketing/PersonaGrid'
-import ServicesSectionDigitalM from '@/components/DigitalMarketing/ServicesSectionDigitalM'
-import React from 'react'
+import BannerSection from "@/components/DigitalMarketing/BannerSection";
+import Funnel from "@/components/DigitalMarketing/Funnel";
+import MetricSection from "@/components/DigitalMarketing/MetricSection";
+import NewMetrics from "@/components/DigitalMarketing/NewMetrics";
+import PersonaGrid from "@/components/DigitalMarketing/PersonaGrid";
+import ServicesSectionDigitalM from "@/components/DigitalMarketing/ServicesSectionDigitalM";
+import React from "react";
 
 function Index() {
-    return (
-        <div>
-            <BannerSection/>
-            <ServicesSectionDigitalM/>
-            <PersonaGrid/>
-            <MetricSection/>
-            <Funnel/>
-            
+  return (
+    <div>
+      <BannerSection />
+      <NewMetrics />
 
-            {/* <BannerSection/> */}
-        </div>
-    )
+      <ServicesSectionDigitalM />
+      <PersonaGrid />
+      <NewMetrics />
+      {/* <MetricSection/ */}
+      {/* <Funnel/> */}
+
+      {/* <BannerSection/> */}
+    </div>
+  );
 }
 
-export default Index
+export default Index;

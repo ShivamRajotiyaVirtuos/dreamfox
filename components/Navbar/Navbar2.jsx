@@ -134,7 +134,7 @@ const Navbar = () => {
                 alt="DreamFox Emblem"
                 width={150}
                 height={50}
-                className="h-9 lg:h-12 w-auto transition-all cursor-pointer duration-300"
+                className="h-9 lg:ml-4 lg:h-12 w-auto transition-all cursor-pointer duration-300"
               />
 
               {/* Logo text - slides in from left */}

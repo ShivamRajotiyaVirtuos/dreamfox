@@ -235,9 +235,9 @@ const GradientCard = ({ gradient, title, description }) => {
   }, []);
 
   return (
-    <div className="flex flex-col w-[345px] min-w-[345px] max-w-[345px] rounded-md shadow-md group overflow-hidden">
+    <div className="flex flex-col w-full lg:max-w-[345px] xl:max-w-[345px]  rounded-md shadow-md group overflow-hidden">
       {/* SVG gradient area */}
-      <div className="flex-shrink-0 w-full h-[160px] 2xl:h-[160px]  overflow-hidden">
+      <div className="flex-shrink-0 w-full h-[178px] lg:h-[230px] 2xl:h-[160px]  overflow-hidden">
         <div
           className="w-full h-full"
           style={{
@@ -275,7 +275,7 @@ const GradientCard = ({ gradient, title, description }) => {
 
 const PersonaGrid = () => {
   return (
-    <section className="py-20 px-4 container mx-auto">
+    <section className="py-20 xl:py-0 px-4 container mx-auto">
       <TextReveal
         className="text-center text-120 font-bold mb-16 text-white"
         animation="rotateX"
@@ -284,7 +284,7 @@ const PersonaGrid = () => {
       >
         Persona Targeting
       </TextReveal>
-      <div className="grid sm:grid-cols-2  xl:grid-cols-3 gap-6 xl:gap-12 justify-center">
+      <div className="grid sm:grid-cols-2  xl:grid-cols-3 gap-12 lg:gap-16 xl:gap-12 justify-center">
         {layeredGradients.map((gradient, index) => (
           <GradientCard
             key={index}

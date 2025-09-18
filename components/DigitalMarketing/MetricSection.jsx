@@ -18,8 +18,8 @@ const metrics = [
   {
     label: "Clients",
     value: "120+",
-    w: 200,
-    h: 180,
+    w: 300,
+    h: 280,
     x: "5vw",
     y: "15vh",
     icon: UsersIcon,
@@ -27,8 +27,8 @@ const metrics = [
   {
     label: "Projects",
     value: "300+",
-    w: 200,
-    h: 180,
+    w: 300,
+    h: 280,
     x: "65vw",
     y: "10vh",
     icon: RocketLaunchIcon,
@@ -36,8 +36,8 @@ const metrics = [
   {
     label: "Awards",
     value: "15",
-    w: 200,
-    h: 180,
+    w: 300,
+    h: 280,
     x: "25vw",
     y: "60vh",
     icon: TrophyIcon,
@@ -45,8 +45,8 @@ const metrics = [
   {
     label: "Countries",
     value: "10",
-    w: 200,
-    h: 180,
+    w: 300,
+    h: 280,
     x: "70vw",
     y: "50vh",
     icon: GlobeAmericasIcon,
@@ -56,7 +56,7 @@ const metrics = [
 // Random purple blur blobs for background
 const blurs = [
   { top: "10%", left: "15%", size: 220, color: "#a259f7", opacity: 0.25 },
-  { top: "60%", left: "70%", size: 180, color: "#8e44ad", opacity: 0.18 },
+  { top: "60%", left: "70%", size: 280, color: "#8e44ad", opacity: 0.18 },
   { top: "40%", left: "40%", size: 140, color: "#d2448d", opacity: 0.13 },
   { top: "20%", left: "60%", size: 200, color: "#9b59b6", opacity: 0.2 },
 ];
@@ -374,8 +374,8 @@ export default function MetricSection() {
                 ref={(el) => (cardRefs.current[i] = el)}
                 className="absolute flex flex-col items-start justify-start transition-all duration-500"
                 style={{
-                  width: cardSize.w,
-                  height: cardSize.h,
+                  width: "300px",
+                  height: "400px",
                   left: 0,
                   top: 0,
                   opacity: 1,
