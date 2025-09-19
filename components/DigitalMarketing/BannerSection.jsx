@@ -75,7 +75,7 @@ const BannerSection = () => {
         <div className="max-w-5xl">
           <BannerTextReveal
             titleClassName="text-white text-130 font-bold leading-tight"
-            descriptionClassName="text-24 text-white mt-8 sm:mt-12 max-w-7xl"
+            descriptionClassName="text-24 text-white mt-8 sm:mt-4 max-w-7xl"
             title="Marketing the Modern Way
 "
             description="We helps advisors save valuable time and create accurate buyer

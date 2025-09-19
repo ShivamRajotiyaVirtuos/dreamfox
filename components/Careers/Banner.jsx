@@ -76,7 +76,7 @@ const Careersbanner = () => {
         <div className="xl:w-3/5">
           <BannerTextReveal
             titleClassName="text-white text-100 font-bold leading-tight"
-            descriptionClassName="text-24 text-white mt-8 sm:mt-12 max-w-7xl"
+            descriptionClassName="text-24 text-white mt-8 sm:mt-4 max-w-7xl"
             title="Shape Your Future With Us"
             description=""
           />
@@ -97,7 +97,10 @@ const Careersbanner = () => {
             experiences. We're looking for passionate individuals who want to
             make a meaningful impact in the world of technology and design
           </TextReveal>
-          <AnimatedButton text="View Open Positions" href="/about/careers#openings" />
+          <AnimatedButton
+            text="View Open Positions"
+            href="/about/careers#openings"
+          />
 
           {/* </div> */}
         </div>
