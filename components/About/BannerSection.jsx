@@ -89,7 +89,7 @@ const BannerSection = () => {
         <div className="max-w-5xl">
           <BannerTextReveal
             titleClassName="text-white text-130 font-bold leading-tight"
-            descriptionClassName="text-24 mt-8 sm:mt-12 text-white max-w-7xl"
+            descriptionClassName="text-24 mt-8 sm:mt-4 text-white max-w-7xl"
             title="About the company"
             description="DreamFox, an associate of Virtuos Group, combines deep design, brand, and technical expertise. Backed by our top-notch Designara, Media, and Brand teams, we craft innovative, immersive, and impactful experiences that empower businesses to thrive in today’s competitive digital economy."
           />

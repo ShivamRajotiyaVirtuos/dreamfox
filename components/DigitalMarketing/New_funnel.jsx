@@ -174,7 +174,7 @@ export default function New_Funnel() {
   };
 
   return (
-    <div className="bg-black py-24 sm:py-32 ">
+    <div className="bg-black py-24 sm:py-36 ">
       <div className="mx-auto max-w-2xl container">
         <TextReveal
           className="text-center text-120 font-bold text-white"
