@@ -232,8 +232,8 @@ const VirtuosHero = () => {
       />
 
       {/* Main Content */}
-      <div className="relative z-10 h-full flex items-center justify-center px-8">
-        <div className="text-center flex flex-col items-center max-w-7xl mx-auto">
+      <div className="relative z-10 h-full flex items-center justify-center container ">
+        <div className="text-center flex flex-col items-center  mx-auto">
          
           <p
             ref={taglineRef}
