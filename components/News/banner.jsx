@@ -132,7 +132,7 @@ const NewsroomPage = () => {
               </div>
 
               {/* Card Content */}
-              <div className="sm:p-8 py-4 sm:py-0 lg:w-1/2">
+              <div className="lg:p-8 py-4 lg:py-0 lg:w-1/2">
                 <div className=" text-white flex gap-2">
                   <span className="text-[#e83584] bg-white px-3 py-1 rounded-full text-xs flex items-center justify-center font-medium">
                     PRESS RELEASES
@@ -147,8 +147,8 @@ const NewsroomPage = () => {
                   className="text-30 mt-4 sm:mt-10 font-light text-gray-50 mb-4 sm:mb-6 leading-tight hover:text-gray-100 transition-colors duration-300"
                   animation="rotateX"
                   stagger={0.1}
-                  delay={1.5}
-                  duration={0.8}
+                  delay={1}
+                  duration={0.5}
                 >
                   {/* <h2 c> */}
                   Dreamfox Expands Its Fund Admin Partnerships with Virtuos,

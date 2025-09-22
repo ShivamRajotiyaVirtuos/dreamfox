@@ -104,7 +104,7 @@ const UXSnapshot = () => {
             end: `+=${window.innerHeight * 2}`, // Reduced end distance
             scrub: 1, // Faster floating effect
           },
-          x: () => Math.sin(index * 1.2) * 20,
+          // x: () => Math.sin(index * 1.2) * 20,
           ease: "none",
         });
 
@@ -134,7 +134,7 @@ const UXSnapshot = () => {
         <div
           key={card.id}
           ref={(el) => (cardsRef.current[index] = el)}
-          className={`absolute z-10 inset-0 w-full h-screen flex flex-col items-center justify-center ${card.bgColor} `}
+          className={`absolute z-10 px- sm:px-0 inset-0 w-full h-screen flex flex-col items-center justify-center ${card.bgColor} `}
           //   style={{
           //     background: `linear-gradient(135deg,
           //                     hsl(${220 + index * 30}, 70%, ${60 + index * 10}%),
@@ -149,12 +149,12 @@ const UXSnapshot = () => {
             height={900}
             width={1600}
             ref={(el) => (contentCardsRef.current[index] = el)}
-            className="bg-white/10 backdrop-blur-lg rounded-2xl p-2 relative z-20 2xl:w-[60%] mx-4 border border-white/20 shadow-2xl transform-gpu mt-44"
+            className="bg-white/10 backdrop-blur-lg rounded-2xl p-2 relative z-20 w-[90%] 2xl:w-[60%] mx-4 border border-white/20 shadow-2xl transform-gpu mt-44"
             style={{
               transformOrigin: "center center",
             }}
           />
-          <h2 className="text-120 z-0 text-center sm:text-left absolute top-[28%] 2xl:top-32 3xl:top-48 2xl:left-64 font-bold text-white mb-4">
+          <h2 className="text-120 z-0 text-center sm:text-left absolute top-[28%] lg:top-[13.5%] 2xl:top-46 3xl:top-60 2xl:left-64 font-bold text-white mb-4">
             {card.title}
           </h2>
           <Link

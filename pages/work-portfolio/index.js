@@ -98,7 +98,7 @@ const TariffCard = () => {
             </header>
 
 
-            <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 !gap-8 xl:!gap-12 mt-16 xl:mt-32">
+            <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 3xl:grid-cols-4 !gap-8 xl:!gap-12 mt-16 xl:mt-32">
                 <CardStyle1
                     title="Digital Marketing Revolution"
                     description="Exploring the latest trends in digital marketing and how brands are adapting to the changing landscape of consumer engagement and transformation."

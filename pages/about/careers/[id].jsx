@@ -182,7 +182,7 @@ const JobDetail = () => {
         </div>
       </section>
 
-      <div className="max-w-4xl mx-auto px-4 sm:px-0 pb-20">
+      <div className="max-w-4xl mx-auto px-4 lg:px-0 pb-20">
         {/* Job Description */}
         <section
           ref={(el) => (sectionsRef.current[0] = el)}

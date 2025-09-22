@@ -367,7 +367,7 @@ const Showreel = () => {
                       swiperRef.current?.autoplay?.start();
                     }}
                   >
-                    <div className="">
+                    <div className="z-30 ">
                       <Image
                         className={`absolute -bottom-24 sm:-bottom-20 opacity-90  z-20  transition-all duration-700 ease-out transform ${
                           hoveredCard === project.id

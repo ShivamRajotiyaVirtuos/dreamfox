@@ -220,12 +220,12 @@ export default function ProcessTimeline() {
         </div>
 
         {/* Step boxes */}
-        <div className="relative w-full h-full 3xl:mt-16 4xl:mt-10">
+        <div className="relative w-full h-full lg:mt-12 3xl:mt-16 4xl:mt-10">
           {steps.map((step, i) => (
             <div
               key={i}
               ref={(el) => (boxesRef.current[i] = el)}
-              className="group h-[40rem] sm:h-[40rem] w-[80%] xl:w-[70rem] relative"
+              className="group h-[40rem] md:h-[30rem] xl:h-[40rem] w-[80%] xl:w-[70rem] relative"
             >
               {/* Glowing background */}
               {/* <div className="absolute -inset-1 bg-gradient-to-r from-pink-600 to-purple-600 rounded-3xl blur opacity-25 group-hover:opacity-75 transition duration-1000 group-hover:duration-200" /> */}
@@ -252,7 +252,7 @@ export default function ProcessTimeline() {
                       alt={step.title}
                       width={400}
                       height={400}
-                      className=" sm:size-[400px] size-[200px] mx-auto mt-6"
+                      className=" md:size-[300px] xl:size-[400px] size-[200px] mx-auto mt-6"
                     />
                   </div>
 

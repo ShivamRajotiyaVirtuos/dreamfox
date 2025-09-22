@@ -78,7 +78,7 @@ const AnimatedButton = ({
       onMouseEnter={handleMouseEnter}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
-      className={`relative px-8 cursor-pointer py-4 font-black text-lg border-2 rounded-full overflow-hidden group hover:shadow-2xl transition-all duration-300 hover:scale-105 flex items-center gap-3 ${currentVariant.base} ${className}`}
+      className={`relative px-8 cursor-pointer py-4 font-black text-lg border rounded-full overflow-hidden group hover:shadow-2xl transition-all duration-300 hover:scale-105 flex items-center gap-3 ${currentVariant.base} ${className}`}
     >
       {/* Overlay effect */}
       <div

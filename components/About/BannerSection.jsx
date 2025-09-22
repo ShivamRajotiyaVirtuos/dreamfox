@@ -112,7 +112,7 @@ const BannerSection = () => {
             </p>
           </div> */}
 
-          <div className="flex flex-col sm:flex-row gap-4 shrink-0">
+          <div className="flex flex-row gap-4 shrink-0">
             <AnimatedButton text="Services" href="/services" />
             <AnimatedButton text="Portfolio" href="/portfolio" />
             {/* <button className="bg-white text-black px-6 py-3 rounded-full text-sm font-medium whitespace-nowrap">

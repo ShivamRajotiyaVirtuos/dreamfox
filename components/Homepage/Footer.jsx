@@ -268,7 +268,7 @@ const Footer = () => {
       {/* Logo as cutout mask with background video */}
       <div className="mt-12 glow-svg-mask aspect-[1048/172] container overflow-hidden">
         <video
-          src="https://vdc-buckett.s3.ap-south-1.amazonaws.com/videos/cohering.mp4"
+          src="/videos/0_Car_Drifting_3840x2160.mp4"
           autoPlay
           loop
           muted

@@ -58,17 +58,17 @@ const Banner_Services = () => {
     >
       {/* Gradient Circles */}
       <div
-      ref={circle1Ref}
-      className="absolute top-[-50vw] right-[-30vw] w-[90vw]  sm:w-[60vw] h-[50vh] sm:h-[60vw] rounded-full bg-gradient-to-bl from-[#8b5cf6] to-[#4c1d95] via-[#000000] z-0"
-    />
-    <div
-      ref={circle2Ref}
-      className="absolute top-[-50vw] right-[-30vw] w-[80vw] h-[38vh]  sm:w-[50vw] sm:h-[50vw] rounded-full bg-gradient-to-bl from-[#a855f7] to-[#6b21a8] via-[#374151] z-0"
-    />
-    <div
-      ref={circle3Ref}
-      className="absolute top-[-50vw] right-[-30vw] w-[75vw] h-[28vh]  sm:w-[40vw] sm:h-[40vw] rounded-full bg-gradient-to-bl from-[#c084fc] to-[#7346c1] via-[#4b5566] z-0"
-    />
+        ref={circle1Ref}
+        className="absolute top-[-50vw] right-[-30vw] w-[90vw]  sm:w-[60vw] h-[50vh] sm:h-[60vw] rounded-full bg-gradient-to-bl from-[#8b5cf6] to-[#4c1d95] via-[#000000] z-0"
+      />
+      <div
+        ref={circle2Ref}
+        className="absolute top-[-50vw] right-[-30vw] w-[80vw] h-[38vh]  sm:w-[50vw] sm:h-[50vw] rounded-full bg-gradient-to-bl from-[#a855f7] to-[#6b21a8] via-[#374151] z-0"
+      />
+      <div
+        ref={circle3Ref}
+        className="absolute top-[-50vw] right-[-30vw] w-[75vw] h-[28vh]  sm:w-[40vw] sm:h-[40vw] rounded-full bg-gradient-to-bl from-[#c084fc] to-[#7346c1] via-[#4b5566] z-0"
+      />
 
       {/* Main Content */}
       <div className="container mx-auto px-6 relative z-10 flex flex-col justify-between h-full py-24 banner-trigger">
@@ -82,8 +82,12 @@ const Banner_Services = () => {
         </div>
 
         <div className="flex flex-col xl:flex-row xl:items-center justify-between gap-8 mt-8 sm:mt-16">
-          <div className="flex flex-col sm:flex-row gap-4 shrink-0">
-            <AnimatedButton className="max-w-fit" text="Talk to Us" href="/contactus" />
+          <div className="flex flex-row gap-4 shrink-0">
+            <AnimatedButton
+              className="max-w-fit"
+              text="Talk to Us"
+              href="/contactus"
+            />
             {/* <AnimatedButton text="button" href="/" /> */}
             {/* <button className="bg-white text-black px-6 py-3 rounded-full text-sm font-medium whitespace-nowrap">
               Arrange an initial consultation

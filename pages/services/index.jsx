@@ -7,7 +7,7 @@ import ProcessTimeline from "@/components/BrandAdvisory/ProcessTimeline";
 import Services from "@/components/BrandAdvisory/services";
 import React from "react";
 import Testimonials_brand from "@/components/BrandAdvisory/Testimonials_BA";
-import NewOurWork from "@/components/BrandAdvisory/Newourwork";
+// import NewOurWork from "@/components/BrandAdvisory/Newourwork";
 import ProjectsSection from "@/components/BrandAdvisory/Newourwork";
 
 const index = () => {
@@ -18,7 +18,7 @@ const index = () => {
 
       <ProcessTimeline />
       <Services />
-      <NewOurWork />
+      {/* <NewOurWork /> */}
       {/* <OurWork /> */}
       <BeforeAfterGallery />
       <Testimonials_brand />

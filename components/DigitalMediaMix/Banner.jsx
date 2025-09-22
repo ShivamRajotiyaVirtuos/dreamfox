@@ -85,8 +85,8 @@ const Banner_Mediamix = () => {
         </div>
 
         <div className="flex flex-col xl:flex-row xl:items-center justify-between gap-8 mt-8 lg:mt-16">
-          <div className="flex flex-col sm:flex-row gap-4 shrink-0">
-            <AnimatedButton text="Arrange an initial consultation" href="/" />
+          <div className="flex flex-row gap-4 shrink-0">
+            <AnimatedButton text="Consult" href="/" />
             <AnimatedButton text="button" href="/" />
             {/* <button className="bg-white text-black px-6 py-3 rounded-full text-sm font-medium whitespace-nowrap">
               Arrange an initial consultation

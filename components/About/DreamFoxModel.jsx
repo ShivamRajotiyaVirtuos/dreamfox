@@ -103,10 +103,10 @@ const DreamFoxModel = () => {
   return (
     <section
       ref={containerRef}
-      className="w-full h-screen flex flex-col text-white font-sans overflow-hidden"
+      className="w-full min-h-screen flex flex-col text-white font-sans overflow-hidden"
     >
       <TextReveal
-        className="mt-36 text-center font-bold text-120 "
+        className="sm:mt-36   text-center font-bold text-120 "
         animation="rotateX"
         stagger={0.1}
         duration={0.8}
@@ -114,15 +114,15 @@ const DreamFoxModel = () => {
         Our Capabilities
       </TextReveal>
 
-      <div className="flex flex-col md:flex-row container mx-auto px-4 gap-4 sm:gap-6 md:gap-8 lg:gap-10 flex-1 overflow-hidden">
+      <div className="flex flex-col items-center justify-center md:flex-row container mx-auto px-4 gap-4 sm:gap-6 md:gap-0 lg:gap-10 flex-1 overflow-hidden">
         {/* Left Card Stack */}
         <div className="w-full md:w-1/2 flex flex-col items-center justify-center relative mb-4 md:mb-0">
-          <div className="relative w-full max-w-[70%] md:max-w-[65%] lg:max-w-[60%] aspect-[0.6] md:aspect-[0.7]  ">
+          <div className="relative w-full max-w-[85%] md:max-w-[75%] lg:max-w-[60%] aspect-[0.6] md:aspect-[0.7]  ">
             {cardData.map((card, i) => (
               <div
                 key={i}
                 ref={(el) => (cardsRef.current[i] = el)}
-                className="absolute top-0  left-0 w-full aspect-[0.7] overflow-hidden    "
+                className="absolute top-0  left-4 sm:left-0 w-full aspect-[0.7] overflow-hidden    "
               >
                 <Image
                   src={card.src}
@@ -163,7 +163,7 @@ const DreamFoxModel = () => {
                   ></div>
                   <div
                     ref={(el) => (labelsRef.current[i] = el)}
-                    className="transition-all duration-300 text-40"
+                    className="transition-all duration-300 text-[24px] xl:text-[40px]"
                   >
                     {card.label}
                   </div>

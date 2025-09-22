@@ -223,7 +223,7 @@ export default function Services() {
           {/* First Card - OUR SERVICES */}
           <div
             ref={(el) => (slidesRef.current[0] = el)}
-            className="w-screen h-screen flex-shrink-0 absolute"
+            className="w-screen h-screen flex-shrink-0 absolute px-4"
           >
             <figure className="relative bg-black w-full h-full m-0">
               {/* <img
@@ -261,7 +261,7 @@ export default function Services() {
           {/* Second Card - Digital Marketing */}
           <div
             ref={(el) => (slidesRef.current[1] = el)}
-            className="w-screen h-screen flex-shrink-0 absolute"
+            className="w-screen h-screen flex-shrink-0 absolute px-4"
           >
             <figure className="relative bg-black flex flex-col xl:flex-row xl:gap-10 items-center justify-center w-full h-full m-0">
               <img
@@ -300,7 +300,7 @@ export default function Services() {
           {/* Third Card - Creative Design */}
           <div
             ref={(el) => (slidesRef.current[2] = el)}
-            className="w-screen h-screen  flex-shrink-0 absolute"
+            className="w-screen h-screen flex-shrink-0 absolute px-4"
           >
             <figure className="relative flex  flex-col xl:flex-row xl:gap-10 items-center justify-center bg-black w-full h-full m-0">
               <img
@@ -335,7 +335,7 @@ export default function Services() {
           {/* Fourth Card - Web Development */}
           <div
             ref={(el) => (slidesRef.current[3] = el)}
-            className="w-screen h-screen flex-shrink-0 absolute"
+            className="w-screen h-screen flex-shrink-0 absolute px-4"
           >
             <figure className="relative bg-black flex flex-col xl:flex-row xl:gap-10 items-center justify-center w-full h-full m-0">
               <img
@@ -374,7 +374,7 @@ export default function Services() {
           {/* Fifth Card - Content Creation */}
           <div
             ref={(el) => (slidesRef.current[4] = el)}
-            className="w-screen h-screen  flex-shrink-0 absolute"
+            className="w-screen h-screen flex-shrink-0 absolute px-4"
           >
             <figure className="relative flex items-center flex-col xl:flex-row xl:gap-10 justify-center bg-black w-full h-full m-0">
               <img

@@ -132,7 +132,7 @@ const MissionVision = () => {
         ref={missionRef}
         className="relative w-full flex items-center overflow-hidden z-10"
       >
-        <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 px-6 pt-16">
+        <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 px-6 pt-16 md:pt-0 xl:pt-16">
           {/* Left Text */}
           <div
             ref={missionTextRef}
@@ -191,7 +191,7 @@ const MissionVision = () => {
       {/* Vision Section */}
       <section
         ref={visionRef}
-        className="relative w-full flex items-start overflow-hidden z-10"
+        className="relative w-full flex items-start overflow-hidden z-10 md:pt-20 xl:pt-0"
       >
         <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 px-6 pb-16 md:pb-32">
           {/* Left Images */}
@@ -223,7 +223,7 @@ const MissionVision = () => {
           {/* Right Text */}
           <div
             ref={visionTextRef}
-            className="md:ml-10 2xl:mt-40 flex flex-col justify-center order-1 md:order-none mt-10 md:mt-0  "
+            className="md:ml-10 2xl:mt-40 flex flex-col justify-center order-1 md:order-none mt-20 md:mt-0  "
           >
             <TextReveal
               animation="rotateX"

@@ -194,7 +194,7 @@ const ServicesSectionDigitalM = () => {
         </div>
       </section>
 
-      <div className="h-[50vh] md:h-[75vh] lg:h-[50vh] xl:h-[80vh]  "></div>
+      <div className="h-[50vh] md:h-[75vh] xl:h-[90vh] 3xl:h-[80vh]  "></div>
     </div>
   );
 };

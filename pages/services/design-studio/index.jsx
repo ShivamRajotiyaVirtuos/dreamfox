@@ -13,7 +13,7 @@ const Index = ({}) => {
       <HorizontalScrollGallery />
       <UXSnapshot />
 
-      <DxStrategy />
+      {/* <DxStrategy /> */}
       {/* <ServicesGrid /> */}
       <Techstack />
     </div>
