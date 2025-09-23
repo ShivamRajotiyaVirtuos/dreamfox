@@ -117,7 +117,7 @@ const DreamFoxModel = () => {
       <div className="flex flex-col items-center justify-center md:flex-row container mx-auto px-4 gap-4 sm:gap-6 md:gap-0 lg:gap-10 flex-1 overflow-hidden">
         {/* Left Card Stack */}
         <div className="w-full md:w-1/2 flex flex-col items-center justify-center relative mb-4 md:mb-0">
-          <div className="relative w-full max-w-[85%] md:max-w-[75%] lg:max-w-[60%] aspect-[0.6] md:aspect-[0.7]  ">
+          <div className="relative w-full max-w-[85%] md:max-w-[75%] xl:max-w-[60%] aspect-[0.6] md:aspect-[0.7]  ">
             {cardData.map((card, i) => (
               <div
                 key={i}

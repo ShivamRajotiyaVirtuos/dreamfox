@@ -48,37 +48,40 @@ const ServicesSectionDigitalM = () => {
       const textCards = textCardsRef.current;
       const imageCards = imageCardsRef.current;
 
-      // Set initial positions - all cards except first are off-screen horizontally
-      gsap.set(textCards.slice(1), { y: "120vw" });
-      gsap.set(imageCards.slice(1), { y: "-120vw" });
+      // GSAP MatchMedia for responsive animations
+      const mm = gsap.matchMedia();
 
-      // Create one main timeline with scroll trigger - SLOWER SETTINGS
-      const mainTl = gsap.timeline({
-        scrollTrigger: {
-          trigger: containerRef.current,
-          start: "top top+=10%",
-          end: `+=${(servicesData.length - 1) * 300}vh`, // Increased from 150vh to 300vh for much slower scrolling
-          scrub: 4, // Increased from 2 to 4 for slower response to scroll
-          pin: true,
-          pinSpacing: false,
-          anticipatePin: 1,
-          invalidateOnRefresh: true,
-        },
-      });
+      // Mobile (up to 768px) - Horizontal animation
+      mm.add("(max-width: 1268px)", () => {
+        // Set initial positions - horizontal for mobile
+        gsap.set(textCards.slice(1), { x: "120vw" });
+        gsap.set(imageCards.slice(1), { x: "-120vw" });
 
-      // Add each card transition to the main timeline - SLOWER ANIMATIONS
-      servicesData.forEach((_, index) => {
-        if (index > 0) {
-          const startTime = (index - 1) * 4; // Increased from 2 to 4 for more time between cards
+        // Create timeline for mobile
+        const mobileTl = gsap.timeline({
+          scrollTrigger: {
+            trigger: containerRef.current,
+            start: "top top+=10%",
+            end: `+=${(servicesData.length - 1) * 200}vh`, // Shorter for mobile
+            scrub: 3,
+            pin: true,
+            pinSpacing: false,
+            anticipatePin: 1,
+            invalidateOnRefresh: true,
+          },
+        });
 
-          // Horizontal animation for all screen sizes
-          if (index % 2 === 1) {
-            mainTl
+        // Add card transitions for mobile
+        servicesData.forEach((_, index) => {
+          if (index > 0) {
+            const startTime = (index - 1) * 3;
+
+            mobileTl
               .to(
                 textCards[index],
                 {
-                  y: "0vh",
-                  duration: 3, // Increased from 1.8 to 3 for slower individual animations
+                  x: "0vw", // Horizontal movement for mobile
+                  duration: 2.5,
                   ease: "power1.inOut",
                 },
                 startTime
@@ -86,47 +89,97 @@ const ServicesSectionDigitalM = () => {
               .to(
                 imageCards[index],
                 {
-                  y: "0vh",
-                  duration: 3, // Increased from 1.8 to 3
-                  ease: "power1.inOut",
-                },
-                startTime
-              );
-          } else {
-            mainTl
-              .to(
-                textCards[index],
-                {
-                  y: "0vh",
-                  duration: 3, // Increased from 1.8 to 3
-                  ease: "power1.inOut",
-                },
-                startTime
-              )
-              .to(
-                imageCards[index],
-                {
-                  y: "0vh",
-                  duration: 3, // Increased from 1.8 to 3
+                  x: "0vw", // Horizontal movement for mobile
+                  duration: 2.5,
                   ease: "power1.inOut",
                 },
                 startTime
               );
           }
-        }
+        });
       });
-    }, containerRef);
 
+      // Desktop (768px and above) - Vertical animation
+      mm.add("(min-width: 1269px)", () => {
+        // Set initial positions - vertical for desktop
+        gsap.set(textCards.slice(1), { y: "120vh" });
+        gsap.set(imageCards.slice(1), { y: "-120vh" });
+
+        // Create timeline for desktop
+        const desktopTl = gsap.timeline({
+          scrollTrigger: {
+            trigger: containerRef.current,
+            start: "top top+=10%",
+            end: `+=${(servicesData.length - 1) * 300}vh`,
+            scrub: 4,
+            pin: true,
+            pinSpacing: false,
+            anticipatePin: 1,
+            invalidateOnRefresh: true,
+          },
+        });
+
+        // Add card transitions for desktop
+        servicesData.forEach((_, index) => {
+          if (index > 0) {
+            const startTime = (index - 1) * 4;
+
+            if (index % 2 === 1) {
+              desktopTl
+                .to(
+                  textCards[index],
+                  {
+                    y: "0vh", // Vertical movement for desktop
+                    duration: 3,
+                    ease: "power1.inOut",
+                  },
+                  startTime
+                )
+                .to(
+                  imageCards[index],
+                  {
+                    y: "0vh", // Vertical movement for desktop
+                    duration: 3,
+                    ease: "power1.inOut",
+                  },
+                  startTime
+                );
+            } else {
+              desktopTl
+                .to(
+                  textCards[index],
+                  {
+                    y: "0vh", // Vertical movement for desktop
+                    duration: 3,
+                    ease: "power1.inOut",
+                  },
+                  startTime
+                )
+                .to(
+                  imageCards[index],
+                  {
+                    y: "0vh", // Vertical movement for desktop
+                    duration: 3,
+                    ease: "power1.inOut",
+                  },
+                  startTime
+                );
+            }
+          }
+        });
+      });
+
+      return mm; // Return matchMedia instance for cleanup
+    }, containerRef);
     return () => ctx.revert();
   }, []);
-
   return (
     <div ref={containerRef}>
       <section className="relative overflow-hidden h-screen bg-black">
         {/* Heading */}
         <div className="z-30 text-center">
           <TextReveal
-            className="text-120 font-bold text-white mt-16 md:mt-28 2xl:mt-28"
+            className="text-120 font-bold text-white mt-8 sm:mt-16 md:mt-28 2xl:mt-28"
             animation="rotateX"
             stagger={0.1}
             duration={0.8}
@@ -143,11 +196,11 @@ const ServicesSectionDigitalM = () => {
               <div
                 key={`text-${index}`}
                 ref={(el) => (textCardsRef.current[index] = el)}
-                className="absolute top-0 left-0 w-full md:w-1/2 h-1/2 md:h-full flex items-start z-20 "
+                className="absolute top-0 left-0 w-full md:w-1/2 sm:h-1/2 md:h-full flex items-start z-20 "
               >
-                <div className="w-full h-full md:h-[65vh] p-4 md:p-8 xl:ml-20">
+                <div className="w-full h-[35vh] md:h-[65vh] p-4 md:p-8 xl:ml-20">
                   <div className="w-full h-full bg-[#2b2725] border border-black rounded-3xl p-4 md:p-8 2xl:p-20 flex flex-col justify-between">
-                    <div className="flex items-center gap-4">
+                    <div className="sm:flex hidden  items-center gap-4">
                       <span className="text-40 md:text-80 font-black text-white  opacity-80">
                         Data {service.number}
                       </span>
@@ -172,7 +225,7 @@ const ServicesSectionDigitalM = () => {
           </div>
 
           {/* Image Cards */}
-          <div className="absolute inset-0 flex md:h-[65vh]">
+          <div className="absolute inset-0 mt-8 sm:mt-0 flex h-[65vh]">
             {servicesData.map((service, index) => (
               <div
                 key={`image-${index}`}
@@ -194,7 +247,7 @@ const ServicesSectionDigitalM = () => {
         </div>
       </section>
 
-      <div className="h-[50vh] md:h-[75vh] xl:h-[90vh] 3xl:h-[80vh]  "></div>
+      <div className="h-[50vh] md:h-[50vh] lg:h-[85vh] xl:h-[90vh] 3xl:h-[80vh] 4xl:h-[90vh]  "></div>
     </div>
   );
 };

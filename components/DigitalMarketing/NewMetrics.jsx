@@ -140,7 +140,7 @@ const PortfolioMetrics = () => {
       <div className="w-full flex justify-center mb-4 md:mb-8  ">
         <TextReveal
           //   ref={headingRef}
-          className="text-center text-120 pt-20 xl:pt-40  font-bold text-white"
+          className="text-center text-120 pt-20   font-bold text-white"
           style={{ pointerEvents: "none" }}
           animation="rotateX"
           stagger={0.1}
