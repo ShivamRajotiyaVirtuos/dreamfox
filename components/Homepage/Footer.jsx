@@ -182,11 +182,13 @@ const Footer = () => {
     }
   };
   return (
-    <footer className="relative bg-[#1a1a1a] text-white overflow-hidden">
+    <footer className="relative  bg-[#1a1a1a] text-white overflow-hidden">
       {/* Main Content */}
-      <div className="container mx-auto px-6 py-20 grid grid-cols-1 md:grid-cols-3 gap-12 relative z-10">
-        {/* Left Nav */}
-        {/* <div className="flex flex-col space-y-4 text-30">
+
+      <div className="container">
+        <div className=" mx-auto sm:px-6 py-20 grid grid-cols-1 md:grid-cols-3 gap-12 relative z-10">
+          {/* Left Nav */}
+          {/* <div className="flex flex-col space-y-4 text-30">
           {['Home', 'Services', 'About', 'Projects', 'Contact'].map((item) => (
             <a
               key={item}
@@ -197,84 +199,85 @@ const Footer = () => {
             </a>
           ))}
         </div> */}
-        <div className="flex flex-col space-y-4 text-30">
-          <h3 className="uppercase tracking-widest font-bold text-gray-500 text-40 mb-6 ">
-            Menu
-          </h3>
-          {[
-            { name: "Home", href: "/" },
-            { name: "Services", href: "/services" },
-            { name: "About", href: "/about" },
-            { name: "Portfolio", href: "/work-portfolio" },
-            { name: "Contact", href: "/contact" },
-          ].map(({ name, href }) => (
-            <Link
-              key={name}
-              href={href}
-              className="text-white group w-fit uppercase"
-            >
-              <span className="link-underline">{name}</span>
-            </Link>
-          ))}
-        </div>
+          <div className="flex flex-col space-y-4 text-30">
+            <h3 className="uppercase tracking-widest font-bold text-gray-500 text-40 mb-6 ">
+              Menu
+            </h3>
+            {[
+              { name: "Home", href: "/" },
+              { name: "Services", href: "/services" },
+              { name: "About", href: "/about" },
+              { name: "Portfolio", href: "/work-portfolio" },
+              { name: "Contact", href: "/contact" },
+            ].map(({ name, href }) => (
+              <Link
+                key={name}
+                href={href}
+                className="text-white group w-fit uppercase"
+              >
+                <span className="link-underline">{name}</span>
+              </Link>
+            ))}
+          </div>
 
-        {/* Middle Links */}
-        <div className="flex flex-col space-y-4 text-20">
-          <h3 className="uppercase tracking-widest font-bold text-gray-500 text-40 mb-6 ">
-            Socials
-          </h3>
-          {[
-            { name: "Instagram", href: "#", Icon: FaInstagram },
-            { name: "Linkedin", href: "#", Icon: FaLinkedinIn },
-            { name: "Telegram", href: "#", Icon: FaTelegramPlane },
-          ].map(({ name, href, Icon }) => (
-            <Link
-              key={name}
-              href={href}
-              className="flex uppercase items-center gap-4 w-fit group"
-            >
-              <div className="h-16 w-16 flex items-center justify-center border border-gray-400 rounded-full transition-all duration-300 group-hover:bg-white mb-2">
-                <Icon className="h-7 w-7 text-white transition-all duration-300 group-hover:text-black" />
-              </div>
-              <span className="text-white transition-all duration-300">
-                {name}
+          {/* Middle Links */}
+          <div className="flex flex-col space-y-4 text-20">
+            <h3 className="uppercase tracking-widest font-bold text-gray-500 text-40 mb-6 ">
+              Socials
+            </h3>
+            {[
+              { name: "Instagram", href: "#", Icon: FaInstagram },
+              { name: "Linkedin", href: "#", Icon: FaLinkedinIn },
+              { name: "Telegram", href: "#", Icon: FaTelegramPlane },
+            ].map(({ name, href, Icon }) => (
+              <Link
+                key={name}
+                href={href}
+                className="flex uppercase items-center gap-4 w-fit group"
+              >
+                <div className="h-16 w-16 flex items-center justify-center border border-gray-400 rounded-full transition-all duration-300 group-hover:bg-white mb-2">
+                  <Icon className="h-7 w-7 text-white transition-all duration-300 group-hover:text-black" />
+                </div>
+                <span className="text-white transition-all duration-300">
+                  {name}
+                </span>
+              </Link>
+            ))}
+          </div>
+
+          {/* Right Email */}
+          <div className="flex  flex-col space-y-4">
+            <h3 className="uppercase tracking-widest font-bold text-gray-500 text-40 mb-6 ">
+              Connect
+            </h3>
+            <button className="group cursor-pointer flex items-center bg-gray-200 text-black rounded-full overflow-hidden max-w-[230px] sm:max-w-[280px] transition-all hover:scale-105 transition-all">
+              <span className="pl-4 sm:px-4 uppercase font-sm py-2 w-full text-24 bg-transparent text-left">
+                Get Started
               </span>
-            </Link>
-          ))}
+
+              {/* Icon container */}
+              <div className="relative bg-black m-2 h-12 w-16 rounded-full overflow-hidden flex items-center justify-center">
+                {/* Outgoing arrow (exits top-right) */}
+                <ArrowRightIcon className="absolute h-5 w-5 text-white -rotate-45 transition-all duration-500 ease-out group-hover:translate-x-6 group-hover:-translate-y-6 group-hover:opacity-0" />
+
+                {/* Incoming arrow (enters from bottom-left) */}
+                <ArrowRightIcon className="absolute h-5 w-5 text-white -rotate-45 opacity-0 transition-all duration-500 ease-out delay-100 group-hover:opacity-100 group-hover:translate-x-0 group-hover:translate-y-0 -translate-x-4 translate-y-4" />
+              </div>
+            </button>
+          </div>
         </div>
 
-        {/* Right Email */}
-        <div className="flex  flex-col space-y-4">
-          <h3 className="uppercase tracking-widest font-bold text-gray-500 text-40 mb-6 ">
-            Connect
-          </h3>
-          <button className="group cursor-pointer flex items-center bg-gray-200 text-black rounded-full overflow-hidden max-w-[280px] transition-all hover:scale-105 transition-all">
-            <span className="px-4 uppercase font-sm py-2 w-full text-24 bg-transparent text-left">
-              Get Started
-            </span>
-
-            {/* Icon container */}
-            <div className="relative bg-black m-2 h-12 w-16 rounded-full overflow-hidden flex items-center justify-center">
-              {/* Outgoing arrow (exits top-right) */}
-              <ArrowRightIcon className="absolute h-5 w-5 text-white -rotate-45 transition-all duration-500 ease-out group-hover:translate-x-6 group-hover:-translate-y-6 group-hover:opacity-0" />
-
-              {/* Incoming arrow (enters from bottom-left) */}
-              <ArrowRightIcon className="absolute h-5 w-5 text-white -rotate-45 opacity-0 transition-all duration-500 ease-out delay-100 group-hover:opacity-100 group-hover:translate-x-0 group-hover:translate-y-0 -translate-x-4 translate-y-4" />
-            </div>
-          </button>
+        {/* Logo as cutout mask with background video */}
+        <div className="mt-0 sm:mt-12 glow-svg-mask aspect-[1048/172]  overflow-hidden">
+          <video
+            src="/videos/0_Car_Drifting_3840x2160.mp4"
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="w-full h-full object-cover"
+          ></video>
         </div>
-      </div>
-
-      {/* Logo as cutout mask with background video */}
-      <div className="mt-12 glow-svg-mask aspect-[1048/172] container overflow-hidden">
-        <video
-          src="/videos/0_Car_Drifting_3840x2160.mp4"
-          autoPlay
-          loop
-          muted
-          playsInline
-          className="w-full h-full object-cover"
-        ></video>
       </div>
     </footer>
   );
