@@ -1,0 +1,381 @@
+[
+    {
+      "id": 1,
+      "title": "Finance Manager/Controller",
+      "location": "United States, Massachusetts, Boston",
+      "creationDate": "2025-07-17",
+      "code": "FM001",
+      "department": "Finance",
+      "type": "Full-time",
+      "experience": "5-7 years",
+      "salary": "$120,000 - $150,000",
+      "description": "We are seeking an experienced Finance Manager/Controller to oversee our financial operations and reporting. You will be responsible for managing accounting processes, financial analysis, and ensuring compliance with financial regulations.",
+      "responsibilities": [
+        "Oversee monthly financial close process and prepare financial statements",
+        "Manage budgeting and forecasting processes",
+        "Ensure compliance with GAAP and financial regulations",
+        "Lead financial analysis and reporting initiatives",
+        "Supervise accounting staff and coordinate with external auditors",
+        "Implement and maintain internal controls and procedures"
+      ],
+      "requirements": [
+        "CPA certification required",
+        "Bachelor's degree in Accounting or Finance",
+        "5+ years of experience in financial management or public accounting",
+        "Strong knowledge of GAAP and financial regulations",
+        "Advanced Excel skills and experience with ERP systems",
+        "Excellent analytical and communication skills"
+      ],
+      "niceToHave": [
+        "MBA or advanced degree in Finance",
+        "Experience with financial software implementations",
+        "Public company reporting experience",
+        "Management consulting background",
+        "Six Sigma or process improvement certification"
+      ],
+      "benefits": [
+        "Competitive salary and performance bonuses",
+        "Comprehensive health, dental, and vision insurance",
+        "401(k) with company matching",
+        "Flexible work arrangements",
+        "Professional development opportunities"
+      ]
+    },
+    {
+      "id": 2,
+      "title": "FPGA Engineer",
+      "location": "Japan",
+      "creationDate": "2025-06-18",
+      "code": "ENG002",
+      "department": "Engineering",
+      "type": "Full-time",
+      "experience": "3-5 years",
+      "salary": "¥8,000,000 - ¥12,000,000",
+      "description": "Join our hardware engineering team to design and develop cutting-edge FPGA solutions for next-generation products. You'll work on complex digital signal processing and hardware acceleration projects.",
+      "responsibilities": [
+        "Design and implement FPGA-based solutions for signal processing",
+        "Develop HDL code (VHDL/Verilog) for complex digital systems",
+        "Collaborate with software teams on hardware-software integration",
+        "Perform timing analysis and optimize designs for performance",
+        "Create comprehensive documentation and test procedures",
+        "Support hardware validation and debugging activities"
+      ],
+      "requirements": [
+        "Bachelor's or Master's degree in Electrical Engineering or related field",
+        "3+ years of FPGA development experience",
+        "Proficiency in VHDL/Verilog and FPGA development tools (Vivado, Quartus)",
+        "Experience with high-speed digital design and signal processing",
+        "Knowledge of embedded systems and communication protocols",
+        "Strong problem-solving and debugging skills"
+      ],
+      "niceToHave": [
+        "PhD in Electrical Engineering or Computer Engineering",
+        "Experience with SystemVerilog and UVM",
+        "Knowledge of DSP algorithms and implementations",
+        "Familiarity with PCIe, DDR, and high-speed interfaces",
+        "Experience with FPGA acceleration for AI/ML workloads"
+      ],
+      "benefits": [
+        "Competitive salary with annual reviews",
+        "Comprehensive health insurance",
+        "Relocation assistance for international candidates",
+        "Flexible working hours",
+        "Annual training budget for skill development"
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Front End Engineer",
+      "location": "United States, Massachusetts, Boston",
+      "creationDate": "2025-01-15",
+      "code": "FE003",
+      "department": "Engineering",
+      "type": "Full-time",
+      "experience": "2-4 years",
+      "salary": "$90,000 - $130,000",
+      "description": "We're looking for a talented Front End Engineer to join our product development team. You'll be responsible for creating exceptional user experiences and implementing modern web applications using cutting-edge technologies.",
+      "responsibilities": [
+        "Develop responsive web applications using React, Next.js, and TypeScript",
+        "Collaborate with designers to implement pixel-perfect UI/UX designs",
+        "Optimize applications for maximum speed and scalability",
+        "Write clean, maintainable, and well-documented code",
+        "Participate in code reviews and contribute to team best practices",
+        "Work closely with backend engineers to integrate APIs"
+      ],
+      "requirements": [
+        "Bachelor's degree in Computer Science or related field",
+        "2+ years of experience with React and modern JavaScript",
+        "Proficiency in HTML5, CSS3, and responsive design",
+        "Experience with TypeScript and modern build tools",
+        "Knowledge of version control systems (Git)",
+        "Strong understanding of web performance optimization"
+      ],
+      "niceToHave": [
+        "Experience with Next.js and server-side rendering",
+        "Knowledge of GraphQL and state management libraries",
+        "Familiarity with design systems and component libraries",
+        "Understanding of web accessibility standards (WCAG)",
+        "Experience with testing frameworks (Jest, Cypress)"
+      ],
+      "benefits": [
+        "Competitive salary and equity package",
+        "Comprehensive healthcare coverage",
+        "Flexible remote work options",
+        "Annual learning and development budget",
+        "Modern tech stack and equipment"
+      ]
+    },
+    {
+      "id": 4,
+      "title": "Principal Software Engineer - C++",
+      "location": "United States, Massachusetts, Boston",
+      "creationDate": "2025-03-14",
+      "code": "111",
+      "department": "Engineering",
+      "type": "Full-time",
+      "experience": "8-12 years",
+      "salary": "$180,000 - $250,000",
+      "description": "Lead our high-performance systems development as a Principal Software Engineer specializing in C++. You'll architect and implement critical infrastructure components that power our platform at scale.",
+      "responsibilities": [
+        "Lead the design and development of high-performance C++ applications",
+        "Mentor junior and senior engineers on best practices and architecture",
+        "Drive technical decision-making for complex system designs",
+        "Optimize code for performance, memory usage, and scalability",
+        "Collaborate with cross-functional teams on system integration",
+        "Establish coding standards and review processes"
+      ],
+      "requirements": [
+        "Master's degree in Computer Science or equivalent experience",
+        "8+ years of professional C++ development experience",
+        "Expert knowledge of modern C++ standards (C++17/20)",
+        "Experience with multithreading, concurrency, and parallel programming",
+        "Strong background in system design and architecture",
+        "Leadership experience and mentoring capabilities"
+      ],
+      "niceToHave": [
+        "Experience with real-time systems and high-frequency trading",
+        "Love measuring and reducing latency - and care about every nanosecond",
+        "Have worked on performance-sensitive systems in trading, gaming, networking, or OS-level dev",
+        "Are comfortable working in C, C++, or Rust",
+        "Have experience optimizing for CPU/memory/cache or real-time constraints",
+        "Understand networking protocols (TCP/UDP) and kernel internals"
+      ],
+      "benefits": [
+        "Senior-level compensation with significant equity",
+        "Premium healthcare and wellness programs",
+        "Flexible work arrangements and unlimited PTO",
+        "Conference attendance and continuing education support",
+        "Stock options and performance bonuses"
+      ]
+    },
+    {
+      "id": 5,
+      "title": "Principal Software Engineer - Python",
+      "location": "United States, Massachusetts, Boston",
+      "creationDate": "2025-03-21",
+      "code": "PSE005",
+      "department": "Engineering",
+      "type": "Full-time",
+      "experience": "8-12 years",
+      "salary": "$170,000 - $240,000",
+      "description": "Drive innovation as a Principal Python Engineer, leading the development of scalable backend systems and data processing pipelines. You'll shape our technical direction while mentoring the next generation of engineers.",
+      "responsibilities": [
+        "Architect and develop scalable Python applications and microservices",
+        "Lead technical initiatives and drive engineering excellence",
+        "Design and implement data processing pipelines and APIs",
+        "Mentor engineers and establish development best practices",
+        "Collaborate on system architecture and technology decisions",
+        "Optimize systems for performance and reliability"
+      ],
+      "requirements": [
+        "Bachelor's or Master's degree in Computer Science or related field",
+        "8+ years of professional Python development experience",
+        "Expertise in Python frameworks (Django, FastAPI, Flask)",
+        "Strong experience with cloud platforms (AWS, GCP, Azure)",
+        "Knowledge of distributed systems and microservices architecture",
+        "Leadership and mentoring experience"
+      ],
+      "niceToHave": [
+        "Experience with containerization and orchestration (Docker, Kubernetes)",
+        "Knowledge of machine learning and data science libraries",
+        "Familiarity with event-driven architecture and message queues",
+        "Understanding of database optimization and caching strategies",
+        "Open source contribution experience"
+      ],
+      "benefits": [
+        "Competitive senior-level salary and equity",
+        "Comprehensive benefits package",
+        "Remote-first work culture",
+        "Professional development budget",
+        "Stock options and annual bonuses"
+      ]
+    },
+    {
+      "id": 6,
+      "title": "Senior DevOps Engineer",
+      "location": "United States, California, San Francisco",
+      "creationDate": "2025-04-10",
+      "code": "205",
+      "department": "Infrastructure",
+      "type": "Full-time",
+      "experience": "5-8 years",
+      "salary": "$140,000 - $180,000",
+      "description": "Join our infrastructure team to build and maintain the systems that power our applications. You'll work with cutting-edge cloud technologies and automation tools to ensure scalability and reliability.",
+      "responsibilities": [
+        "Design and implement CI/CD pipelines and automation workflows",
+        "Manage cloud infrastructure using Infrastructure as Code",
+        "Monitor system performance and implement observability solutions",
+        "Collaborate with development teams on deployment strategies",
+        "Ensure security best practices across all infrastructure",
+        "Lead incident response and post-mortem processes"
+      ],
+      "requirements": [
+        "Bachelor's degree in Computer Science or related field",
+        "5+ years of DevOps or Site Reliability Engineering experience",
+        "Expertise in cloud platforms (AWS, GCP, or Azure)",
+        "Proficiency with containerization (Docker, Kubernetes)",
+        "Experience with Infrastructure as Code (Terraform, CloudFormation)",
+        "Strong scripting skills in Python, Bash, or Go"
+      ],
+      "niceToHave": [
+        "Certified in major cloud platforms (AWS, GCP, Azure)",
+        "Experience with service mesh technologies (Istio, Linkerd)",
+        "Knowledge of chaos engineering and reliability testing",
+        "Familiarity with GitOps workflows and tools",
+        "Experience with security scanning and compliance automation"
+      ],
+      "benefits": [
+        "Competitive salary with performance bonuses",
+        "Full health, dental, and vision coverage",
+        "Flexible work arrangements",
+        "Annual technology allowance",
+        "Professional certification reimbursement"
+      ]
+    },
+    {
+      "id": 7,
+      "title": "Data Scientist",
+      "location": "United States, New York, New York",
+      "creationDate": "2025-05-22",
+      "code": "DS007",
+      "department": "Data Science",
+      "type": "Full-time",
+      "experience": "3-6 years",
+      "salary": "$110,000 - $160,000",
+      "description": "Join our data science team to extract insights from complex datasets and build predictive models that drive business decisions. You'll work with cutting-edge machine learning technologies and collaborate with cross-functional teams.",
+      "responsibilities": [
+        "Develop and implement machine learning models and algorithms",
+        "Analyze large datasets to extract actionable business insights",
+        "Collaborate with engineering teams to deploy models into production",
+        "Create data visualizations and reports for stakeholders",
+        "Conduct A/B tests and statistical analysis",
+        "Stay current with latest developments in data science and ML"
+      ],
+      "requirements": [
+        "Master's degree in Data Science, Statistics, or related field",
+        "3+ years of experience in data science or machine learning",
+        "Proficiency in Python, R, and SQL",
+        "Experience with ML frameworks (scikit-learn, TensorFlow, PyTorch)",
+        "Strong statistical analysis and hypothesis testing skills",
+        "Excellent communication and presentation skills"
+      ],
+      "niceToHave": [
+        "PhD in quantitative field (Statistics, Mathematics, Physics)",
+        "Experience with big data technologies (Spark, Hadoop)",
+        "Knowledge of deep learning and neural networks",
+        "Familiarity with cloud ML platforms (AWS SageMaker, GCP AI Platform)",
+        "Experience in specific domains (finance, healthcare, e-commerce)"
+      ],
+      "benefits": [
+        "Competitive salary and annual bonuses",
+        "Comprehensive health and wellness benefits",
+        "Flexible remote work options",
+        "Conference attendance and learning budget",
+        "Stock options and equity participation"
+      ]
+    },
+    {
+      "id": 8,
+      "title": "Machine Learning Engineer",
+      "location": "Canada, Ontario, Toronto",
+      "creationDate": "2025-06-05",
+      "code": "301",
+      "department": "AI/ML",
+      "type": "Full-time",
+      "experience": "4-7 years",
+      "salary": "CAD $130,000 - $180,000",
+      "description": "Build and deploy machine learning systems at scale as a Machine Learning Engineer. You'll work on cutting-edge AI projects and help bring ML models from research to production.",
+      "responsibilities": [
+        "Design and implement scalable ML pipelines and infrastructure",
+        "Deploy machine learning models into production environments",
+        "Optimize model performance and monitor system reliability",
+        "Collaborate with data scientists to productionize research models",
+        "Implement MLOps practices and automated testing frameworks",
+        "Research and evaluate new ML technologies and frameworks"
+      ],
+      "requirements": [
+        "Bachelor's or Master's degree in Computer Science or related field",
+        "4+ years of experience in machine learning engineering",
+        "Strong programming skills in Python and/or Scala",
+        "Experience with cloud platforms and containerization",
+        "Knowledge of ML frameworks and model serving technologies",
+        "Understanding of distributed systems and data engineering"
+      ],
+      "niceToHave": [
+        "Experience with MLOps tools and model monitoring platforms",
+        "Knowledge of GPU programming and distributed training",
+        "Familiarity with streaming data processing frameworks",
+        "Understanding of model compression and optimization techniques",
+        "Experience with edge deployment and mobile ML"
+      ],
+      "benefits": [
+        "Competitive salary with performance incentives",
+        "Comprehensive healthcare coverage",
+        "Flexible work arrangements and remote options",
+        "Annual professional development allowance",
+        "Stock options and profit sharing"
+      ]
+    },
+    {
+      "id": 9,
+      "title": "Product Manager - AI",
+      "location": "United Kingdom, London",
+      "creationDate": "2025-07-01",
+      "code": "PM009",
+      "department": "Product",
+      "type": "Full-time",
+      "experience": "5-8 years",
+      "salary": "£90,000 - £130,000",
+      "description": "Lead AI product strategy and development as a Product Manager specializing in artificial intelligence solutions. You'll drive product vision, work with engineering teams, and shape the future of our AI offerings.",
+      "responsibilities": [
+        "Define and execute AI product strategy and roadmap",
+        "Collaborate with engineering, design, and data science teams",
+        "Conduct market research and competitive analysis",
+        "Gather and prioritize product requirements from stakeholders",
+        "Track product metrics and analyze user feedback",
+        "Present product updates to executive leadership"
+      ],
+      "requirements": [
+        "Bachelor's degree in Business, Engineering, or related field",
+        "5+ years of product management experience",
+        "Strong understanding of AI/ML technologies and applications",
+        "Experience with agile development methodologies",
+        "Excellent analytical and problem-solving skills",
+        "Strong communication and leadership abilities"
+      ],
+      "niceToHave": [
+        "MBA or advanced degree in business or technology",
+        "Technical background in AI/ML or data science",
+        "Experience with B2B SaaS product management",
+        "Knowledge of AI ethics and responsible AI practices",
+        "International product management experience"
+      ],
+      "benefits": [
+        "Competitive salary with equity package",
+        "Private healthcare and pension scheme",
+        "Flexible working arrangements",
+        "Annual learning and development budget",
+        "Company stock options and bonuses"
+      ]
+    }
+  ]

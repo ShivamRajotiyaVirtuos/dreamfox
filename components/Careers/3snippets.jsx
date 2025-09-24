@@ -5,7 +5,7 @@ import Link from "next/link";
 import SidebarForm from "../Sidebar/sideform";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-
+import jobListings from "../../jobs.json";
 // Register GSAP plugins
 gsap.registerPlugin(ScrollTrigger);
 const JobListingsGrid = () => {
@@ -13,62 +13,62 @@ const JobListingsGrid = () => {
   const cardsRef = useRef([]);
   const [open, setOpen] = useState(false);
   const containerRef = useRef(null);
-  const jobListings = [
-    {
-      title: "Finance Manager/Controller",
-      location: "United States, Massachusetts, Boston",
-      creationDate: "2025-07-17",
-      code: null,
-    },
-    {
-      title: "FPGA Engineer",
-      location: "Japan",
-      creationDate: "2025-06-18",
-      code: null,
-    },
-    {
-      title: "Front End Engineer",
-      location: "United States, Massachusetts, Boston",
-      creationDate: "2025-01-15",
-      code: null,
-    },
-    {
-      title: "Principal Software Engineer - C++",
-      location: "United States, Massachusetts, Boston",
-      creationDate: "2025-03-14",
-      code: "111",
-    },
-    {
-      title: "Principal Software Engineer - Python",
-      location: "United States, Massachusetts, Boston",
-      creationDate: "2025-03-21",
-      code: null,
-    },
-    {
-      title: "Senior DevOps Engineer",
-      location: "United States, California, San Francisco",
-      creationDate: "2025-04-10",
-      code: "205",
-    },
-    {
-      title: "Data Scientist",
-      location: "United States, New York, New York",
-      creationDate: "2025-05-22",
-      code: null,
-    },
-    {
-      title: "Machine Learning Engineer",
-      location: "Canada, Ontario, Toronto",
-      creationDate: "2025-06-05",
-      code: "301",
-    },
-    {
-      title: "Product Manager - AI",
-      location: "United Kingdom, London",
-      creationDate: "2025-07-01",
-      code: null,
-    },
-  ];
+  // const jobListings = [
+  //   {
+  //     title: "Finance Manager/Controller",
+  //     location: "United States, Massachusetts, Boston",
+  //     creationDate: "2025-07-17",
+  //     code: null,
+  //   },
+  //   {
+  //     title: "FPGA Engineer",
+  //     location: "Japan",
+  //     creationDate: "2025-06-18",
+  //     code: null,
+  //   },
+  //   {
+  //     title: "Front End Engineer",
+  //     location: "United States, Massachusetts, Boston",
+  //     creationDate: "2025-01-15",
+  //     code: null,
+  //   },
+  //   {
+  //     title: "Principal Software Engineer - C++",
+  //     location: "United States, Massachusetts, Boston",
+  //     creationDate: "2025-03-14",
+  //     code: "111",
+  //   },
+  //   {
+  //     title: "Principal Software Engineer - Python",
+  //     location: "United States, Massachusetts, Boston",
+  //     creationDate: "2025-03-21",
+  //     code: null,
+  //   },
+  //   {
+  //     title: "Senior DevOps Engineer",
+  //     location: "United States, California, San Francisco",
+  //     creationDate: "2025-04-10",
+  //     code: "205",
+  //   },
+  //   {
+  //     title: "Data Scientist",
+  //     location: "United States, New York, New York",
+  //     creationDate: "2025-05-22",
+  //     code: null,
+  //   },
+  //   {
+  //     title: "Machine Learning Engineer",
+  //     location: "Canada, Ontario, Toronto",
+  //     creationDate: "2025-06-05",
+  //     code: "301",
+  //   },
+  //   {
+  //     title: "Product Manager - AI",
+  //     location: "United Kingdom, London",
+  //     creationDate: "2025-07-01",
+  //     code: null,
+  //   },
+  // ];
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -198,7 +198,7 @@ const JobListingsGrid = () => {
         >
           {jobListings.map((job, index) => (
             <Link
-              href={"/about/careers/2"}
+              href={`/about/careers/${job.code}`}
               key={index}
               ref={(el) => (cardsRef.current[index] = el)}
               className="group cursor-pointer opacity-0"

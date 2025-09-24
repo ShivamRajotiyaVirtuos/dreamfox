@@ -14,6 +14,7 @@ import {
 } from "@heroicons/react/24/solid";
 import TextReveal from "@/components/Text Reveal/textreveal";
 import Link from "next/link";
+import ShareModal from "@/components/SocialShare/Sharemodal";
 
 const NewsDetailPage = () => {
   const headerRef = useRef(null);
@@ -257,7 +258,17 @@ const NewsDetailPage = () => {
                     <span className="text-gray-400 font-medium">
                       Share this article
                     </span>
-                    <div className="flex relative items-center gap-3">
+                    <ShareModal
+                      url={
+                        typeof window !== "undefined"
+                          ? window.location.href
+                          : ""
+                      }
+                      // buttonText="Share Article"
+                      title={article.title}
+                      description=""
+                    />
+                    {/* <div className="flex relative items-center gap-3">
                       <button
                         onClick={handleShareJob}
                         className="bg-white/5 backdrop-blur-md border border-white/20 hover:bg-white/10 text-white p-3 rounded-full transition-all duration-300 hover:scale-110"
@@ -266,26 +277,12 @@ const NewsDetailPage = () => {
                       </button>
                       {showCopyMessage && (
                         <div className="absolute top-1.5 right-15 z-[100] border border-white text-gray-400 px-4 py-2 rounded-lg shadow-lg flex items-center gap-3 animate-pulse">
-                          {/* <svg
-                            className="w-5 h-5"
-                            fill="none"
-                            stroke="currentColor"
-                            viewBox="0 0 24 24"
-                          >
-                            <path
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              strokeWidth={2}
-                              d="M5 13l4 4L19 7"
-                            />
-                          </svg> */}
+                          
                           <span className="font-medium text-xs">Copied!</span>
                         </div>
                       )}
-                      {/* <button className="bg-white/5 backdrop-blur-md border border-white/20 hover:bg-white/10 text-white p-3 rounded-full transition-all duration-300 hover:scale-110">
-                        <ArrowTopRightOnSquareIcon className="w-5 h-5" />
-                      </button> */}
-                    </div>
+                     
+                    </div> */}
                   </div>
                 </div>
               </div>

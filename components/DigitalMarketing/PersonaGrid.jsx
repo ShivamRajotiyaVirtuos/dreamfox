@@ -746,7 +746,7 @@ const PersonaTargeting = () => {
             >
               Persona Targeting
             </TextReveal>
-            {/* <h1 className="main-title text-6xl md:text-8xl lg:text-9xl font-thin tracking-tight mb-8 relative">
+            {/* <h1 className="main-title flex text-6xl md:text-8xl lg:text-9xl font-bold tracking-tight mb-8 relative">
               <span className="bg-gradient-to-r from-white via-gray-300 to-white bg-clip-text text-transparent">
                 Persona
               </span>
@@ -754,7 +754,7 @@ const PersonaTargeting = () => {
               <span className="bg-gradient-to-r from-gray-400 via-white to-gray-400 bg-clip-text text-transparent">
                 Targeting
               </span>
-              <div className="absolute -bottom-4 left-1/2 transform -translate-x-1/2 w-24 h-px bg-gradient-to-r from-transparent via-white to-transparent" />
+              <div className="absolute -bottom-4 left-1/2 transform -translate-x-1/2 w-96 h-px bg-gradient-to-r from-transparent via-white to-transparent" />
             </h1> */}
 
             {/* Subtitle */}
