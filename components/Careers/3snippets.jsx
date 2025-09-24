@@ -3,12 +3,16 @@ import { ArrowRightIcon } from "@heroicons/react/24/solid";
 import TextReveal from "../Text Reveal/textreveal";
 import Link from "next/link";
 import SidebarForm from "../Sidebar/sideform";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
+// Register GSAP plugins
+gsap.registerPlugin(ScrollTrigger);
 const JobListingsGrid = () => {
   const gridRef = useRef(null);
   const cardsRef = useRef([]);
-  const [open, setOpen] = useState(true)
-
+  const [open, setOpen] = useState(false);
+  const containerRef = useRef(null);
   const jobListings = [
     {
       title: "Finance Manager/Controller",
@@ -67,13 +71,7 @@ const JobListingsGrid = () => {
   ];
 
   useEffect(() => {
-    // Load GSAP from CDN
-    const script = document.createElement("script");
-    script.src =
-      "https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js";
-    script.onload = () => {
-      const { gsap } = window;
-
+    const ctx = gsap.context(() => {
       // Set initial state
       gsap.set(cardsRef.current, {
         y: 60,
@@ -81,71 +79,76 @@ const JobListingsGrid = () => {
         scale: 0.9,
       });
 
-      // Intersection Observer for scroll-triggered animation
-      const observer = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              // Animate cards with staggered delays
-              gsap.to(cardsRef.current, {
-                y: 0,
-                opacity: 1,
-                scale: 1,
-                duration: 0.6,
-                ease: "power2.out",
-                stagger: {
-                  amount: 0.8,
-                  grid: [3, 3],
-                  from: "start",
-                },
-                delay: 0.2,
-              });
-
-              observer.unobserve(entry.target);
-            }
-          });
-        },
-        {
-          threshold: 0.2,
-          rootMargin: "-50px",
-        }
-      );
-
-      if (gridRef.current) {
-        observer.observe(gridRef.current);
-      }
-
-      // Add hover animations
-      cardsRef.current.forEach((card) => {
+      // ScrollTrigger animation for cards
+      cardsRef.current.forEach((card, index) => {
         if (card) {
-          card.addEventListener("mouseenter", () => {
+          gsap.to(card, {
+            y: 0,
+            opacity: 1,
+            scale: 1,
+            duration: 0.8,
+            delay: index * 0.1,
+            ease: "power2.out",
+            scrollTrigger: {
+              trigger: card,
+              start: "top 85%",
+              end: "bottom 15%",
+              toggleActions: "play none none reverse",
+            },
+          });
+
+          // Hover animations
+          const handleMouseEnter = () => {
             gsap.to(card, {
-              scale: 1.03,
-              y: -8,
+              scale: 1.02,
+              y: -5,
               duration: 0.3,
               ease: "power2.out",
             });
-          });
+          };
 
-          card.addEventListener("mouseleave", () => {
+          const handleMouseLeave = () => {
             gsap.to(card, {
               scale: 1,
               y: 0,
               duration: 0.3,
               ease: "power2.out",
             });
-          });
+          };
+
+          card.addEventListener("mouseenter", handleMouseEnter);
+          card.addEventListener("mouseleave", handleMouseLeave);
+
+          // Cleanup event listeners
+          return () => {
+            card.removeEventListener("mouseenter", handleMouseEnter);
+            card.removeEventListener("mouseleave", handleMouseLeave);
+          };
         }
       });
-    };
 
-    document.head.appendChild(script);
+      // Container animation
+      gsap.fromTo(
+        containerRef.current,
+        {
+          opacity: 0,
+          y: 30,
+        },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 1,
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: containerRef.current,
+            start: "top 80%",
+            toggleActions: "play none none reverse",
+          },
+        }
+      );
+    }, containerRef);
 
-    return () => {
-      if (document.head.contains(script)) {
-        document.head.removeChild(script);
-      }
-    };
+    return () => ctx.revert();
   }, []);
 
   const formatDate = (dateString) => {
@@ -158,8 +161,12 @@ const JobListingsGrid = () => {
   };
 
   return (
-    <div className="min-h-screen pb-16 lg:pb-32 bg-black  px-6" id="openings">
-      <SidebarForm />
+    <div
+      ref={containerRef}
+      className="min-h-screen pb-16 lg:pb-32 bg-black  px-6"
+      id="openings"
+    >
+      {/* <SidebarForm /> */}
       <div className="container mx-auto">
         {/* Header */}
         <div className="text-center mb-12 lg:mb-24">
@@ -260,8 +267,12 @@ const JobListingsGrid = () => {
             individuals.
           </p>
           <button
-            onClick={() => setOpen(true)}
-            className="bg-[#ec466f] hover:bg-[#ec466f] text-white font-semibold px-8 py-3 rounded-full transition-colors duration-300"
+            onClick={(e) => {
+              e.preventDefault(); // Prevent any default behavior
+              e.stopPropagation(); // Stop event bubbling
+              setOpen(true);
+            }}
+            className="bg-[#ec466f] cursor-pointer hover:bg-[#ec466f] text-white font-semibold px-8 py-3 rounded-full transition-colors duration-300"
           >
             Send Us Your Resume
           </button>

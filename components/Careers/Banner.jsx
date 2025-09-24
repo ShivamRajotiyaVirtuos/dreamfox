@@ -12,6 +12,16 @@ import TextReveal from "../Text Reveal/textreveal";
 gsap.registerPlugin(ScrollTrigger);
 
 const Careersbanner = () => {
+  const scrollToOpenings = () => {
+    gsap.to(window, {
+      duration: 1.5,
+      scrollTo: {
+        y: "#openings",
+        offsetY: 80, // Adjust for header height
+      },
+      ease: "power2.inOut",
+    });
+  };
   // const circle1Ref = useRef(null);
   // const circle2Ref = useRef(null);
   // const circle3Ref = useRef(null);
@@ -97,10 +107,7 @@ const Careersbanner = () => {
             experiences. We're looking for passionate individuals who want to
             make a meaningful impact in the world of technology and design
           </TextReveal>
-          <AnimatedButton
-            text="View Open Positions"
-            href="/about/careers#openings"
-          />
+          <AnimatedButton text="View Open Positions" scrollTo="#openings" />
 
           {/* </div> */}
         </div>

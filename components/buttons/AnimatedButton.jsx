@@ -1,88 +1,12 @@
-// import { useRef, useEffect } from "react";
-// import Link from "next/link";
-// import { gsap } from "gsap";
-// import { UserIcon } from "@heroicons/react/24/solid";
-// import { ArrowRightIcon } from "@heroicons/react/24/outline";
-
-// export default function AnimatedButton({ text = "ABOUT ME", href = "#" }) {
-//   const dotRef = useRef(null);
-//   const userIconRef = useRef(null);
-//   const textTopRef = useRef(null);
-//   const textBottomRef = useRef(null);
-//   const tlRef = useRef(null); // <-- timeline ref
-
-//   useEffect(() => {
-//     gsap.set(userIconRef.current, { opacity: 0, scale: 0.5 });
-//     gsap.set(textBottomRef.current, { y: -22, opacity: 1 });
-//     gsap.set(textTopRef.current, { y: -30, opacity: 1 });
-//   }, []);
-
-//   const handleEnter = () => {
-//     if (tlRef.current) tlRef.current.kill(); // kill previous timeline
-//     const tl = gsap.timeline({ defaults: { ease: "power2.out" } });
-//     tl.to(dotRef.current, { scale: 0.3, opacity: 0, duration: 0.2 })
-//       .to(userIconRef.current, { opacity: 1, scale: 1, duration: 0.3 }, "<")
-//       .to(textTopRef.current, { y: 6, opacity: 1, duration: 0.3 }, "<")
-//       .to(
-//         textBottomRef.current,
-//         { y: 10, opacity: 1, filter: "blur(0px)", duration: 0.3 },
-//         "<"
-//       );
-//     tlRef.current = tl;
-//   };
-
-//   const handleLeave = () => {
-//     if (tlRef.current) tlRef.current.kill(); // kill previous timeline
-//     const tl = gsap.timeline({ defaults: { ease: "power2.out" } });
-//     tl.to(userIconRef.current, { opacity: 0, scale: 0.5, duration: 0.2 })
-//       .to(dotRef.current, { opacity: 1, scale: 1, duration: 0.3 }, "<")
-//       .to(textBottomRef.current, { y: -22, opacity: 1, duration: 0.3 }, "<")
-//       .to(
-//         textTopRef.current,
-//         { y: -30, opacity: 1, filter: "blur(0px)", duration: 0.3 },
-//         "<"
-//       );
-//     tlRef.current = tl;
-//   };
-
-//   return (
-//     <Link
-//       href={href}
-//       onMouseEnter={handleEnter}
-//       onMouseLeave={handleLeave}
-//       className="relative inline-flex items-center gap-3 px-6 py-3 border border-white/50 text-black rounded-md bg-white hover:bg-white transition-all duration-300 overflow-hidden hover:scale-[0.95] hover:border-[1px] hover:border-white max-w-fit "
-//     >
-//       {/* Icon */}
-//       <div className="relative w-5 h-5 shrink-0">
-//         <div
-//           ref={dotRef}
-//           className="absolute w-2.5 h-2.5 top-1.5 left-1.5 bg-black rounded-full"
-//         />
-//         <ArrowRightIcon
-//           ref={userIconRef}
-//           className="absolute w-5 h-5 text-black"
-//         />
-//       </div>
-//       {/* Text Stack */}
-//       <div className="relative bg-white h-8 w-fit overflow-hidden ">
-//         <span ref={textTopRef} className="block text-sm font- text-black uppercase font-semibold">
-//           {text}
-//         </span>
-//         <span
-//           ref={textBottomRef}
-//           className="block text-sm font-semibold uppercase text-black mt-2"
-//         >
-//           {text}
-//         </span>
-//       </div>
-//     </Link>
-//   );
-// }
-
 "use client";
 
 import { useState, useRef } from "react";
 import Link from "next/link";
+import { gsap } from "gsap";
+import { ScrollToPlugin } from "gsap/ScrollToPlugin";
+
+// Register GSAP ScrollToPlugin
+gsap.registerPlugin(ScrollToPlugin);
 
 const AnimatedButton = ({
   href = "/",
@@ -91,6 +15,8 @@ const AnimatedButton = ({
   className = "",
   variant = "primary",
   target = "_self",
+  scrollTo = null,
+  onClick = null,
 }) => {
   const [isHovered, setIsHovered] = useState(false);
   const [overlayStyle, setOverlayStyle] = useState({});
@@ -118,7 +44,28 @@ const AnimatedButton = ({
     setOverlayStyle({});
   };
 
-  // Variant styles
+  const handleClick = (e) => {
+    // Handle scroll to section
+    if (scrollTo) {
+      e.preventDefault();
+      gsap.to(window, {
+        duration: 1.2,
+        scrollTo: {
+          y: scrollTo,
+          offsetY: 80, // Adjust for header height
+        },
+        ease: "power2.inOut",
+      });
+    } 
+    // Handle custom onClick
+    else if (onClick) {
+      e.preventDefault();
+      onClick(e);
+    }
+    // For regular links, let the Link component handle it
+  };
+
+  // Variant styles (unchanged)
   const variants = {
     primary: {
       base: "border-white text-white hover:shadow-purple-500/25",
@@ -139,7 +86,7 @@ const AnimatedButton = ({
 
   const currentVariant = variants[variant] || variants.primary;
 
-  // Default arrow icon
+  // Default arrow icon (unchanged)
   const ArrowIcon = () => (
     <svg
       data-slot="icon"
@@ -153,15 +100,9 @@ const AnimatedButton = ({
     </svg>
   );
 
-  return (
-    <button
-      ref={buttonRef}
-      onMouseEnter={handleMouseEnter}
-      onMouseMove={handleMouseMove}
-      onMouseLeave={handleMouseLeave}
-      className={`relative w-fit px-8 cursor-pointer py-4 font-black text-lg border-2 rounded-full overflow-hidden group hover:shadow-2xl transition-all duration-300 hover:scale-105 flex items-center gap-3 ${currentVariant.base} ${className}`}
-    >
-      {/* Overlay effect */}
+  const ButtonContent = () => (
+    <>
+      {/* Overlay effect (unchanged) */}
       <div
         className={`absolute inset-0 bg-gradient-to-r ${
           currentVariant.gradient
@@ -175,20 +116,43 @@ const AnimatedButton = ({
         }}
       />
 
-      {/* Button content */}
+      {/* Button content (unchanged) */}
+      <span className="relative uppercase z-10">{text}</span>
+    </>
+  );
+
+  // If scrollTo or onClick is provided, render as button
+  if (scrollTo || onClick) {
+    return (
+      <button
+        ref={buttonRef}
+        onClick={handleClick}
+        onMouseEnter={handleMouseEnter}
+        onMouseMove={handleMouseMove}
+        onMouseLeave={handleMouseLeave}
+        className={`relative w-fit px-8 cursor-pointer py-4 font-black text-lg border-2 rounded-full overflow-hidden group hover:shadow-2xl transition-all duration-300 hover:scale-105 flex items-center gap-3 ${currentVariant.base} ${className}`}
+      >
+        <ButtonContent />
+      </button>
+    );
+  }
+
+  // Default Link behavior (unchanged)
+  return (
+    <button
+      ref={buttonRef}
+      onMouseEnter={handleMouseEnter}
+      onMouseMove={handleMouseMove}
+      onMouseLeave={handleMouseLeave}
+      className={`relative w-fit px-8 cursor-pointer py-4 font-black text-lg border-2 rounded-full overflow-hidden group hover:shadow-2xl transition-all duration-300 hover:scale-105 flex items-center gap-3 ${currentVariant.base} ${className}`}
+    >
+      <ButtonContent />
+
       <Link
         href={href}
         target={target}
-        className="relative z-10 flex items-center gap-3 w-full h-full"
-      >
-        <span className="relative uppercase z-10">{text}</span>
-
-        {/* {icon && (
-          <span className="rounded-full relative z-10">
-            {typeof icon === "boolean" ? <ArrowIcon /> : icon}
-          </span>
-        )} */}
-      </Link>
+        className="absolute inset-0 z-10"
+      />
     </button>
   );
 };

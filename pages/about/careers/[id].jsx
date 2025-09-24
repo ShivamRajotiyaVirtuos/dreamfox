@@ -2,6 +2,7 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useEffect, useRef, useState } from "react";
 import { useRouter } from "next/router";
+import SidebarForm from "@/components/Sidebar/sideform";
 
 // Register ScrollTrigger plugin
 gsap.registerPlugin(ScrollTrigger);
@@ -10,6 +11,8 @@ const JobDetail = () => {
   const router = useRouter();
   const { id } = router.query;
   const sectionsRef = useRef([]);
+  const [open, setOpen] = useState(false);
+
   const containerRef = useRef(null);
   const [showCopyMessage, setShowCopyMessage] = useState(false);
 
@@ -130,6 +133,8 @@ const JobDetail = () => {
           <span className="font-medium">Job URL copied to clipboard!</span>
         </div>
       )} */}
+      <SidebarForm jobId={id} open={open} setOpen={setOpen} />
+
       <section className="pt-32 sm:pt-56 pb-16 px-4">
         <div className="max-w-4xl mx-auto">
           <div className="hero-element mb-6">
@@ -148,7 +153,14 @@ const JobDetail = () => {
           </p>
 
           <div className="hero-element relative flex flex-wrap gap-4">
-            <button className="bg-gradient-to-r from-pink-500 to-[#ea4079] text-white px-8 py-3 rounded-full font-medium hover:scale-105 transition-transform">
+            <button
+              onClick={(e) => {
+                e.preventDefault(); // Prevent any default behavior
+                e.stopPropagation(); // Stop event bubbling
+                setOpen(true);
+              }}
+              className="bg-gradient-to-r  from-pink-500 to-[#ea4079] cursor-pointer text-white px-8 py-3 rounded-full font-medium hover:scale-105 transition-transform"
+            >
               Apply Now
             </button>
             <div className="relative">
