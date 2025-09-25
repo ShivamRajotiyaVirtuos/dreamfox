@@ -1,13 +1,14 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Dialog, DialogPanel, DialogTitle } from "@headlessui/react";
 import { XMarkIcon } from "@heroicons/react/24/outline";
 import JobDetail from "../Form/form";
-
+import jobsData from "../../jobs.json";
 export default function SidebarForm({ open, setOpen, jobId }) {
   // const [open, setOpen] = useState(true)
-  console.log(jobId);
+
+  
   return (
     <div>
       <Dialog open={open} onClose={setOpen} className="relative z-50">
@@ -40,7 +41,7 @@ export default function SidebarForm({ open, setOpen, jobId }) {
                     </div>
                   </div>
                   <div className="relative z-50 mt-16 flex-1 px-4 sm:px-6">
-                    <JobDetail onClose={() => setOpen(false)} />
+                    <JobDetail jobId={jobId} onClose={() => setOpen(false)} />
                   </div>
                 </div>
               </DialogPanel>

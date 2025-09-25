@@ -3,6 +3,7 @@
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useRouter } from "next/navigation";
 // import { o } from "framer-motion/dist/types.d-D0HXPxHm";
 
 if (typeof window !== "undefined") {
@@ -17,7 +18,9 @@ const Alliances_card = () => {
       id: 1,
       title: "Enterprise Database Solutions and Cloud Infrastructure",
       category: "ORACLE",
-      alliance:"oracle",
+      alliance: "oracle",
+      id: "oracle",
+
       services: [
         "Database Management",
         "Cloud Infrastructure",
@@ -33,7 +36,8 @@ const Alliances_card = () => {
       id: 2,
       title: "Advanced Analytics and Business Intelligence Solutions",
       category: "COHERING",
-      alliance:"cohering",
+      alliance: "cohering",
+      id: "cohering",
       services: [
         "Data Analytics",
         "Business Intelligence",
@@ -49,7 +53,8 @@ const Alliances_card = () => {
       id: 3,
       title: "Web Hosting and Domain Management Excellence",
       category: "GO-DADDY",
-      alliance:"godaddy",
+      alliance: "godaddy",
+      id: "godaddy",
       services: [
         "Web Hosting",
         "Domain Registration",
@@ -65,7 +70,8 @@ const Alliances_card = () => {
       id: 4,
       title: "Cloud Computing and Digital Transformation Solutions",
       category: "MICROSOFT",
-      alliance:"microsoft",
+      alliance: "microsoft",
+      id: "microsoft",
       services: [
         "Azure Cloud Services",
         "Office 365",
@@ -81,7 +87,8 @@ const Alliances_card = () => {
       id: 5,
       title: "Customer Relationship Management and Sales Automation",
       category: "SALESFORCE",
-      alliance:"salesforce",
+      alliance: "salesforce",
+      id: "salesforce",
       services: [
         "CRM Implementation",
         "Sales Cloud",
@@ -94,7 +101,27 @@ const Alliances_card = () => {
         "Building stronger customer relationships through world-class CRM and automation solutions.",
     },
   ];
+  const router = useRouter();
 
+  useEffect(() => {
+    // Handle hash scrolling when component mounts
+    const hash = window.location.hash;
+    if (hash) {
+      const targetId = hash.substring(1); // Remove the #
+
+      // Wait for the page to fully load, then scroll
+      setTimeout(() => {
+        const element = document.getElementById(targetId);
+        if (element) {
+          element.scrollIntoView({
+            behavior: "smooth",
+            block: "center", // Center the element in viewport
+          });
+        }
+      }, 500); // Increased delay to ensure GSAP animations don't interfere
+    }
+  }, []);
+  
   useEffect(() => {
     if (!containerRef.current) return;
 
@@ -191,10 +218,10 @@ const Alliances_card = () => {
       {offeringsData.map((offering, index) => (
         <div
           key={offering.id}
-          id={offering.alliance}
+          id={offering.id}
           className={`offering-card-${index} flex items-center justify-center relative py-16 md:py-36`}
         >
-          <div className="absolute inset-0  bg-black" />
+          <div id={offering.id} className="absolute inset-0  bg-black" />
 
           <div className="container mx-auto px-6 lg:px-12 relative z-10">
             <div className="grid lg:grid-cols-2 gap-12 lg:gap-24 items-center">

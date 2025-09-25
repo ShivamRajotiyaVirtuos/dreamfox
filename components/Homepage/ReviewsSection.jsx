@@ -11,12 +11,26 @@ import Image from "next/image";
 import TextReveal from "../Text Reveal/textreveal";
 import Link from "next/link";
 const images = [
-  "/images/home/cohering.webp",
-  "/images/home/godaddy.webp",
-  "/images/home/microsoft.webp",
-
-  "/images/home/salesforce.webp",
-  "/images/home/oracle.webp",
+  {
+    imageUrl: "/images/home/cohering.webp",
+    pageUrl: "/about/alliances#cohering",
+  },
+  {
+    imageUrl: "/images/home/godaddy.webp",
+    pageUrl: "/about/alliances#godaddy",
+  },
+  {
+    imageUrl: "/images/home/microsoft.webp",
+    pageUrl: "/about/alliances#microsoft",
+  },
+  {
+    imageUrl: "/images/home/salesforce.webp",
+    pageUrl: "/about/alliances#salesforce",
+  },
+  {
+    imageUrl: "/images/home/oracle.webp",
+    pageUrl: "/about/alliances#oracle",
+  },
 ];
 
 const ReviewsSection = () => {
@@ -111,7 +125,7 @@ const ReviewsSection = () => {
 
           return (
             <motion.div
-              key={img}
+              key={img.imageUrl}
               className="absolute w-full sm:h-full"
               style={{ zIndex: index }}
               animate={{
@@ -130,11 +144,14 @@ const ReviewsSection = () => {
                 alt={`Slide ${index}`}
                 className="w-full h-full object-cover rounded-xl border-4 border-white shadow-2xl"
               /> */}
-              <Link href={"/about/alliances"} className="relative w-full sm:h-full rounded overflow-hidden  shadow">
+              <Link
+                href={img.pageUrl}
+                className="relative w-full sm:h-full rounded overflow-hidden  shadow"
+              >
                 <Image
                   height={1000}
                   width={1200}
-                  src={img}
+                  src={img.imageUrl}
                   alt={`Slide ${index}`}
                   className="w-full  border-t border-l border-r border-white/20 h-full object-cover rounded-xl"
                 />
