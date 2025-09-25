@@ -3,18 +3,18 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useEffect, useRef, useState } from "react";
 import { useRouter } from "next/router";
 import SidebarForm from "@/components/Sidebar/sideform";
-// import ShareDropdown from "@/components/SocialShare/Sharemodal";
 import ShareModal from "@/components/SocialShare/Sharemodal";
 import jobsData from "../../../jobs.json";
 // Register ScrollTrigger plugin
 gsap.registerPlugin(ScrollTrigger);
 
-const JobDetail = () => {
+const JobDetail = ({ jobs = [] }) => {
   const router = useRouter();
   const { id } = router.query;
   const sectionsRef = useRef([]);
   const [open, setOpen] = useState(false);
   const containerRef = useRef(null);
+
   const [currentJob, setCurrentJob] = useState(null);
 
   useEffect(() => {
@@ -38,35 +38,63 @@ const JobDetail = () => {
     }, 100);
 
     const ctx = gsap.context(() => {
-      // Set initial states
-      gsap.set(sectionsRef.current, {
-        opacity: 0,
-        y: 50,
-      });
+      // Set initial states with a small delay to ensure elements exist
+      const sectionsToAnimate = sectionsRef.current.filter(Boolean);
 
-      // Animate sections on scroll
-      sectionsRef.current.forEach((section, index) => {
-        if (section) {
-          ScrollTrigger.create({
-            trigger: section,
-            start: "top 80%",
-            onEnter: () => {
+      if (sectionsToAnimate.length > 0) {
+        gsap.set(sectionsToAnimate, {
+          opacity: 0,
+          y: 50,
+        });
+
+        // Animate sections on scroll with fallback
+        sectionsToAnimate.forEach((section, index) => {
+          if (section) {
+            ScrollTrigger.create({
+              trigger: section,
+              start: "top 85%", // More generous trigger point
+              end: "bottom 15%",
+              onEnter: () => {
+                gsap.to(section, {
+                  opacity: 1,
+                  y: 0,
+                  duration: 0.8,
+                  delay: index * 0.1,
+                  ease: "power2.out",
+                });
+              },
+              // Add refresh and immediate trigger for elements already in view
+              onRefresh: (self) => {
+                if (self.progress > 0) {
+                  gsap.set(section, {
+                    opacity: 1,
+                    y: 0,
+                  });
+                }
+              },
+            });
+          }
+        });
+
+        // Fallback: Show sections after a delay if ScrollTrigger fails
+        setTimeout(() => {
+          sectionsToAnimate.forEach((section) => {
+            if (section && gsap.getProperty(section, "opacity") === 0) {
               gsap.to(section, {
                 opacity: 1,
                 y: 0,
-                duration: 0.8,
-                delay: index * 0.1,
+                duration: 0.6,
                 ease: "power2.out",
               });
-            },
+            }
           });
-        }
-      });
+        }, 1000);
+      }
 
       // Hero section animation
       const heroElements =
         containerRef.current?.querySelectorAll(".hero-element");
-      if (heroElements) {
+      if (heroElements && heroElements.length > 0) {
         gsap.fromTo(
           heroElements,
           {
@@ -82,6 +110,11 @@ const JobDetail = () => {
           }
         );
       }
+
+      // Refresh ScrollTrigger after setup
+      setTimeout(() => {
+        ScrollTrigger.refresh();
+      }, 100);
     });
 
     return () => {
@@ -89,9 +122,22 @@ const JobDetail = () => {
       ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
       clearTimeout(scrollTimer);
     };
-  }, []);
+  }, [id, currentJob]); // Added currentJob dependency
 
-  // console.log(getJobById, "kjncjkdnwckj=-=-=-==-");
+  // If no job found, show error state
+  if (!currentJob) {
+    return (
+      <div className="min-h-screen bg-black text-white flex items-center justify-center">
+        <div className="text-center">
+          <h1 className="text-4xl font-bold mb-4">Job Not Found</h1>
+          <p className="text-gray-400">
+            The job you're looking for doesn't exist.
+          </p>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div ref={containerRef} className="min-h-screen bg-black text-white">
       <SidebarForm jobId={id} open={open} setOpen={setOpen} />
@@ -100,17 +146,17 @@ const JobDetail = () => {
         <div className="max-w-4xl mx-auto">
           <div className="hero-element mb-6">
             <span className="text-pink-500 text-sm font-medium uppercase tracking-wider">
-              Engineering • Full-time • Remote
+              {currentJob.department} • {currentJob.type} •{" "}
+              {currentJob.location.includes("Remote") ? "Remote" : "On-site"}
             </span>
           </div>
 
           <h1 className="hero-element text-60 font-semibold text-white mb-6 leading-tight">
-            Senior Software Engineer
+            {currentJob.title}
           </h1>
 
           <p className="hero-element text-20 text-gray-300 mb-8 max-w-3xl">
-            Join our engineering team to build high-performance systems that
-            power the next generation of digital experiences.
+            {currentJob.description}
           </p>
 
           <div className="hero-element relative flex flex-wrap gap-4">
@@ -125,12 +171,10 @@ const JobDetail = () => {
               Apply Now
             </button>
 
-            {/* Replace the old share button with ShareDropdown */}
             <ShareModal
-              buttonText="Share Job"
               url={typeof window !== "undefined" ? window.location.href : ""}
-              title="Senior Software Engineer - Join Our Team"
-              description="Join our engineering team to build high-performance systems that power the next generation of digital experiences. This is a remote-friendly position with competitive compensation."
+              title={`${currentJob.title} - Join Our Team`}
+              description={`${currentJob.description} Located in ${currentJob.location}. Salary: ${currentJob.salary}`}
             />
           </div>
         </div>
@@ -139,67 +183,34 @@ const JobDetail = () => {
       <div className="max-w-4xl mx-auto px-4 lg:px-0 pb-20 relative">
         {/* Job Description */}
         <section
-          ref={(el) => (sectionsRef.current[0] = el)}
-          className="mb-12 opacity-0"
+          // ref={(el) => (sectionsRef.current[0] = el)}
+          className="mb-12  hero-element"
         >
           <h2 className="text-24 font-semibold text-white mb-6">
             About the Role
           </h2>
           <div className="prose prose-invert max-w-none">
-            <p className="text-20 text-gray-300 leading-relaxed mb-6">
-              We're looking for a Senior Software Engineer to join our growing
-              engineering team. You'll be responsible for designing and
-              implementing scalable backend systems, working closely with
-              product and design teams to deliver exceptional user experiences.
-            </p>
             <p className="text-20 text-gray-300 leading-relaxed">
-              This role is perfect for someone who thrives in a fast-paced
-              environment, loves solving complex technical challenges, and wants
-              to make a significant impact on our product and engineering
-              culture.
+              {currentJob.description}
             </p>
           </div>
         </section>
 
         {/* Responsibilities */}
         <section
-          ref={(el) => (sectionsRef.current[1] = el)}
-          className="mb-12 opacity-0"
+          // ref={(el) => (sectionsRef.current[1] = el)}
+          className="mb-12  hero-element"
         >
           <h2 className="text-24 font-semibold text-white mb-6">
             What You'll Do
           </h2>
           <ul className="space-y-4">
-            <li className="flex items-start">
-              <span className="text-pink-500 mr-3 mt-1">•</span>
-              <span className="text-20 text-gray-300">
-                Design and build scalable backend systems and APIs
-              </span>
-            </li>
-            <li className="flex items-start">
-              <span className="text-pink-500 mr-3 mt-1">•</span>
-              <span className="text-20 text-gray-300">
-                Collaborate with cross-functional teams to deliver features
-              </span>
-            </li>
-            <li className="flex items-start">
-              <span className="text-pink-500 mr-3 mt-1">•</span>
-              <span className="text-20 text-gray-300">
-                Mentor junior engineers and contribute to technical discussions
-              </span>
-            </li>
-            <li className="flex items-start">
-              <span className="text-pink-500 mr-3 mt-1">•</span>
-              <span className="text-20 text-gray-300">
-                Optimize application performance and ensure system reliability
-              </span>
-            </li>
-            <li className="flex items-start">
-              <span className="text-pink-500 mr-3 mt-1">•</span>
-              <span className="text-20 text-gray-300">
-                Write clean, maintainable code and comprehensive tests
-              </span>
-            </li>
+            {currentJob.responsibilities.map((responsibility, index) => (
+              <li key={index} className="flex items-start">
+                <span className="text-pink-500 mr-3 mt-1">•</span>
+                <span className="text-20 text-gray-300">{responsibility}</span>
+              </li>
+            ))}
           </ul>
         </section>
 
@@ -212,90 +223,34 @@ const JobDetail = () => {
             What We're Looking For
           </h2>
           <ul className="space-y-4">
-            <li className="flex items-start">
-              <span className="text-pink-500 mr-3 mt-1">•</span>
-              <span className="text-20 text-gray-300">
-                5+ years of experience in software development
-              </span>
-            </li>
-            <li className="flex items-start">
-              <span className="text-pink-500 mr-3 mt-1">•</span>
-              <span className="text-20 text-gray-300">
-                Strong proficiency in modern programming languages (Python, Go,
-                Node.js)
-              </span>
-            </li>
-            <li className="flex items-start">
-              <span className="text-pink-500 mr-3 mt-1">•</span>
-              <span className="text-20 text-gray-300">
-                Experience with cloud platforms (AWS, GCP, Azure)
-              </span>
-            </li>
-            <li className="flex items-start">
-              <span className="text-pink-500 mr-3 mt-1">•</span>
-              <span className="text-20 text-gray-300">
-                Knowledge of database systems and data modeling
-              </span>
-            </li>
-            <li className="flex items-start">
-              <span className="text-pink-500 mr-3 mt-1">•</span>
-              <span className="text-20 text-gray-300">
-                Understanding of microservices architecture and containerization
-              </span>
-            </li>
+            {currentJob.requirements.map((requirement, index) => (
+              <li key={index} className="flex items-start">
+                <span className="text-pink-500 mr-3 mt-1">•</span>
+                <span className="text-20 text-gray-300">{requirement}</span>
+              </li>
+            ))}
           </ul>
         </section>
 
-        {/* Nice to Have */}
-        <section
-          ref={(el) => (sectionsRef.current[3] = el)}
-          className="mb-12 opacity-0"
-        >
-          <h2 className="text-24 font-semibold text-white mb-6">
-            Nice to Have
-          </h2>
-          <ul className="space-y-4">
-            <li className="flex items-start">
-              <span className="text-pink-500 mr-3 mt-1">•</span>
-              <span className="text-20 text-gray-300">
-                Experience with real-time systems and high-frequency trading
-              </span>
-            </li>
-            <li className="flex items-start">
-              <span className="text-pink-500 mr-3 mt-1">•</span>
-              <span className="text-20 text-gray-300">
-                Love measuring and reducing latency - and care about every
-                nanosecond
-              </span>
-            </li>
-            <li className="flex items-start">
-              <span className="text-pink-500 mr-3 mt-1">•</span>
-              <span className="text-20 text-gray-300">
-                Have worked on performance-sensitive systems in trading, gaming,
-                networking, or OS-level dev
-              </span>
-            </li>
-            <li className="flex items-start">
-              <span className="text-pink-500 mr-3 mt-1">•</span>
-              <span className="text-20 text-gray-300">
-                Are comfortable working in C, C++, or Rust
-              </span>
-            </li>
-            <li className="flex items-start">
-              <span className="text-pink-500 mr-3 mt-1">•</span>
-              <span className="text-20 text-gray-300">
-                Have experience optimizing for CPU/memory/cache or real-time
-                constraints
-              </span>
-            </li>
-            <li className="flex items-start">
-              <span className="text-pink-500 mr-3 mt-1">•</span>
-              <span className="text-20 text-gray-300">
-                Understand networking protocols (TCP/UDP) and kernel internals
-              </span>
-            </li>
-          </ul>
-        </section>
+        {/* Nice to Have - Only show if exists */}
+        {currentJob.niceToHave && currentJob.niceToHave.length > 0 && (
+          <section
+            ref={(el) => (sectionsRef.current[3] = el)}
+            className="mb-12 opacity-0"
+          >
+            <h2 className="text-24 font-semibold text-white mb-6">
+              Nice to Have
+            </h2>
+            <ul className="space-y-4">
+              {currentJob.niceToHave.map((item, index) => (
+                <li key={index} className="flex items-start">
+                  <span className="text-pink-500 mr-3 mt-1">•</span>
+                  <span className="text-20 text-gray-300">{item}</span>
+                </li>
+              ))}
+            </ul>
+          </section>
+        )}
 
         {/* Additional Information */}
         <section
@@ -309,28 +264,57 @@ const JobDetail = () => {
             <div className="grid md:grid-cols-2 gap-6 text-gray-300">
               <div>
                 <h4 className="font-medium text-white mb-2">Location</h4>
-                <p>New York, NY / London, UK / Remote</p>
+                <p>{currentJob.location}</p>
               </div>
               <div>
                 <h4 className="font-medium text-white mb-2">Employment Type</h4>
-                <p>Full-time</p>
+                <p>{currentJob.type}</p>
               </div>
               <div>
                 <h4 className="font-medium text-white mb-2">
                   Experience Level
                 </h4>
-                <p>Mid to Senior Level</p>
+                <p>{currentJob.experience}</p>
               </div>
               <div>
                 <h4 className="font-medium text-white mb-2">Department</h4>
-                <p>Engineering</p>
+                <p>{currentJob.department}</p>
+              </div>
+              <div>
+                <h4 className="font-medium text-white mb-2">Salary Range</h4>
+                <p>{currentJob.salary}</p>
+              </div>
+              <div>
+                <h4 className="font-medium text-white mb-2">Job Code</h4>
+                <p>{currentJob.code}</p>
               </div>
             </div>
           </div>
         </section>
 
+        {/* Benefits Section - Only show if exists */}
+        {currentJob.benefits && currentJob.benefits.length > 0 && (
+          <section
+            ref={(el) => (sectionsRef.current[5] = el)}
+            className="mb-12 opacity-0"
+          >
+            <h2 className="text-24 font-semibold text-white mb-6">
+              What We Offer
+            </h2>
+            <ul className="space-y-4">
+              {currentJob.benefits.map((benefit, index) => (
+                <li key={index} className="flex items-start">
+                  <span className="text-pink-500 mr-3 mt-1">•</span>
+                  <span className="text-20 text-gray-300">{benefit}</span>
+                </li>
+              ))}
+            </ul>
+          </section>
+        )}
+
+        {/* Call to Action */}
         <section
-          ref={(el) => (sectionsRef.current[5] = el)}
+          ref={(el) => (sectionsRef.current[6] = el)}
           className="opacity-0"
         >
           <div className="bg-gradient-to-r from-pink-500/50 to-purple-600/10 border border-pink-500/20 rounded-lg p-8 text-center">
