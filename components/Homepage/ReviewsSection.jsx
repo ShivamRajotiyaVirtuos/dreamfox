@@ -9,6 +9,7 @@ import {
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import TextReveal from "../Text Reveal/textreveal";
+import Link from "next/link";
 const images = [
   "/images/home/cohering.webp",
   "/images/home/godaddy.webp",
@@ -129,7 +130,7 @@ const ReviewsSection = () => {
                 alt={`Slide ${index}`}
                 className="w-full h-full object-cover rounded-xl border-4 border-white shadow-2xl"
               /> */}
-              <div className="relative w-full sm:h-full rounded overflow-hidden  shadow">
+              <Link href={"/about/alliances"} className="relative w-full sm:h-full rounded overflow-hidden  shadow">
                 <Image
                   height={1000}
                   width={1200}
@@ -138,7 +139,7 @@ const ReviewsSection = () => {
                   className="w-full  border-t border-l border-r border-white/20 h-full object-cover rounded-xl"
                 />
                 <div className="absolute bottom-0 left-0 w-full h-48 bg-gradient-to-t from-black to-transparent  pointer-events-none rounded-b" />
-              </div>
+              </Link>
             </motion.div>
           );
         })}
