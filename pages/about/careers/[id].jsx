@@ -27,7 +27,6 @@ const JobDetail = ({ jobs = [] }) => {
   }, [id]);
   useEffect(() => {
     window.scrollTo(0, 0);
-
     // Use setTimeout to ensure DOM is ready and force scroll again
     const scrollTimer = setTimeout(() => {
       window.scrollTo({

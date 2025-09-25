@@ -716,9 +716,9 @@ const PersonaTargeting = () => {
         ))}
 
         {/* Large Decorative Elements */}
-        <div className="absolute top-1/4 right-1/4 w-96 h-96 border border-white/5 rounded-full transform rotate-12" />
+        {/* <div className="absolute top-1/4 right-1/4 w-96 h-96 border border-white/5 rounded-full transform rotate-12" />
         <div className="absolute bottom-1/3 left-1/6 w-64 h-64 border-2 border-white/5 transform rotate-45" />
-        <div className="absolute top-1/2 left-1/2 w-32 h-32 border border-white/5 rounded-full transform -translate-x-1/2 -translate-y-1/2 rotate-45" />
+        <div className="absolute top-1/2 left-1/2 w-32 h-32 border border-white/5 rounded-full transform -translate-x-1/2 -translate-y-1/2 rotate-45" /> */}
       </div>
 
       <div className="relative z-10">

@@ -154,12 +154,12 @@ const UXSnapshot = () => {
               transformOrigin: "center center",
             }}
           />
-          <h2 className="text-120 z-0 text-center sm:text-left absolute top-[28%] lg:top-[13.5%] 2xl:top-46 3xl:top-60 2xl:left-64 font-bold text-white mb-4">
+          <h2 className="text-120 z-0 text-center sm:text-left absolute top-[28%] lg:top-[31%] lg2:top-[14%] xl:top-[14%] 2xl:top-26 3xl:top-40 2xl:left-64 4xl:top-[16%] font-bold text-white mb-4">
             {card.title}
           </h2>
           <Link
             href={"/"}
-            className="font-extralight cursor-pointer hover:scale-105 transition-all text-24 bg-white text-black px-6 py-3 rounded-lg shadow-lg hover:bg-white/60  duration-300 z-20 mt-12"
+            className="font-extralight cursor-pointer hover:scale-105 transition-all text-24 bg-white text-black px-6 py-3 rounded-lg shadow-lg hover:bg-white/60 mt-16  duration-300 z-20 xl:mt-12 sm:mt-0 md:mt-6"
           >
             View Project
           </Link>

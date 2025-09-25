@@ -174,23 +174,23 @@ export default function ContactUs() {
       </div>
 
       {/* Main Content */}
-      <div className="flex flex-col sm:flex-row items-center justify-between gap-10 max-w-7xl mx-auto px-6 py-24 relative z-10 min-h-screen">
+      <div className="flex flex-col sm:flex-row items-center justify-between gap-10 sm:gap-0 lg:gap-10 max-w-7xl mx-auto px-6 py-32 sm:py-44 xl:py-24 relative z-10 min-h-screen">
         {/* Left Side - Contact Info */}
         <div ref={leftSideRef} className="flex-1 max-w-lg">
           {/* Enhanced Header Badge */}
-          <div className="inline-flex items-center space-x-3 text-white mb-8 px-5 py-3 bg-white/10 backdrop-blur-xl border border-white/20 rounded-full shadow-lg">
+          <div className="hidden sm:inline-flex items-center space-x-3 text-white mb-8 px-5 py-3 bg-white/10 backdrop-blur-xl border border-white/20 rounded-full shadow-lg">
             <div className="w-4 h-4 bg-gradient-to-r from-[#DC6263] to-[#D2448D] rounded-full animate-pulse shadow-md"></div>
             <span className="text-sm font-medium tracking-wide">Contact</span>
           </div>
 
-          <h1 className="text-6xl font-bold text-white mb-6 bg-gradient-to-r from-white via-gray-100 to-white bg-clip-text text-transparent">
+          <h1 className="text-6xl font-bold text-white mb-6 bg-gradient-to-r from-white via-gray-100 to-white bg-clip-text ">
             Get in touch
           </h1>
 
-          <p className="text-xl text-gray-300 mb-12 leading-relaxed">
+          <p className="text-xl text-gray-300 mb-6 sm:mb-12 leading-relaxed">
             Have questions or ready to transform your business with AI
-            automation?
-            <span className="text-transparent bg-gradient-to-r from-[#DC6263] to-[#D2448D] bg-clip-text font-semibold ml-1">
+            automation? <br/>
+            <span className="text-transparent bg-gradient-to-r from-[#DC6263] to-[#D2448D] bg-clip-text font-semibold">
               Let's create something amazing together.
             </span>
           </p>
