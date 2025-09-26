@@ -2,9 +2,34 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useEffect, useRef, useState } from "react";
 import { useRouter } from "next/router";
+import AWS from "aws-sdk";
+import { useMutation } from "@apollo/client";
 import jobsData from "../../jobs.json";
+import { CreateJobDreamfox } from "@/graphql/careerMutation";
 // Register ScrollTrigger plugin
 gsap.registerPlugin(ScrollTrigger);
+
+AWS.config.update({
+  accessKeyId: process.env.NEXT_PUBLIC_AWS_ACCESS_KEY_ID,
+  secretAccessKey: process.env.NEXT_PUBLIC_AWS_SECRET_ACCESS_KEY,
+  region: "ap-south-1",
+});
+
+async function FileUpload(file) {
+  const s3 = new AWS.S3();
+  const timestamp = Date.now();
+  const uniqueFileName = `${timestamp}_${file.name}`;
+  const s3BucketName = "myvirtuosprod";
+  const folder = "dreamfox-job-applications";
+  const fileName = `${folder}/${uniqueFileName}`;
+  const params = {
+    Bucket: s3BucketName,
+    Key: fileName,
+    Body: file,
+  };
+  const dets = await s3.upload(params).promise();
+  return dets.Location;
+}
 
 const JobDetail = ({ onClose, jobId }) => {
   const router = useRouter();
@@ -13,14 +38,28 @@ const JobDetail = ({ onClose, jobId }) => {
   const containerRef = useRef(null);
   const [currentJob, setCurrentJob] = useState(null);
 
+  // const [formData, setFormData] = useState({
+  //   name: "",
+  //   email: "",
+  //   phone: "",
+  //   resume: null,
+  //   jobTitle: "",
+  // });
   const [formData, setFormData] = useState({
-    name: "",
+    fullName: "",
     email: "",
-    phone: "",
-    resume: null,
-    jobTitle: "",
+    attached_file: null,
+    yearsOfExperience: "",
+    jobApplied: "",
+    phoneNumber: "",
+    message: "",
+    source: "Dreamfox",
   });
 
+  console.log("=-=-=-=-=-=", formData);
+  const [isLoading, setIsLoading] = useState(false);
+  const [showThankYou, setShowThankYou] = useState(false);
+  const [createCareerFormVDC] = useMutation(CreateJobDreamfox);
   const handleInputChange = (e) => {
     const { name, value, files } = e.target;
     setFormData((prev) => ({
@@ -29,10 +68,48 @@ const JobDetail = ({ onClose, jobId }) => {
     }));
   };
 
-  const handleSubmitApplication = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("Application submitted:", formData);
-    setShowApplicationForm(false);
+    setIsLoading(true);
+
+    try {
+      let fileUrl = "";
+      if (formData.attached_file) {
+        fileUrl = await FileUpload(formData.attached_file);
+      }
+      await createCareerFormVDC({
+        variables: {
+          fullName: formData.fullName,
+          email: formData.email,
+          phoneNumber: formData.phoneNumber || null,
+          attached_file: fileUrl,
+          message: formData.message || null,
+          yearsOfExperience: formData.yearsOfExperience || null,
+          jobApplied: formData.jobApplied || null,
+          source: formData.source,
+        },
+      });
+      setShowThankYou(true);
+      setTimeout(() => {
+        setShowThankYou(false);
+        onClose();
+      }, 2000);
+      setFormData({
+        fullName: "",
+        email: "",
+        phoneNumber: "",
+        attached_file: null,
+        message: "",
+        yearsOfExperience: "",
+        jobApplied: "",
+        source: "INDIC",
+      });
+    } catch (err) {
+      alert("Submission failed. " + (err?.message || ""));
+      //   alert("Submission failed. " );
+      console.error(err);
+    }
+    setIsLoading(false);
   };
 
   useEffect(() => {
@@ -54,15 +131,15 @@ const JobDetail = ({ onClose, jobId }) => {
       ref={containerRef}
       className="min-h-screen bg-black text-white relative"
     >
-      <form onSubmit={handleSubmitApplication} className="space-y-6">
+      <form onSubmit={handleSubmit} className="space-y-6">
         <div>
           <label className="block text-sm font-medium text-gray-300 mb-2">
             Position
           </label>
           <input
             type="text"
-            name="name"
-            value={formData.jobTitle || currentJob?.title}
+            name="jobApplied"
+            value={formData.jobApplied || currentJob?.title}
             onChange={handleInputChange}
             required
             disabled={currentJob?.code}
@@ -78,7 +155,7 @@ const JobDetail = ({ onClose, jobId }) => {
           </label>
           <input
             type="text"
-            name="name"
+            name="fullName"
             value={formData.name}
             onChange={handleInputChange}
             required
@@ -110,7 +187,7 @@ const JobDetail = ({ onClose, jobId }) => {
           </label>
           <input
             type="tel"
-            name="phone"
+            name="phoneNumber"
             value={formData.phone}
             onChange={handleInputChange}
             required
@@ -149,13 +226,19 @@ const JobDetail = ({ onClose, jobId }) => {
             Cancel
           </button>
           <button
+            disabled={isLoading}
             type="submit"
             className="flex-1 bg-gradient-to-r from-pink-500 to-purple-600 text-white px-6 py-3 rounded-full font-medium hover:scale-105 transition-transform shadow-lg"
           >
-            Submit Application
+            {isLoading ? "Submitting..." : "Submit Application"}
           </button>
         </div>
       </form>
+      {showThankYou && (
+        <div className="text-center text-green-400 mt-4 text-xl">
+          Thank you for your application!
+        </div>
+      )}
     </div>
   );
 };
