@@ -53,7 +53,7 @@ const JobDetail = ({ onClose, jobId }) => {
     jobApplied: "",
     phoneNumber: "",
     message: "",
-    source: "Dreamfox",
+    source: "DREAMFOX",
   });
 
   console.log("=-=-=-=-=-=", formData);
