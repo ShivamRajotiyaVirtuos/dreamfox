@@ -1,13 +1,15 @@
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
+import Link from "next/link";
 
-const CardStyle2 = ({ 
-  title = "Accenture Life Trends 2025", 
-  description = "Five trends exploring people's lens on the world today. As disruptive breakthroughs evolve digital experiences, people naturally adjust their relationship with technology, affecting the businesses trying to reach them.", 
-  tag = "Research Report", 
+const CardStyle2 = ({
+  title = "Accenture Life Trends 2025",
+  description = "Five trends exploring people's lens on the world today. As disruptive breakthroughs evolve digital experiences, people naturally adjust their relationship with technology, affecting the businesses trying to reach them.",
+  tag = "Research Report",
   backgroundImage = "https://images.unsplash.com/photo-1518837695005-2083093ee35b?w=500&h=800&fit=crop&crop=entropy&auto=format&fm=jpg&q=80",
   className = "",
-  onCardClick = () => {}
+  url = "",
+  onCardClick = () => {},
 }) => {
   const cardRef = useRef(null);
   const imageRef = useRef(null);
@@ -115,7 +117,7 @@ const CardStyle2 = ({
   }, []);
 
   return (
-    <div className={className}>
+    <Link href={url} className={className}>
       <div
         ref={cardRef}
         className="relative min-w-80 xl:min-w-[370px] hover:scale-105 transition-all duration-300 h-[400px] sm:h-[565px] backdrop-blur-3xl rou shadow-2xl overflow-hidden cursor-pointer border border-gray-800"
@@ -155,14 +157,24 @@ const CardStyle2 = ({
           <div ref={expandButtonRef} className="flex items-center justify-end">
             <button className="flex items-center space-x-2 text-white font-semibold">
               <span>Expand</span>
-              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              <svg
+                className="w-5 h-5"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M17 8l4 4m0 0l-4 4m4-4H3"
+                />
               </svg>
             </button>
           </div>
         </div>
       </div>
-    </div>
+    </Link>
   );
 };
 

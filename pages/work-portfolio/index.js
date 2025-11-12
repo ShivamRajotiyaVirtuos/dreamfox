@@ -91,7 +91,7 @@ const TariffCard = () => {
                     <BannerTextReveal
                         titleClassName="text-120 font-semibold "
                         descriptionClassName="text-30 max-w-7xl px-4 mt-4"
-                        title="Work Portfolio"
+                        title="Client Portfolio"
                         description="Discover our latest projects and creative solutions that showcase our expertise in web development, design, and digital innovation."
                     />
                 </div>
@@ -106,6 +106,7 @@ const TariffCard = () => {
                     backgroundImage="/work/work1.png"
                     onCardClick={() => console.log('Card clicked')}
                     className=""
+                    url='/work-portfolio/work-1'
                 />
 
 
@@ -116,6 +117,8 @@ const TariffCard = () => {
                     backgroundImage="https://images.unsplash.com/photo-1682687220742-aba13b6e50ba?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDF8MHxzZWFyY2h8NDJ8fG5hdHVyZXxlbnwwfHwwfHx8MA%3D%3D"
                     onCardClick={() => console.log('Card clicked')}
                     className=""
+                    url='/work-portfolio/work-2'
+
                 />
                 <CardStyle1
                     title="AI & Future of Work"
@@ -123,6 +126,8 @@ const TariffCard = () => {
                     tag="Technology Report"
                     backgroundImage="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Y29ycG9yYXRlfGVufDB8fDB8fHww"
                     onCardClick={() => console.log('AI card clicked')}
+                    url='/work-portfolio/work-3'
+
                 />
 
                 <CardStyle2

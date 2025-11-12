@@ -1,6 +1,7 @@
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import Image from "next/image";
+import Link from "next/link";
 
 const CardStyle1 = ({ 
   title = "Navigating the new tariff landscape and its economic impact", 
@@ -8,6 +9,7 @@ const CardStyle1 = ({
   tag = "PERSPECTIVE", 
   backgroundImage = "/work/work1.png",
   className = "",
+  url= "",
   onCardClick = () => {}
 }) => {
   const cardRef = useRef(null);
@@ -122,7 +124,7 @@ const CardStyle1 = ({
   }, []);
 
   return (
-    <div className={className}>
+    <Link href={url} className={className}>
       <div
         ref={cardRef}
         className="relative min-w-80 xl:min-w-[370px] hover:scale-105 transition-all duration-300 h-[400px] sm:h-[565px] bg-white  shadow-2xl overflow-hidden cursor-pointer"
@@ -185,7 +187,7 @@ const CardStyle1 = ({
           </div>
         </div>
       </div>
-    </div>
+    </Link>
   );
 };
 
