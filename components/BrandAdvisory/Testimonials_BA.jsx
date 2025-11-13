@@ -3,7 +3,7 @@ import React, { useRef, useEffect, useState } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Draggable } from "gsap/Draggable";
-import { StarIcon } from "@heroicons/react/24/solid";
+import { StarIcon, UserCircleIcon } from "@heroicons/react/24/solid";
 import TextReveal from "../Text Reveal/textreveal";
 
 gsap.registerPlugin(ScrollTrigger, Draggable);
@@ -19,24 +19,23 @@ const Testimonials_brand = () => {
   // Add position data to your testimonials array
   const testimonials = [
     {
-      name: "Sarah Johnson",
-      company: "Tech Innovate",
-      role: "CEO",
+      name: "Sunil Pahouja",
+      company: "BetterBuyClub",
+      role: "MD",
       content:
-        "DreamFox transformed our brand identity completely. Their strategic approach and creative execution exceeded all our expectations.",
+        "We are truly ecstatic and extremely happy with the blend of services—Commerce, SEO, Marketing by DreamFox. Their comprehensive approach delivered exceptional results.",
       avatar:
         "https://plus.unsplash.com/premium_photo-1688350808212-4e6908a03925?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8cGVyc29uJTIwZmFjZXxlbnwwfHwwfHx8MA%3D%3D",
       rating: 5,
       gradient: "from-pink-500 to-purple-600",
-      // Add position and rotation
       position: { x: -320, y: -80, rotation: 15 },
     },
     {
-      name: "Marcus Chen",
-      company: "Digital Solutions",
-      role: "Founder",
+      name: "ThomasCook CIO Team",
+      company: "ThomasCook",
+      role: "CIO Team",
       content:
-        "Working with DreamFox was a game-changer for our startup. They didn't just design a website; they crafted our entire digital presence.",
+        "We have a 10+ year relationship with Virtuos. I am extremely happy with Redwood Design from DreamFox. Their long-term partnership has been invaluable.",
       avatar:
         "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face",
       rating: 5,
@@ -44,29 +43,29 @@ const Testimonials_brand = () => {
       position: { x: 200, y: -50, rotation: -8 },
     },
     {
-      name: "Emily Rodriguez",
-      company: "Creative Studios",
-      role: "Art Director",
+      name: "Agam Bhatnagar",
+      company: "Giftcart.com",
+      role: "UX/Ops",
       content:
-        "The team at DreamFox has an incredible eye for design and user experience. They took our vision and elevated it beyond what we thought was possible.",
+        "Giftcart 2.0 is possible because of DreamFox's exceptional UX design. Looking forward to kickstart our launch services with their team.",
       avatar:
         "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&h=150&fit=crop&crop=face",
       rating: 5,
-      gradient: "from-blue-500 to-cyan-600",
-      position: { x: -200, y: 80, rotation: -12 },
+      gradient: "from-blue-500 to-teal-600",
+      position: { x: -150, y: 100, rotation: 12 },
     },
     {
-      name: "David Park",
-      company: "E-commerce Pro",
-      role: "Marketing Director",
+      name: "Credence.ai Exec Team",
+      company: "Credence.ai",
+      role: "Executive Team",
       content:
-        "DreamFox delivered results that transformed our online presence. Their strategic thinking combined with flawless execution made all the difference.",
+        "I worked with VBrand, parent company of DreamFox for my brand—Credence.ai through GoDaddy. The collaboration has been outstanding and results-driven.",
       avatar:
         "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face",
       rating: 5,
-      gradient: "from-cyan-500 to-pink-600",
-      position: { x: 420, y: 100, rotation: 5 },
-    },
+      gradient: "from-teal-500 to-green-600",
+      position: { x: 250, y: 80, rotation: -15 },
+    }
   ];
 
   const floatingElements = [
@@ -401,11 +400,12 @@ const Testimonials_brand = () => {
                   <div className="relative z-10">
                     <div className="flex items-center mb-4">
                       <div className="relative">
-                        <img
+                        {/* <img
                           src={testimonial.avatar}
                           alt={testimonial.name}
                           className="w-14 h-14 rounded-full object-cover border-2 border-cyan-400/50"
-                        />
+                        /> */}
+                        <UserCircleIcon className="w-14 h-14 rounded-full text-gray-600 border-2 border-cyan-400/50" />
                         <div className="absolute -inset-1 bg-gradient-to-r from-cyan-400 to-pink-400 rounded-full blur opacity-50" />
                       </div>
                       <div className="ml-4">
@@ -491,11 +491,13 @@ const Testimonials_brand = () => {
                 <div className="relative z-10">
                   <div className="flex items-center mb-6">
                     <div className="relative">
-                      <img
+                      {/* <img
                         src={testimonial.avatar}
                         alt={testimonial.name}
                         className="w-16 h-16 rounded-full object-cover border-2 border-cyan-400/50"
-                      />
+                      /> */}
+                        <UserCircleIcon className="w-14 h-14 rounded-full text-gray-600 border-2 border-cyan-400/50" />
+
                       <div className="absolute -inset-1 bg-gradient-to-r from-cyan-400 to-pink-400 rounded-full blur opacity-50" />
                     </div>
                     <div className="ml-4">

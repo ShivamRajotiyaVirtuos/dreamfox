@@ -15,10 +15,13 @@ import {
 import TextReveal from "@/components/Text Reveal/textreveal";
 import Link from "next/link";
 import ShareModal from "@/components/SocialShare/Sharemodal";
+import { useRouter } from "next/router";
 
 const NewsDetailPage = () => {
   const headerRef = useRef(null);
   const heroRef = useRef(null);
+  const router = useRouter();
+
   const contentRef = useRef(null);
   const sidebarRef = useRef(null);
   const [showCopyMessage, setShowCopyMessage] = useState(false);
@@ -54,6 +57,23 @@ const NewsDetailPage = () => {
       }, 3000);
     }
   };
+
+  console.log(router);
+  useEffect(() => {
+    const handleRouteChange = () => {
+      // Scroll to top when route changes
+      window.scrollTo(0, 0);
+
+      // Alternative: For smooth scroll behavior
+      // window.scrollTo({
+      //   top: 0,
+      //   left: 0,
+      //   behavior: 'smooth'
+      // });
+    };
+
+    handleRouteChange();
+  }, [router.asPath, router.events]);
 
   useEffect(() => {
     // Scroll to top on page load
@@ -106,45 +126,66 @@ const NewsDetailPage = () => {
   }, []);
 
   // Mock data
+  // Mock data
   const article = {
     id: 1,
-    title: "Bar Mor named to Ynet's Disrupt 40 List for 2025",
-    category: "Awards and recognitions",
-    tags: ["AWARDS AND RECOGNITIONS", "INNOVATION", "LEADERSHIP"],
-    author: "Danielle VanHart",
-    date: "June 30, 2025",
-    readTime: "5 min read",
+    title:
+      "PlumJob to Launch Dxpify — DXP-as-a-Service Platform Developed by DreamFox",
+    category: "Company News",
+    tags: ["ACQUISITION", "GROWTH", "CREATIVE INTELLIGENCE"],
+    author: "DreamFox Communications",
+    date: "November 14, 2025",
+    readTime: "4 min read",
     image:
       "https://images.unsplash.com/photo-1643759543584-fb6f448d42d4?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fGV2ZW50c3xlbnwwfHwwfHx8MA%3D%3D",
     excerpt:
-      "Recognition for innovation and leadership in the digital transformation space marks a significant milestone for our company.",
+      "DXPify represents the evolution of digital design and experience management,” said a spokesperson for DreamFox. “It brings together the creative depth of Designare™ and the technology rigor of AI-driven architecture—helping our clients build, launch, and optimize experiences faster than ever.",
     content: `
-      <p>We are thrilled to announce that Bar Mor, our Co-Founder and CEO, has been named to Ynet's prestigious Disrupt 40 List for 2025. This recognition highlights the innovative leadership and transformative vision that has driven our company to new heights in the digital transformation landscape.</p>
-      
-      <p>The Disrupt 40 List celebrates the most influential leaders who are reshaping industries and driving technological innovation across various sectors. Bar Mor's inclusion in this elite group reflects not only personal achievement but also the collective success of our entire team.</p>
-      
-      <h3 class="text-20 my-4 font-semibold">A Journey of Innovation</h3>
-      <p>Since founding the company, Bar Mor has been at the forefront of digital transformation, pioneering solutions that bridge the gap between traditional business practices and cutting-edge technology. Under his leadership, we have successfully delivered transformative solutions to over 200+ clients worldwide.</p>
-      
-      <h3 class="text-20 my-4 font-semibold">Looking Forward</h3>
-      <p>This recognition serves as motivation to continue pushing boundaries and exploring new frontiers in technology. As we move forward, we remain committed to our mission of empowering businesses through innovative digital solutions.</p>
-      
-      <p>We extend our gratitude to our clients, partners, and team members who have made this achievement possible. Together, we will continue to disrupt industries and create lasting impact in the digital world.</p>
-    `,
+    <p>DreamFox, the Digital + AI Marketing Agency, through its Designare™ Business Unit, has announced the upcoming launch of Dxpify.com, a groundbreaking Digital Experience Platform (DXP-as-a-Service) that enables brands to rapidly design, deliver, and scale next-generation digital experiences.
+</p>
+    
+    <p class="my-4"Built on cutting-edge cloud, AI, and design technologies, Dxpify is engineered to address the growing demand for agile, modular, and intelligent digital platforms. As enterprises accelerate their digital transformation journeys, Dxpify aims to provide a single, flexible framework for UI/UX development, experience orchestration, branding, and content delivery—helping businesses stay ahead of the speed of change.
+
+</p>
+    
+<p>
+
+PlumJob, a portfolio company under VBrand, will integrate Dxpify into its recruitment and HRTech ecosystem, enabling seamless candidate and employer experiences powered by personalization, design intelligence, and performance analytics. The platform’s open architecture supports multiple front-end frameworks, CMS integrations, and AI-driven recommendation engines, making it a versatile foundation for modern experience design.
+
+</p>
+
+    <h3 class="text-20 my-4 font-semibold">About DreamFox</h3>
+    <p>"DreamFox is a next-generation Digital, Design, and AI Marketing Agency specializing in brand architecture, design experience (DXP), and AI-powered marketing, content, and social media management. Closely connected with Virtuos Digital (vdc.com) and partner ecosystems such as Salesforce, Oracle, Adobe, and Microsoft, DreamFox empowers enterprises to reinvent brand experience, accelerate growth, and achieve digital excellence."</p>
+  
+    <p>For more information visit us at <a href="https://www.dreamfox.com" target="_blank" rel="noopener noreferrer" class="text-[#ea4079] hover:text-[#ff5a9a] underline transition-colors">www.dreamfox.com</a>.</p>
+  `,
   };
 
   const relatedArticles = [
     {
       id: 2,
-      title: "Company expands to Australia with new teams",
-      date: "May 15, 2025",
+      title:
+        "DreamFox Acquires Yippee Media — Expanding the Creative Intelligence Frontier",
+      date: "November 14, 2025",
+      slug: "dreamfox-acquires-yippee-media",
       image:
         "https://images.unsplash.com/photo-1523580494863-6f3031224c94?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fGV2ZW50c3xlbnwwfHwwfHx8MA%3D%3D",
     },
     {
-      id: 3,
-      title: "Forbes 30 Under 30 recognition announced",
-      date: "April 01, 2025",
+      id: 1,
+      title:
+        "DreamFox + EnBrand Unite to Offer Integrated Branding and Digital Experience Solutions",
+      date: "November 14, 2025",
+      slug: "dreamfox-enbrand-unite-integrated-branding-digital-experience-solutions",
+      image:
+        "https://images.unsplash.com/photo-1523580494863-6f3031224c94?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fGV2ZW50c3xlbnwwfHwwfHx8MA%3D%3D",
+    },
+    {
+      id: 2,
+      title:
+        "DreamFox Develops PlumJob.com Brand Through Its Designare™ Experience Services",
+      date: "November 14, 2025",
+      slug: "dreamfox-develops-plumjob-brand-designare-experience-services",
       image:
         "https://images.unsplash.com/photo-1523580494863-6f3031224c94?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fGV2ZW50c3xlbnwwfHwwfHx8MA%3D%3D",
     },
@@ -236,11 +277,6 @@ const NewsDetailPage = () => {
             >
               <div className=" ">
                 {/* Excerpt */}
-                <div className="mb-8 p-6 bg-gradient-to-r from-blue-500/10 to-purple-600/10 border border-blue-500/20 rounded-2xl">
-                  <p className="text-lg text-gray-300 leading-relaxed italic">
-                    {article.excerpt}
-                  </p>
-                </div>
 
                 {/* Article Content */}
                 <div
@@ -251,6 +287,11 @@ const NewsDetailPage = () => {
                   }}
                   dangerouslySetInnerHTML={{ __html: article.content }}
                 />
+                <div className="my-8 p-6 bg-gradient-to-r from-blue-500/10 to-purple-600/10 border border-blue-500/20 rounded-2xl">
+                  <p className="text-lg text-gray-300 leading-relaxed italic">
+                    {article.excerpt}
+                  </p>
+                </div>
 
                 {/* Share Section */}
                 <div className="mt-12  pt-8 border-t border-white/10">
@@ -299,7 +340,7 @@ const NewsDetailPage = () => {
                   <div className="flex flex-col gap-6">
                     {relatedArticles.map((related) => (
                       <Link
-                        href={`/news-events/${related.id}`}
+                        href={`/news-events/${related.slug}`}
                         key={related.id}
                         className="group cursor-pointer "
                       >
@@ -310,7 +351,7 @@ const NewsDetailPage = () => {
                             className="w-20 h-20 object-cover rounded-xl bg-white/5 border border-white/10"
                           />
                           <div className="flex-1">
-                            <h4 className="text-white text-16 font-medium leading-tight group-hover:text-pink-500 transition-colors duration-300 mb-2">
+                            <h4 className="text-white line-clamp-2 text-16 font-medium leading-tight group-hover:text-pink-500 transition-colors duration-300 mb-2">
                               {related.title}
                             </h4>
                             <p className="text-gray-400 text-xs">

@@ -13,27 +13,31 @@ const Offerings = () => {
   const offeringsData = [
     {
       id: 1,
-      title: "A bold new website for Julbo, the giant in sports eyewear",
-      category: "MISSIONS",
-      services: ["Front-End Development"],
+      title: "The leading Digital Transformation Player leverages our Content Services",
+      category: "VDC.com",
+      services: ["Contentare"],
+      link:"https://www.vdc.com/",
       image:
         "https://media.wired.com/photos/5bdca1cf35226a3b7363f84c/191:100/w_1280,c_limit/Red-Dead-Redemption.jpg",
       bgColor: "from-purple-900 to-blue-900",
     },
     {
       id: 2,
-      title: "Vivelys: bring to life a wine lifecycle app for winemakers",
-      category: "MISSIONS",
-      services: ["Art Direction", "Branding", "Lead UX & UI Design"],
+      title: "VCatalogue Management Services by Yippee Media.",
+      category: "GIFTCART",
+      link:"https://www.giftcart.com/",
+
+      services: ["Ecommerce Ops"],
       image:
         "https://media.npr.org/assets/img/2018/12/31/rdr2_screenshot-014_wide-71d02434782cc887366ba9767260080bb73fa207.jpg",
       bgColor: "from-orange-800 to-purple-900",
     },
     {
       id: 3,
-      title: "A bold new website for Julbo, the giant in sports eyewear",
-      category: "MISSIONS",
-      services: ["Front-End Development"],
+      title: "Tech & Electronics E-Commerce Provider From Ohio.",
+      category: "BETTERBUYCLUB",
+      services: ["Shopify Services"],
+      link:"https://betterbuyclub.com/",
       image:
         "https://w0.peakpx.com/wallpaper/82/271/HD-wallpaper-red-dead-red-dead-redemption-2-arthur-morgan-red-dead-redemption-fire.jpg",
       bgColor: "from-purple-900 to-blue-900",

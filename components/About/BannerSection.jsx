@@ -114,7 +114,7 @@ const BannerSection = () => {
 
           <div className="flex flex-row gap-4 shrink-0">
             <AnimatedButton text="Services" href="/services" />
-            <AnimatedButton text="Portfolio" href="/portfolio" />
+            <AnimatedButton text="Portfolio" href="/work-portfolio" />
             {/* <button className="bg-white text-black px-6 py-3 rounded-full text-sm font-medium whitespace-nowrap">
               Arrange an initial consultation
             </button> */}

@@ -40,40 +40,17 @@ const ProjectsSection = () => {
   const allImages = [...imageSet1, ...imageSet2, ...imageSet3];
 
   const projectData = [
-    { title: "ARCHIBALD", category: "Branding", type: "[web design]" },
-    {
-      title: "OLIVE RESTAURANT",
-      category: "Restaurant",
-      type: "[web design, branding]",
-    },
-    { title: "ARTD STUDIO", category: "Architecture", type: "[web design]" },
-    {
-      title: "MINIMAL STUDIO",
-      category: "Interior",
-      type: "[web design, branding]",
-    },
-    { title: "CREATIVE AGENCY", category: "Digital", type: "[web design]" },
-    { title: "FASHION BRAND", category: "Fashion", type: "[branding]" },
-    {
-      title: "TECH STARTUP",
-      category: "Technology",
-      type: "[web design, branding]",
-    },
-    { title: "ART GALLERY", category: "Art", type: "[web design]" },
-    { title: "COFFEE HOUSE", category: "Food & Beverage", type: "[branding]" },
-    {
-      title: "LUXURY HOTEL",
-      category: "Hospitality",
-      type: "[web design, branding]",
-    },
-    { title: "DESIGN STUDIO", category: "Creative", type: "[web design]" },
-    {
-      title: "REAL ESTATE",
-      category: "Property",
-      type: "[web design, branding]",
-    },
+    { title: "Vsys", category: "Technology", type: "[web design, branding]" },
+    { title: "Giftcart", category: "E-commerce", type: "[web design, branding]" },
+    { title: "BetterBuyClub", category: "Retail", type: "[web design, branding]" },
+    { title: "Thomas Cook", category: "Travel", type: "[web design, branding]" },
+    { title: "PlumJob", category: "Recruitment", type: "[web design, branding]" },
+    { title: "Tekcorp", category: "Technology", type: "[web design, branding]" },
+    { title: "Sweven", category: "Lifestyle", type: "[web design, branding]" },
+    { title: "Indic", category: "Education", type: "[web design, branding]" },
+    { title: "Crosswalk", category: "Consulting", type: "[web design, branding]" },
+    // Add more if needed to match your image count
   ];
-
   useEffect(() => {
     const section = sectionRef.current;
     const cards = cardsRef.current.filter(Boolean);

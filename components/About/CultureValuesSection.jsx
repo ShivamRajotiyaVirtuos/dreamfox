@@ -221,7 +221,7 @@ const Values_services = () => {
   }, []);
 
   return (
-    <section className="w-full relative pb-20 lg:pb-32 bg-black text-white container 2xl:min-h-[60vh]">
+    <section className="w-full relative pb-20 lg:pb-32 bg-black text-white container 2xl:min-h-[60vh] 3xl:min-h-[40vh]">
       <TextReveal
         animation="rotateX"
         stagger={0.1}

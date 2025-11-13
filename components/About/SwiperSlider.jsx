@@ -52,24 +52,14 @@ const TeamSlider = () => {
       name: "Shaloo Reddi",
       description: "VP & Senior HR",
     },
-    {
-      url: "/images/About/hemant_tyagi.webp",
 
-      name: "Hemant Tyagi",
-      description: "Project Manager",
-    },
     {
       url: "/images/About/shivam_chawla.jpg",
 
       name: "Shivam Chawla",
       description: "Lead - Application Developer",
     },
-    {
-      url: "/images/About/tina_sachdeva.webp",
 
-      name: "Tina Sachdeva",
-      description: "Customer Success Manager",
-    },
     {
       url: "/images/About/samriddhi.webp",
 

@@ -175,7 +175,7 @@ const Snapshot = () => {
             stagger={0.1}
             duration={0.8}
           >
-            Case Snapshots
+            The Snapshots
           </TextReveal>
 
           <TextReveal
@@ -184,9 +184,8 @@ const Snapshot = () => {
             ref={descriptionRef}
             className="text-40 text-gray-300 max-w-3xl md:max-w-4xl lg:max-w-6xl mx-auto leading-relaxed px-4 font-extralight"
           >
-            Website redesign & Webflow development for studio fugu, A
-            localization studio dedicated to the creative and cultural
-            industries.
+            From brand architecture to immersive design — DreamFox crafted the
+            creative foundation for these moonshots.
           </TextReveal>
         </div>
 

@@ -127,7 +127,15 @@ const NewsroomPage = () => {
                   </div>
 
                   {/* Logos */}
-                 <Image src={"https://images.unsplash.com/photo-1643759543584-fb6f448d42d4?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fGV2ZW50c3xlbnwwfHwwfHx8MA%3D%3D"} alt="News" width={600} height={400} className="w-full h-auto object-cover rounded-2xl" />
+                  <Image
+                    src={
+                      "https://images.unsplash.com/photo-1643759543584-fb6f448d42d4?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fGV2ZW50c3xlbnwwfHwwfHx8MA%3D%3D"
+                    }
+                    alt="News"
+                    width={600}
+                    height={400}
+                    className="w-full h-auto object-cover rounded-2xl"
+                  />
                 </div>
               </div>
 
@@ -137,7 +145,6 @@ const NewsroomPage = () => {
                   <span className="text-[#e83584] bg-white px-3 py-1 rounded-full text-xs flex items-center justify-center font-medium">
                     PRESS RELEASES
                   </span>
-                  
                   |
                   <span className="bg-transparent text-white border  px-3 py-1 rounded-full text-xs lex items-center justify-center font-medium">
                     COMPANY NEWS
@@ -151,26 +158,35 @@ const NewsroomPage = () => {
                   duration={0.5}
                 >
                   {/* <h2 c> */}
-                  Dreamfox Expands Its Fund Admin Partnerships with Virtuos,
-                  Empowering a New Generation of Service Providers
+                  DreamFox Acquires Yippee Media — Expanding the Creative
+                  Intelligence Frontier
                   {/* </h2> */}
                 </TextReveal>
-
+                <p className="text-white line-clamp-3 text-16 mb-6 sm:mb-10 leading-relaxed">
+                  DreamFox, the Digital + AI Marketing Agency, today announced
+                  the successful acquisition of Yippee Media, a fast-rising
+                  creative communications company. The move strengthens
+                  DreamFox’s integrated marketing and digital design
+                  capabilities across global markets.
+                </p>
                 <div className="flex items-center gap-3 mb-10 sm:mb-16">
-                  <div className="w-10 h-10 bg-gradient-to-br from-pink-400 to-pink-600 rounded-full flex items-center justify-center">
+                  {/* <div className="w-10 h-10 bg-gradient-to-br from-pink-400 to-pink-600 rounded-full flex items-center justify-center">
                     <span className="text-white text-sm font-semibold">V</span>
-                  </div>
+                  </div> */}
                   <div className="text-gray-50">
-                    <span className="text-sm">Written by </span>
+                    {/* <span className="text-sm">Written by </span>
                     <span className="font-medium text-gray-100">
                       Venky Vijay Reddi
+                    </span> */}
+                    <span className="text-sm">
+                      {" "}
+                      November 14, 2025, Gurugram
                     </span>
-                    <span className="text-sm"> on Aug 19, 2025</span>
                   </div>
                 </div>
 
                 <Link
-                  href={`/news-events/1`}
+                  href={`/news-events/dreamfox-acquires-yippee-media`}
                   className="text-[#e83584] hover:bg-transparent hover:border hover:text-white border-white bg-white sm:px-6 py-3 rounded-lg font-medium transition-all duration-300 transform hover:scale-105 hover:shadow-lg group px-6"
                 >
                   Read More
@@ -184,7 +200,6 @@ const NewsroomPage = () => {
         </main>
 
         {/* Footer spacing */}
-        
       </div>
     </div>
   );

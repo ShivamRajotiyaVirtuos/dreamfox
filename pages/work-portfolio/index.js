@@ -99,73 +99,68 @@ const TariffCard = () => {
 
 
             <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 3xl:grid-cols-4 !gap-8 xl:!gap-12 mt-16 xl:mt-32">
-                <CardStyle1
-                    title="Digital Marketing Revolution"
-                    description="Exploring the latest trends in digital marketing and how brands are adapting to the changing landscape of consumer engagement and transformation."
-                    tag="Marketing Study"
-                    backgroundImage="/work/work1.png"
-                    onCardClick={() => console.log('Card clicked')}
-                    className=""
-                    url='/work-portfolio/work-1'
-                />
-
-
                 <CardStyle2
-                    title="Digital Marketing Revolution"
-                    description="Exploring the latest trends in digital marketing and how brands are adapting to the changing landscape of consumer engagement and digital transformation."
-                    tag="Marketing Study"
-                    backgroundImage="https://images.unsplash.com/photo-1682687220742-aba13b6e50ba?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDF8MHxzZWFyY2h8NDJ8fG5hdHVyZXxlbnwwfHwwfHx8MA%3D%3D"
-                    onCardClick={() => console.log('Card clicked')}
-                    className=""
-                    url='/work-portfolio/work-2'
-
-                />
-                <CardStyle1
-                    title="AI & Future of Work"
-                    description="An in-depth analysis of how artificial intelligence is transforming workplace dynamics and creating new opportunities for businesses."
-                    tag="Technology Report"
-                    backgroundImage="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Y29ycG9yYXRlfGVufDB8fDB8fHww"
-                    onCardClick={() => console.log('AI card clicked')}
-                    url='/work-portfolio/work-3'
-
-                />
-
-                <CardStyle2
-                    title="Digital Marketing Revolution"
-                    description="Exploring the latest trends in digital marketing and how brands are adapting to the changing landscape of consumer engagement and digital transformation."
-                    tag="Marketing Study"
+                    title="VSYS"
+                    description="Assimilate and compose Talent, Skills, Culture, and Performance into one growth system. The Systems Company."
+                    tag="Technology"
                     backgroundImage="https://images.unsplash.com/photo-1421789665209-c9b2a435e3dc?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fG5hdHVyZXxlbnwwfHwwfHx8MA%3D%3D"
-                    onCardClick={() => console.log('Card clicked')}
-                    className=""
-                /><CardStyle1
-                    title="AI & Future of Work"
-                    description="An in-depth analysis of how artificial intelligence is transforming workplace dynamics and creating new opportunities for businesses."
-                    tag="Technology Report"
-                    backgroundImage="https://images.unsplash.com/photo-1508739773434-c26b3d09e071?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8ODR8fG5hdHVyZXxlbnwwfHwwfHx8MA%3D%3D"
-                    onCardClick={() => console.log('AI card clicked')}
+                    onCardClick={() => console.log('VSYS card clicked')}
+                    url='/work-portfolio/vsys'
                 />
-                <CardStyle2
-                    title="Digital Marketing Revolution"
-                    description="Exploring the latest trends in digital marketing and how brands are adapting to the changing landscape of consumer engagement and digital transformation."
-                    tag="Marketing Study"
-                    backgroundImage="https://plus.unsplash.com/premium_photo-1673603988651-99f79e4ae7d3?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjF8fG5hdHVyZXxlbnwwfHwwfHx8MA%3D%3D"
-                    onCardClick={() => console.log('Card clicked')}
-                    className=""
-                />
+
                 <CardStyle1
-                    title="AI & Future of Work"
-                    description="An in-depth analysis of how artificial intelligence is transforming workplace dynamics and creating new opportunities for businesses."
-                    tag="Technology Report"
-                    backgroundImage="https://images.unsplash.com/photo-1573164574472-797cdf4a583a?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGNvcnBvcmF0ZXxlbnwwfHwwfHx8MA%3D%3D"
-                    onCardClick={() => console.log('AI card clicked')}
+                    title="TEKCORP"
+                    description="Empowering enterprises with intelligent software, scalable cloud systems, and transformative digital engineering. The AI + Cloud Specialist."
+                    tag="Technology"
+                    backgroundImage="https://images.unsplash.com/photo-1508739773434-c26b3d09e071?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8ODR8fG5hdHVyZXxlbnwwfHwwfHx8MA%3D%3D"
+                    onCardClick={() => console.log('TEKCORP card clicked')}
+                    url='/work-portfolio/tekcorp'
+                />
+
+                <CardStyle2
+                    title="PLUMJOB"
+                    description="Connecting exceptional talent with extraordinary opportunities—where ambition meets purpose. The Talent Recruitment Platform."
+                    tag="Recruitment"
+                    backgroundImage="https://plus.unsplash.com/premium_photo-1673603988651-99f79e4ae7d3?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0"
+                    onCardClick={() => console.log('PLUMJOB card clicked')}
+                    url='/work-portfolio/plumjob'
+                />
+
+                <CardStyle1
+                    title="SWEVEN"
+                    description="Reimagining Customer Relationships with AI-born Experience Intelligence that goes beyond CRM. CRM Mastermind."
+                    tag="SaaS"
+                    backgroundImage="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0"
+                    onCardClick={() => console.log('SWEVEN card clicked')}
+                    url='/work-portfolio/sweven'
+                />
+
+                <CardStyle2
+                    title="INDIC"
+                    description="Indic launches a series of DX Platforms in the experience economy in retail, fashion, fintech, etc. Digital Experience Portfolio Company."
+                    tag="Digital Platforms"
+                    backgroundImage="https://images.unsplash.com/photo-1518837695005-2083093ee35b?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0"
+                    onCardClick={() => console.log('INDIC card clicked')}
+                    url='/work-portfolio/indic'
+                />
+
+
+
+                <CardStyle1
+                    title="BETTER BUY CLUB"
+                    description="BetterBuyClub.com has been offering curated electronics & computers for people who love discounts, and special pricing. Electronics Store Online."
+                    tag="E-commerce"
+                    backgroundImage="/work/work1.png"
+                    onCardClick={() => console.log('BETTER BUY CLUB card clicked')}
+                    url='/work-portfolio/better-buy-club'
                 />
                 <CardStyle2
-                    title="Digital Marketing Revolution"
-                    description="Exploring the latest trends in digital marketing and how brands are adapting to the changing landscape of consumer engagement and digital transformation."
-                    tag="Marketing Study"
-                    backgroundImage="https://images.unsplash.com/photo-1682685797439-a05dd915cee9?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDF8MHxzZWFyY2h8Njl8fG5hdHVyZXxlbnwwfHwwfHx8MA%3D%3D"
-                    onCardClick={() => console.log('Card clicked')}
-                    className=""
+                    title="GIFTCART"
+                    description="Giftcart offers plethora of gifting experiences through its popular giftcart.com website on every occasion and for every persona. Gifting Experience Platform."
+                    tag="E-commerce"
+                    backgroundImage="https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0"
+                    onCardClick={() => console.log('GIFTCART card clicked')}
+                    url='/work-portfolio/giftcart'
                 />
             </div>
         </div>

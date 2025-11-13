@@ -2,6 +2,7 @@ import React, { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import TextReveal from "../Text Reveal/textreveal";
+import AnimatedButton from "../buttons/AnimatedButton";
 
 const HorizontalScrollGallery = () => {
   const containerRef = useRef(null);
@@ -13,37 +14,38 @@ const HorizontalScrollGallery = () => {
   const imageData = [
     {
       src: "https://assets.website-files.com/6384f0dcd0a815701796cd36/63858ebfcc6c6b9a1b751abd_iron-man-aestheticandroid-iphone-desktop-hd-backgrounds-wallpapers-1080p-4k-2muyr-3840x2160.jpg",
-      title: "Iron Man",
-      subtitle: "Genius. Billionaire. Playboy. Philanthropist.",
+      title: "VSYS",
+      subtitle: "The Systems Company",
       description:
-        "Tony Stark's revolutionary arc reactor technology powers the Mark suit, making him one of Earth's mightiest defenders.",
+        "Assimilate and compose Talent, Skills, Culture, and Performance into one growth system. vsys.com",
     },
     {
       src: "https://assets.website-files.com/6384f0dcd0a815701796cd36/63858ad6a391d6a38ca30cba_spider-man-no-way-home.png",
-      title: "Spider-Man",
-      subtitle: "With Great Power Comes Great Responsibility",
+      title: "TEKCORP",
+      subtitle: "The AI + Cloud Specialist",
       description:
-        "Peter Parker's spider-sense and web-slinging abilities make him the friendly neighborhood hero New York needs.",
+        "Empowering enterprises with intelligent software, scalable cloud systems, and transformative digital engineering. tekcorp.com",
     },
     {
       src: "https://www.hdwallpapers.in/download/arthur_morgan_with_gun_in_background_of_trees_mountain_and_sky_with_clouds_hd_red_dead_redemption_2-1920x1080.jpg",
-      title: "Arthur Morgan",
-      subtitle: "The Outlaw with a Heart",
-      description: "The goated arthur morgan died with honor and dignity.",
+      title: "PLUMJOB",
+      subtitle: "The Talent Recruitment Platform",
+      description:
+        "Connecting exceptional talent with extraordinary opportunities—where ambition meets purpose. plumjob.com",
     },
     {
       src: "https://assets.website-files.com/6384f0dcd0a815701796cd36/6385f15ca596aa177d81cea8_the-hulk-scaled.jpeg",
-      title: "The Hulk",
-      subtitle: "Hulk Smash!",
+      title: "SWEVEN",
+      subtitle: "CRM Mastermind",
       description:
-        "Bruce Banner's gamma radiation accident created the strongest there is - a green goliath of unlimited power and rage.",
+        "Reimagining Customer Relationships with AI-born Experience Intelligence that goes beyond CRM. sweven.com",
     },
     {
-      src: "/images/645364.jpg",
-      title: "Thor",
-      subtitle: "God of Thunder",
+      src: "https://your-indic-image-url.com/indic.jpg",
+      title: "INDIC",
+      subtitle: "Digital Experience Portfolio Company",
       description:
-        "The Asgardian prince wields Mjolnir and commands lightning, bringing the power of the gods to protect Midgard.",
+        "Indic launches a series of DX Platforms in the experience economy in retail, fashion, fintech, etc. indic.com",
     },
   ];
 
@@ -166,30 +168,31 @@ const HorizontalScrollGallery = () => {
     <div className="bg-black text-gray-300 min-h-screen font-sans">
       {/* Header */}
       <header className="flex justify-center items-center min-h-screen">
-        <div className="text-center">
+        <div className="text-center flex flex-col justify-center items-center px-4">
           <TextReveal
             animation="rotateX"
             stagger={0.1}
             duration={0.8}
             className="text-200 font-bold tracking-wide mb-4 text-white"
           >
-            Our Services
+            Design Services
           </TextReveal>
           <TextReveal
             animation="rotateX"
             stagger={0.1}
             duration={0.8}
-            className="text-30 text-gray-400 container"
+            className="text-30 mb-6 sm:mb-16 text-gray-400 container"
           >
-            Scroll down to explore the services Lorem ipsum dolor sit amet,
-            consectetur adipisicing elit. Dolorem accusantium at impedit
-            distinctio, debitis sequi excepturi ullam id inventore nisi optio
-            rem, soluta voluptas animi qui voluptatum in incidunt dignissimos,
-            adipisci ut fuga minus! Labore, eos! Magnam, suscipit amet eos
-            quaerat voluptatibus adipisci. Cupiditate doloremque et temporibus
-            odio, quo illum qui, modi sint labore accusantium ad hic dolor
-            ullam? Cum tempore sed totam molestiae impedit, op.
+            Our design services powered by Designara Studio fuse strategy,
+            aesthetics, and technology. We build cohesive brand ecosystems that
+            thrive across digital touchpoints. Every creation is human-centered,
+            data-driven, and emotionally resonant.
           </TextReveal>
+
+          <AnimatedButton
+            text="Design story"
+            href="/services/design-studio/vsys"
+          />
         </div>
       </header>
 

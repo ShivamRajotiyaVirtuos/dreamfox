@@ -76,18 +76,17 @@ const Banner_Mediamix = () => {
           <BannerTextReveal
             titleClassName="text-white text-130 font-bold leading-tight"
             descriptionClassName="text-24 text-white mt-8 sm:mt-4 max-w-7xl"
-            title="Designing Digital Experiences"
-            description="We helps advisors save valuable time and create accurate buyer
-              lists. Our technology ensures a fast and effective compilation of
-              suitable buyers and treats all data according to the highest
-              security standards."
+            title="Yippee Media Services from DreamFox"
+            description="Acquired by DreamFox in 2025, Yippee Media powers the new age of storytelling through Media, PR, and Content Marketing. We amplify brand voices across digital and traditional channels with precision, creativity, and measurable impact.
+From strategic narratives to viral campaigns, Yippee Media turns visibility into influence.
+"
           />
         </div>
 
         <div className="flex flex-col xl:flex-row xl:items-center justify-between gap-8 mt-8 lg:mt-16">
           <div className="flex flex-row gap-4 shrink-0">
-            <AnimatedButton text="Consult" href="/" />
-            <AnimatedButton text="button" href="/" />
+            <AnimatedButton text="Consult" href="/contactus" />
+            {/* <AnimatedButton text="button" href="/" /> */}
             {/* <button className="bg-white text-black px-6 py-3 rounded-full text-sm font-medium whitespace-nowrap">
               Arrange an initial consultation
             </button> */}

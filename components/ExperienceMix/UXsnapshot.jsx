@@ -15,22 +15,27 @@ const UXSnapshot = () => {
     {
       id: 1,
       img: "/images/marketing-mix/1.jpg",
-      title: "User Research",
+      url: "/case-study/vsys",
+      title: "From Our UXBook",
       description:
         "Deep dive into user behavior and needs to create meaningful experiences.",
       bgColor: "bg-[#deb22a]", // Dark navy blue
     },
     {
       id: 2,
+      type: "video",
+      videoSrc: "/videos/0_Car_Drifting_3840x2160.mp4",
       img: "/images/marketing-mix/2.jpg",
-      title: "Design Systems",
+      url: "/case-study",
+      title: "Design Brands",
       description:
         "Building consistent and scalable design frameworks for digital products.",
       bgColor: "bg-[#16213e]", // Deep blue
     },
     {
       id: 3,
-      title: "Prototyping",
+      url: "/case-study/gc",
+      title: "ECommerce",
       img: "/images/marketing-mix/3.jpg",
       description:
         "Creating interactive prototypes to validate design concepts and user flows.",
@@ -38,8 +43,12 @@ const UXSnapshot = () => {
     },
     {
       id: 4,
+      type: "video",
+      url: "/case-study",
+      videoSrc: "/videos/0_Car_Drifting_3840x2160.mp4",
+
       img: "/images/marketing-mix/4.jpg",
-      title: "Testing & Iteration",
+      title: "Branding & Identity",
       description:
         "Continuous testing and refinement to optimize user experience.",
       bgColor: "bg-[#533483]", // Purple
@@ -143,17 +152,29 @@ const UXSnapshot = () => {
           //     }%))`,
           //   }}
         >
-          <Image
-            src={card.img}
-            alt={card.title}
-            height={900}
-            width={1600}
-            ref={(el) => (contentCardsRef.current[index] = el)}
-            className="bg-white/10 backdrop-blur-lg rounded-2xl p-2 relative z-20 w-[90%] 2xl:w-[60%] mx-4 border border-white/20 shadow-2xl transform-gpu mt-44"
-            style={{
-              transformOrigin: "center center",
-            }}
-          />
+          {card.type === "video" ? (
+            <video
+              src={card.videoSrc}
+              autoPlay
+              loop
+              muted
+              ref={(el) => (contentCardsRef.current[index] = el)}
+              className="bg-white/10 backdrop-blur-lg rounded-2xl p-2 relative z-20 w-[90%] 2xl:w-[60%] mx-4 border border-white/20 shadow-2xl transform-gpu mt-44"
+            />
+          ) : (
+            <Image
+              src={card.img}
+              alt={card.title}
+              height={900}
+              width={1600}
+              ref={(el) => (contentCardsRef.current[index] = el)}
+              className="bg-white/10 backdrop-blur-lg rounded-2xl p-2 relative z-20 w-[90%] 2xl:w-[60%] mx-4 border border-white/20 shadow-2xl transform-gpu mt-44"
+              style={{
+                transformOrigin: "center center",
+              }}
+            />
+          )}
+
           <h2 className="text-120 z-0 text-center sm:text-left absolute top-[28%] lg:top-[31%] lg2:top-[14%] xl:top-[14%] 2xl:top-26 3xl:top-40 2xl:left-64 4xl:top-[16%] font-bold text-white mb-4">
             {card.title}
           </h2>

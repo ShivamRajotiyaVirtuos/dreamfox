@@ -16,7 +16,7 @@ function Index() {
     <div>
       <BannerSection />
       <VirtuosHero/>
-      <Proud_Part />
+      {/* <Proud_Part /> */}
       <StackingCards />
       <DreamFoxModel />
       <Mission />

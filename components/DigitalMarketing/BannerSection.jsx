@@ -76,12 +76,12 @@ const BannerSection = () => {
           <BannerTextReveal
             titleClassName="text-white text-130 font-bold leading-tight"
             descriptionClassName="text-24 text-white mt-8 sm:mt-4 max-w-7xl"
-            title="Marketing the Modern Way
+            title="DreamFox Marketing — the Modern Way
 "
-            description="We helps advisors save valuable time and create accurate buyer
-              lists. Our technology ensures a fast and effective compilation of
-              suitable buyers and treats all data according to the highest
-              security standards."
+            description="We launch brands into the digital orbit through our Outlaunch™ framework—blending strategy, storytelling, and AI precision.
+ Our Assimilations align data, design, and creativity into one cohesive growth engine.
+ DreamFox transforms every campaign into an intelligent, measurable experience.
+"
           />
           {/* <h1 className="text-white text-120 font-bold leading-tight"> */}
         </div>
@@ -101,8 +101,8 @@ const BannerSection = () => {
           </div> */}
 
           <div className="flex flex-row gap-4 shrink-0">
-            <AnimatedButton text="Arrange " href="/" />
-            <AnimatedButton text="button" href="/" />
+            <AnimatedButton text="Consult " href="/contactus" />
+            {/* <AnimatedButton text="button" href="/" /> */}
             {/* <button className="bg-white text-black px-6 py-3 rounded-full text-sm font-medium whitespace-nowrap">
               Arrange an initial consultation
             </button> */}

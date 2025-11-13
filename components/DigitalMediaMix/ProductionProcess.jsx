@@ -20,29 +20,29 @@ const Productionprocess = () => {
 
   const stages = [
     {
-      title: "Inform yourself",
+      title: "Insight Discovery",
       description:
-        "Bitcoin is different than what you know and use every day. Before you start using Bitcoin, there are a few things that you need to know in order to use it securely and avoid common pitfalls.",
+        "We analyze audience behavior, market trends, and data signals to uncover what inspires engagement. Insight Discovery sets the foundation for content that's emotionally resonant and strategically focused.",
     },
     {
-      title: "Choose your wallet",
+      title: "Story Architecture",
       description:
-        "You can install an app on your mobile device for everyday use or you can have a wallet only for online payments on your computer. In any case, choosing a wallet is easy and can be done in minutes.",
+        "We craft narratives that align brand purpose with audience needs. Each framework ensures consistency in tone, visuals, and emotion — the structure behind compelling storytelling.",
     },
     {
-      title: "Get Bitcoin",
+      title: "AI Co-Creation",
       description:
-        "You can get Bitcoin by accepting it as a payment for goods and services. There are also several ways you can buy Bitcoin through exchanges or ATMs.",
+        "Our creators collaborate with AI to ideate, refine, and personalize content at scale. Human creativity meets machine intelligence to accelerate high-impact storytelling.",
     },
     {
-      title: "Spend Bitcoin",
+      title: "Omnichannel Activation",
       description:
-        "There are a growing number of services and merchants accepting Bitcoin all over the world. Use Bitcoin to pay them and rate your experience to help them gain more visibility.",
+        "We deliver content seamlessly across digital touchpoints — optimized for each platform's audience and algorithm. A unified voice ensures reach and resonance.",
     },
     {
-      title: "Secure & Store",
+      title: "Performance Amplification",
       description:
-        "Keep your Bitcoin safe by using hardware wallets for large amounts, enabling two-factor authentication, and backing up your wallet regularly to prevent loss.",
+        "Using AI analytics, we track, learn, and evolve content in real time. Every performance insight fuels smarter strategy and measurable business results.",
     },
   ];
 
@@ -162,7 +162,7 @@ const Productionprocess = () => {
               duration={0.8}
               className="text-120 font-bold text-gray-50 mb-4"
             >
-              Production Process
+              Contentare Services
             </TextReveal>
             {/* <h2 className="text-120 font-bold text-gray-50 mb-4">
              
@@ -171,10 +171,10 @@ const Productionprocess = () => {
               animation="rotateX"
               stagger={0.1}
               duration={0.8}
-              className="text-gray-50 text-30 max-w-2xl mx-auto"
+              className="text-gray-50 text-30 max-w-5xl mx-auto"
             >
-              Follow these steps to get started with Bitcoin and understand the
-              complete process
+              Crafting intelligent content that connects humans and algorithms —
+              where creativity meets cognition.
             </TextReveal>
           </div>
 

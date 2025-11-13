@@ -1,97 +1,104 @@
-import { MagnifyingGlassIcon } from '@heroicons/react/24/solid';
-import { CalendarIcon, UserIcon, TagIcon } from '@heroicons/react/24/outline';
-import React, { useState, useEffect, useRef } from 'react';
-import Link from 'next/link';
+import { MagnifyingGlassIcon } from "@heroicons/react/24/solid";
+import { CalendarIcon, UserIcon, TagIcon } from "@heroicons/react/24/outline";
+import React, { useState, useEffect, useRef } from "react";
+import Link from "next/link";
 
 const NewsCategory = () => {
-  const [selectedCategory, setSelectedCategory] = useState('All Categories');
-  const [searchQuery, setSearchQuery] = useState('');
+  const [selectedCategory, setSelectedCategory] = useState("All Categories");
+  const [searchQuery, setSearchQuery] = useState("");
   const sidebarRef = useRef(null);
   const searchRef = useRef(null);
   const articlesRef = useRef(null);
 
   // Dummy news data
+  // Updated news data with real DreamFox content
   const newsData = [
     {
       id: 1,
-      title: "Bar Mor named to Ynet's Disrupt 40 List for 2025",
-      category: "Awards and recognitions",
-      tags: ["AWARDS AND RECOGNITIONS"],
-      author: "Danielle VanHart",
-      date: "Jun 30, 2025",
-      image: "https://images.unsplash.com/photo-1531058020387-3be344556be6?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fGV2ZW50c3xlbnwwfHwwfHx8MA%3D%3D",
-      imageAlt: "Disrupt 40 featuring Bar Mor Co-Founder and CEO",
-      excerpt: "Recognition for innovation and leadership in the digital transformation space."
+      title:
+        "DreamFox + EnBrand Unite to Offer Integrated Branding and Digital Experience Solutions",
+      category: "Partnership",
+      tags: ["PARTNERSHIP", "COMPANY NEWS"],
+      author: "DreamFox Team",
+      slug: "dreamfox-enbrand-unite-integrated-branding-digital-experience-solutions",
+      date: "Nov 14, 2025",
+      image:
+        "https://images.unsplash.com/photo-1531058020387-3be344556be6?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fGV2ZW50c3xlbnwwfHwwfHx8MA%3D%3D",
+      imageAlt: "DreamFox and EnBrand strategic collaboration",
+      excerpt:
+        "DreamFox announces strategic collaboration with EnBrand to deliver integrated branding, experience design, and AI-powered marketing under one umbrella, positioning as a holistic growth partner for enterprises.",
     },
     {
       id: 2,
-      title: "Virtuos named one of Israel's most promising startups of 2025 - twice",
-      category: "Awards and recognitions",
-      tags: ["AWARDS AND RECOGNITIONS", "COMPANY NEWS"],
-      author: "Danielle VanHart",
-      date: "May 05, 2025",
-      image: "https://images.unsplash.com/photo-1643759543584-fb6f448d42d4?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fGV2ZW50c3xlbnwwfHwwfHx8MA%3D%3D",
-      imageAlt: "Most Promising Startups of 2025 award",
-      excerpt: "Double recognition highlights our commitment to innovation and excellence."
+      title:
+        "DreamFox Develops PlumJob.com Brand Through Its Designare™ Experience Services",
+      category: "Product Launch",
+      tags: ["PRODUCT LAUNCH", "DESIGNARE™"],
+      slug: "dreamfox-develops-plumjob-brand-designare-experience-services",
+
+      author: "DreamFox Team",
+      date: "Nov 14, 2025",
+      image:
+        "https://images.unsplash.com/photo-1643759543584-fb6f448d42d4?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fGV2ZW50c3xlbnwwfHwwfHx8MA%3D%3D",
+      imageAlt: "PlumJob.com brand development",
+      excerpt:
+        "DreamFox unveils PlumJob.com, a next-generation HRTech and Talent Experience platform designed for the modern technology workforce, built through Designare™ Experience Design practice.",
     },
     {
       id: 3,
-      title: "Virtuos co-founders named to Forbes 30 Under 30",
-      category: "Awards and recognitions",
-      tags: ["AWARDS AND RECOGNITIONS", "COMPANY NEWS"],
-      author: "Danielle VanHart",
-      date: "Apr 01, 2025",
-      image: "https://images.unsplash.com/photo-1523580494863-6f3031224c94?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fGV2ZW50c3xlbnwwfHwwfHx8MA%3D%3D",
-      imageAlt: "Forbes 30 Under 30 recognition",
-      excerpt: "Celebrating young entrepreneurs making a significant impact in technology."
+      title:
+        "PlumJob to Launch Dxpify — DXP-as-a-Service Platform Developed by DreamFox",
+      category: "Technology",
+      tags: ["TECHNOLOGY", "DXP", "PLATFORM LAUNCH"],
+      slug: "plumjob-launch-dxpify-dxp-as-a-service-developed-by-dreamfox",
+
+      author: "DreamFox Team",
+      date: "Nov 14, 2025",
+      image:
+        "https://images.unsplash.com/photo-1523580494863-6f3031224c94?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fGV2ZW50c3xlbnwwfHwwfHx8MA%3D%3D",
+      imageAlt: "Dxpify DXP-as-a-Service platform",
+      excerpt:
+        "DreamFox announces the upcoming launch of Dxpify.com, a groundbreaking Digital Experience Platform (DXP-as-a-Service) that enables brands to rapidly design, deliver, and scale next-generation digital experiences.",
     },
-    {
-      id: 4,
-      title: "Virtuos expands to Australia with new sales and support teams in Sydney and Melbourne",
-      category: "Company news",
-      tags: ["COMPANY NEWS", "PRESS RELEASES"],
-      author: "Danielle VanHart",
-      date: "Mar 31, 2025",
-      image: "https://plus.unsplash.com/premium_photo-1663089174939-5870e2e8d62e?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NjR8fGV2ZW50c3xlbnwwfHwwfHx8MA%3D%3D",
-      imageAlt: "Australia expansion announcement",
-      excerpt: "Strategic expansion into the Asia-Pacific market with dedicated local teams."
-    }
   ];
 
   const categories = [
-    'All Categories',
-    'Awards and recognitions',
-    'Company news',
-    'In the news',
-    'Press releases'
+    "All Categories",
+    "Partnership",
+    "Product Launch",
+    "Technology",
   ];
 
   // Filter articles based on category and search
-  const filteredArticles = newsData.filter(article => {
-    const matchesCategory = selectedCategory === 'All Categories' || article.category === selectedCategory;
-    const matchesSearch = article.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-                         article.tags.some(tag => tag.toLowerCase().includes(searchQuery.toLowerCase()));
+  const filteredArticles = newsData.filter((article) => {
+    const matchesCategory =
+      selectedCategory === "All Categories" ||
+      article.category === selectedCategory;
+    const matchesSearch =
+      article.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      article.tags.some((tag) =>
+        tag.toLowerCase().includes(searchQuery.toLowerCase())
+      );
     return matchesCategory && matchesSearch;
   });
 
   return (
     <div className=" py-16 md:py-44 bg-black ">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        
         {/* Header Section */}
         <div className="text-center mb-16">
           <h1 className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-white via-gray-200 to-gray-400 bg-clip-text text-transparent mb-6">
             Latest News & Events
           </h1>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            Stay updated with our latest achievements, company news, and industry insights
+            Stay updated with our latest achievements, company news, and
+            industry insights
           </p>
         </div>
 
         {/* Search and Filter Section */}
         <div className="mb-12">
           <div className="flex flex-col xl:flex-row gap-6 items-start lg:items-center justify-between">
-            
             {/* Search Bar */}
             <div className="relative 2xl:flex-1 max-w-2xl 2xl:max-w-md">
               <MagnifyingGlassIcon className="absolute left-4 top-1/2 transform -translate-y-1/2 size-6 z-20 text-gray-400" />
@@ -113,8 +120,8 @@ const NewsCategory = () => {
                   onClick={() => setSelectedCategory(category)}
                   className={`px-6 py-3 rounded-full text-sm font-medium transition-all duration-300 ${
                     selectedCategory === category
-                      ? 'bg-gradient-to-r from-[#ee5363] to-[#e62f8c] text-white shadow-lg transform scale-105'
-                      : 'bg-white/5 backdrop-blur-xl border border-white/20 text-gray-300 hover:bg-white/10 hover:border-white/30'
+                      ? "bg-gradient-to-r from-[#ee5363] to-[#e62f8c] text-white shadow-lg transform scale-105"
+                      : "bg-white/5 backdrop-blur-xl border border-white/20 text-gray-300 hover:bg-white/10 hover:border-white/30"
                   }`}
                 >
                   {category}
@@ -125,9 +132,13 @@ const NewsCategory = () => {
         </div>
 
         {/* Articles Grid */}
-        <div ref={articlesRef} className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 lg:grid-cols-3 gap-8 mt-20">
+        <div
+          ref={articlesRef}
+          className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 lg:grid-cols-3 gap-8 mt-20"
+        >
           {filteredArticles.map((article, index) => (
-            <Link href={`/news-events/${article.id}`}
+            <Link
+              href={`/news-events/${article.slug}`}
               key={article.id}
               className="group bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl overflow-hidden  hover:border-white/20 transition-all duration-500 shadow-2xl hover:shadow-3xl hover:transform hover:scale-[1.02]"
             >
@@ -139,18 +150,10 @@ const NewsCategory = () => {
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                 />
                 <div className="absolute -inset-2 bg-gradient-to-t from-[#0d0d0d] via-transparent to-transparent"></div>
-                
-                {/* Category Badge */}
-                {/* <div className="absolute top-4 left-4">
-                  <span className="bg-gradient-to-r from-[#ee5363] to-[#e62f8c] backdrop-blur-md text-white text-[10px] font-medium px-3 py-1.5 rounded-full border border-white/20">
-                    {article.category}
-                  </span>
-                </div> */}
               </div>
 
               {/* Content */}
               <div className="p-6 space-y-4">
-                
                 {/* Tags */}
                 <div className="flex flex-wrap gap-2">
                   {article.tags.map((tag, tagIndex) => (
@@ -186,12 +189,25 @@ const NewsCategory = () => {
                       <span>{article.date}</span>
                     </div>
                   </div>
-                  
+
                   {/* Read More Button */}
-                  <Link href={`/news-events/${article.id}`} className="text-blue-400 hover:text-blue-300 text-sm font-medium flex items-center gap-1 group/btn">
+                  <Link
+                    href={`/news-events/${article.id}`}
+                    className="text-blue-400 hover:text-blue-300 text-sm font-medium flex items-center gap-1 group/btn"
+                  >
                     <span>Read More</span>
-                    <svg className="w-4 h-4 transition-transform group-hover/btn:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    <svg
+                      className="w-4 h-4 transition-transform group-hover/btn:translate-x-1"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M17 8l4 4m0 0l-4 4m4-4H3"
+                      />
                     </svg>
                   </Link>
                 </div>
@@ -205,20 +221,15 @@ const NewsCategory = () => {
           <div className="text-center py-20">
             <div className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl p-12 max-w-md mx-auto">
               <MagnifyingGlassIcon className="w-16 h-16 text-gray-400 mx-auto mb-4" />
-              <h3 className="text-xl font-semibold text-white mb-2">No articles found</h3>
-              <p className="text-gray-400">Try adjusting your search or filter criteria</p>
+              <h3 className="text-xl font-semibold text-white mb-2">
+                No articles found
+              </h3>
+              <p className="text-gray-400">
+                Try adjusting your search or filter criteria
+              </p>
             </div>
           </div>
         )}
-
-        {/* Load More Button */}
-        {/* {filteredArticles.length > 0 && (
-          <div className="text-center mt-16">
-            <button className="bg-white/5 backdrop-blur-xl border border-white/20 hover:bg-white/10 hover:border-white/30 text-white px-8 py-4 rounded-full font-medium transition-all duration-300 hover:transform hover:scale-105">
-              Load More Articles
-            </button>
-          </div>
-        )} */}
       </div>
 
       {/* Custom Styles */}
@@ -229,7 +240,7 @@ const NewsCategory = () => {
           -webkit-box-orient: vertical;
           overflow: hidden;
         }
-        
+
         .shadow-3xl {
           box-shadow: 0 35px 60px -12px rgba(0, 0, 0, 0.25);
         }

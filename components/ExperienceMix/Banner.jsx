@@ -54,7 +54,7 @@ const Banner_Experiencemix = () => {
   return (
     <section
       ref={sectionRef}
-      className="relative w-full min-h-[80vh] pt-16 lg:pt-32 bg-black flex items-end overflow-hidden"
+      className="relative w-full min-h-[80vh] pt-16 lg:pt-32 bg-black flex items-end overflow-hidden pb-4"
     >
       {/* Gradient Circles */}
       <div
@@ -77,10 +77,9 @@ const Banner_Experiencemix = () => {
             titleClassName="text-white text-130 font-bold leading-tight"
             descriptionClassName="text-24 text-white mt-8 sm:mt-4 max-w-7xl"
             title="Designing Digital Experiences"
-            description="We helps advisors save valuable time and create accurate buyer
-              lists. Our technology ensures a fast and effective compilation of
-              suitable buyers and treats all data according to the highest
-              security standards."
+            description="At DreamFox, we design immersive DXPs with DXPIFY — our next-gen experience platform in beta, powered by Designara Studio.
+Crafted with Figma, Webflow, Framer, React, and AI tools that turn design intelligence into digital art.
+"
           />
           {/* <h1 className="text-white text-120 font-bold leading-tight">
             Designing Digital Experiences
@@ -99,8 +98,8 @@ const Banner_Experiencemix = () => {
           </div> */}
 
           <div className="flex flex-row gap-4 shrink-0">
-            <AnimatedButton text="Consult" href="/" />
-            <AnimatedButton text="button" href="/" />
+            <AnimatedButton text="Consult" href="/contactus" />
+            {/* <AnimatedButton text="button" href="/" /> */}
             {/* <button className="bg-white text-black px-6 py-3 rounded-full text-sm font-medium whitespace-nowrap">
               Arrange an initial consultation
             </button> */}

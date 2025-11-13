@@ -10,14 +10,14 @@ gsap.registerPlugin(ScrollTrigger);
 const servicesData = [
   {
     number: "01",
-    heading: "SEO Optimization",
+    heading: "Audacis SEO",
     description:
       "Boost your website's visibility and rankings with our comprehensive SEO strategies that drive organic traffic.",
     image: "https://capsules.moyra.co/_ipx/q_80/images/cap3-square.jpg",
   },
   {
     number: "02",
-    heading: "Social Media Marketing",
+    heading: "OutLaunch",
     description:
       "Engage your audience across all social platforms with compelling content and strategic campaigns.",
     image: "https://capsules.moyra.co/_ipx/q_80/images/cap2.png",
@@ -31,7 +31,7 @@ const servicesData = [
   },
   {
     number: "04",
-    heading: "Content Marketing",
+    heading: "Yippee Media",
     description:
       "Create valuable content that resonates with your audience and builds lasting brand connections.",
     image: "https://capsules.moyra.co/_ipx/q_80/images/activities-3.png",
@@ -39,6 +39,7 @@ const servicesData = [
 ];
 
 const ServicesSectionDigitalM = () => {
+  
   const containerRef = useRef(null);
   const textCardsRef = useRef([]);
   const imageCardsRef = useRef([]);
@@ -202,7 +203,7 @@ const ServicesSectionDigitalM = () => {
                   <div className="w-full h-full bg-[#2b2725] border border-black rounded-3xl p-4 md:p-8 2xl:p-20 flex flex-col justify-between">
                     <div className="sm:flex hidden  items-center gap-4">
                       <span className="text-40 md:text-80 font-black text-white  opacity-80">
-                        Data {service.number}
+                        {service.number}
                       </span>
                     </div>
 

@@ -826,7 +826,7 @@ const PersonaTargeting = () => {
                       {persona.tag}
                     </span>
 
-                    <div className="w-10 h-10 bg-white/5 rounded-full flex items-center justify-center border border-white/20 group-hover:bg-white/10 transition-all duration-300">
+                    {/* <div className="w-10 h-10 bg-white/5 rounded-full flex items-center justify-center border border-white/20 group-hover:bg-white/10 transition-all duration-300">
                       <svg
                         className="w-4 h-4 text-white/60 group-hover:text-white transition-colors duration-300 transform group-hover:translate-x-0.5"
                         fill="currentColor"
@@ -838,7 +838,7 @@ const PersonaTargeting = () => {
                           clipRule="evenodd"
                         />
                       </svg>
-                    </div>
+                    </div> */}
                   </div>
 
                   {/* Additional Decorative Elements */}

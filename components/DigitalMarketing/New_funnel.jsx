@@ -207,15 +207,15 @@ export default function New_Funnel() {
 
               <div className="p-6 pt-0 sm:p-10 sm:pt-4">
                 <h3 className="text-sm/4 font-semibold text-pink-600 dark:text-pink-400">
-                  Performance
+                  Strategy
                 </h3>
                 <p className="mt-2 text-20 font-medium tracking-tight text-white ">
-                  Lightning-fast builds
+                  Funnel Strategy & Architecture
                 </p>
                 <p className="mt-2 max-w-lg text-sm/6 text-gray-300">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. In
-                  gravida justo et nulla efficitur, maximus egestas sem
-                  pellentesque.
+                  Blueprinting the entire customer journey — from awareness to
+                  retention — including landing page flow, messaging, and
+                  campaign logic tailored to buyer personas.
                 </p>
               </div>
             </div>
@@ -239,14 +239,15 @@ export default function New_Funnel() {
 
               <div className="p-6 pt-0 sm:p-10 sm:pt-4">
                 <h3 className="text-sm/4 font-semibold text-pink-600 dark:text-pink-400">
-                  Releases
+                  Design
                 </h3>
                 <p className="mt-2 text-20 font-medium tracking-tight text-white ">
-                  Push to deploy
+                  Landing Page Design & Conversion Optimization
                 </p>
                 <p className="mt-2 max-w-lg text-sm/6 text-gray-300">
-                  Curabitur auctor, ex quis auctor venenatis, eros arcu rhoncus
-                  massa, laoreet dapibus ex elit vitae odio.
+                  Designing high-performance landing pages using Webflow,
+                  Framer, or WordPress with A/B testing, analytics integration,
+                  and persuasive UX/UI focused on conversion.
                 </p>
               </div>
             </div>
@@ -269,14 +270,15 @@ export default function New_Funnel() {
               </div>
               <div className="p-6 pt-0 sm:p-10 sm:pt-4">
                 <h3 className="text-sm/4 font-semibold text-pink-600 dark:text-pink-400">
-                  Speed
+                  Automation
                 </h3>
                 <p className="mt-2 text-20 font-medium tracking-tight text-white ">
-                  Built for power users
+                  Lead Magnet & Content Automation
                 </p>
                 <p className="mt-2 max-w-lg text-sm/6 text-gray-300">
-                  Sed congue eros non finibus molestie. Vestibulum euismod
-                  augue.
+                  Creating downloadable assets, gated content, and automated
+                  email/SMS sequences using tools like HubSpot, ActiveCampaign,
+                  or Zapier to nurture leads intelligently.
                 </p>
               </div>
             </div>
@@ -299,14 +301,15 @@ export default function New_Funnel() {
               </div>
               <div className="p-6 pt-0 sm:p-10 sm:pt-4">
                 <h3 className="text-sm/4 font-semibold text-pink-600 dark:text-pink-400">
-                  Integrations
+                  Acquisition
                 </h3>
                 <p className="mt-2 text-20 font-medium tracking-tight text-white ">
-                  Connect your favorite tools
+                  Paid Ads & Retargeting Funnels
                 </p>
                 <p className="mt-2 max-w-lg text-sm/6 text-gray-300">
-                  Maecenas at augue sed elit dictum vulputate, in nisi aliquam
-                  maximus arcu.
+                  Building acquisition funnels through Meta, Google, and
+                  LinkedIn Ads, with retargeting campaigns that recapture
+                  visitors and drive them back into the funnel.
                 </p>
               </div>
             </div>
@@ -329,14 +332,15 @@ export default function New_Funnel() {
               </div>
               <div className="p-6 pt-0 sm:p-10 sm:pt-4">
                 <h3 className="text-sm/4 font-semibold text-pink-600 dark:text-pink-400">
-                  Network
+                  Analytics
                 </h3>
                 <p className="mt-2 text-20 font-medium tracking-tight text-white ">
-                  Globally distributed CDN
+                  Analytics, AI Insights & Optimization
                 </p>
                 <p className="mt-2 max-w-lg text-sm/6 text-gray-300">
-                  Aenean vulputate justo commodo auctor vehicula in malesuada
-                  semper.
+                  Tracking behavior across the funnel, applying AI insights
+                  (e.g., predictive scoring, heatmaps, or journey analytics),
+                  and continuously refining conversion pathways.
                 </p>
               </div>
             </div>
