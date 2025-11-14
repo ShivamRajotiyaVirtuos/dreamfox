@@ -196,7 +196,7 @@ const Teams = () => {
                 </div>
 
                 {/* Member image positioned at bottom */}
-                <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-44 lg:w-52 h-44 lg:h-52 xl:size-64 overflow-hidden rounded-t-full group-hover:scale-120 transition-transform duration-500">
+                <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-44 lg:w-52 h-44 lg:h-52 xl:size-64 overflow-hidden  group-hover:scale-120 transition-transform duration-500">
                   <img
                     src={member.image}
                     alt={member.name}
@@ -218,7 +218,7 @@ const Teams = () => {
                 alt={member.name}
                 height={1000}
                 width={1000}
-                className="w-44 z-10 lg:w-52 h-44 lg:h-52 xl:size-64 object-cover object-bottom absolute -bottom-48 xl:-bottom-58 left-[56%] transform -translate-x-1/2 rounded-t-full group-hover:scale-y-120 group-hover:-scale-x-120 transition-transform duration-500 rotate-170 brightness-0 grayscale-100 opacity-20 -scale-x-100 invert-75 "
+                className="w-44 z-10 lg:w-52 h-44 lg:h-52 xl:size-64 object-cover object-bottom absolute -bottom-48 xl:-bottom-58 left-[56%] transform -translate-x-1/2  group-hover:scale-y-120 group-hover:-scale-x-120 transition-transform duration-500 rotate-170 brightness-0 grayscale-100 opacity-20 -scale-x-100 invert-75 "
               />
             </div>
             // </div>

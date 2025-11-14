@@ -163,7 +163,7 @@ const JobListingsGrid = () => {
   return (
     <div
       ref={containerRef}
-      className="min-h-screen pb-16 lg:pb-32 bg-black  px-6"
+      className=" pb-16 lg:pb-32 bg-black  px-6"
       id="openings"
     >
       {/* <SidebarForm /> */}
