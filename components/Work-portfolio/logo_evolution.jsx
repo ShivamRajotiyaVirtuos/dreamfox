@@ -7,34 +7,36 @@ import TextReveal from "../Text Reveal/textreveal";
 import Image from "next/image";
 
 gsap.registerPlugin(ScrollTrigger);
-
 const steps = [
-  {
-    title: "IDEATE",
-    desc: "Discover insights, spark possibilities",
-    image: "/svgs/ideate.svg",
-  },
-  {
-    title: "DEFINE",
-    desc: "Shape brand vision, values clearly",
-    image: "/svgs/define.svg",
-  },
-  {
-    title: "DESIGN",
-    desc: "Create identity, experience touchpoints",
-    image: "/svgs/design.svg",
-  },
-  {
-    title: "BUILD",
-    desc: "Integrate across digital, AI, physical",
-    image: "/svgs/build.svg",
-  },
-  {
-    title: "AMPLIFY",
-    desc: "Elevate impact, scale visibility",
-    image: "/svgs/amplify.svg",
-  },
-];
+    {
+      title: "CONCEPT",
+      desc: "Explore brand essence, visual direction",
+      image: "/casestudy/plumjob1.svg",
+    },
+    {
+      title: "SKETCH",
+      desc: "Initial forms, typography exploration",
+      image: "/casestudy/plumjob1.svg",
+
+    },
+    {
+      title: "REFINE",
+      desc: "Perfect proportions, visual hierarchy",
+      image: "/casestudy/plumjob2.svg",
+
+    },
+    {
+      title: "FINALIZE",
+      desc: "Lock colors, typography, mark systems",
+      image: "/casestudy/plumjob2.svg",
+
+    },
+    {
+      title: "DELIVER",
+      desc: "Brand guidelines, asset library ready",
+      image: "/casestudy/plumjob2.svg",
+    }
+  ];
 export default function LogoEvolutions() {
   const containerRef = useRef(null);
   const boxesRef = useRef([]);
@@ -121,9 +123,7 @@ export default function LogoEvolutions() {
         ref={containerRef}
         className="relative w-full h-[100vh] overflow-hidden bg-black"
       >
-        {/* Progress line */}
-        {/* Progress line */}
-        <div className="absolute top-1/2 left-0 right-0 h-16 pointer-events-none z-0 -translate-y-1/2 flex items-center">
+        {/* <div className="absolute top-1/2 left-0 right-0 h-16 pointer-events-none z-0 -translate-y-1/2 flex items-center">
           <svg
             ref={lineRef}
             width="100%"
@@ -133,7 +133,6 @@ export default function LogoEvolutions() {
             className="w-full h-16"
             style={{ position: "absolute", left: 0, top: 0 }}
           >
-            {/* Gradient definitions */}
             <defs>
               <linearGradient
                 id="waveGradient"
@@ -158,7 +157,6 @@ export default function LogoEvolutions() {
               </filter>
             </defs>
 
-            {/* Background wavy path */}
             <path
               d="M0,50 Q100,20 200,50 T400,50 Q500,30 600,50 T800,50 Q900,25 1000,50"
               stroke="url(#waveGradient)"
@@ -169,7 +167,6 @@ export default function LogoEvolutions() {
               className="animate-pulse"
             />
 
-            {/* Main animated wavy path */}
             <path
               ref={lineRef}
               d="M0,50 Q100,20 200,50 T400,50 Q500,30 600,50 T800,50 Q900,25 1000,50"
@@ -187,7 +184,6 @@ export default function LogoEvolutions() {
               }}
             />
 
-            {/* Floating particles along path */}
             <circle r="3" fill="#ec4899" opacity="0.8">
               <animateMotion dur="8s" repeatCount="indefinite">
                 <mpath href="#wavePathMotion" />
@@ -200,7 +196,6 @@ export default function LogoEvolutions() {
               </animateMotion>
             </circle>
 
-            {/* Hidden path for motion */}
             <path
               id="wavePathMotion"
               d="M0,50 Q100,20 200,50 T400,50 Q500,30 600,50 T800,50 Q900,25 1000,50"
@@ -208,7 +203,7 @@ export default function LogoEvolutions() {
               stroke="none"
             />
           </svg>
-        </div>
+        </div> */}
 
         {/* Step boxes */}
         <div className="relative w-full h-full lg:mt-12 3xl:mt-16 4xl:mt-10">
@@ -222,38 +217,38 @@ export default function LogoEvolutions() {
               {/* <div className="absolute -inset-1 bg-gradient-to-r from-pink-600 to-purple-600 rounded-3xl blur opacity-25 group-hover:opacity-75 transition duration-1000 group-hover:duration-200" /> */}
 
               {/* Main card */}
-              <div className="relative bg-gradient-to-r from-[black] to-[#df436a] bg-gray-900/80 backdrop-blur-xl border  rounded-3xl p-8 h-full transform transition-all duration-500 group-hover:scale-105 group-hover:-translate-y-2 border-white">
+              <div className="relative   border  rounded-3xl p-8 h-full transform transition-all duration-500 group-hover:scale-105 group-hover:-translate-y-2 border-white overflow-hidden">
                 {/* Floating icon */}
                 {/* <div className="absolute -top-6 left-1/2 transform -translate-x-1/2">
-                  <div
+                  <divlg:
                     className={`w-16 h-16 bg-gradient-to-r ${step.gradient} rounded-2xl flex items-center justify-center text-2xl shadow-2xl transform rotate-3 group-hover:rotate-0 transition-transform duration-500`}
                   >
                     {step.icon}
-                  </div>
+                  </divlg:>
                 </div> */}
 
                 {/* Step number */}
-                <div className="absolute top-4 right-4 w-8 h-8 bg-white rounded-full flex items-center justify-center text-sm font-bold text-black">
-                  {i + 1}
+                <div className="absolute bottom-0 -right-3  opacity-20  flex items-center -rotate-45 justify-center text-120 font-bold text-white">
+                  V.{i + 1}
                 </div>
-                <div className="flex flex-col gap-10 sm:flex-row items-center justify-center h-full">
-                  <div className="lg:w-1/2">
+                <div className="flex flex-col gap-10  items-center justify-center h-full">
+                  <div className="">
                     <Image
                       src={step.image}
                       alt={step.title}
-                      width={400}
-                      height={400}
-                      className=" md:size-[300px] xl:size-[400px] size-[200px] mx-auto mt-6"
+                      width={1000}
+                      height={1000}
+                      className=" md:w-[300px] xl:w-[800px] w-[200px] mx-auto mt-6"
                     />
                   </div>
 
                   {/* Content */}
-                  <div className="lg:w-1/2  pt-8 text-center sm:text-left">
-                    <h3 className="text-60 font-thin mb-4 text-white ">{step.title}</h3>
-                    <p className="text-gray-100 font-thin text-30 leading-relaxed">
+                  {/* <div className="lg:w-1/2  pt-8 text-center sm:text-left">
+                    <h3 className="text-60 text-center font-thin mb-4 text-white ">{step.title}</h3>
+                    <p className="text-white text-center font-thin text-30 leading-relaxed">
                       {step.desc}
                     </p>
-                  </div>
+                  </div> */}
                 </div>
 
                 {/* Decorative elements */}
