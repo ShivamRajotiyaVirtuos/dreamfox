@@ -12,48 +12,41 @@ const Teams = () => {
 
   const teamMembers = [
     {
-      url: "/images/About/ams.webp",
+      url: "/images/About/Digital_Marketing_Head.webp",
       name: "Amarinder Singh",
-      role: "Senior Director",
-      image: "/images/About/ams.webp",
+      role: "Digital Marketing Head",
+      image: "/images/About/Digital_Marketing_Head.webp",
       height: "h-126",
       bgColor: "bg-purple-200",
     },
     {
-      image: "/images/About/shaloo_reddi.webp",
+      image: "/images/About/Brand_Manager.webp",
       name: "Shaloo Reddi",
-      role: "VP & Senior HR",
-
+      role: "Brand Manager",
       height: "h-104",
       bgColor: "bg-blue-200",
     },
     {
-      image: "/images/About/sc_bg.png",
-
+      image: "/images/About/Customer_Success_Manager.webp",
       name: "Shivam Chawla",
-      role: "Lead - Application Developer",
-
+      role: "Customer Success Manager",
       height: "h-126",
       bgColor: "bg-pink-200",
     },
     {
-      image: "/images/About/tina_sachdeva-removebg-preview.png",
-
+      image: "/images/About/SEO_SMO_Executive.webp",
       name: "Tina Sachdeva",
-      role: "Customer Success Manager",
-
+      role: "SEO/SMO Executive",
       height: "h-116",
       bgColor: "bg-green-200",
     },
     {
-      image: "/images/About/shivam_rajotiya-removebg.png",
-
-      name: "Shivam Rajotiya",
-      role: "Software Engineer",
-
-      height: "h-136",
+      image: "/images/About/Demandgen_Executive.webp",
+      name: "Team Member",
+      role: "DemandGen Executive",
+      height: "h-120",
       bgColor: "bg-yellow-200",
-    },
+    }
   ];
 
   useEffect(() => {
@@ -149,11 +142,11 @@ const Teams = () => {
                 {/* Member info at top */}
                 <div className=" text-center z-10 px-4">
                   <h3 className="text-black font-bold text-24 tracking-wide leading-tight">
-                    {member.name}
-                  </h3>
-                  <p className="text-gray-700 text-16 mt-1 font-medium">
                     {member.role}
-                  </p>
+                  </h3>
+                  {/* <p className="text-gray-700 text-16 mt-1 font-medium">
+                    {member.role}
+                  </p> */}
                 </div>
 
                 {/* Member image positioned at bottom */}
@@ -193,13 +186,13 @@ const Teams = () => {
                 className={`relative w-56 z-20 lg:w-64 2xl:w-80 ${member.height} ${member.bgColor} rounded-t-full rounded-b-  overflow-hidden shadow-2xl`}
               >
                 {/* Member info at top */}
-                <div className="absolute top-20 left-0 right-0 text-center z-10 px-4">
+                <div className="absolute top-28 left-0 right-0 text-center z-10 px-4">
                   <h3 className="text-black font-bold text-24 tracking-wide leading-tight">
-                    {member.name}
-                  </h3>
-                  <p className="text-gray-700 text-16 mt-1 font-medium">
                     {member.role}
-                  </p>
+                  </h3>
+                  {/* <p className="text-gray-700 text-16 mt-1 font-medium">
+                    {member.role}
+                  </p> */}
                 </div>
 
                 {/* Member image positioned at bottom */}

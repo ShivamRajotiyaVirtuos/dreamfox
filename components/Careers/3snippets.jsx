@@ -205,17 +205,19 @@ const JobListingsGrid = () => {
             >
               <div className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-lg p-6 h-full hover:border-white/20 hover:bg-white hover:text-black transition-all duration-300 relative overflow-hidden shadow-2xl group">
                 {/* External link icon */}
-                <div className="absolute top-4 right-4">
+                <div className="absolute bottom-4 right-4">
                   <ArrowRightIcon className="w-5 h-5 text-gray-500 group-hover:text-gray-900 transition-colors" />
                 </div>
 
                 {/* Job Title */}
-                <h3 className="text-xl font-semibold text-white group-hover:text-black mb-4 pr-8 leading-tight">
+                <h3 className="text-24 font-semibold text-white group-hover:text-black mb-4 pr-8 leading-tight">
                   {job.title}
                 </h3>
-
+                <h3 className="text-[12px] font-thin line-clamp-3 text-white group-hover:text-black mb-4 pr-8 leading-tight">
+                  {job.description}
+                </h3>
                 {/* Job Code (if available) */}
-                {job.code && (
+                {/* {job.code && (
                   <div className="mb-3">
                     <span className="text-gray-400 group-hover:text-black text-sm">
                       Code:{" "}
@@ -224,25 +226,25 @@ const JobListingsGrid = () => {
                       {job.code}
                     </span>
                   </div>
-                )}
-
+                )} */}
+                <p className="text-gray-300 group-hover:text-black text-[14px]">
+                  Experience: {job.experience}
+                </p>
+                <span className=" absolute right-10 top-8 group-hover:text-black text-[10px] bg-pink-100 rounded-full px-2 text-pink-700">
+                  {job.type}
+                </span>
                 {/* Location */}
-                <div className="mb-3">
-                  <span className="text-gray-400 group-hover:text-black text-sm">
-                    Location:{" "}
-                  </span>
-                  <span className="text-gray-300 group-hover:text-black text-sm">
+                <div className="">
+                  <span className="text-gray-300 group-hover:text-black text-[14px]">
                     {job.location}
                   </span>
                 </div>
 
                 {/* Creation Date */}
                 <div className="mb-4">
-                  <span className="text-gray-400 group-hover:text-black text-sm">
-                    Creation date:{" "}
-                  </span>
-                  <span className="text-gray-300 group-hover:text-black text-sm">
-                    {formatDate(job.creationDate)}
+                  <span className="text-gray-300 group-hover:text-black text-[14px]">
+                    Posted on: {job.creationDate}
+                    {/* {formatDate(job.creationDate)} */}
                   </span>
                 </div>
 
