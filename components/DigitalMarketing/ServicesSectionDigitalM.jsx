@@ -24,7 +24,7 @@ const servicesData = [
   },
   {
     number: "03",
-    heading: "PPC Advertising",
+    heading: "Assimilation",
     description:
       "Maximize your ROI with targeted pay-per-click campaigns that convert visitors into customers.",
     image: "https://capsules.moyra.co/_ipx/q_80/images/activities-1.png",

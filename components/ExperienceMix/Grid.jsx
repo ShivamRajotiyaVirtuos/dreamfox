@@ -13,35 +13,39 @@ const HorizontalScrollGallery = () => {
   // Image data with descriptions
   const imageData = [
     {
-      src: "https://assets.website-files.com/6384f0dcd0a815701796cd36/63858ebfcc6c6b9a1b751abd_iron-man-aestheticandroid-iphone-desktop-hd-backgrounds-wallpapers-1080p-4k-2muyr-3840x2160.jpg",
+      src: "/images/vsys_dreamfox.webp",
       title: "VSYS",
       subtitle: "The Systems Company",
       description:
         "Assimilate and compose Talent, Skills, Culture, and Performance into one growth system. vsys.com",
     },
     {
-      src: "https://assets.website-files.com/6384f0dcd0a815701796cd36/63858ad6a391d6a38ca30cba_spider-man-no-way-home.png",
+      src: "/images/dreamfox_tekcorp.webp",
+
       title: "TEKCORP",
       subtitle: "The AI + Cloud Specialist",
       description:
         "Empowering enterprises with intelligent software, scalable cloud systems, and transformative digital engineering. tekcorp.com",
     },
     {
-      src: "https://www.hdwallpapers.in/download/arthur_morgan_with_gun_in_background_of_trees_mountain_and_sky_with_clouds_hd_red_dead_redemption_2-1920x1080.jpg",
+      src: "/images/Plumjob_dreamfox.webp",
+
       title: "PLUMJOB",
       subtitle: "The Talent Recruitment Platform",
       description:
         "Connecting exceptional talent with extraordinary opportunities—where ambition meets purpose. plumjob.com",
     },
     {
-      src: "https://assets.website-files.com/6384f0dcd0a815701796cd36/6385f15ca596aa177d81cea8_the-hulk-scaled.jpeg",
+      src: "/images/sweven_dreamfox.webp",
+
       title: "SWEVEN",
       subtitle: "CRM Mastermind",
       description:
         "Reimagining Customer Relationships with AI-born Experience Intelligence that goes beyond CRM. sweven.com",
     },
     {
-      src: "https://your-indic-image-url.com/indic.jpg",
+      src: "/images/indic_dreamfox.webp",
+
       title: "INDIC",
       subtitle: "Digital Experience Portfolio Company",
       description:
@@ -219,15 +223,17 @@ const HorizontalScrollGallery = () => {
                   height: "80vh",
                 }}
               >
+               
                 <img
                   ref={(el) => (imagesRef.current[index] = el)}
-                  className="image relative w-full h-full object-cover"
+                  className="image relative w-full h-full object-contain object-center"
                   src={item.src}
                   alt={item.title}
                 />
-
+                 <div className="absolute inset-0 bg-gradient-to-r from-black via-black/30 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-l from-black via-black/30 to-transparent" />
                 {/* Dark overlay for better text readability */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
+                {/* <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" /> */}
 
                 {/* Text overlay */}
                 <div
