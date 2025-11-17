@@ -10,25 +10,28 @@ const CARD_DATA = [
   {
     title: "Brand Advisory Suite",
     desc: "Naming, Brand ID, Storytelling, Re-engineering Strategies.",
-    img: "https://images.unsplash.com/photo-1592685530138-6fdfaf4b278a?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDF8fHxlbnwwfHx8fHw%3D",
+    img: "/images/brand_advisory.webp",
+
     alt: "Brand Advisory Suite",
   },
   {
     title: "Designara Studio",
     desc: "Prototypes, UX/UI Kits, Mobile/Web Experience, Motion Graphics.",
-    img: "https://media.istockphoto.com/id/1151427999/photo/professional-videographer-holding-camera-on-3-axis-gimbal-which-mounted-on-easy-rig.webp?a=1&s=612x612&w=0&k=20&c=APZBHPmqYTRdcClPO-p7UFcXDzJE8TbJFmDY98mX0E0=",
+    img: "/images/designara_studio.webp",
+
     alt: "Designara Studio",
   },
   {
     title: "Assimilations Marketing",
     desc: "Tech Stack, AI Campaigns, SEO/SMO Dashboards.",
-    img: "https://images.unsplash.com/photo-1723723467929-63315acce895?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDd8fHxlbnwwfHx8fHw%3D",
+    img: "/images/assimilations_marketing.webp",
+
     alt: "Assimilations Marketing",
   },
   {
     title: "Yippee Media",
     desc: "Social Campaigns, Influencer Collabs, Creative Content Pods.",
-    img: "https://images.unsplash.com/photo-1554246881-d1aec048cc39?q=80&w=2874&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    img: "/images/yippee_media.webp",
     alt: "Yippee Media",
   },
 ];
@@ -148,7 +151,7 @@ const Offerings = () => {
                     </p>
 
                     {/* CTA Button */}
-                    <button className="group/btn relative px-8 py-4 rounded-2xl bg-gradient-to-r from-white to-gra-200 font-semibold text-lg text-black shadow-2xl transform transition-all duration-300 hover:shadow-purple-500/25 hover:-translate-y-1 overflow-hidden">
+                    {/* <button className="group/btn relative px-8 py-4 rounded-2xl bg-gradient-to-r from-white to-gra-200 font-semibold text-lg text-black shadow-2xl transform transition-all duration-300 hover:shadow-purple-500/25 hover:-translate-y-1 overflow-hidden">
                       <span className="relative z-10 flex items-center gap-2">
                         Explore
                         <svg
@@ -166,7 +169,7 @@ const Offerings = () => {
                         </svg>
                       </span>
                       <div className="absolute inset-0 bg-white/20 transform scale-x-0 group-hover/btn:scale-x-100 transition-transform duration-300 origin-left rounded-2xl"></div>
-                    </button>
+                    </button> */}
                   </div>
                 </div>
               </div>

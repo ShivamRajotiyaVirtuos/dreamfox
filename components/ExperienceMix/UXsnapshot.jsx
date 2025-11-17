@@ -47,7 +47,6 @@ const UXSnapshot = () => {
       type: "video",
       url: "/work-portfolio",
       videoSrc: "/videos/Brand_idendity_DreamFox.mp4",
-
       img: "/images/marketing-mix/4.jpg",
       title: "Branding & Identity",
       description:

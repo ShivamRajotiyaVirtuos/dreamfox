@@ -105,7 +105,7 @@ const TariffCard = () => {
                     tag="Technology"
                     backgroundImage="https://images.unsplash.com/photo-1421789665209-c9b2a435e3dc?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fG5hdHVyZXxlbnwwfHwwfHx8MA%3D%3D"
                     onCardClick={() => console.log('VSYS card clicked')}
-                    url='/work-portfolio/vsys'
+                    url='/work-portfolio/vsys-case-study'
                 />
 
                 <CardStyle1
@@ -114,7 +114,7 @@ const TariffCard = () => {
                     tag="Technology"
                     backgroundImage="https://images.unsplash.com/photo-1508739773434-c26b3d09e071?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8ODR8fG5hdHVyZXxlbnwwfHwwfHx8MA%3D%3D"
                     onCardClick={() => console.log('TEKCORP card clicked')}
-                    url='/work-portfolio/tekcorp'
+                    url='/work-portfolio/tekcorp-case-study'
                 />
 
                 <CardStyle2
@@ -123,7 +123,7 @@ const TariffCard = () => {
                     tag="Recruitment"
                     backgroundImage="https://plus.unsplash.com/premium_photo-1673603988651-99f79e4ae7d3?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0"
                     onCardClick={() => console.log('PLUMJOB card clicked')}
-                    url='/work-portfolio/plumjob'
+                    url='/work-portfolio/plumjob-case-study'
                 />
 
                 <CardStyle1
@@ -132,7 +132,7 @@ const TariffCard = () => {
                     tag="SaaS"
                     backgroundImage="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0"
                     onCardClick={() => console.log('SWEVEN card clicked')}
-                    url='/work-portfolio/sweven'
+                    url='/work-portfolio/sweven-case-study'
                 />
 
                 <CardStyle2
@@ -141,7 +141,7 @@ const TariffCard = () => {
                     tag="Digital Platforms"
                     backgroundImage="https://images.unsplash.com/photo-1518837695005-2083093ee35b?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0"
                     onCardClick={() => console.log('INDIC card clicked')}
-                    url='/work-portfolio/indic'
+                    url='/work-portfolio/indic-case-study'
                 />
 
 
@@ -152,7 +152,7 @@ const TariffCard = () => {
                     tag="E-commerce"
                     backgroundImage="/work/work1.png"
                     onCardClick={() => console.log('BETTER BUY CLUB card clicked')}
-                    url='/work-portfolio/better-buy-club'
+                    url='/work-portfolio/better-buy-club-case-study'
                 />
                 <CardStyle2
                     title="GIFTCART"
@@ -160,7 +160,15 @@ const TariffCard = () => {
                     tag="E-commerce"
                     backgroundImage="https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0"
                     onCardClick={() => console.log('GIFTCART card clicked')}
-                    url='/work-portfolio/giftcart'
+                    url='/work-portfolio/giftcart-case-study'
+                />
+                <CardStyle1
+                    title="VDC"
+                    description="Giftcart offers plethora of gifting experiences through its popular giftcart.com website on every occasion and for every persona. Gifting Experience Platform."
+                    tag="Consulting"
+                    backgroundImage="https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0"
+                    onCardClick={() => console.log('vdc card clicked')}
+                    url='/work-portfolio/vdc-case-study'
                 />
             </div>
         </div>

@@ -49,16 +49,61 @@ const ProjectsSection = () => {
   const allImages = [...imageSet1, ...imageSet2, ...imageSet3];
 
   const projectData = [
-    { title: "Vsys", category: "Technology", type: "[web design, branding]", url: "/work-portfolio/vsys" },
-    { title: "Giftcart", category: "E-commerce", type: "[web design, branding]", url: "/work-portfolio/giftcart" },
-    { title: "BetterBuyClub", category: "Retail", type: "[web design, branding]", url: "/work-portfolio/better-buy-club" },
-    { title: "Thomas Cook", category: "Travel", type: "[web design, branding]", url: "/work-portfolio/thomas-cook" },
-    { title: "PlumJob", category: "Recruitment", type: "[web design, branding]", url: "/work-portfolio/plumjob" },
-    { title: "Tekcorp", category: "Technology", type: "[web design, branding]", url: "/work-portfolio/tekcorp" },
-    { title: "Sweven", category: "Lifestyle", type: "[web design, branding]", url: "/work-portfolio/sweven" },
-    { title: "Indic", category: "Education", type: "[web design, branding]", url: "/work-portfolio/indic" },
-    { title: "Crosswalk", category: "Consulting", type: "[web design, branding]", url: "/work-portfolio/crosswalk" },
-];
+    {
+      title: "Vsys",
+      category: "Technology",
+      type: "[web design, branding]",
+      url: "https://vsys.com/",
+    },
+    {
+      title: "Giftcart",
+      category: "E-commerce",
+      type: "[web design, branding]",
+      url: "https://giftcart.com/",
+    },
+    {
+      title: "BetterBuyClub",
+      category: "Retail",
+      type: "[web design, branding]",
+      url: "https://betterbuyclub.com/",
+    },
+    {
+      title: "Thomas Cook",
+      category: "Travel",
+      type: "[web design, branding]",
+      url: "https://thomascook.com/",
+    },
+    {
+      title: "PlumJob",
+      category: "Recruitment",
+      type: "[web design, branding]",
+      url: "https://plumjob.com/",
+    },
+    {
+      title: "Tekcorp",
+      category: "Technology",
+      type: "[web design, branding]",
+      url: "https://tekcorp.com/",
+    },
+    {
+      title: "Sweven",
+      category: "Lifestyle",
+      type: "[web design, branding]",
+      url: "https://sweven.com/",
+    },
+    {
+      title: "Indic",
+      category: "Education",
+      type: "[web design, branding]",
+      url: "https://indic.com/",
+    },
+    {
+      title: "Crosswalk",
+      category: "Consulting",
+      type: "[web design, branding]",
+      url: "https://crosswalk.ai/",
+    },
+  ];
   useEffect(() => {
     const section = sectionRef.current;
     const cards = cardsRef.current.filter(Boolean);
@@ -190,7 +235,7 @@ const ProjectsSection = () => {
 
           const mobposition = mobpositions[index];
           return (
-            <Link href={projectData[index]?.url}>
+            <Link target="_blank" href={projectData[index]?.url}>
               <div
                 key={index}
                 ref={addToRefs}
