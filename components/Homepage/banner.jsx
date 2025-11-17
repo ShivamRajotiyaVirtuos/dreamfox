@@ -210,7 +210,7 @@ const Banner = () => {
       </div>
 
       {/* Enhanced Slide Counter */}
-      <div className="absolute top-8 right-8 z-50">
+      {/* <div className="absolute top-8 right-8 z-50">
         <div className="bg-black/30 backdrop-blur-2xl border border-white/20 rounded-2xl px-6 py-4 shadow-2xl">
           <div className="flex items-center space-x-3">
             <div className="text-right">
@@ -232,7 +232,7 @@ const Banner = () => {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
 
       {/* Enhanced Progress Bar */}
       {/* <div className="absolute bottom-0 left-0 w-full h-1 bg-white/10 z-40">

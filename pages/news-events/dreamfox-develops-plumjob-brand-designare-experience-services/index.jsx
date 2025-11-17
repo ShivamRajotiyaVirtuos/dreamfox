@@ -136,8 +136,8 @@ const NewsDetailPage = () => {
     author: "DreamFox Communications",
     date: "November 14, 2025",
     readTime: "4 min read",
-    image:
-      "https://images.unsplash.com/photo-1643759543584-fb6f448d42d4?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fGV2ZW50c3xlbnwwfHwwfHx8MA%3D%3D",
+    image: "/images/DreamForce_Plumjob_designare.webp",
+
     excerpt:
       "“Recruitment today is not just an art — it’s a science and increasingly, a culture-driven equation,” said a spokesperson for DreamFox. “PlumJob stands apart by transforming hiring into a humanized, data-informed journey.”",
     content: `
@@ -175,8 +175,8 @@ As a portfolio company under VBrand, PlumJob has been strategically architected 
         "PlumJob to Launch Dxpify — DXP-as-a-Service Platform Developed by DreamFox",
       date: "November 14, 2025",
       slug: "plumjob-launch-dxpify-dxp-as-a-service-developed-by-dreamfox",
-      image:
-        "https://images.unsplash.com/photo-1523580494863-6f3031224c94?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fGV2ZW50c3xlbnwwfHwwfHx8MA%3D%3D",
+      image: "/images/Dreamfox_dxify.webp",
+
     },
     {
       id: 1,
@@ -184,8 +184,7 @@ As a portfolio company under VBrand, PlumJob has been strategically architected 
         "DreamFox + EnBrand Unite to Offer Integrated Branding and Digital Experience Solutions",
       date: "November 14, 2025",
       slug: "dreamfox-enbrand-unite-integrated-branding-digital-experience-solutions",
-      image:
-        "https://images.unsplash.com/photo-1523580494863-6f3031224c94?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fGV2ZW50c3xlbnwwfHwwfHx8MA%3D%3D",
+      image: "/images/dreamfox_enbrand_branding.webp",
     },
     {
       id: 2,
@@ -193,8 +192,8 @@ As a portfolio company under VBrand, PlumJob has been strategically architected 
         "DreamFox Acquires Yippee Media — Expanding the Creative Intelligence Frontier",
       date: "November 14, 2025",
       slug: "dreamfox-acquires-yippee-media",
-      image:
-        "https://images.unsplash.com/photo-1523580494863-6f3031224c94?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fGV2ZW50c3xlbnwwfHwwfHx8MA%3D%3D",
+      image: "/images/dreamfox_yippeemedia.webp",
+
     },
   ];
 

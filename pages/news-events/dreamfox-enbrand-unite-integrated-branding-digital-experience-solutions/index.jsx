@@ -137,7 +137,7 @@ const NewsDetailPage = () => {
     date: "November 14, 2025",
     readTime: "4 min read",
     image:
-      "https://images.unsplash.com/photo-1643759543584-fb6f448d42d4?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fGV2ZW50c3xlbnwwfHwwfHx8MA%3D%3D",
+    "/images/dreamfox_enbrand_branding.webp",
     excerpt:
       "Our partnership with EnBrand allows DreamFox to complete its vision of becoming a full-spectrum digital and brand powerhouse,” said a spokesperson for DreamFox. “We’re merging analytics, design, and human experience to build brands that thrive in the AI age.",
     content: `
@@ -173,7 +173,8 @@ The collaboration will strengthen DreamFox’s position across AI Marketing, Des
       date: "November 14, 2025",
       slug: "dreamfox-develops-plumjob-brand-designare-experience-services",
       image:
-        "https://images.unsplash.com/photo-1523580494863-6f3031224c94?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fGV2ZW50c3xlbnwwfHwwfHx8MA%3D%3D",
+      "/images/DreamForce_Plumjob_designare.webp",
+
     },
     {
       id: 3,
@@ -182,7 +183,8 @@ The collaboration will strengthen DreamFox’s position across AI Marketing, Des
       date: "November 14, 2025",
       slug: "plumjob-launch-dxpify-dxp-as-a-service-developed-by-dreamfox",
       image:
-        "https://images.unsplash.com/photo-1523580494863-6f3031224c94?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fGV2ZW50c3xlbnwwfHwwfHx8MA%3D%3D",
+      "/images/Dreamfox_dxify.webp",
+
     },
     {
       id: 1,
@@ -190,8 +192,9 @@ The collaboration will strengthen DreamFox’s position across AI Marketing, Des
         "DreamFox Acquires Yippee Media — Expanding the Creative Intelligence Frontier",
       date: "November 14, 2025",
       slug: "dreamfox-acquires-yippee-media",
-      image:
-        "https://images.unsplash.com/photo-1523580494863-6f3031224c94?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fGV2ZW50c3xlbnwwfHwwfHx8MA%3D%3D",
+      
+      image: "/images/dreamfox_yippeemedia.webp"
+
     },
   ];
 

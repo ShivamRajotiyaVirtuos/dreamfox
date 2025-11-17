@@ -13,28 +13,31 @@ const servicesData = [
     heading: "Audacis SEO",
     description:
       "Boost your website's visibility and rankings with our comprehensive SEO strategies that drive organic traffic.",
-    image: "https://capsules.moyra.co/_ipx/q_80/images/cap3-square.jpg",
+    image: "/images/audacis_dreamfox.webp",
   },
   {
     number: "02",
     heading: "OutLaunch",
     description:
       "Engage your audience across all social platforms with compelling content and strategic campaigns.",
-    image: "https://capsules.moyra.co/_ipx/q_80/images/cap2.png",
+      image: "/images/outlaunch_dreamfox.webp",
+
   },
   {
     number: "03",
     heading: "Assimilation",
     description:
       "Maximize your ROI with targeted pay-per-click campaigns that convert visitors into customers.",
-    image: "https://capsules.moyra.co/_ipx/q_80/images/activities-1.png",
+      image: "/images/assimilations_dreamfox.webp",
+
   },
   {
     number: "04",
     heading: "Yippee Media",
     description:
       "Create valuable content that resonates with your audience and builds lasting brand connections.",
-    image: "https://capsules.moyra.co/_ipx/q_80/images/activities-3.png",
+      image: "/images/yippeemedia_dreamfox.webp",
+
   },
 ];
 
@@ -201,14 +204,14 @@ const ServicesSectionDigitalM = () => {
               >
                 <div className="w-full h-[35vh] md:h-[65vh] p-4 md:p-8 xl:ml-20">
                   <div className="w-full h-full bg-[#2b2725] border border-black rounded-3xl p-4 md:p-8 2xl:p-20 flex flex-col justify-between">
-                    <div className="sm:flex hidden  items-center gap-4">
+                    {/* <div className="sm:flex hidden  items-center gap-4">
                       <span className="text-40 md:text-80 font-black text-white  opacity-80">
                         {service.number}
                       </span>
-                    </div>
+                    </div> */}
 
                     <div className="flex-1 flex flex-col justify-center">
-                      <h3 className="text-48 font-bold text-white mb-3 md:mb-6">
+                      <h3 className="text-60 font-bold text-white mb-3 md:mb-6">
                         {service.heading}
                       </h3>
                       <p className="text-24 text-gray-300 leading-relaxed">

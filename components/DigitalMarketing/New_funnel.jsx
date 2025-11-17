@@ -199,7 +199,7 @@ export default function New_Funnel() {
               <div className="relative overflow-hidden">
                 <img
                   alt=""
-                  src="https://images.unsplash.com/photo-1519608220182-b0ee9d0f54d6?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Njd8fGZ1dHVyaXN0aWN8ZW58MHx8MHx8fDA%3D"
+                  src="/images/funnel_builder_Stratey_Dreamfox.webp"
                   className="h-80 object-cover w-full transform-gpu"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#0d0d0d] via-black/10 to-none"></div>
@@ -231,7 +231,7 @@ export default function New_Funnel() {
               <div className="relative overflow-hidden">
                 <img
                   alt=""
-                  src="https://plus.unsplash.com/premium_photo-1682124877854-17281d9072d1?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OTd8fGZ1dHVyaXN0aWN8ZW58MHx8MHx8fDA%3D"
+                  src="/images/conversion_dreamfox.webp"
                   className="h-80 object-cover w-full transform-gpu"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#0d0d0d] via-black/10 to-none"></div>
@@ -263,7 +263,7 @@ export default function New_Funnel() {
               <div className="relative overflow-hidden">
                 <img
                   alt=""
-                  src="https://images.unsplash.com/photo-1634834300387-8015d9fb7550?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjN8fGZ1dHVyaXN0aWN8ZW58MHx8MHx8fDA%3D"
+                  src="/images/leads_dreamfox.webp"
                   className="h-80 object-cover w-full transform-gpu"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#0d0d0d] via-black/10 to-none"></div>
@@ -294,7 +294,7 @@ export default function New_Funnel() {
               <div className="relative overflow-hidden">
                 <img
                   alt=""
-                  src="https://media.istockphoto.com/id/1341396860/photo/abstract-3d-rendering-twisted-liquid-shape-black-background.jpg?s=612x612&w=0&k=20&c=AvQJAdcqMliI0Gw4v4nWqns7T85sMpvkunoiDTd_dVs="
+                  src="/images/paid_ads_dreamfox.webp"
                   className="h-80 object-cover w-full transform-gpu"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#0d0d0d] via-black/10 to-none"></div>
@@ -325,7 +325,8 @@ export default function New_Funnel() {
               <div className="relative overflow-hidden">
                 <img
                   alt=""
-                  src="https://images.unsplash.com/photo-1673640333938-6c071f33e4ce?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTU3fHxmdXR1cmlzdGljJTIwbmV0d29ya3xlbnwwfHwwfHx8MA%3D%3D"
+                  src="/images/analytics_dreamfox.webp"
+
                   className="h-80 object-cover w-full transform-gpu"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#0d0d0d] via-black/10 to-none"></div>

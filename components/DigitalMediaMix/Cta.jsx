@@ -149,10 +149,10 @@ const Cta = () => {
           >
             Content, PR and Media Services?
           </p>
-          <Link href={"/contact"} passHref>
+          <Link href={"/contactus"} passHref>
             <button
               ref={buttonRef}
-              className="element-hidden text-pink-600 cta-button px-14 py-5 text-xl font-bold bg-gradient-to-r from-white via-white to-white  border-none rounded-full cursor-pointer shadow-lg shadow-violet-500/30 hover:shadow-xl hover:shadow-violet-500/40 hover:-translate-y-1 active:translate-y-0 transition-all duration-300 tracking-widest"
+              className="border-2 border-white rounded-full hover:scale-105 transition-all duration-300 cursor-pointer px-15 py-4 text-white text-20 font-semibold"
             >
               CONSULT NOW
             </button>

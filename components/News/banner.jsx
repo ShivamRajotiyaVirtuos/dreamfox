@@ -129,11 +129,11 @@ const NewsroomPage = () => {
                   {/* Logos */}
                   <Image
                     src={
-                      "https://images.unsplash.com/photo-1643759543584-fb6f448d42d4?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fGV2ZW50c3xlbnwwfHwwfHx8MA%3D%3D"
+                      "/images/dreamfox_yippeemedia.webp"
                     }
                     alt="News"
                     width={600}
-                    height={400}
+                    height={500}
                     className="w-full h-auto object-cover rounded-2xl"
                   />
                 </div>
@@ -162,14 +162,14 @@ const NewsroomPage = () => {
                   Intelligence Frontier
                   {/* </h2> */}
                 </TextReveal>
-                <p className="text-white line-clamp-3 text-16 mb-6 sm:mb-10 leading-relaxed">
+                <p className="text-white line-clamp-3 text-16 mb-6 leading-relaxed">
                   DreamFox, the Digital + AI Marketing Agency, today announced
                   the successful acquisition of Yippee Media, a fast-rising
                   creative communications company. The move strengthens
                   DreamFox’s integrated marketing and digital design
                   capabilities across global markets.
                 </p>
-                <div className="flex items-center gap-3 mb-10 sm:mb-16">
+                <div className="flex items-center gap-3 mb-6 sm:mb-10">
                   {/* <div className="w-10 h-10 bg-gradient-to-br from-pink-400 to-pink-600 rounded-full flex items-center justify-center">
                     <span className="text-white text-sm font-semibold">V</span>
                   </div> */}

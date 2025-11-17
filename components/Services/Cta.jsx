@@ -16,7 +16,7 @@ import Image from "next/image";
 
 const Cta = () => {
   return (
-    <section className="w-full relative py-20 lg:py-32 bg-black text-white container 2xl:min-h-[60vh]">
+    <section className="w-full relative py-20 lg:py-32 2xl:pb-56 bg-black text-white container ">
       <TextReveal
         animation="rotateX"
         stagger={0.1}
@@ -30,7 +30,7 @@ const Cta = () => {
         <AnimatedButton text="Talk to Us" href="/contactus" />
       </div>
 
-      <Image src={"/images/fox1.svg"} alt="fox" width={200} height={200} className="mx-auto absolute z-0 left-0 bottom-0" />
+      {/* <Image src={"/images/fox1.svg"} alt="fox" width={200} height={200} className="mx-auto absolute z-0 left-0 bottom-0" /> */}
     </section>
   );
 };

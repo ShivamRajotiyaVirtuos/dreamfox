@@ -3,6 +3,8 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import TextReveal from "../Text Reveal/textreveal";
 import AnimatedButton from "../buttons/AnimatedButton";
+import Image from "next/image";
+import Link from "next/link";
 
 const HorizontalScrollGallery = () => {
   const containerRef = useRef(null);
@@ -13,43 +15,59 @@ const HorizontalScrollGallery = () => {
   // Image data with descriptions
   const imageData = [
     {
-      src: "/images/vsys_dreamfox.webp",
+      src: "/images/dreamfox_vsys.webp",
       title: "VSYS",
       subtitle: "The Systems Company",
       description:
         "Assimilate and compose Talent, Skills, Culture, and Performance into one growth system. vsys.com",
+      url: "https://vsys.com/",
+      logo_url: "/logos/vsys_logo.svg",
+      height: 80,
+      width: 200,
     },
     {
       src: "/images/dreamfox_tekcorp.webp",
-
       title: "TEKCORP",
       subtitle: "The AI + Cloud Specialist",
       description:
         "Empowering enterprises with intelligent software, scalable cloud systems, and transformative digital engineering. tekcorp.com",
+      url: "https://tekcorp.com/",
+      logo_url: "/logos/tekcorp_logo.svg",
+      height: 80,
+      width: 400,
     },
     {
-      src: "/images/Plumjob_dreamfox.webp",
-
+      src: "/images/Dreamfox_plumjob.webp",
       title: "PLUMJOB",
       subtitle: "The Talent Recruitment Platform",
       description:
         "Connecting exceptional talent with extraordinary opportunities—where ambition meets purpose. plumjob.com",
+      url: "https://plumjob.com/",
+      logo_url: "/logos/plumjob_logo.svg",
+      height: 80,
+      width: 250,
     },
     {
-      src: "/images/sweven_dreamfox.webp",
-
+      src: "/images/dreamfox_sweven.webp",
       title: "SWEVEN",
       subtitle: "CRM Mastermind",
       description:
         "Reimagining Customer Relationships with AI-born Experience Intelligence that goes beyond CRM. sweven.com",
+      url: "https://sweven.com/",
+      logo_url: "/logos/sweven_logo.svg",
+      height: 80,
+      width: 250,
     },
     {
-      src: "/images/indic_dreamfox.webp",
-
+      src: "/images/dreamfox_indic.webp",
       title: "INDIC",
       subtitle: "Digital Experience Portfolio Company",
       description:
-        "Indic launches a series of DX Platforms in the experience economy in retail, fashion, fintech, etc. indic.com",
+        "Building a Global Identity Rooted in India's culture, heritage, and digital ambition.",
+      url: "https://indic.com/",
+      logo_url: "/logos/indic_logo.svg",
+      height: 80,
+      width: 250,
     },
   ];
 
@@ -215,58 +233,67 @@ const HorizontalScrollGallery = () => {
             style={{ height: "100vh" }}
           >
             {imageData.map((item, index) => (
-              <div
-                key={index}
-                className="panel-wide relative 2xl:mt-20 3xl:mt-0 flex-shrink-0 overflow-hidden rounded-2xl"
-                style={{
-                  width: "90vw",
-                  height: "80vh",
-                }}
-              >
-               
-                <img
-                  ref={(el) => (imagesRef.current[index] = el)}
-                  className="image relative w-full h-full object-contain object-center"
-                  src={item.src}
-                  alt={item.title}
-                />
-                 <div className="absolute inset-0 bg-gradient-to-r from-black via-black/30 to-transparent" />
-                <div className="absolute inset-0 bg-gradient-to-l from-black via-black/30 to-transparent" />
-                {/* Dark overlay for better text readability */}
-                {/* <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" /> */}
-
-                {/* Text overlay */}
+              <Link href={item.url} target="_blank" key={index}>
                 <div
-                  //   ref={el => textRefs.current[index] = el}
-                  className="absolute inset-0 flex flex-col justify-end p-12 z-10"
+                  key={index}
+                  className="panel-wide relative 2xl:mt-20 3xl:mt-0 flex-shrink-0 overflow-hidden rounded-2xl"
+                  style={{
+                    width: "90vw",
+                    height: "80vh",
+                  }}
                 >
-                  <div className="text-element">
-                    <h2 className="text-5xl md:text-6xl font-bold text-white mb-2 tracking-tight">
-                      {item.title}
-                    </h2>
+                  <img
+                    ref={(el) => (imagesRef.current[index] = el)}
+                    className="image relative w-full h-full object-cover sm:object-cover object-center"
+                    src={item.src}
+                    alt={item.title}
+                  />
+
+                  <Image
+                    src={item.logo_url}
+                    alt={item.title + " logo"}
+                    width={item.width}
+                    height={item.height}
+                    className={`absolute scale-50 lg:scale-100 top-6 left-0 sm:left-auto xl:top-20 xl:right-30 z-20`}
+                  />
+                  {/* <div className="absolute inset-0 bg-gradient-to-r from-black via-black/30 to-transparent" /> */}
+                  <div className="absolute inset-0 bg-gradient-to-l from-black via-black/30 to-transparent" />
+                  {/* Dark overlay for better text readability */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
+
+                  {/* Text overlay */}
+                  <div
+                    //   ref={el => textRefs.current[index] = el}
+                    className="absolute inset-0 flex flex-col justify-end p-12 z-10"
+                  >
+                    <div className="text-element">
+                      <h2 className="text-60 font-bold text-white mb-2 tracking-tight">
+                        {item.title}
+                      </h2>
+                    </div>
+
+                    <div className="text-element">
+                      <h3 className="text-24 font-medium text-red-400 mb-4 italic">
+                        {item.subtitle}
+                      </h3>
+                    </div>
+
+                    <div className="text-element max-w-2xl">
+                      <p className="text-20 text-gray-200 leading-relaxed">
+                        {item.description}
+                      </p>
+                    </div>
+
+                    {/* Decorative element */}
+                    <div className="text-element mt-6">
+                      <div className="w-24 h-1 bg-gradient-to-r from-red-500 to-blue-500 rounded-full"></div>
+                    </div>
                   </div>
 
-                  <div className="text-element">
-                    <h3 className="text-xl md:text-2xl font-medium text-red-400 mb-4 italic">
-                      {item.subtitle}
-                    </h3>
-                  </div>
-
-                  <div className="text-element max-w-2xl">
-                    <p className="text-lg md:text-xl text-gray-200 leading-relaxed">
-                      {item.description}
-                    </p>
-                  </div>
-
-                  {/* Decorative element */}
-                  <div className="text-element mt-6">
-                    <div className="w-24 h-1 bg-gradient-to-r from-red-500 to-blue-500 rounded-full"></div>
-                  </div>
+                  {/* Optional border effect */}
+                  <div className="absolute inset-0 border-2 border-white/20 rounded-2xl pointer-events-none" />
                 </div>
-
-                {/* Optional border effect */}
-                <div className="absolute inset-0 border-2 border-white/20 rounded-2xl pointer-events-none" />
-              </div>
+              </Link>
             ))}
           </div>
         </div>

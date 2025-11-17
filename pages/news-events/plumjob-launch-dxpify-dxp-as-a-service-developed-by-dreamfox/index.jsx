@@ -136,8 +136,8 @@ const NewsDetailPage = () => {
     author: "DreamFox Communications",
     date: "November 14, 2025",
     readTime: "4 min read",
-    image:
-      "https://images.unsplash.com/photo-1643759543584-fb6f448d42d4?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fGV2ZW50c3xlbnwwfHwwfHx8MA%3D%3D",
+    image: "/images/Dreamfox_dxify.webp",
+
     excerpt:
       "DXPify represents the evolution of digital design and experience management,” said a spokesperson for DreamFox. “It brings together the creative depth of Designare™ and the technology rigor of AI-driven architecture—helping our clients build, launch, and optimize experiences faster than ever.",
     content: `
@@ -168,8 +168,7 @@ PlumJob, a portfolio company under VBrand, will integrate Dxpify into its recrui
         "DreamFox Acquires Yippee Media — Expanding the Creative Intelligence Frontier",
       date: "November 14, 2025",
       slug: "dreamfox-acquires-yippee-media",
-      image:
-        "https://images.unsplash.com/photo-1523580494863-6f3031224c94?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fGV2ZW50c3xlbnwwfHwwfHx8MA%3D%3D",
+      image: "/images/dreamfox_yippeemedia.webp",
     },
     {
       id: 1,
@@ -177,8 +176,7 @@ PlumJob, a portfolio company under VBrand, will integrate Dxpify into its recrui
         "DreamFox + EnBrand Unite to Offer Integrated Branding and Digital Experience Solutions",
       date: "November 14, 2025",
       slug: "dreamfox-enbrand-unite-integrated-branding-digital-experience-solutions",
-      image:
-        "https://images.unsplash.com/photo-1523580494863-6f3031224c94?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fGV2ZW50c3xlbnwwfHwwfHx8MA%3D%3D",
+      image: "/images/dreamfox_enbrand_branding.webp",
     },
     {
       id: 2,
@@ -186,8 +184,7 @@ PlumJob, a portfolio company under VBrand, will integrate Dxpify into its recrui
         "DreamFox Develops PlumJob.com Brand Through Its Designare™ Experience Services",
       date: "November 14, 2025",
       slug: "dreamfox-develops-plumjob-brand-designare-experience-services",
-      image:
-        "https://images.unsplash.com/photo-1523580494863-6f3031224c94?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fGV2ZW50c3xlbnwwfHwwfHx8MA%3D%3D",
+      image: "/images/DreamForce_Plumjob_designare.webp",
     },
   ];
 

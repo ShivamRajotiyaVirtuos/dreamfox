@@ -3,6 +3,7 @@
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import Link from "next/link";
 
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
@@ -13,33 +14,35 @@ const Offerings = () => {
   const offeringsData = [
     {
       id: 1,
-      title: "The leading Digital Transformation Player leverages our Content Services",
+      title:
+        "The leading Digital Transformation Player leverages our Content Services",
       category: "VDC.com",
-      services: ["Contentare"],
-      link:"https://www.vdc.com/",
-      image:
-        "https://media.wired.com/photos/5bdca1cf35226a3b7363f84c/191:100/w_1280,c_limit/Red-Dead-Redemption.jpg",
+      button: "Contentare",
+      link: "/work-portfolio/vdc-case-study",
+      image: "/images/vdc.webp",
       bgColor: "from-purple-900 to-blue-900",
     },
     {
       id: 2,
       title: "VCatalogue Management Services by Yippee Media.",
       category: "GIFTCART",
-      link:"https://www.giftcart.com/",
+      link: "/work-portfolio/giftcart-case-study",
 
-      services: ["Ecommerce Ops"],
-      image:
-        "https://media.npr.org/assets/img/2018/12/31/rdr2_screenshot-014_wide-71d02434782cc887366ba9767260080bb73fa207.jpg",
+
+      button: "Ecommerce Ops",
+      image: "/images/giftcart_media.webp",
+
       bgColor: "from-orange-800 to-purple-900",
     },
     {
       id: 3,
       title: "Tech & Electronics E-Commerce Provider From Ohio.",
       category: "BETTERBUYCLUB",
-      services: ["Shopify Services"],
-      link:"https://betterbuyclub.com/",
-      image:
-        "https://w0.peakpx.com/wallpaper/82/271/HD-wallpaper-red-dead-red-dead-redemption-2-arthur-morgan-red-dead-redemption-fire.jpg",
+      button: "Shopify Services",
+      link: "/work-portfolio/betterbuy-case-study",
+
+      image: "/images/betterbuy.webp",
+
       bgColor: "from-purple-900 to-blue-900",
     },
   ];
@@ -148,23 +151,24 @@ const Offerings = () => {
             <div className="grid lg:grid-cols-2 gap-12 lg:gap-24 items-center">
               {/* Content */}
               <div className={`content ${index % 2 === 1 ? "lg:order-2" : ""}`}>
-                <div className="space-y-6">
+                <div className="">
                   <div className="flex items-center space-x-2">
                     <div className="w-2 h-2 bg-red-500 rounded-full" />
                     <span className="text-red-400 text-40 font-medium tracking-wider">
                       {offering.category}
                     </span>
                   </div>
-                  <h2 className="text-60 font-bold text-white leading-tight">
+                  <h2 className="text-60 mt-6 font-bold text-white leading-tight">
                     {offering.title}
                   </h2>
-                  <div className="space-y-2">
-                    {offering.services.map((service, serviceIndex) => (
-                      <div key={serviceIndex} className="text-gray-300 text-lg">
-                        {service}
-                      </div>
-                    ))}
-                  </div>
+                  <button className="mt-16 hover:scale-105 transition-all duration-300">
+                  <Link
+                    href={offering.link}
+                    className=" border text-white px-8 py-3 rounded-full font-semibold text-20  mt-10 border-white"
+                  >
+                    {offering.button}
+                  </Link>
+                  </button>
                 </div>
               </div>
 

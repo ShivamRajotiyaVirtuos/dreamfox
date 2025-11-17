@@ -136,8 +136,7 @@ const NewsDetailPage = () => {
     author: "DreamFox Communications",
     date: "November 14, 2025",
     readTime: "4 min read",
-    image:
-      "https://images.unsplash.com/photo-1643759543584-fb6f448d42d4?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fGV2ZW50c3xlbnwwfHwwfHx8MA%3D%3D",
+    image: "/images/dreamfox_yippeemedia.webp",
     excerpt:
       "This partnership marks a new era of creative intelligence where design, brand, and AI marketing converge,” said a DreamFox spokesperson. “Yippee Media’s creative agility blends perfectly with DreamFox’s technology DNA and performance culture.",
     content: `
@@ -167,8 +166,7 @@ The integrated portfolio will empower B2B and B2C clients with sharper go-to-mar
         "DreamFox + EnBrand Unite to Offer Integrated Branding and Digital Experience Solutions",
       date: "November 14, 2025",
       slug: "dreamfox-enbrand-unite-integrated-branding-digital-experience-solutions",
-      image:
-        "https://images.unsplash.com/photo-1523580494863-6f3031224c94?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fGV2ZW50c3xlbnwwfHwwfHx8MA%3D%3D",
+      image: "/images/dreamfox_enbrand_branding.webp",
     },
     {
       id: 2,
@@ -176,8 +174,7 @@ The integrated portfolio will empower B2B and B2C clients with sharper go-to-mar
         "DreamFox Develops PlumJob.com Brand Through Its Designare™ Experience Services",
       date: "November 14, 2025",
       slug: "dreamfox-develops-plumjob-brand-designare-experience-services",
-      image:
-        "https://images.unsplash.com/photo-1523580494863-6f3031224c94?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fGV2ZW50c3xlbnwwfHwwfHx8MA%3D%3D",
+      image: "/images/DreamForce_Plumjob_designare.webp",
     },
     {
       id: 3,
@@ -185,8 +182,7 @@ The integrated portfolio will empower B2B and B2C clients with sharper go-to-mar
         "PlumJob to Launch Dxpify — DXP-as-a-Service Platform Developed by DreamFox",
       date: "November 14, 2025",
       slug: "plumjob-launch-dxpify-dxp-as-a-service-developed-by-dreamfox",
-      image:
-        "https://images.unsplash.com/photo-1523580494863-6f3031224c94?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fGV2ZW50c3xlbnwwfHwwfHx8MA%3D%3D",
+      image: "/images/Dreamfox_dxify.webp",
     },
   ];
 

@@ -14,19 +14,20 @@ const UXSnapshot = () => {
   const cardData = [
     {
       id: 1,
-      img: "/images/marketing-mix/1.jpg",
-      url: "/case-study/vsys",
+      img: "/images/vsys.webp",
+      url: "/work-portfolio/vsys-case-study",
       title: "From Our UXBook",
       description:
         "Deep dive into user behavior and needs to create meaningful experiences.",
-      bgColor: "bg-[#deb22a]", // Dark navy blue
+      bgColor: "bg-[#1a4be5]", // Dark navy blue
     },
     {
       id: 2,
       type: "video",
-      videoSrc: "/videos/0_Car_Drifting_3840x2160.mp4",
+      videoSrc: "/videos/Brand_Design_Dreamfox.mp4",
+
       img: "/images/marketing-mix/2.jpg",
-      url: "/case-study",
+      url: "/work-portfolio",
       title: "Design Brands",
       description:
         "Building consistent and scalable design frameworks for digital products.",
@@ -34,24 +35,24 @@ const UXSnapshot = () => {
     },
     {
       id: 3,
-      url: "/case-study/gc",
+      url: "/work-portfolio/giftcart-case-study",
       title: "ECommerce",
-      img: "/images/marketing-mix/3.jpg",
+      img: "/images/giftcart.webp",
       description:
         "Creating interactive prototypes to validate design concepts and user flows.",
-      bgColor: "bg-[#0f3460]", // Royal blue
+      bgColor: "bg-[#cb2c24]", // Royal blue
     },
     {
       id: 4,
       type: "video",
-      url: "/case-study",
-      videoSrc: "/videos/0_Car_Drifting_3840x2160.mp4",
+      url: "/work-portfolio",
+      videoSrc: "/videos/Brand_idendity_DreamFox.mp4",
 
       img: "/images/marketing-mix/4.jpg",
       title: "Branding & Identity",
       description:
         "Continuous testing and refinement to optimize user experience.",
-      bgColor: "bg-[#533483]", // Purple
+      bgColor: "bg-[#303653]", // Purple
     },
   ];
 
@@ -159,7 +160,7 @@ const UXSnapshot = () => {
               loop
               muted
               ref={(el) => (contentCardsRef.current[index] = el)}
-              className="bg-white/10 backdrop-blur-lg rounded-2xl p-2 relative z-20 w-[90%] 2xl:w-[60%] mx-4 border border-white/20 shadow-2xl transform-gpu mt-44"
+              className="bg-white/10 backdrop-blur-lg rounded-2xl p-2 relative z-20 w-[90%] lg:w-[60%]  4xl:w-[48%] mx-4 border border-white/20 shadow-2xl transform-gpu mt-44 xl:mt-12 3xl:mt-40"
             />
           ) : (
             <Image
@@ -168,7 +169,7 @@ const UXSnapshot = () => {
               height={900}
               width={1600}
               ref={(el) => (contentCardsRef.current[index] = el)}
-              className="bg-white/10 backdrop-blur-lg rounded-2xl p-2 relative z-20 w-[90%] 2xl:w-[60%] mx-4 border border-white/20 shadow-2xl transform-gpu mt-44"
+              className="bg-white/10 backdrop-blur-lg rounded-2xl p-2 relative z-20 w-[90%] lg:w-[60%]  4xl:w-[48%] mx-4 border border-white/20 shadow-2xl transform-gpu mt-44 xl:mt-12 3xl:mt-24"
               style={{
                 transformOrigin: "center center",
               }}
@@ -179,7 +180,7 @@ const UXSnapshot = () => {
             {card.title}
           </h2>
           <Link
-            href={"/"}
+            href={card.url}
             className="font-extralight cursor-pointer hover:scale-105 transition-all text-24 bg-white text-black px-6 py-3 rounded-lg shadow-lg hover:bg-white/60 mt-16  duration-300 z-20 xl:mt-12 sm:mt-0 md:mt-6"
           >
             View Project

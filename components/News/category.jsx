@@ -22,8 +22,9 @@ const NewsCategory = () => {
       author: "DreamFox Team",
       slug: "dreamfox-enbrand-unite-integrated-branding-digital-experience-solutions",
       date: "Nov 14, 2025",
+      
       image:
-        "https://images.unsplash.com/photo-1531058020387-3be344556be6?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fGV2ZW50c3xlbnwwfHwwfHx8MA%3D%3D",
+        "/images/dreamfox_enbrand_branding.webp",
       imageAlt: "DreamFox and EnBrand strategic collaboration",
       excerpt:
         "DreamFox announces strategic collaboration with EnBrand to deliver integrated branding, experience design, and AI-powered marketing under one umbrella, positioning as a holistic growth partner for enterprises.",
@@ -39,7 +40,7 @@ const NewsCategory = () => {
       author: "DreamFox Team",
       date: "Nov 14, 2025",
       image:
-        "https://images.unsplash.com/photo-1643759543584-fb6f448d42d4?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fGV2ZW50c3xlbnwwfHwwfHx8MA%3D%3D",
+        "/images/DreamForce_Plumjob_designare.webp",
       imageAlt: "PlumJob.com brand development",
       excerpt:
         "DreamFox unveils PlumJob.com, a next-generation HRTech and Talent Experience platform designed for the modern technology workforce, built through Designare™ Experience Design practice.",
@@ -55,7 +56,8 @@ const NewsCategory = () => {
       author: "DreamFox Team",
       date: "Nov 14, 2025",
       image:
-        "https://images.unsplash.com/photo-1523580494863-6f3031224c94?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fGV2ZW50c3xlbnwwfHwwfHx8MA%3D%3D",
+      "/images/Dreamfox_dxify.webp",
+
       imageAlt: "Dxpify DXP-as-a-Service platform",
       excerpt:
         "DreamFox announces the upcoming launch of Dxpify.com, a groundbreaking Digital Experience Platform (DXP-as-a-Service) that enables brands to rapidly design, deliver, and scale next-generation digital experiences.",
@@ -143,7 +145,7 @@ const NewsCategory = () => {
               className="group bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl overflow-hidden  hover:border-white/20 transition-all duration-500 shadow-2xl hover:shadow-3xl hover:transform hover:scale-[1.02]"
             >
               {/* Image */}
-              <div className="relative h-48 overflow-hidden">
+              <div className="relative h-56 overflow-hidden">
                 <img
                   src={article.image}
                   alt={article.imageAlt}
@@ -192,7 +194,7 @@ const NewsCategory = () => {
 
                   {/* Read More Button */}
                   <Link
-                    href={`/news-events/${article.id}`}
+                    href={`/news-events/${article.slug}`}
                     className="text-blue-400 hover:text-blue-300 text-sm font-medium flex items-center gap-1 group/btn"
                   >
                     <span>Read More</span>

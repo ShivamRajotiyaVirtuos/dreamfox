@@ -4,6 +4,7 @@ import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Image from "next/image";
+import Link from "next/link";
 
 // Register ScrollTrigger plugin
 if (typeof window !== "undefined") {
@@ -16,23 +17,31 @@ const ProjectsSection = () => {
   const cardsRef = useRef([]);
 
   const imageSet1 = [
-    "https://static.wixstatic.com/media/3d4741_088ad4a2cde54fcda775b28fe0111886~mv2.png/v1/fill/w_730,h_792,fp_0.54_0.50,q_90,enc_avif,quality_auto/ARCHIBALD-COVER-min.png",
-    "https://static.wixstatic.com/media/3d4741_d1f0e254499044059089b7fc4f5338e2~mv2.png/v1/fill/w_760,h_538,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/OLIVE-min.png",
-    "https://static.wixstatic.com/media/3d4741_655b3ead275b4e01a9040b4fe046f300~mv2.png/v1/fill/w_772,h_490,al_c,lg_1,q_90,enc_avif,quality_auto/ARTD-C02-Device-013-min.png",
+    "/images/projects/vsys_com.webp",
+    "/images/projects/giftcart_com.webp",
+
+    "/images/projects/betterbuy_com.webp",
+
     // "https://static.wixstatic.com/media/3d4741_91322deb235249afbb23229fe25af43f~mv2.jpg/v1/fill/w_864,h_862,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/2-min%20(1).jpg",
   ];
 
   const imageSet2 = [
-    "https://static.wixstatic.com/media/3d4741_b6545e7b157842d08d622b26dd301279~mv2.png/v1/fill/w_562,h_562,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/2.png",
-    "https://static.wixstatic.com/media/3d4741_651459eccee1418c96d6783fe1c63735~mv2.jpg/v1/fill/w_760,h_538,fp_0.50_0.50,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/2-min%20(3).jpg",
-    "https://static.wixstatic.com/media/3d4741_b6545e7b157842d08d622b26dd301279~mv2.png/v1/fill/w_562,h_562,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/2.png",
+    "/images/projects/thomascook_com.webp",
+
+    "/images/projects/plumjob_com.webp",
+
+    "/images/projects/tekcorp_com.webp",
+
     // "https://static.wixstatic.com/media/3d4741_651459eccee1418c96d6783fe1c63735~mv2.jpg/v1/fill/w_760,h_538,fp_0.50_0.50,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/2-min%20(3).jpg",
   ];
 
   const imageSet3 = [
-    "https://static.wixstatic.com/media/3d4741_088ad4a2cde54fcda775b28fe0111886~mv2.png/v1/fill/w_730,h_792,fp_0.54_0.50,q_90,enc_avif,quality_auto/ARCHIBALD-COVER-min.png",
-    "https://static.wixstatic.com/media/3d4741_d1f0e254499044059089b7fc4f5338e2~mv2.png/v1/fill/w_760,h_538,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/OLIVE-min.png",
-    "https://static.wixstatic.com/media/3d4741_655b3ead275b4e01a9040b4fe046f300~mv2.png/v1/fill/w_772,h_490,al_c,lg_1,q_90,enc_avif,quality_auto/ARTD-C02-Device-013-min.png",
+    "/images/projects/sweven_com.webp",
+
+    "/images/projects/indic.com.webp",
+
+    "/images/projects/crosswalk.ai.webp",
+
     // "https://static.wixstatic.com/media/3d4741_91322deb235249afbb23229fe25af43f~mv2.jpg/v1/fill/w_864,h_862,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/2-min%20(1).jpg",
   ];
 
@@ -40,17 +49,16 @@ const ProjectsSection = () => {
   const allImages = [...imageSet1, ...imageSet2, ...imageSet3];
 
   const projectData = [
-    { title: "Vsys", category: "Technology", type: "[web design, branding]" },
-    { title: "Giftcart", category: "E-commerce", type: "[web design, branding]" },
-    { title: "BetterBuyClub", category: "Retail", type: "[web design, branding]" },
-    { title: "Thomas Cook", category: "Travel", type: "[web design, branding]" },
-    { title: "PlumJob", category: "Recruitment", type: "[web design, branding]" },
-    { title: "Tekcorp", category: "Technology", type: "[web design, branding]" },
-    { title: "Sweven", category: "Lifestyle", type: "[web design, branding]" },
-    { title: "Indic", category: "Education", type: "[web design, branding]" },
-    { title: "Crosswalk", category: "Consulting", type: "[web design, branding]" },
-    // Add more if needed to match your image count
-  ];
+    { title: "Vsys", category: "Technology", type: "[web design, branding]", url: "/work-portfolio/vsys" },
+    { title: "Giftcart", category: "E-commerce", type: "[web design, branding]", url: "/work-portfolio/giftcart" },
+    { title: "BetterBuyClub", category: "Retail", type: "[web design, branding]", url: "/work-portfolio/better-buy-club" },
+    { title: "Thomas Cook", category: "Travel", type: "[web design, branding]", url: "/work-portfolio/thomas-cook" },
+    { title: "PlumJob", category: "Recruitment", type: "[web design, branding]", url: "/work-portfolio/plumjob" },
+    { title: "Tekcorp", category: "Technology", type: "[web design, branding]", url: "/work-portfolio/tekcorp" },
+    { title: "Sweven", category: "Lifestyle", type: "[web design, branding]", url: "/work-portfolio/sweven" },
+    { title: "Indic", category: "Education", type: "[web design, branding]", url: "/work-portfolio/indic" },
+    { title: "Crosswalk", category: "Consulting", type: "[web design, branding]", url: "/work-portfolio/crosswalk" },
+];
   useEffect(() => {
     const section = sectionRef.current;
     const cards = cardsRef.current.filter(Boolean);
@@ -147,7 +155,7 @@ const ProjectsSection = () => {
 
       {/* Scrolling Cards Container */}
       <div className="absolute inset-0 z-30">
-        {allImages.slice(0, 7).map((image, index) => {
+        {allImages.slice(0, 9).map((image, index) => {
           const positions = [
             { left: "15%", top: "10%" },
             { right: "10%", top: "25%" },
@@ -155,9 +163,9 @@ const ProjectsSection = () => {
             { right: "05%", top: "72%" },
             { left: "05%", top: "75%" },
             { right: "25%", top: "120%" },
-            { left: "18%", top: "130%" },
-            // { right: "15%", top: "30%" },
-            // { left: "35%", top: "85%" },
+            { left: "12%", top: "130%" },
+            { right: "40%", top: "10%" },
+            { left: "35%", top: "105%" },
             // { right: "30%", top: "10%" },
             // { left: "10%", top: "40%" },
             // { right: "8%", top: "60%" },
@@ -172,8 +180,9 @@ const ProjectsSection = () => {
             { left: "05%", top: "110%" },
             { right: "5%", top: "130%" },
             { left: "8%", top: "160%" },
-            // { right: "15%", top: "30%" },
-            // { left: "35%", top: "85%" },
+            { right: "2%", top: "-45%" },
+            { lefy: "3%", top: "-65%" },
+
             // { right: "30%", top: "10%" },
             // { left: "10%", top: "40%" },
             // { right: "8%", top: "60%" },
@@ -181,7 +190,7 @@ const ProjectsSection = () => {
 
           const mobposition = mobpositions[index];
           return (
-            <>
+            <Link href={projectData[index]?.url}>
               <div
                 key={index}
                 ref={addToRefs}
@@ -197,13 +206,13 @@ const ProjectsSection = () => {
                       {projectData[index]?.type || "[web design]"}
                     </span>
                   </div>
-                  <div className="relative aspect-[4/3]  overflow-hidden bg-zinc-800">
+                  <div className="relative aspect-[3/2.8]  overflow-hidden bg-zinc-800">
                     <img
                       src={image}
                       alt={projectData[index]?.title || `Project ${index + 1}`}
                       height={500}
                       width={500}
-                      className="object-cover"
+                      className="object-contain"
                       sizes="(max-width: 768px) 192px, (max-width: 1024px) 224px, 256px"
                     />
                     {/* <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" /> */}
@@ -230,7 +239,7 @@ const ProjectsSection = () => {
                       {projectData[index]?.type || "[web design]"}
                     </span>
                   </div>
-                  <div className="relative aspect-[4/3]  overflow-hidden bg-zinc-800">
+                  <div className="relative aspect-[3/2.8]  overflow-hidden bg-zinc-800">
                     <img
                       src={image}
                       alt={projectData[index]?.title || `Project ${index + 1}`}
@@ -248,7 +257,7 @@ const ProjectsSection = () => {
                   </div>
                 </div>
               </div>
-            </>
+            </Link>
           );
         })}
       </div>
