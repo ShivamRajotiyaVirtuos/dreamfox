@@ -223,7 +223,7 @@ const SEOHead = ({
       <meta name="twitter:image" content={finalImage} />
 
       {/* Additional SEO Tags */}
-      <meta name="robots" content="index, follow" />
+      <meta name="robots" content="noindex, nofollow" />
       <meta name="author" content="DreamFox Team" />
       <meta name="publisher" content="DreamFox" />
       <meta name="theme-color" content="#D2448D" />
