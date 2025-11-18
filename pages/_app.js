@@ -5,6 +5,7 @@ import client from "../lib/apollo-client";
 import { ApolloProvider } from "@apollo/client";
 import { useRouter } from "next/router";
 import { useEffect } from "react";
+import SEOHead from "@/components/seohead/seohead";
 // Dynamically import WebGL component to avoid SSR issues
 const WebGLCursorEffect = dynamic(() => import("@/components/Webgl/webgl"), {
   ssr: false,
@@ -44,6 +45,7 @@ export default function App({ Component, pageProps }) {
   return (
     <>
       <WebGLCursorEffect />
+      <SEOHead/>
       {/* <SmoothScroll> */}
       <ApolloProvider client={client}>
         <ScrollSmootherWrapper>
