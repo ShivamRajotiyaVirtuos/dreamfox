@@ -6,19 +6,19 @@ const seoData = {
     title: "DreamFox: Intelligent Digital Branding & AI Marketing Studio",
     description:
       "DreamFox transforms brands with intelligent digital branding, design, AI-driven marketing, and immersive experiences that fuel creativity, speed, and innovation.",
-    image: "https://dreamfox.com/og-images/home.jpg",
+    image: "https://dreamfox.com/og-images/homepage.jpg",
   },
   "/services/digital-marketing": {
     title: "DreamFox Digital Marketing Services - SEO, Funnels & AI Growth",
     description:
       "DreamFox elevates brands with SEO, social, PPC, funnels, AI insights, and conversion-focused strategies that turn data, design, and creativity into measurable growth.",
-    image: "https://dreamfox.com/og-images/digital_marketing.jpg",
+    image: "https://dreamfox.com/og-images/ai_marketing.jpg",
   },
   "/services/brand-advisory": {
     title: "DreamFox Brand Advisory Services - Identity, Strategy & Design",
     description:
       "DreamFox elevates brands with identity design, strategic advisory, UX/UI, AI-driven marketing, and creative systems that build powerful, scalable brand experiences.",
-    image: "https://dreamfox.com/og-images/brand_advisory.jpg",
+    image: "https://dreamfox.com/og-images/branding.jpg",
   },
   "/services/design-studio": {
     title: "Designare™ Studio | Digital Experience & UX/UI Design-DreamFox",
@@ -78,7 +78,7 @@ const seoData = {
     title: "DreamFox News & Events | Latest Press & Company Updates",
     description:
       "Explore DreamFox news, press releases, and events featuring acquisitions, partnerships, product launches, and industry updates shaping our digital innovation journey.",
-    image: "https://dreamfox.com/og-images/news_events.jpg",
+    image: "https://dreamfox.com/og-images/news_and_events.jpg",
   },
   "/news-events/dreamfox-acquires-yippee-media-expanding-creative-intelligence-frontier":
     {
