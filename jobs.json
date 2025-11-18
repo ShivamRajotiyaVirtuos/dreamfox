@@ -1,129 +1,224 @@
- [
-    {
-      "id": 1,
-      "title": "Creative Director",
-      "location": "Gurugram, India",
-      "creationDate": "14th Nov, 2025",
-      "code": "CD001",
-      "department": "Creative",
-      "type": "Full-time",
-      "experience": "7-9 years",
-      "salary": "₹25,00,000 - ₹35,00,000",
-      "description": "Lead the creative vision, direction, and execution across branding, digital marketing, design, and AI-driven creative projects. This role demands strategic thinking, storytelling excellence, and hands-on leadership.",
-      "responsibilities": [
-        "Oversee creative strategy, concept development, and campaign design for digital, branding, and integrated marketing projects",
-        "Lead the creative team—designers, writers, strategists—in producing compelling assets and experiences",
-        "Translate brand goals and client objectives into high-impact ideas and visual narratives",
-        "Ensure consistency of brand voice, visual identity, and creative excellence across all deliverables",
-        "Collaborate with strategy, marketing, performance, and UI/UX teams to drive integrated creative solutions",
-        "Present creative concepts and pitches to clients, leadership, and partners with clarity and impact",
-        "Inspire, mentor, and guide teams while fostering a high-performance, innovation-driven culture",
-        "Stay updated with design trends, AI creative tools, digital platforms, and new-age storytelling techniques",
-        "Oversee multi-project timelines, prioritization, and reviews to ensure high-quality, timely deliverables"
-      ],
-      "requirements": [
-        "7–9 years of experience in advertising, digital marketing, or creative agencies",
-        "Exceptional communication, presentation, and storytelling skills",
-        "Strong leadership and team management abilities with a collaborative mindset",
-        "Expertise in creative direction, branding, digital campaigns, and visual communication",
-        "Ability to think conceptually while executing with precision and creativity",
-        "Familiarity with AI-accelerated creative tools and modern digital design methods"
-      ],
-      "niceToHave": [
-        "MBA preferred",
-        "Additional qualifications in Design from IID or similar reputed design institutions",
-        "Experience in next-generation AI + digital design workflows",
-        "Hands-on involvement in branding, motion design, and campaign ideation"
-      ],
-      "benefits": [
-        "A leadership opportunity to shape the agency's creative direction",
-        "Access to cutting-edge AI, design, and marketing technologies",
-        "High-impact work across multiple brands and digital environments",
-        "Competitive compensation and high-growth career trajectory",
-        "A creative, open, and innovation-led work environment"
-      ]
-    },
-    {
-      "id": 2,
-      "title": "Graphics Designer",
-      "location": "Gurugram, India",
-      "creationDate": "14th Nov, 2025",
-      "code": "GD002",
-      "department": "Creative",
-      "type": "Full-time",
-      "experience": "2-5 years",
-      "salary": "₹6,00,000 - ₹12,00,000",
-      "description": "Create compelling visual assets for branding, digital campaigns, websites, social media, and AI-enhanced creative deliverables. Leverage AI acceleration tools to produce high-quality work efficiently.",
-      "responsibilities": [
-        "Design graphics, layouts, social creatives, branding assets, and digital campaign visuals",
-        "Use AI-based tools to streamline and enhance creative output, including ideation, rendering, and variation generation",
-        "Collaborate with Creative Directors, UI/UX designers, copywriters, and marketing teams",
-        "Interpret briefs and translate them into visually engaging assets with speed and precision",
-        "Maintain brand consistency across all creative materials",
-        "Work on multiple projects simultaneously while meeting deadlines and quality standards",
-        "Explore new styles, techniques, and AI-powered innovations to improve creative workflows"
-      ],
-      "requirements": [
-        "2–5 years of experience in graphic design across digital and social ecosystems",
-        "Strong portfolio demonstrating design fundamentals, creativity, and versatility",
-        "Proficiency in Adobe Creative Suite, Figma, Canva, and AI creative tools",
-        "Ability to understand brand guidelines and convert them into powerful visual stories",
-        "Strong attention to detail and a passion for modern digital aesthetics",
-        "Eagerness to learn, adapt, and grow in an AI-first creative environment"
-      ],
-      "niceToHave": [
-        "Graduate in any discipline",
-        "Design certifications or coursework are a plus",
-        "Experience using AI tools such as Midjourney, Adobe Firefly, Runway, or similar",
-        "Exposure to motion graphics or short-form video content"
-      ],
-      "benefits": [
-        "The opportunity to work with global brands in an AI-accelerated creative setup",
-        "Mentorship from senior creative leadership",
-        "Growth-oriented environment with diverse projects and continuous learning",
-        "Competitive compensation and performance-based incentives"
-      ]
-    },
-    {
-      "id": 3,
-      "title": "UI/UX Designer",
-      "location": "Gurugram, India",
-      "creationDate": "14th Nov, 2025",
-      "code": "UX003",
-      "department": "Design",
-      "type": "Full-time",
-      "experience": "4-7 years",
-      "salary": "₹12,00,000 - ₹20,00,000",
-      "description": "Design outstanding digital experiences across applications, DXPs, websites, landing pages, and mobile interfaces. Blend research, user psychology, visual design, and prototyping to create intuitive, high-performing digital journeys.",
-      "responsibilities": [
-        "Design user flows, wireframes, prototypes, and high-fidelity UI for web and mobile platforms",
-        "Conduct UX research, competitor analysis, and user testing to validate design decisions",
-        "Collaborate with product, development, and marketing teams to build seamless experiences",
-        "Create responsive, accessible, and scalable design systems",
-        "Work on DXPs, websites, apps, and landing pages with a strong conversion and usability focus",
-        "Leverage AI tools to accelerate UX workflows, insights, and UI generation",
-        "Present design concepts and rationale to stakeholders clearly and confidently",
-        "Ensure visual consistency and usability across digital touchpoints"
-      ],
-      "requirements": [
-        "4–7 years of experience in UX/UI design for apps, websites, and digital platforms",
-        "Strong portfolio demonstrating UX thinking, UI craft, and interaction design",
-        "Proficiency in Figma, Adobe XD, Webflow (optional), and prototyping tools",
-        "Understanding of DXP structures, component libraries, and responsive design principles",
-        "Strong analytical and problem-solving mindset with design thinking orientation",
-        "Ability to balance aesthetics with functionality and business goals"
-      ],
-      "niceToHave": [
-        "Graduate in any discipline",
-        "Certifications in UX/UI, HCI, or digital design are a plus",
-        "Experience in Webflow, Framer, or no-code design tools",
-        "Familiarity with AI-based UX research and UI automation tools"
-      ],
-      "benefits": [
-        "Work on next-generation digital experience platforms and modern product design",
-        "Exposure to global brands and enterprise-level digital ecosystems",
-        "Creative freedom, learning opportunities, and career advancement",
-        "Competitive compensation and a collaborative, future-ready environment"
-      ]
-    }
-  ]
+[
+  {
+    "id": 1,
+    "title": "Creative Director",
+    "location": "Gurugram, India",
+    "creationDate": "14th Nov, 2025",
+    "code": "CD001",
+    "department": "Creative",
+    "type": "Full-time",
+    "experience": "7-9 years",
+    "slug": "creative-director",
+    "salary": "₹25,00,000 - ₹35,00,000",
+    "description": "Lead the creative vision, direction, and execution across branding, digital marketing, design, and AI-driven creative projects. This role demands strategic thinking, storytelling excellence, and hands-on leadership.",
+    "responsibilities": [
+      "Oversee creative strategy, concept development, and campaign design for digital, branding, and integrated marketing projects",
+      "Lead the creative team—designers, writers, strategists—in producing compelling assets and experiences",
+      "Translate brand goals and client objectives into high-impact ideas and visual narratives",
+      "Ensure consistency of brand voice, visual identity, and creative excellence across all deliverables",
+      "Collaborate with strategy, marketing, performance, and UI/UX teams to drive integrated creative solutions",
+      "Present creative concepts and pitches to clients, leadership, and partners with clarity and impact",
+      "Inspire, mentor, and guide teams while fostering a high-performance, innovation-driven culture",
+      "Stay updated with design trends, AI creative tools, digital platforms, and new-age storytelling techniques",
+      "Oversee multi-project timelines, prioritization, and reviews to ensure high-quality, timely deliverables"
+    ],
+    "requirements": [
+      "7–9 years of experience in advertising, digital marketing, or creative agencies",
+      "Exceptional communication, presentation, and storytelling skills",
+      "Strong leadership and team management abilities with a collaborative mindset",
+      "Expertise in creative direction, branding, digital campaigns, and visual communication",
+      "Ability to think conceptually while executing with precision and creativity",
+      "Familiarity with AI-accelerated creative tools and modern digital design methods"
+    ],
+    "niceToHave": [
+      "MBA preferred",
+      "Additional qualifications in Design from IID or similar reputed design institutions",
+      "Experience in next-generation AI + digital design workflows",
+      "Hands-on involvement in branding, motion design, and campaign ideation"
+    ],
+    "benefits": [
+      "A leadership opportunity to shape the agency's creative direction",
+      "Access to cutting-edge AI, design, and marketing technologies",
+      "High-impact work across multiple brands and digital environments",
+      "Competitive compensation and high-growth career trajectory",
+      "A creative, open, and innovation-led work environment"
+    ]
+  },
+  {
+    "id": 2,
+    "title": "Graphics Designer",
+    "location": "Gurugram, India",
+    "creationDate": "14th Nov, 2025",
+    "code": "GD002",
+    "department": "Creative",
+    "type": "Full-time",
+    "slug": "graphics-designer",
+    "experience": "2-5 years",
+    "salary": "₹6,00,000 - ₹12,00,000",
+    "description": "Create compelling visual assets for branding, digital campaigns, websites, social media, and AI-enhanced creative deliverables. Leverage AI acceleration tools to produce high-quality work efficiently.",
+    "responsibilities": [
+      "Design graphics, layouts, social creatives, branding assets, and digital campaign visuals",
+      "Use AI-based tools to streamline and enhance creative output, including ideation, rendering, and variation generation",
+      "Collaborate with Creative Directors, UI/UX designers, copywriters, and marketing teams",
+      "Interpret briefs and translate them into visually engaging assets with speed and precision",
+      "Maintain brand consistency across all creative materials",
+      "Work on multiple projects simultaneously while meeting deadlines and quality standards",
+      "Explore new styles, techniques, and AI-powered innovations to improve creative workflows"
+    ],
+    "requirements": [
+      "2–5 years of experience in graphic design across digital and social ecosystems",
+      "Strong portfolio demonstrating design fundamentals, creativity, and versatility",
+      "Proficiency in Adobe Creative Suite, Figma, Canva, and AI creative tools",
+      "Ability to understand brand guidelines and convert them into powerful visual stories",
+      "Strong attention to detail and a passion for modern digital aesthetics",
+      "Eagerness to learn, adapt, and grow in an AI-first creative environment"
+    ],
+    "niceToHave": [
+      "Graduate in any discipline",
+      "Design certifications or coursework are a plus",
+      "Experience using AI tools such as Midjourney, Adobe Firefly, Runway, or similar",
+      "Exposure to motion graphics or short-form video content"
+    ],
+    "benefits": [
+      "The opportunity to work with global brands in an AI-accelerated creative setup",
+      "Mentorship from senior creative leadership",
+      "Growth-oriented environment with diverse projects and continuous learning",
+      "Competitive compensation and performance-based incentives"
+    ]
+  },
+  {
+    "id": 3,
+    "title": "UI/UX Designer",
+    "location": "Gurugram, India",
+    "creationDate": "14th Nov, 2025",
+    "code": "UX003",
+    "department": "Design",
+    "slug": "ui-ux-designer",
+    "type": "Full-time",
+    "experience": "4-7 years",
+    "salary": "₹12,00,000 - ₹20,00,000",
+    "description": "Design outstanding digital experiences across applications, DXPs, websites, landing pages, and mobile interfaces. Blend research, user psychology, visual design, and prototyping to create intuitive, high-performing digital journeys.",
+    "responsibilities": [
+      "Design user flows, wireframes, prototypes, and high-fidelity UI for web and mobile platforms",
+      "Conduct UX research, competitor analysis, and user testing to validate design decisions",
+      "Collaborate with product, development, and marketing teams to build seamless experiences",
+      "Create responsive, accessible, and scalable design systems",
+      "Work on DXPs, websites, apps, and landing pages with a strong conversion and usability focus",
+      "Leverage AI tools to accelerate UX workflows, insights, and UI generation",
+      "Present design concepts and rationale to stakeholders clearly and confidently",
+      "Ensure visual consistency and usability across digital touchpoints"
+    ],
+    "requirements": [
+      "4–7 years of experience in UX/UI design for apps, websites, and digital platforms",
+      "Strong portfolio demonstrating UX thinking, UI craft, and interaction design",
+      "Proficiency in Figma, Adobe XD, Webflow (optional), and prototyping tools",
+      "Understanding of DXP structures, component libraries, and responsive design principles",
+      "Strong analytical and problem-solving mindset with design thinking orientation",
+      "Ability to balance aesthetics with functionality and business goals"
+    ],
+    "niceToHave": [
+      "Graduate in any discipline",
+      "Certifications in UX/UI, HCI, or digital design are a plus",
+      "Experience in Webflow, Framer, or no-code design tools",
+      "Familiarity with AI-based UX research and UI automation tools"
+    ],
+    "benefits": [
+      "Work on next-generation digital experience platforms and modern product design",
+      "Exposure to global brands and enterprise-level digital ecosystems",
+      "Creative freedom, learning opportunities, and career advancement",
+      "Competitive compensation and a collaborative, future-ready environment"
+    ]
+  },
+  {
+    "id": "brand-marketing-executive-001",
+    "title": "Brand Marketing Executive",
+    "department": "Marketing",
+    "type": "Full-time",
+    "location": "Gurugram, India",
+    "creationDate": "3rd Nov, 2025",
+    "salary": "Competitive",
+    "experience": "0-2 years",
+    "slug": "brand-marketing-executive",
+    "description": "Manage and maintain all digital assets, websites, and applications across the VBrand.com portfolio.",
+    "aboutRole": "The Brand Marketing Executive will play a key role in strengthening the company's brand identity and digital presence across the SaaS Partners (our Client) portfolio. This role focuses on managing digital assets, mobile apps, and online platforms while executing impactful marketing and branding strategies. Working closely with cross-functional teams, the Brand Marketing Executive ensures cohesive brand communication, visibility, and engagement across all channels.",
+    "responsibilities": [
+      "Manage and maintain all digital assets, websites, and applications across the VBrand.com portfolio",
+      "Develop and execute marketing and branding strategies aligned with business goals and brand positioning",
+      "Collaborate with UX/UI developers, SEO specialists, and content curation teams to ensure consistent brand storytelling and user experience",
+      "Plan, organize, and execute brand campaigns, expos, and events, including coordination with PR agencies and media partners",
+      "Support joint branding initiatives with key partners, managing outreach to publications and media for coverage and collaboration",
+      "Handle the company's social media presence—create, curate, and manage content across multiple channels using social media management tools",
+      "Track and analyze campaign performance, providing insights to the Campaign Manager for continuous improvement",
+      "Work with internal stakeholders from Sales, Marketing, and Development teams to ensure unified messaging and execution"
+    ],
+    "requirements": [
+      "MBA in Marketing or related field, with 0–3 years of relevant experience",
+      "Strong communication, coordination, and presentation skills",
+      "Passion for branding, digital marketing, and emerging media trends",
+      "Proactive, detail-oriented, and comfortable managing multiple projects simultaneously",
+      "Team player with an analytical mindset and a creative flair for storytelling"
+    ],
+    "niceToHave": [
+      "Experience with digital marketing tools (Google Analytics, Meta Business Suite, HubSpot, or similar)",
+      "Knowledge of SEO, SEM, and SMO strategies and tools",
+      "Exposure to event marketing and public relations management",
+      "Creative design sensibility or basic proficiency in tools like Canva, Figma, or Adobe Creative Suite",
+      "Prior experience in a marketing or creative agency environment"
+    ],
+    "benefits": [
+      "A dynamic and innovative workplace that values creativity, collaboration, and growth",
+      "Exposure to diverse brands and digital portfolios within the Virtuos ecosystem",
+      "Mentorship from industry leaders and access to modern marketing platforms",
+      "Opportunities to participate in brand events, expos, and joint partner programs",
+      "Competitive compensation and career advancement in a rapidly expanding digital enterprise",
+      "Full-time role based in Gurugram with a flexible, learning-driven environment"
+    ]
+  },
+  {
+    "id": "campaign-manager-001",
+    "title": "Campaign Manager",
+    "department": "Marketing",
+    "type": "Full-time",
+    "slug": "campaign-manager",
+    "location": "Gurugram, India",
+    "creationDate": "3rd Nov, 2025",
+    "salary": "Competitive",
+    "experience": "3-5 years",
+    "description": "Develop and execute multi-channel digital marketing campaigns, including social media, email, paid search, display, and content-driven initiatives.",
+    "aboutRole": "The Campaign Manager will be responsible for planning, launching, and managing digital marketing campaigns across multiple channels — both direct and indirect. This role ensures that every marketing initiative is aligned with brand strategy, business objectives, and target audience goals. The Campaign Manager acts as the central link between brand marketing, creative, SEO/SMO, and content teams, driving successful execution and measurable results for the organization's marketing programs.",
+    "responsibilities": [
+      "Develop and execute multi-channel digital marketing campaigns, including social media, email, paid search, display, and content-driven initiatives",
+      "Oversee campaign planning, scheduling, budgeting, and reporting to ensure timely delivery and optimal ROI",
+      "Collaborate with Brand Marketing Executives, SEO/SMO specialists, and design teams to create integrated campaigns",
+      "Manage campaign workflows, ensuring all marketing assets and messages are consistent with the company's brand voice and positioning",
+      "Monitor campaign performance, track KPIs (CTR, engagement, conversions), and optimize ongoing campaigns for improved outcomes",
+      "Coordinate with Sales, Product, and Development teams to align marketing activities with business goals",
+      "Manage relationships with external agencies, partners, and media outlets for joint promotional and branding initiatives",
+      "Maintain an understanding of market trends, emerging platforms, and competitor activities to refine strategy",
+      "Lead post-campaign analysis and reporting, delivering insights and recommendations for future campaigns"
+    ],
+    "requirements": [
+      "Bachelor's or Master's degree in Marketing, Business, or Communications",
+      "3–5 years of hands-on experience in digital marketing or campaign management, preferably in an agency or brand-driven environment",
+      "Strong project management, analytical, and interpersonal skills",
+      "Ability to manage multiple campaigns simultaneously under tight deadlines",
+      "A creative and data-driven thinker with a deep understanding of digital marketing trends and customer engagement strategies",
+      "Excellent communication and presentation skills"
+    ],
+    "niceToHave": [
+      "Experience with marketing automation tools (HubSpot, Marketo, Zoho Campaigns, or similar)",
+      "Proficiency with analytics and performance tracking platforms (Google Analytics, SEMrush, Data Studio)",
+      "Knowledge of SEO, SEM, PPC, and programmatic advertising",
+      "Familiarity with CRM and campaign management tools such as Salesforce, Asana, or Smartsheet",
+      "Exposure to event-based campaigns or partner co-marketing initiatives"
+    ],
+    "benefits": [
+      "Opportunity to lead cross-functional campaigns across a diverse brand portfolio under the Virtuos ecosystem",
+      "A collaborative and innovative work culture where ideas and creativity are valued",
+      "Access to cutting-edge marketing tools and platforms",
+      "Exposure to high-impact brand initiatives, events, and joint campaigns with global partners",
+      "Competitive compensation and career growth opportunities",
+      "Full-time position based in Gurugram with a flexible and performance-oriented environment"
+    ]
+  }
+]

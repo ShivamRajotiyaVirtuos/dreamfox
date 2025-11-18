@@ -83,7 +83,7 @@ const Banner_Brand = () => {
 
         <div className="flex flex-col xl:flex-row xl:items-center justify-between gap-8 mt-8 sm:mt-16">
           <div className="flex flex-row gap-4 shrink-0">
-            <AnimatedButton text="Brand Story" href="/services/brand-advisory/plumjob" />
+            {/* <AnimatedButton text="Brand Story" href="/services/brand-advisory/plumjob" /> */}
             {/* <AnimatedButton text="button" href="/" /> */}
             {/* <button className="bg-white text-black px-6 py-3 rounded-full text-sm font-medium whitespace-nowrap">
               Arrange an initial consultation

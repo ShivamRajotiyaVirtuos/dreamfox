@@ -44,6 +44,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
         {/* Robots meta - remove noindex for production */}
         <meta name="robots" content="noindex, nofollow" />
+        {process.env.NEXT_PUBLIC_NODE_ENV === "production" ? (
+          <meta name="robots" content="index, follow" />
+        ) : (
+          <meta name="robots" content="noindex, nofollow" />
+        )}
         
         {/* Viewport meta */}
         <meta

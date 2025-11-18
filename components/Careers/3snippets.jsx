@@ -198,8 +198,9 @@ const JobListingsGrid = () => {
         >
           {jobListings.map((job, index) => (
             <Link
-              href={`/about/careers/${job.code}`}
+              href={`https://plumjob.com/jobs/${job.slug}`}
               key={index}
+              target="_blank"
               ref={(el) => (cardsRef.current[index] = el)}
               className="group cursor-pointer opacity-0"
             >

@@ -40,6 +40,7 @@ const CardStyle2 = ({
         .to(image, {
           scale: 2.1,
           duration: 0.8,
+          backdropFilter: "blur(200px)",
           ease: "power2.out",
         })
         .to(
@@ -118,63 +119,67 @@ const CardStyle2 = ({
 
   return (
     <Link href={url} className={className}>
-      <div
-        ref={cardRef}
-        className="relative min-w-80 xl:min-w-[370px] hover:scale-105 transition-all duration-300 h-[400px] sm:h-[565px] backdrop-blur-3xl rou shadow-2xl overflow-hidden cursor-pointer border border-gray-800"
-        onClick={onCardClick}
-      >
-        {/* Fixed Header - Always visible */}
-        <div className="absolute top-0 left-0 right-0 p-8 z-30">
-          <div className="text-sm font-semibold text-white mb-4 tracking-wide">
-            {tag.toUpperCase()}
-          </div>
-          <h1 className="text-24 font-bold text-white leading-tight">
-            {title}
-          </h1>
+    <div
+      ref={cardRef}
+      className="relative min-w-80 xl:min-w-[370px] hover:scale-105 transition-all duration-300 h-[400px] sm:h-[565px] backdrop-blur-3xl rounded shadow-2xl overflow-hidden cursor-pointer border border-gray-800 group"
+      onClick={onCardClick}
+    >
+      {/* Fixed Header - Always visible */}
+      <div className="absolute group-hover:text-white top-0 left-0 right-0 p-8 z-30">
+        <div className="text-sm font-semibold mb-4 tracking-wide">
+          {tag.toUpperCase()}
         </div>
-
-        {/* Image Section - This will slide left */}
-        <div ref={imageRef} className="absolute inset-0 w-full h-full">
-          {/* Background Image with Overlay */}
-          <div
-            className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-            style={{
-              backgroundImage: `url(${backgroundImage})`,
-            }}
-          ></div>
+        <h1 className="text-24 font-bold leading-tight">
+          {title}
+        </h1>
+      </div>
+  
+      {/* Image Section - This will slide left */}
+      <div ref={imageRef} className="absolute inset-0 w-full h-full">
+        {/* Background Image with Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-transparent to-transparent opacity-100 transition-opacity duration-300 z-10"></div>
+        <div
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{
+            backgroundImage: `url(${backgroundImage})`,
+          }}
+        ></div>
+        
+        {/* Hover Overlay for better text readability */}
+        <div className="absolute inset-0 bg-black/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10"></div>
+      </div>
+  
+      {/* Description Content - Slides from right */}
+      <div className="absolute inset-0 pt-32 p-8 flex flex-col justify-between z-20">
+        {/* Body Text */}
+        <div className="mt-8" ref={textRef}>
+          <p className="font-semibold leading-relaxed text-base mb-6 text-white drop-shadow-lg">
+            {description}
+          </p>
         </div>
-
-        {/* Description Content - Slides from right */}
-        <div className="absolute inset-0  pt-32 p-8 flex flex-col justify-between z-20">
-          {/* Body Text */}
-          <div className="mt-8 " ref={textRef}>
-            <p className="text-white leading-relaxed text-base mb-6">
-              {description}
-            </p>
-          </div>
-
-          {/* Expand Button */}
-          <div ref={expandButtonRef} className="flex items-center justify-end">
-            <button className="flex items-center space-x-2 text-white font-semibold">
-              <span>Expand</span>
-              <svg
-                className="w-5 h-5"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M17 8l4 4m0 0l-4 4m4-4H3"
-                />
-              </svg>
-            </button>
-          </div>
+  
+        {/* Expand Button */}
+        <div ref={expandButtonRef} className="flex items-center justify-end">
+          <button className="flex items-center space-x-2 font-semibold text-white drop-shadow-lg">
+            <span>Expand</span>
+            <svg
+              className="w-5 h-5"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M17 8l4 4m0 0l-4 4m4-4H3"
+              />
+            </svg>
+          </button>
         </div>
       </div>
-    </Link>
+    </div>
+  </Link>
   );
 };
 

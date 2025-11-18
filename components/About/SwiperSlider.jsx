@@ -52,19 +52,24 @@ const TeamSlider = () => {
       name: "Shaloo Reddi",
       description: "VP & Senior HR",
     },
+    {
+      url: "/images/About/Hashim_Marazi.png",
 
+      name: "Hashim Marazi",
+      description: "Project Manager",
+    },
     {
       url: "/images/About/shivam_chawla.jpg",
 
       name: "Shivam Chawla",
-      description: "Lead - Application Developer",
+      description: "Lead Application Developer",
     },
 
     {
       url: "/images/About/samriddhi.webp",
 
       name: "Samriddhi Gulati",
-      description: "Marketing Manager",
+      description: "Associate Tech Sales Consultant",
     },
     {
       url: "/images/About/shivam_rajotiya.webp",
@@ -75,7 +80,7 @@ const TeamSlider = () => {
     {
       url: "/images/About/aditya.webp",
       name: "Aditya Kumar",
-      description: "SEO Expert",
+      description: "SEO Associate",
     },
 
     {
@@ -92,7 +97,7 @@ const TeamSlider = () => {
     {
       url: "/images/About/sukriti.webp",
       name: "Sukriti Kumari",
-      description: "UI/UX Designer",
+      description: "Associate UI/UX Designer",
     },
   ];
   const multipleSlides = [...slides, ...slides, ...slides];
@@ -191,7 +196,7 @@ const TeamSlider = () => {
               >
                 <div className="info">
                   <div className="name ">
-                    <FaUser /> <p className="text-40 "> {slide.name}</p>
+                    <FaUser /> <p className="text-[12px] sm:text-[16px] lg:text-[20px] xl:text-[24px] 3xl:text-[30px] 5xl:text-[40px] "> {slide.name}</p>
                   </div>
                   <div className="desc">
                     <FaQuoteLeft /> {slide.description}

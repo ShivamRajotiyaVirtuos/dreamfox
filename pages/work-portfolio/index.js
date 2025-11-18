@@ -100,10 +100,12 @@ const TariffCard = () => {
 
             <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 3xl:grid-cols-4 !gap-8 xl:!gap-12 mt-16 xl:mt-32">
                 <CardStyle2
+                className='text-white'
+
                     title="VSYS"
                     description="Assimilate and compose Talent, Skills, Culture, and Performance into one growth system. The Systems Company."
                     tag="Technology"
-                    backgroundImage="https://images.unsplash.com/photo-1421789665209-c9b2a435e3dc?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fG5hdHVyZXxlbnwwfHwwfHx8MA%3D%3D"
+                    backgroundImage="/images/case_study/vsys.webp"
                     onCardClick={() => console.log('VSYS card clicked')}
                     url='/work-portfolio/vsys-case-study'
                 />
@@ -112,16 +114,20 @@ const TariffCard = () => {
                     title="TEKCORP"
                     description="Empowering enterprises with intelligent software, scalable cloud systems, and transformative digital engineering. The AI + Cloud Specialist."
                     tag="Technology"
-                    backgroundImage="https://images.unsplash.com/photo-1508739773434-c26b3d09e071?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8ODR8fG5hdHVyZXxlbnwwfHwwfHx8MA%3D%3D"
+                    backgroundImage="/images/case_study/tekcorp.webp"
+
                     onCardClick={() => console.log('TEKCORP card clicked')}
                     url='/work-portfolio/tekcorp-case-study'
                 />
 
                 <CardStyle2
                     title="PLUMJOB"
+                className='text-white'
+
                     description="Connecting exceptional talent with extraordinary opportunities—where ambition meets purpose. The Talent Recruitment Platform."
                     tag="Recruitment"
-                    backgroundImage="https://plus.unsplash.com/premium_photo-1673603988651-99f79e4ae7d3?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0"
+                    backgroundImage="/images/case_study/plumjob.webp"
+
                     onCardClick={() => console.log('PLUMJOB card clicked')}
                     url='/work-portfolio/plumjob-case-study'
                 />
@@ -130,16 +136,19 @@ const TariffCard = () => {
                     title="SWEVEN"
                     description="Reimagining Customer Relationships with AI-born Experience Intelligence that goes beyond CRM. CRM Mastermind."
                     tag="SaaS"
-                    backgroundImage="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0"
+                    backgroundImage="/images/case_study/sweven.webp"
+
                     onCardClick={() => console.log('SWEVEN card clicked')}
                     url='/work-portfolio/sweven-case-study'
                 />
 
                 <CardStyle2
+                className='text-white'
                     title="INDIC"
                     description="Indic launches a series of DX Platforms in the experience economy in retail, fashion, fintech, etc. Digital Experience Portfolio Company."
                     tag="Digital Platforms"
-                    backgroundImage="https://images.unsplash.com/photo-1518837695005-2083093ee35b?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0"
+                    backgroundImage="/images/case_study/indic.webp"
+
                     onCardClick={() => console.log('INDIC card clicked')}
                     url='/work-portfolio/indic-case-study'
                 />
@@ -150,7 +159,8 @@ const TariffCard = () => {
                     title="BETTER BUY CLUB"
                     description="BetterBuyClub.com has been offering curated electronics & computers for people who love discounts, and special pricing. Electronics Store Online."
                     tag="E-commerce"
-                    backgroundImage="/work/work1.png"
+                    backgroundImage="/images/case_study/betterbuy.webp"
+
                     onCardClick={() => console.log('BETTER BUY CLUB card clicked')}
                     url='/work-portfolio/better-buy-club-case-study'
                 />
@@ -158,15 +168,17 @@ const TariffCard = () => {
                     title="GIFTCART"
                     description="Giftcart offers plethora of gifting experiences through its popular giftcart.com website on every occasion and for every persona. Gifting Experience Platform."
                     tag="E-commerce"
-                    backgroundImage="https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0"
+                    backgroundImage="/images/case_study/giftcart.webp"
+
                     onCardClick={() => console.log('GIFTCART card clicked')}
                     url='/work-portfolio/giftcart-case-study'
                 />
                 <CardStyle1
-                    title="VDC"
+                    title="VDC" 
                     description="Giftcart offers plethora of gifting experiences through its popular giftcart.com website on every occasion and for every persona. Gifting Experience Platform."
                     tag="Consulting"
-                    backgroundImage="https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0"
+                    backgroundImage="/images/case_study/VDC.webp"
+
                     onCardClick={() => console.log('vdc card clicked')}
                     url='/work-portfolio/vdc-case-study'
                 />

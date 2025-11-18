@@ -7,10 +7,10 @@ import { gsap } from "gsap";
 import React from "react";
 import Link from "next/link";
 
-import { FaInstagram, FaTelegramPlane } from "react-icons/fa";
+import { FaInstagram, FaTelegramPlane, FaTwitter } from "react-icons/fa";
 // import { CiLinkedin } from "react-icons/ci";
 import { FaLinkedinIn } from "react-icons/fa";
-
+import { FaXTwitter } from "react-icons/fa6";
 const Footer = () => {
   const buttonRef = useRef(null);
   const textRef = useRef(null);
@@ -226,9 +226,9 @@ const Footer = () => {
               Socials
             </h3>
             {[
-              { name: "Instagram", href: "#", Icon: FaInstagram },
-              { name: "Linkedin", href: "#", Icon: FaLinkedinIn },
-              { name: "Telegram", href: "#", Icon: FaTelegramPlane },
+              // { name: "Instagram", href: "#", Icon: FaInstagram },
+              { name: "Linkedin", href: "https://www.linkedin.com/company/dreamfox-com", Icon: FaLinkedinIn },
+              { name: "X", href: "https://x.com/dreamfox_com", Icon: FaXTwitter },
             ].map(({ name, href, Icon }) => (
               <Link
                 key={name}
