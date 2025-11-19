@@ -20,6 +20,7 @@ const Offerings = () => {
       button: "Contentare",
       link: "/work-portfolio/vdc-case-study",
       image: "/images/vdc.webp",
+      videosrc: "/videos/vdc.mp4",
       bgColor: "from-purple-900 to-blue-900",
     },
     {
@@ -28,6 +29,7 @@ const Offerings = () => {
       category: "GIFTCART",
       link: "/work-portfolio/giftcart-case-study",
 
+      videosrc: "/videos/Giftcart.mp4",
 
       button: "Ecommerce Ops",
       image: "/images/giftcart_media.webp",
@@ -41,6 +43,7 @@ const Offerings = () => {
       button: "Shopify Services",
       link: "/work-portfolio/betterbuy-case-study",
 
+      videosrc: "/videos/betterbuy.mp4",
       image: "/images/betterbuy.webp",
 
       bgColor: "from-purple-900 to-blue-900",
@@ -162,12 +165,12 @@ const Offerings = () => {
                     {offering.title}
                   </h2>
                   <button className="mt-16 hover:scale-105 transition-all duration-300">
-                  <Link
-                    href={offering.link}
-                    className=" border text-white px-8 py-3 rounded-full font-semibold text-20  mt-10 border-white"
-                  >
-                    {offering.button}
-                  </Link>
+                    <Link
+                      href={offering.link}
+                      className=" border text-white px-8 py-3 rounded-full font-semibold text-20  mt-10 border-white"
+                    >
+                      {offering.button}
+                    </Link>
                   </button>
                 </div>
               </div>
@@ -177,10 +180,17 @@ const Offerings = () => {
                 className={`relative ${index % 2 === 1 ? "lg:order-1" : ""}`}
               >
                 <div className="image-container relative w-full max-w-5xl lg:max-w-6xl overflow-hidden rounded-2xl aspect-[16/15] shadow-2xl backdrop-blur-md bg-white/10 border border-white/20">
-                  {/* Background image */}
-                  <div
-                    className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-                    style={{ backgroundImage: `url(${offering.image})` }}
+                  {/* Background video */}
+                  <video
+                    className="absolute inset-0 w-full h-full object-cover"
+                    src={offering.videosrc}
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    disablePictureInPicture
+                    controlsList="nodownload nofullscreen noremoteplayback"
+                    style={{ pointerEvents: "none" }}
                   />
                   {/* Animated overlay mask */}
                   <div className="image-fill absolute inset-0 bg-black" />
