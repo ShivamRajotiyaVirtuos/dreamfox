@@ -136,7 +136,7 @@ const Banner3 = () => {
             <span ref={whereRef3}>Marketing Made</span>
             <span
               ref={brandsRef3}
-              className="gradient-selection  bg-gradient-to-r px-6 inline-block from-[#DC6263] to-[#D2448D] text-black origin-bottom-left"
+              className="gradient-selection  bg-gradient-to-r px-0 sm:px-6 inline-block from-[#DC6263] to-[#D2448D] text-black origin-bottom-left"
               style={{ transformOrigin: "bottom left" }}
             >
                Intelligent.
@@ -151,7 +151,10 @@ const Banner3 = () => {
               height={100}
               className="inline-block size-[40px] sm:size-[66px] lg:size-[80px] 2xl:size-[100px] bg-[#000] rounded-full ml-2 absolute sm:-top-4 top-16 right-10 sm:right-auto  -translate-x-16"
             /> */}
-            <span ref={dreamRef3}>
+             <span className="block sm:hidden" ref={dreamRef3}>
+            With data
+            </span>
+            <span className="hidden sm:block" ref={dreamRef3}>
             With data<br/> that’s alive.
             </span>
           </h1>

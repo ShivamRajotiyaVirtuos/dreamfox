@@ -227,8 +227,16 @@ const Footer = () => {
             </h3>
             {[
               // { name: "Instagram", href: "#", Icon: FaInstagram },
-              { name: "Linkedin", href: "https://www.linkedin.com/company/dreamfox-com", Icon: FaLinkedinIn },
-              { name: "X", href: "https://x.com/dreamfox_com", Icon: FaXTwitter },
+              {
+                name: "Linkedin",
+                href: "https://www.linkedin.com/company/dreamfox-com",
+                Icon: FaLinkedinIn,
+              },
+              {
+                name: "X",
+                href: "https://x.com/dreamfox_com",
+                Icon: FaXTwitter,
+              },
             ].map(({ name, href, Icon }) => (
               <Link
                 key={name}
@@ -266,7 +274,32 @@ const Footer = () => {
             </button>
           </div>
         </div>
+        {/* <div className="py-8 border-t border-b border-gray-700 mt-8">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-6">
+            <div className="flex flex-wrap justify-center md:justify-start gap-4 md:gap-6 text-16 md:text-18">
+              {[
+                { name: "Privacy Policy", href: "/privacy-policy" },
+                { name: "Terms of Use", href: "/terms-of-use" },
+                { name: "Cookie Policy", href: "/cookie-policy" },
+                { name: "GDPR Policy", href: "/gdpr-policy" },
+                { name: "Safe Harbor Policy", href: "/safe-harbour-policy" },
+                { name: "Disclaimer", href: "/disclaimer" },
+              ].map(({ name, href }) => (
+                <Link
+                  key={name}
+                  href={href}
+                  className="text-gray-400 hover:text-white transition-colors duration-300"
+                >
+                  {name}
+                </Link>
+              ))}
+            </div>
 
+            <div className="text-gray-400 text-16 md:text-18 text-center md:text-right">
+              © {new Date().getFullYear()} DreamFox. All rights reserved.
+            </div>
+          </div>
+        </div> */}
         {/* Logo as cutout mask with background video */}
         <div className="mt-0 sm:mt-12 glow-svg-mask aspect-[1048/172]  overflow-hidden">
           <video
@@ -275,8 +308,41 @@ const Footer = () => {
             loop
             muted
             playsInline
-            className="w-full h-full object-cover"
+            controls={false}
+            disablePictureInPicture
+            controlsList="nodownload nofullscreen noremoteplayback"
+            className="w-full h-full object-cover pointer-events-none"
           ></video>
+        </div>
+
+        {/* Policy Links and Copyright */}
+        <div className="py-8 border-t border-gray-700 mt-8">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-6">
+            {/* Policy Links */}
+            <div className="flex flex-wrap justify-center md:justify-start gap-4 md:gap-6 text-16 md:text-18">
+              {[
+                { name: "Privacy Policy", href: "/privacy-policy" },
+                { name: "Terms of Use", href: "/terms-of-use" },
+                { name: "Cookie Policy", href: "/cookie-policy" },
+                { name: "GDPR Policy", href: "/gdpr-policy" },
+                { name: "Safe Harbor Policy", href: "/safe-harbour-policy" },
+                { name: "Disclaimer", href: "/disclaimer" },
+              ].map(({ name, href }) => (
+                <Link
+                  key={name}
+                  href={href}
+                  className="text-gray-400 hover:text-white transition-colors duration-300"
+                >
+                  {name}
+                </Link>
+              ))}
+            </div>
+
+            {/* Copyright */}
+            <div className="text-gray-400 text-16 md:text-18 text-center md:text-right">
+              © 2025 DreamFox. All rights reserved.
+            </div>
+          </div>
         </div>
       </div>
     </footer>

@@ -116,20 +116,20 @@ const Banner = () => {
       </Swiper>
 
       {/* Enhanced Custom Navigation */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-50">
-        <div className="flex items-center space-x-8 bg-black/30 backdrop-blur-2xl border border-white/20 rounded-full px-8 py-4 shadow-2xl">
+      <div className="absolute bottom-4 sm:bottom-8 left-1/2 transform -translate-x-1/2 z-50 w-full flex justify-center">
+        <div className="flex items-center justify-center space-x-4 sm:space-x-8 bg-black/30 backdrop-blur-2xl border border-white/20 rounded-full px-4 sm:px-8 py-3 sm:py-4 shadow-2xl">
           {/* Previous Button */}
           <button
             onClick={prevSlide}
             disabled={isAnimating}
-            className={`group relative overflow-hidden flex items-center justify-center w-14 h-14 bg-white/10 hover:bg-gradient-to-r hover:from-[#DC6263] hover:to-[#D2448D] border border-white/30 hover:border-transparent rounded-full transition-all duration-500 transform hover:scale-110 ${
+            className={`flex group relative overflow-hidden items-center justify-center w-6 h-6 sm:w-14 sm:h-14 bg-white/10 hover:bg-gradient-to-r hover:from-[#DC6263] hover:to-[#D2448D] border border-white/30 hover:border-transparent rounded-full transition-all duration-500 transform hover:scale-110 ${
               isAnimating
                 ? "opacity-50 cursor-not-allowed"
                 : "hover:shadow-lg hover:shadow-pink-500/25"
             }`}
           >
             <svg
-              className="w-6 h-6 text-white transition-all duration-300 group-hover:scale-110 group-hover:-translate-x-1"
+              className="w-4 h-4 sm:w-6 sm:h-6 text-white transition-all duration-300 group-hover:scale-110 group-hover:-translate-x-1"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -145,7 +145,7 @@ const Banner = () => {
           </button>
 
           {/* Enhanced Pagination Dots */}
-          <div className="flex items-center space-x-4">
+          <div className="flex items-center space-x-2 sm:space-x-4">
             {slides.map((_, index) => (
               <button
                 key={index}
@@ -157,7 +157,7 @@ const Banner = () => {
               >
                 {/* Outer Ring */}
                 <div
-                  className={`w-4 h-4 rounded-full border-2 transition-all duration-500 ${
+                  className={`w-2.5 h-2.5 sm:w-4 sm:h-4 rounded-full border-2 sm:border-2 transition-all duration-500 ${
                     index === currentSlide
                       ? "border-[#D2448D] scale-125"
                       : "border-white/30 hover:border-white/60"
@@ -175,7 +175,7 @@ const Banner = () => {
 
                 {/* Active Indicator Glow */}
                 {index === currentSlide && (
-                  <div className="absolute inset-0 w-4 h-4 bg-[#D2448D] rounded-full opacity-30 animate-pulse" />
+                  <div className="absolute inset-0 w-2.5 h-2.5 sm:w-4 sm:h-4 bg-[#D2448D] rounded-full opacity-30 animate-pulse" />
                 )}
               </button>
             ))}
@@ -185,14 +185,14 @@ const Banner = () => {
           <button
             onClick={nextSlide}
             disabled={isAnimating}
-            className={`group relative overflow-hidden flex items-center justify-center w-14 h-14 bg-white/10 hover:bg-gradient-to-r hover:from-[#DC6263] hover:to-[#D2448D] border border-white/30 hover:border-transparent rounded-full transition-all duration-500 transform hover:scale-110 ${
+            className={`flex group relative overflow-hidden items-center justify-center w-6 h-6 sm:w-14 sm:h-14 bg-white/10 hover:bg-gradient-to-r hover:from-[#DC6263] hover:to-[#D2448D] border border-white/30 hover:border-transparent rounded-full transition-all duration-500 transform hover:scale-110 ${
               isAnimating
                 ? "opacity-50 cursor-not-allowed"
                 : "hover:shadow-lg hover:shadow-pink-500/25"
             }`}
           >
             <svg
-              className="w-6 h-6 text-white transition-all duration-300 group-hover:scale-110 group-hover:translate-x-1"
+              className="w-4 h-4 sm:w-6 sm:h-6 text-white transition-all duration-300 group-hover:scale-110 group-hover:translate-x-1"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"

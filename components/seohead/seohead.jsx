@@ -149,11 +149,11 @@ const seoData = {
       "Discover how Giftcart.com evolved into a modern gifting platform through brand identity, UX redesign, Shopify migration, and AI-driven personalization for digital consumers.",
     image: "https://dreamfox.com/og-images/giftcart_case_study.jpg",
   },
-  "/terms-conditions": {
+  "/terms-of-use": {
     title: "DreamFox Terms & Conditions | User Responsibilities & Data Use",
     description:
       "Review DreamFox's Terms & Conditions to understand user eligibility, data use, intellectual property rights, and our commitment to ethical digital practices.",
-    image: "https://dreamfox.com/og-images/terms_conditions.jpg",
+    image: "https://dreamfox.com/og-images/terms_and_condition.jpg",
   },
   "/privacy-policy": {
     title: "DreamFox Privacy Policy | Data Protection & User Confidentiality",
