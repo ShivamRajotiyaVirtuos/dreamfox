@@ -4,6 +4,7 @@ import Swiper from "swiper/bundle";
 import "swiper/css/bundle";
 import { FaTrophy, FaQuoteLeft } from "react-icons/fa";
 import TextReveal from "../Text Reveal/textreveal";
+import Link from "next/link";
 
 const SuccessStories = () => {
   useEffect(() => {
@@ -22,6 +23,9 @@ const SuccessStories = () => {
       slidesPerView: 1,
       allowTouchMove: true,
       freeMode: false,
+      preventClicks: false,
+      preventClicksPropagation: false,
+      slideToClickedSlide: false,
       coverflowEffect: {
         rotate: 50,
         stretch: 0,
@@ -29,12 +33,8 @@ const SuccessStories = () => {
         modifier: 1,
         slideShadows: true,
       },
-      // pagination: {
-      //   el: ".swiper-pagination",
-      //   clickable: true,
-      // },
       breakpoints: {
-        320: { slidesPerView: 1.5 },
+        320: { slidesPerView: 1.2 },
         580: { slidesPerView: 1.5 },
         767: { slidesPerView: 2 },
         992: { slidesPerView: 2.5 },
@@ -54,7 +54,7 @@ const SuccessStories = () => {
       stats: "Oracle Fusion",
       category: "CX Migration",
       pageurl:
-        "/customers/tvs-credit-oracle-fusion-Virtuos-Digital-Customer-Success",
+        "https://vdc.com/customers/tvs-credit-oracle-fusion-Virtuos-Digital-Customer-Success",
     },
     {
       url: "/casestudy/clp_modernizes_stakeholder_management.webp",
@@ -64,7 +64,8 @@ const SuccessStories = () => {
       logo: "/Homepage/CLP_logo.svg",
       stats: "No-Code Platform",
       category: "Legacy Transformation",
-      pageurl: "/customers/customer-success-case-study-clp-hongkong-creatio",
+      pageurl:
+        "https://vdc.com/customers/customer-success-case-study-clp-hongkong-creatio",
     },
     {
       url: "/casestudy/standard_chartered_advances_email_automation_journey.webp",
@@ -74,7 +75,8 @@ const SuccessStories = () => {
       logo: "/Homepage/standard_chartered.svg",
       stats: "Email Automation",
       category: "Banking",
-      pageurl: "/customers/customer-success-standard-chartered-bank-kana",
+      pageurl:
+        "https://vdc.com/customers/customer-success-standard-chartered-bank-kana",
     },
     {
       url: "/casestudy/hdfc_life_digitizes_quote_management.webp",
@@ -84,7 +86,8 @@ const SuccessStories = () => {
       logo: "/Homepage/hdfc-life-logo.png",
       stats: "Digital Quotes",
       category: "Insurance",
-      pageurl: "/customers/customers-success-case-study-hdfcbank-Creatio-CRM",
+      pageurl:
+        "https://vdc.com/customershttps://vdc.com/customers-success-case-study-hdfcbank-Creatio-CRM",
     },
     {
       url: "/casestudy/kgsil_streamlines_contract_management_with_agiloft.webp",
@@ -94,7 +97,7 @@ const SuccessStories = () => {
       logo: "/Homepage/kgisl.svg",
       stats: "Contract Intelligence",
       category: "Technology Services",
-      pageurl: "/customers/success-story-CLM-Agiloft-KGISL",
+      pageurl: "https://vdc.com/customers/success-story-CLM-Agiloft-KGISL",
     },
     {
       url: "/casestudy/leading_brewery_company.webp",
@@ -104,7 +107,8 @@ const SuccessStories = () => {
       logo: "/Homepage/agiloft_logo.svg",
       stats: "CLM Implementation",
       category: "Manufacturing",
-      pageurl: "/customers/Brewery-Company-Implements-Agiloft-CLM",
+      pageurl:
+        "https://vdc.com/customers/Brewery-Company-Implements-Agiloft-CLM",
     },
     {
       url: "/casestudy/securitas_implements_contract_intelligence.webp",
@@ -114,7 +118,7 @@ const SuccessStories = () => {
       logo: "/Homepage/securitas_logo.svg",
       stats: "AI-Native CLM",
       category: "Security Services",
-      pageurl: "/customers/securitas-Agiloft-clm-success-story",
+      pageurl: "https://vdc.com/customers/securitas-Agiloft-clm-success-story",
     },
     {
       url: "/casestudy/pickme_accelerates_customer_experience.webp",
@@ -124,7 +128,8 @@ const SuccessStories = () => {
       logo: "/Homepage/pickme.svg",
       stats: "CRM Transformation",
       category: "Mobility Platform",
-      pageurl: "/customers/pickme-implements-Creatio-No-Code-Platform",
+      pageurl:
+        "https://vdc.com/customers/pickme-implements-Creatio-No-Code-Platform",
     },
     {
       url: "/casestudy/space_ops_insights_company_integrates_smartsheet.webp",
@@ -134,7 +139,8 @@ const SuccessStories = () => {
       logo: "/Homepage/smartsheet_logo.svg",
       stats: "Mission-Critical",
       category: "Space Operations",
-      pageurl: "/customers/customer-success-smartsheet-space-ops",
+      pageurl:
+        "https://vdc.com/customers/customer-success-smartsheet-space-ops",
     },
     {
       url: "/casestudy/thomas_cook_india_creates_experience_business_with_cxdesk.webp",
@@ -144,7 +150,7 @@ const SuccessStories = () => {
       logo: "/Homepage/oracle_logo.svg",
       stats: "CX Excellence",
       category: "Travel & Tourism",
-      pageurl: "/customers/customer-success-thomas-cook-india",
+      pageurl: "https://vdc.com/customers/customer-success-thomas-cook-india",
     },
     {
       url: "/casestudy/barq_fintech_company_implements.webp",
@@ -154,7 +160,8 @@ const SuccessStories = () => {
       logo: "/Homepage/oracle_logo.svg",
       stats: "Fusion Service Cloud",
       category: "FinTech",
-      pageurl: "/customers/customer-success-barq-implements-oracle-fusion",
+      pageurl:
+        "https://vdc.com/customers/customer-success-barq-implements-oracle-fusion",
     },
     {
       url: "/casestudy/tvs_credit_fuels_customer_delight.webp",
@@ -165,7 +172,7 @@ const SuccessStories = () => {
       stats: "Oracle Fusion",
       category: "CX Migration",
       pageurl:
-        "/customers/tvs-credit-oracle-fusion-Virtuos-Digital-Customer-Success",
+        "https://vdc.com/customers/tvs-credit-oracle-fusion-Virtuos-Digital-Customer-Success",
     },
     {
       url: "/casestudy/clp_modernizes_stakeholder_management.webp",
@@ -175,7 +182,8 @@ const SuccessStories = () => {
       logo: "/Homepage/CLP_logo.svg",
       stats: "No-Code Platform",
       category: "Legacy Transformation",
-      pageurl: "/customers/customer-success-case-study-clp-hongkong-creatio",
+      pageurl:
+        "https://vdc.com/customers/customer-success-case-study-clp-hongkong-creatio",
     },
     {
       url: "/casestudy/standard_chartered_advances_email_automation_journey.webp",
@@ -185,7 +193,8 @@ const SuccessStories = () => {
       logo: "/Homepage/standard_chartered.svg",
       stats: "Email Automation",
       category: "Banking",
-      pageurl: "/customers/customer-success-standard-chartered-bank-kana",
+      pageurl:
+        "https://vdc.com/customers/customer-success-standard-chartered-bank-kana",
     },
     {
       url: "/casestudy/hdfc_life_digitizes_quote_management.webp",
@@ -195,7 +204,8 @@ const SuccessStories = () => {
       logo: "/Homepage/hdfc-life-logo.png",
       stats: "Digital Quotes",
       category: "Insurance",
-      pageurl: "/customers/customers-success-case-study-hdfcbank-Creatio-CRM",
+      pageurl:
+        "https://vdc.com/customershttps://vdc.com/customers-success-case-study-hdfcbank-Creatio-CRM",
     },
     {
       url: "/casestudy/kgsil_streamlines_contract_management_with_agiloft.webp",
@@ -205,7 +215,7 @@ const SuccessStories = () => {
       logo: "/Homepage/kgisl.svg",
       stats: "Contract Intelligence",
       category: "Technology Services",
-      pageurl: "/customers/success-story-CLM-Agiloft-KGISL",
+      pageurl: "https://vdc.com/customers/success-story-CLM-Agiloft-KGISL",
     },
     {
       url: "/casestudy/leading_brewery_company.webp",
@@ -215,7 +225,8 @@ const SuccessStories = () => {
       logo: "/Homepage/agiloft_logo.svg",
       stats: "CLM Implementation",
       category: "Manufacturing",
-      pageurl: "/customers/Brewery-Company-Implements-Agiloft-CLM",
+      pageurl:
+        "https://vdc.com/customers/Brewery-Company-Implements-Agiloft-CLM",
     },
     {
       url: "/casestudy/securitas_implements_contract_intelligence.webp",
@@ -225,7 +236,7 @@ const SuccessStories = () => {
       logo: "/Homepage/securitas_logo.svg",
       stats: "AI-Native CLM",
       category: "Security Services",
-      pageurl: "/customers/securitas-Agiloft-clm-success-story",
+      pageurl: "https://vdc.com/customers/securitas-Agiloft-clm-success-story",
     },
     {
       url: "/casestudy/pickme_accelerates_customer_experience.webp",
@@ -235,7 +246,8 @@ const SuccessStories = () => {
       logo: "/Homepage/pickme.svg",
       stats: "CRM Transformation",
       category: "Mobility Platform",
-      pageurl: "/customers/pickme-implements-Creatio-No-Code-Platform",
+      pageurl:
+        "https://vdc.com/customers/pickme-implements-Creatio-No-Code-Platform",
     },
     {
       url: "/casestudy/space_ops_insights_company_integrates_smartsheet.webp",
@@ -245,7 +257,8 @@ const SuccessStories = () => {
       logo: "/Homepage/smartsheet_logo.svg",
       stats: "Mission-Critical",
       category: "Space Operations",
-      pageurl: "/customers/customer-success-smartsheet-space-ops",
+      pageurl:
+        "https://vdc.com/customers/customer-success-smartsheet-space-ops",
     },
     {
       url: "/casestudy/thomas_cook_india_creates_experience_business_with_cxdesk.webp",
@@ -255,7 +268,7 @@ const SuccessStories = () => {
       logo: "/Homepage/oracle_logo.svg",
       stats: "CX Excellence",
       category: "Travel & Tourism",
-      pageurl: "/customers/customer-success-thomas-cook-india",
+      pageurl: "https://vdc.com/customers/customer-success-thomas-cook-india",
     },
     {
       url: "/casestudy/barq_fintech_company_implements.webp",
@@ -265,7 +278,8 @@ const SuccessStories = () => {
       logo: "/Homepage/oracle_logo.svg",
       stats: "Fusion Service Cloud",
       category: "FinTech",
-      pageurl: "/customers/customer-success-barq-implements-oracle-fusion",
+      pageurl:
+        "https://vdc.com/customers/customer-success-barq-implements-oracle-fusion",
     },
     {
       url: "/casestudy/tvs_credit_fuels_customer_delight.webp",
@@ -276,7 +290,7 @@ const SuccessStories = () => {
       stats: "Oracle Fusion",
       category: "CX Migration",
       pageurl:
-        "/customers/tvs-credit-oracle-fusion-Virtuos-Digital-Customer-Success",
+        "https://vdc.com/customers/tvs-credit-oracle-fusion-Virtuos-Digital-Customer-Success",
     },
     {
       url: "/casestudy/clp_modernizes_stakeholder_management.webp",
@@ -286,7 +300,8 @@ const SuccessStories = () => {
       logo: "/Homepage/CLP_logo.svg",
       stats: "No-Code Platform",
       category: "Legacy Transformation",
-      pageurl: "/customers/customer-success-case-study-clp-hongkong-creatio",
+      pageurl:
+        "https://vdc.com/customers/customer-success-case-study-clp-hongkong-creatio",
     },
     {
       url: "/casestudy/standard_chartered_advances_email_automation_journey.webp",
@@ -296,7 +311,8 @@ const SuccessStories = () => {
       logo: "/Homepage/standard_chartered.svg",
       stats: "Email Automation",
       category: "Banking",
-      pageurl: "/customers/customer-success-standard-chartered-bank-kana",
+      pageurl:
+        "https://vdc.com/customers/customer-success-standard-chartered-bank-kana",
     },
     {
       url: "/casestudy/hdfc_life_digitizes_quote_management.webp",
@@ -306,7 +322,8 @@ const SuccessStories = () => {
       logo: "/Homepage/hdfc-life-logo.png",
       stats: "Digital Quotes",
       category: "Insurance",
-      pageurl: "/customers/customers-success-case-study-hdfcbank-Creatio-CRM",
+      pageurl:
+        "https://vdc.com/customershttps://vdc.com/customers-success-case-study-hdfcbank-Creatio-CRM",
     },
     {
       url: "/casestudy/kgsil_streamlines_contract_management_with_agiloft.webp",
@@ -316,7 +333,7 @@ const SuccessStories = () => {
       logo: "/Homepage/kgisl.svg",
       stats: "Contract Intelligence",
       category: "Technology Services",
-      pageurl: "/customers/success-story-CLM-Agiloft-KGISL",
+      pageurl: "https://vdc.com/customers/success-story-CLM-Agiloft-KGISL",
     },
     {
       url: "/casestudy/leading_brewery_company.webp",
@@ -326,7 +343,8 @@ const SuccessStories = () => {
       logo: "/Homepage/agiloft_logo.svg",
       stats: "CLM Implementation",
       category: "Manufacturing",
-      pageurl: "/customers/Brewery-Company-Implements-Agiloft-CLM",
+      pageurl:
+        "https://vdc.com/customers/Brewery-Company-Implements-Agiloft-CLM",
     },
     {
       url: "/casestudy/securitas_implements_contract_intelligence.webp",
@@ -336,7 +354,7 @@ const SuccessStories = () => {
       logo: "/Homepage/securitas_logo.svg",
       stats: "AI-Native CLM",
       category: "Security Services",
-      pageurl: "/customers/securitas-Agiloft-clm-success-story",
+      pageurl: "https://vdc.com/customers/securitas-Agiloft-clm-success-story",
     },
     {
       url: "/casestudy/pickme_accelerates_customer_experience.webp",
@@ -346,7 +364,8 @@ const SuccessStories = () => {
       logo: "/Homepage/pickme.svg",
       stats: "CRM Transformation",
       category: "Mobility Platform",
-      pageurl: "/customers/pickme-implements-Creatio-No-Code-Platform",
+      pageurl:
+        "https://vdc.com/customers/pickme-implements-Creatio-No-Code-Platform",
     },
     {
       url: "/casestudy/space_ops_insights_company_integrates_smartsheet.webp",
@@ -356,7 +375,8 @@ const SuccessStories = () => {
       logo: "/Homepage/smartsheet_logo.svg",
       stats: "Mission-Critical",
       category: "Space Operations",
-      pageurl: "/customers/customer-success-smartsheet-space-ops",
+      pageurl:
+        "https://vdc.com/customers/customer-success-smartsheet-space-ops",
     },
     {
       url: "/casestudy/thomas_cook_india_creates_experience_business_with_cxdesk.webp",
@@ -366,7 +386,7 @@ const SuccessStories = () => {
       logo: "/Homepage/oracle_logo.svg",
       stats: "CX Excellence",
       category: "Travel & Tourism",
-      pageurl: "/customers/customer-success-thomas-cook-india",
+      pageurl: "https://vdc.com/customers/customer-success-thomas-cook-india",
     },
     {
       url: "/casestudy/barq_fintech_company_implements.webp",
@@ -376,7 +396,8 @@ const SuccessStories = () => {
       logo: "/Homepage/oracle_logo.svg",
       stats: "Fusion Service Cloud",
       category: "FinTech",
-      pageurl: "/customers/customer-success-barq-implements-oracle-fusion",
+      pageurl:
+        "https://vdc.com/customers/customer-success-barq-implements-oracle-fusion",
     },
   ];
 
@@ -512,19 +533,26 @@ const SuccessStories = () => {
                 className="swiper-slide"
                 style={{ backgroundImage: `url(${story.url})` }}
               >
-                <div className="hidden sm:block story-stats">{story.stats}</div>
-                <div className=" story-category">{story.category}</div>
-                <div className="story-info">
-                  <div className="text-24 line-clamp-2 text-white font-semibold ">
-                    {/* <FaQuoteLeft className="text-gray-400 mt-1 flex-shrink-0 text-20" /> */}
-
-                    <span>{story.title}</span>
+                <Link
+                  href={story.pageurl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="absolute inset-0 z-10"
+                  onClick={(e) => e.stopPropagation()}
+                >
+                  <div className="hidden sm:block story-stats">
+                    {story.stats}
                   </div>
-                  <div className="text-16 line-clamp-2 text-white ">
-                    {/* <FaQuoteLeft className="text-gray-400 mt-1 flex-shrink-0 text-20" /> */}
-                    <span>{story.description}</span>
+                  <div className="story-category">{story.category}</div>
+                  <div className="story-info">
+                    <div className="text-24 line-clamp-2 text-white font-semibold ">
+                      <span>{story.title}</span>
+                    </div>
+                    <div className="text-16 line-clamp-2 text-white ">
+                      <span>{story.description}</span>
+                    </div>
                   </div>
-                </div>
+                </Link>
               </div>
             ))}
           </div>

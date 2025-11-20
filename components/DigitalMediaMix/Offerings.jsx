@@ -184,10 +184,12 @@ const Offerings = () => {
                   <video
                     className="absolute inset-0 w-full h-full object-cover"
                     src={offering.videosrc}
+                    poster={offering.image}
                     autoPlay
                     loop
                     muted
                     playsInline
+                    preload="metadata"
                     disablePictureInPicture
                     controlsList="nodownload nofullscreen noremoteplayback"
                     style={{ pointerEvents: "none" }}

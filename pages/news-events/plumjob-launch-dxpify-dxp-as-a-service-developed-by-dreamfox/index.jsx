@@ -330,7 +330,7 @@ PlumJob, a portfolio company under VBrand, will integrate Dxpify into its recrui
               <div className="sticky top-64 space-y-12">
                 {/* Related Articles */}
                 <div className=" shadow-2xl  border-b-[0.5px] pb-12  border-gray-700">
-                  <h3 className="text-xl border-l-2 border-[#ea4079] pl-2 font-bold text-white mb-6">
+                  <h3 className="text-20 border-l-2 border-[#ea4079] pl-2 font-bold text-white mb-6">
                     Related Articles
                   </h3>
                   <div className="flex flex-col gap-6">

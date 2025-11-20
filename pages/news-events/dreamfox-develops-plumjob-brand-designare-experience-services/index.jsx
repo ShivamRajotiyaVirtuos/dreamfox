@@ -166,8 +166,6 @@ As a portfolio company under VBrand, PlumJob has been strategically architected 
   };
 
   const relatedArticles = [
-    
-   
     {
       id: 3,
       title:
@@ -175,7 +173,6 @@ As a portfolio company under VBrand, PlumJob has been strategically architected 
       date: "November 14, 2025",
       slug: "plumjob-launch-dxpify-dxp-as-a-service-developed-by-dreamfox",
       image: "/images/Dreamfox_dxify.webp",
-
     },
     {
       id: 1,
@@ -192,7 +189,6 @@ As a portfolio company under VBrand, PlumJob has been strategically architected 
       date: "November 14, 2025",
       slug: "dreamfox-acquires-yippee-media",
       image: "/images/dreamfox_yippeemedia.webp",
-
     },
   ];
 
@@ -339,7 +335,7 @@ As a portfolio company under VBrand, PlumJob has been strategically architected 
               <div className="sticky top-64 space-y-12">
                 {/* Related Articles */}
                 <div className=" shadow-2xl  border-b-[0.5px] pb-12  border-gray-700">
-                  <h3 className="text-xl border-l-2 border-[#ea4079] pl-2 font-bold text-white mb-6">
+                  <h3 className="text-20 border-l-2 border-[#ea4079] pl-2 font-bold text-white mb-6">
                     Related Articles
                   </h3>
                   <div className="flex flex-col gap-6">

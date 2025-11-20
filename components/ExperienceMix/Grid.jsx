@@ -211,10 +211,10 @@ const HorizontalScrollGallery = () => {
             data-driven, and emotionally resonant.
           </TextReveal>
 
-          <AnimatedButton
+          {/* <AnimatedButton
             text="Design story"
             href="/services/design-studio/vsys"
-          />
+          /> */}
         </div>
       </header>
 
@@ -254,7 +254,7 @@ const HorizontalScrollGallery = () => {
                     alt={item.title + " logo"}
                     width={item.width}
                     height={item.height}
-                    className={`absolute scale-50 lg:scale-100 top-6 left-0 sm:left-auto xl:top-20 xl:right-30 z-20`}
+                    className={`absolute scale-50 lg:scale-100 top-6 left-0 sm:left-auto xl:top-20 sm:right-30 z-20`}
                   />
                   {/* <div className="absolute inset-0 bg-gradient-to-r from-black via-black/30 to-transparent" /> */}
                   <div className="absolute inset-0 bg-gradient-to-l from-black via-black/30 to-transparent" />

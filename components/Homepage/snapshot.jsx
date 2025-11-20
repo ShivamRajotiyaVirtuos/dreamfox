@@ -21,6 +21,7 @@ const Snapshot = () => {
       description:
         "Platform dedicated to promoting cultural industries and creative professionals.",
       videoSrc: "/videos/Dreamfox_Giftcart.mp4",
+      poster: "/images/giftcart.png",
     },
     {
       id: 2,
@@ -28,6 +29,7 @@ const Snapshot = () => {
       description:
         "Complete website overhaul with modern design principles and enhanced user experience.",
       videoSrc: "/videos/Dreamfox_INDIC.mp4",
+      poster: "/images/indic.png",
     },
     {
       id: 3,
@@ -35,6 +37,7 @@ const Snapshot = () => {
       description:
         "Custom Webflow implementation with advanced interactions and responsive design.",
       videoSrc: "/videos/Dreamfox_Everfox.mp4",
+      poster: "/images/everfox.png",
     },
     {
       id: 4,
@@ -42,6 +45,7 @@ const Snapshot = () => {
       description:
         "Showcasing creative work with dynamic layouts and smooth transitions.",
       videoSrc: "/videos/Dreamfox_October.ai.mp4",
+      poster: "/images/october.png",
     },
 
     {
@@ -50,6 +54,7 @@ const Snapshot = () => {
       description:
         "Website redesign & Webflow development for studio fugu, A localization studio.",
       videoSrc: "/videos/Dreamfox_Crosswalk.mp4",
+      poster: "/images/crosswalk.png",
     },
   ];
 
@@ -221,14 +226,18 @@ const Snapshot = () => {
                 <div className="relative w-full h-full">
                   <video
                     src={card.videoSrc}
+                    poster={card.poster}
                     className="w-full h-full object-cover"
                     muted
                     loop
                     playsInline
+                    preload="metadata"
                     ref={(video) => {
                       if (video) {
                         if (hoveredCard === card.id) {
-                          video.play();
+                          video.play().catch(() => {
+                            // Fallback if autoplay fails
+                          });
                         } else {
                           video.pause();
                           video.currentTime = 0;

@@ -256,7 +256,7 @@ const ScrollSyncedCarousel = () => {
                         <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
                       </div>
                       <div className="card-text p-6">
-                        <h3 className="title text-xl font-semibold mb-3 text-white">
+                        <h3 className="title text-20 font-semibold mb-3 text-white">
                           {slide.title}
                         </h3>
                         <p className="text-gray-300 mb-4 leading-relaxed">

@@ -3,7 +3,6 @@ import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollSmoother } from "gsap/ScrollSmoother";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import Navbar from "../Navbar/Navbar";
 import Footer from "../Homepage/Footer";
 import Navbar2 from "../Navbar/Navbar2";
 

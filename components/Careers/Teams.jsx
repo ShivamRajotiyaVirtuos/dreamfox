@@ -13,7 +13,7 @@ const Teams = () => {
   const teamMembers = [
     {
       url: "/images/About/Digital_Marketing_Head.webp",
-      name: "Amarinder Singh",
+      // name: "Amarinder Singh",
       role: "Digital Marketing Head",
       image: "/images/About/Digital_Marketing_Head.webp",
       height: "h-126",
@@ -21,30 +21,30 @@ const Teams = () => {
     },
     {
       image: "/images/About/Brand_Manager.webp",
-      name: "Shaloo Reddi",
+      // name: "Shaloo Reddi",
       role: "Brand Manager",
-      height: "h-104",
+      height: "h-126",
       bgColor: "bg-blue-200",
     },
     {
       image: "/images/About/Customer_Success_Manager.webp",
-      name: "Shivam Chawla",
+      // name: "Shivam Chawla",
       role: "Customer Success Manager",
       height: "h-126",
       bgColor: "bg-pink-200",
     },
     {
       image: "/images/About/SEO_SMO_Executive.webp",
-      name: "Tina Sachdeva",
+      // name: "Tina Sachdeva",
       role: "SEO/SMO Executive",
-      height: "h-116",
+      height: "h-126",
       bgColor: "bg-green-200",
     },
     {
       image: "/images/About/Demandgen_Executive.webp",
-      name: "Team Member",
+      // name: "Team Member",
       role: "DemandGen Executive",
-      height: "h-120",
+      height: "h-126",
       bgColor: "bg-yellow-200",
     }
   ];
@@ -128,10 +128,10 @@ const Teams = () => {
   return (
     <div className=" bg-black flex items-end justify-center  sm:p-8 pb-16 lg:pb-70">
       <div ref={containerRef} className="container w-full">
-        <div className="grid grid-cols-2 lg:grid-cols-3 gap-5 lg:hidden items-end justify-center ">
+        <div className="flex flex-wrap gap-8 lg:hidden items-end justify-center ">
           {teamMembers.map((member, index) => (
             <div
-              key={member.name}
+              key={member.role}
               ref={(el) => (teamMembersRef.current[index] = el)}
               className="flex relative  flex-col group items-center cursor-pointer"
             >
@@ -155,7 +155,7 @@ const Teams = () => {
                     height={200}
                     width={200}
                     src={member.image}
-                    alt={member.name}
+                    alt={member.role}
                     className="w-full h-full mt-4 object-cover "
                     style={{ filter: "grayscale(100%)" }}
                   />

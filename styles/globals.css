@@ -4,7 +4,7 @@
 @import "tailwindcss";
 
 @theme {
-  
+  --breakpoint-xs: 26rem;
   --breakpoint-lg2: 73rem; /* 1700px ÷ 16 = 106.25rem */
 
   --breakpoint-3xl: 106.25rem; /* 1700px ÷ 16 = 106.25rem */
@@ -239,17 +239,22 @@ textarea,
 
 /* text-100 - 100px on desktop, scales down */
 .text-100 {
-  font-size: 60px;
+  font-size: 50px;
   line-height: 1.1;
 }
 
 @media (min-width: 640px) {
   .text-100 {
-    font-size: 85px;
+    font-size: 70px;
   }
 }
 
 @media (min-width: 1024px) {
+  .text-100 {
+    font-size: 90px;
+  }
+}
+@media (min-width: 1924px) {
   .text-100 {
     font-size: 100px;
   }
@@ -304,36 +309,40 @@ textarea,
 
 @media (min-width: 1024px) {
   .text-130 {
-    font-size: 98px;
+    font-size: 90px;
   }
 }
-
 @media (min-width: 1324px) {
+  .text-130 {
+    font-size: 108px;
+  }
+}
+@media (min-width: 1924px) {
   .text-130 {
     font-size: 130px;
   }
 }
 /* text-200 - 200px on desktop, scales down */
 .text-200 {
-  font-size: 48px;
+  font-size: 36px;
   line-height: 1.1;
 }
 
 @media (min-width: 640px) {
   .text-200 {
-    font-size: 80px;
+    font-size: 60px;
   }
 }
 
 @media (min-width: 768px) {
   .text-200 {
-    font-size: 92px;
+    font-size: 62px;
   }
 }
 
 @media (min-width: 1024px) {
   .text-200 {
-    font-size: 110px;
+    font-size: 70px;
   }
 }
 
@@ -384,7 +393,7 @@ textarea,
   }
 }
 
-@media (min-width: 1536px) {
+@media (min-width: 2036px) {
   .text-250 {
     font-size: 250px;
   }

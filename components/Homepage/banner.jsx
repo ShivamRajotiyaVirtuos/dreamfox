@@ -26,7 +26,7 @@ const Banner = () => {
   const slides = ["Banner 1", "Banner 2", "Banner 3"];
 
   const onSlideChange = (swiper) => {
-    setCurrentSlide(swiper.activeIndex);
+    setCurrentSlide(swiper.realIndex);
   };
 
   const onSlideChangeTransitionStart = () => {

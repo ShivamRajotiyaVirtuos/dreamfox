@@ -135,8 +135,7 @@ const NewsDetailPage = () => {
     author: "DreamFox Communications",
     date: "November 14, 2025",
     readTime: "4 min read",
-    image:
-    "/images/dreamfox_enbrand_branding.webp",
+    image: "/images/dreamfox_enbrand_branding.webp",
     excerpt:
       "Our partnership with EnBrand allows DreamFox to complete its vision of becoming a full-spectrum digital and brand powerhouse,” said a spokesperson for DreamFox. “We’re merging analytics, design, and human experience to build brands that thrive in the AI age.",
     content: `
@@ -171,9 +170,7 @@ The collaboration will strengthen DreamFox’s position across AI Marketing, Des
         "DreamFox Develops PlumJob.com Brand Through Its Designare™ Experience Services",
       date: "November 14, 2025",
       slug: "dreamfox-develops-plumjob-brand-designare-experience-services",
-      image:
-      "/images/DreamForce_Plumjob_designare.webp",
-
+      image: "/images/DreamForce_Plumjob_designare.webp",
     },
     {
       id: 3,
@@ -181,9 +178,7 @@ The collaboration will strengthen DreamFox’s position across AI Marketing, Des
         "PlumJob to Launch Dxpify — DXP-as-a-Service Platform Developed by DreamFox",
       date: "November 14, 2025",
       slug: "plumjob-launch-dxpify-dxp-as-a-service-developed-by-dreamfox",
-      image:
-      "/images/Dreamfox_dxify.webp",
-
+      image: "/images/Dreamfox_dxify.webp",
     },
     {
       id: 1,
@@ -191,9 +186,8 @@ The collaboration will strengthen DreamFox’s position across AI Marketing, Des
         "DreamFox Acquires Yippee Media — Expanding the Creative Intelligence Frontier",
       date: "November 14, 2025",
       slug: "dreamfox-acquires-yippee-media",
-      
-      image: "/images/dreamfox_yippeemedia.webp"
 
+      image: "/images/dreamfox_yippeemedia.webp",
     },
   ];
 
@@ -340,7 +334,7 @@ The collaboration will strengthen DreamFox’s position across AI Marketing, Des
               <div className="sticky top-64 space-y-12">
                 {/* Related Articles */}
                 <div className=" shadow-2xl  border-b-[0.5px] pb-12  border-gray-700">
-                  <h3 className="text-xl border-l-2 border-[#ea4079] pl-2 font-bold text-white mb-6">
+                  <h3 className="text-20 border-l-2 border-[#ea4079] pl-2 font-bold text-white mb-6">
                     Related Articles
                   </h3>
                   <div className="flex flex-col gap-6">

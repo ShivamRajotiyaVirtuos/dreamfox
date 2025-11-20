@@ -7,16 +7,18 @@ import { ApolloProvider } from "@apollo/client";
 import { useRouter } from "next/router";
 import { useEffect } from "react";
 import SEOHead from "@/components/seohead/seohead";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+// Register GSAP plugins
+if (typeof window !== "undefined") {
+  gsap.registerPlugin(ScrollTrigger);
+}
+
 // Dynamically import WebGL component to avoid SSR issues
 const WebGLCursorEffect = dynamic(() => import("@/components/Webgl/webgl"), {
   ssr: false,
 });
-// const SmoothScroll = dynamic(
-//   () => import("@/components/SmoothScroll/SmoothScroll"),
-//   {
-//     ssr: false,
-//   }
-// );
 
 const ScrollSmootherWrapper = dynamic(
   () => import("@/components/SmoothScroll/SmoothScrollWrapper"),
@@ -27,21 +29,37 @@ const ScrollSmootherWrapper = dynamic(
 
 export default function App({ Component, pageProps }) {
   const router = useRouter();
+  
   useEffect(() => {
-    const handleRouteChange = () => {
-      // Scroll to top when route changes
-      window.scrollTo(0, 0);
-
-      // Alternative: For smooth scroll behavior
-      // window.scrollTo({
-      //   top: 0,
-      //   left: 0,
-      //   behavior: 'smooth'
-      // });
+    const handleRouteChangeStart = () => {
+      // Kill all GSAP animations and ScrollTriggers on route change
+      gsap.killTweensOf("*");
+      ScrollTrigger.getAll().forEach(trigger => trigger.kill());
     };
 
-    handleRouteChange()
-  }, [router.asPath, router.events]);
+    const handleRouteChangeComplete = () => {
+      // Scroll to top when route changes
+      window.scrollTo(0, 0);
+      
+      // Refresh ScrollTrigger after route change
+      setTimeout(() => {
+        ScrollTrigger.refresh();
+      }, 100);
+    };
+
+    // Subscribe to route change events
+    router.events.on("routeChangeStart", handleRouteChangeStart);
+    router.events.on("routeChangeComplete", handleRouteChangeComplete);
+
+    // Initial scroll to top
+    handleRouteChangeComplete();
+
+    // Cleanup
+    return () => {
+      router.events.off("routeChangeStart", handleRouteChangeStart);
+      router.events.off("routeChangeComplete", handleRouteChangeComplete);
+    };
+  }, [router.events]);
   return (
     <>
       {/* Google Tag Manager */}

@@ -223,7 +223,7 @@ export default function Services() {
           {/* First Card - OUR SERVICES */}
           <div
             ref={(el) => (slidesRef.current[0] = el)}
-            className="w-screen h-screen flex-shrink-0 absolute px-4"
+            className="w-screen h-screen flex-shrink-0 py-16 absolute px-4"
           >
             <figure className="relative bg-black w-full h-full m-0">
               {/* <img
@@ -261,14 +261,14 @@ export default function Services() {
           {/* Second Card - Digital Marketing */}
           <div
             ref={(el) => (slidesRef.current[1] = el)}
-            className="w-screen h-screen flex-shrink-0 absolute px-4"
+            className="w-screen h-screen flex-shrink-0 py-16 absolute px-4"
           >
             <figure className="relative bg-black flex flex-col xl:flex-row xl:gap-10 items-center justify-center w-full h-full m-0">
               <img
                 ref={image2ref}
                 src={images[1]?.src}
                 alt={images[1]?.alt}
-                className="w-[18rem] xl:w-[26rem] h-[30rem] xl:h-[40rem] object-cover"
+                className=" sm:w-[18rem] xl:w-[26rem] xs:h-[30rem] xl:h-[40rem] object-cover"
               />
               <div className="flex-col gap-4  flex items-center justify-center bg-black/40">
                 <div className="flex items-start xl:items-start xl:justify-center flex-col">
@@ -300,14 +300,14 @@ export default function Services() {
           {/* Third Card - Creative Design */}
           <div
             ref={(el) => (slidesRef.current[2] = el)}
-            className="w-screen h-screen flex-shrink-0 absolute px-4"
+            className="w-screen h-screen flex-shrink-0 py-16 absolute px-4"
           >
             <figure className="relative flex  flex-col xl:flex-row xl:gap-10 items-center justify-center bg-black w-full h-full m-0">
               <img
                 ref={image3ref}
                 src={images[2]?.src}
                 alt={images[2]?.alt}
-                className="w-[18rem] xl:w-[26rem] h-[30rem] xl:h-[40rem] object-cover"
+                className="sm:w-[18rem] xl:w-[26rem] xs:h-[30rem] xl:h-[40rem] object-cover"
               />
               <figcaption className="flex-col gap-4  flex items-start xl:items-start justify-center bg-black/40">
                 <h2 className="text-200   font-bold   py-2">
@@ -335,14 +335,14 @@ export default function Services() {
           {/* Fourth Card - Web Development */}
           <div
             ref={(el) => (slidesRef.current[3] = el)}
-            className="w-screen h-screen flex-shrink-0 absolute px-4"
+            className="w-screen h-screen flex-shrink-0 py-16 absolute px-4"
           >
             <figure className="relative bg-black flex flex-col xl:flex-row xl:gap-10 items-center justify-center w-full h-full m-0">
               <img
                 ref={image4ref}
                 src={images[3]?.src}
                 alt={images[3]?.alt}
-                className="w-[18rem] xl:w-[26rem] h-[30rem] xl:h-[40rem] object-cover"
+                className="sm:w-[18rem] xl:w-[26rem] xs:h-[30rem] xl:h-[40rem] object-cover"
               />
               <div className="flex-col gap-4  flex items-center justify-center bg-black/40">
                 <div className="flex items-start xl:items-start xl:justify-center flex-col">
@@ -374,14 +374,14 @@ export default function Services() {
           {/* Fifth Card - Content Creation */}
           <div
             ref={(el) => (slidesRef.current[4] = el)}
-            className="w-screen h-screen flex-shrink-0 absolute px-4"
+            className="w-screen h-screen flex-shrink-0 py-16 absolute px-4"
           >
             <figure className="relative flex items-center flex-col xl:flex-row xl:gap-10 justify-center bg-black w-full h-full m-0">
               <img
                 ref={image5ref}
                 src={images[4]?.src}
                 alt={images[4]?.alt}
-                className="w-[18rem] xl:w-[26rem] h-[30rem] xl:h-[40rem] object-cover"
+                className="sm:w-[18rem] xl:w-[26rem] xs:h-[30rem] xl:h-[40rem] object-cover"
               />
               <figcaption className="flex-col gap-4  flex items-start xl:items-start justify-center bg-black/40">
                 <h2 className="text-200   font-bold   py-2">
@@ -409,14 +409,14 @@ export default function Services() {
           {/* Sixth Card - Analytics & Insights */}
           <div
             ref={(el) => (slidesRef.current[5] = el)}
-            className="w-screen h-screen px-4 flex-shrink-0 absolute"
+            className="w-screen h-screen px-4 flex-shrink-0 py-16 absolute"
           >
             <figure className="relative bg-black flex flex-col xl:flex-row xl:gap-10 items-center justify-center w-full h-full m-0">
               <img
                 ref={image6ref}
                 src={images[5]?.src}
                 alt={images[5]?.alt}
-                className="w-[18rem] xl:w-[26rem] h-[30rem] xl:h-[40rem] object-cover"
+                className="sm:w-[18rem] xl:w-[26rem] xs:h-[30rem] xl:h-[40rem] object-cover"
               />
               <div className="flex-col gap-4  flex items-center justify-center bg-black/40">
                 <div className="flex items-start xl:items-start xl:justify-center flex-col">

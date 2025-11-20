@@ -230,7 +230,7 @@ const JobListingsGrid = () => {
                 <p className="text-gray-300 group-hover:text-black text-[14px]">
                   Experience: {job.experience}
                 </p>
-                <span className=" absolute right-10 top-8 group-hover:text-black text-[10px] bg-pink-100 rounded-full px-2 text-pink-700">
+                <span className=" absolute right-4 sm:right-10 top-7 sm:top-8 group-hover:text-black text-[10px] bg-pink-100 rounded-full px-2 text-pink-700">
                   {job.type}
                 </span>
                 {/* Location */}

@@ -100,7 +100,7 @@ const NewsroomPage = () => {
           <h1 className="text-120 font-semibold text-gray-100 mb-6 leading-tight">
             Newsroom
           </h1>
-          <p className="text-xl text-gray-600 max-w-2xl leading-relaxed">
+          <p className="text-20 text-gray-600 max-w-2xl leading-relaxed">
             News and announcements featuring our solutions, team, and company.
           </p>
         </div> */}
@@ -128,9 +128,7 @@ const NewsroomPage = () => {
 
                   {/* Logos */}
                   <Image
-                    src={
-                      "/images/dreamfox_yippeemedia.webp"
-                    }
+                    src={"/images/dreamfox_yippeemedia.webp"}
                     alt="News"
                     width={600}
                     height={500}

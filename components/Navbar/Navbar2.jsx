@@ -34,6 +34,12 @@ const Navbar = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
+  const closeMenu = () => {
+    setIsMenuOpen(false);
+    setDropdownOpen(false);
+    setDropdownOpenAbout(false);
+  };
+
   const toggleDropdown = () => {
     const newState = !dropdownOpen;
     setDropdownOpen(newState);
@@ -397,12 +403,12 @@ const Navbar = () => {
           <div className="lg:hidden">
             <button
               onClick={toggleMenu}
-              className="text-white p-2 rounded-lg hover:bg-white/10 transition-colors duration-300 relative w-10 h-10 flex flex-col justify-center items-center group"
+              className="text-white p-2 rounded-lg hover:bg-white/10 transition-colors duration-150 relative w-10 h-10 flex flex-col justify-center items-center group"
             >
               <div className="relative w-6 h-5">
                 {/* Top bar */}
                 <div
-                  className={`absolute w-6 h-0.5 bg-white rounded transition-all duration-500 ease-out transform origin-center ${
+                  className={`absolute w-6 h-0.5 bg-white rounded transition-all duration-200 ease-in-out transform origin-center ${
                     isMenuOpen
                       ? "rotate-45 translate-y-2"
                       : "rotate-0 translate-y-0"
@@ -411,14 +417,14 @@ const Navbar = () => {
 
                 {/* Middle bar */}
                 <div
-                  className={`absolute w-6 h-0.5 bg-white rounded transition-all duration-300 ease-out top-2 ${
+                  className={`absolute w-6 h-0.5 bg-white rounded transition-all duration-150 ease-in-out top-2 ${
                     isMenuOpen ? "opacity-0 scale-0" : "opacity-100 scale-100"
                   }`}
                 />
 
                 {/* Bottom bar */}
                 <div
-                  className={`absolute w-6 h-0.5 bg-white rounded transition-all duration-500 ease-out transform origin-center top-4 ${
+                  className={`absolute w-6 h-0.5 bg-white rounded transition-all duration-200 ease-in-out transform origin-center top-4 ${
                     isMenuOpen
                       ? "-rotate-45 -translate-y-2"
                       : "rotate-0 translate-y-0"
@@ -432,13 +438,13 @@ const Navbar = () => {
         {/* Mobile Menu */}
         {/* Mobile Menu */}
         <div
-          className={`lg:hidden overflow-hidden transition-all duration-500 ease-out ${
+          className={`lg:hidden overflow-hidden transition-all duration-200 ease-in-out ${
             isMenuOpen ? "max-h-full opacity-100" : "max-h-0 opacity-0"
           }`}
         >
           <div className="mt-4 pb-4 border-t border-white/10">
             <div
-              className={`flex flex-col space-y-4 pt-4 px-4 transform transition-all duration-500 ease-out ${
+              className={`flex flex-col space-y-4 pt-4 px-4 transform transition-all duration-200 ease-in-out ${
                 isMenuOpen
                   ? "translate-y-0 opacity-100"
                   : "-translate-y-4 opacity-0"
@@ -447,7 +453,7 @@ const Navbar = () => {
               <div>
                 <button
                   onClick={toggleDropdownAbout}
-                  className="text-white text-xl font-bold hover:text-[#ec466f] transition-all duration-300 flex items-center space-x-2 px-2 py-2 rounded-lg hover:bg-white/10 transform hover:translate-x-2 w-full text-left"
+                  className="text-white text-20 font-bold hover:text-[#ec466f] transition-all duration-300 flex items-center space-x-2 px-2 py-2 rounded-lg hover:bg-white/10 transform hover:translate-x-2 w-full text-left"
                 >
                   <span>ABOUT</span>
                   <ChevronDownIcon
@@ -467,20 +473,14 @@ const Navbar = () => {
                 >
                   <div className="p-2">
                     <Link
-                      // onClick={() => {
-                      //   setActive("services");
-                      onClick={() => setIsMenuOpen(false)}
-                      // }}
+                      onClick={closeMenu}
                       href="/about"
                       className="block px-6 uppercase py-3 text-white font-medium text-base hover:text-[#ec466f]  transition-all duration-300 ease-out rounded-xl transform hover:scale-110 "
                     >
                       Background
                     </Link>
                     <Link
-                      // onClick={() => {
-                      //   setActive("services");
-                      onClick={() => setIsMenuOpen(false)}
-                      // }}
+                      onClick={closeMenu}
                       href="/about/team"
                       className="block px-6 uppercase py-3 text-white font-medium text-base hover:text-[#ec466f]  transition-all duration-300 ease-out rounded-xl transform hover:scale-110 "
                     >
@@ -488,27 +488,21 @@ const Navbar = () => {
                     </Link>
 
                     <Link
-                      // onClick={() => {
-                      //   setActive("services");
-                      onClick={() => setIsMenuOpen(false)}
-                      // }}
+                      onClick={closeMenu}
                       href="/about/careers"
                       className="block uppercase px-6 py-3 text-white font-medium text-base hover:text-[#ec466f]  transition-all duration-300 ease-out rounded-xl transform hover:scale-110 "
                     >
                       Careers
                     </Link>
                     <Link
-                      // onClick={() => {
-                      //   setActive("services");
-                      // }}
-                      onClick={() => setIsMenuOpen(false)}
+                      onClick={closeMenu}
                       href="/about/alliances"
                       className="block uppercase px-6 py-3 text-white font-medium text-base hover:text-[#ec466f]  transition-all duration-300 ease-out rounded-xl transform hover:scale-110 "
                     >
                       Alliances
                     </Link>
                     <Link
-                      onClick={() => setIsMenuOpen(false)}
+                      onClick={closeMenu}
                       href="/news-events"
                       className="block uppercase px-6 py-3 text-white font-medium text-base hover:text-[#ec466f]  transition-all duration-300 ease-out rounded-xl transform hover:scale-110 "
                     >
@@ -522,7 +516,7 @@ const Navbar = () => {
               <div>
                 <button
                   onClick={toggleDropdown}
-                  className="text-white text-xl font-bold hover:text-[#ec466f] transition-all duration-300 flex items-center space-x-2 px-2 py-2 rounded-lg hover:bg-white/10 transform hover:translate-x-2 w-full text-left"
+                  className="text-white text-20 font-bold hover:text-[#ec466f] transition-all duration-300 flex items-center space-x-2 px-2 py-2 rounded-lg hover:bg-white/10 transform hover:translate-x-2 w-full text-left"
                 >
                   <span>SERVICES</span>
                   <ChevronDownIcon
@@ -542,19 +536,14 @@ const Navbar = () => {
                 >
                   <div className="p-2">
                     <Link
-                      // onClick={() => {
-                      //   setActive("services");
-                      // }}
-                      onClick={() => setIsMenuOpen(false)}
+                      onClick={closeMenu}
                       href="/services"
                       className="block px-6 uppercase py-3 text-white font-medium text-base hover:text-[#ec466f]  transition-all duration-300 ease-out rounded-xl transform hover:scale-110 "
                     >
                       Our Work
                     </Link>
                     <Link
-                      // onClick={() => {
-                      //   setActive("services");
-                      // }}
+                      onClick={closeMenu}
                       href="/services/brand-advisory"
                       className="block px-6 uppercase py-3 text-white font-medium text-base hover:text-[#ec466f]  transition-all duration-300 ease-out rounded-xl transform hover:scale-110 "
                     >
@@ -562,27 +551,21 @@ const Navbar = () => {
                     </Link>
 
                     <Link
-                      // onClick={() => {
-                      //   setActive("services");
-                      // }}
-                      onClick={() => setIsMenuOpen(false)}
+                      onClick={closeMenu}
                       href="/services/design-studio"
                       className="block uppercase px-6 py-3 text-white font-medium text-base hover:text-[#ec466f]  transition-all duration-300 ease-out rounded-xl transform hover:scale-110 "
                     >
                       Design
                     </Link>
                     <Link
-                      // onClick={() => {
-                      //   setActive("services");
-                      // }}
-                      onClick={() => setIsMenuOpen(false)}
+                      onClick={closeMenu}
                       href="/services/digital-marketing"
                       className="block uppercase px-6 py-3 text-white font-medium text-base hover:text-[#ec466f]  transition-all duration-300 ease-out rounded-xl transform hover:scale-110 "
                     >
                       Ai Marketing
                     </Link>
                     <Link
-                      onClick={() => setIsMenuOpen(false)}
+                      onClick={closeMenu}
                       href="/services/digital-media-mix"
                       className="block uppercase px-6 py-3 text-white font-medium text-base hover:text-[#ec466f]  transition-all duration-300 ease-out rounded-xl transform hover:scale-110 "
                     >
@@ -593,15 +576,15 @@ const Navbar = () => {
               </div>
               <Link
                 href="/work-portfolio"
-                className="text-white text-xl font-bold hover:text-[#ec466f] transition-all duration-300 px-2 py-2 rounded-lg hover:bg-white/10 transform hover:translate-x-2"
-                onClick={() => setIsMenuOpen(false)}
+                className="text-white text-20 font-bold hover:text-[#ec466f] transition-all duration-300 px-2 py-2 rounded-lg hover:bg-white/10 transform hover:translate-x-2"
+                onClick={closeMenu}
               >
                 PORTFOLIO
               </Link>
               {/* Mobile Contact Button */}
               <Link
                 href={"/contactus"}
-                onClick={() => setIsMenuOpen(false)}
+                onClick={closeMenu}
                 className="relative px-6  w-fit py-3 text-white font-black text-lg bg-gradient-to-r from-[#ec466f] to-[#ff6b9d] rounded-full overflow-hidden group hover:shadow-xl transition-all duration-300 mx-2 mt-4"
               >
                 <span className="relative z-10">CONTACT US</span>

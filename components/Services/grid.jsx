@@ -217,7 +217,7 @@ const FourPillarsSection = () => {
                 {/* Content Overlay */}
                 <div className="content-overlay absolute inset-0 flex flex-col justify-end p-6 bg-gradient-to-t from-black/90 via-transparent to-transparent">
                   <div className="transform transition-transform duration-300">
-                    <h3 className="card-title text-xl sm:text-2xl font-bold mb-3 text-white leading-tight">
+                    <h3 className="card-title text-20 sm:text-2xl font-bold mb-3 text-white leading-tight">
                       {pillar.title}
                     </h3>
                     <p className="card-text text-gray-300 text-sm sm:text-base leading-relaxed mb-4 line-clamp-3">
@@ -388,7 +388,7 @@ const FourPillarsSection = () => {
               {/* Content Overlay */}
               <div className="content-overlay absolute inset-0 flex flex-col justify-end p-6 bg-gradient-to-t from-black/90 via-transparent to-transparent">
                 <div className="transform transition-transform duration-300 group-hover:translate-y-[-5px]">
-                  <h3 className="card-title text-xl font-bold mb-3 text-white leading-tight">
+                  <h3 className="card-title text-20 font-bold mb-3 text-white leading-tight">
                     {pillars[2].title}
                   </h3>
                   <p className="card-text text-gray-300 text-sm leading-relaxed mb-4 line-clamp-2">
@@ -425,7 +425,7 @@ const FourPillarsSection = () => {
               {/* Content Overlay */}
               <div className="content-overlay absolute inset-0 flex flex-col justify-end p-6 bg-gradient-to-t from-black/90 via-transparent to-transparent">
                 <div className="transform transition-transform duration-300 group-hover:translate-y-[-5px]">
-                  <h3 className="card-title text-xl font-bold mb-3 text-white leading-tight">
+                  <h3 className="card-title text-20 font-bold mb-3 text-white leading-tight">
                     {pillars[3].title}
                   </h3>
                   <p className="card-text text-gray-300 text-sm leading-relaxed mb-4 line-clamp-2">

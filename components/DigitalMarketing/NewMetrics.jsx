@@ -153,7 +153,7 @@ const PortfolioMetrics = () => {
       <div className="absolute inset-0 opacity-20">
         <div className="absolute top-1/4 left-1/4 w-96 h-64 bg-gray-700 rounded-lg transform -rotate-12"></div>
         <div className="absolute top-1/3 right-1/4 w-96 h-64 bg-gray-600 rounded-lg transform rotate-6"></div>
-        <div className="absolute bottom-1/6 left-1/3 w-96 h-64 bg-gray-500 rounded-lg transform -rotate-3"></div>
+        <div className="absolute bottom-1/6 left-1/2 w-96 h-64 bg-gray-500 rounded-lg transform -rotate-3"></div>
       </div>
 
       {/* Main content grid */}

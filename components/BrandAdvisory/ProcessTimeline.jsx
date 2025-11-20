@@ -225,7 +225,7 @@ export default function ProcessTimeline() {
             <div
               key={i}
               ref={(el) => (boxesRef.current[i] = el)}
-              className="group h-[40rem] md:h-[30rem] xl:h-[40rem] w-[80%] xl:w-[70rem] relative"
+              className="group h-[34rem] xs:h-[40rem] md:h-[30rem] xl:h-[40rem] w-[80%] xl:w-[70rem] relative"
             >
               {/* Glowing background */}
               {/* <div className="absolute -inset-1 bg-gradient-to-r from-pink-600 to-purple-600 rounded-3xl blur opacity-25 group-hover:opacity-75 transition duration-1000 group-hover:duration-200" /> */}
@@ -242,9 +242,9 @@ export default function ProcessTimeline() {
                 </div> */}
 
                 {/* Step number */}
-                <div className="absolute top-4 right-4 w-8 h-8 bg-white rounded-full flex items-center justify-center text-sm font-bold text-black">
+                {/* <div className="absolute bottom-24 right-24 w-8 h-8  rounded-full flex items-center justify-center text-250 font-bold text-white/30 ">
                   {i + 1}
-                </div>
+                </div> */}
                 <div className="flex flex-col gap-10 sm:flex-row items-center justify-center h-full">
                   <div className="lg:w-1/2">
                     <Image

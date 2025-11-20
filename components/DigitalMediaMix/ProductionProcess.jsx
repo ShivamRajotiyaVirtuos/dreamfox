@@ -259,11 +259,11 @@ const Productionprocess = () => {
                       {index + 1}
                     </span>
                   </div> */}
-                  <h3 className="text-24 group-hover:text-black font-semibold text-gray-100">
+                  <h3 className="text-24  font-semibold text-gray-100">
                     {stage.title}
                   </h3>
                 </div>
-                <p className="text-gray-200 group-hover:text-black leading-relaxed text-16">
+                <p className="text-gray-200  leading-relaxed text-16">
                   {stage.description}
                 </p>
               </div>

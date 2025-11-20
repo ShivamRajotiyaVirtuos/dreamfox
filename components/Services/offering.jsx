@@ -121,7 +121,7 @@ const Offerings = () => {
               </div>
 
               {/* Content Container */}
-              <div className="relative z-10 h-full flex flex-col justify-between p-8 md:p-24">
+              <div className="relative z-10 h-full flex flex-col justify-between px-8 pt-12 pb-24 sm:px-8 md:px-24 md:pb-44">
                 {/* Top Section - Card Number */}
                 <div className="flex justify-between items-start">
                   <div className="flex items-center gap-4">
@@ -135,7 +135,7 @@ const Offerings = () => {
                 </div>
 
                 {/* Main Content - Bottom Section */}
-                <div className="space-y-6">
+                <div className=" sm:space-y-6">
                   {/* Title with animated underline */}
                   <div className="relative">
                     <h2 className="text-80 font-bold text-white leading-none tracking-tight">

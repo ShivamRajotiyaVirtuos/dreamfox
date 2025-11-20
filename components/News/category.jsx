@@ -22,9 +22,8 @@ const NewsCategory = () => {
       author: "DreamFox Team",
       slug: "dreamfox-enbrand-unite-integrated-branding-digital-experience-solutions",
       date: "Nov 14, 2025",
-      
-      image:
-        "/images/dreamfox_enbrand_branding.webp",
+
+      image: "/images/dreamfox_enbrand_branding.webp",
       imageAlt: "DreamFox and EnBrand strategic collaboration",
       excerpt:
         "DreamFox announces strategic collaboration with EnBrand to deliver integrated branding, experience design, and AI-powered marketing under one umbrella, positioning as a holistic growth partner for enterprises.",
@@ -39,8 +38,7 @@ const NewsCategory = () => {
 
       author: "DreamFox Team",
       date: "Nov 14, 2025",
-      image:
-        "/images/DreamForce_Plumjob_designare.webp",
+      image: "/images/DreamForce_Plumjob_designare.webp",
       imageAlt: "PlumJob.com brand development",
       excerpt:
         "DreamFox unveils PlumJob.com, a next-generation HRTech and Talent Experience platform designed for the modern technology workforce, built through Designare™ Experience Design practice.",
@@ -55,8 +53,7 @@ const NewsCategory = () => {
 
       author: "DreamFox Team",
       date: "Nov 14, 2025",
-      image:
-      "/images/Dreamfox_dxify.webp",
+      image: "/images/Dreamfox_dxify.webp",
 
       imageAlt: "Dxpify DXP-as-a-Service platform",
       excerpt:
@@ -92,7 +89,7 @@ const NewsCategory = () => {
           <h1 className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-white via-gray-200 to-gray-400 bg-clip-text text-transparent mb-6">
             Latest News & Events
           </h1>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+          <p className="text-20 text-gray-300 max-w-3xl mx-auto">
             Stay updated with our latest achievements, company news, and
             industry insights
           </p>
@@ -170,7 +167,7 @@ const NewsCategory = () => {
                 </div>
 
                 {/* Title */}
-                <h3 className="text-xl font-bold text-white leading-tight group-hover:text-blue-300 transition-colors duration-300 line-clamp-2">
+                <h3 className="text-20 font-bold text-white leading-tight group-hover:text-blue-300 transition-colors duration-300 line-clamp-2">
                   {article.title}
                 </h3>
 
@@ -223,7 +220,7 @@ const NewsCategory = () => {
           <div className="text-center py-20">
             <div className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl p-12 max-w-md mx-auto">
               <MagnifyingGlassIcon className="w-16 h-16 text-gray-400 mx-auto mb-4" />
-              <h3 className="text-xl font-semibold text-white mb-2">
+              <h3 className="text-20 font-semibold text-white mb-2">
                 No articles found
               </h3>
               <p className="text-gray-400">

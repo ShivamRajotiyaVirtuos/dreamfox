@@ -354,7 +354,7 @@ export default function MetricSection() {
                 </span>
 
                 {/* Label in white */}
-                <span className="text-xl text-white ">{metric.label}</span>
+                <span className="text-20 text-white ">{metric.label}</span>
               </div>
             </div>
           ))}

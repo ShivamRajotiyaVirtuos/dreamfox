@@ -66,7 +66,7 @@ const ServicesSectionDigitalM = () => {
           scrollTrigger: {
             trigger: containerRef.current,
             start: "top top+=10%",
-            end: `+=${(servicesData.length - 1) * 200}vh`, // Shorter for mobile
+            end: `+=${(servicesData.length - 1) * 170}vh`, // Shorter for mobile
             scrub: 3,
             pin: true,
             pinSpacing: false,
@@ -179,7 +179,7 @@ const ServicesSectionDigitalM = () => {
   }, []);
   return (
     <div ref={containerRef}>
-      <section className="relative overflow-hidden h-screen bg-black">
+      <section className="relative xs:overflow-hidden h-screen bg-black">
         {/* Heading */}
         <div className="z-30 text-center">
           <TextReveal

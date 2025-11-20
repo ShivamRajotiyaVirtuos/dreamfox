@@ -204,13 +204,13 @@ const ProjectsSection = () => {
           const positions = [
             { left: "15%", top: "10%" },
             { right: "10%", top: "25%" },
-            { left: "40%", top: "60%" },
+            { left: "40%", top: "55%" },
             { right: "05%", top: "72%" },
             { left: "05%", top: "75%" },
-            { right: "25%", top: "120%" },
+            { right: "15%", top: "125%" },
             { left: "12%", top: "130%" },
-            { right: "40%", top: "10%" },
-            { left: "35%", top: "105%" },
+            { right: "40%", top: "-10%" },
+            { left: "39%", top: "110%" },
             // { right: "30%", top: "10%" },
             // { left: "10%", top: "40%" },
             // { right: "8%", top: "60%" },
@@ -224,9 +224,9 @@ const ProjectsSection = () => {
             { right: "05%", top: "85%" },
             { left: "05%", top: "110%" },
             { right: "5%", top: "130%" },
-            { left: "8%", top: "160%" },
+            { right: "8%", top: "-90%" },
             { right: "2%", top: "-45%" },
-            { lefy: "3%", top: "-65%" },
+            { left: "3%", top: "-65%" },
 
             // { right: "30%", top: "10%" },
             // { left: "10%", top: "40%" },
@@ -239,7 +239,7 @@ const ProjectsSection = () => {
               <div
                 key={index}
                 ref={addToRefs}
-                className=" sm:block hidden absolute w-48 md:w-56 lg:w-64 2xl:w-96"
+                className=" sm:block hidden absolute w-48 md:w-56 hover:z-30 lg:w-64 2xl:w-96"
                 style={position}
               >
                 <div className="bg-zinc-900/90 backdrop-blur-sm  p-4 shadow-2xl border border-zinc-800 hover:border-zinc-600 transition-all duration-300">
@@ -272,7 +272,7 @@ const ProjectsSection = () => {
               <div
                 key={index}
                 ref={addToRefs}
-                className="absolute w-48 md:w-56 lg:w-64 2xl:w-96  block sm:hidden"
+                className="absolute w-48 md:w-56 lg:w-64 2xl:w-96 hover:z-30 block sm:hidden"
                 style={mobposition}
               >
                 <div className="bg-zinc-900/90 backdrop-blur-sm  p-4 shadow-2xl border border-zinc-800 hover:border-zinc-600 transition-all duration-300">

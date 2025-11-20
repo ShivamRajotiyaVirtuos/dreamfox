@@ -302,8 +302,22 @@
 
 import { useEffect, useRef } from "react";
 import TextReveal from "../Text Reveal/textreveal";
-import { ChartBarIcon, CpuChipIcon, FaceSmileIcon, IdentificationIcon, MagnifyingGlassIcon, PaintBrushIcon } from "@heroicons/react/24/outline";
-import { BoltIcon, FireIcon, LightBulbIcon, RocketLaunchIcon, SparklesIcon, StarIcon } from "@heroicons/react/24/solid";
+import {
+  ChartBarIcon,
+  CpuChipIcon,
+  FaceSmileIcon,
+  IdentificationIcon,
+  MagnifyingGlassIcon,
+  PaintBrushIcon,
+} from "@heroicons/react/24/outline";
+import {
+  BoltIcon,
+  FireIcon,
+  LightBulbIcon,
+  RocketLaunchIcon,
+  SparklesIcon,
+  StarIcon,
+} from "@heroicons/react/24/solid";
 // import {
 //   ChartBarIcon,
 //   BoltIcon,
@@ -684,7 +698,7 @@ const PersonaTargeting = () => {
 
   return (
     <div
-      className="bg-black text-white min-h-screen overflow-hidden relative pt-26 md:pt-0 xl:pt-24 4xl:pt-0"
+      className="bg-black text-white min-h-screen overflow-hidden relative pt-24 sm:pt-26 md:pt-0 xl:pt-24 4xl:pt-0"
       ref={containerRef}
     >
       {/* Animated Background Elements */}
@@ -739,7 +753,7 @@ const PersonaTargeting = () => {
 
             {/* Main Title */}
             <TextReveal
-              className="text-center text-120 font-bold  text-white"
+              className="text-center mb-4 text-120 font-bold  text-white"
               animation="rotateX"
               stagger={0.1}
               duration={0.8}
@@ -758,7 +772,7 @@ const PersonaTargeting = () => {
             </h1> */}
 
             {/* Subtitle */}
-            <p className="subtitle text-xl md:text-2xl text-gray-400 max-w-4xl mx-auto leading-relaxed font-light">
+            <p className="subtitle text-20 md:text-2xl text-gray-400 max-w-4xl mx-auto leading-relaxed font-light">
               Precision-engineered audience targeting through sophisticated
               design systems, data intelligence, and creative excellence that
               transforms engagement into lasting connections
@@ -796,11 +810,11 @@ const PersonaTargeting = () => {
                     {/* Icon */}
                     <div className="card-icon relative">
                       <div className="w-16 h-16 bg-[#ec466f] rounded-2xl flex items-center justify-center backdrop-blur-sm \ border-gray-100 transition-all duration-300">
-                      <persona.visuals.icon className="h-10 w-10 text-gray-100" />
+                        <persona.visuals.icon className="h-10 w-10 text-gray-100" />
                       </div>
                       {/* Decorative Element */}
                       <div className="decorative-element absolute -top-2 -right-2 w-6 h-6 bg-white/5 rounded-full flex items-center justify-center border border-white/20 opacity-60">
-                      <persona.visuals.decorativeIcon className=" h-4 w-4 text-gray-300" />
+                        <persona.visuals.decorativeIcon className=" h-4 w-4 text-gray-300" />
                       </div>
                     </div>
 
