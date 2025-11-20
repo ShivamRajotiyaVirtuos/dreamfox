@@ -35,7 +35,6 @@ const ScrollSmootherWrapper = ({ children }) => {
       // Force a complete refresh of all ScrollTrigger instances
       ScrollTrigger.refresh(true);
 
-      console.log("ScrollSmoother initialized", scrollSmootherRef.current);
     }, 200); // Increased timeout for more reliable initialization
 
     // Cleanup function

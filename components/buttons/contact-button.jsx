@@ -166,7 +166,6 @@ const ContactButton = () => {
     });
 
     // Here you can add your contact logic
-    console.log("Contact button clicked!");
   };
 
   return (

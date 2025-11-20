@@ -86,7 +86,6 @@ const TextReveal = ({
         );
         
         // For debugging
-        console.log("TextReveal initialized with ScrollTrigger", tl.scrollTrigger);
       }, textRef);
 
       return () => ctx.revert();

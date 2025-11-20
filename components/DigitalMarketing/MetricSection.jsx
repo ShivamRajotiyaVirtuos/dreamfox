@@ -112,12 +112,12 @@ export default function MetricSection() {
         pinSpacing: true,
         scrub: 1,
         markers: false, // Set to false in production
-        onEnter: () => {
-          console.log("Section entered viewport");
-        },
-        onLeave: () => {
-          console.log("Section left viewport");
-        },
+        // onEnter: () => {
+        //   console.log("Section entered viewport");
+        // },
+        // onLeave: () => {
+        //   console.log("Section left viewport");
+        // },
       },
     });
 

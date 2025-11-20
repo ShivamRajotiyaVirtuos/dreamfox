@@ -22,7 +22,6 @@ const JobDetail = ({ jobs = [] }) => {
       // Find job by ID (convert string to number)
       const job = jobsData.find((job) => job.code === id);
       setCurrentJob(job);
-      console.log("Found job:", job);
     }
   }, [id]);
   useEffect(() => {

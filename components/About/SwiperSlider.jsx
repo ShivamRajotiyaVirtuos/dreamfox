@@ -101,7 +101,7 @@ const TeamSlider = () => {
     },
   ];
   const multipleSlides = [...slides, ...slides, ...slides];
-  console.log(multipleSlides, "multipleSlides");
+  // console.log(multipleSlides, "multipleSlides");
   return (
     <>
       <style>{`

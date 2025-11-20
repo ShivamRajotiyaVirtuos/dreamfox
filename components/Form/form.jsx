@@ -56,7 +56,6 @@ const JobDetail = ({ onClose, jobId }) => {
     source: "DREAMFOX",
   });
 
-  console.log("=-=-=-=-=-=", formData);
   const [isLoading, setIsLoading] = useState(false);
   const [showThankYou, setShowThankYou] = useState(false);
   const [createCareerFormVDC] = useMutation(CreateJobDreamfox);
@@ -116,16 +115,13 @@ const JobDetail = ({ onClose, jobId }) => {
     if (jobId) {
       const job = jobsData.find((job) => job.code === jobId);
       setCurrentJob(job);
-      console.log("Found job:", job);
     }
   }, [jobId]);
-  console.log(jobId);
   const handleCancel = () => {
     if (onClose) {
       onClose();
     }
   };
-  console.log(currentJob);
   return (
     <div
       ref={containerRef}

@@ -58,7 +58,6 @@ const NewsDetailPage = () => {
     }
   };
 
-  console.log(router);
   useEffect(() => {
     const handleRouteChange = () => {
       // Scroll to top when route changes

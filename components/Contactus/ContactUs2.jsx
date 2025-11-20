@@ -54,7 +54,6 @@ export default function ContactUs2() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(formData);
     // Submit logic (API call, validation, etc.) goes here
   };
 

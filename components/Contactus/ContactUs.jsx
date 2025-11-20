@@ -75,7 +75,6 @@ export default function ContactUs() {
       try {
         const response = await fetch("https://ipapi.co/json/");
         const data = await response.json();
-        console.log("Location data fetched:", data);
         setLocationData(data);
       } catch (error) {
         console.error("Failed to fetch location data:", error);

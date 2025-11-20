@@ -1,6 +1,7 @@
 import Layout from "@/components/Layout/layout";
 import "@/styles/globals.css";
 import dynamic from "next/dynamic";
+import Script from "next/script";
 import client from "../lib/apollo-client";
 import { ApolloProvider } from "@apollo/client";
 import { useRouter } from "next/router";
@@ -26,7 +27,6 @@ const ScrollSmootherWrapper = dynamic(
 
 export default function App({ Component, pageProps }) {
   const router = useRouter();
-  console.log(router);
   useEffect(() => {
     const handleRouteChange = () => {
       // Scroll to top when route changes
@@ -44,8 +44,39 @@ export default function App({ Component, pageProps }) {
   }, [router.asPath, router.events]);
   return (
     <>
+      {/* Google Tag Manager */}
+      <Script
+        id="gtm-script"
+        strategy="afterInteractive"
+        dangerouslySetInnerHTML={{
+          __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-TXV4TPDV');`,
+        }}
+      />
+
+      {/* Google Analytics */}
+      <Script
+        strategy="afterInteractive"
+        src="https://www.googletagmanager.com/gtag/js?id=G-CKSP8XNWKJ"
+      />
+      <Script
+        id="gtag-init"
+        strategy="afterInteractive"
+        dangerouslySetInnerHTML={{
+          __html: `
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-CKSP8XNWKJ');
+          `,
+        }}
+      />
+
       <WebGLCursorEffect />
-      <SEOHead/>
+      <SEOHead />
       {/* <SmoothScroll> */}
       <ApolloProvider client={client}>
         <ScrollSmootherWrapper>

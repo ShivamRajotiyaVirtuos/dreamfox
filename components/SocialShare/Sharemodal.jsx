@@ -22,7 +22,6 @@ const ShareModal = ({ url, title, className = "" ,buttonText}) => {
 
   // Handle different share actions
   const handleShareAction = (action, platform) => {
-    console.log(`Sharing on ${platform}:`, action);
 
     switch (platform) {
       case "Facebook":
