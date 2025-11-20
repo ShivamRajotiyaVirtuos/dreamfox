@@ -2,7 +2,6 @@ import React, { useEffect, useRef, useState } from "react";
 import { ArrowRightIcon } from "@heroicons/react/24/solid";
 import TextReveal from "../Text Reveal/textreveal";
 import Link from "next/link";
-import SidebarForm from "../Sidebar/sideform";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import jobListings from "../../jobs.json";
@@ -263,23 +262,7 @@ const JobListingsGrid = () => {
         >
           Open drawer
         </button> */}
-        <SidebarForm open={open} setOpen={setOpen} />
-        <div className="text-center mt-16">
-          <p className="text-gray-400 mb-6">
-            Don't see a position that fits? We're always looking for talented
-            individuals.
-          </p>
-          <button
-            onClick={(e) => {
-              e.preventDefault(); // Prevent any default behavior
-              e.stopPropagation(); // Stop event bubbling
-              setOpen(true);
-            }}
-            className="bg-[#ec466f] cursor-pointer hover:bg-[#ec466f] text-white font-semibold px-8 py-3 rounded-full transition-colors duration-300"
-          >
-            Send Us Your Resume
-          </button>
-        </div>
+        
       </div>
     </div>
   );

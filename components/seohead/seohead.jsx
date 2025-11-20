@@ -167,6 +167,24 @@ const seoData = {
       "Read DreamFox's Safe Harbour Statement outlining forward-looking disclosures, risk factors, and legal commitments under securities regulations.",
     image: "https://dreamfox.com/og-images/safe_harbour_policy.jpg",
   },
+  "/cookie-policy": {
+    title: "DreamFox Cookie Policy | Tracking, Analytics & Privacy",
+    description:
+      "Learn how DreamFox uses cookies for site functionality, analytics, personalization, and marketing, plus how to manage your preferences securely.",
+    image: "https://dreamfox.com/og-images/cookie_policy.jpg",
+  },
+  "/gdpr-policy": {
+    title: "DreamFox GDPR Policy | Data Protection & User Rights",
+    description:
+      "Learn how DreamFox ensures GDPR compliance with secure data processing, user rights protection, lawful transfers, encryption, and transparent marketing.",
+    image: "https://dreamfox.com/og-images/gdpr_policy.jpg",
+  },
+  "/disclaimer": {
+    title: "DreamFox Disclaimer | Website Liability & Content Terms",
+    description:
+      "Read DreamFox's Disclaimer outlining content accuracy, no professional advice, AI limitations, third-party links, liability limits, and user responsibilities.",
+    image: "https://dreamfox.com/og-images/disclaimer.jpg",
+  },
 };
 const SEOHead = ({
   title,

@@ -5,125 +5,149 @@
         <lastmod>2025-11-17</lastmod>
         <priority>1.0</priority>
     </url>
-
     <url>
         <loc>https://dreamfox.com/about</loc>
         <lastmod>2025-11-17</lastmod>
         <priority>0.9</priority>
     </url>
-
     <url>
         <loc>https://dreamfox.com/services</loc>
         <lastmod>2025-11-17</lastmod>
         <priority>0.9</priority>
     </url>
-
     <url>
         <loc>https://dreamfox.com/work-portfolio</loc>
         <lastmod>2025-11-17</lastmod>
         <priority>0.9</priority>
     </url>
-
     <url>
         <loc>https://dreamfox.com/contactus</loc>
         <lastmod>2025-11-17</lastmod>
         <priority>0.9</priority>
     </url>
-
     <url>
         <loc>https://dreamfox.com/services/digital-marketing</loc>
         <lastmod>2025-11-17</lastmod>
         <priority>0.8</priority>
     </url>
-
     <url>
         <loc>https://dreamfox.com/services/brand-advisory</loc>
         <lastmod>2025-11-17</lastmod>
         <priority>0.8</priority>
     </url>
-
     <url>
         <loc>https://dreamfox.com/services/design-studio</loc>
         <lastmod>2025-11-17</lastmod>
         <priority>0.8</priority>
     </url>
-
     <url>
         <loc>https://dreamfox.com/services/digital-media-mix</loc>
         <lastmod>2025-11-17</lastmod>
         <priority>0.8</priority>
     </url>
-
     <url>
         <loc>https://dreamfox.com/about/team</loc>
         <lastmod>2025-11-17</lastmod>
         <priority>0.7</priority>
     </url>
-
     <url>
         <loc>https://dreamfox.com/about/alliances</loc>
         <lastmod>2025-11-17</lastmod>
         <priority>0.7</priority>
     </url>
-
     <url>
         <loc>https://dreamfox.com/about/careers</loc>
         <lastmod>2025-11-17</lastmod>
         <priority>0.7</priority>
     </url>
-
     <url>
-        <loc>https://dreamfox.com/work-portfolio/vsys</loc>
+        <loc>https://dreamfox.com/work-portfolio/vsys-case-study</loc>
         <lastmod>2025-11-17</lastmod>
         <priority>0.7</priority>
     </url>
-
+  <url>
+        <loc>https://dreamfox.com/work-portfolio/tekcorp-case-study</loc>
+        <lastmod>2025-11-17</lastmod>
+        <priority>0.7</priority>
+    </url>
+  <url>
+        <loc>https://dreamfox.com/work-portfolio/plumjob-case-study</loc>
+        <lastmod>2025-11-17</lastmod>
+        <priority>0.7</priority>
+    </url>
+  <url>
+        <loc>https://dreamfox.com/work-portfolio/sweven-case-study</loc>
+        <lastmod>2025-11-17</lastmod>
+        <priority>0.7</priority>
+    </url>
+  <url>
+        <loc>https://dreamfox.com/work-portfolio/indic-case-study</loc>
+        <lastmod>2025-11-17</lastmod>
+        <priority>0.7</priority>
+    </url>
+  <url>
+        <loc>https://dreamfox.com/work-portfolio/better-buy-club-case-study</loc>
+        <lastmod>2025-11-17</lastmod>
+        <priority>0.7</priority>
+    </url>
+  <url>
+        <loc>https://dreamfox.com/work-portfolio/giftcart-case-study</loc>
+        <lastmod>2025-11-17</lastmod>
+        <priority>0.7</priority>
+    </url>
     <url>
         <loc>https://dreamfox.com/news-events</loc>
         <lastmod>2025-11-17</lastmod>
         <priority>0.8</priority>
     </url>
-
     <url>
-        <loc>https://dreamfox.com/news-events/dreamfox-acquires-yippee-media</loc>
+<loc>https://dreamfox.com/news-events/dreamfox-acquires-yippee-media</loc>
         <lastmod>2025-11-17</lastmod>
         <priority>0.6</priority>
     </url>
-
     <url>
-        <loc>https://dreamfox.com/news-events/dreamfox-enbrand-unite-integrated-branding-digital-experience-solutions</loc>
+<loc>https://dreamfox.com/news-events/dreamfox-enbrand-unite-integrated-branding-digital-experience-solutions</loc>
         <lastmod>2025-11-17</lastmod>
         <priority>0.6</priority>
     </url>
-
     <url>
-        <loc>https://dreamfox.com/news-events/dreamfox-develops-plumjob-brand-designare-experience-services</loc>
+<loc>https://dreamfox.com/news-events/dreamfox-develops-plumjob-brand-designare-experience-services</loc>
         <lastmod>2025-11-17</lastmod>
         <priority>0.6</priority>
     </url>
-
     <url>
-        <loc>https://dreamfox.com/news-events/plumjob-launch-dxpify-dxp-as-a-service-developed-by-dreamfox</loc>
+<loc>https://dreamfox.com/news-events/plumjob-launch-dxpify-dxp-as-a-service-developed-by-dreamfox</loc>
         <lastmod>2025-11-17</lastmod>
         <priority>0.6</priority>
     </url>
-
     <url>
-        <loc>https://dreamfox.com/terms-conditions</loc>
+        <loc>https://dreamfox.com/terms-of-use</loc>
         <lastmod>2025-11-17</lastmod>
         <priority>0.5</priority>
     </url>
-
     <url>
         <loc>https://dreamfox.com/privacy-policy</loc>
         <lastmod>2025-11-17</lastmod>
         <priority>0.5</priority>
     </url>
-
     <url>
-        <loc>https://dreamfox.com/safe-harbor-policy</loc>
+        <loc>https://dreamfox.com/safe-harbour-policy</loc>
         <lastmod>2025-11-17</lastmod>
         <priority>0.5</priority>
     </url>
-
+    <url>
+        <loc>https://dreamfox.com/cookie-policy</loc>
+        <lastmod>2025-11-17</lastmod>
+        <priority>0.5</priority>
+    </url>
+    <url>
+        <loc>https://dreamfox.com/gdpr-policy</loc>
+        <lastmod>2025-11-17</lastmod>
+        <priority>0.5</priority>
+    </url>
+    <url>
+        <loc>https://dreamfox.com/disclaimer</loc>
+        <lastmod>2025-11-17</lastmod>
+        <priority>0.5</priority>
+    </url>
 </urlset>

@@ -35,10 +35,20 @@ const Navbar = () => {
   };
 
   const toggleDropdown = () => {
-    setDropdownOpen(!dropdownOpen);
+    const newState = !dropdownOpen;
+    setDropdownOpen(newState);
+    // Close the About dropdown when Services is opened
+    if (newState) {
+      setDropdownOpenAbout(false);
+    }
   };
   const toggleDropdownAbout = () => {
-    setDropdownOpenAbout(!dropdownOpenAbout);
+    const newState = !dropdownOpenAbout;
+    setDropdownOpenAbout(newState);
+    // Close the Services dropdown when About is opened
+    if (newState) {
+      setDropdownOpen(false);
+    }
   };
   //   const handleMouseEnter = (e) => {
   //     if (!buttonRef.current) return;
@@ -185,16 +195,6 @@ const Navbar = () => {
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-[#ec466f] to-[#ff6b9d] group-hover:w-full transition-all duration-500 ease-out"></span>
               </Link>
 
-              {/* Dropdown Menu */}
-              {/* <svg
-                width="24"
-                height="8"
-                viewBox="0 0 10 8"
-                className=" fill-gray-100 size-4 z-30 absolute -top-2 left-32  right-0"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path d="M5 0L10 8H0L5 0Z" />
-              </svg> */}
               <div
                 className={`absolute top-full -left-[83px] mt-2 w-64 bg-gray-700 backdrop-blur-xl rounded-2xl shadow-2xl border border-white/10 overflow-hidden transition-all duration-500 ease-out transform ${
                   dropdownOpenAbout
@@ -354,44 +354,6 @@ const Navbar = () => {
             </Link>
           </div>
 
-          {/* Contact Button */}
-          {/* <div className="hidden lg:block">
-            <button
-              ref={buttonRef}
-              onMouseEnter={handleMouseEnter}
-              onMouseLeave={handleMouseLeave}
-              className="relative px-8 cursor-pointer py-4 text-white font-black text-lg border-white border-2 rounded-full overflow-hidden group hover:shadow-2xl hover:shadow-purple-500/25 transition-all duration-300 hover:scale-105 flex items-center gap-3"
-            >
-              <span className="relative z-10">CONTACT US</span>
-
-              <span className="bg-white rounded-full relative z-10">
-                <svg
-                  className="size-7 bg-white text-black group-hover:bg-white  p-1 rounded-full group-hover:text-purple-400"
-                  dataSlot="icon"
-                  fill="none"
-                  strokeWidth={2.5}
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                  xmlns="http://www.w3.org/2000/svg"
-                  aria-hidden="true"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"
-                  />
-                </svg>
-              </span>
-
-           
-              <div
-                className={`absolute inset-0 bg-gradient-to-r from-[#ef565f] to-[#e62e8c] rounded-full transition-all duration-500 ease-out ${
-                  isHovered ? "scale-150 opacity-100" : "scale-0 opacity-0"
-                }`}
-                style={overlayStyle}
-              ></div>
-            </button>
-          </div> */}
           <div className="hidden lg:block">
             <button
               ref={buttonRef}

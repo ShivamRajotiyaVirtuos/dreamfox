@@ -182,11 +182,11 @@ export default function ContactUs() {
             <span className="text-sm font-medium tracking-wide">Contact</span>
           </div>
 
-          <h1 className="text-6xl font-bold text-white mb-6 bg-gradient-to-r from-white via-gray-100 to-white bg-clip-text ">
+          <h1 className="text-60 font-bold text-white mb-6 bg-gradient-to-r from-white via-gray-100 to-white bg-clip-text ">
             Get in touch
           </h1>
 
-          <p className="text-xl text-gray-300 mb-6 sm:mb-12 leading-relaxed">
+          <p className="hidden sm:block text-xl text-gray-300 mb-6 sm:mb-12 leading-relaxed">
             Have questions or ready to transform your business with AI
             automation? <br />
             <span className="text-transparent bg-gradient-to-r from-[#DC6263] to-[#D2448D] bg-clip-text font-semibold">
@@ -313,7 +313,7 @@ export default function ContactUs() {
                 </div>
 
                 {/* Phone and Company */}
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                {/* <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div className="relative group">
                     <div className="absolute -inset-0.5 bg-gradient-to-r from-[#DC6263]/20 to-[#D2448D]/20 rounded-2xl blur opacity-0 group-focus-within:opacity-100 transition-opacity duration-300"></div>
                     <input
@@ -336,7 +336,7 @@ export default function ContactUs() {
                       className="relative w-full bg-white/10 backdrop-blur-2xl border border-white/20 rounded-2xl px-6 py-4 text-white placeholder-gray-300 focus:outline-none focus:border-white/40 focus:bg-white/15 transition-all duration-300 group-hover:bg-white/12 shadow-lg"
                     />
                   </div>
-                </div>
+                </div> */}
 
                 {/* Subject */}
                 <div className="relative group">
@@ -463,7 +463,7 @@ export default function ContactUs() {
       </div>
 
       {/* Enhanced floating refresh button */}
-      <div className="fixed bottom-8 right-8 group">
+      {/* <div className="fixed bottom-8 right-8 group">
         <div className="absolute -inset-1 bg-gradient-to-r from-[#DC6263] to-[#D2448D] rounded-full blur opacity-50 group-hover:opacity-100 transition duration-300"></div>
         <button className="relative w-16 h-16 bg-white/10 backdrop-blur-2xl hover:bg-white/20 rounded-full flex items-center justify-center text-white transition-all duration-300 border border-white/20 group-hover:scale-110 shadow-2xl">
           <svg
@@ -480,7 +480,7 @@ export default function ContactUs() {
             />
           </svg>
         </button>
-      </div>
+      </div> */}
     </div>
   );
 }

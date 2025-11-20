@@ -31,7 +31,7 @@ export default function Document() {
           content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
         />
       </Head>
-      <body className="antialiased">
+      <body className="antialiased">   
         {/* Google Tag Manager (noscript) */}
         <noscript>
           <iframe
