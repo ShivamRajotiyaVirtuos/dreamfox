@@ -18,6 +18,8 @@ const Navbar = () => {
   const [isActivea, setActive] = useState(false);
 
   const buttonRef = useRef(null);
+  const dropdownRefAbout = useRef(null);
+  const dropdownRefServices = useRef(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -28,6 +30,26 @@ const Navbar = () => {
 
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (
+        dropdownRefAbout.current &&
+        !dropdownRefAbout.current.contains(event.target)
+      ) {
+        setDropdownOpenAbout(false);
+      }
+      if (
+        dropdownRefServices.current &&
+        !dropdownRefServices.current.contains(event.target)
+      ) {
+        setDropdownOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
   const toggleMenu = () => {
@@ -176,7 +198,9 @@ const Navbar = () => {
           {/* Desktop Menu Items - Center */}
           <div className="hidden lg:flex items-center space-x-12">
             <div
+              ref={dropdownRefAbout}
               className="relative"
+              onClick={() => setDropdownOpenAbout(true)}
               onMouseEnter={() => setDropdownOpenAbout(true)}
               onMouseLeave={() => setDropdownOpenAbout(false)}
             >
@@ -269,8 +293,10 @@ const Navbar = () => {
             {/* Services Dropdown */}
             {/* Services Dropdown */}
             <div
+              ref={dropdownRefServices}
               className="relative"
               onMouseEnter={() => setDropdownOpen(true)}
+              onClick={() => setDropdownOpen(true)}
               onMouseLeave={() => setDropdownOpen(false)}
             >
               <p
