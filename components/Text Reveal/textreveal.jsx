@@ -20,11 +20,11 @@ const TextReveal = ({
     // Give ScrollSmoother time to initialize first
     const timer = setTimeout(() => {
       if (!textRef.current) return;
-      
+
       // Create animation context
       const ctx = gsap.context(() => {
         const words = textRef.current.querySelectorAll(".word");
-        
+
         if (!words.length) return;
 
         // Animation configurations
@@ -61,6 +61,9 @@ const TextReveal = ({
 
         const selectedAnimation = animations[animation] || animations.fadeUp;
 
+        // Set initial state first
+        gsap.set(words, { opacity: 0 });
+
         // Create timeline with ScrollTrigger
         const tl = gsap.timeline({
           scrollTrigger: {
@@ -69,13 +72,14 @@ const TextReveal = ({
             toggleActions: "play none none reset",
             // Don't specify scroller here - it will use the global default
             markers: false,
-          }
+            once: false,
+          },
         });
-        
+
         // Add animation to timeline
         tl.fromTo(
-          words, 
-          selectedAnimation.from, 
+          words,
+          selectedAnimation.from,
           {
             ...selectedAnimation.to,
             duration,
@@ -84,13 +88,13 @@ const TextReveal = ({
           },
           delay
         );
-        
+
         // For debugging
       }, textRef);
 
       return () => ctx.revert();
-    }, 400); // Wait longer for ScrollSmoother to initialize
-    
+    }, 100); // Reduced timeout for faster initialization
+
     return () => clearTimeout(timer);
   }, [animation, stagger, duration, delay, trigger, ease]);
 
@@ -101,10 +105,10 @@ const TextReveal = ({
     return text.split(" ").map((word, index) => (
       <span
         key={index}
-        className="word inline-block opacity-0"
-        style={{ 
+        className="word inline-block"
+        style={{
           overflow: "hidden",
-          display: "inline-block"
+          display: "inline-block",
         }}
       >
         {word}&nbsp;

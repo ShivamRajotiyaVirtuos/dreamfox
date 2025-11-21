@@ -109,10 +109,7 @@ const Navbar = () => {
   };
 
   const isActive = (href) => {
-    if (href === "/") {
-      return router.pathname === "/";
-    }
-    return router.pathname.startsWith(href);
+    return router.pathname === href;
   };
   return (
     <nav
@@ -210,45 +207,58 @@ const Navbar = () => {
               >
                 <div className="p-2">
                   <Link
-                    // onClick={() => {
-                    //   setActive("services");
-                    // }}
                     href="/about"
-                    className="block px-6 uppercase py-3 text-white font-medium text-base hover:text-[#ec466f] text-center transition-all duration-300 ease-out rounded-xl transform hover:scale-110 "
+                    onClick={() => setDropdownOpenAbout(false)}
+                    className={`block px-6 uppercase py-3 font-medium text-base text-center transition-all duration-300 ease-out rounded-xl transform hover:scale-110 ${
+                      isActive("/about")
+                        ? "text-[#fff] bg-white/10"
+                        : "text-white hover:text-[#ec466f]"
+                    }`}
                   >
                     Background
                   </Link>
                   <Link
-                    // onClick={() => {
-                    //   setActive("services");
-                    // }}
                     href="/about/team"
-                    className="block px-6 uppercase py-3 text-white font-medium text-base hover:text-[#ec466f] text-center transition-all duration-300 ease-out rounded-xl transform hover:scale-110 "
+                    onClick={() => setDropdownOpenAbout(false)}
+                    className={`block px-6 uppercase py-3 font-medium text-base text-center transition-all duration-300 ease-out rounded-xl transform hover:scale-110 ${
+                      isActive("/about/team")
+                        ? "text-[#fff] bg-white/10"
+                        : "text-white hover:text-[#ec466f]"
+                    }`}
                   >
                     Our Team
                   </Link>
 
                   <Link
-                    // onClick={() => {
-                    //   setActive("services");
-                    // }}
                     href="/about/careers"
-                    className="block uppercase px-6 py-3 text-white font-medium text-base hover:text-[#ec466f] text-center transition-all duration-300 ease-out rounded-xl transform hover:scale-110 "
+                    onClick={() => setDropdownOpenAbout(false)}
+                    className={`block uppercase px-6 py-3 font-medium text-base text-center transition-all duration-300 ease-out rounded-xl transform hover:scale-110 ${
+                      isActive("/about/careers")
+                        ? "text-[#fff] bg-white/10"
+                        : "text-white hover:text-[#ec466f]"
+                    }`}
                   >
                     Careers
                   </Link>
                   <Link
-                    // onClick={() => {
-                    //   setActive("services");
-                    // }}
                     href="/about/alliances"
-                    className="block uppercase px-6 py-3 text-white font-medium text-base hover:text-[#ec466f] text-center transition-all duration-300 ease-out rounded-xl transform hover:scale-110 "
+                    onClick={() => setDropdownOpenAbout(false)}
+                    className={`block uppercase px-6 py-3 font-medium text-base text-center transition-all duration-300 ease-out rounded-xl transform hover:scale-110 ${
+                      isActive("/about/alliances")
+                        ? "text-[#fff] bg-white/10"
+                        : "text-white hover:text-[#ec466f]"
+                    }`}
                   >
                     Alliances
                   </Link>
                   <Link
                     href="/news-events"
-                    className="block uppercase px-6 py-3 text-white font-medium text-base hover:text-[#ec466f] text-center transition-all duration-300 ease-out rounded-xl transform hover:scale-110 "
+                    onClick={() => setDropdownOpenAbout(false)}
+                    className={`block uppercase px-6 py-3 font-medium text-base text-center transition-all duration-300 ease-out rounded-xl transform hover:scale-110 ${
+                      isActive("/news-events")
+                        ? "text-[#fff] bg-white/10"
+                        : "text-white hover:text-[#ec466f]"
+                    }`}
                   >
                     News & Events
                   </Link>
@@ -300,45 +310,58 @@ const Navbar = () => {
               >
                 <div className="p-2">
                   <Link
-                    // onClick={() => {
-                    //   setActive("services");
-                    // }}
                     href="/services"
-                    className="block px-6 uppercase py-3 text-white font-medium text-base hover:text-[#ec466f] text-center transition-all duration-300 ease-out rounded-xl transform hover:scale-110 "
+                    onClick={() => setDropdownOpen(false)}
+                    className={`block px-6 uppercase py-3 font-medium text-base text-center transition-all duration-300 ease-out rounded-xl transform hover:scale-110 ${
+                      router.pathname === "/services"
+                        ? "text-[#fff] bg-white/10"
+                        : "text-white hover:text-[#ec466f]"
+                    }`}
                   >
                     Our Work
                   </Link>
                   <Link
-                    // onClick={() => {
-                    //   setActive("services");
-                    // }}
                     href="/services/brand-advisory"
-                    className="block px-6 uppercase py-3 text-white font-medium text-base hover:text-[#ec466f] text-center transition-all duration-300 ease-out rounded-xl transform hover:scale-110 "
+                    onClick={() => setDropdownOpen(false)}
+                    className={`block px-6 uppercase py-3 font-medium text-base text-center transition-all duration-300 ease-out rounded-xl transform hover:scale-110 ${
+                      isActive("/services/brand-advisory")
+                        ? "text-[#fff] bg-white/10"
+                        : "text-white hover:text-[#ec466f]"
+                    }`}
                   >
                     Branding
                   </Link>
 
                   <Link
-                    // onClick={() => {
-                    //   setActive("services");
-                    // }}
                     href="/services/design-studio"
-                    className="block uppercase px-6 py-3 text-white font-medium text-base hover:text-[#ec466f] text-center transition-all duration-300 ease-out rounded-xl transform hover:scale-110 "
+                    onClick={() => setDropdownOpen(false)}
+                    className={`block uppercase px-6 py-3 font-medium text-base text-center transition-all duration-300 ease-out rounded-xl transform hover:scale-110 ${
+                      isActive("/services/design-studio")
+                        ? "text-[#fff] bg-white/10"
+                        : "text-white hover:text-[#ec466f]"
+                    }`}
                   >
                     Design
                   </Link>
                   <Link
-                    // onClick={() => {
-                    //   setActive("services");
-                    // }}
                     href="/services/digital-marketing"
-                    className="block uppercase px-6 py-3 text-white font-medium text-base hover:text-[#ec466f] text-center transition-all duration-300 ease-out rounded-xl transform hover:scale-110 "
+                    onClick={() => setDropdownOpen(false)}
+                    className={`block uppercase px-6 py-3 font-medium text-base text-center transition-all duration-300 ease-out rounded-xl transform hover:scale-110 ${
+                      isActive("/services/digital-marketing")
+                        ? "text-[#fff] bg-white/10"
+                        : "text-white hover:text-[#ec466f]"
+                    }`}
                   >
                     Ai Marketing
                   </Link>
                   <Link
                     href="/services/digital-media-mix"
-                    className="block uppercase px-6 py-3 text-white font-medium text-base hover:text-[#ec466f] text-center transition-all duration-300 ease-out rounded-xl transform hover:scale-110 "
+                    onClick={() => setDropdownOpen(false)}
+                    className={`block uppercase px-6 py-3 font-medium text-base text-center transition-all duration-300 ease-out rounded-xl transform hover:scale-110 ${
+                      isActive("/services/digital-media-mix")
+                        ? "text-[#fff] bg-white/10"
+                        : "text-white hover:text-[#ec466f]"
+                    }`}
                   >
                     Media
                   </Link>
@@ -475,14 +498,22 @@ const Navbar = () => {
                     <Link
                       onClick={closeMenu}
                       href="/about"
-                      className="block px-6 uppercase py-3 text-white font-medium text-base hover:text-[#ec466f]  transition-all duration-300 ease-out rounded-xl transform hover:scale-110 "
+                      className={`block px-6 uppercase py-3 font-medium text-base transition-all duration-300 ease-out rounded-xl transform hover:scale-110 ${
+                        isActive("/about")
+                          ? "text-[#fff] bg-white/10"
+                          : "text-white hover:text-[#ec466f]"
+                      }`}
                     >
                       Background
                     </Link>
                     <Link
                       onClick={closeMenu}
                       href="/about/team"
-                      className="block px-6 uppercase py-3 text-white font-medium text-base hover:text-[#ec466f]  transition-all duration-300 ease-out rounded-xl transform hover:scale-110 "
+                      className={`block px-6 uppercase py-3 font-medium text-base transition-all duration-300 ease-out rounded-xl transform hover:scale-110 ${
+                        isActive("/about/team")
+                          ? "text-[#fff] bg-white/10"
+                          : "text-white hover:text-[#ec466f]"
+                      }`}
                     >
                       Our Team
                     </Link>
@@ -490,21 +521,33 @@ const Navbar = () => {
                     <Link
                       onClick={closeMenu}
                       href="/about/careers"
-                      className="block uppercase px-6 py-3 text-white font-medium text-base hover:text-[#ec466f]  transition-all duration-300 ease-out rounded-xl transform hover:scale-110 "
+                      className={`block uppercase px-6 py-3 font-medium text-base transition-all duration-300 ease-out rounded-xl transform hover:scale-110 ${
+                        isActive("/about/careers")
+                          ? "text-[#fff] bg-white/10"
+                          : "text-white hover:text-[#ec466f]"
+                      }`}
                     >
                       Careers
                     </Link>
                     <Link
                       onClick={closeMenu}
                       href="/about/alliances"
-                      className="block uppercase px-6 py-3 text-white font-medium text-base hover:text-[#ec466f]  transition-all duration-300 ease-out rounded-xl transform hover:scale-110 "
+                      className={`block uppercase px-6 py-3 font-medium text-base transition-all duration-300 ease-out rounded-xl transform hover:scale-110 ${
+                        isActive("/about/alliances")
+                          ? "text-[#fff] bg-white/10"
+                          : "text-white hover:text-[#ec466f]"
+                      }`}
                     >
                       Alliances
                     </Link>
                     <Link
                       onClick={closeMenu}
                       href="/news-events"
-                      className="block uppercase px-6 py-3 text-white font-medium text-base hover:text-[#ec466f]  transition-all duration-300 ease-out rounded-xl transform hover:scale-110 "
+                      className={`block uppercase px-6 py-3 font-medium text-base transition-all duration-300 ease-out rounded-xl transform hover:scale-110 ${
+                        isActive("/news-events")
+                          ? "text-[#fff] bg-white/10"
+                          : "text-white hover:text-[#ec466f]"
+                      }`}
                     >
                       News & Events
                     </Link>
@@ -538,14 +581,22 @@ const Navbar = () => {
                     <Link
                       onClick={closeMenu}
                       href="/services"
-                      className="block px-6 uppercase py-3 text-white font-medium text-base hover:text-[#ec466f]  transition-all duration-300 ease-out rounded-xl transform hover:scale-110 "
+                      className={`block px-6 uppercase py-3 font-medium text-base transition-all duration-300 ease-out rounded-xl transform hover:scale-110 ${
+                        router.pathname === "/services"
+                          ? "text-[#fff] bg-white/10"
+                          : "text-white hover:text-[#ec466f]"
+                      }`}
                     >
                       Our Work
                     </Link>
                     <Link
                       onClick={closeMenu}
                       href="/services/brand-advisory"
-                      className="block px-6 uppercase py-3 text-white font-medium text-base hover:text-[#ec466f]  transition-all duration-300 ease-out rounded-xl transform hover:scale-110 "
+                      className={`block px-6 uppercase py-3 font-medium text-base transition-all duration-300 ease-out rounded-xl transform hover:scale-110 ${
+                        isActive("/services/brand-advisory")
+                          ? "text-[#fff] bg-white/10"
+                          : "text-white hover:text-[#ec466f]"
+                      }`}
                     >
                       Branding
                     </Link>
@@ -553,21 +604,33 @@ const Navbar = () => {
                     <Link
                       onClick={closeMenu}
                       href="/services/design-studio"
-                      className="block uppercase px-6 py-3 text-white font-medium text-base hover:text-[#ec466f]  transition-all duration-300 ease-out rounded-xl transform hover:scale-110 "
+                      className={`block uppercase px-6 py-3 font-medium text-base transition-all duration-300 ease-out rounded-xl transform hover:scale-110 ${
+                        isActive("/services/design-studio")
+                          ? "text-[#fff] bg-white/10"
+                          : "text-white hover:text-[#ec466f]"
+                      }`}
                     >
                       Design
                     </Link>
                     <Link
                       onClick={closeMenu}
                       href="/services/digital-marketing"
-                      className="block uppercase px-6 py-3 text-white font-medium text-base hover:text-[#ec466f]  transition-all duration-300 ease-out rounded-xl transform hover:scale-110 "
+                      className={`block uppercase px-6 py-3 font-medium text-base transition-all duration-300 ease-out rounded-xl transform hover:scale-110 ${
+                        isActive("/services/digital-marketing")
+                          ? "text-[#fff] bg-white/10"
+                          : "text-white hover:text-[#ec466f]"
+                      }`}
                     >
                       Ai Marketing
                     </Link>
                     <Link
                       onClick={closeMenu}
                       href="/services/digital-media-mix"
-                      className="block uppercase px-6 py-3 text-white font-medium text-base hover:text-[#ec466f]  transition-all duration-300 ease-out rounded-xl transform hover:scale-110 "
+                      className={`block uppercase px-6 py-3 font-medium text-base transition-all duration-300 ease-out rounded-xl transform hover:scale-110 ${
+                        isActive("/services/digital-media-mix")
+                          ? "text-[#fff] bg-white/10"
+                          : "text-white hover:text-[#ec466f]"
+                      }`}
                     >
                       Media
                     </Link>
