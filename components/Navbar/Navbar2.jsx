@@ -52,6 +52,18 @@ const Navbar = () => {
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
+  useEffect(() => {
+    const handleRouteChange = () => {
+      setDropdownOpen(false);
+      setDropdownOpenAbout(false);
+    };
+
+    router.events.on("routeChangeStart", handleRouteChange);
+    return () => {
+      router.events.off("routeChangeStart", handleRouteChange);
+    };
+  }, [router.events]);
+
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
