@@ -2,6 +2,7 @@ import { useState, useRef, useEffect } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Flip, CustomEase } from "gsap/all";
+import Image from "next/image";
 
 gsap.registerPlugin(ScrollTrigger, Flip, CustomEase);
 CustomEase.create("osmo-ease", "0.625, 0.05, 0, 1");
@@ -12,48 +13,45 @@ const BeforeAfterGallery = () => {
   const projects = [
     {
       id: 1,
-      name: "E-commerce",
+      name: "SWEVEN",
       category: "Web Design",
-      beforeImage:
-        "https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=800&h=600&fit=crop",
-      afterImage:
-        "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&h=600&fit=crop",
+      beforeImage: "/images/sweven_old.webp",
+      afterImage: "/images/sweven_new.webp",
+
       beforeAlt: "Old e-commerce design",
       afterAlt: "New e-commerce design",
     },
     {
       id: 2,
-      name: "Mobile App",
-      category: "UI/UX",
-      beforeImage:
-        "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=800&h=600&fit=crop",
-      afterImage:
-        "https://images.unsplash.com/photo-1551650975-87deedd944c3?w=800&h=600&fit=crop",
+      name: "VDC",
+      category: "Web Design",
+      beforeImage: "/images/vdc_old.webp",
+      afterImage: "/images/vdc_new.webp",
       beforeAlt: "Old mobile app interface",
       afterAlt: "New mobile app interface",
     },
-    {
-      id: 3,
-      name: "Brand Identity",
-      category: "Branding",
-      beforeImage:
-        "https://images.unsplash.com/photo-1551650975-87deedd944c3?w=800&h=600&fit=crop",
-      afterImage:
-        "https://images.unsplash.com/photo-1557804506-669a67965ba0?w=800&h=600&fit=crop",
-      beforeAlt: "Old brand design",
-      afterAlt: "New brand design",
-    },
-    {
-      id: 4,
-      name: "Dashboard",
-      category: "Web App",
-      beforeImage:
-        "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop",
-      afterImage:
-        "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=800&h=600&fit=crop",
-      beforeAlt: "Old dashboard design",
-      afterAlt: "New dashboard design",
-    },
+    // {
+    //   id: 3,
+    //   name: "Brand Identity",
+    //   category: "Branding",
+    //   beforeImage:
+    //     "https://images.unsplash.com/photo-1551650975-87deedd944c3?w=800&h=600&fit=crop",
+    //   afterImage:
+    //     "https://images.unsplash.com/photo-1557804506-669a67965ba0?w=800&h=600&fit=crop",
+    //   beforeAlt: "Old brand design",
+    //   afterAlt: "New brand design",
+    // },
+    // {
+    //   id: 4,
+    //   name: "Dashboard",
+    //   category: "Web App",
+    //   beforeImage:
+    //     "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop",
+    //   afterImage:
+    //     "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=800&h=600&fit=crop",
+    //   beforeAlt: "Old dashboard design",
+    //   afterAlt: "New dashboard design",
+    // },
   ];
 
   const [activeProject, setActiveProject] = useState(0);
@@ -332,7 +330,7 @@ const BeforeAfterGallery = () => {
                   onClick={() => handleTabClick(index)}
                   disabled={isTransitioning}
                 >
-                  <div className="relative z-10">{project.name}</div>
+                  <div className="relative text-center pr-4 sm:pr-0 z-10">{project.name}</div>
                   {activeProject === index && (
                     <div
                       data-flip-button="bg"
@@ -362,16 +360,18 @@ const BeforeAfterGallery = () => {
       {/* Image Slider */}
       <div
         ref={imageContainerRef}
-        className="relative flex w-full max-w-7xl h-[32rem] md:h-[40rem] xl:h-[50rem] aspect-[3/2] max-h-[95vh] z-10"
+        className="relative flex w-full max-w-7xl   lg:h-[40rem] xl:h-[50rem] aspect-[3/2] max-h-[95vh] z-10"
         style={{ width: "clamp(28rem, 90vw, 80rem)" }}
         aria-label="Before and after image slider"
       >
         {/* Before Image */}
         <div className="absolute w-full h-full overflow-hidden rounded-2xl">
-          <img
+          <Image
+          height={600}
+          width={1000}
             src={currentProject.beforeImage}
             alt={currentProject.beforeAlt}
-            className="w-full h-full object-cover"
+            className="w-full h-full o"
           />
           <span className="absolute top-6 left-6 bg-black/70 text-white text-lg font-bold px-4 py-2 rounded-full shadow-lg select-none pointer-events-none z-20">
             Before
@@ -383,10 +383,12 @@ const BeforeAfterGallery = () => {
           className="absolute w-full h-full overflow-hidden rounded-2xl"
           style={{ clipPath: `inset(0px 0px 0px ${sliderValue}%)` }}
         >
-          <img
+          <Image
+            height={600}
+            width={1000}
             src={currentProject.afterImage}
             alt={currentProject.afterAlt}
-            className="w-full h-full object-cover"
+            className="w-full h-full o"
           />
           <span className="absolute top-6 right-6 bg-gradient-to-r from-[#DC6263] to-[#D2448D] text-white text-lg font-bold px-4 py-2 rounded-full shadow-lg select-none pointer-events-none z-20">
             After

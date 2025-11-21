@@ -20,7 +20,7 @@ const index = () => {
       <Services />
       {/* <NewOurWork /> */}
       {/* <OurWork /> */}
-      {/* <BeforeAfterGallery /> */}
+      <BeforeAfterGallery />
       <Testimonials_brand />
     </div>
   );
