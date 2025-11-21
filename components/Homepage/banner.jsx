@@ -102,7 +102,7 @@ const Banner = () => {
         onSlideChange={onSlideChange}
         onSlideChangeTransitionStart={onSlideChangeTransitionStart}
         onSlideChangeTransitionEnd={onSlideChangeTransitionEnd}
-        className="w-full h-full"
+        className="w-full h-full " 
       >
         <SwiperSlide>
           <Banner1 />
@@ -116,7 +116,7 @@ const Banner = () => {
       </Swiper>
 
       {/* Enhanced Custom Navigation */}
-      <div className="absolute bottom-4 sm:bottom-8 left-1/2 transform -translate-x-1/2 z-50 w-full flex justify-center">
+      <div className="absolute -bottom-6 xl:bottom-8 left-1/2 transform -translate-x-1/2 z-50 w-full flex justify-center">
         <div className="flex items-center justify-center space-x-4 sm:space-x-8 bg-black/30 backdrop-blur-2xl border border-white/20 rounded-full px-4 sm:px-8 py-3 sm:py-4 shadow-2xl">
           {/* Previous Button */}
           <button

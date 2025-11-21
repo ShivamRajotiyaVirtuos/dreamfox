@@ -180,8 +180,8 @@ const Navbar = () => {
               onMouseEnter={() => setDropdownOpenAbout(true)}
               onMouseLeave={() => setDropdownOpenAbout(false)}
             >
-              <Link
-                href={"/about"}
+              <p
+                // href={"/about"}
                 // onClick={() => {
                 //   setActive("services");
                 // }}
@@ -196,7 +196,7 @@ const Navbar = () => {
                   }`}
                 />
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-[#ec466f] to-[#ff6b9d] group-hover:w-full transition-all duration-500 ease-out"></span>
-              </Link>
+              </p>
 
               <div
                 className={`absolute top-full -left-[83px] mt-2 w-64 bg-gray-700 backdrop-blur-xl rounded-2xl shadow-2xl border border-white/10 overflow-hidden transition-all duration-500 ease-out transform ${
@@ -273,8 +273,8 @@ const Navbar = () => {
               onMouseEnter={() => setDropdownOpen(true)}
               onMouseLeave={() => setDropdownOpen(false)}
             >
-              <Link
-                href={"/services"}
+              <p
+                // href={"/services"}
                 // onClick={() => {
                 //   setActive("services");
                 // }}
@@ -289,7 +289,7 @@ const Navbar = () => {
                   }`}
                 />
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-[#ec466f] to-[#ff6b9d] group-hover:w-full transition-all duration-500 ease-out"></span>
-              </Link>
+              </p>
 
               {/* Dropdown Menu */}
               {/* <svg

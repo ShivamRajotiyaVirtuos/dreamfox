@@ -75,7 +75,7 @@ const ReviewsSection = () => {
           Our Partners will tell you better about us
         </h2> */}
         <TextReveal
-          className="text-40  text-white/80 mb-6"
+          className="text-40  text-white/80 mb-16 sm:mb-6"
           animation="rotateX"
           stagger={0.1}
           duration={0.8}

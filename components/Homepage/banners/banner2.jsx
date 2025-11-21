@@ -126,15 +126,15 @@ const Banner2 = () => {
     <div className="container relative flex justify-center min-h-[90vh] items-center 2xl:min-h-[100vh] lg:pt-32">
       <div className="text-left relative ">
         <div>
-          <h3
+          {/* <h3
             ref={h3Ref2}
             className="text-24 font-semibold text-[#d2448d] mb-4"
           >
             Digital branding, reimagined by DreamFox
-          </h3>
+          </h3> */}
           <h1
             ref={h1Ref2}
-            className="text-130 font-semibold uppercase text-white leading-tight group"
+            className="text-130 xl:w-[70%] 3xl:w-[80%] font-semibold uppercase text-white leading-tight group"
           >
             <span ref={whereRef2}>Design that </span>
             <span
@@ -164,7 +164,7 @@ const Banner2 = () => {
             className="hover:scale-105 transition-all absolute right-0 bottom-0 text-30 font-semibold rounded-lg pl-8 pr-16 pb-4 pt-32 bg-gray-200 flex gap-4"
           />
         </div>  */}
-        <div ref={buttonRef2} className="xl:absolute right-0 bottom-0">
+        <div ref={buttonRef2} className="lg:absolute right-0 bottom-0">
           {/* <AnimatedButton text="ABOUT ME" href="/about" /> */}
           <BannerButton
             text="Designara"

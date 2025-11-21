@@ -126,17 +126,17 @@ const Banner3 = () => {
     <div className="container relative flex justify-center min-h-[90vh] items-center 2xl:min-h-[100vh] lg:pt-32">
       <div className="text-left relative ">
         <div>
-          <h3 ref={h3Ref3} className="text-24 font-semibold text-[#d2448d] mb-4">
+          {/* <h3 ref={h3Ref3} className="text-24 font-semibold text-[#d2448d] mb-4">
             Digital branding, reimagined by DreamFox
-          </h3>
+          </h3> */}
           <h1
             ref={h1Ref3}
-            className="text-130 font-semibold uppercase text-white leading-tight group"
+            className="text-130 xl:w-[70%] 3xl:w-[100%] font-semibold uppercase text-white leading-tight group"
           >
             <span ref={whereRef3}>Marketing Made</span>
             <span
               ref={brandsRef3}
-              className="gradient-selection  bg-gradient-to-r px-0 sm:px-6 inline-block from-[#DC6263] to-[#D2448D] text-black origin-bottom-left"
+              className="gradient-selection  bg-gradient-to-r px-0 sm:px-6 inline-block from-[#DC6263] to-[#D2448D] text-black relative z-20 origin-bottom-left"
               style={{ transformOrigin: "bottom left" }}
             >
                Intelligent.
@@ -167,7 +167,7 @@ const Banner3 = () => {
             className="hover:scale-105 transition-all absolute right-0 bottom-0 text-30 font-semibold rounded-lg pl-8 pr-16 pb-4 pt-32 bg-gray-200 flex gap-4"
           />
         </div>  */}
-        <div ref={buttonRef3} className="xl:absolute right-0 bottom-0">
+        <div ref={buttonRef3} className="lg:absolute right-0 bottom-0">
           {/* <AnimatedButton text="ABOUT ME" href="/about" /> */}
           <BannerButton
             text="OutLaunch"

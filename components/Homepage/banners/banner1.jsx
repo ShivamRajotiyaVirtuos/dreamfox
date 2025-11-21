@@ -122,7 +122,7 @@ const Banner1 = () => {
   }, []);
 
   return (
-    <div className="container relative flex justify-center min-h-[90vh] items-center 2xl:min-h-[100vh] lg:pt-32">
+    <div className="container relative flex justify-center min-h-[90vh] items-center 2xl:min-h-[100vh] pt-20 lg:pt-32">
       <div className="text-left relative ">
         <div>
           <h3 ref={h3Ref} className="text-24 font-semibold text-[#d2448d] mb-4">
@@ -130,7 +130,7 @@ const Banner1 = () => {
           </h3>
           <h1
             ref={h1Ref}
-            className="text-130 font-semibold uppercase text-white leading-tight group"
+            className="text-130 xl:w-[70%] 3xl:w-[80%] font-semibold uppercase text-white leading-tight group"
           >
             <span ref={whereRef}>WHERE </span>
             <span
@@ -147,7 +147,7 @@ const Banner1 = () => {
               alt="Ring Icon"
               width={100}
               height={100}
-              className="inline-block size-[40px] sm:size-[66px] lg:size-[80px] 2xl:size-[100px] bg-[#000] rounded-full ml-2 absolute sm:-top-4 top-16 right-10 sm:right-auto  -translate-x-16"
+              className="inline-block size-[40px] sm:size-[66px] lg:size-[80px] 2xl:size-[100px] bg-[#000] rounded-full ml-2 absolute top-22 sm:-top-4 xs:top-16 right-5 xs:right-10 sm:right-auto  -translate-x-16"
             />
             <span ref={dreamRef}>
               Dream in <br />
@@ -163,7 +163,7 @@ const Banner1 = () => {
             className="hover:scale-105 transition-all absolute right-0 bottom-0 text-30 font-semibold rounded-lg pl-8 pr-16 pb-4 pt-32 bg-gray-200 flex gap-4"
           />
         </div>  */}
-        <div ref={buttonRef} className="xl:absolute right-0 bottom-0">
+        <div ref={buttonRef} className="lg:absolute right-0 bottom-0">
           {/* <AnimatedButton text="ABOUT ME" href="/about" /> */}
           <BannerButton
             text="Brandlara"
