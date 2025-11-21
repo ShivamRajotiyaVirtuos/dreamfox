@@ -13,23 +13,23 @@ import Link from "next/link";
 const images = [
   {
     imageUrl: "/images/home/cohering.webp",
-    pageUrl: "/about/alliances#cohering",
+    pageUrl: "/about/alliances",
   },
   {
     imageUrl: "/images/home/godaddy.webp",
-    pageUrl: "/about/alliances#godaddy",
+    pageUrl: "/about/alliances",
   },
   {
     imageUrl: "/images/home/microsoft.webp",
-    pageUrl: "/about/alliances#microsoft",
+    pageUrl: "/about/alliances",
   },
   {
     imageUrl: "/images/home/salesforce.webp",
-    pageUrl: "/about/alliances#salesforce",
+    pageUrl: "/about/alliances",
   },
   {
     imageUrl: "/images/home/oracle.webp",
-    pageUrl: "/about/alliances#oracle",
+    pageUrl: "/about/alliances",
   },
 ];
 
