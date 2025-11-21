@@ -119,7 +119,7 @@ const NewsCategory = () => {
                   onClick={() => setSelectedCategory(category)}
                   className={`px-6 py-3 rounded-full text-sm font-medium transition-all duration-300 ${
                     selectedCategory === category
-                      ? "bg-gradient-to-r from-[#ee5363] to-[#e62f8c] text-white shadow-lg transform scale-105"
+                      ? "bg-gradient-to-r from-[#ee5363] to-[#e62f8c] text-white shadow-lg transform"
                       : "bg-white/5 backdrop-blur-xl border border-white/20 text-gray-300 hover:bg-white/10 hover:border-white/30"
                   }`}
                 >

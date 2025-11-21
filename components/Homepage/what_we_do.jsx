@@ -169,7 +169,7 @@ const WhatWeDo = () => {
             animation="rotateX"
             stagger={0.1}
             duration={0.8}
-            className="text-60 font-semibold mb-4 md:mb-6 text-[#ec4672] mt-10 md:mt-0"
+            className="text-60 whitespace-nowrap font-semibold mb-4 md:mb-6 text-[#ec4672] mt-10 md:mt-0"
           >
             What we do
           </TextReveal>

@@ -209,12 +209,13 @@ export default function OurVision() {
         const tl = gsap.timeline({
           scrollTrigger: {
             trigger: container.current,
-            start: "top center",
+            start: "top 10%",
             end: "bottom center",
             pin: true,
             pinSpacing: true,
             scrub: 1,
             anticipatePin: 1,
+            markers: true,
           },
         });
 
