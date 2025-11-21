@@ -21,7 +21,7 @@ const Snapshot = () => {
       description:
         "Platform dedicated to promoting cultural industries and creative professionals.",
       videoSrc: "/videos/Dreamfox_Giftcart.mp4",
-      poster: "/images/giftcart.png",
+      poster: "/images/giftcart.webp",
     },
     {
       id: 2,
@@ -29,7 +29,7 @@ const Snapshot = () => {
       description:
         "Complete website overhaul with modern design principles and enhanced user experience.",
       videoSrc: "/videos/Dreamfox_INDIC.mp4",
-      poster: "/images/indic.png",
+      poster: "/images/indic.webp",
     },
     {
       id: 3,
@@ -37,7 +37,7 @@ const Snapshot = () => {
       description:
         "Custom Webflow implementation with advanced interactions and responsive design.",
       videoSrc: "/videos/Dreamfox_Everfox.mp4",
-      poster: "/images/everfox.png",
+      poster: "/images/everfox.webp",
     },
     {
       id: 4,
@@ -45,7 +45,7 @@ const Snapshot = () => {
       description:
         "Showcasing creative work with dynamic layouts and smooth transitions.",
       videoSrc: "/videos/Dreamfox_October.ai.mp4",
-      poster: "/images/october.png",
+      poster: "/images/october.webp",
     },
 
     {
@@ -54,7 +54,7 @@ const Snapshot = () => {
       description:
         "Website redesign & Webflow development for studio fugu, A localization studio.",
       videoSrc: "/videos/Dreamfox_Crosswalk.mp4",
-      poster: "/images/crosswalk.png",
+      poster: "/images/crosswalk.webp",
     },
   ];
 

@@ -175,7 +175,7 @@ const Navbar = () => {
       >
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <Link
+          <a
             href={"/"}
             // onClick={() => {
             //   setActive("");
@@ -220,7 +220,7 @@ const Navbar = () => {
                 />
               </div>
             </div>
-          </Link>
+          </a>
 
           {/* Desktop Menu Items - Center */}
           <div className="hidden lg:flex items-center space-x-12">
