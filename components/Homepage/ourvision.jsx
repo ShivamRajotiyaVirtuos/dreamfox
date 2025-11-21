@@ -110,206 +110,211 @@ export default function OurVision() {
 
   const container = useRef(null);
 
-  useGSAP(() => {
-    // ScrollTrigger.defaults({
-    //   scroller: "#smooth-content",
-    // });
-    const splitHeading = new SplitText(container.current.querySelector("h1"), {
-      type: "lines, words",
-      linesClass: "split-line",
-      wordsClass: "split-word",
-    });
+  useGSAP(
+    () => {
+      // ScrollTrigger.defaults({
+      //   scroller: "#smooth-content",
+      // });
+      const heading = container.current.querySelector("h1");
+      const description = container.current.querySelector("p");
 
-    // Fix spacing between words for the heading
-    splitHeading.words.forEach((word, index) => {
-      if (index > 0) {
-        word.style.marginLeft = "-0.1em";
-      }
-    });
+      if (!heading || !description) return;
 
-    const splitDescription = new SplitText(
-      container.current.querySelector("p"),
-      {
+      const splitHeading = new SplitText(heading, {
         type: "lines, words",
         linesClass: "split-line",
         wordsClass: "split-word",
-      }
-    );
+      });
 
-    // Set initial state for all words
-    gsap.set(splitHeading.words, {
-      opacity: 0,
-      y: 30,
-      scale: 0.8,
-      filter: "blur(30px)",
-      backgroundImage: "linear-gradient(to right, #D2448D, #DC6263)",
-      WebkitBackgroundClip: "text",
-      WebkitTextFillColor: "transparent",
-      backgroundClip: "text",
-    });
-    gsap.set(splitDescription.words, {
-      opacity: 0,
-      y: 30,
-      scale: 0.8,
-      filter: "blur(30px)",
-    });
+      // Fix spacing between words for the heading
+      splitHeading.words.forEach((word, index) => {
+        if (index > 0) {
+          word.style.marginLeft = "-0.1em";
+        }
+      });
 
-    // Responsive ScrollTrigger animations
-    ScrollTrigger.matchMedia({
-      // Desktop (1024px and up)
-      "(min-width: 1024px)": () => {
-        const tl = gsap.timeline({
-          scrollTrigger: {
-            trigger: container.current,
-            start: "top 10%",
-            end: "bottom +=10%",
-            pin: true,
-            pinSpacing: true,
-            scrub: 1,
-            anticipatePin: 1,
-            markers: false,
-          },
-        });
+      const splitDescription = new SplitText(description, {
+        type: "lines, words",
+        linesClass: "split-line",
+        wordsClass: "split-word",
+      });
 
-        tl.to(splitHeading.words, {
-          opacity: 1,
-          y: 0,
-          scale: 1,
-          filter: "blur(0px)",
-          ease: "power2.out",
-          stagger: 0.1,
-        }).to(
-          splitDescription.words,
-          {
+      // Set initial state for all words
+      gsap.set(splitHeading.words, {
+        opacity: 0,
+        y: 30,
+        scale: 0.8,
+        filter: "blur(30px)",
+        backgroundImage: "linear-gradient(to right, #D2448D, #DC6263)",
+        WebkitBackgroundClip: "text",
+        WebkitTextFillColor: "transparent",
+        backgroundClip: "text",
+      });
+      gsap.set(splitDescription.words, {
+        opacity: 0,
+        y: 30,
+        scale: 0.8,
+        filter: "blur(30px)",
+      });
+
+      // Responsive ScrollTrigger animations
+      ScrollTrigger.matchMedia({
+        // Desktop (1024px and up)
+        "(min-width: 1024px)": () => {
+          const tl = gsap.timeline({
+            scrollTrigger: {
+              trigger: container.current,
+              start: "top 10%",
+              end: "bottom +=10%",
+              pin: true,
+              pinSpacing: true,
+              scrub: 1,
+              anticipatePin: 1,
+              markers: false,
+            },
+          });
+
+          tl.to(splitHeading.words, {
             opacity: 1,
             y: 0,
             scale: 1,
             filter: "blur(0px)",
             ease: "power2.out",
-            stagger: 0.05,
-          },
-          "-=0.3"
-        );
-      },
+            stagger: 0.1,
+          }).to(
+            splitDescription.words,
+            {
+              opacity: 1,
+              y: 0,
+              scale: 1,
+              filter: "blur(0px)",
+              ease: "power2.out",
+              stagger: 0.05,
+            },
+            "-=0.3"
+          );
+        },
 
-      // Tablet (768px to 1023px)
-      "(min-width: 768px) and (max-width: 1023px)": () => {
-        // Adjust initial state for tablet
-        gsap.set(splitHeading.words, {
-          y: 25,
-          scale: 0.85,
-          filter: "blur(25px)",
-        });
-        gsap.set(splitDescription.words, {
-          y: 20,
-          scale: 0.85,
-          filter: "blur(20px)",
-        });
+        // Tablet (768px to 1023px)
+        "(min-width: 768px) and (max-width: 1023px)": () => {
+          // Adjust initial state for tablet
+          gsap.set(splitHeading.words, {
+            y: 25,
+            scale: 0.85,
+            filter: "blur(25px)",
+          });
+          gsap.set(splitDescription.words, {
+            y: 20,
+            scale: 0.85,
+            filter: "blur(20px)",
+          });
 
-        const tl = gsap.timeline({
-          scrollTrigger: {
-            trigger: container.current,
-            start: "top 10%",
-            end: "bottom center",
-            pin: true,
-            pinSpacing: true,
-            scrub: 1,
-            anticipatePin: 1,
-            // markers: true,
-          },
-        });
+          const tl = gsap.timeline({
+            scrollTrigger: {
+              trigger: container.current,
+              start: "top 10%",
+              end: "bottom center",
+              pin: true,
+              pinSpacing: true,
+              scrub: 1,
+              anticipatePin: 1,
+              // markers: true,
+            },
+          });
 
-        tl.to(splitHeading.words, {
-          opacity: 1,
-          y: 0,
-          scale: 1,
-          filter: "blur(0px)",
-          ease: "power2.out",
-          stagger: 0.08,
-        }).to(
-          splitDescription.words,
-          {
+          tl.to(splitHeading.words, {
             opacity: 1,
             y: 0,
             scale: 1,
             filter: "blur(0px)",
             ease: "power2.out",
-            stagger: 0.04,
-          },
-          "-=0.2"
-        );
-      },
+            stagger: 0.08,
+          }).to(
+            splitDescription.words,
+            {
+              opacity: 1,
+              y: 0,
+              scale: 1,
+              filter: "blur(0px)",
+              ease: "power2.out",
+              stagger: 0.04,
+            },
+            "-=0.2"
+          );
+        },
 
-      // Mobile (767px and below)
-      "(max-width: 767px)": () => {
-        // Adjust initial state for mobile
-        gsap.set(splitHeading.words, {
-          y: 20,
-          scale: 0.9,
-          filter: "blur(15px)",
-        });
-        gsap.set(splitDescription.words, {
-          y: 15,
-          scale: 0.9,
-          filter: "blur(10px)",
-        });
+        // Mobile (767px and below)
+        "(max-width: 767px)": () => {
+          // Adjust initial state for mobile
+          gsap.set(splitHeading.words, {
+            y: 20,
+            scale: 0.9,
+            filter: "blur(15px)",
+          });
+          gsap.set(splitDescription.words, {
+            y: 15,
+            scale: 0.9,
+            filter: "blur(10px)",
+          });
 
-        // Mobile - no pinning, simpler animation
-        const tl = gsap.timeline({
-          scrollTrigger: {
-            trigger: container.current,
-            start: "top -=5%",
-            end: "bottom 20%",
-            scrub: 0.5,
-            pin: true,
-            markers: false,
-          },
-        });
+          // Mobile - no pinning, simpler animation
+          const tl = gsap.timeline({
+            scrollTrigger: {
+              trigger: container.current,
+              start: "top -=5%",
+              end: "bottom 20%",
+              scrub: 0.5,
+              pin: true,
+              markers: false,
+            },
+          });
 
-        tl.to(splitHeading.words, {
-          opacity: 1,
-          y: 0,
-          scale: 1,
-          filter: "blur(0px)",
-          ease: "power2.out",
-          stagger: 0.06,
-        }).to(
-          splitDescription.words,
-          {
+          tl.to(splitHeading.words, {
             opacity: 1,
             y: 0,
             scale: 1,
             filter: "blur(0px)",
             ease: "power2.out",
-            stagger: 0.03,
-          },
-          "-=0.1"
-        );
-      },
+            stagger: 0.06,
+          }).to(
+            splitDescription.words,
+            {
+              opacity: 1,
+              y: 0,
+              scale: 1,
+              filter: "blur(0px)",
+              ease: "power2.out",
+              stagger: 0.03,
+            },
+            "-=0.1"
+          );
+        },
 
-      // All devices - container slide up effect
-      all: () => {
-        gsap.from(container.current, {
-          y: 100,
-          opacity: 0.7,
-          duration: 1,
-          ease: "power2.out",
-          scrollTrigger: {
-            trigger: container.current,
-            start: "top 90%",
-            end: "top 70%",
-            scrub: true,
-          },
-        });
-      },
-    });
+        // All devices - container slide up effect
+        all: () => {
+          gsap.from(container.current, {
+            y: 100,
+            opacity: 0.7,
+            duration: 1,
+            ease: "power2.out",
+            scrollTrigger: {
+              trigger: container.current,
+              start: "top 90%",
+              end: "top 70%",
+              scrub: true,
+            },
+          });
+        },
+      });
 
-    return () => {
-      splitHeading.revert();
-      splitDescription.revert();
-      ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
-    };
-  }, []);
+      return () => {
+        splitHeading.revert();
+        splitDescription.revert();
+        ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
+      };
+    },
+    { scope: container, dependencies: [] }
+  );
 
   return (
     <section
@@ -322,7 +327,9 @@ export default function OurVision() {
         </h1>
         <div className="max-w-full sm:max-w-4xl lg:max-w-7xl">
           <p className="text-40 text-[#ec4672] leading-relaxed">
-            DreamFox is a powerhouse of digital transformation through brand creativity, strategic marketing, immersive experience design, and media storytelling.
+            DreamFox is a powerhouse of digital transformation through brand
+            creativity, strategic marketing, immersive experience design, and
+            media storytelling.
           </p>
         </div>
       </div>

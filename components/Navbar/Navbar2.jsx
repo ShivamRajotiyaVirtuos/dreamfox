@@ -145,6 +145,21 @@ const Navbar = () => {
   const isActive = (href) => {
     return router.pathname === href;
   };
+
+  const isAboutActive = () => {
+    return (
+      router.pathname.startsWith("/about") || router.pathname === "/news-events"
+    );
+  };
+
+  const isServicesActive = () => {
+    return router.pathname.startsWith("/services");
+  };
+
+  const isPortfolioActive = () => {
+    return router.pathname.includes("/work-portfolio");
+  };
+
   return (
     <nav
       className={`fixed top-0 mx-auto max-w-[95rem]  left-0 right-0 z-50 transition-all duration-500 ease-in-out ${
@@ -222,7 +237,7 @@ const Navbar = () => {
                 //   setActive("services");
                 // }}
                 className={`${
-                  isActive("/about") ? "text-[#ec466f]" : "text-[#fff]"
+                  isAboutActive() ? "text-[#ec466f]" : "text-[#fff]"
                 } text-20 font-normal hover:text-[#ec466f] transition-all duration-500 ease-out hover:scale-105 relative group flex items-center gap-2`}
               >
                 ABOUT
@@ -317,7 +332,7 @@ const Navbar = () => {
                 //   setActive("services");
                 // }}
                 className={`${
-                  isActive("/services") ? "text-[#ec466f]" : "text-[#fff]"
+                  isServicesActive() ? "text-[#ec466f]" : "text-[#fff]"
                 } text-20 font-normal hover:text-[#ec466f] transition-all duration-500 ease-out hover:scale-105 relative group flex items-center gap-2`}
               >
                 SERVICES
@@ -413,7 +428,7 @@ const Navbar = () => {
               //   setActive("portfolio");
               // }}
               className={`${
-                isActive("/work-portfolio") ? "text-[#ec466f]" : "text-[#fff]"
+                isPortfolioActive() ? "text-[#ec466f]" : "text-[#fff]"
               }  text-20 font-normal hover:text-[#ec466f] transition-all duration-300 hover:scale-105 relative group`}
             >
               PORTFOLIO
@@ -677,7 +692,11 @@ const Navbar = () => {
               </div>
               <Link
                 href="/work-portfolio"
-                className="text-white text-20 font-bold hover:text-[#ec466f] transition-all duration-300 px-2 py-2 rounded-lg hover:bg-white/10 transform hover:translate-x-2"
+                className={`text-white text-20 font-bold transition-all duration-300 px-2 py-2 rounded-lg hover:bg-white/10 transform hover:translate-x-2 ${
+                  isPortfolioActive()
+                    ? "text-[#ec466f]"
+                    : "hover:text-[#ec466f]"
+                }`}
                 onClick={closeMenu}
               >
                 PORTFOLIO
