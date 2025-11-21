@@ -60,7 +60,7 @@ const seoData = {
     title: "Contact DreamFox | Connect for Digital & AI Solutions",
     description:
       "Contact DreamFox to discuss your digital, design, or AI automation needs. Reach our team for project inquiries, consultations, and business transformation support.",
-    image: "https://dreamfox.com/og-images/contact.jpg",
+    image: "https://dreamfox.com/og-images/contact_us.jpg",
   },
   "/about/team": {
     title: "Meet the DreamFox Team | Creators of Digital Innovation",
@@ -80,7 +80,7 @@ const seoData = {
       "Explore DreamFox news, press releases, and events featuring acquisitions, partnerships, product launches, and industry updates shaping our digital innovation journey.",
     image: "https://dreamfox.com/og-images/news_and_events.jpg",
   },
-  "/news-events/dreamfox-acquires-yippee-media-expanding-creative-intelligence-frontier":
+  "/news-events/dreamfox-acquires-yippee-media":
     {
       title: "DreamFox Acquires Yippee Media | Creative Intelligence Growth",
       description:
@@ -111,43 +111,43 @@ const seoData = {
     title: "VSYS Case Study | Future-Ready Systems by DreamFox",
     description:
       "Explore how DreamFox built VSYS, a unified platform driving scalable growth, AI-powered operations, and a future-ready digital ecosystem for ventures.",
-    image: "https://dreamfox.com/og-images/vsys_case_study.jpg",
+    image: "https://dreamfox.com/og-images/vsys.jpg",
   },
   "/work-portfolio/tekcorp-case-study": {
     title: "TEKCORP Case Study — Reinventing a Legacy Tech Brand",
     description:
       "Explore how DreamFox transformed TEKCORP into a future-ready brand leading in Agentic AI, robotics, cloud infrastructure, and modern digital experience design.",
-    image: "https://dreamfox.com/og-images/tekcorp_case_study.jpg",
+    image: "https://dreamfox.com/og-images/tekcorp.jpg",
   },
   "/work-portfolio/plumjob-case-study": {
     title: "PlumJob.com Case Study — Next-Gen Talent Branding",
     description:
       "Discover how DreamFox built PlumJob.com for VSys—a premium talent experience platform that redefines hiring with a global brand identity, clean design, and curated roles.",
-    image: "https://dreamfox.com/og-images/plumjob_case_study.jpg",
+    image: "https://dreamfox.com/og-images/plumjob.jpg",
   },
   "/work-portfolio/sweven-case-study": {
     title: "Sweven Case Study — Vision-Driven Salesforce Consulting Brand",
     description:
       "Explore how DreamFox built Sweven—a visionary Salesforce consulting brand with a bold identity, global scalability, and a future-ready digital experience.",
-    image: "https://dreamfox.com/og-images/sweven_case_study.jpg",
+    image: "https://dreamfox.com/og-images/sweven.jpg",
   },
   "/work-portfolio/indic-case-study": {
     title: "INDIC Case Study — Building a Global Identity Rooted in India",
     description:
       "Discover how INDIC evolved into a powerful global identity rooted in India's culture, heritage, and digital ambition, built with strong strategy, design, and vision.",
-    image: "https://dreamfox.com/og-images/indic_case_study.jpg",
+    image: "https://dreamfox.com/og-images/indic.jpg",
   },
   "/work-portfolio/better-buy-club-case-study": {
     title: "BetterBuyClub Case Study — Modern Retail Reinvented Online",
     description:
       "See how BetterBuyClub was transformed into a modern digital retail experience through branding, UX design, catalog strategy, and a full-scale online launch built for growth.",
-    image: "https://dreamfox.com/og-images/better_buy_club_case_study.jpg",
+    image: "https://dreamfox.com/og-images/betterbuy.jpg",
   },
   "/work-portfolio/giftcart-case-study": {
     title: "Giftcart.com Case Study — Reinventing Digital Gifting Experiences",
     description:
       "Discover how Giftcart.com evolved into a modern gifting platform through brand identity, UX redesign, Shopify migration, and AI-driven personalization for digital consumers.",
-    image: "https://dreamfox.com/og-images/giftcart_case_study.jpg",
+    image: "https://dreamfox.com/og-images/giftcart.jpg",
   },
   "/terms-of-use": {
     title: "DreamFox Terms & Conditions | User Responsibilities & Data Use",
@@ -209,7 +209,7 @@ const SEOHead = ({
     "DreamFox transforms brands with intelligent digital branding, design, AI-driven marketing, and immersive experiences that fuel creativity, speed, and innovation.";
   const finalUrl = url || `https://dreamfox.com${currentPath}`;
   const finalImage =
-    image || pageSeoData.image || "https://dreamfox.com/og-images/default.jpg";
+    image || pageSeoData.image || "https://dreamfox.com/og-images/homepage.jpg";
 
   return (
     <Head>
@@ -241,7 +241,11 @@ const SEOHead = ({
       <meta name="twitter:image" content={finalImage} />
 
       {/* Additional SEO Tags */}
-      <meta name="robots" content="noindex, nofollow" />
+      {process.env.NEXT_PUBLIC_NODE_ENV === "production" ? (
+        <meta name="robots" content="index, follow" />
+      ) : (
+        <meta name="robots" content="noindex, nofollow" />
+      )}
       <meta name="author" content="DreamFox Team" />
       <meta name="publisher" content="DreamFox" />
       <meta name="theme-color" content="#D2448D" />
